@@ -34,7 +34,6 @@
     "tabs": [
       {
         "tab": "Home",
-        "public": true,
         "groups": [
           {
             "group": "Home",
@@ -46,7 +45,7 @@
       },
       {
         "tab": "Property Manager",
-        "public": true,
+        "icon": "house-building",
         "groups": [
           {
             "group": "Property Managers Help Guides",
@@ -358,7 +357,7 @@
       },
       {
         "tab": "Resident",
-        "public": true,
+        "icon": "house-user",
         "groups": [
           {
             "group": "Resident Help Guides",
@@ -402,7 +401,7 @@
       },
       {
         "tab": "Service Provider",
-        "public": true,
+        "icon": "truck-plow",
         "groups": [
           {
             "group": "Service Provider Help Guides",
@@ -458,7 +457,7 @@
       },
       {
         "tab": "Product Updates",
-        "public": true,
+        "icon": "newspaper",
         "groups": [
           {
             "group": "What's New!",
@@ -517,7 +516,7 @@
       },
       {
         "tab": "API Reference",
-        "public": true,
+        "icon": "book-open-reader",
         "groups": [
           {
             "group": "API Documentation",
