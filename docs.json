@@ -575,5 +575,8 @@
       "format": "woff2",
       "source": "https://latchel.com/wp-content/uploads/2022/01/GT-Walsheim-Regular.woff2"
     }
+  },
+  "metadata": {
+    "timestamp": true
   }
 }
