@@ -34,10 +34,10 @@
     "tabs": [
       {
         "tab": "Home",
+        "public": true,
         "groups": [
           {
             "group": "Home",
-            "public": true,
             "pages": [
               "home"
             ]
@@ -46,10 +46,10 @@
       },
       {
         "tab": "Property Manager",
+        "public": true,
         "groups": [
           {
             "group": "Property Managers Help Guides",
-            "public": true,
             "pages": [
               "s/topic/0TO5e000000h9wqGAA/property-manager-guides",
               {
@@ -358,10 +358,10 @@
       },
       {
         "tab": "Resident",
+        "public": true,
         "groups": [
           {
             "group": "Resident Help Guides",
-            "public": true,
             "pages": [
               "s/topic/0TO5e000000h9wrGAA/resident-help-guides",
               "s/topic/0TO5e000000h9wrGAA/Resident-Dashboard-Overview",
@@ -402,10 +402,10 @@
       },
       {
         "tab": "Service Provider",
+        "public": true,
         "groups": [
           {
             "group": "Service Provider Help Guides",
-            "public": true,
             "pages": [
               "s/topic/0TO5e000000h9wpGAA/service-provider-help-guides",
               {
@@ -458,10 +458,10 @@
       },
       {
         "tab": "Product Updates",
+        "public": true,
         "groups": [
           {
             "group": "What's New!",
-            "public": true,
             "pages": [
               "s/topic/0TO5e000000h9wsGAA/latchel-newsletter",
               {
@@ -517,10 +517,10 @@
       },
       {
         "tab": "API Reference",
+        "public": true,
         "groups": [
           {
             "group": "API Documentation",
-            "public": true,
             "pages": [
               "reference/introduction",
               "reference/payload-format",
