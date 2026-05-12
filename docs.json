@@ -7,7 +7,10 @@
     "light": "#ff9b8a",
     "dark": "#ff9b8a"
   },
-  "favicon": "/favicon.webp",
+  "favicon": {
+    "light": "/favicon.webp",
+    "dark": "/favicon.webp"
+  },
   "navigation": {
     "global": {
       "anchors": [
