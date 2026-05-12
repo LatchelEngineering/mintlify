@@ -34,7 +34,7 @@
         "groups": [
           {
             "group": "Home",
-
+            "public": true,
             "pages": [
               "home"
             ]
@@ -46,7 +46,7 @@
         "groups": [
           {
             "group": "Property Managers Help Guides",
-
+            "public": true,
             "pages": [
               "s/topic/0TO5e000000h9wqGAA/property-manager-guides",
               {
@@ -358,7 +358,7 @@
         "groups": [
           {
             "group": "Resident Help Guides",
-
+            "public": true,
             "pages": [
               "s/topic/0TO5e000000h9wrGAA/resident-help-guides",
               "s/topic/0TO5e000000h9wrGAA/Resident-Dashboard-Overview",
@@ -402,7 +402,7 @@
         "groups": [
           {
             "group": "Service Provider Help Guides",
-
+            "public": true,
             "pages": [
               "s/topic/0TO5e000000h9wpGAA/service-provider-help-guides",
               {
@@ -458,7 +458,7 @@
         "groups": [
           {
             "group": "What's New!",
-
+            "public": true,
             "pages": [
               "s/topic/0TO5e000000h9wsGAA/latchel-newsletter",
               {
@@ -517,7 +517,7 @@
         "groups": [
           {
             "group": "API Documentation",
-
+            "public": true,
             "pages": [
               "reference/introduction",
               "reference/payload-format",
@@ -525,6 +525,15 @@
               "reference/tenant-created-&-updated",
               "reference/portfolio-created-&-updated"
             ]
+          }
+        ]
+      },
+      {
+        "tab": "Latchel Team Spaces",
+        "groups": [
+          {
+            "group": "Data Support Team",
+            "pages": []
           }
         ]
       }
