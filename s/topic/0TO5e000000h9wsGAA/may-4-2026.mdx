@@ -1,0 +1,140 @@
+---
+title: "May 4, 2026"
+---
+
+The following are the Latchel updates for the week of May 5, 2026.
+
+### **New Features**
+
+1. **Improved Duplicate Detection: Multiple Open Job**
+
+We've overhauled how Latchel handles situations where multiple work orders come in for the same property or issue. Here's what now happens automatically:
+
+- **True duplicate:** A WO submitted for the same issue as another open WO is automatically cancelled as a duplicate
+- **Potential recall:** A WO submitted for the same issue as a WO completed in the last 6 months automatically triggers a recall project
+- **Shared SP:** A new issue that can be handled by the same SP already assigned to another open work order at the property → automatically assigned to that same vendor (they're notified and can remove themselves if needed)
+- **Same category, no SP yet:** A new issue in the same category as an open job with no SP assigned → new WO stays in Pending until a vendor is assigned on the other job, then auto-assigned to the same SP Less manual coordination, fewer duplicate dispatches, and better vendor continuity — handled for you.
+
+2. **More Control Over Work Order Budgets**
+
+A quick refresher on how Latchel's budget system works — because this update makes it more powerful:
+
+- Your **Soft Budget Limit** is the ceiling shown to service providers. If a job will exceed it, they contact Latchel for approval before proceeding.
+- Your **Hard Budget Limit** is the maximum Latchel can auto-approve on your behalf. Estimates that land between the soft and hard limits are approved automatically — no notification to you. Anything above the hard limit gets escalated to your team.
+- The **Approved Budget** on an active work order starts at your soft limit — but it can move. It updates if you request a one-off amount for a specific job, or if a vendor submits an estimate that falls under your hard limit and gets auto-approved. Either way, the SP always sees the current approved amount on their end.
+
+<Check>
+  **What's New:**
+
+  Here's where the gap used to be — if a vendor submitted an estimate below your hard budget limit, Latchel would auto-approve it without notifying you, even on jobs you wanted to review closely. The only workaround was lowering the soft limit to \$1, but that didn't stop the auto-approval from happening within the hard limit.
+
+  Now, Latchel Ops and Property Managers can set a **per-WO hard budget limit** — think of it as "nothing above this amount is approved on this specific work order, no matter what." Any estimate over that threshold will require explicit approval before it moves forward, overriding the auto-approve behavior for that job.
+</Check>
+
+If you have a specific work order you want this updated, feel free to reach out to Ops via the webchat or update the WO yourself via the Budget tab!
+
+<Frame>
+  ![Hard Budget Newsletter](/images/hard-budget-newsletter.png)
+</Frame>
+
+**Manage your own budget limits!** You can also customize default soft and hard limits at the company, portfolio, or property level — whatever fits your operation:
+
+<Card title="How to Customize Work Order Budget Limits" color="#ff9b8a" icon="money-check-dollar" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/How-to-Customize-Work-Order-Budget-Limits">
+  Adjust the budget threshold that triggers the approval requirements on work orders.
+</Card>
+
+<Card title="How to Update the Budget Limit on an Active Work Order" color="#ff9b8a" icon="money-bill-trend-up" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/How-to-Update-the-Approved-Budget-on-an-Active-Work-Order-New-Experience">
+  Edit the budget for ongoing work based on new estimates and changes.
+</Card>
+
+3. **Generic Intake: Non-Maintenance Help Path Now Live for All Customers**
+
+Starting **May 4**, residents will see a dedicated path in their dashboard to request non-maintenance help — so those requests get routed separately from the start, keeping your work order queue cleaner.
+
+<Frame>
+  ![Image 05 06 2026 11 20 AM](/images/image-05-06-2026_11_20_AM.png)
+</Frame>
+
+<Note>
+  **A few things to know:**
+
+  - If you **don't** want this path shown to your residents, reach out to [success@latchel.com](mailto:success@latchel.com) to opt out
+  - You can create custom rules in your **Intake Settings** to route non-maintenance requests to specific team inboxes or contacts
+</Note>
+
+<Tip>
+  **What's Next!**
+
+  This is just the beginning of our Generic Intake roadmap! Upcoming enhancements include:
+
+  - Routing non-maintenance calls from non-residents — prospective tenants, property owners seeking a PM company, and more
+  - More routing options — call forwarding, calendar links, task creation in external systems
+  - The ability to ingest your SOPs to actually _handle_ (not just route) non-maintenance inquiries on your behalf
+
+  **Questions?** Reach out to [success@latchel.com](mailto:success@latchel.com)!
+</Tip>
+
+4. **PM User Replacement Prompt When Disabling a User**
+
+When you disable a PM user in Latchel, you'll now be prompted to select an active replacement before the change takes effect. Previously, disabling a user didn't automatically hand off their work orders — leaving WO communications without an owner.
+
+Now, updates, resident communications, and escalations flow to the right person from day one — no manual reassignment needed.
+
+5. **Appfolio: Work Orders Now Sync Every 15 Minutes**
+
+Good news for Appfolio customers — faster WO syncs are now live for everyone..
+
+We've split the Appfolio background sync into two tracks: work orders now sync every 15 minutes, while property and tenant data syncs once daily. Your WO data in Appfolio stays more current, stale statuses are reduced, and fewer manual refreshes are needed.
+
+**Get the latest Latchel Chrome Extension by accessing this:**
+
+<Card title="How to Install the Latchel Data Sync Extension" color="#ff9b8a" icon="plug-circle-check" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension">
+  Follow these steps to download and install the Latchel Data Sync Extension on your system.
+</Card>
+
+<Tip>
+  **Want to have Latchel run it or check?** Reach out to [Success@latchel.com](mailto:Success@latchel.com)
+</Tip>
+
+### **Special Announcements**
+
+**Subscription Billing Update — No Action Needed**
+
+We've made a small behind-the-scenes update to our billing system to improve how invoices are generated and aligned across the billing period.
+
+<Warning>
+  **What's Changing:**
+
+  The official invoice date is moving from the 10th → 1st of each month
+</Warning>
+
+<Check>
+  **What stays exactly the same for you:**
+
+  - You'll still receive your invoice on the 10th, just like always
+  - Your payment due dates remain unchanged
+</Check>
+
+We've adjusted the billing terms internally so your schedule, timing, and payment expectations continue exactly as before — no action needed on your end.
+
+<Tip>
+  **Questions?** Reach out to [success@latchel.com](mailto:success@latchel.com)!
+</Tip>
+
+### **Influence Our 2026 Roadmap**
+
+We’re locking our **2026 priorities** soon, and this is your chance to directly **influence what we build next**. It takes less than **60 seconds** — and every response is reviewed by our product and leadership teams!
+
+<Columns cols={2}>
+  <Card title="Submit your feedback here!" color="#ff9b8a" icon="message-pen" iconType="duotone" horizontal href="https://forms.gle/AbUoieefga3azLmH7">
+  </Card>
+</Columns>
+
+Your input directly impacts which features get built, improved, or deprioritized — this is where that thought turns into action!
+
+### **Interested in learning more about Latchel's products? Book a meeting with us.**
+
+<Columns cols={2}>
+  <Card title="Get a Demo" color="#ff9b8a" icon="comments-question-check" iconType="duotone" horizontal href="https://latchel.com/demo-request-releases/">
+  </Card>
+</Columns>

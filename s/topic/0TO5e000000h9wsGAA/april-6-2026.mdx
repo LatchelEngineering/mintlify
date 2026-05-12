@@ -1,0 +1,200 @@
+---
+title: "April 6, 2026"
+---
+
+The following are the Latchel updates for the week of April 6, 2026.
+
+### **New Features**
+
+1. **New Emergency & On-Call Performance Reports**
+
+We’ve introduced two new reports to the [Analytics Dashboard](https://app.latchel.com/admin/analytics) to give you greater visibility into how emergencies and on-call alerts are being handled across your portfolio:
+
+- **Emergencies De-escalated:** View a detailed list of emergency requests that were successfully de-escalated by Latchel—helping you understand when situations were resolved without requiring full emergency dispatch.
+- **Missed or Ignored On-Call Alerts:** Identify on-call alerts that were not acknowledged or responded to, so you can quickly spot gaps in coverage and improve response times.
+
+<Tip>
+  **Want to see how you stack up?**
+
+  Upgrade to **Analytics\+** to unlock:
+
+  - Benchmarking insights comparing your performance to similar property management companies
+  - Deeper, more advanced reporting across your portfolio
+
+  \
+  **Bonus:** Refer another property manager to Latchel and earn **one year of Analytics\+ for free.**
+</Tip>
+
+2. **Smarter Non-Maintenance Intake & Rule Processing (Beta)**
+
+We’re introducing the first step in our **Generic Intake roadmap**, designed to better handle non-maintenance requests and improve how intake rules are evaluated—so the right action is taken every time.
+
+**Non-Maintenance Intake Fallback**\
+If a resident submits a request that does not match any existing Intake Settings rules, we will now **send an email notification** to the default Property Manager on the property (or a custom email of your choice) instead of creating a work order. This helps ensure non-maintenance requests are surfaced without cluttering your work order queue.
+
+**Holistic Rule Processing (Beta)**\
+Alongside this, we’re testing a smarter approach to intake logic with Intake Settings. Instead of processing rules in a top-down order, it will **evaluate all rules at once** and match requests to the **most relevant and specific rule**, improving routing accuracy and reducing misclassification.
+
+<Check>
+  **Why This Matters?**
+
+  - Fewer unnecessary work orders for non-maintenance requests
+  - More accurate routing based on intent, not rule order
+  - Greater visibility into requests that previously may not have matched any rule
+</Check>
+
+<Icon icon="camera-movie" iconType="duotone" color="#ff9b8a" size={25} /> **Interested in joining the beta? Watch a quick 4-minute overview:**
+
+<iframe src="https://www.loom.com/embed/f7c25a46b7cd44cfb9d96772f624bd7a" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+<Columns cols={2}>
+  <Column>
+    <Card title="Schedule time to learn more!" color="#ff9b8a" icon="calendar-clock" iconType="duotone" horizontal href="https://calendly.com/jcaley-latchel/15min-1">
+    </Card>
+  </Column>
+  <Column>
+  </Column>
+</Columns>
+
+**What’s Next!**
+
+This is just the beginning of our Generic Intake roadmap! Upcoming enhancements include:
+
+- Intake and route **non-maintenance calls** from non-residents (prospective tenants, property owners seeking a PM company, etc.)
+- Route those inquiries in more ways than email (call forwarding, send a link to your calendar, create tasks in another system, etc.)
+- **Ingest your SOPs** to actually handle (not just route) non-maintenance inquiries on your behalf.
+
+3. **Latchel Overlay for Property Management (AppFolio)**
+
+We’ve launched the **Latchel Overlay for Property Management**, a new Chrome extension designed to bring key Latchel functionality directly into your Appfolio dashboard—so you can manage work orders without switching systems.
+
+<Check>
+  **What's New:**
+
+  The Latchel Overlay acts as a **Heads-Up Display (HUD)** within AppFolio, allowing you to:
+
+  - View the **assigned vendor in Latchel** directly from Appfolio
+  - **Cancel and complete work orders** without leaving AppFolio
+
+  <Frame>
+    ![Latchel Overlay 04 28 2026 06 40 AM](/images/latchel_overlay-04-28-2026_06_40_AM.png)
+  </Frame>
+
+  - Click “**Create work order in Latchel**” to be taken directly to the Latchel workflow
+
+  <Frame>
+    ![Latchel Overlay 2 04 28 2026 06 40 AM](/images/latchel_overlay_2-04-28-2026_06_40_AM.png)
+  </Frame>
+</Check>
+
+This means faster workflows, fewer tabs, and a more seamless experience managing maintenance.
+
+**Want to get started?**
+
+<Columns cols={2}>
+  <Column>
+    <Card title="Download the extension here!" color="#ff9b8a" icon="plug" iconType="duotone" horizontal href="https://chromewebstore.google.com/detail/latchel-overlay-for-prope/nbifpjdaeocmafihkpjohfcodimelibc">
+      Chrome Webstore
+    </Card>
+  </Column>
+  <Column>
+  </Column>
+</Columns>
+
+<Note>
+  **Coming Soon!**
+
+  Support for additional property management systems is on the way!
+</Note>
+
+<Tip>
+  **Looking Ahead!**
+
+  This release also lays the groundwork for upcoming innovations, including maintenance analytics insights for Latchel’s emergency-only customers.
+</Tip>
+
+4. **Smarter Weather-Based Intake Rules**
+
+We’ve updated how weather data is evaluated within Intake Settings to improve accuracy and consistency when triggering rules.
+
+<Check>
+  **What's New:**
+
+  Intake Settings will now **reference the next 72 hours of weather data by default** when evaluating rules. This ensures your rules have a broader and more reliable view of upcoming conditions—helping capture events like incoming storms or temperature drops before they happen.
+</Check>
+
+**More Control for Your Team**
+
+Need a shorter window? You can customize this directly in your Intake Settings:
+
+- Specify a **smaller timeframe (e.g., 24 hours)** within your rule logic
+- Tailor rules based on how proactively you want to respond to weather events
+
+**Learn how to manage and customize your Intake Settings here:**
+
+<Card title="Managing Intake Settings" color="#ff9b8a" icon="arrows-from-line" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings">
+  Manage rules for your work orders to match your team's preference.\\
+</Card>
+
+This update ensures your Intake rules are powered by smarter, forward-looking data—so you can stay ahead of what’s coming.
+
+### **Resolved Bugs**
+
+**Service Provider Territoties Error**
+
+We’ve resolved an issue where Property Managers encountered an “invalid request” error when adding a Service Provider with service territories. This error previously blocked provider creation from the PM side, even though Latchel could successfully add the same provider on their behalf. With this fix, Service Provider territories can now be added without issue, ensuring a smoother and more reliable vendor setup experience.
+
+<Tip>
+  **Did you know?**
+
+  You can assign service provider territories (zip codes) to better control which vendors are contacted for work orders—helping reduce duplicate setup across portfolios and properties while ensuring the right providers are dispatched.
+</Tip>
+
+**Learn more here:**
+
+<Card title="How to Assign Service Provider to a Territory / Zip Code" color="#ff9b8a" icon="map-location-dot" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/How-to-Assign-Service-Provider-to-a-Territory-Zip-Code">
+  Map providers to specific regions for more targeted job dispatching.
+</Card>
+
+### **Special Announcements**
+
+**Free Multi-Family Operations Tool (Beta)**
+
+Do you manage **staffed multi-family buildings**? We’re offering early access to our new **multi-family daily operations platform—completely free during beta**.
+
+This tool is built to support your on-site teams with:
+
+- **Daily operations management**
+- **Team task lists & coordination**
+- **Routine site inspections and property walks**
+- **Offline inspection capabilities** for teams in the field
+
+This is a unique opportunity to streamline your operations while helping shape the product to fit your company’s needs.
+
+<Columns cols={2}>
+  <Column>
+    <Card title="Want to get an early access?" color="#ff9b8a" icon="pen-field" iconType="duotone" horizontal href="http://ops.latchel.com">
+      Sign up here to join the beta!
+    </Card>
+  </Column>
+  <Column>
+  </Column>
+</Columns>
+
+### **Influence Our 2026 Roadmap**
+
+We’re locking our **2026 priorities** soon, and this is your chance to directly **influence what we build next**. It takes less than **60 seconds** — and every response is reviewed by our product and leadership teams!
+
+<Columns cols={2}>
+  <Card title="Submit your feedback here!" color="#ff9b8a" icon="message-pen" iconType="duotone" horizontal href="https://forms.gle/AbUoieefga3azLmH7">
+  </Card>
+</Columns>
+
+Your input directly impacts which features get built, improved, or deprioritized — this is where that thought turns into action!
+
+### **Interested in learning more about Latchel's products? Book a meeting with us.**
+
+<Columns cols={2}>
+  <Card title="Get a Demo" color="#ff9b8a" icon="comments-question-check" iconType="duotone" horizontal href="https://latchel.com/demo-request-releases/">
+  </Card>
+</Columns>

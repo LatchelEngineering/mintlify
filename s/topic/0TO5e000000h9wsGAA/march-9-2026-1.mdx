@@ -1,0 +1,143 @@
+---
+title: "March 9, 2026"
+---
+
+The following are the Latchel updates for the week of March 9, 2026.
+
+### **New Features**
+
+1. **Automatic Property Assignee Sync for Rentvine Work Orders**
+
+<Accordion title="Shoutout!" defaultOpen iconType="duotone">
+  <Icon icon="party-horn" iconType="sharp-duotone-solid" color="#ff9b8a" size={35} />   Big thanks to **Grace Management** for the request that sparked this improvement!
+</Accordion>
+
+When work orders sync from Latchel to **Rentvine**, the **Rentvine work order property assignee will now automatically update based on the lease assignee in Rentvine**. This ensures the correct team member is assigned to the work order right away—no manual reassignment needed!
+
+<Tip>
+  Want this update enabled for your account? Email [success@latchel.com](mailto:success@latchel.com).
+</Tip>
+
+2. **On-Call Performance Scorecards**
+
+We’ve introduced **On-Call Scorecards**, giving property managers greater visibility into how emergency alerts are handled across their teams.
+
+With this new dashboard, you can track key performance metrics including:
+
+- **Alerts received vs. acknowledged**
+- **Alerts missed or ignored**
+- **No-show rate**
+- **Median response time**
+- **Incident acknowledgement performance**
+
+<Frame>
+  ![Latchel Analytics › On Call Scorecard 03 17 2026 08 30 PM 1](/images/Latchel-Analytics-›-On-Call-Scorecard-03-17-2026_08_30_PM-1.png)
+</Frame>
+
+You can also **filter the data by portfolio or by individual on-call technician**, making it easier to understand team performance and identify opportunities for improvement.
+
+**To learn more about Latchel Analytics filters, you may visit:**
+
+<Card title="Use of Filters" color="#ff9b8a" icon="filter-list" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/Latchel-Analytics-Filters">
+  Refine your data by applying filters to focus on the metrics and insights that matter most.
+</Card>
+
+This feature provides clearer insight into how emergency coverage is performing and helps teams ensure residents receive timely responses when urgent maintenance issues occur.
+
+**Want Analytics\+ for free for 1 year?** Refer someone to Latchel and when they sign up we will give you Analytics\+ for free for 1 year for every new customer you refer.
+
+<Columns cols={2}>
+  <Card title="Check this out!" color="#ff9b8a" icon="pen-field" iconType="duotone" horizontal href="https://latchel.com/upgrade-to-analytics-plus/">
+  </Card>
+</Columns>
+
+### **Resolved Bugs**
+
+1. **User List Display in On-Call Calendar**
+
+We resolved an issue where the **user list could appear behind the calendar view** when a large number of team members were included in the schedule.
+
+Previously, if many users were added, the **member selection list would render behind the calendar grid**, making it difficult to view or select users. This display issue has now been fixed so the **user list properly overlays the calendar**, ensuring smooth scheduling and easier team management.
+
+2. **Work Order “Created” Webhook Timing**
+
+We resolved an issue impacting customers who rely on **webhook-based integrations** for work order creation events.
+
+Previously, the **“Created” webhook could fire before intake processing was fully completed**, which meant key details—such as severity, troubleshooting results, and finalized work order data—were not yet available in the payload. This made it difficult for customers to reliably trigger downstream automation or integrations.
+
+The webhook behavior has now been updated so the **“Created” webhook fires only after intake processing is complete**, ensuring the work order data is fully populated when the webhook is sent.
+
+This improvement simplifies webhook integrations and provides a more reliable trigger for external systems.
+
+<Accordion title="Shoutout!" defaultOpen iconType="duotone">
+  <Icon icon="party-horn" iconType="sharp-duotone-solid" color="#ff9b8a" size={35} />   Big thanks to **Compass (MI)** for raising this issue and helping drive the fix!
+</Accordion>
+
+**To learn more about webhook visit:**
+
+<Card title="The Webhook Subscription" color="#ff9b8a" icon="webhook" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/The-Webhook-Subscription">
+  Learn how to use webhook subscriptions to receive real-time updates from Latchel.
+</Card>
+
+### **Key Process Changes**
+
+1. **Building-Wide Emergency Work Orders**
+
+We’ve implemented a new standardized process for handling **building-wide emergency maintenance issues** to improve response coordination and prevent duplicate dispatches.
+
+When multiple emergency reports come in from different units within the same building (for example, **no heat, boiler down, or shared HVAC failures**), our team will now verify whether the issue affects a **shared building system**. If confirmed, the incident will be consolidated under **one Main Work Order**, which becomes the single source of truth for the response.
+
+<Check>
+  **This process allows our team to:**
+
+  - Prevent duplicate vendor dispatches
+  - Reduce vendor confusion and unnecessary costs
+  - Maintain clear communication and tracking for property managers
+  - Ensure faster, more coordinated resolution for residents
+</Check>
+
+All additional reports tied to the same incident will be linked to the Main Work Order rather than dispatched separately, ensuring the issue is addressed efficiently while keeping everyone informed.
+
+2. **Handling Duplicate Emergency Work Orders**
+
+We’ve enhanced our emergency troubleshooting process to provide **clearer guidance on identifying and handling duplicate work orders**.
+
+This update introduces a defined **Active Window for Unresolved Issues**, helping associates determine whether a new submission should be treated as a **duplicate of an existing work order** or handled as a **new request**.
+
+<Check>
+  **Under the updated process:**
+
+  - An **open work order remains the primary reference for up to 180 days**.
+  - Any new submission for the same issue within this window will typically be treated as a **duplicate and linked to the original work order**.
+  - Submissions received **after the 180-day window** may be handled as a new work order or evaluated under recall criteria.
+</Check>
+
+<Note>
+  **This clarification helps ensure:**
+
+  - Consistent duplicate classification across associates
+  - Fewer duplicate dispatches and unnecessary vendor confusion
+  - Clearer handling of long-open work orders
+  - Faster and more consistent decision-making during emergency intake
+</Note>
+
+By standardizing this timeframe and process, our team can more confidently determine whether a new report is part of an existing issue or requires independent action.
+
+### **Influence Our 2026 Roadmap**
+
+We’re locking our **2026 priorities** soon, and this is your chance to directly **influence what we build next**. It takes less than **60 seconds** — and every response is reviewed by our product and leadership teams!
+
+<Columns cols={2}>
+  <Card title="Submit your feedback here!" color="#ff9b8a" icon="message-pen" iconType="duotone" horizontal href="https://forms.gle/AbUoieefga3azLmH7">
+  </Card>
+</Columns>
+
+Your input directly impacts which features get built, improved, or deprioritized — this is where that thought turns into action!
+
+### **Interested in learning more about Latchel's products? Book a meeting with us.**
+
+<Columns cols={2}>
+  <Card title="Get a Demo" color="#ff9b8a" icon="comments-question-check" iconType="duotone" horizontal href="https://latchel.com/demo-request-releases/">
+  </Card>
+</Columns>
+
