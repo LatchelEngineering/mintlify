@@ -34,6 +34,7 @@
     "tabs": [
       {
         "tab": "Home",
+        "icon": "house-chimney-heart",
         "groups": [
           {
             "group": "Home",
@@ -45,7 +46,7 @@
       },
       {
         "tab": "Property Manager",
-        "icon": "house-building",
+        "icon": "user-tie-hair",
         "groups": [
           {
             "group": "Property Managers Help Guides",
