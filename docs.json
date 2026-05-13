@@ -38,6 +38,7 @@
         "groups": [
           {
             "group": "Home",
+            "public": true,
             "pages": [
               "home"
             ]
@@ -55,6 +56,7 @@
               "s/topic/0TO5e000000h9wqGAA/property-manager-guides",
               {
                 "group": "Getting Started",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Getting-Started",
                   "s/topic/0TO5e000000h9wqGAA/Getting-Started-Approvals",
@@ -67,6 +69,7 @@
               },
               {
                 "group": "Dashboard Overview",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Dashboard-2-0",
                   "s/topic/0TO5e000000h9wqGAA/Latchel-Task-Page-Overview",
@@ -79,6 +82,7 @@
               },
               {
                 "group": "Account Settings",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Account-Settings-Overview",
                   "s/topic/0TO5e000000h9wqGAA/Adding-Your-Company-Address",
@@ -96,6 +100,7 @@
               },
               {
                 "group": "Data Management & Configurations",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Data-Management-Configurations",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Add-a-Property",
@@ -119,6 +124,7 @@
               },
               {
                 "group": "Latchel Analytics",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Latchel-Analytics-Overview",
                   "s/topic/0TO5e000000h9wqGAA/latchel-analytics-register-your-existing-email-with-gmail-for-latchel-analytics-access",
@@ -135,6 +141,7 @@
               },
               {
                 "group": "On-Call Rotation",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/on-call-rotation-getting-started",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Set-up-an-On-Call-Rotation",
@@ -143,6 +150,7 @@
               },
               {
                 "group": "Integrations",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Comprehensive-Integration-Guides",
                   "s/topic/0TO5e000000h9wqGAA/How-Latchel-Integration-Works",
@@ -175,6 +183,7 @@
               },
               {
                 "group": "Projects, Inspections, & Recurring Work Orders",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Projects-Inspections-Overview",
                   "s/topic/0TO5e000000h9wqGAA/Managing-Latchel-Maintenance-Projects",
@@ -184,6 +193,7 @@
               },
               {
                 "group": "Resident Benefits Guides",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Resident-Benefits-Guides",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Give-Your-Residents-Direct-Access-to-Their-Benefits-Dashboard",
@@ -194,6 +204,7 @@
               },
               {
                 "group": "Invoice and Payments",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Invoice-and-Payments",
                   "s/topic/0TO5e000000h9wqGAA/Latchel-Guarantee-and-Refund-Request-Policy",
@@ -215,6 +226,7 @@
               },
               {
                 "group": "Communication & Notification Settings",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Communication-Notification-Settings-Overview",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Contact-Latchel",
@@ -238,6 +250,7 @@
               },
               {
                 "group": "Work Order Management",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Comprehensive-Work-Order-Guide-New-Experience",
                   "s/topic/0TO5e000000h9wqGAA/A-Property-Owner-s-Guide-in-Managing-Work-Orders",
@@ -275,6 +288,7 @@
               },
               {
                 "group": "Emergency & Escalation Settings",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Emergency-Escalation-Settings-Overview",
                   "s/topic/0TO5e000000h9wqGAA/Emergency-Escalations-Property-Damaging-and-Extreme-Habitability-Situations",
@@ -293,6 +307,7 @@
               },
               {
                 "group": "Preferred Service Provider",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Preferred-Service-Providers-guides-overview",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Navigate-Preferred-Service-Providers-Profiles",
@@ -321,6 +336,7 @@
               },
               {
                 "group": "Task Management",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Task-Management-Overview",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Defer-a-Task-New-Experience",
@@ -330,6 +346,7 @@
               },
               {
                 "group": "User Management",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/User-Management-Overview",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Add-a-New-Company-User",
@@ -341,6 +358,7 @@
               },
               {
                 "group": "Files & Reports",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Files-Reports-Overview",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Upload-Files-to-a-Work-Order-for-Property-Manager-New-Experience",
@@ -369,6 +387,7 @@
               "s/topic/0TO5e000000h9wrGAA/Resident-Dashboard-Overview",
               {
                 "group": "Maintenance Request Guides",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wrGAA/Maintenance-Request-Guides-Overview",
                   "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Submit-a-Maintenance-Request",
@@ -386,6 +405,7 @@
               },
               {
                 "group": "Resident Benefits Guides",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wrGAA/Resident-Benefits-Guides-Overview",
                   "s/topic/0TO5e000000h9wrGAA/Accessing-Your-Resident-Benefits-Hub",
@@ -413,6 +433,7 @@
               "s/topic/0TO5e000000h9wpGAA/service-provider-help-guides",
               {
                 "group": "Getting Started",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wpGAA/Get-Started-Service-Provider",
                   "s/topic/0TO5e000000h9wpGAA/A-Guide-in-Joining-Latchel-Contractor-Network",
@@ -424,6 +445,7 @@
               },
               {
                 "group": "Managing Your Account",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wpGAA/Managing-Your-Account-Service-Provider",
                   "s/topic/0TO5e000000h9wpGAA/How-can-a-Service-Provider-Add-Their-Bank-Account-Information",
@@ -433,6 +455,7 @@
               },
               {
                 "group": "Work Order Management",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wpGAA/Work-Order-Management-Service-Providers",
                   "s/topic/0TO5e000000h9wpGAA/How-to-Accept-and-Schedule-Work-Orders",
@@ -446,6 +469,7 @@
               },
               {
                 "group": "Estimates, Invoicing & Documentation",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wpGAA/Estimates-Invoicing-Documentation-Service-Provider",
                   "s/topic/0TO5e000000h9wpGAA/How-Can-a-Service-Provider-Submit-an-Estimate-or-a-Bid",
@@ -470,6 +494,7 @@
               "s/topic/0TO5e000000h9wsGAA/latchel-newsletter",
               {
                 "group": "2026 Newsletters",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wsGAA/2026-newsletter-releases",
                   "s/topic/0TO5e000000h9wsGAA/may-4-2026",
@@ -486,6 +511,7 @@
               },
               {
                 "group": "2025 Newsletters",
+                "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wsGAA/2025-newsletter-releases",
                   "s/topic/0TO5e000000h9wsGAA/December-29-release",
