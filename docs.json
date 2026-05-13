@@ -558,6 +558,8 @@
       {
         "tab": "API Reference",
         "icon": "book-open-reader",
+        "iconType":"duotone",
+        "color":"#ff9b8a",
         "groups": [
           {
             "group": "API Documentation",
