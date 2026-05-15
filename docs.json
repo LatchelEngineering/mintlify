@@ -35,8 +35,6 @@
       {
         "tab": "Home",
         "icon": "house-chimney-heart",
-        "iconType":"duotone",
-        "color":"#ff9b8a",
         "groups": [
           {
             "group": "Home",
@@ -50,8 +48,6 @@
       {
         "tab": "Property Manager",
         "icon": "user-tie-hair",
-        "iconType":"duotone",
-        "color":"#ff9b8a",
         "groups": [
           {
             "group": "Property Managers Help Guides",
@@ -382,8 +378,6 @@
       {
         "tab": "Resident",
         "icon": "house-user",
-        "iconType":"duotone",
-        "color":"#ff9b8a",
         "groups": [
           {
             "group": "Resident Help Guides",
@@ -431,8 +425,6 @@
       {
         "tab": "Service Provider",
         "icon": "truck-plow",
-        "iconType":"duotone",
-        "color":"#ff9b8a",
         "groups": [
           {
             "group": "Service Provider Help Guides",
@@ -494,8 +486,6 @@
       {
         "tab": "Product Updates",
         "icon": "newspaper",
-        "iconType":"duotone",
-        "color":"#ff9b8a",
         "groups": [
           {
             "group": "What's New!",
@@ -558,8 +548,6 @@
       {
         "tab": "API Reference",
         "icon": "book-open-reader",
-        "iconType":"duotone",
-        "color":"#ff9b8a",
         "groups": [
           {
             "group": "API Documentation",
@@ -570,6 +558,17 @@
               "reference/job-created-&-updated",
               "reference/tenant-created-&-updated",
               "reference/portfolio-created-&-updated"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Latchel Admin",
+        "dropdowns": [
+          {
+            "dropdown": "Data Support Team",
+            "pages": [
+              "data-support-team"
             ]
           }
         ]
