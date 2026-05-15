@@ -564,6 +564,7 @@
       },
       {
         "tab": "Latchel Admin",
+        "icon": "house",
         "dropdowns": [
           {
             "dropdown": "Latchel Admin Team Spaces",
@@ -571,7 +572,10 @@
             "color": {
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
-            }
+            },
+            "pages": [
+              "latchel-admin"
+            ]
           },
           {
             "dropdown": "Data Support Team",
@@ -586,6 +590,11 @@
           },
           {
             "dropdown": "Product Support Team",
+            "icon": "book-atlas",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
             "pages": [
               "product-support-overview"
             ]
