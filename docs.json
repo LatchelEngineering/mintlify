@@ -570,6 +570,12 @@
             "pages": [
               "data-support-team"
             ]
+          },
+          {
+            "dropdown": "Product Support",
+            "pages": [
+              "product-support-test"
+            ]
           }
         ]
       }
