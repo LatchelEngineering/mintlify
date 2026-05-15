@@ -566,10 +566,23 @@
         "tab": "Latchel Admin",
         "dropdowns": [
           {
-            "dropdown": "Latchel Admin Team Spaces"
+            "dropdown": "Latchel Admin Team Spaces",
+            "icon": "users",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
+            "pages": [
+              "team-spaces"
+            ]
           },
           {
             "dropdown": "Data Support Team",
+            "icon": "database",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
             "pages": [
               "data-support-overview"
             ]
