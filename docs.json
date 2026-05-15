@@ -578,14 +578,9 @@
             ]
           },
           {
-            "dropdown": "Data Support Team",
-            "icon": "database",
-            "color": {
-              "light": "#ff9b8a",
-              "dark": "#ff9b8a"
-            },
+            "dropdown": "Service Operations Team",
             "pages": [
-              "data-support-overview"
+              "service-operations-overview"
             ]
           },
           {
@@ -597,6 +592,47 @@
             },
             "pages": [
               "product-support-overview"
+            ]
+          },
+          {
+            "dropdown": "Data Support Team",
+            "icon": "database",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
+            "pages": [
+              "data-support-overview"
+            ]
+          },
+          {
+            "dropdown": "Customer Success Team",
+            "pages": [
+              "customer-success-overview"
+            ]
+          },
+          {
+            "dropdown": "Product/Engineering Team",
+            "pages": [
+              "product-engineering-overview"
+            ]
+          },
+          {
+            "dropdown": "Sales Team",
+            "pages": [
+              "sales-team-overview"
+            ]
+          },
+          {
+            "dropdown": "Latchel People Ops",
+            "pages": [
+              "latchel-people-overview"
+            ]
+          },
+          {
+            "dropdown": "HR Documents",
+            "pages": [
+              "hr-documents-overview"
             ]
           }
         ]
