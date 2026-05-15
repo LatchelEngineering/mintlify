@@ -579,6 +579,11 @@
           },
           {
             "dropdown": "Service Operations Team",
+            "icon": "headset",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
             "pages": [
               "service-operations-overview"
             ]
@@ -607,30 +612,55 @@
           },
           {
             "dropdown": "Customer Success Team",
+            "icon": "user-tie-hair",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
             "pages": [
               "customer-success-overview"
             ]
           },
           {
             "dropdown": "Product/Engineering Team",
+            "icon": "lightbulb-gear",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
             "pages": [
               "product-engineering-overview"
             ]
           },
           {
             "dropdown": "Sales Team",
+            "icon": "money-bill-trend-up",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
             "pages": [
               "sales-team-overview"
             ]
           },
           {
             "dropdown": "Latchel People Ops",
+            "icon": "people-roof",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
             "pages": [
               "latchel-people-overview"
             ]
           },
           {
             "dropdown": "HR Documents",
+            "icon": "file-doc",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
             "pages": [
               "hr-documents-overview"
             ]
