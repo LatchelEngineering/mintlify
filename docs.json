@@ -564,20 +564,7 @@
       },
       {
         "tab": "Latchel Admin",
-        "dropdowns": [
-          {
-            "dropdown": "Data Support Team",
-            "pages": [
-              "data-support-team"
-            ]
-          },
-          {
-            "dropdown": "Product Support",
-            "pages": [
-              "product-support-test"
-            ]
-          }
-        ]
+        "href": "https://help.latchel.com/latchel-admin"
       }
     ]
   },
