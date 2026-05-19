@@ -259,6 +259,7 @@
                   "s/topic/0TO5e000000h9wqGAA/Work-Order-Status-Definitions-Maintenance-Page-Overview-New-Experience",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Submit-a-New-Work-Order",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Use-the-Filter-Options-in-the-Work-Order-Tab-Page",
+                  "s/topic/0TO5e000000h9wqGAA/split-work-order-help-guide",
                   "s/topic/0TO5e000000h9wqGAA/Merging-Work-Orders",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Update-the-Work-Order-Status-i-e-to-Scheduling-Pending-Completed-Canceled-New-Experience",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Update-the-Work-Order-Summary",
@@ -283,7 +284,6 @@
                   "s/topic/0TO5e000000h9wqGAA/How-to-Approve-or-Deny-a-Duplicate-Work-Order",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Reopen-a-Work-Order-New-Experience",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Cancel-a-Work-Order-New-Experience",
-                  "s/topic/0TO5e000000h9wqGAA/split-work-order-help-guide",
                   "s/topic/0TO5e000000h9wqGAA/How-to-Resend-the-Work-Order-Details-to-the-Service-Provider"
                 ]
               },
@@ -609,7 +609,13 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "data-support-overview"
+              "data-support-overview",
+              {
+                "group": "Test Folder",
+                "pages": [
+                  "test-page-1"
+                ]
+              }
             ]
           },
           {

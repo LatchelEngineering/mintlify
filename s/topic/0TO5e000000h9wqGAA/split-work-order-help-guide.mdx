@@ -1,49 +1,60 @@
 ---
-title: "Split Work Order & Improved Job Splitter"
+title: "Split Work Order"
 description: "Learn how Latchel's smarter Job Splitter works and how to manually split a work order when needed."
 ---
 
 As part of Latchel's ongoing improvements to duplicate detection, two updates make it easier to manage work orders when a resident reports multiple issues: a smarter Job Splitter and a new **Split Work Order** action.
 
-## What Changed
+### **What Changed**
 
 Previously, the Job Splitter would create separate work orders any time it detected more than one issue in a single intake session—even when those issues were closely related (like a plumbing leak and water remediation). This could result in unnecessary splits and extra coordination.
 
 With this update, Latchel has narrowed when automatic splits happen and given property managers and Latchel Ops users a quick way to manually split a work order when needed.
 
-## How the Improved Job Splitter Works
+### **How the Improved Job Splitter Works**
 
 The Job Splitter now only creates multiple work orders automatically when the issues reported are in **completely separate categories**—for example, a clogged toilet and a broken clothes dryer. These are unrelated problems that require different vendors and skill sets.
 
 Related issues, such as a plumbing leak and remediation work caused by that leak, will **stay together in the same work order**. This reduces unnecessary splitting and keeps connected repairs organized.
 
 | Scenario | What Happens |
-|----------|--------------|
-| Toilet clogged + clothes dryer not working | Two separate work orders are created automatically (unrelated categories) |
-| Plumbing leak + remediation needed | Stays in one work order (related issues) |
+| --- | --- |
+| Toilet clogged \+ clothes dryer not working | Two separate work orders are created automatically (unrelated categories) |
+| Plumbing leak \+ remediation needed | Stays in one work order (related issues) |
 
-## How to Split a Work Order Manually
-
-**Applies to:** Property Managers, Latchel Ops
+### How to Split a Work Order Manually
 
 If you're on a work order and realize it needs to be split into two separate jobs, you can now do this directly from the work order page. Latchel uses AI to suggest how the work order might be split and lets you confirm or edit the suggestion before creating the new work order.
 
-1. Open the work order you need to split from your dashboard.
-2. In the **Action** dropdown (or from the work order detail page), select **Split Work Order**.
-3. Latchel will suggest how to divide the issues. Review the suggested split and make any edits if needed.
-4. Confirm the split. A new, separate work order will be created for the second issue.
+Open the work order you need to split from your dashboard. In the **Action** dropdown (or from the work order detail page), select **Split Work Order**.
+
+<Frame>
+  ![Split WO 1](/images/split-WO-1.png)
+</Frame>
+
+Latchel will suggest how to divide the issues.
+
+<Frame>
+  ![Split Wo 2](/images/split-wo-2.png)
+</Frame>
+
+Review the suggested split and make any edits if needed.
+
+<Frame>
+  ![Split Wo 3](/images/split-wo-3.png)
+</Frame>
+
+Confirm the split by clicking **Split Work Order**. A new, separate work order will be created for the second issue.
 
 <Note>
-**Note for Latchel Ops:** When using Split Work Order, you will need to **manually select the correct severity** for the new work order by referencing the property's Intake Settings. The suggested budget on the split work order is pulled from the original (parent) work order, but it can be edited before confirming.
+  When using Split Work Order, you will need to **manually select the correct severity** for the new work order. The suggested budget on the split work order is pulled from the original (parent) work order, but it can be edited before confirming.
 </Note>
 
 <Tip>
-The skill for the new work order is automatically detected—no need to assign it manually.
+  The skill for the new work order is automatically detected—no need to assign it manually.
 </Tip>
 
----
-
-## Frequently Asked Questions
+### Frequently Asked Questions
 
 **Will this affect existing work orders?**
 
@@ -55,17 +66,14 @@ The suggested budget for the split work order is taken from the original work or
 
 **Can I still merge work orders that were split unnecessarily?**
 
-Yes! The **Merge Work Orders** feature is still available. If two work orders at the same property can be handled by the same service provider, you can merge them to avoid extra trip fees. See the *Merge Work Orders* guide for details.
+Yes! The **Merge Work Orders** feature is still available. If two work orders at the same property can be handled by the same service provider, you can merge them to avoid extra trip fees.
+
+**Learn more about merging work orders:**
+
+<Card title="Merge Work Orders" color="#ff9b8a" icon="merge" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/Merging-Work-Orders">
+  Follow this help guide to combine multiple non-emergency work orders at the same property.
+</Card>
 
 **Does the Split Work Order feature work for emergency work orders?**
 
 The Split Work Order action is available on non-emergency work orders. For emergency situations, contact Latchel support for guidance.
-
----
-
-## Related Guides
-
-- Merge Work Orders
-- Duplicate vs. Recall Work Order: Know the Difference
-- How to Approve or Deny a Duplicate Work Order
-- Intake Creates Multiple Work Orders
