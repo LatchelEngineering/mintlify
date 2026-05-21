@@ -607,10 +607,7 @@
             "color": {
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
-            },
-            "pages": [
-              "data-support-overview"
-            ]
+            }
           },
           {
             "dropdown": "Customer Success Team",
