@@ -576,7 +576,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin"
+              "latchel-admin/latchel-admin"
             ]
           },
           {
@@ -587,7 +587,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "service-operations-overview"
+              "latchel-admin/Service Operations/service-operations-overview"
             ]
           },
           {
@@ -598,7 +598,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "product-support-overview"
+              "latchel-admin/Product Support Team/product-support-overview"
             ]
           },
           {
@@ -607,7 +607,10 @@
             "color": {
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
-            }
+            },
+            "pages": [
+              "latchel-admin/Data Support Team/data-support-overview"
+            ]
           },
           {
             "dropdown": "Customer Success Team",
@@ -617,7 +620,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "customer-success-overview"
+              "latchel-admin/Customer Success Team/customer-success-overview"
             ]
           },
           {
@@ -628,7 +631,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "product-engineering-overview"
+              "latchel-admin/Product Engineering/product-engineering-overview"
             ]
           },
           {
@@ -639,7 +642,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "sales-team-overview"
+              "latchel-admin/Sales Team/sales-team-overview"
             ]
           },
           {
@@ -650,7 +653,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-people-overview"
+              "latchel-admin/Latchel People Ops/latchel-people-overview"
             ]
           },
           {
@@ -661,7 +664,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "hr-documents-overview"
+              "latchel-admin/HR Documents/hr-documents-overview"
             ]
           }
         ]
