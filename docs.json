@@ -609,7 +609,8 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "data-support-overview"
+              "data-support-overview",
+              "latchel-data-support-tool"
             ]
           },
           {
