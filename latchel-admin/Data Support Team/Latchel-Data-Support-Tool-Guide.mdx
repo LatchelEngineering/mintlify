@@ -1,0 +1,259 @@
+# Latchel Data Support Tool Guide
+
+The Latchel Data Support Tool is an internal tool that lets the Data Support Team match a property manager's (PM) property or resident list against Latchel's production data and perform bulk updates — all without writing a single line of code. This guide walks you through everything you need to know to use it confidently.
+
+> 🔗 **Tool URL:** https://latchel-matcher-110204726220.us-central1.run.app
+
+---
+
+## Logging In
+
+Access the tool using the shared team password. Here's how to get started!
+
+1. Navigate to the Tool URL above.
+2. Enter the shared team password and click **Sign in**.
+
+> ⚠️ **Important:** If you don't have the shared password, reach out to **Matias Cantella** to get access.
+
+---
+
+## How It Works — The 3-Step Flow
+
+Every operation in the tool follows the same three steps. Getting familiar with this flow makes using every feature much easier!
+
+1. **Set the PM Company ID.** Paste the full admin URL (e.g. `https://app.latchel.com/admin/pm-company/40708/properties`) or just the numeric ID (e.g. `40708`). A green banner confirms the scope: *✓ PM Company ID: XXXXX.*
+2. **Choose an operation.** Select from **Match Properties**, **Match Residents**, or **Bulk Update via API**.
+3. **Configure and run.** Each operation has its own sub-steps — upload a file, map columns, enter an API key, and so on.
+
+> ⚠️ **Important:** All operations are automatically scoped to the PM Company ID set in Step 1. If a CSV contains IDs from a different PM company, those rows are blocked automatically.
+
+---
+
+## Match Properties 🏠
+
+Use **Match Properties** to cross-reference a PM's external property list against Latchel and retrieve Latchel property IDs. The result is a table with property IDs and admin URLs, ready to export.
+
+### Context Shown Automatically
+
+After selecting Match Properties, the tool pulls live stats from Latchel so you always know what you're working with:
+
+- **Properties in Latchel** — total count for this PM
+- **Active** — number of currently active properties
+- **Portfolios** — number of distinct portfolios
+
+Expand **View properties in Latchel** to see the full table: `property_id`, `address1`, `city`, `state`, `zip`, `portfolio_id`, `is_active`.
+
+### How to Run a Match
+
+1. **Upload the PM's file** — CSV/Excel or paste a Google Sheets URL.
+2. **Map columns** — Tell the tool which column contains the address. ZIP, City, and State are optional but improve match accuracy.
+3. Click **Match addresses**.
+
+### Reading the Results
+
+Once the match runs, results are organized into four categories:
+
+| Result | Score | What It Means | What to Do |
+|---|---|---|---|
+| 🟢 **HIGH CONFIDENCE** | ≥ 90% | Automatically matched | Safe to use the Latchel ID directly |
+| 🟡 **IN MANUAL REVIEW** | 70–89% | Partial match — DS review recommended | Review manually before using the ID |
+| 🔴 **NO MATCH** | < 70% | No match found | Check address spelling or add the property in Latchel first |
+| ⚠️ **MATCHED INACTIVE** | Any | Matched but property is inactive | Reactivate the property first if needed |
+
+---
+
+## Match Residents 👤
+
+Use **Match Residents** to view all residents currently in Latchel for a PM company. This is a required first step before running any resident bulk update — you'll need the `user_id` values shown here.
+
+The tool shows:
+
+- **Residents in Latchel** — total count
+- **Active Residents** — currently active residents
+- **Properties with Residents** — properties that have at least one resident
+
+Expand **View residents in Latchel** to see the full table: `user_id`, `name`, `email`, `phone`, `address`, `active`, `move_in_date`.
+
+> 💡 **Pro Tip:** The `user_id` column is the key value you need when building an Update Residents CSV for Bulk Update via API. Copy it from this table before moving on.
+
+---
+
+## Bulk Update via API 🔄
+
+Use **Bulk Update via API** to update or add resident and property records in bulk using a CSV file. Always test in Demo first before applying changes to Production!
+
+### Step 1 — Choose Your Environment
+
+> ⚠️ **Important:** Always run your update in **Demo** first. The Demo environment (`latchel-demo.com`) lets you validate your CSV without touching real data. Switch to **Production** only when you're confident the changes are correct.
+
+| Environment | When to Use |
+|---|---|
+| **Demo** | Validate your CSV and preview changes — no real data is touched |
+| **Production** | Apply confirmed, verified changes to live PM data |
+
+### Step 2 — Get the PM's API Key
+
+1. Go to **app.latchel.com** and impersonate the PM: open their user profile → click the three dots menu → select **Impersonate**.
+2. Go to **Account Settings** → **Integrations**.
+3. Scroll to the bottom and copy the API key.
+4. Paste it into the API key field in the tool.
+
+> ⚠️ **Important:** Each API key is unique to that PM's company. You must use a different key for each PM you work with.
+
+### Step 3 — Choose an Operation and Upload Your CSV
+
+Select one of the three bulk operations below, then upload your CSV file.
+
+#### Update Residents
+
+Update one or more fields on existing residents. Upload a CSV with one row per resident.
+
+> 📋 **Note:** Only the columns you fill in are sent to the API — empty cells are ignored and that field is left unchanged.
+
+| Field | Required? | Description |
+|---|---|---|
+| `user_id` | ✅ Always | Latchel user ID (from Match Residents export) |
+| `property_id` | Required for tenancy fields | Scopes the update to a specific tenancy |
+| `name` | Optional | Full name of the resident |
+| `email` | Optional | New primary email address |
+| `phone` | Optional | New primary phone — US format, e.g. (231) 234-2422 |
+| `sms_enabled` | Optional | 1 = on, 0 = off (SMS notifications) |
+| `email_enabled` | Optional | 1 = on, 0 = off (email notifications) |
+| `critical_note` | Optional | Critical note to add to the resident profile |
+| `is_active` | Optional | 1 = active, 0 = inactive (requires `property_id`) |
+| `move_in_date` | Optional | Format: YYYY-MM-DD (requires `property_id`) |
+| `move_out_date` | Optional | Format: YYYY-MM-DD (requires `property_id`) |
+
+#### Add Residents to Properties
+
+Add new residents to a property. Upload a CSV with one row per new resident.
+
+| Field | Required? | Description |
+|---|---|---|
+| `property_id` | ✅ Always | Latchel property ID (from Match Properties export) |
+| `name` | ✅ Always | Full name of the new resident |
+| `email` | Optional | Primary email address |
+| `phone` | Optional | Primary phone number (US format) |
+| `is_active` | Optional | 1 = active (default), 0 = inactive |
+| `move_in_date` | Optional | Format: YYYY-MM-DD |
+| `move_out_date` | Optional | Format: YYYY-MM-DD |
+
+#### Update Properties
+
+Update fields on existing properties in bulk. `property_id` is always required.
+
+| Field | Required? | Description |
+|---|---|---|
+| `property_id` | ✅ Always | Latchel property ID (from Match Properties export) |
+| `portfolio_id` | Optional | Numeric ID of the portfolio to assign |
+| `owner_id` | Optional | Numeric ID of the owner to assign |
+| `pm_id` | Optional | Numeric ID of the PM user responsible for this property |
+| `is_active` | Optional | 1 = active, 0 = inactive |
+| `critical_note` | Optional | Critical notes for the property |
+| `ref_property_id` | Optional | External / 3rd-party reference ID (e.g. EXT-001) |
+
+---
+
+## Preview & Confirmation
+
+Before anything is sent to the API, the tool shows you exactly what will change. Review this carefully!
+
+The preview table shows:
+
+- **ID** — the record being updated
+- **Admin URL** — a direct link to that record in the Latchel admin
+- **Changes** — a summary of what will be updated (e.g. `is_active=1`)
+
+Rows with no changes to apply are flagged with ⚠️ and automatically skipped. A yellow banner shows how many rows will be skipped before you confirm.
+
+> ✅ **To apply changes:** Check the confirmation checkbox, then click **Apply changes**.
+
+---
+
+## Execution & Results
+
+While the tool is running, you'll see a real-time progress bar showing successes, errors, and remaining API calls. Once complete, a results table appears.
+
+| Column | Description |
+|---|---|
+| **Row** | Identifier of the record (e.g. "property 309482") |
+| **Status** | ✅ OK or ❌ Error |
+| **HTTP Code** | 200 = success · 422 = validation error · 404 = not found |
+| **Detail** | Human-readable error message if the call failed |
+| **Payload sent** | The exact JSON sent to the API for that row |
+
+Click **⬇️ Download results log** to export all results as a CSV. Always download and save the log for every production run.
+
+---
+
+## Things to Keep in Mind
+
+### Phone Numbers
+
+- Must be a valid US phone number.
+- Accepted formats: `(231) 234-2422`, `2312342422`, `+12312342422` — all normalized automatically to `+1XXXXXXXXXX`.
+- Fake or test numbers (555-XXXX) are rejected by the API.
+
+### Email Addresses
+
+- Must be unique in Latchel.
+- If the email is already registered to another user, the API will return an error.
+- Phone numbers can be shared between users — emails cannot.
+
+### Empty Cells = No Change
+
+For all bulk operations, leaving a cell empty means "don't touch this field." Only explicitly filled columns are sent to the API.
+
+### Tenancy Fields Require property_id
+
+> ⚠️ **Important:** When updating `is_active`, `move_in_date`, or `move_out_date` on a resident, you must also include `property_id` in the same row. These fields belong to the resident–property relationship, not the resident globally.
+
+### API Rate Limit
+
+The Latchel Partner API allows **600 calls per 10-minute window**. The tool shows remaining calls in real time during execution. Plan accordingly for large batches.
+
+---
+
+## Typical Workflows
+
+### Workflow A — Match & Export Property IDs
+
+1. Enter the PM's Company ID.
+2. Select **Match Properties**.
+3. Upload the PM's property list (CSV or Google Sheet).
+4. Map the address column and run the match.
+5. Download the results — this gives you Latchel `property_id` values for every matched property.
+6. Use those IDs to populate an **Update Properties** or **Add Residents** CSV.
+
+### Workflow B — Bulk Resident Update
+
+1. Enter the PM's Company ID.
+2. Select **Match Residents**, expand the table, and note the `user_id` values.
+3. Select **Bulk Update via API → Update Residents**.
+4. Choose the **Demo** environment, enter the PM's API key, and upload your CSV.
+5. Review the preview — confirm the changes look correct.
+6. Switch to **Production**, re-enter the API key, and click **Apply changes**.
+
+### Workflow C — Add New Residents in Bulk
+
+1. Run **Match Properties** to get the Latchel `property_id` for each unit.
+2. Build a CSV with one row per new resident: `property_id`, `name`, plus any contact details.
+3. Use **Bulk Update via API → Add Residents to Properties**.
+4. Preview, confirm, and apply.
+
+---
+
+## Need Help?
+
+If you run into any issues or have questions while using the Latchel Data Support Tool, here's who to contact:
+
+| Situation | Contact / Action |
+|---|---|
+| Don't have the tool password | Reach out to **Matias Cantella** |
+| API key returns errors | Re-impersonate the PM and re-copy the key from **Account Settings → Integrations** |
+| Match confidence is unexpectedly low | Check address spelling in the PM's file; consider adding missing properties in Latchel first |
+| Unexpected errors after a production run | Download the results log and escalate to the Data Support Lead with the CSV attached |
+
+You can also share feedback, suggestions, or report issues using the team's shared Feedback & Suggestions log.
+
+> 📬 **Questions or feedback?** Use the Data Support Tool Feedback & Suggestions log shared with the team, or contact the Data Support Lead directly.
