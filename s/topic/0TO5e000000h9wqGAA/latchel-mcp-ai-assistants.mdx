@@ -1,0 +1,63 @@
+---
+title: "Latchel MCP for AI Assistants"
+---
+
+**Latchel MCP (Model Context Protocol)** connects Latchel to AI tools like Claude, giving you instant access to help guides, workflows, and answers without leaving your workflow. Instead of searching manually, simply ask a question and get accurate, Latchel-specific guidance in seconds.
+
+### **What is Latchel MCP?**
+
+The **Latchel MCP connector** lets you talk to your Latchel account directly from AI assistants like Claude and ChatGPT. Ask in plain English and the assistant can pull and act on your real work-order data — no copy-pasting, no switching tabs.
+
+Everything is scoped to your PM company and gated behind your own Latchel login, so the assistant only ever sees what you're allowed to see.
+
+### **What You Can Do**
+
+Once connected, you can interact with your Latchel account conversationally. Here's what's supported:
+
+- **Work orders** — list them, get full details (including open tasks), review activity history, and create new ones.
+- **Tasks** — list, view details, create, resolve, and reschedule (defer) tasks on a work order.
+- **Lookups** — search your properties, see the residents on a property, and browse your company's users and user groups.
+
+<Tip>
+  A typical request just works conversationally, e.g. "Open a work order for a leaking faucet at 123 Main St for the current tenant" or "What's still open on work order #4821?"
+</Tip>
+
+### **Before You Begin**
+
+You'll need the following to connect:
+
+<Icon icon="circle-1" iconType="duotone" color="#ff9b8a" /> An **active Latchel account** with your PM company credentials
+
+<Icon icon="circle-2" iconType="duotone" color="#ff9b8a" /> A **compatible AI assistant plan** (see requirements below per platform).
+
+<Icon icon="circle-3" iconType="duotone" color="#ff9b8a" /> The **Latchel MCP connection** URL: `https://app.latchel.com/mcp/user-tools`
+
+<Note>
+  You'll be prompted to sign in with your Latchel credentials the first time you connect via standard OAuth — no API keys to manage.
+</Note>
+
+### **How to Install**
+
+**A. Claude (web or desktop)**
+
+1. Open Settings → Connectors.
+2. Click Add custom connector.
+3. Paste the URL: [https://app.latchel.com/mcp/user-tools](https://app.latchel.com/mcp/user-tools).
+4. Save, then click Connect and sign in with your Latchel account when the login window appears.
+5. Look for the Latchel tools in a new chat — you're ready to go.
+
+<Warning>
+  Custom connectors require a **Claude Pro, Max, Team,** or **Enterprise plan**.
+</Warning>
+
+**B. ChatGPT**
+
+1. Open Settings → Connectors (Connured under Apps/Connectors depending on plan).
+2. Choose Add custom connector / MCP server.
+3. Paste the URL: [https://app.latchel.com/mcp/user-tools](https://app.latchel.com/mcp/user-tools).
+4. Save and complete the Latchel sign-in when prompted.
+5. Enable the connector in your conversation (and Composer/Deep Research where applicable).
+
+<Warning>
+  Remote MCP connectors are available on **ChatGPT Plus, Pro, Business,** and **Enterprise**. Exact menu names vary slightly by plan.
+</Warning>
