@@ -22,6 +22,10 @@ Once connected, you can interact with your Latchel account conversationally. Her
   A typical request just works conversationally, e.g. "Open a work order for a leaking faucet at 123 Main St for the current tenant" or "What's still open on work order #4821?"
 </Tip>
 
+<Icon icon="camera-movie" iconType="duotone" color="#ff9b8a" size="25" /> **Watch this video to see how it works!**
+
+<iframe src="https://www.youtube.com/embed/T8g6FqcLxfQ" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
 ### **Before You Begin**
 
 You'll need the following to connect:
@@ -40,11 +44,47 @@ You'll need the following to connect:
 
 **A. Claude (web or desktop)**
 
-1. Open Settings → Connectors.
-2. Click Add custom connector.
-3. Paste the URL: [https://app.latchel.com/mcp/user-tools](https://app.latchel.com/mcp/user-tools)
-4. Save, then click Connect and sign in with your Latchel account when the login window appears.
-5. Look for the Latchel tools in a new chat — you're ready to go.
+Open **Settings** by clicking your **Account icon**.
+
+<Frame>
+  ![Image 06 01 2026 12 02 PM](/images/image-06-01-2026_12_02_PM.png)
+</Frame>
+
+From the settings window go to **Connectors**, then click **Customize**.
+
+<Frame>
+  ![Desktop Screenshot 06 01 2026 12 09 PM](/images/Desktop-screenshot-06-01-2026_12_09_PM.png)
+</Frame>
+
+Click the “**\+**” button next to **Connectors**. Then select, **Add custom connector**.
+
+<Frame>
+  ![Image 06 01 2026 12 18 PM](/images/image-06-01-2026_12_18_PM.png)
+</Frame>
+
+Place a **name** for your custom connector, then paste the URL `https://app.latchel.com/mcp/user-tools` in the box for **Remote MCP server URL**. Then click **Save**.
+
+<Frame>
+  ![Desktop Screenshot 06 01 2026 12 24 PM](/images/Desktop-screenshot-06-01-2026_12_24_PM.png)
+</Frame>
+
+Once saved, click **Connect**.
+
+<Frame>
+  ![Desktop Screenshot 06 01 2026 12 29 PM](/images/Desktop-screenshot-06-01-2026_12_29_PM.png)
+</Frame>
+
+In the new browser on your screen, **authorize Claude** to use MCP functionality in Latchel.
+
+<Danger>
+  The email you signed up for Claude needs to match your Latchel user email.
+</Danger>
+
+<Frame>
+  ![Authorize Application Latchel 06 01 2026 12 36 PM](/images/Authorize-Application-Latchel-06-01-2026_12_36_PM.png)
+</Frame>
+
+Look for the Latchel tools in a new chat — you're ready to go.
 
 <Warning>
   Custom connectors require a **Claude Pro, Max, Team,** or **Enterprise plan**.
@@ -52,12 +92,48 @@ You'll need the following to connect:
 
 **B. ChatGPT**
 
-1. Open Settings → Connectors (Connured under Apps/Connectors depending on plan).
-2. Choose Add custom connector / MCP server.
-3. Paste the URL: [https://app.latchel.com/mcp/user-tools](https://app.latchel.com/mcp/user-tools)
-4. Save and complete the Latchel sign-in when prompted.
-5. Enable the connector in your conversation (and Composer/Deep Research where applicable).
+Open **Settings** by clicking your **Account icon**.
+
+<Frame>
+  ![Image 06 01 2026 12 51 PM](/images/image-06-01-2026_12_51_PM.png)
+</Frame>
+
+Go to **Apps**, then click **Create App** to create a custom MCP application.
+
+<Note>
+  Depending on the Chatgpt plan, the exact menu names may vary.
+</Note>
+
+<Frame>
+  ![Chat GPT 06 01 2026 12 58 PM](/images/ChatGPT-06-01-2026_12_58_PM.png)
+</Frame>
+
+Add your new app **name**, click the check box for Custom MCP Server, then **paste** the URL `https://app.latchel.com/mcp/user-tools` in the **Connection** box. Click **Save** when done.
+
+<Frame>
+  ![Desktop Screenshot 06 01 2026 01 05 PM](/images/Desktop-screenshot-06-01-2026_01_05_PM.png)
+</Frame>
+
+**Sign in** to your Latchel account when prompted.
+
+<Danger>
+  The email you signed up for Chatgpt needs to match your Latchel user email.
+</Danger>
+
+<Frame>
+  ![Desktop Screenshot 06 01 2026 01 11 PM](/images/Desktop-screenshot-06-01-2026_01_11_PM.png)
+</Frame>
+
+<Tip>
+  Enable the connector in your conversation (and Composer/Deep Research where applicable).
+</Tip>
+
+Complete the authorization process by **authorizing Chatgpt** to use the MCP server.
+
+<Frame>
+  ![Authorize Application Latchel 06 01 2026 01 12 PM](/images/Authorize-Application-Latchel-06-01-2026_01_12_PM.png)
+</Frame>
 
 <Warning>
-  Remote MCP connectors are available on **ChatGPT Plus, Pro, Business,** and **Enterprise**. Exact menu names vary slightly by plan.
+  Remote MCP connectors are available on **ChatGPT Plus, Pro, Business,** and **Enterprise**.
 </Warning>
