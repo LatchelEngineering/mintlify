@@ -688,7 +688,7 @@
   "navbar": {
     "links": [
       {
-        "label": "Login",
+        "label": "Login to Latchel",
         "href": "https://app.latchel.com/login"
       }
     ],
