@@ -2,33 +2,38 @@
 title: "Failed Work Order Syncs"
 ---
 
-During a Chrome plugin sync, one of the operations performed is syncing newly created work orders from Latchel to the Appfolio platform. This article covers why work orders fail to sync and how to fix them.
+## **Summary**
 
-## What Are the Ways a Work Order Can Fail to Sync?
+During a chrome plugin sync, one the operations performed is to sync newly created (since the last successful sync) work orders in Latchel to the Appfolio platform. A process exists to send a report to the Technical Success team detailing these work orders in an attempt to fix them for the customer. In this article, we’ll deep dive exactly why these work orders fail and how to fix them.
 
-### Unrecognized Resident
+## **What are the ways a work order can fail to sync?**
 
-**Description** When Latchel tries to create the WO in Appfolio, the resident information is not found in the Appfolio system. Usually caused by the resident or call center associate providing incorrect information during work order creation.
+## **Unrecognized Resident**
 
-**How to Fix** Research the resident report for the customer. Find a resident who matches the details of the resident in the work order. Find that resident in Latchel and re-assign the work order to that resident.
+### **Description**
 
-### Property Errors
+When Latchel tries to create the WO in Appfolio, we don’t see the resident information stored in the appfolio system. This is usually caused by the resident or call center associate providing incorrect information during work order creation
 
-**Error Types**
+### **How to Fix**
 
-- No units associated with `ref_property_id`
-- Unable to find property with `ref_unit_id`
-- Unable to find property with `ref_property_id`
+Research the resident report for the customer. Find a resident who matches the details of the resident in the work order. Find that resident in Latchel and re-assign the work order to that resident.
 
-**Description** Latchel is unable to find a property with a matching `ref_property_id`.
+## **Property Errors**
+
+`No units associated with ref_property_id`
+
+`Unable to find property with ref_unit_id`
+
+ `Unable to find property with ref_property_id`
+
+**Description**
+
+Latchel is unable to find a property with a matching ref\_property\_id.
 
 **How to Fix**
 
-1. Research the Latchel database for properties/units with a similar address and compare to the Appfolio report
-2. Problems can be caused by duplicate properties in either platform
-3. Properties/units can be merged or a missing ref ID can be added
-4. It may be necessary to connect with the customer to validate the correct data
+Research Latchel database for properties/units with a similar address and compare to the Appfolio report. Problems can be caused by duplicate properties in either platform. Properties/units can be merge or missing ref id added.
 
-<Warning>
-  We should not have two properties/units with a matching ref ID for the same PM company.
-</Warning>
+It might be necessary to connect with the customer to validate the correct data.\
+\
+**Important, we should not have two properties/units with a matching ref id for the same pm company.**

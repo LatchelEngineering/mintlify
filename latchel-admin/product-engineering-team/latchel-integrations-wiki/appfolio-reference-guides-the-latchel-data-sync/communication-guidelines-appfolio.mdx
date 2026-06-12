@@ -4,33 +4,34 @@ title: "Communication Guidelines — Appfolio Plugin Sync"
 
 This document outlines the required communication and development guidelines for all Latchel team members when discussing or working with the Appfolio Chrome Plugin.
 
-## Background
+## **Email From Appfolio**
 
-Appfolio has explicitly stated that Latchel must remove all Appfolio-related images, mentions, and descriptions from its website, marketing materials, and other public-facing properties. Appfolio's copyrighted material and trademarks cannot be used without their express written consent.
+This portion of the email from Appfolio outlines their restrictions for communication/advertising:
 
-## Communication Guidelines
+“If you take the steps below, we are willing to forego further action at this time.  Note that this email does not contain a complete or exhaustive statement of AppFolio’s rights or claims; and nothing stated herein is intended as nor be deemed to constitute a waiver or relinquishment of any of AppFolio’s rights or remedies, whether legal or equitable, all of which are hereby expressly reserved. 
 
-### ❌ Never do this
+Latchel must remove all AppFolio related images, mentions, and descriptions from its website, marketing materials, and other properties.  In addition, Latchel may not use any of our copyrighted material (e.g., screenshots of our product) or trademarks (e.g., stylized name or logo) even if it is clearly communicated that Latchel is not partnered or affiliated with us.  Such items constitute our intellectual property and cannot be used without our express written consent.“
 
-- Use the word "Appfolio" publicly (in mass emails, blog posts, marketing materials)
-- Use screenshots or imagery of Appfolio's UI in any public communication
-- Portray that Latchel is affiliated with or sanctioned by Appfolio
+## **Proposed Communication Guidelines **
 
-### ✅ Do this instead
+In general, we should be as inconspicuous as possible when communicating with customers about the plugin, especially when the communication is publicly available (e.g. mass emails, blog posts, other marketing materials, etc). Appfolio does not want us to portray in any way that we are affiliated with or sanctioned by them. In addition to their explicit restrictions outlined in the email above (e.g. “dont use their logo”), here are some guidelines to help communicate with customers about the plugin:
 
-- Call the plugin **"The Chrome Plugin"**, **"The Latchel Data Sync Plugin"**, or **"Latchel Data Sync"**
-- In private communication (phone, email), it is acceptable to say: _"We have a Chrome plugin that is capable of synchronizing data with Appfolio"_
-- When advertising data sync capabilities publicly, use vague language: _"Latchel can help you synchronize your data between Latchel and many third-party Property Management softwares, such as Propertyware and RentManager"_
+Never use the word “Appfolio” publicly. In messaging, it’s safe to call the plugin “The Chrome Plugin”, or “The Latchel Data Sync Plugin”, or some other combination of vague terminology, but never “The Appfolio Plugin”. The plugin is currently listed in the Chrome Store as “Latchel Data Sync”. We may want to use the same name for consistency. If we are advertising our ability to synchronize data between Latchel and Appfolio, it’s better to use vague terminology like “Latchel can help you synchronize your data between Latchel and many third-party Property Management softwares, such as Propertyware and RentManager”. If a customer asks if we have the ability to synchronize with Appfolio, it’s acceptable to respond with “We have a Chrome plugin that is capable of synchronizing data with Appfolio”, since that communication would be in a private communication thread (phone, email, etc), and not publicly visible to prospective customers or Appfolio themselves.
 
-### Screenshot Policy
+Never use screenshots or other imagery of Appfolio’s UI. When sending communication about an update to the Plugin, we should only include imagery of the plugin itself, removing any portion that contains part of Appfolio’s UI.
 
-- ❌ **Not permitted**: Screenshots that include any portion of Appfolio's UI
-- ✅ **Permitted**: Screenshots of only the Latchel plugin itself, with all Appfolio UI cropped out
+For example, this screenshot is **not** permitted:
 
-## Development Guidelines
+<Frame>
+  ![Image](/images/image-3.png)
+</Frame>
 
-These same guidelines apply to engineering:
+But this screenshot **is** permitted:
 
-- Never use Appfolio's logo, screenshots of Appfolio's UI, or the word "Appfolio" anywhere visible to customers
-- It **is** acceptable to use "Appfolio" in code where customers can't see it (e.g. naming a controller `AppfolioSyncController`)
-- Any customer-facing settings that currently say "Appfolio" should be renamed to something like "Data Sync Plugin - Sync Date"
+<Frame>
+  ![9b4678bf 8476 45f7 A74c F90c27ff2f6d](/images/9b4678bf-8476-45f7-a74c-f90c27ff2f6d.png)
+</Frame>
+
+## **Proposed Development Guidelines**
+
+For engineers, the communication guidelines should apply to development as well. When building a UI, we should never use Appfolio’s logo, screenshots of Appfolio’s UI, or the word “Appfolio” anywhere visible by customers. It is acceptable to use “Appfolio” in code, where it’s not visible by a customer (e.g. naming a controller “AppfolioSyncController”). We currently have a few settings related to the Chrome Plugin that explicitly say “Appfolio”, but these could be easily changed to say something like “Data Sync Plugin - Sync Date” or “Data Sync Plugin - Account Slug”, for example, and new settings added should also follow this format.
