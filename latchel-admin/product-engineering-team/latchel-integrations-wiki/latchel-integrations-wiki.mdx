@@ -2,38 +2,64 @@
 title: "Latchel Integrations Wiki"
 ---
 
-This is a high-level overview of Latchel's integrations functionality. Detailed reference guides for each platform are nested under this section.
+This is a very high-level overview of Latchel’s integrations functionality. We have detailed articles for each of the individual platforms we support nested under this article.
 
-## What Features Are Available on Each Platform
+### What Features Are Available on Each Platform
 
-| Feature | Appfolio | Buildium | Propertyware | Public API | Rent Manager | Rentvine | Yardi |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Property/Unit | Auto, every 4hrs | Auto, hourly | Auto, every 2hrs | Available | Auto, hourly | Auto, hourly | Auto, hourly |
-| Resident | Auto, every 4hrs | Auto, hourly | Auto, every 2hrs | Available | Auto, hourly | Auto, hourly | Auto, hourly |
-| Vendor | CSV upload | CSV upload | CSV upload | Available | CSV upload | CSV upload | CSV upload |
-| Owner | Auto, every 4hrs | CSV upload | CSV upload | Available | CSV upload | CSV upload | CSV upload |
-| Work Order | Auto, every 4hrs | Auto, hourly | Auto, every 2hrs | Available | Auto, hourly | Auto, hourly | Auto, hourly |
-| Photos/Calls/SMS | Manual download | Manual download | Auto on completion | Manual download | Auto on completion | Manual download | Manual download |
-| Invoices | Manual \+ email | Manual \+ email | Auto | Available | Auto | Manual \+ email | Manual \+ email |
+| **Feature** | **Appfolio** | **Buildium** | **Propertyware** | **Public API** | **Rent Manager** | **Rentvine** | **Yardi** |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| **Property/** **Unit** | Automatic, every 4 hours | Automatic, hourly | Automatic, every two hours | Available | Automatic, hourly | Automatic, hourly | Automatic, hourly |
+| **Resident** | Automatic, every 4 hours | Automatic, hourly | Automatic, every two hours | Available | Automatic, hourly | Automatic, hourly | Automatic, hourly |
+| **Vendor** | .csv upload available | .csv upload available | .csv upload available | Available | .csv upload available | .csv upload available | .csv upload available |
+| **Owner** | Automatic, every 4 hours | .csv upload available | .csv upload available | Available | .csv upload available | .csv upload available | .csv upload available |
+| **Work Order\*** | Automatic, every 4 hours | Automatic, hourly | Automatic, every two hours | Available | Automatic, hourly | Automatic, hourly | Automatic, hourly |
+| **Photos, Calls, SMS Logs** | manual download | manual download | Automatically uploaded when WO is completed | manual download | Automatically uploaded when WO is completed | manual download | manual download |
+| **Invoices** | manual download \+ email notification with invoice files | manual download \+ email notification with invoice files | Automatically uploaded when WO is completed | Available | Automatically uploaded when WO is completed | manual download \+ email notification with invoice files | manual download \+ email notification with invoice files |
 
-## How Do Integrations Benefit Our Customers?
+<Note>
+  See the individual reference guide of each integration to learn the specific sync requirements
+</Note>
 
-An integration between a customer's primary property management software and Latchel saves time and improves quality of service.
+### **How Do Integrations Benefit Our Customers?**
 
-**Without an integration**, a property manager must manually copy/paste work order details, pictures, and files between systems, and update resident/property information in two places.
+Put simply, an integration between a customer's primary property management software and Latchel **saves the customer time and improves quality** of service the customer can provide to their residents. Lets look at a comparison.
 
-**With an integration**, work orders, pictures, and files automatically sync from Latchel back to the primary software, and any changes to resident or property data in the platform automatically reflect in Latchel.
+#### **Life without an integration**
 
-## How Often Does Information Sync?
+In this scenario, the property manager (lets call him Bob) has two systems. He uses Buildium as his primary software to manage leases, residents communication, owner and property information. He uses Latchel to track and manage maintenance. Here are some of the challenges Bob is going to have to manage:
 
-**Platform to Latchel**
+- Bob’s company has a policy of keeping any historical information about a property in Buildium. That means Bob has to manually copy/paste WO details, pictures and files from Latchel to Buildium. Ew!
+- If anything about Bob’s residents change, lease dates, contact information etc. Bob has to makes these updates in TWO places! If he doesn’t, operational issues can occur.
+- Similarly, if any property or owner information changes, Bob also has to make sure he executes these changes in two places. Gross!
 
-- On first activation, a full synchronization of all properties and residents is triggered automatically (the "initial sync")
-- Scheduled syncs occur every hour, at the 5-minute mark (e.g. 08:05 AM)
-- Scheduled syncs can take up to 45 minutes to complete
-- Only data updated in the previous 72 hours is considered
+<Frame>
+  ![Image 20221005 152540](/images/image-20221005-152540.png)
+</Frame>
 
-**Latchel to Platform**
+#### **Life with an integration**
 
-- Work orders are generally synced on creation
-- Files are synced when the work order is completed
+In this universe, Bob uses Propertyware which already has a supported integration with Latchel. Bob still has two systems, but they work seamlessly together to keeps Bob’s operations running efficiently and with less tedious work required of Bob. Lets look at the same scenarios as above:
+
+- Work orders, pictures and files are automatically sync’d from Latchel back to Bob’s primary software. Easy!
+- If Bob makes any changes to resident data in Propertyware, the changes are automatically reflected in Latchel an hour later.
+- Same as above for property information!
+
+<Frame>
+  ![Image 20240120 045450](/images/image-20240120-045450.png)
+</Frame>
+
+### **How Often Does Information Sync Between The Systems?**
+
+Sync timing depends on the exact integration platform but is aligned in general to the following.
+
+#### **Platform to Latchel**
+
+- When a customer first activates their integration, a full synchronization of all of their properties and residents is triggered automatically.
+- After that, scheduled syncs occur every hour, on the 5 minute mark (e.g. 08:05 AM).
+  - Scheduled syncs can take 45 minutes to complete
+  - Only data updated in the previous 72 hours is considered
+
+#### **Latchel to Platform**
+
+- Work orders are generally sync’d on creation
+- Files are sync’d when the WO is completed
