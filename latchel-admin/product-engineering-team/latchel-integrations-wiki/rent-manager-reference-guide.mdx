@@ -4,71 +4,299 @@ title: "Rent Manager Reference Guide"
 
 This document is the detailed source of truth for how the Latchel\<\>Rent Manager sync operates today.
 
-## Activating the Rent Manager Integration (New Customer)
+## **Activating the Rent Manager Integration (New Customer)**
 
-### Step 1 — Requesting Activation (Customer)
+## **Step 1: Requesting Activation - Customer**
 
-Customer follows the help guide: **Integrating Rent Manager into Latchel**
+The following help guide details the steps a customer will take to request activation through Rent Manager:
 
-### Step 2 — Activate the Integration (Latchel Internal Only)
+- [<u>Integrating Rent Manager into Latchel</u>](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Integrating-Rent-Manager-into-Latchel "https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Integrating-Rent-Manager-into-Latchel")
 
-1. Log in to the Rent Manager Partner Web Access portal: [https://pwa.rentmanager.com/](https://pwa.rentmanager.com/)
-2. Select the **Latchel Product**
-3. Click on **Interested Clients**
-4. Copy the **Company Entity** to your clipboard
-5. Click the 3 dots → **"Enable Integration"**
-6. From admin login, search the PM account → **Integrations Page** → Click **"Activate"** under Rent Manager
-7. Add the Rent Manager Company Entity and click **Save**
-8. From the PM's **Details tab → Miscellaneous Settings**, toggle property and resident modification **on**
+## **Step 2: Activate the Rent Manager Integration - Latchel (Internal Only)**
 
-## Activating for Existing Customers
+1. Log in to the Rent Manager Partner Web Access portal using your personal credentials: [<u>https://pwa.rentmanager.com/</u>](https://pwa.rentmanager.com/)
+2. Select the Latchel Product
 
-Submit a request in `#task-share-jira-request` Slack channel.
+<Frame>
+  ![Rent Manager Products](/images/Rent-Manager-Products.png)
+</Frame>
 
-## What Happens When a Customer First Activates?
+3. Click on the Interested Clients.
 
-A full synchronization of all properties and residents is triggered automatically (the **"initial sync"**).
+<Frame>
+  ![Rent Manager Manage Product](/images/Rent-Manager-Manage-Product.png)
+</Frame>
 
-## Subsequent Syncs
+4. Copy the Company Entity to your clipboard, you are going to need it for the next step. Next, click the 3 dots to the far right and select, “Enable Integration”.
 
-- Run every hour, starting in the first 5 minutes of the hour
-- May take 15–45 minutes to complete
-- Only considers data created or updated in the **last 72 hours**
+<Frame>
+  ![Rent Manager Clients](/images/Rent-Manager-Clients.png)
+</Frame>
 
-## Platform → Latchel Field Mapping
+5. From your admin login, search the PM account and navigate to the Integrations Page. Click “Activate” under the Rent Manager Integration. 
+   <Frame>
+     ![Yardi](/images/yardi.gif)
+   </Frame>
+    
+6. Add the Rent Manager Company Entity from Step 5. Click Save.
 
-### Properties
+<Frame>
+  ![Yardi 2](/images/yardi-2.gif)
+</Frame>
 
-| RM Field | Latchel Field |
-| --- | --- |
-| Address 1 | address1 |
+7. From the Property Manager's Details tab under Miscellaneous Settings modal, toggle the property and resident modification on.
+
+<Frame>
+  ![Yardi 3](/images/yardi-3.gif)
+</Frame>
+
+## **Activating the Rent Manager Integration (Existing Customer)**
+
+For any existing customer that wish to activate the Rent Manager integration for the first time, please enter your request in the [<u>#task-share-jira-request</u>](https://latchel.slack.com/archives/C05CGVC9FPV "https://latchel.slack.com/archives/C05CGVC9FPV") slack channel using the following steps:
+
+- [<u>Entering an Account Update Request</u>](https://latchel.atlassian.net/wiki/spaces/TST/pages/2772140035/Job+Aid+Task+Share+Jira+Improved+Process#The-New-Process "https://latchel.atlassian.net/wiki/spaces/TST/pages/2772140035/Job+Aid+Task+Share+Jira+Improved+Process#The-New-Process")
+
+## **What happens when a customer first activates their integration?**
+
+When a customer first activates their integration, a full synchronization of all of their properties and residents is triggered automatically. We refer to this as the “**initial sync**.”
+
+## **Properties**
+
+| **Platform field** | **Field/Interpretation in Latchel** |
+| :-- | :-- |
+| Address 1 | address 1 |
+| Address2 | address2 |
 | City | city |
 | State | state |
 | Zip Code | zip |
 | Platform property ID | ref\_property\_id |
 | Platform unit ID | ref\_unit\_id |
-| Active? | is\_active |
+| Active?\* | is\_active \*If property is “inactive” in the platform, the property will be marked as “inactive “in Latchel |
+| (various data) | integration\_data |
 
-### Residents
+## **Residents**
 
-Not synced if: RM Contact is a lease guarantor, contact is under 18, or lease is inactive.
+Residents are not sync at any point if:
 
-### Work Orders
+- RM Contact is a lease guarantor
+- RM Contact is less than 18 years old
+- The lease is inactive
 
-WOs created in RM must have Category set to **"\[Latchel\] Maintenance"** to sync to Latchel.
+The following resident fields are brought over from RM to Latchel via the initial sync:
 
-**Show on Statement/Label checkbox**: Residents will only sync to Latchel if this checkbox is checked in RM.
+- ref\_user\_id
+- name
+- email (nullable)
+- phone (use the first number available in RM)
+- ref\_property\_id
+- ref\_unit\_id (nullable)
+- move\_in\_data (check if valid date object, if not, set to null)
+- move\_out\_data (check if valid date object, if not, set to null)
+- integration\_data
+  - rm\_user\_id =\> tenant ID
+  - rm\_contact\_id =\> contact ID
 
-## Latchel → Rent Manager (Work Orders)
+## **Work orders**
 
-Work orders created in the Latchel console automatically trigger a sync to RM.
+The following Work Order (Job) fields are brought over from RM via the Integration:
 
-**Previously created WOs**: Updated only when the WO moves to **Canceled** or **Completed**.
+- ref\_work\_order\_id
+- work order number
+- name (WO Title)
+- description
+- scheduled\_data
+- vendor\_id (Payee Account ID)
+- state\_id (special logic applied to format to Latchel)
+- is\_urgent (special logic applied to format to Latchel)
+- is\_emergency =\> always set to 0
+- ref\_property\_id
+- ref\_unit\_id (nullable)
+- ref\_user\_id (nullable)
 
-**File Sync**: Latchel automatically syncs files (pictures and invoices) to Rent Manager on any work order state change.
+Each work order is:
 
-**Manually Sync WO**: Go to the **"Action"** menu → **"Sync Now"**.
+- Assigned to a property manager based on the pm\_user id related to the property
+- Linked to an existing property & unit in Latchel
+- IF a resident id is supplied, the WO will also be assigned to an existing resident in Latchel.
 
-## Automatic Property Reconciliation
+## **Leases**
 
-Runs on the **27th of each month at 3am PST**.
+Leases are not currently processed as part of the initial sync
+
+## **What happens after the initial sync?**
+
+There are two directions of data synchronization that occur after the initial sync.
+
+1. Platform → Latchel
+2. Latchel → Platform
+
+Subsequent syncs will look for any data that was created or updated **within the last 72 hours.** The syncs run every hour, starting sometime in the first 5 minutes of the hour and may take between 15-45 minutes to complete.
+
+## **Platform → Latchel**
+
+### **Properties**
+
+Subsequent property updates can be organized into two categories (1) Newly created properties and (2) previously created properties
+
+#### **Newly created Properties**
+
+Newly-created properties will sync all the same fields we do in the initial sync. [<u>See above!</u>](https://latchel.atlassian.net/wiki/spaces/PROD/pages/2618261539/Propertyware+Reference+Guide#Properties "https://latchel.atlassian.net/wiki/spaces/PROD/pages/2618261539/Propertyware+Reference+Guide#Properties")
+
+#### **Previously created Properties**
+
+Subsequent synchronizations of the same property will impact the following fields:
+
+| **Platform field** | **Field/Interpretation in Latchel** |
+| :-- | :-- |
+| Active? | is\_active (only from active to inactive) **Note**: This means if a customer _activates_ an _inactive property_ in the platform, **this change will not propagate to Latchel.** |
+| (various data) | integration\_data |
+| Address data\* | address\_label \*If any address data is different in the platform than in Latchel, we store the exact platform address in order to provide the “Source Address” feature for customers. [<u>Link to product release.</u>](https://latchel.slack.com/archives/C038Z6M0T6H/p1735848840482549 "https://latchel.slack.com/archives/C038Z6M0T6H/p1735848840482549") |
+
+##### **Automatic Property Reconciliation**
+
+To ensure accurate customer billing Latchel runs on automated process each month to de-activate any active units in Latchel that no longer exist in the Rent Manager property list integrated with Latchel. This process currently happens on the 27th at 3am PST.
+
+<Frame>
+  ![Image 20240110 052449](/images/image-20240110-052449.png)
+</Frame>
+
+Customers can view information about recently de-activated units on the Reports page. They can also export a list of the units deleted in the most recent snapshot.
+
+![](/images/image-20240112-042829.png)
+
+When a property is deactivated through this process. It will be logged to the property in Latchel
+
+![](/images/image-20240112-042855.png)
+
+#### **Common areas**
+
+Upon customer request, Latchel can create common area units for PM’s to manage building-level maintenance for jobs such as landscaping, garbage removal, elevator maintenance and more.
+
+How it works:
+
+1. A PM (or Latchel team member on behalf of a PM) submits a one-off request for common area maintenance on a specific building(s) via this Typeform: [https://latchel.typeform.com/to/P8jj3FBx](https://latchel.typeform.com/to/P8jj3FBx)
+   1. Why one-off requests only? We only want to enable common areas on specific addresses for customers who are actually going to create building-level work orders due to billing implications (they will appear as active units in Latchel for billing purposes).
+2. Latchel creates the common area unit via API.
+   1. This results in a record with a building ID but no ref unit ID.
+
+### **Residents**
+
+Subsequent resident updates can be organized into two categories (1) Newly-created residents and (2) previously created residents
+
+#### **Newly-created residents**
+
+Newly-created residents will sync all the same fields we do in the initial sync. [<u>See above!</u>](https://latchel.atlassian.net/wiki/spaces/PROD/pages/2618261539/Propertyware+Reference+Guide#Residents "https://latchel.atlassian.net/wiki/spaces/PROD/pages/2618261539/Propertyware+Reference+Guide#Residents")
+
+#### **Previously-created residents**
+
+Once a resident is created the only thing we only change a few things on subsequent syncs
+
+- The property and unit the resident is associated with
+- The move\_in and move\_out dates
+  - **Note**: Any issues with move in/out dates need to be resolved in the 3rd party platform when an integration is in place.
+
+The integration will not currently update contact information, name nor “active” status.
+
+#### **Show on Statement/Label checkbox**
+
+<Note>
+  Residents will only be synced to Latchel if the “Show on Statement/Label” checkbox is checked (see example below). PMs can use this checkbox to control which residents sync to Latchel.
+</Note>
+
+![](/images/Rent_Manager_Show_On_Statement.jpg)
+
+ 
+
+### **Work Orders**
+
+Subsequent work order updates can be organized into two categories (1) Newly-created work orders and (2) previously created work orders. First, its important to understand the below requirement for WOs to sync from Rent Manager to Latchel.
+
+#### **Sync Requirements**
+
+If a WO is created in Rent Manager it **must** have the **Category** set to “**\[Latchel\] Maintenance”** for it to be synced over to Latchel.
+
+![](/images/image-20230213-192920.png)
+
+#### **Newly-created work orders**
+
+Newly-created work orders will sync all the same fields we do in the initial sync.
+
+#### **Previously-created work orders**
+
+The integration will not update any fields on previously created work orders
+
+### **Leases**
+
+The lease sync runs at 11:30pm UTC every night and are thus synchronized from RM to Latchel once a day.
+
+The following lease fields are brought over from RM to Latchel via the daily sync:
+
+- field\_1
+- field\_2
+
+#### **Newly-created leases**
+
+Sync’d daily at 11:30pm UTC every night
+
+#### **Previously-created leases**
+
+We update all values if it is an existing lease. So whatever new values come in from the sync would override the old ones.
+
+## **Latchel → Platform**
+
+### **Work orders**
+
+#### **Newly created WOs**
+
+If a work order (job) is created in the Latchel console it will automatically trigger a sync to also create it in RM.
+
+- `ServiceManagerIssueID (ref_job_id)`
+- `Title` (name)
+- work order number
+- `IsClosed` (state\_id)
+  - If state\_id = 14 (Cancelled) OR 16 (Completed) set to closed. Otherwise open.
+- `CategoryID` (pulled from RM)
+- Description
+- `ScheduledDate` (scheduled\_start)
+- `AssignedCloseDate` (based on state\_id, nullable)
+- `PriorityID` (pulled from RM priorities, priority ID)
+- `StatusID` (pulled from RM statuses, status ID)
+- `PropertyID` (Only if property and `ref_property_id` is supplied)
+- `UnitID` (Only if property and `ref_unit_id` is supplied)
+- `TenantID` (Only if tenant with `ref_user_id` is supplied)
+
+#### **Previously created WOs**
+
+By default, we only the WO in Rent Manager when the WO moves to the ‘Canceled' or 'Completed’ statuses in Latchel. We do not update the status in Rent Manager when the work order moves to “Forwarded to PM.” These are the WO fields we update for previously created work orders:
+
+- `AssignedCloseDate` (based on state\_id, nullable)
+- `IsClosed` (state\_id)
+  - If state\_id = 14 (Cancelled) OR 16 (Completed) set to closed. Otherwise open.
+- `StatusID` (pulled from RM statuses, status ID)
+- `PropertyID`\* (Only if property and `ref_property_id` is supplied)
+- `UnitID`\* (Only if property and `ref_unit_id` is supplied)
+- `TenantID*` (Only if tenant with `ref_user_id` is supplied)
+
+\*these fields should never change but are technically included in the update to RM
+
+#### **Integration Work Order Update conditions**
+
+A customer can specify if they want WO updates to happen less often than by default. This settings is located  on a PM account details page → Miscellaneous Settings → Integration Work Order Update conditions. This setting is only accessible by admin users.
+
+![](/images/image-20240819-170938-\(1\).png)
+
+#### **WO Sync Status**
+
+When a customer is on an _active_ integration, an indication will show at the top of each work order whether or not the WO was successfully sync’d with the customer’s PMS. Example below.
+
+![](/images/image-20231120-224552-\(2\).png)
+
+#### **Manually Sync WO**
+
+Customers can manually trigger a Latchel--\>Platform sync by going to the “Action” menu and clicking “Sync Now.” This will manually push the WO to the customer’s platform.
+
+<iframe src="https://www.loom.com/embed/da0535c37a0146e8a2b14e327f6d80c4" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+### **File Sync**
+
+Latchel will automatically sync files (such as pictures and invoices) to Rent Manager on any work order state change.
