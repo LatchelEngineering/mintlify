@@ -720,7 +720,20 @@
               {
                 "group": "Latchel Integrations Wiki",
                 "pages": [
-                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/latchel-integrations-wiki"
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/latchel-integrations-wiki",
+                  {
+                    "group": "Appfolio Reference Guides (The Latchel Data Sync)",
+                    "pages": [
+                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/appfolio-reference-guide",
+                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/failed-work-order-syncs",
+                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/communication-guidelines-appfolio"
+                    ]
+                  },
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/buildium-reference-guide",
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/propertyware-reference-guide",
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/rentvine-reference-guide",
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/rent-manager-reference-guide",
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/yardi-reference-guide"
                 ]
               }
             ]

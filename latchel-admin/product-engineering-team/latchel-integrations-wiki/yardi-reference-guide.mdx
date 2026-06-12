@@ -1,0 +1,361 @@
+---
+title: "Yardi Reference Guide"
+---
+
+This document is the detailed source of truth for how the Latchel\<\>Yardi sync operates today.
+
+## **Yardi Version Compatibility Requirements**
+
+In order to use the Latchel-Yardi Integration, customers must have Voyager 7S with the following minimum plug-in versions\*: 
+
+- Interfaces PIv22 
+- Common Data PIv19 
+- Service Requests PIv15
+
+Clients on earlier plug-in versions can still use Latchel by entering enter a support ticket to their Yardi Account Manager or team to request the vendor package for Latchel to be loaded to their database. This will make Latchel appear in their Voyager environment for configuration. Note that no vendor package will be required after clients install _Interfaces Service Requests PIv21,_ once released, as the Latchel package will be included in that version.
+
+Finally, clients with questions about compatibility between their Voyager 7S or other Yardi software and Latchel should contact a Yardi Account Manager directly.
+
+# **Activating the integration**
+
+There are a few high level “stages” in activating the Yardi integration for customers.
+
+<Note>
+  It is critically important that the steps are conducted in the order defined below. Going out of order could cause issues with the customer’s data in Latchel and/or Yardi.
+</Note>
+
+### Stage 1 - Yardi Voyager Standard Interfaces Setup
+
+The following steps all occur within the customer’s Yardi. 
+
+**1 – Configure Vendor Options for Latchel** 
+
+Menu Path: Basic iData Menu \> Interfaces \> Configuration \> Review Interface Vendors \> Interface Configuration
+
+1. Confirm the vendor name appears in Voyager under the appropriate Interface configuration.  If vendor is not present, contact Yardi Technical Support to load the vendor package.
+2. Select the vendor name.
+3. Select the options desired on the vendor configuration screen.  This is the configuration Latchel recommends:
+
+<Frame>
+  ![Image 20231017 230947](/images/image-20231017-230947.png)
+</Frame>
+
+4. Save the configuration options!
+
+**2 – Configure the Property or Property List**
+
+_Menu Path for a Single Property:  Setup \> Property \> Find Property \> \[property code\] \> Submit._
+
+1. Click on Functions drop down menu.  Click on Interface Configuration.
+2. Select “Service Request” for the Interface Type.
+3. Highlight Latchel under Available Agencies. Click Select and Save.
+
+_Menu Path for a Property List:  Interfaces \> Configuration \> Bulk Property Configuration._
+
+1. Enter property list code
+2. Select Interface Type from drop down.
+3. Select Configure.
+4. Highlight Latchel from list of Available Agencies and click Save.  
+
+**3 – Configure the Interface User** 
+
+Menu Path: System Administration \> Security \> Add User
+
+1. Create a new interface user and link to a security group for the specific Interface Type. The security group should have Read or Read/Write access for appropriate web services permission(s) 
+
+(e.g.) Interfaces: Web Service – Common Data
+
+2. Enter the property code or property list code in the property field to allow interface user access to properties configured for Latchel.
+3. Click on Privileges tab and Select “Interface User”.  This will give user access through the web services, but not the Voyager front end.
+4. Save.\*
+
+**4 – Provide Access Info to Latchel**
+
+1. Voyager URL (vendor will append the appropriate web services endpoint)
+2. Interface username and password
+3. Database Name
+4. Server Name (will always be the same as Database Name)
+
+<Note>
+  _Clients should always notify the third-party vendor of any changes to Voyager URL, database server or database name._
+</Note>
+
+_\*Mutual Clients should enter a case in Client Central if assistance is needed with any Step in this document.  _
+
+### Stage 2 — Existing Customer Data Migration
+
+If you’re helping a _new_ customer (no property/resident data in Latchel yet) you can skip to the next stage.  Otherwise read on!
+
+### **<u>1 – Get Property & Resident Data from Yardi</u>**
+
+This step is critical to avoid creating duplicate property and resident records in Latchel.
+
+1. Request all resident and property data for the “property list” that was created in Stage 1, Step 2 above.
+2. There are multiple ways to get this data in Yardi. The customer can generate and send the data to us in whatever way is easiest for them. The fields that are most import to us are
+   - A. Property
+     1. Address 1
+     2. Address 2
+     3. pCode (unique ID in Yardi)
+   - B. Resident
+     1. Name
+     2. Contact info
+     3. move-in dates
+     4. move-out dates
+     5. tCode (unique ID in Yardi)
+
+### **<u>2 – Submit a #account-update-request</u>**
+
+In this step, the data support team will clean and prepare the customer’s data by assigning “ref\_ids” to each resident and property in Latchel. This will prevent the integration from accidentally creating those records again when we turn the integration on in the next stage.
+
+1. Navigate to the #task-share-jira-request slack channel
+2. Go to Workflows--\>Account Update Request
+3. Fill out the required information
+   1. Select “Data Migration” in the task type question
+4. Tag @Jordan Caley  in the slack workflow or thread after its created
+5. Once the data support team is completes the data work, product will prioritize the engineering ticket to complete the final step of this stage
+6. Once product confirms this step is complete, move to the next stage
+
+### **Stage 3 - Activate the Integration in Latchel**
+
+You’re almost there! The last stage is turning on the integration in Latchel.
+
+### **<u>1 – Gather Customer’s Yardi Info</u>**
+
+The customer should have provided this to you as part of Stage 1, step 4. You will need it to continue.
+
+### **<u>2 – Activate the Integration in Latchel</u>**
+
+1. Go to the customer’s integration page in Latchel e.g. [<u>https://app.latchel.com/admin/pm-company/2/integrations</u>](https://app.latchel.com/admin/pm-company/2/integrations)
+2. Find the Yardi tile and click “Activate”
+3. Follow the steps in the video below for entering the rest of the information.
+4. Thats it! The customer’s Yardi integration is live!
+
+## **What happens when a customer first activates their integration?**
+
+When an admin first activates the customer’s Yardi integration nothing happens immediately. The integration will be active and will be scheduled for hourly imports but currently does not have an “initial sync” like Propertyware and Rent Manager.
+
+## **Yardi → Latchel**
+
+### Properties
+
+The following Property fields are brought over from Yardi to Latchel. Currently we sync all properties in the defined “property list” on every sync (not just the last 72 hours).
+
+| **Platform field** | **Field/Interpretation in Latchel** |
+| :-- | :-- |
+| Property-\>Code | ref\_property\_id |
+| Unit-\>Code | ref\_unit\_id |
+| Unit-\>Address -\>AddressLine1 | address1 |
+| Unit-\>Address -\>AddressLine2 | address2 |
+| Unit-\>Address-\>City | city |
+| Unit-\>Address-\>State | state |
+| Unit-\>Address-\>PostalCode | zip |
+| Unit-\>`UnitEconomicStatusDescription` (if available) | criticalNote |
+|  | is\_active = 1\* |
+| yardi building id: Property-\>Code | Integration data |
+
+<Note>
+  This is necessary by nature of Yardi’s platform. They do not expose property active status to the API. To account for this, Latchel runs an automated unit reconciliation each month. See the section below. 
+</Note>
+
+### **Previously created Properties**
+
+Subsequent synchronizations of the same property will impact the following fields:
+
+| **Platform field** | **Field/Interpretation in Latchel** |  |
+| :-- | :-- | --- |
+| (various data) | integration\_data |  |
+| Address data\* | address\_label \*If any address data is different in the platform than in Latchel, we store the exact platform address in order to provide the “Source Address” feature for customers. [<u>Link to product release.</u>](https://latchel.slack.com/archives/C038Z6M0T6H/p1735848840482549 "https://latchel.slack.com/archives/C038Z6M0T6H/p1735848840482549") |  |
+
+#### **Automatic Property Reconciliation**
+
+To ensure accurate customer billing Latchel runs on automated process each month to de-activate any active units in Latchel that no longer exist in the Yardi property list integrated with Latchel. This process currently happens on the 27th at 3am PST.
+
+<Frame>
+  ![Image 20231219 184734](/images/image-20231219-184734.png)
+</Frame>
+
+Customers can view information about recently de-activated units on the Reports page. They can also export a list of the units deleted in the most recent snapshot.
+
+<Frame>
+  ![Image 20231219 184353](/images/image-20231219-184353.png)
+</Frame>
+
+When a property is deactivated through this process. It will be logged to the property in Latchel
+
+<Frame>
+  ![Image 20231219 185054 (1)](/images/image-20231219-185054-\(1\).png)
+</Frame>
+
+### **Common areas**
+
+Upon customer request, Latchel can create common area units for PM’s to manage building-level maintenance for jobs such as landscaping, garbage removal, elevator maintenance and more.
+
+How it works:
+
+1. A PM (or Latchel team member on behalf of a PM) submits a one-off request for common area maintenance on a specific building(s) via this Typeform: [https://latchel.typeform.com/to/P8jj3FBx](https://latchel.typeform.com/to/P8jj3FBx)
+   1. Why one-off requests only? We only want to enable common areas on specific addresses for customers who are actually going to create building-level work orders due to billing implications (they will appear as active units in Latchel for billing purposes).
+2. Latchel creates the common area unit via API.
+   1. This results in a record with a building ID but no ref unit ID.
+
+## **Residents**
+
+The following resident fields are brought over from Yardi to Latchel. Currently we sync all eligible residents on every sync. This differs slightly from our other integrations where we only sync residents that were added or edited in the last 72 hours. An “eligible” resident is anyone living at the property who is not in one of the following Yardi statuses `['Applicant', ‘Denied', ‘Past', 'Canceled']`. We sync all residents on the property (Yardi’s concept of “current” and “roommates”) so that any of them are able to create a work order in Latchel.
+
+| **Latchel Field** | **Value/Interpretation** |
+| :-- | :-- |
+| ref\_user\_id | @tCode (tenant code) |
+| name | firstname \+ lastname |
+| email | Email |
+| phone | Phone  -\> phone number prioritize: cell \> home \> office\* |
+| ref\_property\_id | Property code |
+| ref\_unit\_id | Unit code |
+| move\_in\_date | moveindate |
+| move\_out\_date | moveoutdate |
+
+<Note>
+  We need to set a primary phone number for the resident in Latchel. Our current logic states that when multiple numbers are provided, we will prioritize setting the primary phone number in the order listed in the table. 
+</Note>
+
+### **Previously-created residents**
+
+Once a resident is created we only change a few things on subsequent syncs
+
+- Property/unit associations
+- Move in / move out dates
+  - When a resident is passed their move-out date, we’ll mark them inactive at the relevant property in Latchel
+
+## **Work orders**
+
+Work orders must be updated in the last 72 hours and be associated with a property in the “property list” Latchel has access to as part of the Yardi integration.
+
+### **Customize which work oders sync from Yardi to Latchel**
+
+By default, all work orders are sync’d to Latchel. However customers can configure exactly how they want work orders to sync. The customer has three options
+
+- **Sync No Work Orders**: This is the default setting and doesn’t require any extra work
+- **Sync All Work Orders**: This requires a configuration change from engineering as part of the Yardi set-up process
+- **Sync Some Work Orders**: This requires setting up a custom work order field in Yardi and naming it “SyncToLatchel. See [Yardi Reference Guide | Setting Up a Customized Field in Voyager](https://latchel.atlassian.net/wiki/spaces/PROD/pages/2712928302/Yardi+Reference+Guide#Setting-Up-a-Customized-Field-in-Voyager) for enabling this option.
+
+#### **WO Sync Logic**
+
+In general, we default to respecting the custom field on each WO (when it is set) and default to the default setting when its not.
+
+| **SyncToLatchel (on ea. WO)** | **sync\_all\_wo (on PM’s settings)** | **Decision - sync WO to Latchel?** |
+| :-- | :-- | :-- |
+| left blank or not configured | false | Don’t Sync |
+| true | false | Sync |
+| false | false | Don’t Sync |
+| left blank or not configured | true | Sync |
+| false | true | Don’t Sync |
+| true | true | Sync |
+
+#### **Setting Up a Customized Field in Voyager**
+
+Unfortunately Yardi does not give us detailed customer-facing instructions on how to set up this field. Yardi’s guidance is for the client to refer to their core Voyager team for assistance modifying these fields. Latchel can also cut a case with Yardi support on the customer’s behalf.
+
+Here are the details we know about setting up the custom field:
+
+- The field must be exactly “SyncToLatchel” (its case sensitive, no trailing spaces etc.)
+- The field must be under “General Info”
+  <Frame>
+    ![Image 20231121 195032](/images/image-20231121-195032.png)
+  </Frame>
+
+### **Yadi WO Fields and Interpretation**
+
+The following Work Order (Job) fields are brought over from Yardi via the Integration:
+
+| **Value/Interpretation From Yardi** | **Field to set in Latchel** |
+| :-- | :-- |
+| ServiceRequestId | ref\_work\_order\_id |
+| ServiceRequestId | order\_number |
+| ServiceRequestBriefDescription | name |
+| ServiceRequestFullDescription | description |
+| null | scheduled\_date |
+| null | vendor\_id |
+| If “Work Completed” then Latchel state = 16 (Completed)<br /> If “Canceled” 14 then Latchel state = 14 (Cancelled) Otherwise then Latchel state =  1 (scheduling resident) | state\_id |
+| false | is\_emergency |
+| false | is\_urgent |
+| PropertyCode | ref\_property\_id |
+| UnitCode | ref\_unit\_id |
+| TenantCode | ref\_user\_id |
+
+### **Previously-created work orders**
+
+Previously created WOs can have any field updated in Latchel except the ref\_work\_order\_id
+
+## **Leases**
+
+Not yet supported
+
+## Latchel → Yardi
+
+## **Work orders**
+
+Work orders created in Latchel will be automatically sync’d to Yardi at the time of creation. See how we’ll set Yardi work order fields based on Latchel data below.
+
+### **“Work order number” sync**
+
+Once a Latchel work order is successful created in Yardi, we will set the Latchel work order number to match the WO number in Yardi. This helps customers reference WOs between the two systems.
+
+<Columns cols={2}>
+  <Column>
+    <Frame>
+      ![Image 20231011 161420](/images/image-20231011-161420.png)
+    </Frame>
+  </Column>
+  <Column>
+    <Frame>
+      ![Image 20231013 152412](/images/image-20231013-152412.png)
+    </Frame>
+  </Column>
+</Columns>
+
+### **What WO values do we set when we create a WO in Yardi?**
+
+| **Yardi field where value is set** | **Value in Latchel** |
+| :-- | :-- |
+| `YardiPropertyId` | `ref_property_id` |
+| `ServiceRequestId` | `ref_job_id` |
+| `Origin` | `"WO"` |
+| `PropertyCode` | `ref_property_id` |
+| `UnitCode` | `ref_unit_id` |
+| `TenantCode` | `ref_tenant_id` |
+| `ServiceRequestBriefDescription` | `name` |
+| `ServiceRequestFullDescription` | `description` |
+| `Priority` | `(not set)` |
+| `HasPermissionToEnter` | `enter_permission === 1 then HasPermissionToEnter = true else HasPermissionToEnter = false` |
+| `AccessNotes` | `access_instructions` |
+| `TenantCaused` | `is_tenant_caused === 1 then TenantCaused = true else TenantCaused = false` |
+| `ServiceRequestDate` | `scheduled_start` |
+| `CurrentStatus` | `state_id === 14 then CurrentStatus = Canceled else if state_id === 16 then CurrentStatus = Completed else CurrentStatus = In Progress` |
+
+#### **Previously created WOs**
+
+By default, we only the WO in Yardi when the WO moves to the ‘Canceled' or 'Completed’ statuses in Latchel. We do not update the status in Yardi when the work order moves to “Forwarded to PM.”
+
+#### **Integration Work Order Update conditions**
+
+A customer can specify if they want WO updates to happen less often than by default. This settings is located  on a PM account details page → Miscellaneous Settings → Integration Work Order Update conditions. This setting is only accessible by admin users.
+
+<Frame>
+  ![Image 20240819 174039](/images/image-20240819-174039.png)
+</Frame>
+
+### **WO Sync Status**
+
+When a customer is on an _active_ integration, an indication will show at the top of each work order whether or not the WO was successfully sync’d with the customer’s PMS. Example below.
+
+<Frame>
+  ![Image 20231120 224552 (1)](/images/image-20231120-224552-\(1\).png)
+</Frame>
+
+#### **Manually Sync WO**
+
+Customers can manually trigger a Latchel--\>Platform sync by going to the “Action” menu and clicking “Sync Now.” This will manually push the WO to the customer’s platform.
+
+<iframe src="https://www.loom.com/embed/da0535c37a0146e8a2b14e327f6d80c4" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+## **File Sync**
+
+Not yet supported

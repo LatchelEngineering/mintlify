@@ -1,0 +1,92 @@
+---
+title: "Rentvine Reference Guide"
+---
+
+This document is the detailed source of truth for how the Latchel\<\>Rentvine sync operates today.
+
+**Technical Docs**: [Rentvine API Docs](https://rentvine.com/api)
+
+## Activating the Integration
+
+### 1. Obtain Credentials
+
+Engineering needs three pieces of data:
+
+1. **API Key**
+2. **API Secret**
+3. **Customer subdomain** (found in the URL of the customer's Rentvine portal — the first part after `https://`)
+
+To set up an API key in Rentvine:
+
+1. Log into Rentvine
+2. Navigate to **Settings \> Account \> Users, Roles and API Keys**
+3. Go to the **API** tab
+4. Click **"New API Key"**
+5. Fill out: Name = `Latchel`, Role = `Administrator`
+6. Customer copies and pastes (not screenshots) the API Key and API Secret to their Latchel contact
+
+### 2. Get Property & Resident Data from Rentvine
+
+<Note>
+  Only necessary for existing customers with data already in Latchel.
+</Note>
+
+Request a CSV export of the **"Lease Tenant"** report (Reports \> Lease Tenants) from the Rentvine Web App.
+
+### 3. Submit a #account-update-request
+
+1. Navigate to the `#account-update-request` Slack channel
+2. Go to **Workflows → Account Update Request**
+3. Select **"Data Migration"** in the task type question
+4. Tag @Jordan Caley in the thread
+
+### 4. Notify Engineering
+
+Provide API keys and notify engineering to activate the integration.
+
+## What Happens When a Customer First Activates?
+
+Nothing happens immediately. The integration becomes active and is scheduled for hourly imports. Does **not** have an "initial sync" like Propertyware and Rent Manager.
+
+## Rentvine → Latchel Field Mapping
+
+### Properties
+
+| Rentvine Field | Latchel Field |
+| --- | --- |
+| PropertyId | ref\_property\_id |
+| UnitId | ref\_unit\_id |
+| address | address1 |
+| city | city |
+| stateID | state |
+| postalCode | zip |
+| unit.isActive | property.is\_active |
+
+### Residents
+
+| Rentvine Field | Latchel Field |
+| --- | --- |
+| contactID | ref\_user\_id |
+| name | name |
+| email | email |
+| phone | Primary phone number |
+| Move In Date | move\_in\_date |
+| Move Out Date | move\_out\_date |
+
+**Previously-created residents**: Only property/unit associations and move in/out dates are updated on subsequent syncs.
+
+### Automatic Property Reconciliation
+
+Runs on the **27th of each month at 3am PST**.
+
+## Latchel → Rentvine (Work Orders)
+
+Work orders are synced to Rentvine a few seconds after creation in Latchel.
+
+**Previously created WOs**: Updated in Rentvine only when the WO moves to **Canceled** or **Completed** in Latchel. Status is not updated when WO moves to "Forwarded to PM."
+
+**Files**: Not yet synced to Rentvine.
+
+## Integration Work Order Update Conditions
+
+Located on PM account details page → **Miscellaneous Settings → Integration Work Order Update conditions**. Admin-only setting.

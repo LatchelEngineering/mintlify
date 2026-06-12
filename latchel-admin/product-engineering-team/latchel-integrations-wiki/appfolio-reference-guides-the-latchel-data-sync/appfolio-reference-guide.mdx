@@ -1,0 +1,71 @@
+---
+title: "Appfolio Reference Guide (The Latchel Data Sync)"
+---
+
+This guide helps customer support agents understand and use the Latchel Data Sync Chrome Extension for Appfolio customers.
+
+<Warning>
+  Never use the word "Appfolio" publicly in marketing materials or mass communications. Refer to the plugin as "The Chrome Plugin" or "The Latchel Data Sync Plugin." See the [Communication Guidelines](/latchel-admin/product-support/communication-guidelines-appfolio) for full details.
+</Warning>
+
+## Activating the Latchel Data Sync (New Customer)
+
+### Step 1 — Activate Chrome Plugin in Latchel (Internal Only)
+
+1. From your admin login, search the PM account and navigate to the **Integrations** tab
+2. Click **Activate** under the Chrome Plugin Integration
+3. Enter the client's AppFolio database App Slug (found in their Appfolio URL, e.g. `rinconpm.appfolio.com` → slug is `rinconpm`)
+4. Set the **Starting Sync Date** as today's date and click **Save**
+5. Navigate to **Miscellaneous Settings** and configure the Integration Sync Method
+
+### Step 2 — Download and Activate (Property Manager)
+
+Share the Latchel Data Sync Extension download guide with the client. Create a new Appfolio user with:
+
+- **Email**: No CPT access: any email you manage. CPT access: `pmcompanyname@ledgering.com`
+- **Recommended Role**: On-Site Manager
+- **First Name**: Team | **Last Name**: Latchel
+
+### Step 3 — Force Run Property & Resident Sync (if needed)
+
+If properties and residents don't begin syncing:
+
+1. Have the PM open Chrome Developer Console (right-click \+ Inspect → Console tab)
+2. Type `allow pasting` and hit Enter
+3. Paste and run `SyncService.bgSync()`
+
+## Activating for Existing Customers
+
+Submit a request in `#account-update-request` Slack channel using the Account Update Request Workflow.
+
+## Data Synchronization Overview
+
+### Background Sync (Appfolio → Latchel)
+
+- **Work Order Sync**: Every 15 minutes, runs 24/7
+- **Daily Full Sync**: Every 24 hours, includes properties, tenants, owners, and work orders
+
+### Foreground Sync (Latchel → Appfolio)
+
+- Creates new work orders and updates existing ones that have been completed or canceled
+- Only runs automatically when automatic work order sync is enabled
+
+## Special Features and Settings
+
+### Integration Sync Method
+
+Found on PM profile page under **Miscellaneous Settings**:
+
+- **Assigned Work Orders**: Only WOs assigned to a user with "Latchel" in their name sync
+- **All Work Orders**: All WOs sync between both systems
+- **No Work Orders**: No WOs sync
+
+### Latchel Overlay for Property Management
+
+Released March 30, 2026. A Heads-Up Display (HUD) that allows Appfolio customers to view the Assigned Vendor in Latchel without leaving their PMS. Download from the Chrome Web Store: **Property Manager Visor**.
+
+### File & Invoice Sync
+
+Not currently supported for Appfolio. However, if the client uses **AppFolio Smart Bill**, assign their Smart Bill email address in Latchel for automatic PDF invoice delivery.
+
+> Note: Appfolio only accepts .pdfs. Attachments are limited to 20MB.

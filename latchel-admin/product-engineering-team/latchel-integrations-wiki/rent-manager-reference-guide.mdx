@@ -1,0 +1,74 @@
+---
+title: "Rent Manager Reference Guide"
+---
+
+This document is the detailed source of truth for how the Latchel\<\>Rent Manager sync operates today.
+
+## Activating the Rent Manager Integration (New Customer)
+
+### Step 1 — Requesting Activation (Customer)
+
+Customer follows the help guide: **Integrating Rent Manager into Latchel**
+
+### Step 2 — Activate the Integration (Latchel Internal Only)
+
+1. Log in to the Rent Manager Partner Web Access portal: [https://pwa.rentmanager.com/](https://pwa.rentmanager.com/)
+2. Select the **Latchel Product**
+3. Click on **Interested Clients**
+4. Copy the **Company Entity** to your clipboard
+5. Click the 3 dots → **"Enable Integration"**
+6. From admin login, search the PM account → **Integrations Page** → Click **"Activate"** under Rent Manager
+7. Add the Rent Manager Company Entity and click **Save**
+8. From the PM's **Details tab → Miscellaneous Settings**, toggle property and resident modification **on**
+
+## Activating for Existing Customers
+
+Submit a request in `#task-share-jira-request` Slack channel.
+
+## What Happens When a Customer First Activates?
+
+A full synchronization of all properties and residents is triggered automatically (the **"initial sync"**).
+
+## Subsequent Syncs
+
+- Run every hour, starting in the first 5 minutes of the hour
+- May take 15–45 minutes to complete
+- Only considers data created or updated in the **last 72 hours**
+
+## Platform → Latchel Field Mapping
+
+### Properties
+
+| RM Field | Latchel Field |
+| --- | --- |
+| Address 1 | address1 |
+| City | city |
+| State | state |
+| Zip Code | zip |
+| Platform property ID | ref\_property\_id |
+| Platform unit ID | ref\_unit\_id |
+| Active? | is\_active |
+
+### Residents
+
+Not synced if: RM Contact is a lease guarantor, contact is under 18, or lease is inactive.
+
+### Work Orders
+
+WOs created in RM must have Category set to **"\[Latchel\] Maintenance"** to sync to Latchel.
+
+**Show on Statement/Label checkbox**: Residents will only sync to Latchel if this checkbox is checked in RM.
+
+## Latchel → Rent Manager (Work Orders)
+
+Work orders created in the Latchel console automatically trigger a sync to RM.
+
+**Previously created WOs**: Updated only when the WO moves to **Canceled** or **Completed**.
+
+**File Sync**: Latchel automatically syncs files (pictures and invoices) to Rent Manager on any work order state change.
+
+**Manually Sync WO**: Go to the **"Action"** menu → **"Sync Now"**.
+
+## Automatic Property Reconciliation
+
+Runs on the **27th of each month at 3am PST**.

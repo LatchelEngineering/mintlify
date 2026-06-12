@@ -1,0 +1,346 @@
+---
+title: "Propertyware Reference Guide"
+---
+
+This document is the detailed source of truth for how the Latchel\<\>Propertyware sync operates today.
+
+**Technical Docs**: PW SOAP API Doc 2021
+
+## Enterprise Account Restrictions
+
+Propertyware enterprise accounts with multiple "locations" are only supported if all properties the customer wants to sync are in a **single location**.
+
+## Activating the Integration
+
+### Step 1 — Create Propertyware\<\>Latchel User Credentials (Latchel Internal)
+
+1. Add customer info to the Propertyware tab on the following report: [<u>https://docs.google.com/spreadsheets/d/16B1d5acwDRvx6w8BkSuL4\_QAOZmcXKYwf5HFpMcwRdU/edit?usp=sharing</u>](https://docs.google.com/spreadsheets/d/16B1d5acwDRvx6w8BkSuL4_QAOZmcXKYwf5HFpMcwRdU/edit?usp=sharing)
+2. Use this format for the Latchel User email: `pwbeta+pmcompanyname@latchel.com`
+3. Provide the customer the email address and password for Step 2
+
+### Step 2 — Create the Latchel User in Propertyware (Client)
+
+Follow the help guide: **How to Activate the Client Propertyware Integration**
+
+<Card title="How to Activate the Client Propertyware Integration" icon="sparkles" href="/s/topic/0TO5e000000h9wqGAA/How-to-Activate-the-Client-Propertyware-Integration#how-to-activate-the-client-propertyware-integration">
+</Card>
+
+<Note>
+  Make sure you shared the email and password from Step 1 with the client.
+</Note>
+
+### Step 3 — Activate the Integration (Latchel Internal)
+
+1. From admin login, navigate to the PM's **Integrations Page** → Click **"Activate"** under Propertyware
+
+<Frame>
+  ![Activate The Propertyware Integration](/images/Activate-the-Propertyware-Integration.gif)
+</Frame>
+
+2. Enter the credentials to activate the Propertyware Integration. The Propertyware ID and password are the email address and password created in Step 1.
+3. Check the box next to **“Automatic import of Propertyware data”** and then click “Save”.
+
+<Frame>
+  ![Image 20240501 235119](/images/image-20240501-235119.png)
+</Frame>
+
+2. From the **Property Manager's Details tab** under **Miscellaneous Settings** modal, toggle the property and resident modification on.
+
+<Frame>
+  ![Property Manager's Details Tab](/images/Property-Manager's-Details-tab.gif)
+</Frame>
+
+## What Happens When a Customer First Activates?
+
+When a customer first activates their integration, a full synchronization of all of their properties and residents is triggered automatically. We refer to this as the **“initial sync.”**
+
+## Platform → Latchel Field Mapping
+
+### Properties
+
+The following Property fields are brought over from PW to Latchel via the initial sync:
+
+| Platform field | Field/Interpretation in Latchel |
+| --- | --- |
+| Address 1 | address 1 |
+| Address2 | address2 |
+| City | city |
+| State | state |
+| Zip Code | zip |
+| Platform property ID | ref\_property\_id |
+| Platform unit ID | ref\_unit\_id |
+|  | critical\_note |
+| is\_active | is\_active \*If property is “inactive” in the platform, the property will be marked as “inactive “in Latchel |
+| (various data) | integration\_data |
+
+<Warning>
+  Multifamily buildings: Sometimes (but not always) fictitious units are created for multifamily buildings. If a customer reports this behavior, escalate to the CSM to propose a billing adjustment.
+</Warning>
+
+### Residents
+
+For both initial and regular syncs only residents with active leases and included in imports both for initial and ongoing syncs.
+
+The following resident fields are brought over from PW to Latchel via the initial sync:
+
+- ref\_user\_id
+- name
+- email
+- phone (Use “Mobile” if available. If not, “Home”)
+- ref\_property\_id
+- ref\_unit\_id
+- move\_in\_date (check if valid date object, if not, set to null)
+- scheduled\_move\_out\_date (check if valid date object, if not, set to null)
+
+<Note>
+  This is different than lease\_end\_date in Propertyware.
+</Note>
+
+- integration\_data
+
+### Work Orders
+
+Work orders are excluded from all syncs if the owner email does not match the email used to access Propertyware (as supplied when setting up the integration)
+
+The following Work Order (Job) fields are brought over from PW/RM via the Integration:
+
+- ref\_work\_order\_id
+- name (special logic applied to format to Latchel)
+- work order number
+- description
+- scheduled\_data
+- vendor\_id
+- state\_id (special logic applied to format to Latchel)
+- is\_urgent (special logic applied to format to Latchel)
+- ref\_property\_id
+- ref\_unit\_id (special logic applied to format to Latchel)
+- ref\_user\_id (special logic applied to format to Latchel)
+
+Each work order is:
+
+- Assigned to a property manager based on the pm\_user id related to the property
+- Linked to an existing property & unit in Latchel
+- IF a resident id is supplied, the WO will also be assigned to an existing resident in Latchel.
+
+## Leases
+
+Leases are not currently processed as part of the initial sync.
+
+## **What happens after the initial sync?**
+
+There are two directions of data synchronization that occur after the initial sync.
+
+1. Platform → Latchel
+2. Latchel → Platform
+
+Subsequent syncs will look for any data that was created or updated **within the last 72 hours.** The syncs run every other hour, starting sometime in the first 5 minutes of the hour and may take between 15-45 minutes to complete.
+
+## **Platform → Latchel**
+
+### **Properties**
+
+Subsequent property updates can be organized into two categories (1) Newly created properties and (2) previously created properties
+
+#### **Newly created Properties**
+
+Newly-created properties will sync all the same fields we do in the initial sync. [<u>See above!</u>](https://latchel.atlassian.net/wiki/spaces/PROD/pages/2618261539/Propertyware+Reference+Guide#Properties "https://latchel.atlassian.net/wiki/spaces/PROD/pages/2618261539/Propertyware+Reference+Guide#Properties")
+
+#### **Previously created Properties**
+
+Subsequent synchronizations of the same property will impact the following fields:
+
+| **Platform field** | **Field/Interpretation in Latchel** |  |
+| :-- | :-- | --- |
+| Active? | is\_active (only from active to inactive) **Note**: This means if a customer _activates_ an _inactive property_ in the platform, **this change will not propagate to Latchel.** |  |
+| (various data) | integration\_data |  |
+| Address data\* | address\_label \*If any address data is different in the platform than in Latchel, we store the exact platform address in order to provide the “Source Address” feature for customers. [<u>Link to product release.</u>](https://latchel.slack.com/archives/C038Z6M0T6H/p1735848840482549 "https://latchel.slack.com/archives/C038Z6M0T6H/p1735848840482549") |  |
+
+##### **Automatic Property Reconciliation**
+
+To ensure accurate customer billing Latchel runs on automated process each month to de-activate any active units in Latchel that no longer exist in the Propertyware property list integrated with Latchel. This process currently happens on the 27th at 3am PST.
+
+<Frame>
+  ![Image 20240129 225530](/images/image-20240129-225530.png)
+</Frame>
+
+Customers can view information about recently de-activated units on the Reports page. They can also export a list of the units deleted in the most recent snapshot.
+
+<Frame>
+  ![Image 20240129 225637](/images/image-20240129-225637.png)
+</Frame>
+
+When a property is deactivated through this process. It will be logged to the property in Latchel.
+
+<Frame>
+  ![Image 20240129 225710](/images/image-20240129-225710.png)
+</Frame>
+
+#### **Common areas**
+
+Upon customer request, Latchel can create common area units for PM’s to manage building-level maintenance for jobs such as landscaping, garbage removal, elevator maintenance and more.
+
+How it works:
+
+1. A PM (or Latchel team member on behalf of a PM) submits a one-off request for common area maintenance on a specific building(s) via this Typeform: [https://latchel.typeform.com/to/P8jj3FBx](https://latchel.typeform.com/to/P8jj3FBx)
+   - Why one-off requests only? We only want to enable common areas on specific addresses for customers who are actually going to create building-level work orders due to billing implications (they will appear as active units in Latchel for billing purposes).
+2. Latchel creates the common area unit via API.
+   - This results in a record with a building ID but no ref unit ID.
+
+<Warning>
+  Multifamily buildings: Sometimes (but not always) fictitious units are created for multifamily buildings. If a customer reports this behavior, escalate to the CSM to propose a billing adjustment.
+</Warning>
+
+### **Residents**
+
+Subsequent resident updates can be organized into two categories (1) Newly-created residents and (2) previously created residents
+
+#### **Newly-created residents**
+
+Newly-created residents will sync all the same fields we do in the initial sync. [<u>See above!</u>](https://latchel.atlassian.net/wiki/spaces/PROD/pages/2618261539/Propertyware+Reference+Guide#Residents "https://latchel.atlassian.net/wiki/spaces/PROD/pages/2618261539/Propertyware+Reference+Guide#Residents")
+
+#### **Previously-created residents**
+
+Once a resident is created the only thing we only change a few things on subsequent syncs
+
+- The property and unit the resident is associated with
+- The move\_in and move\_out dates
+  - **Note**: Any issues with move in/out dates need to be resolved in the 3rd party platform when an integration is in place. For propertyware, these fields can be found on the tenant's lease.
+    <Frame>
+      ![Image 20230511 155239](/images/image-20230511-155239.png)
+    </Frame>
+
+The integration will not currently update contact information, name nor “active” status.
+
+### **Work Orders**
+
+Subsequent work order updates can be organized into two categories (1) Newly-created work orders and (2) previously created work orders
+
+#### **Newly-created work orders**
+
+In order for a WO to sync into Latchel, the “Managed By” field **must** be assigned to the Latchel user in PW.
+
+There is no way to automatically have all of the “Managed By” field filled out when a maintenance request is submitted. It has to be manually done by someone on the team. Normally:
+
+- When a resident submits the WO, the “Managed By” field will be blank.
+- When a PW user creates the WO, the “Managed By” defaults to the user that created the WO.
+
+There is some customization:
+
+1. Go to your Settings.
+2. Go to Customize Maintenance/Maintenance Settings.
+3. There should be a “Managed By” option where you can pick the default user (which could be the Latchel user).
+
+Newly-created work orders will sync all the same fields and following the same rules as in the initial sync.
+
+#### **Previously-created work orders**
+
+The integration will not update any fields on previously created work orders
+
+### **Leases**
+
+The lease sync runs at 11:30pm UTC every night and are thus synchronized from PW to Latchel once a day.
+
+The following lease fields are brought over from PW to Latchel via the daily sync:
+
+- `ref_lease_id`
+- `ref_tenant_id`
+- `ref_property_id`
+- `ref_unit_id`
+- `integration_data`
+- `start_date`
+- `end_date`
+- `amount`
+- `status`
+- `term`
+
+#### **Newly-created leases**
+
+Sync’d daily at 11:30pm UTC every night
+
+#### **Previously-created leases**
+
+We update all values if it is an existing lease. So whatever new values come in from the sync would override the old ones.
+
+## **Latchel → Platform**
+
+### **Work orders**
+
+If a work order (job) is created in the Latchel console it will automatically trigger a sync to also create it in PW. Updating that work order (job) in Latchel will automatically sync over the changes from Latchel to PW.
+
+- refWorkOrderId
+- work order number
+- Type
+  - always set to “General” for Propertyware
+- Priority
+  - Set to “High” if the wo is emergency or urgent, otherwise “Medium”
+- Status (Default behavior - see section below for detailed settings)
+  - Set to “Closed” if state\_id = 14 (Cancelled) OR 16 (Completed). Otherwise set to “Open”
+- Description
+- StartDate
+- approved (true/false)
+  - Always set to “True”
+- ApprovedDate
+  - Created date or null
+- Completed Date
+- Location
+  - we generate a slug based on the integration\_data, by looking at the building, portfolio and unit slugs
+- Specific location
+  - same as WO name
+- Portfolio information
+  - from the portfolio\_id inside the integration\_data
+- Building information
+  - from the building\_id inside the integration\_data
+- Unit IDs
+
+#### **Previously-created work orders**
+
+By default, we only the WO in PropertyWare when the WO moves to the ‘Canceled' or 'Completed’ statuses in Latchel. We do not update the status in Rent Manager when the work order moves to “Forwarded to PM.” These are the WO fields we update for previously created work orders:
+
+- type
+- priority
+- approved
+- specific location
+- description
+- approved date
+- status
+- start date
+- completed date (if avail)
+
+#### **Integration Work Order Update conditions**
+
+A customer can specify if they want WO updates to happen less often than by default. This settings is located  on a PM account details page → Miscellaneous Settings → Integration Work Order Update conditions. This setting is only accessible by admin users.
+
+<Frame>
+  ![Image 20240819 170938](/images/image-20240819-170938.png)
+</Frame>
+
+#### **WO Sync Status**
+
+When a customer is on an _active_ integration, an indication will show at the top of each work order whether or not the WO was successfully sync’d with the customer’s PMS. Example below.
+
+<Frame>
+  ![Image 20231120 224552](/images/image-20231120-224552.png)
+</Frame>
+
+#### **Manually Sync WO**
+
+Customers can manually trigger a Latchel--\>Platform sync by going to the “Action” menu and clicking “Sync Now.” This will manually push the WO to the customer’s platform.
+
+### **File Sync**
+
+Latchel will automatically sync files (such as pictures and invoices) to Propertyware on any work order state change.
+
+<Note>
+  If a files from Latchel are automatically published to both the Owner and Resident portals in Propertyware, this behavior is not caused by Latchel’s sync. It is controlled entirely by settings within the Propertyware account. Steps to disable auto-publishing in Propertyware:
+
+  1. Go to Setup
+  2. Expand the Customize section
+  3. Click on Maintenance
+  4. Click Edit Maintenance Settings
+  5. Change the following:\
+       a. Publish Work Orders to Tenant Portal → No\
+       b. Publish Work Orders to Owner Portal → No
+  6. Click Save
+
+  _Important: This change applies across the entire Propertyware account—not just to files synced from Latchel._
+</Note>

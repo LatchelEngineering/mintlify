@@ -1,0 +1,95 @@
+---
+title: "Buildium Reference Guide"
+---
+
+This document is the detailed source of truth for how the Latchel\<\>Buildium sync operates today.
+
+**Technical Docs**: [Open API, powered by Buildium](https://www.buildium.com/open-api/)
+
+<Warning>
+  Customers must be on Buildium's **"Premium"** product to access the Open API feature that powers the Latchel\<\>Buildium integration.
+</Warning>
+
+## Activating the Integration
+
+### Integration Requirements
+
+Customers must be on Buildium's "Premium" plan.
+
+### Step 1 — Activate the API and Obtain API Keys
+
+Buildium onboarding is not yet self-serve — engineering must respond to a request.
+
+1. PM should activate the API and obtain API keys in Buildium Docs with these permissions:
+   - Accounting: VIEW
+   - Rentals: VIEW
+   - Associations: VIEW
+   - Maintenance: VIEW \+ EDIT
+   - Administration: VIEW
+   - Communications: VIEW
+   - Tasks: VIEW \+ EDIT \+ DELETE
+   - Documents: VIEW \+ EDIT
+2. API keys should be passed to engineering (@Ben Heller) for activation
+
+### Step 2 — Get Property & Resident Data from Buildium
+
+<Note>
+  Only necessary for existing customers. Skip to Step 4 for new customers with no data in Latchel yet.
+</Note>
+
+Request a CSV export of the **"Current Tenants"** report (Reports \> Current Tenants) from the Buildium Web App.
+
+### Step 3 — Submit a #task-share-jira-request
+
+1. Navigate to the `#task-share-jira-request` Slack channel
+2. Go to **Workflows → Account Update Request**
+3. Select **"Data Migration"** in the task type question
+4. Tag @Jordan Caley in the thread
+
+### Step 4 — Notify Engineering
+
+Provide API keys and notify engineering to activate the integration.
+
+## What Happens When a Customer First Activates?
+
+Nothing happens immediately. The integration becomes active and scheduled for hourly imports but does not have an "initial sync" like Propertyware and Rent Manager.
+
+## Buildium → Latchel Field Mapping
+
+### Properties
+
+| Buildium Field | Latchel Field |
+| --- | --- |
+| PropertyId | ref\_property\_id |
+| UnitId | ref\_unit\_id |
+| Address.Address1 | address1 |
+| Address.City | city |
+| Address.State | state |
+| Address.PostalCode | zip |
+| property active status | property\_is\_active |
+
+### Residents
+
+Eligible residents = anyone not in Buildium status `['Past']`. All residents on the property are synced so any of them can create a work order.
+
+| Buildium Field | Latchel Field |
+| --- | --- |
+| Id | ref\_user\_id |
+| Firstname \+ Lastname | name |
+| Email | email |
+| Phone (cell \> home \> work \> fax) | Primary phone number |
+| PropertyId | ref\_property\_id |
+| Move In Date | move\_in\_date |
+| Move Out Date | move\_out\_date |
+
+### Automatic Property Reconciliation
+
+Runs on the **27th of each month at 3am PST**. Deactivates any active Latchel units no longer in Buildium.
+
+## Product Support FAQs
+
+**Can you sync the Latchel work order number to match Buildium's?** Not currently — the Buildium API doesn't allow reading the Buildium work order number.
+
+**Can you automatically update the work order status in Buildium when complete in Latchel?** Not currently — the Buildium API doesn't allow updating the status of a task or work order.
+
+**We only want WOs to sync from Buildium to Latchel, not the other direction. How?** In Buildium, go to **Settings \> Developer Tools**, find the Latchel API key, click the three dots to edit, and for "Maintenance" permission, leave VIEW checked but uncheck EDIT.
