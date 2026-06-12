@@ -716,7 +716,13 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/Product Engineering/product-engineering-overview"
+              "latchel-admin/Product Engineering/product-engineering-overview",
+              {
+                "group": "Latchel Integrations Wiki",
+                "pages": [
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/latchel-integrations-wiki"
+                ]
+              }
             ]
           },
           {

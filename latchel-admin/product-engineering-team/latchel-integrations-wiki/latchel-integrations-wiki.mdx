@@ -1,0 +1,39 @@
+---
+title: "Latchel Integrations Wiki"
+---
+
+This is a high-level overview of Latchel's integrations functionality. Detailed reference guides for each platform are nested under this section.
+
+## What Features Are Available on Each Platform
+
+| Feature | Appfolio | Buildium | Propertyware | Public API | Rent Manager | Rentvine | Yardi |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Property/Unit | Auto, every 4hrs | Auto, hourly | Auto, every 2hrs | Available | Auto, hourly | Auto, hourly | Auto, hourly |
+| Resident | Auto, every 4hrs | Auto, hourly | Auto, every 2hrs | Available | Auto, hourly | Auto, hourly | Auto, hourly |
+| Vendor | CSV upload | CSV upload | CSV upload | Available | CSV upload | CSV upload | CSV upload |
+| Owner | Auto, every 4hrs | CSV upload | CSV upload | Available | CSV upload | CSV upload | CSV upload |
+| Work Order | Auto, every 4hrs | Auto, hourly | Auto, every 2hrs | Available | Auto, hourly | Auto, hourly | Auto, hourly |
+| Photos/Calls/SMS | Manual download | Manual download | Auto on completion | Manual download | Auto on completion | Manual download | Manual download |
+| Invoices | Manual \+ email | Manual \+ email | Auto | Available | Auto | Manual \+ email | Manual \+ email |
+
+## How Do Integrations Benefit Our Customers?
+
+An integration between a customer's primary property management software and Latchel saves time and improves quality of service.
+
+**Without an integration**, a property manager must manually copy/paste work order details, pictures, and files between systems, and update resident/property information in two places.
+
+**With an integration**, work orders, pictures, and files automatically sync from Latchel back to the primary software, and any changes to resident or property data in the platform automatically reflect in Latchel.
+
+## How Often Does Information Sync?
+
+**Platform to Latchel**
+
+- On first activation, a full synchronization of all properties and residents is triggered automatically (the "initial sync")
+- Scheduled syncs occur every hour, at the 5-minute mark (e.g. 08:05 AM)
+- Scheduled syncs can take up to 45 minutes to complete
+- Only data updated in the previous 72 hours is considered
+
+**Latchel to Platform**
+
+- Work orders are generally synced on creation
+- Files are synced when the work order is completed
