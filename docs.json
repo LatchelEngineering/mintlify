@@ -140,7 +140,7 @@
                 ]
               },
               {
-                "group": "On-Call Rotation",
+                "group": "Contact Rotation",
                 "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/on-call-rotation-getting-started",
