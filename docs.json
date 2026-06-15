@@ -758,7 +758,8 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/Latchel People Ops/latchel-people-overview"
+              "latchel-admin/Latchel-People-Ops/latchel-people-ops-home",
+              "latchel-admin/Latchel-People-Ops/latchel-handbook"
             ]
           },
           {
