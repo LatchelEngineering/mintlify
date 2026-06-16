@@ -759,7 +759,20 @@
             },
             "pages": [
               "latchel-admin/Latchel-People-Ops/latchel-people-ops-home",
-              "latchel-admin/Latchel-People-Ops/latchel-handbook"
+              "latchel-admin/Latchel-People-Ops/latchel-handbook",
+              {
+                "group": "Latchel Policies and Procedures",
+                "pages": [
+                  "latchel-admin/Latchel-People-Ops/latchel-policies-and-procedures",
+                  "latchel-admin/Latchel-People-Ops/lpo-code-of-conduct",
+                  "latchel-admin/Latchel-People-Ops/staffing-approval-hiring-policy",
+                  "latchel-admin/Latchel-People-Ops/referral-policy-and-procedure",
+                  "latchel-admin/Latchel-People-Ops/remote-work-policy",
+                  "latchel-admin/Latchel-People-Ops/sales-commission-payout-policy",
+                  "latchel-admin/Latchel-People-Ops/nondiscrimination-anti-harassment-policy",
+                  "latchel-admin/Latchel-People-Ops/team-member-complaint-procedure"
+                ]
+              }
             ]
           },
           {
