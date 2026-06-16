@@ -230,7 +230,6 @@
                 "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wqGAA/Communication-Notification-Settings-Overview",
-                  "s/topic/0TO5e000000h9wqGAA/How-to-Contact-Latchel",
                   "s/topic/0TO5e000000h9wqGAA/Latchel-Phone-Numbers",
                   "s/topic/0TO5e000000h9wqGAA/Property-Manager-360-Degree-Communication-View",
                   "s/topic/0TO5e000000h9wqGAA/How-To-Send-SMS-Messages-From-Latchel",
@@ -831,7 +830,9 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/HR Documents/hr-documents-overview"
+              "latchel-admin/HR-Documents/hr-documents-overview",
+              "latchel-admin/HR Documents/Employee-Attrition-Announcement",
+              "latchel-admin/HR-Documents/Informational-Documents-for-US-Employees"
             ]
           }
         ]
