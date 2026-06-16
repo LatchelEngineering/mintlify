@@ -1,0 +1,94 @@
+---
+title: "SOP: Guidelines for Notifying Property Managers of Severe Weather Events"
+---
+
+# SOP: Guidelines for Notifying Property Managers of Severe Weather Events
+
+The purpose of the Weather Advisory email to PMs is to acknowledge an upcoming
+extreme weather event, check in on our customers, and educate them on how they can
+best prepare in Latchel.
+Review Process
+Shift Support monitors extreme weather events on a weekly basis and reports them in the
+1.
+#shift-support Slack channel using the Weather Report workflow. Ex:
+The Weather Report workflow sends a notification to the Product Support Manager to review
+2.
+the post.
+If the Product Support Manager deems that the weather event is likely to have a major impact
+3.
+on our customers, the Product Support team will be instructed to follow the process below.
+Note: Our goal is to send no more than 4 Weather Advisory emails per year to avoid over-
+notification.
+Product Support Process
+Once the Product Support team has been notified by the Product Support Manager that we will
+alert affected PM customers about an upcoming extreme weather event:
+Determine which PMs are affected. The following pgAdmin query returns all active units for all
+1.
+active customers by state. This Loom video provides an overview of how to use it in
+conjunction with this worksheet to identify which PMs should receive an email.
+1 SELECT p.address1, p.city, p.state, p.pm_company_id AS company_id, c.name
+2 FROM property p
+3 LEFT JOIN company c ON c.company_id = p.pm_company_id
+4 WHERE p.is_active = 1 AND c.is_active = 1
+The following query retrieves a list of emails for property manager users whose companies
+are located in specific states (see states in line 15). You can change the state abbreviations in
+the query based on where you need to focus your attention, such as specific weather-related
+events.
+1 SELECT distinct c.name as pm_co_name, u.name as user_name, con.value as email
+2 from property p
+3 JOIN public.company c
+4 ON p.pm_company_id = c.company_id
+5 JOIN public.subscription s
+6 ON c.company_id = s.relation_id
+7 AND s.relation_type = 'Latchel\Company'
+8 JOIN public.user u
+9 ON c.company_id = u.company_id
+10 JOIN public.user_contact uc
+11 ON u.user_id = uc.user_id
+12 JOIN public.contact con
+13 ON uc.contact_id = con.contact_id
+14 WHERE TRUE
+15 AND UPPER(p.state) in ('TX','OK','KS','NE','IA','IL','OH','PA','LA', 'AR',
+'TN','MS','WV','VA','NC','SC','GA', 'IN', 'MO','AR' )
+16 AND p.is_active = 1
+17 AND s.ended_at is null
+18 AND u.is_active = 1
+19 AND u.user_type = 'pm'
+20 AND con.method = 'email'
+21 AND c.name NOT ILIKE '%test%'
+Note: Some weather events (ex: a major winter storm) could be almost nationwide. In those
+cases, it would be appropriate to email all customers. Consult with the Product Support
+Manager if youʼre unsure.
+Product Support sends the following email template with the list of affected PMsvia hubspot
+2.
+at least 48 hours before the weather event. Be sure to update the fields in [red] accordingly.
+Email Template
+Dear [Customer Name],
+Latchel is actively monitoring [weather event] which is forecast to impact [geographic area] in
+the days ahead.
+How does Latchel prepare? Our Service Operations team regularly monitors extreme weather
+events across the US and adjusts staffing to ensure continuity in intaking resident calls,
+troubleshooting and dispatching emergencies.
+What should you do in Latchel?
+Review your Severity Settings and Emergency Temperature Thresholds in Latchel and make
+updates if needed.
+Verify your Emergency Escalation Contacts in Latchel, then make sure theyʼre prepared for a
+potential increase in calls during the weather event. Here is how Latchel communicates to
+Property Managers during emergencies.
+Reach out to your Service Providers to understand if theyʼll be working extra hours and able to
+reach property locations to handle additional volume if needed. Verify your Service Provider
+prioritization in Latchel. Consider whether there are back-up Service Providers you wish to
+contact in the event your primary Service Providers become overwhelmed or are unable to
+reach an address.
+Prepare for extreme weather and set resident and owner expectations. We recommend the
+following resources:
+US Department of Homeland Security: https://www.ready.gov/
+CDC Natural Disasters and Severe Weather: https://www.cdc.gov/disasters/index.html
+During the event, check your Latchel dashboard frequently to monitor the number of
+emergencies Latchel is handling, how quickly your Service Providers are responding and
+determine whether circumstances require you to reach out to residents or owners with
+additional communication.
+If you need assistance completing any of these steps, donʼt hesitate to reach out to your
+Product Support team at success@latchel.com.
+Take care and stay safe!
+The Latchel Team
