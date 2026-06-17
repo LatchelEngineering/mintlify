@@ -770,8 +770,7 @@
                   "latchel-admin/Latchel-People-Ops/sales-commission-payout-policy",
                   "latchel-admin/Latchel-People-Ops/nondiscrimination-anti-harassment-policy",
                   "latchel-admin/Latchel-People-Ops/team-member-complaint-procedure"
-                ],
-                "expanded": true
+                ]
               },
               {
                 "group": "Policy: Employee Time and Attendance",
@@ -779,8 +778,7 @@
                   "latchel-admin/Latchel-People-Ops/policy-employee-time-and-attendance",
                   "latchel-admin/Latchel-People-Ops/shortened-work-week-policy",
                   "latchel-admin/Latchel-People-Ops/shortened-work-week-schedule-2026"
-                ],
-                "expanded": true
+                ]
               },
               {
                 "group": "Latchel Leave Policies",
@@ -794,24 +792,21 @@
                   "latchel-admin/Latchel-People-Ops/Job-Abandonment-Policy",
                   "latchel-admin/Latchel-People-Ops/International-Team-Member-Birthing-Parental-Leave-Policy",
                   "latchel-admin/Latchel-People-Ops/International-Team-Member-Non-Birthing-Parental-Leave-Policy"
-                ],
-                "expanded": true
+                ]
               },
               {
                 "group": "Paid Holidays",
                 "pages": [
                   "latchel-admin/Latchel-People-Ops/Paid-Holidays",
                   "latchel-admin/Latchel-People-Ops/2026-Scheduled-Holidays"
-                ],
-                "expanded": true
+                ]
               },
               {
                 "group": "Latchel Security Policies",
                 "pages": [
                   "latchel-admin/Latchel-People-Ops/asset-management-policy",
                   "latchel-admin/Latchel-People-Ops/policy-information-security"
-                ],
-                "expanded": true
+                ]
               },
               {
                 "group": "Management Resource Center",
