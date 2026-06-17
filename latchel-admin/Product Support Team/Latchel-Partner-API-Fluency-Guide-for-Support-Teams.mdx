@@ -2,12 +2,12 @@
 title: "Latchel Partner API — Fluency Guide for Support Teams"
 ---
 
-> Product Support Team > Product Support Team Overview
+> Product Support Team \> Product Support Team Overview
 
-*Created by Jennifer Folch on May 28, 2026*
+_Created by Jennifer Folch on May 28, 2026_
 
 <Info>
-**Internal use only — do not distribute externally.** This guide enables the Product Support team to answer customer API questions independently, without engineering escalation. Last updated: May 2026.
+  **Internal use only — do not distribute externally.** This guide enables the Product Support team to answer customer API questions independently, without engineering escalation. Last updated: May 2026.
 </Info>
 
 # Part 1: How to Use This Guide
@@ -111,7 +111,7 @@ Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfol
 ## 3.1 The Right URL
 
 <Warning>
-**Always use papi.latchel.com — never app.latchel.com.** The papi subdomain is the official, authoritative, up-to-date reference.
+  **Always use papi.latchel.com — never app.latchel.com.** The papi subdomain is the official, authoritative, up-to-date reference.
 </Warning>
 
 | Resource | URL |
@@ -121,7 +121,7 @@ Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfol
 | Sandbox/testing base URL | `https://latchel-demo.com/v1/` |
 | API key generation | [help.latchel.com — How to Generate an API Key](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Generate-an-API-Key) |
 | Webhook docs | [help.latchel.com — search “Webhooks”](https://help.latchel.com/reference/introduction.md) |
-| Analytics+ | [https://latchel.com/analytics-plus/](https://latchel.com/analytics-plus/) |
+| Analytics\+ | [https://latchel.com/analytics-plus/](https://latchel.com/analytics-plus/) |
 | API technical issues | [tech@latchel.com](mailto:tech@latchel.com) |
 | Customer Success | [success@latchel.com](mailto:success@latchel.com) |
 
@@ -131,7 +131,7 @@ Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfol
 | --- | --- |
 | Left sidebar | A list of all endpoint categories. Click any to jump to it. |
 | Colored method badges | Each endpoint shows its HTTP method (GET, POST, etc.) followed by the path. |
-| “+ Show” toggle | Expand an endpoint to see full details: parameters, request body, and example responses. |
+| “\+ Show” toggle | Expand an endpoint to see full details: parameters, request body, and example responses. |
 | Request Parameters table | Lists all query and path parameters, whether required or optional, and descriptions. |
 | Response schemas | Shows what fields the API returns, with descriptions. |
 | Example responses | Sample JSON showing what a real API response looks like. |
@@ -142,12 +142,12 @@ Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfol
 2. Identify the data type the customer is asking about (vendors, jobs, properties, tenants, etc.)
 3. Click the matching category in the left sidebar
 4. Scan the endpoint list. Find the one matching the action (GET for reading, POST for creating, etc.)
-5. Click “+ Show” to expand it
+5. Click “\+ Show” to expand it
 6. Read the Parameters section to answer questions about filters, pagination, required fields
 7. Read the Response section to confirm what fields are returned
 8. Share the relevant endpoint URL with the customer
 
-**Pro tip:** Use Ctrl+F on the docs page and search for a keyword (e.g., “status”, “invoice”). The docs are one long scrollable page.
+**Pro tip:** Use Ctrl\+F on the docs page and search for a keyword (e.g., “status”, “invoice”). The docs are one long scrollable page.
 
 # Part 4: Full Endpoint Reference
 
@@ -236,7 +236,7 @@ Endpoint for accessing the status change history (audit trail) of a work order.
 | DELETE | `/payment-methods/{payment_id}` | Remove a payment method. |
 
 <Warning>
-**Caution:** DELETE on payment methods is permanent and cannot be undone. Confirm the customer understands this before advising them to use this endpoint.
+  **Caution:** DELETE on payment methods is permanent and cannot be undone. Confirm the customer understands this before advising them to use this endpoint.
 </Warning>
 
 ## 4.9 Property Tenants
@@ -275,12 +275,12 @@ Endpoint for accessing the status change history (audit trail) of a work order.
 ## 4.12 Vendors / Service Providers
 
 <Info>
-This is the most common category for customer API questions. The Vendor ID is a stable, permanent identifier that never changes even if the vendor’s name is updated.
+  This is the most common category for customer API questions. The Vendor ID is a stable, permanent identifier that never changes even if the vendor’s name is updated.
 </Info>
 
 | Method | Endpoint | What it does |
 | --- | --- | --- |
-| GET | `/vendor-companies` | List ALL vendor companies. Returns active + inactive. Includes Vendor ID, name, contact, skills, status, last updated. |
+| GET | `/vendor-companies` | List ALL vendor companies. Returns active \+ inactive. Includes Vendor ID, name, contact, skills, status, last updated. |
 | POST | `/vendor-companies` | Create a new vendor company. |
 | GET | `/vendor-companies/{company_id}` | Get full details of a specific vendor. |
 | PATCH | `/vendor-companies/{company_id}` | Partially update a vendor company record. |
@@ -349,7 +349,7 @@ Webhook documentation is separate from PAPI and is available in the Help Center 
 | Customer’s data type | Look here |
 | --- | --- |
 | Vendors / service providers | Section 4.12 (Vendors) |
-| Work orders / maintenance requests | Section 4.2 (Jobs) + 4.3 (Job Files) + 4.4 (Jobs History) |
+| Work orders / maintenance requests | Section 4.2 (Jobs) \+ 4.3 (Job Files) \+ 4.4 (Jobs History) |
 | Properties / units | Section 4.10 (Properties) |
 | Tenants / residents | Section 4.7 (Tenants) or 4.9 (Property Tenants) |
 | Property owners | Section 4.6 (Owners) |
@@ -364,7 +364,7 @@ Webhook documentation is separate from PAPI and is available in the Help Center 
 | What the customer wants to do | What to look for |
 | --- | --- |
 | Pull / read a list | GET endpoint on the category’s collection (e.g., GET /jobs) |
-| Pull / read one specific record | GET endpoint with an ID (e.g., GET /jobs/{job_id}) |
+| Pull / read one specific record |  |
 | Create something new | POST endpoint |
 | Update an existing record | PUT (full update) or PATCH (partial update) |
 | Remove a record | DELETE endpoint |
@@ -375,7 +375,7 @@ Webhook documentation is separate from PAPI and is available in the Help Center 
 1. Go to [papi.latchel.com/api-docs/papi/](https://papi.latchel.com/api-docs/papi/)
 2. Click the matching category in the left sidebar
 3. Find the endpoint matching the action
-4. Click “+ Show” to read parameters and response fields
+4. Click “\+ Show” to read parameters and response fields
 5. Confirm the endpoint returns what the customer needs
 6. Share the direct link to that section
 
@@ -384,9 +384,9 @@ Webhook documentation is separate from PAPI and is available in the Help Center 
 | Customer question | Answer |
 | --- | --- |
 | How do I authenticate? | API key in the request header. Generate at Account Settings → Integrations in the Latchel dashboard. |
-| Why am I only getting some records? | Pagination. Tell them to check for a page or per_page parameter and iterate through pages. |
+| Why am I only getting some records? | Pagination. Tell them to check for a page or per\_page parameter and iterate through pages. |
 | Why am I getting 429 errors? | Rate limit hit. Max 600 requests/10 minutes. Add delays between requests. |
-| Can I filter to only active/recent records? | Check the “+ Show” parameters for that specific endpoint — most list endpoints support filters. |
+| Can I filter to only active/recent records? | Check the “\+ Show” parameters for that specific endpoint — most list endpoints support filters. |
 | I need a read-only key | Not available. Latchel does not support scoped API keys. Escalate to CSM if a blocker. |
 | Can I test without affecting live data? | Yes. Use latchel-demo.com/v1 with a separate demo API key. |
 
@@ -399,7 +399,7 @@ Webhook documentation is separate from PAPI and is available in the Help Center 
 - Rate limit questions — explain the limit and advise on pacing
 - Pagination questions — point to the docs for that endpoint
 - Requests for read-only API keys — explain not available, note to CSM if a blocker
-- Questions about Analytics+ as an alternative to the API
+- Questions about Analytics\+ as an alternative to the API
 
 ## Escalate to Engineering ([tech@latchel.com](mailto:tech@latchel.com))
 
@@ -449,8 +449,8 @@ Webhook documentation is separate from PAPI and is available in the Help Center 
 | 401 | Unauthorized — API key missing or invalid | Check the API key; have customer re-generate if needed |
 | 404 | Not found — the ID in the request does not exist | Verify the ID is correct for this account |
 | 429 | Too many requests — rate limit exceeded | Add delays; advise on pacing. Max 600/10 minutes. |
-| 500 | Server error | Escalate to tech@latchel.com |
+| 500 | Server error | Escalate to [tech@latchel.com](mailto:tech@latchel.com) |
 
 ---
 
-*Created from a real customer escalation (South Bay Home Rental vendor API inquiry) and a full crawl of the Latchel PAPI docs. Review and update whenever the PAPI documentation changes or a new category of question appears in support.*
+_Created from a real customer escalation (South Bay Home Rental vendor API inquiry) and a full crawl of the Latchel PAPI docs. Review and update whenever the PAPI documentation changes or a new category of question appears in support._
