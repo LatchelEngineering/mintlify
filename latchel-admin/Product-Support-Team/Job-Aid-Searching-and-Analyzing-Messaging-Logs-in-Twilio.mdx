@@ -2,31 +2,26 @@
 title: "Job Aid: Searching and Analyzing Messaging Logs in Twilio"
 ---
 
-> Product Support Team > Product Support Team Overview > Product Support Deep Dive Management
-
-*Created by Jennifer Folch , last modified by maddie on Oct 21, 2025*
-
 <Info>
-**Objective**: This job aid provides guidance on how to **search for messaging logs in Twilio** and **analyze message details** to support troubleshooting, track communication flow, and verify delivery outcomes.
+  **Objective**: This job aid provides guidance on how to **search for messaging logs in Twilio** and **analyze message details** to support troubleshooting, track communication flow, and verify delivery outcomes.
 </Info>
 
 <Warning>
-You may receive feedback from property managers stating that they **attempted to call and were sent to voicemail without speaking to anyone**.
-This is due to Latchel’s **call routing logic**:
+  You may receive feedback from property managers stating that they **attempted to call and were sent to voicemail without speaking to anyone**. This is due to Latchel’s **call routing logic**:
 
-- **Property Managers (PMs)** are **automatically directed to voicemail**.
-- **Residents or unidentified callers** are routed to the live call center, where they can speak with an agent.
+  - **Property Managers (PMs)** are **automatically directed to voicemail**.
+  - **Residents or unidentified callers** are routed to the live call center, where they can speak with an agent.
 
-This routing is determined by **the caller’s phone number and user type**, ensuring efficient handling of inbound communication.
+  This routing is determined by **the caller’s phone number and user type**, ensuring efficient handling of inbound communication.
 </Warning>
 
 <Note>
-**Best Way for a PM to Contact Latchel**
+  **Best Way for a PM to Contact Latchel**
 
-For the quickest support, PMs should use the designated Latchel phone numbers and channels:
+  For the quickest support, PMs should use the designated Latchel phone numbers and channels:
 
-- 📞 [Latchel Phone Numbers](#)
-- 📩 [How to Contact Latchel](#)
+  - 📞 [Latchel Phone Numbers](#)
+  - 📩 [How to Contact Latchel](#)
 </Note>
 
 ### **Accessing Messaging Logs in Twilio**
@@ -34,11 +29,15 @@ For the quickest support, PMs should use the designated Latchel phone numbers an
 1. **Login**: Navigate to [https://www.twilio.com/console](https://www.twilio.com/console)  and log in using your credentials.
 2. **Navigate to Messaging Logs**:
 
-  - From the left-hand menu, click **“Monitor.”**
-  - Under **“Monitor,”** select **“Logs.”**
-  - Click **“Messaging”** to open the full list of message logs.
+- From the left-hand menu, click **“Monitor.”**
+- Under **“Monitor,”** select **“Logs.”**
+- Click **“Messaging”** to open the full list of message logs.
 
-<img src="attachments/3209691199/3209625643.png?width=760" alt="Logs-Messaging-Twilio-Console-10-16-2024_11_13_AM.png" width="760" />
+<img
+  src="attachments/3209691199/3209625643.png?width=760"
+  alt="Logs-Messaging-Twilio-Console-10-16-2024_11_13_AM.png"
+  width="760"
+/>
 
 ---
 
@@ -46,7 +45,11 @@ For the quickest support, PMs should use the designated Latchel phone numbers an
 
 You can filter and search messaging logs based on specific criteria to locate relevant message details quickly.
 
-<img src="attachments/3209691199/3209822242.png?width=760" alt="Logs-Messaging-Twilio-Console-10-16-2024_11_13_AM (1).png" width="760" />
+<img
+  src="attachments/3209691199/3209822242.png?width=760"
+  alt="Logs-Messaging-Twilio-Console-10-16-2024_11_13_AM (1).png"
+  width="760"
+/>
 
 #### **1. Search by Date Range**
 
@@ -56,7 +59,7 @@ You can filter and search messaging logs based on specific criteria to locate re
 
 #### **2. Search by Phone Number**
 
-- In the **“To”** or **“From”** fields, enter the phone number (in E.164 format, e.g., +1xxxxxxxxxx) to locate messages sent to or from that number.
+- In the **“To”** or **“From”** fields, enter the phone number (in E.164 format, e.g., \+1xxxxxxxxxx) to locate messages sent to or from that number.
 
 #### **3. Search by Message SID**
 
@@ -99,14 +102,12 @@ Once the relevant logs are retrieved, you’ll be able to see detailed informati
 #### **2. Delivery and Status Breakdown**
 
 - **Delivery Status**: This shows whether the message was delivered successfully or encountered issues.
-
   - A **Delivered** status means the message reached the recipient.
   - A **Failed** or **Undelivered** status requires further investigation (see Error Code analysis below).
 
 #### **3. Error Codes and Troubleshooting**
 
 - If the message failed or was undelivered, an **error code** will appear in the log. This code indicates why the message failed.
-
   - **Click on the Message SID** to view the detailed error information.
   - **Locate the Error Code and Error Message** fields.
   - **Use Twilio’s Error Code Documentation** to identify the cause and recommended actions.
@@ -121,45 +122,49 @@ Once the relevant logs are retrieved, you’ll be able to see detailed informati
 
 ### **Practical Example of Log Interpretation**
 
-<img src="attachments/3209691199/3209396293.png?width=760" alt="Logs-Messaging-Twilio-Console-10-16-2024_11_16_AM.png" width="760" />
+<img
+  src="attachments/3209691199/3209396293.png?width=760"
+  alt="Logs-Messaging-Twilio-Console-10-16-2024_11_16_AM.png"
+  width="760"
+/>
 
 Here’s an example of how you would interpret a messaging log:
 
 1. **Message SID**: `SMxxxxxxxxxxxxxxxxxxxxx`
 
-  - This is the unique identifier for the message. Click on the SID to get more details.
+- This is the unique identifier for the message. Click on the SID to get more details.
 
 2. **Date Sent**: `2024-10-15 14:22:45 UTC`
 
-  - This shows the exact time the message was sent.
+- This shows the exact time the message was sent.
 
 3. **From**: `+15551234567`
 
-  - The sender’s phone number (Twilio phone number used for sending).
+- The sender’s phone number (Twilio phone number used for sending).
 
 4. **To**: `+15559876543`
 
-  - The recipient’s phone number. Verify this to ensure it’s correct.
+- The recipient’s phone number. Verify this to ensure it’s correct.
 
 5. **Status**: `Failed`
 
-  - The message was not delivered. Click on the **Message SID** to investigate further.
+- The message was not delivered. Click on the **Message SID** to investigate further.
 
 6. **Error Code**: `30007`
 
-  - This indicates **carrier filtering**, which means the message may have been flagged as spam by the carrier. To resolve this, you may need to revise the message content to ensure it complies with carrier regulations.
+- This indicates **carrier filtering**, which means the message may have been flagged as spam by the carrier. To resolve this, you may need to revise the message content to ensure it complies with carrier regulations.
 
 ---
 
 ### **PgAdmin Query for Latchel Messages**
 
 <Info>
-If a message is not displaying in twilio, yet we have record of it in the Latchel console, we can execute the following database query to determine if the message we are seeing in Latchel (but not in twilio) failed or delivered. This could also help us track down delivery errors if we are unable to determine the root issue in Twilio.
+  If a message is not displaying in twilio, yet we have record of it in the Latchel console, we can execute the following database query to determine if the message we are seeing in Latchel (but not in twilio) failed or delivered. This could also help us track down delivery errors if we are unable to determine the root issue in Twilio.
 
-See this real life scenario as an example: [https://www.loom.com/share/e872a0325c5a461cb2d420abb4c01792?sid=51fd3aae-db65-4cb1-be97-97699495db76](https://www.loom.com/share/e872a0325c5a461cb2d420abb4c01792?sid=51fd3aae-db65-4cb1-be97-97699495db76) [https://latchel.slack.com/archives/C01SF43DPEE/p1729015050979409](https://latchel.slack.com/archives/C01SF43DPEE/p1729015050979409)
+  See this real life scenario as an example: [https://www.loom.com/share/e872a0325c5a461cb2d420abb4c01792?sid=51fd3aae-db65-4cb1-be97-97699495db76](https://www.loom.com/share/e872a0325c5a461cb2d420abb4c01792?sid=51fd3aae-db65-4cb1-be97-97699495db76) [https://latchel.slack.com/archives/C01SF43DPEE/p1729015050979409](https://latchel.slack.com/archives/C01SF43DPEE/p1729015050979409)
 </Info>
 
-```
+```text
 SELECT *
 FROM conversation con
 JOIN conversation_member cm ON con.conversation_id = cm.conversation_id
@@ -175,6 +180,6 @@ LIMIT 100
 
 ## Attachments
 
-- [Logs-Messaging-Twilio-Console-10-16-2024_11_13_AM.png](attachments/3209691199/3209625643.png)
-- [Logs-Messaging-Twilio-Console-10-16-2024_11_13_AM (1).png](attachments/3209691199/3209822242.png)
-- [Logs-Messaging-Twilio-Console-10-16-2024_11_16_AM.png](attachments/3209691199/3209396293.png)
+- [Logs-Messaging-Twilio-Console-10-16-2024\_11\_13\_AM.png](attachments/3209691199/3209625643.png)
+- [Logs-Messaging-Twilio-Console-10-16-2024\_11\_13\_AM (1).png](attachments/3209691199/3209822242.png)
+- [Logs-Messaging-Twilio-Console-10-16-2024\_11\_16\_AM.png](attachments/3209691199/3209396293.png)

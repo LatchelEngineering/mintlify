@@ -2,10 +2,6 @@
 title: "SOP: Sending Proactive Failed Escalation Emails"
 ---
 
-> Product Support Team > Product Support Team Overview > Product Support ASM Ticket Management
-
-*Created by Jennifer Folch , last modified on Sep 05, 2025*
-
 ## **Context**
 
 Once the Quality team validates an escalation failure and submits it through the Failed Escalation Report workflow, the Product Support team is responsible for notifying the impacted property management company. These emails are proactive alerts to PMs that their contacts or service providers are unresponsive.
@@ -34,7 +30,6 @@ This SOP provides step-by-step guidance for the PS team to send the correct **Pr
 
 - Monitor the `ps-escalation` Slack channel or workflow submissions.
 - Each submission will include:
-
   - PM company name & ID
   - Type of failure (On-Call, Escalation Contact, Service Provider, Pre-Dispatch)
   - Job URL(s)
@@ -47,22 +42,21 @@ This SOP provides step-by-step guidance for the PS team to send the correct **Pr
 
 Use the failure type to choose the right proactive email template:
 
-1. **Escalation Contacts Unreachable** → [*Escalation contacts email template*](https://latchel.atlassian.net/wiki/spaces/SR/pages/edit-v2/3615883271#1.-Escalation-Contacts-Unreachable)
-2. **Primary Technician Unresponsive (On-Call)** → *On-Call email*[*template*](https://latchel.atlassian.net/wiki/spaces/SR/pages/edit-v2/3615883271#2.-Primary-Technician-Unresponsive-(On-Call))
-3. **Pre-Dispatch Contacts Unresponsive** → *Pre-Dispatch email*[*template*](https://latchel.atlassian.net/wiki/spaces/SR/pages/edit-v2/3615883271#3.-Pre-Dispatch-Contacts-Unresponsive)
-4. **Preferred Service Provider Unresponsive** → *Service Provider email*[*template*](https://latchel.atlassian.net/wiki/spaces/SR/pages/edit-v2/3615883271#4.-Preferred-Service-Provider-Unresponsive)
+1. **Escalation Contacts Unreachable** → [_Escalation contacts email template_](https://latchel.atlassian.net/wiki/spaces/SR/pages/edit-v2/3615883271#1.-Escalation-Contacts-Unreachable)
+2. **Primary Technician Unresponsive (On-Call)** → _On-Call email[template](https://latchel.atlassian.net/wiki/spaces/SR/pages/edit-v2/3615883271#2.-Primary-Technician-Unresponsive-\(On-Call\))_
+3. **Pre-Dispatch Contacts Unresponsive** → _Pre-Dispatch email[template](https://latchel.atlassian.net/wiki/spaces/SR/pages/edit-v2/3615883271#3.-Pre-Dispatch-Contacts-Unresponsive)_
+4. **Preferred Service Provider Unresponsive** → _Service Provider email[template](https://latchel.atlassian.net/wiki/spaces/SR/pages/edit-v2/3615883271#4.-Preferred-Service-Provider-Unresponsive)_
 
 ---
 
 ### **Step 3: Personalize the Email**
 
 - Replace placeholders with actual details from the workflow submission:
-
-  - **[link, property address]** → Job URL + property address from the work order.
-  - **[text in escalation contacts field]** → paste escalation contacts.
-  - **[name, number]** → paste technician name & phone (from oncall_failures report).
-  - **[text in pre-dispatch contacts field]** → paste pre-dispatch contacts.
-  - **[text in service provider contact field]** → paste provider(s) info.
+  - **\[link, property address\]** → Job URL \+ property address from the work order.
+  - **\[text in escalation contacts field\]** → paste escalation contacts.
+  - **\[name, number\]** → paste technician name & phone (from oncall\_failures report).
+  - **\[text in pre-dispatch contacts field\]** → paste pre-dispatch contacts.
+  - **\[text in service provider contact field\]** → paste provider(s) info.
 
 ---
 
@@ -89,8 +83,7 @@ Use the failure type to choose the right proactive email template:
 
 **Subject:** Action Needed: Escalation Contacts Unreachable for {{PM_Company_Name}}
 
-**To:** ALL PM Users
-**CC:** {{CSM_Name}}
+**To:** ALL PM Users **CC:** {{CSM_Name}}
 
 Hello {{PM_FirstName}},
 
@@ -109,16 +102,15 @@ To ensure seamless communication and timely service, we recommend reviewing and 
 5. Update your Escalation Contacts List and Failed Escalation Email List
 6. For multiple emails, separate with commas: `test@gmail.com, test1@gmail.com`
 
-**Recent Work Order Example:**
-{{Job_URL}}, {{Property_Address}}
+**Recent Work Order Example:** {{Job_URL}}, {{Property_Address}}
 
 **Unresponsive Escalation Contacts:**
+
 {{Escalation_Contacts}}
 
 Please reply to this email if you require assistance with this update or if you have any questions.
 
-Thank you for your attention to this matter,
-**Latchel Product Support Team**
+Thank you for your attention to this matter, **Latchel Product Support Team**
 
 ---
 
@@ -126,8 +118,7 @@ Thank you for your attention to this matter,
 
 **Subject:** Action Needed: Primary Technician On-Call Unresponsive for {{PM_Company_Name}}
 
-**To:** ALL PM Users
-**CC:** {{CSM_Name}}
+**To:** ALL PM Users **CC:** {{CSM_Name}}
 
 Hello {{PM_FirstName}},
 
@@ -143,16 +134,13 @@ To prevent any service disruptions, we suggest verifying the availability and co
 4. Verify/Update a backup contact in case the primary technicians can’t be reached
 5. Click **Create** to finalize the setup
 
-**Recent Work Order Example:**
-{{Job_URL}}, {{Property_Address}}
+**Recent Work Order Example:** {{Job_URL}}, {{Property_Address}}
 
-**Unresponsive Technician:**
-{{Technician_Name}}, {{Technician_Number}}
+**Unresponsive Technician:** {{Technician_Name}}, {{Technician_Number}}
 
 Please reply to this email if you require assistance with this update or if you have any questions.
 
-Thank you for your attention to this matter,
-**Latchel Product Support Team**
+Thank you for your attention to this matter, **Latchel Product Support Team**
 
 ---
 
@@ -160,8 +148,7 @@ Thank you for your attention to this matter,
 
 **Subject:** Action Needed: Pre-Dispatch Contacts Unresponsive for {{PM_Company_Name}}
 
-**To:** ALL PM Users
-**CC:** {{CSM_Name}}
+**To:** ALL PM Users **CC:** {{CSM_Name}}
 
 Hello {{PM_FirstName}},
 
@@ -169,18 +156,17 @@ We wanted to bring to your attention an issue regarding your **pre-dispatch cont
 
 To maintain efficient service, we advise reviewing your pre-dispatch contact list to ensure all information is accurate and up-to-date. Our team is ready to assist you with this review and make any necessary updates.
 
-**Recent Work Order Example:**
-{{Job_URL}}, {{Property_Address}}
+**Recent Work Order Example:** {{Job_URL}}, {{Property_Address}}
 
 **Unresponsive Pre-Dispatch Contacts:**
+
 {{PreDispatch_Contacts}}
 
 [More Info on Pre-Dispatch Contacts Here](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Send-Latchel-Pre-Dispatch-Instructions#setting-up-pre-dispatch-instructions-with-latchel)
 
 Please reply back to this email if these contacts have changed.
 
-Thank you for your attention to this matter,
-**Latchel Product Support Team**
+Thank you for your attention to this matter, **Latchel Product Support Team**
 
 ---
 
@@ -188,8 +174,7 @@ Thank you for your attention to this matter,
 
 **Subject:** Action Needed: Preferred Service Providers Unresponsive for {{PM_Company_Name}}
 
-**To:** ALL PM Users
-**CC:** {{CSM_Name}}
+**To:** ALL PM Users **CC:** {{CSM_Name}}
 
 Hello {{PM_FirstName}},
 
@@ -203,13 +188,12 @@ To avoid any potential service interruptions, we recommend verifying the contact
 2. Edit contact details by tapping in the phone number or email address box
 3. Add new information and click **Save**
 
-**Recent Work Order Example:**
-{{Job_URL}}, {{Property_Address}}
+**Recent Work Order Example:** {{Job_URL}}, {{Property_Address}}
 
 **Unresponsive Service Providers:**
+
 {{Service_Provider_Contacts}}
 
 Please reply to this email if you require assistance with this update or if you have any questions.
 
-Thank you for your understanding and cooperation,
-**Latchel Product Support Team**
+Thank you for your understanding and cooperation, **Latchel Product Support Team**
