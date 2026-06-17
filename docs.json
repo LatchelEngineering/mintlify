@@ -590,7 +590,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/Service Operations/service-operations-overview"
+              "latchel-admin/Service-Operations/service-operations-overview"
             ]
           },
           {
@@ -735,7 +735,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/Data Support Team/data-support-overview",
+              "latchel-admin/Data-Support-Team/data-support-overview",
               "latchel-admin/Data Support Team/Latchel-Data-Support-Tool-Guide",
               "latchel-admin/Data Support Team/account-creation-and-configuration-new-version",
               "latchel-admin/Data Support Team/account-update-flowchart",
@@ -828,7 +828,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/Customer Success Team/customer-success-overview"
+              "latchel-admin/Customer-Success-Team/customer-success-overview"
             ]
           },
           {
@@ -869,7 +869,7 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/Sales Team/sales-team-overview"
+              "latchel-admin/Sales-Team/sales-team-overview"
             ]
           },
           {
