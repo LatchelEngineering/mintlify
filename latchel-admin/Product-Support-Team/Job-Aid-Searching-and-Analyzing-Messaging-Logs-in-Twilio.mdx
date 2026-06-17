@@ -183,3 +183,17 @@ LIMIT 100
 - [Logs-Messaging-Twilio-Console-10-16-2024\_11\_13\_AM.png](attachments/3209691199/3209625643.png)
 - [Logs-Messaging-Twilio-Console-10-16-2024\_11\_13\_AM (1).png](attachments/3209691199/3209822242.png)
 - [Logs-Messaging-Twilio-Console-10-16-2024\_11\_16\_AM.png](attachments/3209691199/3209396293.png)
+
+```text
+SELECT *
+FROM conversation con
+JOIN conversation_member cm ON con.conversation_id = cm.conversation_id
+JOIN message m ON m.conversation_id = con.conversation_id
+WHERE 
+	cm.user_id = 1147871
+	AND m.created_at >'2024-10-06'
+	AND m.created_at <'2024-10-08'
+	AND m.status = 'failed'
+ORDER BY m.created_at DESC
+LIMIT 100
+```
