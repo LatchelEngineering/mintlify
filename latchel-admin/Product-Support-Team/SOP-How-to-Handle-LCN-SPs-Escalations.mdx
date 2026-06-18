@@ -38,7 +38,21 @@ Refer to: [How to Opt Out of the Latchel Contractor Network](https://help.latche
 
 If deletion fails, it means the payment method is **actively in use**.
 
-- Check portfolios and/or properties where LCN vendor payments are enabled. Queries to find where LCN is payment method is being used: `SELECT * from payment_method WHERE relation_id = 37645 -- replace with PM company Id AND relation_type = 'Latchel\Company'` `SELECT * from portfolio -- this can be replaced by property as well where pm_company_id = 37645 AND use_lcn_vendor_payments in ( ) -- list payment method ID's you want to find`
+- Check portfolios and/or properties where LCN vendor payments are enabled. Queries to find where LCN is payment method is being used: 
+
+```text
+SELECT * from payment_method
+WHERE relation_id = 37645 -- replace with PM company Id
+AND relation_type = 'Latchel\Company'
+```
+
+```text
+SELECT * from portfolio -- this can be replaced by property as well
+where pm_company_id = 37645
+AND use_lcn_vendor_payments in (
+) -- list payment method ID's you want to find
+```
+
 - Remove Usage - Temporarily **activate LCN (if needed)** to allow edits.
 - Remove the LCN payment method from:
   - Portfolios

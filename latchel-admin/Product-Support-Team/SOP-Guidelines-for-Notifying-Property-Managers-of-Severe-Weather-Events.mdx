@@ -21,7 +21,18 @@ title: "SOP: Guidelines for Notifying Property Managers of Severe Weather Events
 
 Once the Product Support team has been notified by the Product Support Manager that we will alert affected PM customers about an upcoming extreme weather event:
 
-1. Determine which PMs are affected. The following pgAdmin query returns all active units for all active customers by state. [This Loom video](https://www.loom.com/share/938542f5564e478ba58d9e93eba04d6c) provides an overview of how to use it in conjunction with [this worksheet](https://docs.google.com/spreadsheets/d/1SbRD_K00to64JdUhnhOlofOEi6u0HLjM4Gaw2SQTtD4/edit#gid=0) to identify which PMs should receive an email. `SELECT p.address1, p.city, p.state, p.pm_company_id AS company_id, c.name FROM property p LEFT JOIN company c ON c.company_id = p.pm_company_id WHERE p.is_active = 1 AND c.is_active = 1` The following query retrieves a list of emails for property manager users whose companies are located in specific states (see states in line 15). You can change the state abbreviations in the query based on where you need to focus your attention, such as specific weather-related events.
+1. Determine which PMs are affected. The following pgAdmin query returns all active units for all active customers by state. This Loom video provides an overview of how to use it in conjunction with [this worksheet](https://docs.google.com/spreadsheets/d/1SbRD_K00to64JdUhnhOlofOEi6u0HLjM4Gaw2SQTtD4/edit#gid=0) to identify which PMs should receive an email. 
+
+<iframe src="https://www.loom.com/embed/938542f5564e478ba58d9e93eba04d6c" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+```text
+SELECT p.address1, p.city, p.state, p.pm_company_id AS company_id, c.name
+FROM property p
+LEFT JOIN company c ON c.company_id = p.pm_company_id
+WHERE p.is_active = 1 AND c.is_active = 1
+```
+
+The following query retrieves a list of emails for property manager users whose companies are located in specific states (see states in line 15). You can change the state abbreviations in the query based on where you need to focus your attention, such as specific weather-related events.
 
 ```text
 SELECT distinct c.name as pm_co_name, u.name as user_name, con.value as email 

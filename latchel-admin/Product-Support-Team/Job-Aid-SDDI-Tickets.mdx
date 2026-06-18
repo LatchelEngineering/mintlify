@@ -136,8 +136,8 @@ All findings should be recorded directly on the **SDDI ticket** in Assembly. You
 - Document the **current stage** of the WO (e.g., Awaiting SP, Scheduled, In Progress, Completed, Cancelled).
 
 | **Scenario 1: Escalation for Open WOs** | **Scenario 2: Closed WOs** |
-| --- | --- |
-| If the WO is **open** and further action can address the complaint: - Escalate in the Slack channel ( `#ops_assistance_hub`) or assign the task to the responsible team. - Include:   - WO number and summary of the issue   - Resident or PM feedback   - Recommended next steps or required action - Clearly identify whether the **next steps fall under Latchel’s responsibility** or the **Property Manager’s responsibility**. - Ensure the issue is moved forward promptly. | If the WO is **closed**: - Review the WO timeline carefully, focusing on **key milestones** and **handoff points**. - Identify the **root cause** or any gaps that contributed to the low rating (e.g., delays, vendor errors, communication failures). - Document a **clear, high-level overview** of:   - What happened   - Where the process failed   - What could have been improved |
+| :-- | :-- |
+| If the WO is **open** and further action can address the complaint: <ul><li>Escalate in the Slack channel ( `#ops_assistance_hub`) or assign the task to the responsible team.</li><li>Include: <ul><li>WO number and summary of the issue</li><li>Resident or PM feedback</li><li>Recommended next steps or required action</li></ul></li><li>Clearly identify whether the **next steps fall under Latchel’s responsibility** or the **Property Manager’s responsibility**.</li><li>Ensure the issue is moved forward promptly.</li></ul> | If the WO is **closed**: <ul><li>Review the WO timeline carefully, focusing on **key milestones** and **handoff points**.</li><li>Identify the **root cause** or any gaps that contributed to the low rating (e.g., delays, vendor errors, communication failures).</li><li>Document a **clear, high-level overview** of: <ul><li>What happened</li><li>Where the process failed</li><li>What could have been improved</li></ul></li></ul> |
 
 ### **4. Communicate Findings**
 
@@ -167,8 +167,8 @@ Ensure the findings are:
 
 The team reviews both **rating** and **feedback content** to determine whether an SDDI is necessary. An investigation is required if the feedback meets any of the following:
 
-| **Type of Review** | **Actual Sample Comment** | **Coordination Score** | **Vendor Score** | **Why It Requires a Dive** |
-| --- | --- | --- | --- | --- |
+| **ype of Review** | **Actual Sample Comment** | **Coordination Score** | **Vendor Score** | **Why It Requires a Dive** |
+| :-- | :-- | :-- | :-- | :-- |
 | **Low rating with complaint** | _“There was a problem reaching Latchel via the preferred method but I was able to contact someone to assist with the washing machine. Mike from All American Appliance was great in solving the problem with the washing machine.”_ | 3 | 5 | There’s an identified **communication gap** despite vendor resolution. Review response times and escalation handling. |
 | **High rating but negative comment** | _“My request took over two weeks to be resolved. Latchel is unhelpful.”_ | 4 | 4 | Even though the rating is above 3, the **feedback indicates dissatisfaction**. Investigate delays or process failures. |
 | **Low rating with positive comment** | _“The vendor came quickly, got the job done immediately! But the agent I spoke with was rude!”_ | 3 | 3 | The vendor performed well but the **Latchel interaction caused dissatisfaction**. Review agent behavior, scripting, or communication handling. |
@@ -235,6 +235,6 @@ Avoid deep diving into matters that **do not directly involve Latchel** or lack 
   title="3644358683"
 />
 
-<Warning>
-  For **ON-CALL customers**, we do NOT need to dive into poor reviews **from residents**. We should **only** dive into poor reviews **from Property Managers** to ensure there isn’t an issue with our automation.
-</Warning>
+<Danger>
+  For **ON-CALL customers**, we do NOT need to dive into poor reviews **from residents.** We should only dive into poor reviews **from Property Managers** to ensure there isn’t an issue with our automation.
+</Danger>
