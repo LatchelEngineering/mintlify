@@ -18,7 +18,9 @@ By the end, you should be able to:
 - Answer the most common API questions without escalating
 - Know exactly when something genuinely needs an engineer
 
-**How to use:** Read Parts 1–2 once to build your foundation. Use Parts 3–4 as an ongoing lookup reference. Keep Part 5 (the question framework) bookmarked — it’s your step-by-step process for any new scenario.
+<Check>
+  **How to use:** Read Parts 1–2 once to build your foundation. Use Parts 3–4 as an ongoing lookup reference. Keep Part 5 (the question framework) bookmarked — it’s your step-by-step process for any new scenario.
+</Check>
 
 # Part 2: API 101 — Core Concepts
 
@@ -44,7 +46,9 @@ Latchel’s PAPI is a REST API. This means requests are made over the web using 
 | **PATCH** | Partially update an existing record — change just one or two fields. |
 | **DELETE** | Remove a record permanently. |
 
-**Support tip:** Most customer questions are about GET requests — they want to read data out of Latchel. If a customer asks how to pull a list of something, it’s always a GET.
+<Tip>
+  **Support tip:** Most customer questions are about GET requests — they want to read data out of Latchel. If a customer asks how to pull a list of something, it’s always a GET.
+</Tip>
 
 ## 2.3 What is an Endpoint?
 
@@ -85,7 +89,9 @@ Important things to know:
 | `Retry-After` | How many seconds to wait before retrying |
 | `X-RateLimit-Reset` | The exact timestamp when the window resets |
 
-**Support tip:** If a customer reports 429 errors, ask how many requests per minute they’re making. Advise them to add delays between batches or spread the sync over time.
+<Tip>
+  **Support tip:** If a customer reports 429 errors, ask how many requests per minute they’re making. Advise them to add delays between batches or spread the sync over time.
+</Tip>
 
 ## 2.7 Pagination
 
@@ -143,7 +149,9 @@ Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfol
 7. Read the Response section to confirm what fields are returned
 8. Share the relevant endpoint URL with the customer
 
-**Pro tip:** Use Ctrl\+F on the docs page and search for a keyword (e.g., “status”, “invoice”). The docs are one long scrollable page.
+<Tip>
+  **Pro tip:** Use Ctrl\+F on the docs page and search for a keyword (e.g., “status”, “invoice”). The docs are one long scrollable page.
+</Tip>
 
 # Part 4: Full Endpoint Reference
 
@@ -158,7 +166,9 @@ Endpoints about the API user’s company account and users within it.
 | GET | `/me` | Returns details about the authenticated company. Use this to confirm API key is working. |
 | GET | `/company/users` | Lists all users within the company account. |
 
-**Common question:** “How can I confirm my API key is working?” — Have them call GET /me. A successful response confirms authentication.
+<Note>
+  **Common question:** “How can I confirm my API key is working?” — Have them call GET /me. A successful response confirms authentication.
+</Note>
 
 ## 4.2 Jobs (Work Orders)
 
@@ -174,7 +184,9 @@ Endpoints for creating, reading, and managing work orders (called Jobs in the AP
 | POST | `/jobs/{job_id}/approve` | Approve a job (e.g., approve a bid or budget). |
 | POST | `/jobs/{job_id}/deny` | Deny a job approval request. |
 
-**Common question:** “Can I pull all our work orders via API?” — Yes, GET /jobs. Use pagination for large accounts and filters to narrow results.
+<Note>
+  **Common question:** “Can I pull all our work orders via API?” — Yes, GET /jobs. Use pagination for large accounts and filters to narrow results.
+</Note>
 
 ## 4.3 Job Files
 
@@ -195,7 +207,9 @@ Endpoint for accessing the status change history (audit trail) of a work order.
 | --- | --- | --- |
 | GET | `/jobs/{job_id}/history/state` | Returns a log of all status transitions for a specific job. |
 
-**Common question:** “Can we see the full timeline of a work order?” — Yes, GET /jobs/{job_id}/history/state returns the full state history.
+<Note>
+  **Common question:** “Can we see the full timeline of a work order?” — Yes, GET /jobs/{job_id}/history/state returns the full state history.
+</Note>
 
 ## 4.5 Locations
 
@@ -222,7 +236,9 @@ Endpoint for accessing the status change history (audit trail) of a work order.
 | GET | `/tenants/{user_id}` | Get details of a specific tenant. |
 | PUT | `/tenants/{user_id}` | Update a tenant’s details. |
 
-**Common question:** “Can we sync our resident list to our CRM?” — Yes, GET /tenants returns all resident records.
+<Note>
+  **Common question:** “Can we sync our resident list to our CRM?” — Yes, GET /tenants returns all resident records.
+</Note>
 
 ## 4.8 Payment Methods
 
@@ -306,7 +322,9 @@ Endpoint for accessing the status change history (audit trail) of a work order.
 | GET | `/problems` | List all problems. |
 | GET | `/problems/{problem_id}` | Get details of a specific problem. |
 
-**Tip:** Categories → Issues → Problems is the hierarchy Latchel uses to classify maintenance. A customer creating jobs via API needs to understand this chain to assign the correct classification.
+<Tip>
+  **Tip:** Categories → Issues → Problems is the hierarchy Latchel uses to classify maintenance. A customer creating jobs via API needs to understand this chain to assign the correct classification.
+</Tip>
 
 ## 4.16 Vendor Service Territories
 
@@ -336,7 +354,9 @@ Supported webhook events:
 
 Webhook documentation is separate from PAPI and is available in the Help Center (search “Webhooks”).
 
-**Common question:** “Do you support webhooks so we don’t have to poll the API?” — Yes, for Jobs, Portfolios, and Tenants. Direct customers to the webhook docs in the Help Center.
+<Note>
+  **Common question:** “Do you support webhooks so we don’t have to poll the API?” — Yes, for Jobs, Portfolios, and Tenants. Direct customers to the webhook docs in the Help Center.
+</Note>
 
 # Part 5: The Framework — Answering Any API Question
 
