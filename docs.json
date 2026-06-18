@@ -603,16 +603,6 @@
             "pages": [
               "latchel-admin/Product-Support-Team/product-support-overview",
               "latchel-admin/Product-Support-Team/Product-Support-Customer-Tenets",
-              {
-                "group": "Product Support Team vs Customer Success Managers",
-                "pages": [
-                  "latchel-admin/Product-Support-Team/Product-Support-Team-vs-Customer-Success-Managers",
-                  "latchel-admin/Product-Support-Team/How-to-Handle-Autopilot-PM-Explanation",
-                  "latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM",
-                  "latchel-admin/Product-Support-Team/SOP-Account-Termination-Steps",
-                  "latchel-admin/Product-Support-Team/How-to-Subscription-Upgrade"
-                ]
-              },
               "latchel-admin/Product-Support-Team/Product-Support-Team-vs-Ops-Agents",
               "latchel-admin/Product-Support-Team/Product-Support-PS-New-Hire-Setup",
               {
@@ -690,13 +680,7 @@
               },
               {
                 "group": "Account Settings",
-                "pages": [
-                  "latchel-admin/Product-Support-Team/Account-Settings",
-                  "latchel-admin/Product-Support-Team/How-to-Report-Issues-with-the-Latchel-Help-Center",
-                  "latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests",
-                  "latchel-admin/Product-Support-Team/How-to-Handle-PM-Account-Updates",
-                  "latchel-admin/Product-Support-Team/How-to-Build-Reports-via-the-Analytics-Dashboard"
-                ]
+                "pages": []
               },
               {
                 "group": "Job Aid: Integration Functionality, Troubleshooting, and Setup Steps",
@@ -844,14 +828,6 @@
                 "group": "Latchel Integrations Wiki",
                 "pages": [
                   "latchel-admin/product-engineering-team/latchel-integrations-wiki/latchel-integrations-wiki",
-                  {
-                    "group": "Appfolio Reference Guides",
-                    "pages": [
-                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/appfolio-reference-guide",
-                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/failed-work-order-syncs",
-                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/communication-guidelines-appfolio"
-                    ]
-                  },
                   "latchel-admin/product-engineering-team/latchel-integrations-wiki/buildium-reference-guide",
                   "latchel-admin/product-engineering-team/latchel-integrations-wiki/propertyware-reference-guide",
                   "latchel-admin/product-engineering-team/latchel-integrations-wiki/rentvine-reference-guide",
@@ -882,19 +858,6 @@
             "pages": [
               "latchel-admin/Latchel-People-Ops/latchel-people-ops-home",
               "latchel-admin/Latchel-People-Ops/latchel-handbook",
-              {
-                "group": "Latchel Policies and Procedures",
-                "pages": [
-                  "latchel-admin/Latchel-People-Ops/latchel-policies-and-procedures",
-                  "latchel-admin/Latchel-People-Ops/lpo-code-of-conduct",
-                  "latchel-admin/Latchel-People-Ops/staffing-approval-hiring-policy",
-                  "latchel-admin/Latchel-People-Ops/referral-policy-and-procedure",
-                  "latchel-admin/Latchel-People-Ops/remote-work-policy",
-                  "latchel-admin/Latchel-People-Ops/sales-commission-payout-policy",
-                  "latchel-admin/Latchel-People-Ops/nondiscrimination-anti-harassment-policy",
-                  "latchel-admin/Latchel-People-Ops/team-member-complaint-procedure"
-                ]
-              },
               {
                 "group": "Policy: Employee Time and Attendance",
                 "pages": [
