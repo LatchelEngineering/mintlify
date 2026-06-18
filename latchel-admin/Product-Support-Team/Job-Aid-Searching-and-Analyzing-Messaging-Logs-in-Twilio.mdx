@@ -34,9 +34,10 @@ title: "Job Aid: Searching and Analyzing Messaging Logs in Twilio"
 - Click **“Messaging”** to open the full list of message logs.
 
 <img
-  src="attachments/3209691199/3209625643.png?width=760"
-  alt="Logs-Messaging-Twilio-Console-10-16-2024_11_13_AM.png"
+  src="/images/3209625643.png"
+  alt="3209625643"
   width="760"
+  title="3209625643"
 />
 
 ---
@@ -46,9 +47,10 @@ title: "Job Aid: Searching and Analyzing Messaging Logs in Twilio"
 You can filter and search messaging logs based on specific criteria to locate relevant message details quickly.
 
 <img
-  src="attachments/3209691199/3209822242.png?width=760"
-  alt="Logs-Messaging-Twilio-Console-10-16-2024_11_13_AM (1).png"
+  src="/images/3209822242.png"
+  alt="3209822242"
   width="760"
+  title="3209822242"
 />
 
 #### **1. Search by Date Range**
@@ -123,9 +125,10 @@ Once the relevant logs are retrieved, you’ll be able to see detailed informati
 ### **Practical Example of Log Interpretation**
 
 <img
-  src="attachments/3209691199/3209396293.png?width=760"
-  alt="Logs-Messaging-Twilio-Console-10-16-2024_11_16_AM.png"
+  src="/images/3209396293.png"
+  alt="3209396293"
   width="760"
+  title="3209396293"
 />
 
 Here’s an example of how you would interpret a messaging log:
@@ -163,26 +166,6 @@ Here’s an example of how you would interpret a messaging log:
 
   See this real life scenario as an example: [https://www.loom.com/share/e872a0325c5a461cb2d420abb4c01792?sid=51fd3aae-db65-4cb1-be97-97699495db76](https://www.loom.com/share/e872a0325c5a461cb2d420abb4c01792?sid=51fd3aae-db65-4cb1-be97-97699495db76) [https://latchel.slack.com/archives/C01SF43DPEE/p1729015050979409](https://latchel.slack.com/archives/C01SF43DPEE/p1729015050979409)
 </Info>
-
-```text
-SELECT *
-FROM conversation con
-JOIN conversation_member cm ON con.conversation_id = cm.conversation_id
-JOIN message m ON m.conversation_id = con.conversation_id
-WHERE 
-	cm.user_id = 1147871
-	AND m.created_at >'2024-10-06'
-	AND m.created_at <'2024-10-08'
-	AND m.status = 'failed'
-ORDER BY m.created_at DESC
-LIMIT 100
-```
-
-## Attachments
-
-- [Logs-Messaging-Twilio-Console-10-16-2024\_11\_13\_AM.png](attachments/3209691199/3209625643.png)
-- [Logs-Messaging-Twilio-Console-10-16-2024\_11\_13\_AM (1).png](attachments/3209691199/3209822242.png)
-- [Logs-Messaging-Twilio-Console-10-16-2024\_11\_16\_AM.png](attachments/3209691199/3209396293.png)
 
 ```text
 SELECT *
