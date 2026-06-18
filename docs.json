@@ -81,6 +81,24 @@
                 ]
               },
               {
+                "group": "Account Settings",
+                "public": true,
+                "pages": [
+                  "s/topic/0TO5e000000h9wqGAA/Account-Settings-Overview",
+                  "s/topic/0TO5e000000h9wqGAA/Adding-Your-Company-Address",
+                  "s/topic/0TO5e000000h9wqGAA/Self-Signup-Latchel-Standard",
+                  "s/topic/0TO5e000000h9wqGAA/How-to-view-your-Latchel-Assigned-Phone-Number",
+                  "s/topic/0TO5e000000h9wqGAA/How-to-Manage-My-Own-Invoice-Notification-Settings",
+                  "s/topic/0TO5e000000h9wqGAA/How-to-Configure-a-Property-with-Default-Access-Instructions",
+                  "s/topic/0TO5e000000h9wqGAA/Configuring-Portal-Settings",
+                  "s/topic/0TO5e000000h9wqGAA/Customize-Resident-Review-URL",
+                  "s/topic/0TO5e000000h9wqGAA/How-to-Customize-Work-Order-Budget-Limits",
+                  "s/topic/0TO5e000000h9wqGAA/How-Emergency-Temperature-and-Severity-Settings-Work-Together",
+                  "s/topic/0TO5e000000h9wqGAA/How-to-Add-Emergency-Temperature-Thresholds",
+                  "s/topic/0TO5e000000h9wqGAA/Set-Up-Non-Emergency-Schedule"
+                ]
+              },
+              {
                 "group": "Data Management & Configurations",
                 "public": true,
                 "pages": [
@@ -560,13 +578,8 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "groups": [
-              {
-                "group": "Latchel Admin",
-                "pages": [
-                  "latchel-admin/latchel-admin"
-                ]
-              }
+            "pages": [
+              "latchel-admin/latchel-admin"
             ]
           },
           {
@@ -576,13 +589,8 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "groups": [
-              {
-                "group": "Service Operations",
-                "pages": [
-                  "latchel-admin/Service-Operations/service-operations-overview"
-                ]
-              }
+            "pages": [
+              "latchel-admin/Service-Operations/service-operations-overview"
             ]
           },
           {
@@ -592,30 +600,132 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "groups": [
+            "pages": [
+              "latchel-admin/Product-Support-Team/product-support-overview",
+              "latchel-admin/Product-Support-Team/Product-Support-Customer-Tenets",
               {
-                "group": "Product Support Team",
+                "group": "Product Support Team vs Customer Success Managers",
                 "pages": [
-                  "latchel-admin/Product-Support-Team/product-support-overview",
-                  "latchel-admin/Product-Support-Team/Product-Support-Customer-Tenets",
+                  "latchel-admin/Product-Support-Team/Product-Support-Team-vs-Customer-Success-Managers",
+                  "latchel-admin/Product-Support-Team/How-to-Handle-Autopilot-PM-Explanation",
+                  "latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM",
+                  "latchel-admin/Product-Support-Team/SOP-Account-Termination-Steps",
+                  "latchel-admin/Product-Support-Team/How-to-Subscription-Upgrade"
+                ]
+              },
+              "latchel-admin/Product-Support-Team/Product-Support-Team-vs-Ops-Agents",
+              "latchel-admin/Product-Support-Team/Product-Support-PS-New-Hire-Setup",
+              {
+                "group": "Product Support Deep Dive Management",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management",
+                  "latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process",
+                  "latchel-admin/Product-Support-Team/Job-Aid-PS-DD-and-SDDI-Category-Matrix",
+                  "latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request",
+                  "latchel-admin/Product-Support-Team/Job-Aid-Searching-and-Analyzing-Messaging-Logs-in-Twilio"
+                ]
+              },
+              {
+                "group": "Job Aid: SDDI Tickets",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets",
+                  "latchel-admin/Product-Support-Team/SOP-How-to-Deep-Dive-Google-Reviews",
+                  "latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE"
+                ]
+              },
+              {
+                "group": "Product Support ASM Ticket Management",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/Product-Support-ASM-Ticket-Management",
+                  "latchel-admin/Product-Support-Team/Job-Aid-Interaction-Tags-Explained",
                   {
-                    "group": "Product Support Team vs Customer Success Managers",
+                    "group": "Job Aid: Slack Channels & Escalation Workflows",
                     "pages": [
-                      "latchel-admin/Product-Support-Team/Product-Support-Team-vs-Customer-Success-Managers",
-                      "latchel-admin/Product-Support-Team/How-to-Handle-Autopilot-PM-Explanation",
-                      "latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM",
-                      "latchel-admin/Product-Support-Team/SOP-Account-Termination-Steps",
-                      "latchel-admin/Product-Support-Team/How-to-Subscription-Upgrade"
+                      "latchel-admin/Product-Support-Team/Job-Aid-Slack-Channels-Escalation-Workflows",
+                      "latchel-admin/Product-Support-Team/Job-Aid-Tech-High-Sev-Framework"
                     ]
                   },
-                  "latchel-admin/Product-Support-Team/Product-Support-Team-vs-Ops-Agents",
-                  "latchel-admin/Product-Support-Team/Product-Support-PS-New-Hire-Setup",
-                  "latchel-admin/Product-Support-Team/SOP-Escalating-Legal-Concerns",
-                  "latchel-admin/Product-Support-Team/SOP-Guidelines-for-Notifying-Property-Managers-of-Severe-Weather-Events",
-                  "latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes",
-                  "latchel-admin/Product-Support-Team/Latchel-Partner-API-Fluency-Guide-for-Support-Teams"
+                  "latchel-admin/Product-Support-Team/Job-Aid-Assembly-Case-Automation-Explained",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-New-Ticket-in-Product-Support",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations",
+                  "latchel-admin/Product-Support-Team/SOP-Latchel-Department-Escalation-Process-for-Product-Support-Cases",
+                  "latchel-admin/Product-Support-Team/SOP-Managing-Unresponsive-Property-Managers-in-Case-Management",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-RentRedi-Cases",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-Nomad-Cases",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-Non-RentRedi-or-Non-Nomad-Owner-Cases",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-Subscription-Billing-Inquiries",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-Resident-Cases",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-Service-Provider-SP-Cases",
+                  "latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support",
+                  "latchel-admin/Product-Support-Team/SOP-Sending-Proactive-Failed-Escalation-Emails"
                 ]
-              }
+              },
+              {
+                "group": "SOP: PS CX Audit Process",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/SOP-PS-CX-Audit-Process",
+                  "latchel-admin/Product-Support-Team/PS-CX-Audit-Guidelines"
+                ]
+              },
+              "latchel-admin/Product-Support-Team/SOP-Escalating-Legal-Concerns",
+              {
+                "group": "SOP: Pre-Dispatch Instructions & Critical Notes",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/SOP-Pre-Dispatch-Instructions-Critical-Notes",
+                  "latchel-admin/Product-Support-Team/How-to-Request-Pre-Dispatch-Instruction-andor-Critical-Note-Approval"
+                ]
+              },
+              "latchel-admin/Product-Support-Team/SOP-Guidelines-for-Notifying-Property-Managers-of-Severe-Weather-Events",
+              "latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes",
+              {
+                "group": "Work Orders",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/Work-Orders",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-Outbound-Communication-Inquiries",
+                  "latchel-admin/Product-Support-Team/SOP-How-to-Handle-LVN-Escalations",
+                  "latchel-admin/Product-Support-Team/SOP-How-to-Handle-LCN-SPs-Escalations",
+                  "latchel-admin/Product-Support-Team/Job-Aid-Requesting-ClarificationAnswering-General-Work-Order-Question",
+                  "latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Complaints-from-Property-Managers"
+                ]
+              },
+              {
+                "group": "Account Settings",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/Account-Settings",
+                  "latchel-admin/Product-Support-Team/How-to-Report-Issues-with-the-Latchel-Help-Center",
+                  "latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests",
+                  "latchel-admin/Product-Support-Team/How-to-Handle-PM-Account-Updates",
+                  "latchel-admin/Product-Support-Team/How-to-Build-Reports-via-the-Analytics-Dashboard"
+                ]
+              },
+              {
+                "group": "Job Aid: Integration Functionality, Troubleshooting, and Setup Steps",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/Job-Aid-Integration-Functionality-Troubleshooting-and-Setup-Steps",
+                  "latchel-admin/Product-Support-Team/Propertyware-Integration-Troubleshooting-Invalid-Building-ID-Errors",
+                  "latchel-admin/Product-Support-Team/SOP-Running-AppFolio-Sync-on-Behalf-of-Customers"
+                ]
+              },
+              {
+                "group": "Portal Access",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/Job-Aid-Handling-User-Login-Issues",
+                  "latchel-admin/Product-Support-Team/Job-Aid-How-to-Locate-Public-Dashboard-URLs"
+                ]
+              },
+              {
+                "group": "Latchel Resident Benefits",
+                "pages": [
+                  "latchel-admin/Product-Support-Team/Latchel-Resident-Benefits",
+                  {
+                    "group": "SOP: Benefits & Partnerships - How to Handle Customer Inquiries",
+                    "pages": [
+                      "latchel-admin/Product-Support-Team/SOP-Benefits-Partnerships---How-to-Handle-Customer-Inquiries"
+                    ]
+                  }
+                ]
+              },
+              "latchel-admin/Product-Support-Team/Latchel-Partner-API-Fluency-Guide-for-Support-Teams"
             ]
           },
           {
@@ -625,94 +735,89 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "groups": [
-              {
-                "group": "Data Support Team",
-                "pages": [
-                  "latchel-admin/Data-Support-Team/data-support-overview",
-                  "latchel-admin/Data Support Team/Latchel-Data-Support-Tool-Guide",
-                  "latchel-admin/Data Support Team/account-creation-and-configuration-new-version",
-                  "latchel-admin/Data Support Team/account-update-flowchart",
-                  "latchel-admin/Data Support Team/assembly-ticket-workflow-on-bulk-update-requests",
-                  "latchel-admin/Data Support Team/assembly",
-                  "latchel-admin/Data Support Team/calibration-guidelines-help-guide-audit",
-                  "latchel-admin/Data Support Team/calibration-guidelines-task-share-audit",
-                  "latchel-admin/Data Support Team/completing-rentredi-and-nomad-casetickets",
-                  "latchel-admin/Data Support Team/configuring-on-call-technicians",
-                  "latchel-admin/Data Support Team/cs-how-to-export-service-provider-information-appfolio",
-                  "latchel-admin/Data Support Team/cs-teamdata-support-job-aid-the-data-migration-project",
-                  "latchel-admin/Data Support Team/csadmin-how-to-create-configure-a-portfolio",
-                  "latchel-admin/Data Support Team/cutomer-data-collection",
-                  "latchel-admin/Data Support Team/data-migration-integration-activation-guide",
-                  "latchel-admin/Data Support Team/data-support-associate-interview-guide",
-                  "latchel-admin/Data Support Team/data-support-associates-performance-rating-and-team-metric-goals",
-                  "latchel-admin/Data Support Team/data-support-how-to-handle-assembly-tickets",
-                  "latchel-admin/Data Support Team/data-support-quality-audit",
-                  "latchel-admin/Data Support Team/data-support-requests-for-leonardo-247-customer",
-                  "latchel-admin/Data Support Team/data-support-requests",
-                  "latchel-admin/Data Support Team/data-support-team",
-                  "latchel-admin/Data Support Team/data-support-teams-task-cadence-and-prioritization",
-                  "latchel-admin/Data Support Team/failed-work-order-sync-process",
-                  "latchel-admin/Data Support Team/guidelines-for-creating-knowledge-articles-for-help-center",
-                  "latchel-admin/Data Support Team/help-guide-directory",
-                  "latchel-admin/Data Support Team/how-to-access-the-property-manager-profile-page",
-                  "latchel-admin/Data Support Team/how-to-add-default-access-instructions",
-                  "latchel-admin/Data Support Team/how-to-add-pre-dispatch-instructions",
-                  "latchel-admin/Data Support Team/how-to-add-properties-in-the-latchel-console-to-a-new-account",
-                  "latchel-admin/Data Support Team/how-to-check-the-property-managers-active-integration",
-                  "latchel-admin/Data Support Team/how-to-collect-severity-responsibility-pre-approval-definitions-from-customer",
-                  "latchel-admin/Data Support Team/how-to-complete-automated-reports",
-                  "latchel-admin/Data Support Team/how-to-complete-new-latchel-preferred-vendor-request-from-rentredi",
-                  "latchel-admin/Data Support Team/how-to-complete-new-nomad-owner-details-for-latchel",
-                  "latchel-admin/Data Support Team/how-to-configure-customer-profile-information-details-page-in-latchel-admin",
-                  "latchel-admin/Data Support Team/how-to-configure-owner-and-communication-preferences",
-                  "latchel-admin/Data Support Team/how-to-configure-preferred-service-provider-to-a-new-account",
-                  "latchel-admin/Data Support Team/how-to-create-a-custom-view",
-                  "latchel-admin/Data Support Team/how-to-create-a-customer-group",
-                  "latchel-admin/Data Support Team/how-to-create-publish-help-guides",
-                  "latchel-admin/Data Support Team/how-to-enter-property-management-members-information",
-                  "latchel-admin/Data Support Team/how-to-enter-property-management-payment-information",
-                  "latchel-admin/Data Support Team/how-to-export-and-import-data-from-buildium",
-                  "latchel-admin/Data Support Team/how-to-export-and-import-property-data-from-propertyware",
-                  "latchel-admin/Data Support Team/how-to-export-and-import-service-provider-data-from-propertyware",
-                  "latchel-admin/Data Support Team/how-to-gather-company-information",
-                  "latchel-admin/Data Support Team/how-to-handle-account-update-request-for-optional-benefits-customers",
-                  "latchel-admin/Data Support Team/how-to-handle-a-task-assigned-to-me-in-the-task-share-program",
-                  "latchel-admin/Data Support Team/how-to-handle-property-and-resident-information-update",
-                  "latchel-admin/Data Support Team/how-to-handle-property-manager-specific-files",
-                  "latchel-admin/Data Support Team/how-to-integrate-a-slack-channel-in-assembly",
-                  "latchel-admin/Data Support Team/how-to-merge-duplicate-properties",
-                  "latchel-admin/Data Support Team/how-to-process-new-service-provider-requests-for-nomad",
-                  "latchel-admin/Data Support Team/how-to-request-a-new-help-guide",
-                  "latchel-admin/Data Support Team/how-to-submit-an-account-update-request",
-                  "latchel-admin/Data Support Team/how-to-submit-an-active-unit-adjustment-request",
-                  "latchel-admin/Data Support Team/job-aid-featured-help-guide-of-the-week",
-                  "latchel-admin/Data Support Team/job-aid-general-ledger-reports-audit-checklist",
-                  "latchel-admin/Data Support Team/job-aid-how-the-task-share-program-works",
-                  "latchel-admin/Data Support Team/job-aid-review-process-for-published-help-guides",
-                  "latchel-admin/Data Support Team/job-aid-task-share-jira-improved-process",
-                  "latchel-admin/Data Support Team/latchel-brand-colors",
-                  "latchel-admin/Data Support Team/latchel-help-center",
-                  "latchel-admin/Data Support Team/monthly-gl-report-instructions-buildium",
-                  "latchel-admin/Data Support Team/on-call-productpackage-setup",
-                  "latchel-admin/Data Support Team/on-call-rotations-admin-guides",
-                  "latchel-admin/Data Support Team/plugin-failed-sync-data-support-process",
-                  "latchel-admin/Data Support Team/pm-help-guides-and-subcategories",
-                  "latchel-admin/Data Support Team/product-feature-guideline-sync-failure-handling-system",
-                  "latchel-admin/Data Support Team/product-releases-help-guide-process-and-monitoring",
-                  "latchel-admin/Data Support Team/resident-help-guides",
-                  "latchel-admin/Data Support Team/service-provider-help-guides",
-                  "latchel-admin/Data Support Team/sop-handling-service-provider-payment-issue-escalations",
-                  "latchel-admin/Data Support Team/steps-to-submit-a-data-support-ticket",
-                  "latchel-admin/Data Support Team/sync-failure-handling-scenario",
-                  "latchel-admin/Data Support Team/task-share-program",
-                  "latchel-admin/Data Support Team/task-share-program-standardized-task-titles",
-                  "latchel-admin/Data Support Team/team-homepage",
-                  "latchel-admin/Data Support Team/team-onboarding-plans",
-                  "latchel-admin/Data Support Team/technical-success-team",
-                  "latchel-admin/Data Support Team/weekly-meeting-notes"
-                ]
-              }
+            "pages": [
+              "latchel-admin/Data-Support-Team/data-support-overview",
+              "latchel-admin/Data Support Team/Latchel-Data-Support-Tool-Guide",
+              "latchel-admin/Data Support Team/account-creation-and-configuration-new-version",
+              "latchel-admin/Data Support Team/account-update-flowchart",
+              "latchel-admin/Data Support Team/assembly-ticket-workflow-on-bulk-update-requests",
+              "latchel-admin/Data Support Team/assembly",
+              "latchel-admin/Data Support Team/calibration-guidelines-help-guide-audit",
+              "latchel-admin/Data Support Team/calibration-guidelines-task-share-audit",
+              "latchel-admin/Data Support Team/completing-rentredi-and-nomad-casetickets",
+              "latchel-admin/Data Support Team/configuring-on-call-technicians",
+              "latchel-admin/Data Support Team/cs-how-to-export-service-provider-information-appfolio",
+              "latchel-admin/Data Support Team/cs-teamdata-support-job-aid-the-data-migration-project",
+              "latchel-admin/Data Support Team/csadmin-how-to-create-configure-a-portfolio",
+              "latchel-admin/Data Support Team/cutomer-data-collection",
+              "latchel-admin/Data Support Team/data-migration-integration-activation-guide",
+              "latchel-admin/Data Support Team/data-support-associate-interview-guide",
+              "latchel-admin/Data Support Team/data-support-associates-performance-rating-and-team-metric-goals",
+              "latchel-admin/Data Support Team/data-support-how-to-handle-assembly-tickets",
+              "latchel-admin/Data Support Team/data-support-quality-audit",
+              "latchel-admin/Data Support Team/data-support-requests-for-leonardo-247-customer",
+              "latchel-admin/Data Support Team/data-support-requests",
+              "latchel-admin/Data Support Team/data-support-team",
+              "latchel-admin/Data Support Team/data-support-teams-task-cadence-and-prioritization",
+              "latchel-admin/Data Support Team/failed-work-order-sync-process",
+              "latchel-admin/Data Support Team/guidelines-for-creating-knowledge-articles-for-help-center",
+              "latchel-admin/Data Support Team/help-guide-directory",
+              "latchel-admin/Data Support Team/how-to-access-the-property-manager-profile-page",
+              "latchel-admin/Data Support Team/how-to-add-default-access-instructions",
+              "latchel-admin/Data Support Team/how-to-add-pre-dispatch-instructions",
+              "latchel-admin/Data Support Team/how-to-add-properties-in-the-latchel-console-to-a-new-account",
+              "latchel-admin/Data Support Team/how-to-check-the-property-managers-active-integration",
+              "latchel-admin/Data Support Team/how-to-collect-severity-responsibility-pre-approval-definitions-from-customer",
+              "latchel-admin/Data Support Team/how-to-complete-automated-reports",
+              "latchel-admin/Data Support Team/how-to-complete-new-latchel-preferred-vendor-request-from-rentredi",
+              "latchel-admin/Data Support Team/how-to-complete-new-nomad-owner-details-for-latchel",
+              "latchel-admin/Data Support Team/how-to-configure-customer-profile-information-details-page-in-latchel-admin",
+              "latchel-admin/Data Support Team/how-to-configure-owner-and-communication-preferences",
+              "latchel-admin/Data Support Team/how-to-configure-preferred-service-provider-to-a-new-account",
+              "latchel-admin/Data Support Team/how-to-create-a-custom-view",
+              "latchel-admin/Data Support Team/how-to-create-a-customer-group",
+              "latchel-admin/Data Support Team/how-to-create-publish-help-guides",
+              "latchel-admin/Data Support Team/how-to-enter-property-management-members-information",
+              "latchel-admin/Data Support Team/how-to-enter-property-management-payment-information",
+              "latchel-admin/Data Support Team/how-to-export-and-import-data-from-buildium",
+              "latchel-admin/Data Support Team/how-to-export-and-import-property-data-from-propertyware",
+              "latchel-admin/Data Support Team/how-to-export-and-import-service-provider-data-from-propertyware",
+              "latchel-admin/Data Support Team/how-to-gather-company-information",
+              "latchel-admin/Data Support Team/how-to-handle-account-update-request-for-optional-benefits-customers",
+              "latchel-admin/Data Support Team/how-to-handle-a-task-assigned-to-me-in-the-task-share-program",
+              "latchel-admin/Data Support Team/how-to-handle-property-and-resident-information-update",
+              "latchel-admin/Data Support Team/how-to-handle-property-manager-specific-files",
+              "latchel-admin/Data Support Team/how-to-integrate-a-slack-channel-in-assembly",
+              "latchel-admin/Data Support Team/how-to-merge-duplicate-properties",
+              "latchel-admin/Data Support Team/how-to-process-new-service-provider-requests-for-nomad",
+              "latchel-admin/Data Support Team/how-to-request-a-new-help-guide",
+              "latchel-admin/Data Support Team/how-to-submit-an-account-update-request",
+              "latchel-admin/Data Support Team/how-to-submit-an-active-unit-adjustment-request",
+              "latchel-admin/Data Support Team/job-aid-featured-help-guide-of-the-week",
+              "latchel-admin/Data Support Team/job-aid-general-ledger-reports-audit-checklist",
+              "latchel-admin/Data Support Team/job-aid-how-the-task-share-program-works",
+              "latchel-admin/Data Support Team/job-aid-review-process-for-published-help-guides",
+              "latchel-admin/Data Support Team/job-aid-task-share-jira-improved-process",
+              "latchel-admin/Data Support Team/latchel-brand-colors",
+              "latchel-admin/Data Support Team/latchel-help-center",
+              "latchel-admin/Data Support Team/monthly-gl-report-instructions-buildium",
+              "latchel-admin/Data Support Team/on-call-productpackage-setup",
+              "latchel-admin/Data Support Team/on-call-rotations-admin-guides",
+              "latchel-admin/Data Support Team/plugin-failed-sync-data-support-process",
+              "latchel-admin/Data Support Team/pm-help-guides-and-subcategories",
+              "latchel-admin/Data Support Team/product-feature-guideline-sync-failure-handling-system",
+              "latchel-admin/Data Support Team/product-releases-help-guide-process-and-monitoring",
+              "latchel-admin/Data Support Team/resident-help-guides",
+              "latchel-admin/Data Support Team/service-provider-help-guides",
+              "latchel-admin/Data Support Team/sop-handling-service-provider-payment-issue-escalations",
+              "latchel-admin/Data Support Team/steps-to-submit-a-data-support-ticket",
+              "latchel-admin/Data Support Team/sync-failure-handling-scenario",
+              "latchel-admin/Data Support Team/task-share-program",
+              "latchel-admin/Data Support Team/task-share-program-standardized-task-titles",
+              "latchel-admin/Data Support Team/team-homepage",
+              "latchel-admin/Data Support Team/team-onboarding-plans",
+              "latchel-admin/Data Support Team/technical-success-team",
+              "latchel-admin/Data Support Team/weekly-meeting-notes"
             ]
           },
           {
@@ -722,13 +827,8 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "groups": [
-              {
-                "group": "Customer Success Team",
-                "pages": [
-                  "latchel-admin/Customer-Success-Team/customer-success-overview"
-                ]
-              }
+            "pages": [
+              "latchel-admin/Customer-Success-Team/customer-success-overview"
             ]
           },
           {
@@ -738,30 +838,25 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "groups": [
+            "pages": [
+              "latchel-admin/Product-Engineering/product-engineering-overview",
               {
-                "group": "Product/Engineering Team",
+                "group": "Latchel Integrations Wiki",
                 "pages": [
-                  "latchel-admin/Product-Engineering/product-engineering-overview",
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/latchel-integrations-wiki",
                   {
-                    "group": "Latchel Integrations Wiki",
+                    "group": "Appfolio Reference Guides",
                     "pages": [
-                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/latchel-integrations-wiki",
-                      {
-                        "group": "Appfolio Reference Guides",
-                        "pages": [
-                          "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/appfolio-reference-guide",
-                          "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/failed-work-order-syncs",
-                          "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/communication-guidelines-appfolio"
-                        ]
-                      },
-                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/buildium-reference-guide",
-                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/propertyware-reference-guide",
-                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/rentvine-reference-guide",
-                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/rent-manager-reference-guide",
-                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/yardi-reference-guide"
+                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/appfolio-reference-guide",
+                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/failed-work-order-syncs",
+                      "latchel-admin/product-engineering-team/latchel-integrations-wiki/appfolio-reference-guides-the-latchel-data-sync/communication-guidelines-appfolio"
                     ]
-                  }
+                  },
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/buildium-reference-guide",
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/propertyware-reference-guide",
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/rentvine-reference-guide",
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/rent-manager-reference-guide",
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/yardi-reference-guide"
                 ]
               }
             ]
@@ -773,13 +868,8 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "groups": [
-              {
-                "group": "Sales Team",
-                "pages": [
-                  "latchel-admin/Sales-Team/sales-team-overview"
-                ]
-              }
+            "pages": [
+              "latchel-admin/Sales-Team/sales-team-overview"
             ]
           },
           {
@@ -789,28 +879,72 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "groups": [
+            "pages": [
+              "latchel-admin/Latchel-People-Ops/latchel-people-ops-home",
+              "latchel-admin/Latchel-People-Ops/latchel-handbook",
               {
-                "group": "Latchel People Ops",
+                "group": "Latchel Policies and Procedures",
                 "pages": [
-                  "latchel-admin/Latchel-People-Ops/latchel-people-ops-home",
-                  "latchel-admin/Latchel-People-Ops/latchel-handbook",
-                  {
-                    "group": "Latchel Policies and Procedures",
-                    "pages": [
-                      "latchel-admin/Latchel-People-Ops/latchel-policies-and-procedures",
-                      "latchel-admin/Latchel-People-Ops/lpo-code-of-conduct",
-                      "latchel-admin/Latchel-People-Ops/staffing-approval-hiring-policy",
-                      "latchel-admin/Latchel-People-Ops/referral-policy-and-procedure",
-                      "latchel-admin/Latchel-People-Ops/remote-work-policy",
-                      "latchel-admin/Latchel-People-Ops/sales-commission-payout-policy",
-                      "latchel-admin/Latchel-People-Ops/nondiscrimination-anti-harassment-policy",
-                      "latchel-admin/Latchel-People-Ops/team-member-complaint-procedure"
-                    ]
-                  },
-                  "latchel-admin/Latchel-People-Ops/onboarding-flow-communications"
+                  "latchel-admin/Latchel-People-Ops/latchel-policies-and-procedures",
+                  "latchel-admin/Latchel-People-Ops/lpo-code-of-conduct",
+                  "latchel-admin/Latchel-People-Ops/staffing-approval-hiring-policy",
+                  "latchel-admin/Latchel-People-Ops/referral-policy-and-procedure",
+                  "latchel-admin/Latchel-People-Ops/remote-work-policy",
+                  "latchel-admin/Latchel-People-Ops/sales-commission-payout-policy",
+                  "latchel-admin/Latchel-People-Ops/nondiscrimination-anti-harassment-policy",
+                  "latchel-admin/Latchel-People-Ops/team-member-complaint-procedure"
                 ]
-              }
+              },
+              {
+                "group": "Policy: Employee Time and Attendance",
+                "pages": [
+                  "latchel-admin/Latchel-People-Ops/policy-employee-time-and-attendance",
+                  "latchel-admin/Latchel-People-Ops/shortened-work-week-policy",
+                  "latchel-admin/Latchel-People-Ops/shortened-work-week-schedule-2026"
+                ]
+              },
+              {
+                "group": "Latchel Leave Policies",
+                "pages": [
+                  "latchel-admin/Latchel-People-Ops/latchel-leave-policies",
+                  "latchel-admin/Latchel-People-Ops/Vacation-Leave-Policy",
+                  "latchel-admin/Latchel-People-Ops/Sick-Leave-Policy",
+                  "latchel-admin/Latchel-People-Ops/Bereavement-Leave-Policy",
+                  "latchel-admin/Latchel-People-Ops/Employee-Birthing-Parental-Leave-Policy-and-Procedure",
+                  "latchel-admin/Latchel-People-Ops/Employee-Non-Birthing-Parental-Leave-Policy-and-Procedure",
+                  "latchel-admin/Latchel-People-Ops/Job-Abandonment-Policy",
+                  "latchel-admin/Latchel-People-Ops/International-Team-Member-Birthing-Parental-Leave-Policy",
+                  "latchel-admin/Latchel-People-Ops/International-Team-Member-Non-Birthing-Parental-Leave-Policy"
+                ]
+              },
+              {
+                "group": "Paid Holidays",
+                "pages": [
+                  "latchel-admin/Latchel-People-Ops/Paid-Holidays",
+                  "latchel-admin/Latchel-People-Ops/2026-Scheduled-Holidays"
+                ]
+              },
+              {
+                "group": "Latchel Security Policies",
+                "pages": [
+                  "latchel-admin/Latchel-People-Ops/asset-management-policy",
+                  "latchel-admin/Latchel-People-Ops/policy-information-security"
+                ]
+              },
+              {
+                "group": "Management Resource Center",
+                "pages": [
+                  {
+                    "group": "Toolkit: Performance Management",
+                    "expanded": true,
+                    "pages": [
+                      "latchel-admin/Latchel-People-Ops/toolkit-performance-management",
+                      "latchel-admin/Latchel-People-Ops/performance-review-process-documentation"
+                    ]
+                  }
+                ]
+              },
+              "latchel-admin/Latchel-People-Ops/onboarding-flow-communications"
             ]
           },
           {
@@ -820,15 +954,10 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "groups": [
-              {
-                "group": "HR Documents",
-                "pages": [
-                  "latchel-admin/HR-Documents/hr-documents-overview",
-                  "latchel-admin/HR-Documents/Employee-Attrition-Announcement",
-                  "latchel-admin/HR-Documents/Informational-Documents-for-US-Employees"
-                ]
-              }
+            "pages": [
+              "latchel-admin/HR-Documents/hr-documents-overview",
+              "latchel-admin/HR-Documents/Employee-Attrition-Announcement",
+              "latchel-admin/HR-Documents/Informational-Documents-for-US-Employees"
             ]
           }
         ]
