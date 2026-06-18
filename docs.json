@@ -613,16 +613,6 @@
                   "latchel-admin/Product-Support-Team/SOP-Escalating-Legal-Concerns",
                   "latchel-admin/Product-Support-Team/SOP-Guidelines-for-Notifying-Property-Managers-of-Severe-Weather-Events",
                   "latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes",
-                  {
-                    "group": "Account Settings",
-                    "pages": [
-                      "latchel-admin/Product-Support-Team/Account-Settings",
-                      "latchel-admin/Product-Support-Team/How-to-Report-Issues-with-the-Latchel-Help-Center",
-                      "latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests",
-                      "latchel-admin/Product-Support-Team/How-to-Handle-PM-Account-Updates",
-                      "latchel-admin/Product-Support-Team/How-to-Build-Reports-via-the-Analytics-Dashboard"
-                    ]
-                  },
                   "latchel-admin/Product-Support-Team/Latchel-Partner-API-Fluency-Guide-for-Support-Teams"
                 ]
               }
