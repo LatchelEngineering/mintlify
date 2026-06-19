@@ -872,6 +872,33 @@
                   "nondiscrimination-anti-harassment-policy-and-complaint-procedure",
                   "team-member-complaint-procedure",
                   {
+                    "group": "Management Resource Center",
+                    "pages": [
+                      {
+                        "group": "Toolkit: Performance Management",
+                        "expanded": true,
+                        "pages": [
+                          "latchel-admin/Latchel-People-Ops/toolkit-performance-management",
+                          "latchel-admin/Latchel-People-Ops/performance-review-process-documentation"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Latchel Security Policies",
+                    "pages": [
+                      "latchel-admin/Latchel-People-Ops/asset-management-policy",
+                      "latchel-admin/Latchel-People-Ops/policy-information-security"
+                    ]
+                  },
+                  {
+                    "group": "Paid Holidays",
+                    "pages": [
+                      "latchel-admin/Latchel-People-Ops/Paid-Holidays",
+                      "latchel-admin/Latchel-People-Ops/2026-Scheduled-Holidays"
+                    ]
+                  },
+                  {
                     "group": "Latchel Leave Policies",
                     "pages": [
                       "latchel-admin/Latchel-People-Ops/latchel-leave-policies",
@@ -884,32 +911,12 @@
                       "latchel-admin/Latchel-People-Ops/International-Team-Member-Birthing-Parental-Leave-Policy",
                       "latchel-admin/Latchel-People-Ops/International-Team-Member-Non-Birthing-Parental-Leave-Policy"
                     ]
-                  }
-                ]
-              },
-              {
-                "group": "Paid Holidays",
-                "pages": [
-                  "latchel-admin/Latchel-People-Ops/Paid-Holidays",
-                  "latchel-admin/Latchel-People-Ops/2026-Scheduled-Holidays"
-                ]
-              },
-              {
-                "group": "Latchel Security Policies",
-                "pages": [
-                  "latchel-admin/Latchel-People-Ops/asset-management-policy",
-                  "latchel-admin/Latchel-People-Ops/policy-information-security"
-                ]
-              },
-              {
-                "group": "Management Resource Center",
-                "pages": [
+                  },
                   {
-                    "group": "Toolkit: Performance Management",
-                    "expanded": true,
+                    "group": "Policy: Employee Time and Attendance",
                     "pages": [
-                      "latchel-admin/Latchel-People-Ops/toolkit-performance-management",
-                      "latchel-admin/Latchel-People-Ops/performance-review-process-documentation"
+                      "policy-employee-time-and-attendance",
+                      "shortened-work-week-policy"
                     ]
                   }
                 ]
