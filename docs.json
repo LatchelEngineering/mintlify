@@ -861,25 +861,38 @@
               "latchel-admin/Latchel-People-Ops/latchel-handbook",
               "latchel-admin/Latchel-People-Ops/team-member-employee-contractor-term-sheet",
               {
-                "group": "Policy: Employee Time and Attendance",
+                "group": "Latchel Policies & Procedures",
                 "pages": [
-                  "latchel-admin/Latchel-People-Ops/policy-employee-time-and-attendance",
-                  "latchel-admin/Latchel-People-Ops/shortened-work-week-policy",
-                  "latchel-admin/Latchel-People-Ops/shortened-work-week-schedule-2026"
-                ]
-              },
-              {
-                "group": "Latchel Leave Policies",
-                "pages": [
-                  "latchel-admin/Latchel-People-Ops/latchel-leave-policies",
-                  "latchel-admin/Latchel-People-Ops/Vacation-Leave-Policy",
-                  "latchel-admin/Latchel-People-Ops/Sick-Leave-Policy",
-                  "latchel-admin/Latchel-People-Ops/Bereavement-Leave-Policy",
-                  "latchel-admin/Latchel-People-Ops/Employee-Birthing-Parental-Leave-Policy-and-Procedure",
-                  "latchel-admin/Latchel-People-Ops/Employee-Non-Birthing-Parental-Leave-Policy-and-Procedure",
-                  "latchel-admin/Latchel-People-Ops/Job-Abandonment-Policy",
-                  "latchel-admin/Latchel-People-Ops/International-Team-Member-Birthing-Parental-Leave-Policy",
-                  "latchel-admin/Latchel-People-Ops/International-Team-Member-Non-Birthing-Parental-Leave-Policy"
+                  "code-of-conduct",
+                  "staffing-approval-and-hiring-policy-and-procedure",
+                  "referral-policy-and-procedure",
+                  "policy-employee-compensation-increase-process",
+                  "remote-work-policy",
+                  "sales-commission-payout-policy",
+                  "nondiscrimination-anti-harassment-policy-and-complaint-procedure",
+                  "team-member-complaint-procedure",
+                  {
+                    "group": "Policy: Employee Time and Attendance",
+                    "pages": [
+                      "latchel-admin/Latchel-People-Ops/policy-employee-time-and-attendance",
+                      "latchel-admin/Latchel-People-Ops/shortened-work-week-policy",
+                      "latchel-admin/Latchel-People-Ops/shortened-work-week-schedule-2026"
+                    ]
+                  },
+                  {
+                    "group": "Latchel Leave Policies",
+                    "pages": [
+                      "latchel-admin/Latchel-People-Ops/latchel-leave-policies",
+                      "latchel-admin/Latchel-People-Ops/Vacation-Leave-Policy",
+                      "latchel-admin/Latchel-People-Ops/Sick-Leave-Policy",
+                      "latchel-admin/Latchel-People-Ops/Bereavement-Leave-Policy",
+                      "latchel-admin/Latchel-People-Ops/Employee-Birthing-Parental-Leave-Policy-and-Procedure",
+                      "latchel-admin/Latchel-People-Ops/Employee-Non-Birthing-Parental-Leave-Policy-and-Procedure",
+                      "latchel-admin/Latchel-People-Ops/Job-Abandonment-Policy",
+                      "latchel-admin/Latchel-People-Ops/International-Team-Member-Birthing-Parental-Leave-Policy",
+                      "latchel-admin/Latchel-People-Ops/International-Team-Member-Non-Birthing-Parental-Leave-Policy"
+                    ]
+                  }
                 ]
               },
               {
@@ -909,20 +922,7 @@
                   }
                 ]
               },
-              "latchel-admin/Latchel-People-Ops/onboarding-flow-communications",
-              {
-                "group": "Latchel Policies & Procedures",
-                "pages": [
-                  "code-of-conduct",
-                  "staffing-approval-and-hiring-policy-and-procedure",
-                  "referral-policy-and-procedure",
-                  "policy-employee-compensation-increase-process",
-                  "remote-work-policy",
-                  "sales-commission-payout-policy",
-                  "nondiscrimination-anti-harassment-policy-and-complaint-procedure",
-                  "team-member-complaint-procedure"
-                ]
-              }
+              "latchel-admin/Latchel-People-Ops/onboarding-flow-communications"
             ]
           },
           {
