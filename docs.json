@@ -872,19 +872,6 @@
                   "nondiscrimination-anti-harassment-policy-and-complaint-procedure",
                   "team-member-complaint-procedure",
                   {
-                    "group": "Management Resource Center",
-                    "pages": [
-                      {
-                        "group": "Toolkit: Performance Management",
-                        "expanded": true,
-                        "pages": [
-                          "latchel-admin/Latchel-People-Ops/toolkit-performance-management",
-                          "latchel-admin/Latchel-People-Ops/performance-review-process-documentation"
-                        ]
-                      }
-                    ]
-                  },
-                  {
                     "group": "Policy: Employee Time and Attendance",
                     "pages": [
                       "policy-employee-time-and-attendance",
@@ -918,6 +905,23 @@
                     "pages": [
                       "latchel-admin/Latchel-People-Ops/asset-management-policy",
                       "latchel-admin/Latchel-People-Ops/policy-information-security"
+                    ]
+                  },
+                  "performance-and-salary-review-policy",
+                  "health-care-benefits-policy",
+                  "international-health-care-benefits-policy"
+                ]
+              },
+              {
+                "group": "Management Resource Center",
+                "pages": [
+                  "manager-resource-center",
+                  {
+                    "group": "Toolkit: Performance Management",
+                    "expanded": true,
+                    "pages": [
+                      "latchel-admin/Latchel-People-Ops/toolkit-performance-management",
+                      "latchel-admin/Latchel-People-Ops/performance-review-process-documentation"
                     ]
                   }
                 ]
