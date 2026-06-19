@@ -892,10 +892,11 @@
                     ]
                   },
                   {
-                    "group": "Paid Holidays",
+                    "group": "Policy: Employee Time and Attendance",
                     "pages": [
-                      "latchel-admin/Latchel-People-Ops/Paid-Holidays",
-                      "latchel-admin/Latchel-People-Ops/2026-Scheduled-Holidays"
+                      "policy-employee-time-and-attendance",
+                      "shortened-work-week-policy",
+                      "shortened-work-week-schedule-2026"
                     ]
                   },
                   {
@@ -913,11 +914,10 @@
                     ]
                   },
                   {
-                    "group": "Policy: Employee Time and Attendance",
+                    "group": "Paid Holidays",
                     "pages": [
-                      "policy-employee-time-and-attendance",
-                      "shortened-work-week-policy",
-                      "shortened-work-week-schedule-2026"
+                      "latchel-admin/Latchel-People-Ops/Paid-Holidays",
+                      "latchel-admin/Latchel-People-Ops/2026-Scheduled-Holidays"
                     ]
                   }
                 ]
