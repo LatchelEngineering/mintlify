@@ -680,7 +680,10 @@
               },
               {
                 "group": "Account Settings",
-                "pages": []
+                "pages": [
+                  "latchel-admin/Product-Support-Team/account-settings",
+                  "latchel-admin/Product-Support-Team/untitled-page"
+                ]
               },
               {
                 "group": "Job Aid: Integration Functionality, Troubleshooting, and Setup Steps",
