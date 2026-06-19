@@ -885,13 +885,6 @@
                     ]
                   },
                   {
-                    "group": "Latchel Security Policies",
-                    "pages": [
-                      "latchel-admin/Latchel-People-Ops/asset-management-policy",
-                      "latchel-admin/Latchel-People-Ops/policy-information-security"
-                    ]
-                  },
-                  {
                     "group": "Policy: Employee Time and Attendance",
                     "pages": [
                       "policy-employee-time-and-attendance",
@@ -918,6 +911,13 @@
                     "pages": [
                       "latchel-admin/Latchel-People-Ops/Paid-Holidays",
                       "latchel-admin/Latchel-People-Ops/2026-Scheduled-Holidays"
+                    ]
+                  },
+                  {
+                    "group": "Latchel Security Policies",
+                    "pages": [
+                      "latchel-admin/Latchel-People-Ops/asset-management-policy",
+                      "latchel-admin/Latchel-People-Ops/policy-information-security"
                     ]
                   }
                 ]
