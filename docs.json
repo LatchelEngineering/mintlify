@@ -707,12 +707,7 @@
                 "group": "Latchel Resident Benefits",
                 "pages": [
                   "latchel-admin/Product-Support-Team/Latchel-Resident-Benefits",
-                  {
-                    "group": "SOP: Benefits & Partnerships - How to Handle Customer Inquiries",
-                    "pages": [
-                      "latchel-admin/Product-Support-Team/SOP-Benefits-Partnerships---How-to-Handle-Customer-Inquiries"
-                    ]
-                  }
+                  "latchel-admin/Product-Support-Team/SOP-Benefits-Partnerships---How-to-Handle-Customer-Inquiries"
                 ]
               },
               "latchel-admin/Product-Support-Team/Latchel-Partner-API-Fluency-Guide-for-Support-Teams"
