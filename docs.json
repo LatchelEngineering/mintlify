@@ -859,6 +859,7 @@
             "pages": [
               "latchel-admin/Latchel-People-Ops/latchel-people-ops-home",
               "latchel-admin/Latchel-People-Ops/latchel-handbook",
+              "latchel-admin/Latchel-People-Ops/team-member-employee-contractor-term-sheet",
               {
                 "group": "Policy: Employee Time and Attendance",
                 "pages": [
@@ -908,7 +909,14 @@
                   }
                 ]
               },
-              "latchel-admin/Latchel-People-Ops/onboarding-flow-communications"
+              "latchel-admin/Latchel-People-Ops/onboarding-flow-communications",
+              {
+                "group": "Latchel Policies & Procedures",
+                "pages": [
+                  "code-of-conduct",
+                  "staffing-approval-and-hiring-policy-and-procedure"
+                ]
+              }
             ]
           },
           {
