@@ -1,0 +1,96 @@
+## Overview
+
+Mintlify is the platform we use to create and manage the Latchel Help Center at [help.latchel.com](https://help.latchel.com). This guide walks you through navigating the dashboard, creating new pages, formatting content, and publishing your changes.
+
+---
+
+## 1. The Mintlify Dashboard
+
+When you sign in to Mintlify, you will land on the **Home dashboard**. From here you can see:
+
+- A **live preview** of the Help Center homepage
+- The site's **Live** status and last update time
+- The connected **GitHub repository** and branch
+- An **Activity log** showing recent updates and their publish status (Successful / Failed)
+- The **Open Editor** button to jump directly into editing
+
+![Mintlify Dashboard showing live site preview and activity log](/images/mintlify-dashboard.png)
+
+### Left Sidebar Navigation
+
+Click the **hamburger menu (☰)** at the top left to expand the full navigation menu. You will see:
+
+| Section | Options |
+| --- | --- |
+| **Main** | Home, Editor, Analytics, Assistant |
+| **Automate** | Automations, Agent |
+| **Admin** | MCP, Settings |
+
+![Mintlify left sidebar showing Home, Editor, Analytics, Assistant, and Admin options](/images/mintlify-sidebar.png)
+
+<Note>
+  The **MCP** and **Settings** options under Admin are only visible to admin-level users. Regular users will only see Home, Editor, Analytics, and Assistant.
+</Note>
+
+The most important section for creating and editing articles is the **Editor**.
+
+---
+
+## 2. Opening the Editor
+
+To start creating or editing content, click **Editor** in the left sidebar, or click the **Open Editor** button from the dashboard.
+
+This brings you into the **Navigation panel** — the main view of all the tabs and pages in the Help Center.
+
+![Mintlify Editor navigation panel showing all Help Center tabs](/images/mintlify-navigation-panel.png)
+
+### Understanding the Navigation Panel
+
+The navigation panel shows the full structure of the Help Center, organized by **tabs** (top-level sections):
+
+- Home
+- Property Manager
+- Resident
+- Service Provider
+- Product Updates
+- API Reference
+- Latchel Admin _(contains team-specific subfolders like Data Support Team, Customer Success Team, etc.)_
+
+Each tab can contain **pages** and **groups** (subfolders). Click any item to open it in the editor.
+
+### Two Panel Views
+
+At the top left of the editor, you have two panel toggle icons:
+
+- **Navigation view** (list icon) — Shows the logical page hierarchy as it appears in the Help Center
+- **Files view** (folder icon) — Shows the actual `.mdx` file structure in the GitHub repository
+
+![Mintlify Files view showing the MDX file and folder structure](/images/mintlify-files-view.png)
+
+---
+
+## 3. Creating a New Page
+
+### Step 1 — Navigate to Your Team Folder
+
+In the Navigation panel, scroll down to your team's folder (e.g., **Latchel Admin → Data Support Team**). Click the folder to expand it and see existing pages.
+
+### Step 2 — Click the \+ Button
+
+Hover over your folder name. A **\+** icon will appear to the right. Click it to see three options:
+
+![Add a page, Add a group, and Add existing file options in Mintlify](/images/mintlify-add-page-menu.png)
+
+| Option | What it does |
+| --- | --- |
+| **Add a page** | Creates a new blank page directly in the current folder |
+| **Add a group** | Creates a new subfolder (group) inside the current folder |
+| **Add existing file** | Links an existing `.mdx` file from the repo into the navigation |
+
+### Step 3 — Name the Page
+
+When adding a new page, you will be prompted to enter a **title**. Use title case with words separated by spaces (e.g., `How to Submit a Support Ticket`). Mintlify will auto-generate a slug (the URL path) from the title.
+
+### Step 4 — Set the Slug
+
+The **slug** is the URL path for your page. It should reflect your team folder path. For example, for a page in the Data Support Team folder, the slug would be:
