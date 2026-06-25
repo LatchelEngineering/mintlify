@@ -813,7 +813,24 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/Customer-Success-Team/customer-success-overview"
+              "latchel-admin/Customer-Success-Team/customer-success-overview",
+              "latchel-admin/Customer-Success-Team/Recurring-Meetings",
+              "latchel-admin/Customer-Success-Team/time-off",
+              "latchel-admin/Customer-Success-Team/getting-around-slack",
+              {
+                "group": "CSMs (Account Management)",
+                "pages": [
+                  "latchel-admin/Customer-Success-Team/A-Day-in-the-Life-of-a-CSM"
+                ]
+              },
+              {
+                "group": "CSM: Communication SOPs",
+                "pages": [
+                  "latchel-admin/Customer-Success-Team/sop-how-to-do-all-email-work-in-salesforce",
+                  "latchel-admin/Customer-Success-Team/sop-calling-and-texting",
+                  "latchel-admin/Customer-Success-Team/sop-booking-and-logging-meetings"
+                ]
+              }
             ]
           },
           {

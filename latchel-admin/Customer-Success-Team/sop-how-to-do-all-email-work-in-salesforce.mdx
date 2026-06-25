@@ -1,0 +1,202 @@
+---
+title: "SOP: How to do all email work in Salesforce"
+---
+
+## **Background**
+
+The purpose of this SOP is to standardize the way the CS team sends and receives emails so that all activities are reflected in the [<u>CSM Activity Dashboard</u>](https://latchel1.lightning.force.com/lightning/r/Dashboard/01Z5e000000eWwdEAE/view "https://latchel1.lightning.force.com/lightning/r/Dashboard/01Z5e000000eWwdEAE/view").
+
+## **Setting up email forwarding in Gmail**
+
+To create a forwarding rule to send all customer emails to Salesforce:
+
+1. Click the **wheel icon** in the top right of your Gmail inbox, then click **See all settings**:
+
+<Frame>
+  ![CSM 1](/images/CSM-1.png)
+</Frame>
+
+2. Enter [<u>success@m-1o17pxhd7p9pym4l8nf9mrrgl2wd8yaryqf8oayptszft36i67.5e-2rocheag.na162.case.salesforce.com</u>](mailto:success@m-1o17pxhd7p9pym4l8nf9mrrgl2wd8yaryqf8oayptszft36i67.5e-2rocheag.na162.case.salesforce.com) as your forwarding address then click **Next**:
+
+<Frame>
+  ![CSM 2](/images/CSM-2.png)
+</Frame>
+
+3. A pop up will appear. Click **Proceed**:
+
+<Frame>
+  ![CSM 3](/images/CSM-3.png)
+</Frame>
+
+4. Click **OK** to finish adding your forwarding address:
+
+<Frame>
+  ![CSM 4](/images/CSM-4.png)
+</Frame>
+
+5. Go to the **Filters and Blocked Addresses** tab. Click **Create a new filter**:
+
+<Frame>
+  ![CSM 5](/images/CSM-5.png)
+</Frame>
+
+6. Add the following filters:
+
+a. In the **From** field: `-{*@latchel.com, do-not-reply@ramp.com}`
+
+b. In the **Has the words** field:  `-{"Gong", "PandaDoc", "[JIRA]", "Notification:", “[Confluence]”, “Meet recording status”}`
+
+c. Click **Create filter**:
+
+<Frame>
+  ![CSM 6](/images/CSM-6.png)
+</Frame>
+
+<Note>
+  You can add more filters later as needed. Please post in the [<u>#temp-csm-sop-feedback</u>](https://latchel.slack.com/archives/C05BF7DLW5Q "https://latchel.slack.com/archives/C05BF7DLW5Q") Slack channel  when you add a filter that would be useful for the rest of the team so we can update this SOP!
+</Note>
+
+7. Click **OK** on the next screen:
+
+<Frame>
+  ![CSM 7](/images/CSM-7.png)
+</Frame>
+
+8. Check **Skip the Inbox (Archive it)** and **Forward it to** selecting [<u>success@m-1o17pxhd7p9pym4l8nf9mrrgl2wd8yaryqf8oayptszft36i67.5e-2rocheag.na162.case.salesforce.com</u>](mailto:success@m-1o17pxhd7p9pym4l8nf9mrrgl2wd8yaryqf8oayptszft36i67.5e-2rocheag.na162.case.salesforce.com) from the dropdown, then click **Create filter**:
+
+<Frame>
+  ![CSM 8](/images/CSM-8.png)
+</Frame>
+
+<Note>
+  Archived mail is moved to a label called All Mail but does not appear in your inbox. [<u>Click here</u>](https://support.google.com/mail/answer/6576?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Copen-all-mail%2Csearch-for-archived-messages "https://support.google.com/mail/answer/6576?hl=en&co=GENIE.Platform%3DDesktop#zippy=%2Copen-all-mail%2Csearch-for-archived-messages") for more information.
+</Note>
+
+<Danger>
+  **Known issue:** Occasionally an email is not forwarded to Salesforce, or it goes to Salesforce as a Task instead of a Case. To address this, **_you should do a daily review of your Gmail inbox for any customer emails_** that didn’t get forwarded and archived.
+
+  1. Review the Account page recent Activity to make sure the email didn’t go into Salesforce as a Task instead of a Case. If it went in as a Task, share the SF link in the [<u>#data-bug-report</u>](https://latchel.slack.com/archives/C04SLM85S6A "https://latchel.slack.com/archives/C04SLM85S6A") Slack channel.
+  2. If you can’t find the email anywhere in Salesforce, forward it from your Gmail inbox to [<u>success@latchel.com</u>](mailto:success@latchel.com)
+  3. Post in the [<u>#data-bug-report</u>](https://latchel.slack.com/archives/C04SLM85S6A "https://latchel.slack.com/archives/C04SLM85S6A") Slack channel with the Salesforce link to the email you had to manually forward.
+</Danger>
+
+The **Filters and Blocked Addresses** tab should look like this when you’re done:
+
+<Frame>
+  ![CSM 9](/images/CSM-9.png)
+</Frame>
+
+## **Setting up your Salesforce email signature**
+
+See a quick Loom overview [<u>here</u>](https://www.loom.com/share/3914bcccdec54e21b86beb2c49ce06c6 "https://www.loom.com/share/3914bcccdec54e21b86beb2c49ce06c6").
+
+1. Click on your **avatar** in the top right of the page:
+
+<Frame>
+  ![CSM 11](/images/CSM-11.png)
+</Frame>
+
+2. Click **Settings** from the dropdown:
+
+<Frame>
+  ![CSM 12](/images/CSM-12.png)
+</Frame>
+
+3. Click **Email** \> **My Email Settings** from the panel on the left of the page.
+4. Scroll down to **Signature** and enter:\
+   Your Name\
+   Your Title\
+   Your email address\
+   [<u>https://help.latchel.com/s/</u>](https://help.latchel.com/s/)
+5. Click **Save** at the bottom of the page:
+
+<Frame>
+  ![CSM 13](/images/CSM-13.png)
+</Frame>
+
+## **Your Salesforce inbox**
+
+1. Your inbox will now be the [<u>All Open Cases</u>](https://latchel1.lightning.force.com/lightning/o/Case/list?filterName=00B5e00000GN3noEAD "https://latchel1.lightning.force.com/lightning/o/Case/list?filterName=00B5e00000GN3noEAD") view of Salesforce. You should check it throughout the day in between calls and meetings, like you would any email inbox. You can click the header of the “CSM” column to sort it alphabetically to easily isolate cases related to your customers:
+
+<Frame>
+  ![CSM 14](/images/CSM-14.png)
+</Frame>
+
+2. As your emails are forwarded from Gmail, the Owner will automatically be listed as Success Team until Product Support has reviewed the new cases and assigned an Owner. Example:
+
+<Frame>
+  ![CSM 15](/images/CSM-15.png)
+</Frame>
+
+3. If you are listed as the CSM but the Owner is someone on the Product Support team, they have reviewed the case and are handling next steps. Example:
+
+<Frame>
+  ![CSM 16](/images/CSM-16.png)
+</Frame>
+
+<Note>
+  Note: CSMs can reassign themselves as the Owner if they would like to handle the case themselves.
+</Note>
+
+4. If your name is listed as both the CSM and the Owner, this means it has been escalated to you by the Product Support team. They will also notify you in the [<u>#salesforce-case-support</u>](https://latchel.slack.com/archives/C02S7RBQ960 "https://latchel.slack.com/archives/C02S7RBQ960") Slack channel when they escalate something to you. React in Slack with a checkmark to let Product Support know you’ve seen the escalation and will be handling it. Example:
+   <Frame>
+     ![CSM 17](/images/CSM-17.png)
+   </Frame>
+
+<Frame>
+  ![CSM 18](/images/CSM-18.png)
+</Frame>
+
+5. It is good practice to do a quick scan of cases with no CSM assigned to see if any are for your customers.
+
+<Danger>
+  **Known issues:**
+
+  - When we reply from [<u>success@latchel.com</u>](mailto:success@latchel.com) it doesn’t feel very personal because the sender info is a long string of numbers/letters.
+</Danger>
+
+<Note>
+  While the CSM populates automatically if the customer is recognized by Salesforce, Product Support should be updating the Account from Latchel to the customer for escalations from Service Ops, or adding the customer’s email to Salesforce and the Console for customers that don’t currently exist in Salesforce so that the CSM will populate automatically the next time they email us.
+</Note>
+
+<Note>
+  The Product Support team reviews all Cases that were classified as Spam 2-3 times per week.
+</Note>
+
+<Note>
+  For more information about what is handled by Product Support vs. CSMs, see [Product Support Team vs Customer Success Managers](https://latchel.atlassian.net/wiki/spaces/SR/pages/2614755413)
+</Note>
+
+## **Replying to customers in Salesforce**
+
+1. You should reply to all customer emails in Salesforce from your personal email address. Further customer replies in the email chain will continue to be archived in Gmail but will also come into Salesforce. 
+
+<Warning>
+  When emailing a customer following an escalation from Service Ops, make sure to select “New Blank Email” when you reply. This way the customer won’t see the escalation from Ops at the bottom of your email.
+</Warning>
+
+## **Outbound and follow-up emails in Salesforce**
+
+1. When following up with a customer (ex: you send them a post-meeting recap), email them from the Account page from your personal email address. Once they respond, a case is created for you as the CSM.
+
+<Note>
+  Anytime you respond to a case, it goes into “Waiting for customer” status. If the customer doesn’t respond within a few days, it will go back into “Open” status for you to follow up.
+</Note>
+
+2. If you’ve made multiple follow ups and the PM still hasn’t responded, move the case to “Closed Unresponsive” status. If the PM does respond later, the case will automatically be reopened.
+
+<Warning>
+  You must send all emails from your personal email address for them to appear in the [<u>CSM Activity Dashboard</u>](https://latchel1.lightning.force.com/lightning/r/Dashboard/01Z5e000000eWwdEAE/view "https://latchel1.lightning.force.com/lightning/r/Dashboard/01Z5e000000eWwdEAE/view"). Emails sent from [<u>success@latchel.com</u>](mailto:success@latchel.com) will not appear in the reporting. Be sure to leverage the Product Support Team by having them respond to any [<u>questions about functional problems with the product</u>](https://latchel.atlassian.net/wiki/spaces/SR/pages/2614755413 "https://latchel.atlassian.net/wiki/spaces/SR/pages/2614755413") so you can focus your time on business outcomes!
+</Warning>
+
+## **Out of office**
+
+1. When you are out of office, you should set up your Vacation Responder in Gmail. Customers who email you will receive your automated reply, and their email will still be forwarded to [s<u>uccess@latchel.com</u>](mailto:success@latchel.com)<u>.</u> Set up your Vacation Responder by going to your Gmail **Settings** \> **General** and scrolling down to the **Vacation Responder** section. Click **Save Changes** at the bottom of the screen when you are done editing:
+
+<Frame>
+  ![CSM 20](/images/CSM-20.png)
+</Frame>
+
+<Note>
+  See [Time Off!](https://latchel.atlassian.net/wiki/spaces/CS/pages/2707980289) for more details on preparing to be out of office.
+</Note>
