@@ -830,6 +830,36 @@
                   "latchel-admin/Customer-Success-Team/sop-calling-and-texting",
                   "latchel-admin/Customer-Success-Team/sop-booking-and-logging-meetings"
                 ]
+              },
+              {
+                "group": "Executive Business Reviews",
+                "pages": [
+                  "latchel-admin/Customer-Success-Team/executive-business-reviews",
+                  "latchel-admin/Customer-Success-Team/assisted-ledgering-monthly-scorecard-meeting"
+                ]
+              },
+              {
+                "group": "Onboarding",
+                "pages": [
+                  "latchel-admin/Customer-Success-Team/cs-admin-job-aid-onboarding-flow-and-communications-maintenance-only",
+                  "latchel-admin/Customer-Success-Team/complete-onboarding-journey"
+                ]
+              },
+              {
+                "group": "Sales -> Onboarding Handoff",
+                "pages": [
+                  "latchel-admin/Customer-Success-Team/sending-a-closed-opportunity-to-onboarding"
+                ]
+              },
+              {
+                "group": "Onboarding Call Agendas",
+                "pages": [
+                  "latchel-admin/Customer-Success-Team/onboarding-call-agendas",
+                  "latchel-admin/Customer-Success-Team/pre-kickoff-preparation-45-minutes",
+                  "latchel-admin/Customer-Success-Team/kickoff-call-45-minutes",
+                  "latchel-admin/Customer-Success-Team/configuration-call-60-minutes",
+                  "latchel-admin/Customer-Success-Team/onboarding-review-60-minutes"
+                ]
               }
             ]
           },
