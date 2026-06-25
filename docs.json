@@ -916,7 +916,8 @@
                 "pages": [
                   "latchel-admin/Customer-Success-Team/app-folio-resources",
                   "latchel-admin/Customer-Success-Team/rent-manager-resources",
-                  "latchel-admin/Customer-Success-Team/propertyware-resources"
+                  "latchel-admin/Customer-Success-Team/propertyware-resources",
+                  "latchel-admin/Customer-Success-Team/buildium-resources"
                 ]
               }
             ]
