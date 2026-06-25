@@ -919,6 +919,42 @@
                   "latchel-admin/Customer-Success-Team/propertyware-resources",
                   "latchel-admin/Customer-Success-Team/buildium-resources"
                 ]
+              },
+              {
+                "group": "(Needs review) Customer Success Library - Landing Page",
+                "pages": [
+                  "latchel-admin/Customer-Success-Team/needs-review-customer-success-library-landing-page",
+                  {
+                    "group": "Integrations",
+                    "pages": [
+                      {
+                        "group": "Propertyware",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/propertyware-integration-steps-new-customers",
+                          "latchel-admin/Customer-Success-Team/propertyware-integration-steps-existing-customers-data-migration",
+                          "latchel-admin/Customer-Success-Team/rent-manager-integration-steps-existing-customers"
+                        ]
+                      },
+                      {
+                        "group": "Appfolio",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/how-to-install-the-chrome-plug-in-appfolio",
+                          "latchel-admin/Customer-Success-Team/cs-admin-how-to-troubleshoot-the-latchel-plug-in"
+                        ]
+                      },
+                      {
+                        "group": "RentCheck",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/rent-check-latchel-rollout",
+                          "latchel-admin/Customer-Success-Team/scripting-around-the-beta-experience",
+                          "latchel-admin/Customer-Success-Team/integration-demo",
+                          "latchel-admin/Customer-Success-Team/how-to-activate-the-integration"
+                        ]
+                      },
+                      "api-training-session"
+                    ]
+                  }
+                ]
               }
             ]
           },
