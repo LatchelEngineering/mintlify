@@ -1,0 +1,40 @@
+---
+title: "Intake + 24/7 Emergency + SaaS"
+---
+
+### **Brief Description**
+
+- Intake
+  - Latchel will intake 100% of resident initiated maintenance requests.
+- Emergency Work Orders:
+  - The Latchel operations team will attempt to dispatch a preferred service provider for all emergencies. If Latchel is unable to reach a service provider:
+    - An email will be sent to the Default Notification User Group with the work order details.
+    - Emergency Escalation Contacts(s) will receive a phone call for any emergencies with PD/EH issues.
+  - For PMs with an active integration, the work order will sync to their PMS.
+- Non-Emergency Work Orders 
+  - For work orders that Need Pre-Approval:
+    - An email will be sent to the Default Notification User Group with the work order details and request for approval. 
+    - If the PM chooses to approve the work order, the work order will then flow through our non-emergency work order automation. 
+    - If the PM chooses to Deny the work order, the work order will be canceled. 
+  - For Normal and Urgent Work Orders:
+    - The work order will then flow through our non-emergency work order automation. 
+  - For PMs with an active integration, the work order will sync to their PMS.
+
+### **Configurations Required**
+
+- Product Subscription
+  - Maintenance - 24/7 Emergency
+  - Saas - Enabled
+- Maint. Communication Settings
+  - Users and User Groups established
+  - Emergency Escalation Contact(s) established
+- Work Order Budget Limits
+  - Emergency & Normal Soft and Hard Limits
+- Severity & Responsibility Settings 
+  - Ensure all severity settings are set to the appropriate setting type. 
+- Service Providers
+  - This setup requires prioritization of preferred service providers. 
+- Integration
+  - Not required for this setup as all work orders will be worked to completion in Latchel. 
+- Portfolios
+  - Required if they have any unique Maint. Communication Settings, Budget Limits, Service Provider Preferences or Severity & Responsibility Settings for specific properties/units. 

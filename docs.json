@@ -842,23 +842,81 @@
                 "group": "Onboarding",
                 "pages": [
                   "latchel-admin/Customer-Success-Team/cs-admin-job-aid-onboarding-flow-and-communications-maintenance-only",
-                  "latchel-admin/Customer-Success-Team/complete-onboarding-journey"
+                  "latchel-admin/Customer-Success-Team/complete-onboarding-journey",
+                  {
+                    "group": "Sales -> Onboarding Handoff",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/sending-a-closed-opportunity-to-onboarding"
+                    ]
+                  },
+                  {
+                    "group": "Onboarding Call Agendas",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/onboarding-call-agendas",
+                      "latchel-admin/Customer-Success-Team/pre-kickoff-preparation-45-minutes",
+                      "latchel-admin/Customer-Success-Team/kickoff-call-45-minutes",
+                      "latchel-admin/Customer-Success-Team/configuration-call-60-minutes",
+                      "latchel-admin/Customer-Success-Team/onboarding-review-60-minutes"
+                    ]
+                  },
+                  {
+                    "group": "Training Call Agendas",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/training-1-maintenance-console-navigation",
+                      "latchel-admin/Customer-Success-Team/training-2-maintenance-working-session",
+                      "latchel-admin/Customer-Success-Team/training-3-resident-benefits"
+                    ]
+                  },
+                  {
+                    "group": "Additional Onboarding Resources",
+                    "pages": [
+                      {
+                        "group": "Maintenance Configurations - Defined",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/maintenance-configurations-defined",
+                          "latchel-admin/Customer-Success-Team/intake-only-no-dispatch-after-hours-emergency",
+                          "latchel-admin/Customer-Success-Team/intake-only-no-dispatch-24-7-emergency",
+                          "latchel-admin/Customer-Success-Team/intake-after-hours-emergency-only-dispatch",
+                          "latchel-admin/Customer-Success-Team/intake-24-7-emergency-only-dispatch",
+                          "latchel-admin/Customer-Success-Team/intake-24-7-emergency-saas-needs-pre-approval",
+                          "latchel-admin/Customer-Success-Team/intake-24-7-emergency-saas"
+                        ]
+                      },
+                      "latchel-admin/Customer-Success-Team/cs-diagnostic-workflow-assignment-guide",
+                      "latchel-admin/Customer-Success-Team/delayed-launches-reporting-and-next-action-steps",
+                      "latchel-admin/Customer-Success-Team/glossary-of-terms-onboarding-stages",
+                      {
+                        "group": "Update Latchel Assigned Number in Twilio",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/update-latchel-assigned-number-in-twilio",
+                          "latchel-admin/Customer-Success-Team/moving-twilio-phone-numbers-to-another-twilio-account"
+                        ]
+                      }
+                    ]
+                  },
+                  "latchel-admin/Customer-Success-Team/latchel-company-creation-automation-ui-selectors-and-api-integration-guide"
                 ]
               },
               {
-                "group": "Sales -> Onboarding Handoff",
+                "group": "Off-boarding - Desire to Churn",
                 "pages": [
-                  "latchel-admin/Customer-Success-Team/sending-a-closed-opportunity-to-onboarding"
+                  "latchel-admin/Customer-Success-Team/off-boarding-desire-to-churn",
+                  {
+                    "group": "SOP: Handling Client Churn Requests",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/sop-handling-client-churn-requests",
+                      "latchel-admin/Customer-Success-Team/churn-categories-defined",
+                      "latchel-admin/Customer-Success-Team/desire-to-churn-talk-tracks"
+                    ]
+                  }
                 ]
               },
               {
-                "group": "Onboarding Call Agendas",
+                "group": "Property Management Software (PMS) Resources",
                 "pages": [
-                  "latchel-admin/Customer-Success-Team/onboarding-call-agendas",
-                  "latchel-admin/Customer-Success-Team/pre-kickoff-preparation-45-minutes",
-                  "latchel-admin/Customer-Success-Team/kickoff-call-45-minutes",
-                  "latchel-admin/Customer-Success-Team/configuration-call-60-minutes",
-                  "latchel-admin/Customer-Success-Team/onboarding-review-60-minutes"
+                  "latchel-admin/Customer-Success-Team/app-folio-resources",
+                  "latchel-admin/Customer-Success-Team/rent-manager-resources",
+                  "latchel-admin/Customer-Success-Team/propertyware-resources"
                 ]
               }
             ]

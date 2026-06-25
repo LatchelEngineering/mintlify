@@ -1,0 +1,36 @@
+---
+title: "Intake Only<>No Dispatch (24/7 Emergency)"
+---
+
+### **Brief Description**
+
+- Intake
+  - Latchel will intake 100% of resident initiated maintenance requests.
+- Emergency Work Orders:
+  - An email will be sent to the Default Notification User Group with the work order details.
+  - Emergency Escalation Contacts(s) will receive a phone call for any emergencies with PD/EH issues.
+  - For PMs with an active integration, the work order will sync to their PMS for them to work through to completion. 
+- Non-Emergency Work Orders (Normal/Urgent/Needs Pre-Approval)
+  - An email will be sent to the Default Notification User Group with the work order details.
+  - For PMs with an active integration, the work order will sync to their PMS for them to work through to completion. 
+
+### **Configurations Required**
+
+- Product Subscription
+  - Maintenance - 24/7 Emergency 
+  - Saas - Disabled 
+- Maint. Communication Settings
+  - Users and User Groups established
+  - Emergency Escalation Contact(s) established
+  - Add the following Pre-Dispatch Instructions
+    - Please DO NOT dispatch a vendor for any Emergency Work Orders
+    - For PD/EH issues, please call the Emergency Escalations Contact List
+    - For Non PD/EH issues, please Forward the WO to the PM by clicking "Contact accepted work order"
+- Work Order Budget Limits
+  - Not required 
+- Severity & Responsibility Settings 
+  - Ensure Emergency severity settings are clearly defined. 
+- Integration
+  - Not required but HIGHLY recommended as the PM will continue to work out of their current maintenance solution. 
+- Portfolios
+  - Required if they have any unique Maint. Communication Settings or Severity & Responsibility Settings for specific properties/units. 

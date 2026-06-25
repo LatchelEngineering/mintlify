@@ -1,0 +1,47 @@
+---
+title: "Intake + After-Hours Emergency Only Dispatch"
+---
+
+### **Brief Description**
+
+- Intake
+  - Latchel will intake 100% of resident-initiated maintenance requests.
+- Emergency Work Orders:
+  - After Hours:
+    - The Latchel operations team will attempt to dispatch a preferred service provider for all after-hours emergencies. If Latchel is unable to reach a service provider:
+      - An email will be sent to the Default Notification User Group with the work order details.
+      - Emergency Escalation Contacts(s) will receive a phone call for any emergencies with PD/EH issues.
+  - Normal Business Hours:
+    - All emergency work orders will bypass troubleshooting/dispatch and be forwarded to the PM.
+    - An email will be sent to the Default Notification User Group with the work order details.
+  - For PMs with an active integration, the work order will sync to their PMS.
+- Non-Emergency Work Orders (Normal/Urgent/Needs Pre-Approval)
+  - All non-emergency work orders will be forwarded to the PM.
+    - An email will be sent to the Default Notification User Group with the work order details.
+  - For PMs with an active integration, the work order will sync to their PMS for them to work through to completion. 
+
+### **You should only take action on non-emergency after-hours work orders when:**
+
+1. The PM explicitly asks you to do something (see PM Communication section below).
+2. You receive an inbound communication from a resident or service provider, create a task containing all the details, and assign the task to the PM.
+3. A system-generated task on the WO is assigned to Latchel Service Ops within normal business hours. If this happens, please handle the task, then submit a #bug-report for the incident.\
+   \
+   \
+   **Configurations Required**
+
+- Product Subscription
+  - Maintenance - After-Hours Emergency
+  - Saas - Disabled 
+- Maint. Communication Settings
+  - Users and User Groups established
+  - Emergency Escalation Contact(s) established
+- Work Order Budget Limits
+  - Emergency Soft and Hard Limits only
+- Severity & Responsibility Settings 
+  - Ensure Emergency severity settings are clearly defined.
+- Service Providers
+  - This setup requires prioritization of preferred service providers. 
+- Integration
+  - Not required but HIGHLY recommended as the PM will continue to work out of their current maintenance solution for emergencies during business hours and all non-emergencies. 
+- Portfolios
+  - Required if they have any unique Maint. Communication Settings, Emergency Budget Limits, Service Provider Preferences or Severity & Responsibility Settings for specific properties/units. 

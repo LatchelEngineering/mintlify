@@ -1,0 +1,273 @@
+---
+title: "Latchel Company Creation Automation: UI Selectors & API Integration Guide"
+---
+
+<Note>
+  This document provides a comprehensive breakdown of our Selenium-based automation script for provisioning and configuring Property Management Companies in Latchel. For each major workflow—login, company creation, address & URL updates, settings application, product package setup, subscription activation, and HubSpot synchronization—it lists the exact UI selectors (IDs, XPaths, CSS selectors, AngularJS models) that the code depends on. By cataloguing these dynamic touchpoints, engineering teams can quickly identify and update fragile selectors whenever the Latchel UI changes. To further improve reliability, maintainability, and scalability, is also recommended introducing dedicated RESTful API endpoints (e.g., createCompany, updateAddress, assignSubscription) that would allow these operations to be performed directly—bypassing fragile UI automation—and support high-volume, programmatic account management.
+</Note>
+
+# **Code Architecture and Steps Followed**
+
+## **1. Login to Latchel**
+
+Navigates to the login page and submits credentials.
+
+- **URL**: `https://app.latchel.com/login`
+- **Email input**
+  `(By.ID, "login-email") `
+- **Password input**
+  `(By.ID, "login-password") `
+- **Submit** by sending `Keys.RETURN` on the password field
+- **Success check**: waits for URL to contain `"work-orders"`
+
+---
+
+## **2. Create a New Company**
+
+Loads the “New Property Manager” form and fills in company \+ user details.
+
+- **Navigate**: `https://app.latchel.com/admin/property-manager/new`
+- **Form container**
+  `(By.TAG_NAME, "form")`
+- **Company Name**
+  `(By.CSS_SELECTOR, "input[placeholder='Property Management Company Name *']") `
+- **Contact Name**
+  `(By.CSS_SELECTOR, "input[placeholder='Name *']") `
+- **Contact Phone**
+  `(By.CSS_SELECTOR, "input[placeholder='Phone *']") `
+- **Contact Email**
+  `(By.CSS_SELECTOR, "input[placeholder='Email']") `
+- **Save/Create button**
+  `(By.CSS_SELECTOR, "button.hl-btn.hl-busy-button") `
+- **Email‐exists error**
+  `(By.CSS_SELECTOR, ".hl-error-messages li") `
+- **Success URL check**: URL contains `"pm-company"`
+
+---
+
+## **3. Activate a New Subscription**
+
+Clicks through the subscription modal to pick a package.
+
+- **“\+ New Subscription”** 
+
+```text
+(By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/hl-subscriptions/div/div[1]/div[2]/a")
+```
+
+- **Product‐package radio button** 
+
+```text
+(By.XPATH, "/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[2]/input")
+```
+
+- **“Next” button** 
+
+```text
+(By.XPATH, "/html/body/div[6]/div/div/div[2]/div[2]/div/div[3]/button")
+```
+
+- **“Subscribe” button** 
+
+```text
+(By.XPATH, "/html/body/div[6]/div/div/div[2]/div[3]/button")
+```
+
+- **Wait for staleness** of the subscribe button to confirm dialog close
+
+---
+
+## **4. Extract & Update Latchel‐Assigned Number**
+
+Opens each company page, expands the phone section, and grabs the value.
+
+- **Navigate**: `https://app.latchel.com/admin/pm-company/{id}`
+- **Expand Phone section** 
+
+```text
+(By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]")
+```
+
+- **Phone input value** 
+
+```text
+(By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[2]/div[2]/div[1]/div/input") 
+```
+
+---
+
+## **5. Update Company Addresses**
+
+Expands the “Address” accordion and writes street/city/state/zip.
+
+- **Navigate**: `https://app.latchel.com/admin/pm-company/{id}`
+- **Form container**
+  `(By.TAG_NAME, "form") `
+- **Expand “Address” section**
+  `(By.XPATH, "//label[contains(text(), 'Address')]") `
+- **Toggle arrow** (relative to the label) 
+
+```text
+(By.XPATH, "./ancestor::div[contains(@class, 'hl-accordion')]/div[contains(@class, 'hl-accordion-head')]/div[contains(@class, 'hl-accordion-head__toggle')]")
+```
+
+- **State dropdown label**
+  `(By.XPATH, "//div[contains(@class, 'hl-dropdown__label')]") `
+- **State options**
+  `(By.XPATH, f"//a[starts-with(normalize-space(text()), '{state} -')]") `
+- **Other address fields**
+  `(By.XPATH, f"//input[@ng-model='{field_name}']") `
+- **Save button**
+  `(By.XPATH, "//button[contains(text(), 'Save') and not(@disabled)]") `
+
+---
+
+## **6. Update Company Website URL**
+
+Very similar to addresses, but in “Portal Settings.”
+
+- **Navigate**: `https://app.latchel.com/admin/pm-company/{id}`
+- **Expand “Portal Settings”**
+  `(By.XPATH, "//div[contains(text(), 'Portal Settings')]") `
+- **Site URL field**
+  `(By.XPATH, "//input[@ng-model='company.site_url']") `
+- **Save buttons** (inside that accordion)
+  - search via XPATH within the section
+  - fallback CSS selector
+  - then click whichever is enabled
+
+---
+
+## **7. Apply Company‐Wide Settings**
+
+On `/severity-responsibility`, clicks the ellipsis menu and picks a default set.
+
+- **Navigate**: `https://app.latchel.com/admin/pm-company/{id}/severity-responsibility`
+- **First ellipsis dot**
+  `(By.XPATH, "(//div[contains(@class, 'ellipsis__dot')])[1]") `
+- **“Apply Settings Set” option** 
+
+```text
+(By.XPATH, "//div[contains(@class, 'ellipsis__action') and text()='Apply Settings Set']") 
+```
+
+- **Dropdown label**
+  `(By.XPATH, "//div[contains(@class, 'hl-dropdown__label')]") `
+- **Select “Default | Needs Pre-Approval / Keeps Emergency”** 
+
+```text
+(By.XPATH, "//a[contains(text(), 'Default | Needs Pre-Approval / Keeps Emergency')]") 
+```
+
+- **“Apply Settings” button** 
+
+```text
+(By.XPATH, "//button[contains(@class, 'hl-btn') and contains(@class, 'hl-busy-button') and not(@disabled)]")
+```
+
+---
+
+## **8. Enable AppFolio Integration**
+
+On the integrations tab, clicks “Activate” then fills slug and date.
+
+- **Navigate**: `https://app.latchel.com/admin/pm-company/{id}/integrations`
+- **Chrome plugin card → Activate** 
+
+```text
+(By.XPATH,   "//hl-external-integration-card"   "[.//h4[contains(text(), 'Plugin')] and .//p[contains(text(), 'Chrome')]]"   "//button[.//span[text()='Activate']]" ) 
+```
+
+- **AppFolio slug field**
+  `(By.ID, "app-slug-field") `
+- **Start‐sync date field**
+  `(By.ID, "appfolio-start-sync-input") `
+- **Save button** (XPath then CSS fallback) 
+
+```text
+(By.XPATH, "/html/body/react-component[2]/div/div/div[2]/div/div[3]/button") (By.CSS_SELECTOR, "body > react-component:nth-child(5) > div > div > div.react-modal__body > div > div.text-right > button")
+```
+
+- **Expand “Maint. Communication Settings”** 
+  ```text
+  (By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]")
+  ```
+  ` `
+- **Email input inside that** 
+  ```text
+  (By.XPATH,   "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[2]/div[6]/div[1]/div[2]/div[3]/div[2]/div/input" ) 
+  ```
+- **Save** 
+  ```text
+  (By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[2]/div[6]/div[2]/button[2]") 
+  ```
+
+---
+
+## **9. Update Product Packages**
+
+Creates and configures “packages” matching your subscription list.
+
+- **Navigate**: `https://app.latchel.com/admin/pm-company/{id}/product-packages`
+- **“New Package”** 
+
+```text
+(By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div[1]/div/button") 
+```
+
+- **Package name input**
+  `(By.ID, "react-modal-prompt-value") `
+- **Click the newly created package**
+  `(By.XPATH, f"//a[contains(text(), '{subscription_raw}')]") `
+- **“Add Products”** 
+  ```text
+  (By.XPATH, "//*[@id='angular-app-main-content']/div[1]/div/div[3]/div[1]/button")
+  ```
+  ` `
+- **Base‐product dropdown** 
+  ```text
+  (By.XPATH, "//*[@id='angular-app-main-content']/div[1]/div/form/div[1]/la-dropdown/div/div[1]") 
+  ```
+- **Select base product** 
+  ```text
+  (By.XPATH, f"//div[@class='list__element ng-scope']//strong[contains(text(), '{base_product}')]") 
+  ```
+- **Date picker** 
+  ```text
+  (By.XPATH, "//*[@id='angular-app-main-content']/div[1]/div/form/div[2]/hl-product-details-form/div/div/div[1]") (By.XPATH, "//td[contains(@class, 'current')]") 
+  ```
+- **Add-on toggles** (per add-on) 
+  ```text
+  //label[contains(text(), 'Include Autopilot')]/preceding-sibling::div[contains(@ng-model, 'includeSAAS')] //label[contains(text(), '{addon}')]/preceding-sibling::div[contains(@class, 'hl-toggle')] 
+  ```
+- **Save button** (XPath \+ CSS fallback) 
+  ```text
+  (By.XPATH, "//*[@id='angular-app-main-content']/div[1]/div/form//button[contains(., 'Save')]") (By.CSS_SELECTOR, "#angular-app-main-content > div.container.container--white.|.m-y-2.ng-scope > div > form button[type='submit']") 
+  ```
+
+---
+
+# **Why this could break**
+
+Every one of these steps relies on **exact** IDs, placeholders, class names, or XPATH hierarchies. If because a redesign of the ui, new features or changes we:
+
+- Renames an input placeholder
+- Moves a field into a different wrapper
+- Changes a CSS class on a button
+- Adjusts text on a label
+
+then Selenium will immediately throw a `NoSuchElementException` or `ElementNotInteractableException` and the flow will not be completed.
+
+---
+
+## **Suggested API Endpoints**
+
+To avoid this fragility, will be good to expose simple REST endpoints that exactly mirror these flows:
+
+| Endpoint | Purpose |
+| :-- | :-- |
+| `POST /api/companies` | Create a company |
+| `POST /api/companies/{companyId}/subscriptions` | Attach a new subscription package |
+| `PATCH /api/companies/{companyId}` | Update addresses, settings, website |
+| `PATCH /api/companies/{companyId}/integrations` | Enable AppFolio, toggle features |
+| `GET /api/companies/{companyId}` | Retrieve company details (incl. URLs) |

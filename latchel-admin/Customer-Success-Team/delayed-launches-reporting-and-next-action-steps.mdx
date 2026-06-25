@@ -1,0 +1,95 @@
+---
+title: "Delayed Launches - Reporting and Next Action Steps"
+---
+
+# **Purpose**
+
+<Note>
+  **Purpose of this document**
+
+  The purpose of this document is to define the process for creating additional visibility around Delayed Launches through Salesforce Reporting and the Action Steps required to ensure any delayed Opportunities have a clear path forward. This SOP will also clearly define who is responsible for each step.
+</Note>
+
+<Note>
+  **Who should read this document?**
+
+  The primary stakeholders for this document are anyone involved in removing a blocker from a delayed launch, including but not limited to Launch, Sales, Product and Customer Billing.
+</Note>
+
+## **Step-by-Step Guide**
+
+### **Process Overview**
+
+A Delayed Launch is defined as any Opportunity that is still in the Onboarding Pipeline once the Target Go Live Date (Billing Start Date) has passed. The process below will solve for:
+
+1. Identifying and categorizing Delayed Launches using Salesforce Reporting.
+2. Additional visibility into Delayed Launches and action required using the Delayed Launches Slack Workflow.
+3. The steps required to move Delayed Launches forward, clearly defining what action needs to be taken and who owns this step.
+
+### **Step 1 - Updating the Delayed Launches Report in Salesforce**
+
+Each Monday, the Launch Manager will run the [<u>Delayed Launches</u>](https://latchel1.lightning.force.com/lightning/r/Report/00O5e000008FAAAEA4/view?queryScope=userFolders "https://latchel1.lightning.force.com/lightning/r/Report/00O5e000008FAAAEA4/view?queryScope=userFolders") report and audit/add the Delayed Launch Reason.
+
+1. From the [<u>Delayed Launches</u>](https://latchel1.lightning.force.com/lightning/r/Report/00O5e000008FAAAEA4/view?queryScope=userFolders "https://latchel1.lightning.force.com/lightning/r/Report/00O5e000008FAAAEA4/view?queryScope=userFolders") report, click on the **Opportunity Name** to open the Opportunity in Salesforce.
+2. From the Onboarding tab, click into the **Delayed Launch Reason** field in the bottom right and choose from one of the following options:
+   - **Tech Request - High Impact**
+     - Multiple/high priority customers significantly impacted. Launch will work closely with the Sales and Product team to determine next steps and who owns the next action. 
+     - Action owner will be clearly defined in Delayed Launch Update each week.
+   - **Tech Request - Low Impact**
+     - Single user/customer impacted. Launch will work closely with the Sales and Product team to determine next steps and who owns the next action. 
+     - Action owner will be clearly defined in Delayed Launch Update each week.
+   - **Client Delay - Engaged**
+     - Past billing start date but client is engaged and there is a clear plan to complete onboarding - no additional action required.
+   - **Client Delay - Disengaged **
+     - Client is no longer engaged. Launch will make 2-3 attempts via email and phone to re-engage the client. If the client is still unresponsive, Launch will loop in Sales. 
+     - Action owner will be clearly defined in Delayed Launch Update each week.
+   - **Launch Delay - Configuration**
+     - Client has a unique/complex configuration that is taking the Launch team longer than normal to complete. 
+     - Launch Manager owns the next action steps with the client. 
+   - **Launch Delay - Other**
+     - Undefined Reason. 
+     - Action owner will be clearly defined in Delayed Launch Update each week.
+   - **Product Fit/Expectations**
+     - Latchel doesn’t meet client’s current needs or client has unrealistic expectations we do not plan on solving for.
+     - Sales will own next action steps to determine whether opportunity can be saved. 
+
+### **Step 2- Running the Delayed Launch Update Workflow in Slack**
+
+The Launch Manager will complete the **Delayed Launches** workflow in the [<u>onboard\_911</u>](https://latchel.slack.com/archives/GRUJB0J91 "https://latchel.slack.com/archives/GRUJB0J91") slack channel for any account included on the Delayed Launches report.
+
+1. From the [<u>onboard\_911</u>](https://latchel.slack.com/archives/GRUJB0J91 "https://latchel.slack.com/archives/GRUJB0J91") slack channel, select the Workflow labeled **Delayed Launches** and complete the following information:
+   - Company Name
+   - Subscription Details
+   - Account Executive 
+   - Contracted Units
+   - CMRR
+   - Billing Start Date
+   - Delayed Launch Reason (as defined in Step 1)
+   - Action Required / Next Steps
+     - Quick summary of Launch Delay Reason
+     - Next Steps: What is required to get the client back on track and who owns this step (Action Owner). This process is defined in Step 3.
+   - Action Owner
+   - Link to Salesforce URL
+   - Link to Latchel URL
+
+### **Step 3 - Weekly Delayed Launch Action Meeting**
+
+Each week, the Launch Manager will host an ad hoc **Delayed Launch Action Meeting** to review all delayed launches and make sure the action plans and next steps are moving the client towards a resolution. 
+
+1. This meeting will be **mandatory** for all parties identified as the **Action Owner** in the **Delayed Launch Update**.
+2. The Launch Manager will coordinate meetings based on schedule availability.
+3. Delayed Launch Action Meeting Goals/Outcomes:
+   - The Launch Manager will provide a recap of any newly added Opportunities.
+   - The current Action Owner for existing Opportunities will provide a quick recap of any updates since the last meeting. 
+   - Meeting Attendees will discuss any current blockers/impediments and ways to move the opportunity forward.
+   - Meeting Attendees will clearly define the next steps and Action Owner as a group with a clear plan of action for the next 7 days. 
+4. This process will conclude once the Opportunity has been successfully moved into the **Customer Success Pipeline** or has been moved back to the AE Sales Pipeline.
+
+### **Step 4 - Deal Moved Back to AE Sales Pipeline**
+
+1. A new contract is required if a client will not launch by the first of the month following their Service Start Date.
+   - For example, if a client has a service start date of 11/1, they would need to be live by 12/1, which means once we are past the midway point of November we need a new contract. This gives them a month (more or less) to kickoff from the original kickoff date.
+2. If they won’t launch by the first of the following month, the deal is moved back to the AE Sales Pipeline into a newly created stage, **Onboarding Delay - Client Engaged**. 
+   - A new contract is required to move the deal back into the Onboarding Pipeline.
+3. The implementation fee is not refunded, but the client will have a credit towards their implementation fee if they sign a new contract with a Service Start Date within 90 days of the original start date.
+4. If the client either does not sign resign within 90 days, or confirms with the AE they will not move forward with onboarding, the deal will be moved to **Closed Lost**.

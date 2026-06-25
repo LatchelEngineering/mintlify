@@ -1,0 +1,56 @@
+---
+title: "(CS) Diagnostic Workflow Assignment Guide"
+---
+
+## **Background**
+
+Latchel currently has 3 different types of “master” diagnostic workflows to account for the different subscription types that are supported. This guide will go through how each of them are different, where they should be assigned, and the SOP for how to manually assign a diagnostic workflow to a customer.
+
+## **Diagnostic Workflow Types and Assignment Guide**
+
+\
+
+| **Diagnostic Flow Name** | **Description** | **Who Is It For?** |
+| :-- | :-- | :-- |
+| [<u>\[MASTER\] Troubleshooting Flow</u>](https://app.latchel.com/admin/diagnostic-flow/121 "https://app.latchel.com/admin/diagnostic-flow/121") | Master diagnostic flow intended for Premium and Home Assistant customers. This workflow includes the most workflow options, compared to the other 2 below, and a hidden option for those who are signed up for Home Assistant. It is continuously updated by the Ops Product/Program team and revised when we see an opportunity through requests. However, please note that it hasn’t had a full clean up/refresher like the other 2 master diagnostic workflows. We plan to do this when we have some free bandwidth. | <ul><li>Home Assistant</li><li>Premium</li><li>Premium \+ Home Assistant</li></ul> |
+| [<u>\[24/7 MASTER\] 24/7 Only Flow</u>](https://app.latchel.com/admin/diagnostic-flow/177 "https://app.latchel.com/admin/diagnostic-flow/177") | Master diagnostic flow created for emergency subscriptions. This workflow was created in June 2021 by cloning the \[MASTER\] Troubleshooting Flow and simplifying it to focus on emergency situations. Previously, 24/7 and after hours residents were getting confused by the many options in the \[MASTER\] Troubleshooting Flow and submitting WOs with incorrect problems. This workflow also has a hidden Home Assistant workflow for customers who are signed up for that program. | <ul><li>24/7 Emergency</li><li>24/7 Emergency \+ Home Assistant</li><li>After Hours</li><li>After Hours \+ Home Assistant</li></ul> |
+| [<u>\[HOA MASTER\] Common Area and At Residence Flow</u>](https://app.latchel.com/admin/diagnostic-flow/208 "https://app.latchel.com/admin/diagnostic-flow/208") | Master diagnostic flow created for customers who have common area spaces for HOA in addition to in-residence. It first asks if the submitter is submitting for a common space or in their residence. <ul><li>The in-residence workflow is currently the same as the \[24/7 MASTER\] 24/7 Only Flow.</li><li>The common space workflow was also cloned from the same workflow, but changed so that the location is specifically for common areas. It was also further simplified to remove any troubleshooting steps since PMs do not expect residents to execute these in common areas.</li></ul> Please note that the Ops Product/Program team will eventually create a new one for premium or Home Assistant customers with HOA when we have more bandwidth or when there’s a need for it. | <ul><li>Any of our subscriptions \+ HOA</li></ul> |
+
+## **SOP for Manually Assigning a Diagnostic Workflow to a Customer**
+
+This section lists out the steps for manually assigning a diagnostic workflow to a customer.
+
+<Note>
+  See a video version of this SOP [<u>here</u>](https://www.loom.com/share/9a90118efe5747978d22380d7a82574b "https://www.loom.com/share/9a90118efe5747978d22380d7a82574b").
+</Note>
+
+1. Go to the PM Company’s Page and identify the “Details” tab. See blue arrow in the screenshot below. 
+
+<Frame>
+  ![CSM 37](/images/CSM-37.png)
+</Frame>
+
+2. Scroll down the details tab and look for the drop down that says “Workflow Automation Settings”. See blue arrow in the screenshot below. 
+
+<Frame>
+  ![CSM 38](/images/CSM-38.png)
+</Frame>
+
+3. Press the drop down for “Workflow Automation Settings and it’ll expand (see below). 
+
+<Frame>
+  ![CSM 39](/images/CSM-39.png)
+</Frame>
+
+4. In the part that says “Default Diagnostic Flow”, type in the name of the master diagnostic flow that you’d like to have for that customer. You will know which diagnostic workflow to choose by checking it against their subscription (see the table in the [<u>Diagnostic Workflow Types and Assignment Guide</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/2495447041/CS+Diagnostic+Workflow+Assignment+Guide#Diagnostic-Workflow-Types-and-Assignment-Guide "https://latchel.atlassian.net/wiki/spaces/CS/pages/2495447041/CS+Diagnostic+Workflow+Assignment+Guide#Diagnostic-Workflow-Types-and-Assignment-Guide") section above). As you type, options will show up in the drop down and you can choose the correct one. See blue arrow in screenshot below.\
+   \
+   _Please note that the default for any onboarded customer is “\[MASTER\] Troubleshooting Flow”, which is intended for Premium and Home Assistant customers._ 
+   <Frame>
+     ![CSM 40](/images/CSM-40.png)
+   </Frame>
+5. Once you have chosen the diagnostic flow, press “Save”. See blue arrow in screenshot below. 
+   <Frame>
+     ![CSM 41](/images/CSM-41.png)
+   </Frame>
+   \
+6. To validate that the diagnostic workflow has saved properly, refresh the page and check that the updated diagnostic flow is in the “Default Diagnostic Flow” field for that customer page.
