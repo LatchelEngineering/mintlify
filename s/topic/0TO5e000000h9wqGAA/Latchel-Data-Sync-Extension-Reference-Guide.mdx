@@ -44,14 +44,14 @@ Here is how each setting option impacts which work orders sync from your platfor
 1. **Properties -** status of previously created properties synchronizes **_only from active to inactive._** This means that if you activates a previously inactive property from your PMS, **this change will not propagate to Latchel.**
 
 <Note>
-  Chrome plugin users can influence the **"is_active"** field of a property by hiding or unhiding the object in your PMS.
+  Chrome plugin users can influence the **"is\_active"** field of a property by hiding or unhiding the object in your PMS.
 </Note>
 
 2. **Residents -** the integration **do not currently update contact information nor the name of the resident**. Once residents are existing or created the only things that would potentially change are:
 
 - move in date
 - move out date
-- is_active in Latchel (based on the residents move in and move out date)
+- is\_active in Latchel (based on the residents move in and move out date)
 - the property unit they are associated with
 
 3. **Work Order (WO) -** the integration do not update any fields on previously created work orders.
@@ -81,7 +81,7 @@ When a customer is on an **_active_** integration, an indication will show at th
 
 To manually sync WO using the Chrome plugin data sync, you can initiate a re-sync of all data by opening up the Chrome plugin UI and clicking **Sync All Data**.
 
-<Icon icon="camera-movie" iconType="sharp-duotone-solid" color="#ff9b8a" /> **Watch how this works below\!**
+<Icon icon="camera-movie" iconType="sharp-duotone-solid" color="#ff9b8a" /> **Watch how this works below!**
 
 <iframe width="100%" height="420" src="https://www.loom.com/embed/9e52e22b0d284fae80faa7cb7c8cb653?sid=444a8506-09a3-4ed1-b0ce-ddf54c4d9583" title="How to Accept & Schedule a Job" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen />
 
@@ -96,3 +96,18 @@ To manually sync WO using the Chrome plugin data sync, you can initiate a re-syn
 <Tip>
   You may also contact Latchel's Product Support via [team@latchel.com](mailto:team@latchel.com) to know which option works best for your company.
 </Tip>
+
+## Excluding Properties from Import
+
+PMs can now choose to exclude specific properties from being imported into Latchel during a sync. This is useful for units that should not be managed through Latchel, such as:
+
+- Commercial units
+- Non-revenue units
+- Parking spots
+- Storage units
+
+To exclude a property, use the **Exclude from Property Sync** button found within your PMS (e.g., in AppFolio, this button appears directly on the property page). Excluded properties will be skipped in all future syncs.
+
+<Note>
+  To re-include a property, simply remove the exclusion in your PMS. It will be picked up in the next sync.
+</Note>
