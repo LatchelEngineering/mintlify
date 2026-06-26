@@ -951,7 +951,20 @@
                           "latchel-admin/Customer-Success-Team/how-to-activate-the-integration"
                         ]
                       },
-                      "api-training-session"
+                      "latchel-admin/Customer-Success-Team/api-training-session"
+                    ]
+                  },
+                  {
+                    "group": "Customer Account Management SOPs",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/job-aid-send-grid-training-unblocking-bounced-emails",
+                      {
+                        "group": "Customer Meetings",
+                        "pages": [
+                          "meeting-cadence-for-latchel-customers-post-sale",
+                          "ad-hoc-meeting-agenda-template"
+                        ]
+                      }
                     ]
                   }
                 ]
