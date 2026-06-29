@@ -583,7 +583,8 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/latchel-admin"
+              "latchel-admin/latchel-admin",
+              "latchel-admin/how-to-use-mintlify"
             ]
           },
           {
