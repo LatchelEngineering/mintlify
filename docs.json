@@ -965,8 +965,8 @@
                       {
                         "group": "Customer Meetings",
                         "pages": [
-                          "meeting-cadence-for-latchel-customers-post-sale",
-                          "ad-hoc-meeting-agenda-template"
+                          "latchel-admin/Customer-Success-Team/meeting-cadence-for-latchel-customers-post-sale",
+                          "latchel-admin/Customer-Success-Team/ad-hoc-meeting-agenda-template"
                         ]
                       }
                     ]
