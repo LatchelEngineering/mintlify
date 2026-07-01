@@ -1014,7 +1014,20 @@
                     ]
                   },
                   "latchel-admin/Customer-Success-Team/customer-profitability-score-the-spotlight-approach",
-                  "latchel-admin/Customer-Success-Team/this-is-a-draft-job-aid-latchel-renters-insuranc"
+                  "latchel-admin/Customer-Success-Team/this-is-a-draft-job-aid-latchel-renters-insuranc",
+                  {
+                    "group": "Upgrading Accounts",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/upgrade-talk-track",
+                      "latchel-admin/Customer-Success-Team/upgrade-lunch-and-learn-deck",
+                      {
+                        "group": "Customer Upgrades",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/draft-sales-cs-admin-customer-upgrade-process-flow"
+                        ]
+                      }
+                    ]
+                  }
                 ]
               }
             ]
