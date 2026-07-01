@@ -76,7 +76,7 @@ Important things to know:
 - Each property manager generates their own API key from their Latchel dashboard (Account Settings → Integrations)
 - Re-generating immediately invalidates the old key — the customer must update any integrations using the old key
 - Latchel does **not** currently support scoped (read-only) API keys — all keys have full access
-- For API-specific technical issues: [tech@latchel.com](mailto:tech@latchel.com)
+- For API-specific technical issues: #bug-report
 
 ## 2.6 Rate Limits
 
@@ -124,7 +124,7 @@ Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfol
 | API key generation | [help.latchel.com — How to Generate an API Key](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Generate-an-API-Key) |
 | Webhook docs | [help.latchel.com — search “Webhooks”](https://help.latchel.com/reference/introduction.md) |
 | Analytics\+ | [https://latchel.com/analytics-plus/](https://latchel.com/analytics-plus/) |
-| API technical issues | [tech@latchel.com](mailto:tech@latchel.com) |
+| API technical issues | #bug-report |
 | Customer Success | [success@latchel.com](mailto:success@latchel.com) |
 
 ## 3.2 Anatomy of the Docs Page
@@ -417,7 +417,7 @@ Webhook documentation is separate from PAPI and is available in the Help Center 
 - Requests for read-only API keys — explain not available, note to CSM if a blocker
 - Questions about Analytics\+ as an alternative to the API
 
-## Escalate to Engineering ([tech@latchel.com](mailto:tech@latchel.com))
+## Escalate to Product & Engineering (#bug-report or #feature-requests)
 
 - The API is returning incorrect or missing data for the customer’s account
 - A customer’s API key is not working after re-generation
@@ -465,7 +465,7 @@ Webhook documentation is separate from PAPI and is available in the Help Center 
 | 401 | Unauthorized — API key missing or invalid | Check the API key; have customer re-generate if needed |
 | 404 | Not found — the ID in the request does not exist | Verify the ID is correct for this account |
 | 429 | Too many requests — rate limit exceeded | Add delays; advise on pacing. Max 600/10 minutes. |
-| 500 | Server error | Escalate to [tech@latchel.com](mailto:tech@latchel.com) |
+| 500 | Server error | Escalate in #bug-report |
 
 ---
 

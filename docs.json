@@ -1081,7 +1081,13 @@
                   "latchel-admin/product-engineering-team/latchel-integrations-wiki/propertyware-reference-guide",
                   "latchel-admin/product-engineering-team/latchel-integrations-wiki/rentvine-reference-guide",
                   "latchel-admin/product-engineering-team/latchel-integrations-wiki/rent-manager-reference-guide",
-                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/yardi-reference-guide"
+                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/yardi-reference-guide",
+                  {
+                    "group": "Appfolio Reference Guide (The Latchel Data Sync)",
+                    "pages": [
+                      "latchel-admin/product-engineering-team/appfolio-reference-guide-the-latchel-data-sync"
+                    ]
+                  }
                 ]
               }
             ]
