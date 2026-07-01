@@ -1103,39 +1103,34 @@
                   "latchel-admin/Sales-Team/sales-pipeline-metrics",
                   "latchel-admin/Sales-Team/sales-goals",
                   "latchel-admin/Sales-Team/lead-assignment-rules-and-notifications",
-                  "latchel-admin/Sales-Team/salesforce-account-stage-change-automations"
+                  "latchel-admin/Sales-Team/salesforce-account-stage-change-automations",
+                  "latchel-admin/Sales-Team/content-creation-and-management-standards",
+                  "latchel-admin/Sales-Team/sales-resource-or-content-management-process",
+                  "latchel-admin/Sales-Team/sales-glossary",
+                  "latchel-admin/Sales-Team/sop-how-to-reactivate-a-suspended-google-account",
+                  "latchel-admin/Sales-Team/sop-how-to-connect-your-latchel-gmail-account-to-salesforce"
                 ]
               },
               {
                 "group": "AE Resources",
-                "pages": [
-                  "latchel-admin/Sales-Team/AE-Resources"
-                ]
+                "pages": []
               },
               {
                 "group": "SDR Resources",
-                "pages": [
-                  "latchel-admin/Sales-Team/sdr-resources"
-                ]
+                "pages": []
               },
               "latchel-admin/Sales-Team/product-information",
               {
                 "group": "Sales Strategy",
-                "pages": [
-                  "latchel-admin/Sales-Team/sales-strategy"
-                ]
+                "pages": []
               },
               {
                 "group": "Industry Information",
-                "pages": [
-                  "latchel-admin/Sales-Team/industry-information"
-                ]
+                "pages": []
               },
               {
                 "group": "Marketing Team Resources",
-                "pages": [
-                  "latchel-admin/Sales-Team/marketing-team-resources"
-                ]
+                "pages": []
               }
             ]
           },
