@@ -1,0 +1,89 @@
+---
+title: "Job Aid: Billing + Past Due Accounts"
+---
+
+The purpose of this job aid is to (a) describe how Latchel communicates with customers with past due account balances and (b) describe Customer Success, Product and Finance’s responsibilities in connection with these accounts. 
+
+## **Payment cycle**
+
+1. **5th working day of each month** - All Active Customers with a Service Start Date (as defined in their contract with Latchel) that has passed will receive an invoice on the 5th of each calendar month.
+
+Ex. ABC Management’s contract has a Service Start Date of December 25, 2022. ABC Management receives their first invoice on January 5, 2023. 
+
+2. **10th calendar day of each month** - Latchel will attempt to charge the credit card on file for each Active Customers who received a bill on the 5th and has not yet paid that bill. 
+
+Ex. ABC Management has not paid their invoice as of January 9, 2023. On January 10, Latchel attempts to charge ABC Management’s card on file. 
+
+3. **7th thru 11th calendar days of each month** - Latchel will retry the above cards, in the event the charge attempt on the 6th calendar day failed. 
+
+Ex. Latchel retries ABC Management’s card on January 11, 12, 13, 14, and 15, 2023.  
+
+## **Past due accounts **
+
+4. **3rd Monday of each month** - In the event that an account still remains past due, a customer will receive the following email from [<u>accounting@latchel.com</u>](mailto:accounting@latchel.com).
+
+> “Dear \$CUSTOMER\_NAME,
+>
+> You have missed making a payment under the terms of our agreement, and your account is past due. As of the date of this notice, the balance of the attached invoice \$INVOICE\_NUMBER from \$INVOICE\_DATE is \$AMOUNT\_DUE.
+>
+> Please arrange payment of the overdue balance within seven (7) days of this notice or contact us for additional assistance.
+>
+> If payment has been made within five (5) days of this notice, please disregard this letter.
+>
+> Should you have any enquiries, please reach out to your CSM at [<u>success@latchel.com</u>](mailto:success@latchel.com).
+>
+> Best Regards,
+>
+> Accounting Team”
+
+Ex. Latchel sends the above email to ABC Management on January 16, 2023. 
+
+5. **Following 3 Mondays** - In the event that an account still remains past due, the customer will continue to receive the following email indicating that their account remains past due.
+
+Ex. Latchel re-sends the above email to ABC Management on January 23, 30,and February 6, 2023. 
+
+6. **8 weeks past due** - Beginning the 8th week that a customer’s account remains past due, Finance will:\*
+
+a. Post in #accounts-receivable the names of the customers who will receive a past due banner in their Latchel account. 
+
+b. Use the flow described in the #userpilot  to add the below banner on the customer’s Latchel account. 
+
+<Frame>
+  ![CSM 64](/images/CSM-64.png)
+</Frame>
+
+Ex. On February 26, 2023, Finance uses the flow described in #userpilot triggering a banner to ABC Management’s Latchel account.
+
+7. **1st calendar day of month 3 after the first missed payment**. This is the date that Finance will have sent a 3rd consecutive monthly invoice that the customer has not paid.  On days 3 and 5 after this day, Accounting will send the following email to the customer adding **_all_** email addresses associated with customer account in Salesforce. Finance will attempt to reach the customer by phone. 
+
+>  “Subject: SERVICE DISRUPTION - Latchel 
+>
+> Dear Customer, 
+>
+> Your Latchel account is severely past due. You currently have 3 or more invoices unpaid. Your service will be suspended on the 14th day of this month. To avoid this disruption, click here to pay your account balance as soon as possible..
+>
+> If you have any questions about your account, please email [<u>success@latchel.com</u>](mailto:success@latchel.com),
+>
+> Accounting Team”
+
+Ex. On March 4 and 6, 2023, Finance sends the above email to the customer, indicating that the customer’s account will be disabled on March 11, 2023. 
+
+8. **Account Termination Date**.  On the date in the email described in Step 7, Finance will (a) submit an account termination request in the #accounts-receivable, triggering the CSM to disable the past due customer’s account and (b) send the following email to the customer adding **_all_** email addresses associated with customer account in Salesforce. 
+
+> “Subject: SERVICE DISRUPTION - Latchel 
+>
+> Good Afternoon, 
+>
+> You currently have 3 or more invoices unpaid with Latchel, and your service has been suspended.
+>
+> If you have any questions about your account, please email [<u>success@latchel.com</u>](mailto:success@latchel.com).
+>
+> Accounting Team”
+>
+> Ex. On March 11, 2023, the CSM disables the customer’s account and Finance sends the above email to customer. 
+
+9. **Re-enabling suspended accounts**. An account suspended because of non-payment may be re-enabled by Launch only once Finance has confirmed that the customer is current on their account, including any late fees assessed by Finance.   
+
+<Warning>
+  In the event a past due account becomes current, Finance will remove the banner from the customer’s account within 2 business days. 
+</Warning>

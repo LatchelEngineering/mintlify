@@ -993,7 +993,22 @@
                       "latchel-admin/Customer-Success-Team/how-to-request-a-customer-billing-exception",
                       "latchel-admin/Customer-Success-Team/customer-discounts-escalation-matrix",
                       "latchel-admin/Customer-Success-Team/billing-exception-requests-slack-channels",
-                      "latchel-admin/Customer-Success-Team/property-manager-profit-calculator"
+                      "latchel-admin/Customer-Success-Team/property-manager-profit-calculator",
+                      {
+                        "group": "Ordway Training Videos",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/ordway-how-to-search-for-a-customer-account-in-ordway",
+                          "latchel-admin/Customer-Success-Team/ordway-how-to-find-the-price-per-unit",
+                          "latchel-admin/Customer-Success-Team/ordway-how-to-find-the-active-unit-count-latchel-invoiced-for",
+                          "latchel-admin/Customer-Success-Team/ordway-how-to-view-the-customers-default-subscription-payment-method-on-file",
+                          "latchel-admin/Customer-Success-Team/ordway-how-to-view-customer-billing-contacts-and-invoice-email-history",
+                          "latchel-admin/Customer-Success-Team/ordway-how-to-view-and-download-customer-subscription-invoices",
+                          "latchel-admin/Customer-Success-Team/ordway-parent-and-child-accounts-in-ordway",
+                          "latchel-admin/Customer-Success-Team/ordway-how-to-look-at-invoices-for-pms-with-multiple-subscriptions"
+                        ]
+                      },
+                      "latchel-admin/Customer-Success-Team/faqs-monthly-subscription-invoicing-accounts-receivable",
+                      "latchel-admin/Customer-Success-Team/job-aid-billing-past-due-accounts"
                     ]
                   }
                 ]
