@@ -95,8 +95,8 @@ The following Property fields are brought over from Rentvine to Latchel.
 | stateID | state |
 | postcalCode | zip |
 | blank | criticalNote |
-| unit.isActive | [property.is](http://property.is)\_active |
-| {name: [unit.name](http://unit.name)} | integration\_data |
+| unit.isActive | property.is\_active |
+| name: unit.name | integration\_data |
 
 ### **Previously created Properties**
 
@@ -105,7 +105,7 @@ Subsequent synchronizations of the same property will impact the following field
 | **Platform field** | **Field/Interpretation in Latchel** |
 | :-- | :-- |
 | (various data) | integration\_data |
-| unit.isActive | [property.is](http://property.is)\_active |
+| unit.isActive | property.is\_active |
 | Address data\* | address\_label \*If any address data is different in the platform than in Latchel, we store the exact platform address in order to provide the “Source Address” feature for customers. [<u>Link to product release.</u>](https://latchel.slack.com/archives/C038Z6M0T6H/p1735848840482549 "https://latchel.slack.com/archives/C038Z6M0T6H/p1735848840482549") |
 
 #### **Automatic Property Reconciliation**
