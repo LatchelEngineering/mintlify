@@ -1,10 +1,11 @@
 ---
 title: "Appfolio Reference Guide (The Latchel Data Sync)"
+sidebarTitle: "Overview"
 ---
 
 This guide helps customer support agents understand and use the Latchel Data Sync Chrome Extension. It provides instructions and information to support customers with data synchronization between Appfolio and Latchel.
 
-# **Activating the Latchel Data Sync (New Customer)**
+## **Activating the Latchel Data Sync (New Customer)**
 
 ### **Step 1: Activate Chrome Plugin in Latchel - Latchel (Internal Only)**
 
@@ -51,7 +52,7 @@ If the sync does not begin within 1 minute, then troubleshoot the permissions gr
 
 For any existing customer that wish to activate the Latchel Data Sync for the first time, please also enter your request in the [<u>#account-update-request</u>](https://latchel.slack.com/archives/C05CGVC9FPV "https://latchel.slack.com/archives/C05CGVC9FPV") slack channel using the Account Update Request Workflow. 
 
-# **Data Synchronization Overview**
+## **Data Synchronization Overview**
 
 ## **Types of Syncs**
 
@@ -80,16 +81,13 @@ The background sync now runs on two independent cadences
 - **Conditions**: Only occurs automatically when automatic work order sync is on. Otherwise can be initiated manually.
 - **Frequency**: Manually initiated or, if automation is enabled, runs immediately following the automated background sync.
 
-# **Data Sync Details**
+## **Data Sync Details**
 
 ## **Properties**
 
 ### **Newly Created Properties**
 
 When a property is first synced from Appfolio to Latchel, the following fields are mapped:
-
-| **Appfolio Field** | **Latchel Field** |
-| :-- | :-- |
 
 | **Appfolio Field** | **Latchel Field** |
 | :-- | :-- |
@@ -124,9 +122,9 @@ Upon customer request, Latchel can create common area units for PM’s to manage
 How it works:
 
 1. A PM (or Latchel team member on behalf of a PM) submits a one-off request for common area maintenance on a specific building(s) via this Typeform: [<u>https://latchel.typeform.com/to/P8jj3FBx</u>](https://latchel.typeform.com/to/P8jj3FBx)
-   1. Why one-off requests only? We only want to enable common areas on specific addresses for customers who are actually going to create building-level work orders due to billing implications (they will appear as active units in Latchel for billing purposes).
+   - Why one-off requests only? We only want to enable common areas on specific addresses for customers who are actually going to create building-level work orders due to billing implications (they will appear as active units in Latchel for billing purposes).
 2. Latchel creates the common area unit via API.
-   1. This results in a record with a building ID but no ref unit ID.
+   - This results in a record with a building ID but no ref unit ID.
 
 ## **Tenants/Residents**
 
@@ -176,3 +174,102 @@ When a work order is first synced from Appfolio to Latchel, the following fields
 #### **Work Order Update conditions**
 
 A customer can specify if they want WO updates to happen less often than by default. This settings is located  on a PM company page → Integrations tab → Work Order Update conditions. This setting is only accessible by admin users.
+
+<Frame>
+  ![Image 20260701 203922](/images/image-20260701-203922.png)
+</Frame>
+
+### **Foreground Sync (Latchel \> Appfolio)**
+
+When work orders are synced from Latchel to Appfolio, the following conditions and fields apply:
+
+- **Conditions for Sync**:
+  - Work order created date must be after the Appfolio sync date.
+  - Work order must be matched to a property in Appfolio.
+  - Property associated with the work order must have an integration sync method of "all" or "assigned" and be assigned to the Latchel user in Appfolio.
+- **Fields Synced**:
+
+| **Latchel Field** | **Appfolio Field** |  |
+| :-- | :-- | :-- |
+| ref\_service\_request\_id | ServiceRequestId |  |
+| ref\_job\_id | WorkOrderId |  |
+| ref\_property\_id | PropertyId |  |
+| ref\_unit\_id | UnitId |  |
+| order\_number | WorkOrderNumber |  |
+| name | pre-pended to the “description” |  |
+| description | description |  |
+| vendor\_description | Instructions |  |
+| max\_cost | Max Cost |  |
+| No equivalent Latchel field\* | Status \*Always set to "Assigned" |  |
+| No equivalent Latchel field\* | Assigned user \*If the user assigned to the Appfolio property has “Latchel” in their name, then assign the job that Appfolio user. If not, assigned user left blank. |  |
+
+- **Updates**: Work orders are updated in Appfolio when they move to the 'Canceled' or 'Completed' statuses in Latchel.
+- **Conditions:**
+  - Work order was updated in the last two weeks
+
+## **Owners (coming soon)**
+
+### **Owner Data**
+
+| **Appfolio Field** | **Latchel Field** |
+| :-- | :-- |
+| Owner Entity Name | name |
+| Primary Phone Number | primary phone number |
+| All Other Numbers | secondary phone numbers |
+| Primary Email | primary email |
+| All Other Emails | secondary emails |
+
+<Note>
+  Note: Only owners with more than 50% ownership are synced. If multiple owners are associated with a single property, the owner with the largest percentage ownership is imported.
+</Note>
+
+## **Special Features and Settings**
+
+### **Integration Sync Method**
+
+This is a special setting in Latchel that governs which Appfolio WOs will sync to and from Appfolio and Latchel. It can be found when logged in as an admin on the PM’s profile page under “Miscellaneous Settings.” This setting is inheritable to the portfolio and property.
+
+- **Options**:
+  - **Assigned Work Orders**: Only work orders assigned to a user with "Latchel" in their name will sync from Appfolio to Latchel.
+  - **All Work Orders**: All work orders in the Appfolio account will sync to Latchel, and vice versa.
+  - **No Work Orders**: No work orders will sync between Appfolio and Latchel.
+
+<Frame>
+  ![Image 20230213 191156 2](/images/image-20230213-191156-2.png)
+</Frame>
+
+<Tip>
+  **ProTip**: Users can stop WOs from updating in appfolio by using the “Assigned Work Orders” setting and unassigning the Latchel user in appfolio when they want the WO to stop updating in Appfolio.
+</Tip>
+
+### **Sync Status**
+
+- **Sync Status**: An indication will show at the top of each work order whether it was successfully synced with the customer’s PMS.
+
+### **File & Invoice Sync**
+
+This feature is not currently supported for Appfolio.
+
+<Tip>
+  **ProTip**: If the client uses the AppFolio Smart Bill feature they can assign their unique Smart Bill email address in Latchel for invoicing and we will automatically send the invoice as a pdf to AppFolio once the invoice is uploaded by the service provider.
+</Tip>
+
+<Note>
+  **Note:** Appfolio only accepts .pdfs currently, so .jpeg files are not uploaded. Also, attachments are limited to 20MB for most mail servers, so larger invoices are not attached via email and must be downloaded.
+</Note>
+
+## **Latchel Overlay for Property Management**
+
+Released Mar 30, 2026
+
+The Latchel Overlay for Property Management is a Heads-Up Display (HUD) that allows current Appfolio customers to view the Assigned Vendor in Latchel without leaving their PMS.
+
+Customers can download the Chrome extension here: [Property Manager Visor - Chrome Web Store](https://chromewebstore.google.com/detail/latchel-overlay-for-prope/nbifpjdaeocmafihkpjohfcodimelibc)
+
+**Loom overview:** Latchel Overlay for Property Management - 30 March 2026
+
+<iframe src="https://www.loom.com/embed/4a3179232fb341a08b02a5044dfb7cb4" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+<Note>
+  Note: The [<u>Exclude from Property Sync feature</u>](https://latchel.atlassian.net/wiki/spaces/PROD/pages/2608824321/Appfolio+Reference+Guide+The+Latchel+Data+Sync#Exclude-properties-from-import "https://latchel.atlassian.net/wiki/spaces/PROD/pages/2608824321/Appfolio+Reference+Guide+The+Latchel+Data+Sync#Exclude-properties-from-import") has been moved over to the Latchel Overlay extension.
+</Note>

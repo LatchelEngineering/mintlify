@@ -1,0 +1,39 @@
+---
+title: "Failed Work Order Syncs"
+---
+
+## **Summary**
+
+During a chrome plugin sync, one the operations performed is to sync newly created (since the last successful sync) work orders in Latchel to the Appfolio platform. A process exists to send a report to the Technical Success team detailing these work orders in an attempt to fix them for the customer. In this article, we’ll deep dive exactly why these work orders fail and how to fix them.
+
+## **What are the ways a work order can fail to sync?**
+
+## **Unrecognized Resident**
+
+### **Description**
+
+When Latchel tries to create the WO in Appfolio, we don’t see the resident information stored in the appfolio system. This is usually caused by the resident or call center associate providing incorrect information during work order creation
+
+### **How to Fix**
+
+Research the resident report for the customer. Find a resident who matches the details of the resident in the work order. Find that resident in Latchel and re-assign the work order to that resident.
+
+## **Property Errors**
+
+`No units associated with ref_property_id`
+
+`Unable to find property with ref_unit_id`
+
+ `Unable to find property with ref_property_id`
+
+**Description**
+
+Latchel is unable to find a property with a matching ref\_property\_id.
+
+**How to Fix**
+
+Research Latchel database for properties/units with a similar address and compare to the Appfolio report. Problems can be caused by duplicate properties in either platform. Properties/units can be merge or missing ref id added.
+
+It might be necessary to connect with the customer to validate the correct data.\
+\
+**Important, we should not have two properties/units with a matching ref id for the same pm company.**
