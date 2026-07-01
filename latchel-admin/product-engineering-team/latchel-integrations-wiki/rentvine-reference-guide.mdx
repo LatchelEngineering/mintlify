@@ -2,23 +2,23 @@
 title: "Rentvine Reference Guide"
 ---
 
-This document is the detailed source of truth for how the Latchel\<\>Rentvine sync operates today.
+This document is intended to be the detailed source of truth for how the Latchel\<\>Rentvine sync operates today.
 
-**Technical Docs**: [Rentvine API Docs](https://rentvine.com/api)
+**Technical Docs**: [Rentvine API Docs](https://docs.rentvine.com/)
 
 ## **Activating the integration**
 
-## **Integration Requirements**
+### **Integration Requirements**
 
-### **1. Obtain credentials**
+#### **<u>1 - Obtain credentials</u>**
 
 To activate Latchel’s Rentvine integration, engineering will need three pieces of data:\
 1. API Key\
 2. API Secret\
-3. customer subdomain. The subdomain is found in the URL of the customer’s Rentvine portal (the first bit after [<u>https://)</u>](https://latchel.atlassian.net/wiki/spaces/PROD/pages/3476553729/Rentvine+Reference+Guide# "#"). In the screenshot below the subdomain is `demopm5`
+3. customer subdomain. The subdomain is found in the URL of the customer’s Rentvine portal the first bit after `https://`. In the screenshot below the subdomain is `demopm5`
 
 <Frame>
-  ![Image 20250514 201217](/images/image-20250514-201217.png)
+  ![35435fb4 9283 4a31 905e 72c5809c3313](/images/35435fb4-9283-4a31-905e-72c5809c3313.png)
 </Frame>
 
 To set up an API key:
@@ -27,27 +27,27 @@ To set up an API key:
 2. Navigate to Settings\>Account\>User, Roles and API Keys
 
 <Frame>
-  ![Image 20250514 201545 (1)](/images/image-20250514-201545-\(1\).png)
+  ![7ba6e072 E998 480a 97e8 0adab68b44bb](/images/7ba6e072-e998-480a-97e8-0adab68b44bb.png)
 </Frame>
 
 3. Go to the API tab
 4. Click “New API Key”
 
 <Frame>
-  ![Image 20250514 201602 (1)](/images/image-20250514-201602-\(1\).png)
+  ![A6a9221d 2ebe 47aa A3d8 Ff9a9895d889](/images/a6a9221d-2ebe-47aa-a3d8-ff9a9895d889.png)
 </Frame>
 
 5. Fill out
-   1. name: Latchel
-   2. role: Administrator
+   - name: Latchel
+   - role: Administrator
 
 The customer should then copy and paste text (not screenshot) of the returned API Key and API Secret and send it to their Latchel customer success or product support contact.
 
 <Frame>
-  ![Image 20250514 201526 (1)](/images/image-20250514-201526-\(1\).png)
+  ![A8b4eb2a A294 4ec1 9056 E5a0c503fc8c](/images/a8b4eb2a-a294-4ec1-9056-e5a0c503fc8c.png)
 </Frame>
 
-### **<u>2 – Get Property & Resident Data from Rentvine</u>**
+#### **<u>2 – Get Property & Resident Data from Rentvine</u>**
 
 **NOTE**: This step is only necessary for existing customers. If you are working with a new customer with no data in Latchel yet, you can skip to step 4.
 
@@ -56,32 +56,32 @@ This step is critical to avoid creating duplicate property and resident records 
 Request a CSV export of the “Lease Tenant” report (Reports \> Lease Tenants or search for “Tenant”) from the Rentvine Web App
 
 <Frame>
-  ![Image 20250514 201727](/images/image-20250514-201727.png)
+  ![7a1d25b1 589a 4907 A26a 76e9733a359f](/images/7a1d25b1-589a-4907-a26a-76e9733a359f.png)
 </Frame>
 
-### **<u>3 – Submit a #account-update-request</u>**
+#### **<u>3 – Submit a #account-update-request</u>**
 
 In this step, the data support team will clean and prepare the customer’s data by assigning “ref\_ids” to each resident and property in Latchel. This will prevent the integration from accidentally creating those records again when we turn the integration on in the next stage.
 
 1. Navigate to the #account-update-request slack channel
 2. Go to Workflows--\>Account Update Request
 3. Fill out the required information
-   1. Select “Data Migration” in the task type question
+   - Select “Data Migration” in the task type question
 4. Tag @Jordan Caley in the slack workflow or thread after its created
 5. Once the data support team is completes the data work, product will prioritize the engineering ticket to complete the final step of this stage
 6. Once product confirms this step is complete, move to the next stage
 
-### **<u>4 – Notify Engineering</u>**
+#### **<u>4 – Notify Engineering</u>**
 
 You’re almost there! The last stage is to notify engineering to activate the integration. Make sure you are provided or have already provided API keys as outlined earlier.
 
-## **What happens when a customer first activates their integration?**
+### **What happens when a customer first activates their integration?**
 
 When an admin first activates the customer’s Rentvine integration nothing happens immediately. The integration will be active and will be scheduled for hourly imports but currently does not have an “initial sync” like Propertyware and Rent Manager.
 
 ## **Rentvine → Latchel**
 
-## **Properties**
+### **Properties**
 
 The following Property fields are brought over from Rentvine to Latchel.
 
@@ -113,13 +113,13 @@ Subsequent synchronizations of the same property will impact the following field
 To ensure accurate customer billing Latchel runs on automated process each month to de-activate any active units in Latchel that no longer exist in Rentvine. This process currently happens on the 27th at 3am PST.
 
 <Frame>
-  ![Active Units Reconciliation Integrations Frame 6 (2) 20250519 161638](/images/Active-Units-Reconciliation---Integrations---Frame-6-\(2\)-20250519-161638.jpg)
+  ![7db5522e F0d8 45fd 9417 A8081a98ebeb](/images/7db5522e-f0d8-45fd-9417-a8081a98ebeb.jpg)
 </Frame>
 
 When a property is deactivated through this process. It will be logged to the property in Latchel
 
 <Frame>
-  ![Image 20231219 185054 (3)](/images/image-20231219-185054-\(3\).png)
+  ![Adce5dc2 A0bb 47ba B140 4e5098eae03b](/images/adce5dc2-a0bb-47ba-b140-4e5098eae03b.png)
 </Frame>
 
 #### **Common areas**
@@ -129,11 +129,11 @@ Upon customer request, Latchel can create common area units for PM’s to manage
 How it works:
 
 1. A PM (or Latchel team member on behalf of a PM) submits a one-off request for common area maintenance on a specific building(s) via this Typeform: [https://latchel.typeform.com/to/P8jj3FBx](https://latchel.typeform.com/to/P8jj3FBx)
-   1. Why one-off requests only? We only want to enable common areas on specific addresses for customers who are actually going to create building-level work orders due to billing implications (they will appear as active units in Latchel for billing purposes).
+   - Why one-off requests only? We only want to enable common areas on specific addresses for customers who are actually going to create building-level work orders due to billing implications (they will appear as active units in Latchel for billing purposes).
 2. Latchel creates the common area unit via API.
-   1. This results in a record with a building ID but no ref unit ID.
+   - This results in a record with a building ID but no ref unit ID.
 
-## **Residents**
+### **Residents**
 
 The following resident fields are brought over from Rentvine to Latchel. Currently we sync all eligible residents on every sync. We sync all residents on the property so that any of them are able to create a work order in Latchel.
 
@@ -156,7 +156,7 @@ Once a resident is created we only change a few things on subsequent syncs
 - Move in / move out dates
   - When a resident is passed their move-out date, we’ll mark them inactive at the relevant property in Latchel
 
-## **Work orders**
+### **Work orders**
 
 By default, work orders are not imported from Rentvine to Latchel. If CS or PS receive a specific customer request to activate work order imports:
 
@@ -176,7 +176,7 @@ By default, work orders are not imported from Rentvine to Latchel. If CS or PS r
 
 ## **Latchel → Rentvine**
 
-## **Work orders**
+### **Work orders**
 
 Work orders are synced to Rentvine a few seconds after they are created in Latchel.
 
@@ -194,22 +194,24 @@ Work orders are synced to Rentvine a few seconds after they are created in Latch
 | ref\_property\_id | propertyID |
 | ref\_unit\_id | unitID |
 
-Rentvine Property Assignee (assignedToUserID) - Available upon request
+<Note>
+  Rentvine Property Assignee (assignedToUserID) - Available upon request
 
-When work orders sync from Latchel to Rentvine, the Rentvine work order property assignee is updated based on the Rentvine lease assignee. To request for a specific PM, please submit a #feature-request and tag @Jordan Caley.
+  When work orders sync from Latchel to Rentvine, the Rentvine work order property assignee is updated based on the Rentvine lease assignee. To request for a specific PM, please submit a #feature-request and tag @Jordan Caley.
+</Note>
 
 ### **Previously created WOs**
 
 By default, we only update the WO in Rentvine when the WO moves to the ‘Canceled' or 'Completed’ statuses in Latchel. We do not update the status in Rentvine when the work order moves to “Forwarded to PM.”
 
-#### **Integration Work Order Update conditions**
+### **Integration Work Order Update conditions**
 
 A customer can specify if they want WO updates to happen less often than by default. This settings is located  on a PM account details page → Miscellaneous Settings → Integration Work Order Update conditions. This setting is only accessible by admin users.
 
 <Frame>
-  ![Image 20240819 170938 (1) 2](/images/image-20240819-170938-\(1\)-2.png)
+  ![587a95f0 3f13 4e64 89a5 Cf4010733a76](/images/587a95f0-3f13-4e64-89a5-cf4010733a76.png)
 </Frame>
 
-## **Files**
+### **Files**
 
 We don’t sync files to Rentvine yet
