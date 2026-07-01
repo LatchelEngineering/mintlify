@@ -1,0 +1,63 @@
+---
+title: "(CHECK IF STILL NEEDED) Work Order Monitoring Process"
+description: "Explains Customer Success's work order monitoring process and escalation paths."
+---
+
+## Purpose
+
+Explain Customer Success's work order monitoring process and escalation paths.
+
+### What is the goal?
+
+The goal is to catch potential problems before property managers do. Additionally, this process can help Ops identify areas that need to be escalated if they have not been already.
+
+### Why is this important?
+
+One of our customers' top frustrations with Latchel is the perception that work orders are stuck without progressing. The specific purpose of this responsibility is to create a check on our manual task reports — Operations is not responsible for ensuring these reports are 100% accurate; this task falls to Customer Success. Also, these checks help identify problems or issues on a customer-level, which may be outside of Operations' visibility or scope.
+
+For example, if Ops is faced with more tasks that can be completed in a day, Ops is not expected to micro-manage or prioritize jobs based on property manager. However, one property manager may be disproportionately affected by this. This process exists as a check against individual property managers receiving sub-par service because of chance or bad luck.
+
+This is NOT an audit on Operations. Operations self-audits their work. This is an explicit check on problems Ops is not supposed to focus on.
+
+---
+
+## What is the process?
+
+Customer Success reviews jobs in a few different ways:
+
+- Based on the Customer Health Dashboard (WorkOrderAging tab).
+- Based on looking at the oldest jobs in each status by property manager.
+- Based on issues a property manager escalates to them.
+- In any other ad hoc manner.
+
+When looking at a job, Customer Success looks for the following scenarios:
+
+**New orphaned work orders** - These are work orders that have no tasks, has sent an automated message within the past 24 hours (or 1 business day, whichever is longer), but no more automated messages will be sent out.
+
+- Customer Success will check to see if this work order is on the Orphaned work order report. If not, notify @Will Gordon because there may be an issue with the report.
+- Customer success will add an appropriate follow-up task.
+- Note: These work orders are specifically monitored by Ops. The primary reason for this to existing in Customer Success is to find cases that are NOT on the Orphaned work order report.
+
+**Old orphaned work orders** - These are work orders that have no tasks, have sent the last automated message more than 1 business day ago, and no more automated messages will be sent out.
+
+- Customer Success will check to see if this work order is on the Orphaned work order report. If not, notify @Will Gordon because there may be an issue with the report.
+- Customer Success will add an appropriate follow-up task.
+- Customer Success will notify the #operations channel in Slack with a link to the work order and that it needs immediate action.
+
+**Old idle work orders** - These are work orders that have a task, which is either overdue or has a due date more than 1 week in the future and have no activity within the past 2 business days.
+
+- If the task is overdue:
+  - Check if the task is appropriate. If it is the right task, notify the #operations channel this work order needs immediate attention (include a link to the work order).
+  - If the task is not appropriate, close the existing task and create an appropriate task. Notify the #operations channel this work order needs immediate attention (include a link to the work order).
+- If the task is scheduled in the future:
+  - Review notes. If there is no obvious reason why the task should be scheduled more than 1 week in the future notify #operations channel and ask why it is scheduled for the future because there is no note and/or the note is unclear.
+
+**Old active work orders** - These are work orders that have a task, and are actively being worked on (worked on within the past 2 business days and a clear follow-up), but their status is not progressing.
+
+- Use best judgment to determine if Ops is taking the right action or if they're taking the wrong action.
+  - If they're taking the right action:
+    - Notify #operations and tag @ethan and @will.gordon this work order is stuck and we're following the right process.
+  - If they're taking the wrong action:
+    - Create a task with what you believe the right action to be and notify #operations with the work order link and recommended action.
+
+If Customer Success is primarily identifying places where Ops is not addressing old work, operations can escalate to @Will Gordon regarding the excessive workload. This is left to the Ops Supervisor's (@Shannon Bremer) discretion.

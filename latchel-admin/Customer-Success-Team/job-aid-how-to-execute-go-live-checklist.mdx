@@ -1,0 +1,93 @@
+---
+title: '(CS/Admin) Job-Aid: How to Execute the "Go Live" Check-list'
+description: 'Guide for completing the tasks listed in the "Go Live" check-list to confirm an account is correctly configured and ready to Go Live.'
+---
+
+## Objective
+
+### Purpose
+
+The purpose of this document is to guide you on completing the tasks listed in the "Go Live" check-list. The auditor owns managing the audit process and will be the one executing the audit, providing feedback or requesting adjustments, and keeping track of the status of this audit until final completion, which means the auditor is confirming the account is correctly configured and ready to Go Live.
+
+### What is happening prior to this process?
+
+We have completed all of the account configurations required for Phase 1 or Phase 2 of the Onboarding Process.
+
+---
+
+## Step-by-Step Guide
+
+### Step 1. General Account Information
+
+1. Open the Property Manager account you will audit (How to: Access the Property Manager Profile Page)
+2. Verify that the information entered in the account matches what was provided to us in the onboarding questionnaire. See this SOP for links to the questionnaire and the responses How to: Gather Company Information
+   This info includes: Account / Property Management Company Name, Account Type / Product Package, Subscription to LCN
+3. Enter the date you are performing this audit and the date the account will go live
+
+---
+
+### Step 2. Configurations Checks
+
+---
+
+### Step 3. Property Management Software Verification
+
+If the account uses the Latchel data sync plugin, there are additional settings we need to verify they are correctly configured to avoid creating problems with the account sync between Latchel and the Property Manager's software. So this audit is **EXTREMELY important**.
+
+**Appfolio Sync Date:**
+
+- Go to the Property Manager Account, details tab. Scroll down to the "Miscellaneous Settings".
+- If this account has the Latchel data sync, the "Appfolio Sync Date" needs to be added.
+- See Step 2 - (ADMIN) Configure the Property Manager's Miscellaneous Settings in Latchel
+- If there is any discrepancy, write details of it in your audit / check-list page for the Launch Manager in charge of this onboarding to fix it
+- Launch Manager in charge of this account will adjust appropriately
+
+**Account Slug:**
+
+- Go to the Property Manager Account, details tab. Scroll down to the "Miscellaneous Settings".
+- If this account has the Latchel data sync, the "Account Slug" needs to be added.
+- See Step 2 - (ADMIN) Configure the Property Manager's Miscellaneous Settings in Latchel
+- If there is any discrepancy, write details of it in your audit / check-list page for the Launch Manager in charge of this onboarding to fix it
+- Launch Manager in charge of this account will adjust appropriately
+
+**Property & Tenant Modification toggle:**
+
+- Go to the Property Manager Account, details tab. Scroll down to the "Miscellaneous Settings".
+- If this account has the Latchel data sync, the "Property & Tenant Modification" needs to be toggled ON.
+- See Step 2 - (ADMIN) Configure the Property Manager's Miscellaneous Settings in Latchel
+- If there is any discrepancy, write details of it in your audit / check-list page for the Launch Manager in charge of this onboarding to fix it
+- Launch Manager in charge of this account will adjust appropriately.
+
+**Verify the Property Manager has created a test work order assigned to the Latchel user** (property and resident data will not sync to Latchel if this has not been completed):
+
+- See Step 4 - (PROPERTY MANAGER) Assign a fake work order to the user
+- When testing the Latchel plugin, the Property Manager is required to create a fake work order and assign it to the Latchel user. Have the Property Manager forward you this test work order email notification to confirm this step was completed. You can also check Latchel for this test work order under the Property Manager's account under the maintenance tab.
+
+**Verify Reference IDs and last sync date:**
+
+_Ref\_ids_
+
+We store property and resident Reference IDs so the sync can push data back into the Property Manager's platform.
+
+- To verify if all properties have ref-ids, run the Query #3 from this page: Job-Aid: SQL Queries. When you execute this query, you should NOT get any data output. If you do, see step iii. below.
+- Use this SOP to learn how to run a query. How to: Handle Property and Resident Information Update
+- Note: The SOP is going over a specific query to pull property and resident information, but the process is the same.
+- If there are properties without ref-Ids, write details of it in your audit (the address and property ID) / check-list page for the Launch Manager in charge of this onboarding to fix it.
+- Launch Manager in charge of this account will adjust appropriately — SOP
+- To verify if all residents have ref-ids, run the Query #4 from this page: Job-Aid: SQL Queries. When you execute this query, you should NOT get any data output. If you do, see step v. below
+- Use this SOP to learn how to run a query. How to: Handle Property and Resident Information Update
+- Note: The SOP is going over a specific query to pull property and resident information, but the process is the same.
+- If there are residents without ref-Ids, write details of it in your audit (full name and resident ID) / check-list page for the Customer Service Manager in charge of this onboarding to fix it.
+- Launch Manager in charge of this account will adjust appropriately — SOP
+
+_Last sync date_
+
+- Run query #12 from this page: Job-Aid: SQL Queries to show when was the last sync date.
+- Use this SOP to learn how to run a query. How to: Handle Property and Resident Information Update
+- Note: The SOP is going over a specific query to pull property and resident information, but the process is the same.
+- Ensure there is in fact a sync date for that Property Manage account and the data output does not state NULL.
+- Note: NULL indicates the sync was never initiated by the Property Manager.
+
+---
+
+### Step 4. Final Set-up and Go Live

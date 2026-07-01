@@ -1040,6 +1040,23 @@
                   "latchel-admin/Customer-Success-Team/cs-admin-how-to-prep-home-assistant-materials-for-the-customer",
                   "latchel-admin/Customer-Success-Team/cs-admin-how-to-buy-and-release-numbers-in-twilio"
                 ]
+              },
+              {
+                "group": "Archived",
+                "pages": [
+                  "latchel-admin/Customer-Success-Team/draft-cs-admin-job-aid-home-assistant-onboarding-flow",
+                  "latchel-admin/Customer-Success-Team/service-provider-stripe-reconciliation",
+                  "latchel-admin/Customer-Success-Team/work-order-monitoring-process",
+                  "latchel-admin/Customer-Success-Team/cs-meetings-agendas-action-items-notes",
+                  "latchel-admin/Customer-Success-Team/2019-04-17-meeting-notes",
+                  "latchel-admin/Customer-Success-Team/archive-pre-configuration-call-agenda",
+                  "latchel-admin/Customer-Success-Team/archive-contract-review-call-agenda",
+                  "latchel-admin/Customer-Success-Team/job-aid-how-to-execute-go-live-checklist",
+                  "latchel-admin/Customer-Success-Team/customer-onboarding-information-checklist",
+                  "latchel-admin/Customer-Success-Team/onboarding-flow-communications",
+                  "latchel-admin/Customer-Success-Team/archive-customer-offboarding",
+                  "latchel-admin/Customer-Success-Team/customer-success-roadmap"
+                ]
               }
             ]
           },

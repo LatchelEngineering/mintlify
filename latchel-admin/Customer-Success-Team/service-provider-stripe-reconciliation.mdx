@@ -1,0 +1,122 @@
+---
+title: "(CS/Admin) Service Provider Stripe Reconciliation (LCN & Stripe Issuing)"
+description: "Covers the most frequent Stripe issues affecting Service Provider payments."
+---
+
+## Purpose
+
+### Purpose of this document
+
+This SOP is written to cover the common the most frequent stripe issues affecting Service Provider payments.
+
+### Who should read this document?
+
+T3, & Leadership Team
+
+---
+
+## Step-by-Step Guide
+
+### Process Overview
+
+<Accordion title="What is happening prior to this process?">
+  The Service Provider needs to be paid out, however, an error occurred trying to process a Service Provider's charge to an Issued Card or via Direct Deposit.
+
+  Invoice issues can also be found and monitored in the [<u>#service\_provider\_team</u>](https://latchel.slack.com/archives/CL8GYPGF3 "https://latchel.slack.com/archives/CL8GYPGF3") slack channel or escalated to Customer Success via Zendesk.
+
+  You will need access to stripe to troubleshoot the issues below. You can learn more about Stripe and why we use Stripe here →  [What is Stripe?](https://latchel.atlassian.net/wiki/spaces/LTG/pages/910524669)
+</Accordion>
+
+---
+
+### Initial Troubleshooting Steps for ALL Issue Types
+
+<Accordion title="Things to note:">
+  1. Service Providers using PayPal Commercial or Square App are not able to use Stripe issued cards.
+  2. The amount actually being charged on the Service Provider's end must be LESS than or equal to the amount issued and not a cent more.
+</Accordion>
+
+---
+
+### Issue Type 1 - Your card was declined / Your card number is incorrect → Failed Customer
+
+![Screen Shot 2020-05-18 at 12.25.05 PM](/images/CSM-1001.png)
+
+![Screen Shot 2020-05-18 at 12.33.30 PM](/images/CSM-101.png)
+
+![Latchel - 2020-05-18T112936.495](/images/CSM-102.png)
+
+**Steps to Resolve Issue Type 1:**
+
+<Accordion title="Steps to Resolve Issue Type 1:">
+
+  <Note>
+    Found in the #service\_provider\_team slack channel, this error means we can't process a transaction because the customer's payment information is declined, missing, or incorrect.
+  </Note>
+
+  1. Contact the Property Manager to update their LCN payment method via the Latchel portal.
+
+  <Check>
+    _Hi there, we are attempting to pay the service provider for Work Order #XXX-XXXX. We advise you to either contact your bank to resolve why they declined this or to use a different payment method._
+
+    _You may add a new payment method to your account by going to Account Settings in Latchel on the top-right of your screen, then going to Payments. See a step by step tutorial here: [<u>https://latchel.com/blog/how-to-opt-into-the-latchel-contractor-network/</u>](https://latchel.com/blog/how-to-opt-into-the-latchel-contractor-network/)_
+
+    **_Please let us know when we can reattempt the charge._**
+  </Check>
+</Accordion>
+
+---
+
+### Issue Type 2 - The period for acting on this authorization has passed and it is no longer pending approval → Failed Customer
+
+<Warning>
+  **Watch this video demo before diving into the steps below.**
+</Warning>
+
+![Screen Shot 2020-05-18 at 8.31.03 AM](/images/CSM-103.png)
+
+![Copy invoice number](/images/CSM-104.gif)
+
+![Search invoice in stripe](/images/CSM-105.gif)
+
+![Issue card - deselect payment source](/images/CSM-106.gif)
+
+<Accordion title="Steps to Resolve Issue Type 2:">
+  <Note>
+    Found in the #service\_provider\_team slack channel, this error will occur when the Service Provider attempts to run the card issued by Latchel and it is unsuccessful. If you see this error, you should be aware that the money has already been taken from the Property Manager, but not delivered to the Service Provider yet.
+  </Note>
+</Accordion>
+
+---
+
+### Issue Type 3 - Failed Vendor
+
+<Note>
+  Please note: This issue is not displayed in the #service\_provider\_team slack channel.
+</Note>
+
+**Steps to Resolve Issue Type 3:**
+
+This error occurs when a payment is attempting to be processed via direct deposit and the Service Provider never completed their bank account information. We need to make sure they enter their bank information and complete the full stripe verification process, otherwise, we cannot pay them.
+
+You can find incomplete steps on the Service Provider's company profile under the Payments tab in the Latchel portal (image a) or within Stripe (image b).
+
+![Latchel - 2020-05-18T124801.170 (image a)](/images/CSM-107.png)
+
+![Dashboard – Latchel – Stripe (image b)](/images/CSM-108.png)
+
+Contact the Service Provider to update their payment method/finish the verification process via the Latchel portal. You can advise the Service Provider to log into their Latchel portal, select Account Settings for the top right-hand side of their portal, and then to click on Payment Settings and Update Payment Account Info (Service Provider view shown in image a).
+
+![Screen Shot 2020-05-21 at 4.29.30 PM](/images/CSM-109.png)
+
+> Hi there, we are attempting to pay you for \[Work Order Title\], \[Property Address\].
+>
+> You may add a new bank account to your account by going to Account Settings in Latchel on the top-right of your screen, then going to Payment Setting. From here, click on Update Payment Account Info to complete the verification process/update your account.
+>
+> Once updated, you will see a green confirmation message in your Latchel portal under Payment Settings. Funds will be released once this is taken care of. Thank you!
+
+Successful bank account connections should state, **Payment account is good to go!**
+
+<Warning>
+  Please note: Service Provider payouts will be disabled until the account is verified and the error message is cleared.
+</Warning>
