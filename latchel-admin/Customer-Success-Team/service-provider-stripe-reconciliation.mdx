@@ -178,3 +178,29 @@ Successful bank account connections should state, **Payment account is good to g
 <Warning>
   Please note: Service Provider payouts will be disabled until the account is verified and the error message is cleared.
 </Warning>
+
+<Note>
+  This error occurs when a payment is attempting to be processed via direct deposit and the Service Provider never completed their bank account information. We need to make sure they enter their bank information and complete the full stripe verification process, otherwise, we cannot pay them.
+</Note>
+
+1. You can find incomplete steps on the Service Provider's company profile under the Payments tab in the Latchel portal (image a) or within Stripe (image b).
+
+<Frame>
+  ![Latchel - 2020-05-18T124801.170 (image a)](/images/CSM-107.png)
+</Frame>
+
+<Frame>
+  ![Dashboard – Latchel – Stripe (image b)](/images/CSM-108.png)
+</Frame>
+
+2. Contact the Service Provider to update their payment method/finish the verification process via the Latchel portal. You can advise the Service Provider to log into their Latchel portal, select Account Settings for the top right-hand side of their portal, and then to click on Payment Settings and Update Payment Account Info (Service Provider view shown in image a).
+
+<Frame>
+  ![Screen Shot 2020-05-21 at 4.29.30 PM](/images/CSM-109.png)
+</Frame>
+
+> "Hi there, we are attempting to pay you for \[Work Order Title\], \[Property Address\].
+>
+> You may add a new bank account to your account by going to Account Settings in Latchel on the top-right of your screen, then going to Payment Setting. From here, click on Update Payment Account Info to complete the verification process/update your account.
+>
+> Once updated, you will see a green confirmation message in your Latchel portal under Payment Settings. Funds will be released once this is taken care of. Thank you!"
