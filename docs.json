@@ -988,7 +988,12 @@
                     "group": "Reimbursements/Billing Resources",
                     "pages": [
                       "latchel-admin/Customer-Success-Team/how-to-submit-a-refund-request",
-                      "latchel-admin/Customer-Success-Team/in-progress-draft-how-to-handle-lcn-vendors-that-charge-residents-on-the-spot"
+                      "latchel-admin/Customer-Success-Team/in-progress-draft-how-to-handle-lcn-vendors-that-charge-residents-on-the-spot",
+                      "latchel-admin/Customer-Success-Team/job-aid-refunds-and-reimbursements-definitions-and-guidelines",
+                      "latchel-admin/Customer-Success-Team/how-to-request-a-customer-billing-exception",
+                      "latchel-admin/Customer-Success-Team/customer-discounts-escalation-matrix",
+                      "latchel-admin/Customer-Success-Team/billing-exception-requests-slack-channels",
+                      "latchel-admin/Customer-Success-Team/property-manager-profit-calculator"
                     ]
                   }
                 ]
