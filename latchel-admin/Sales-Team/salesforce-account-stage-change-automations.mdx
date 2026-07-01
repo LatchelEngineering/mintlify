@@ -41,3 +41,43 @@ title: "Salesforce Account Stage Change Automations"
 | Initial Account Stage and Substage | Automation Rule | End Account Stage and Substage | Implementation Status BI team --- please write "Active" when you pushed it live |
 | --- | --- | --- | --- |
 | Any Stage in the AE pipe | Account is not a customer and had an Closed Lost Opportunity (Current customer that had a closed lost opportunity, maybe an upsell opportunity, should not have their account status changed) | Lifecycle Stage: Prospecting / Lifecycle Substage: Lost Opportunities |  |
+
+<Note>
+  **Purpose of this document**
+
+  To provide a list on all the account change change automations and the logic behind them
+</Note>
+
+<Note>
+  **Who should read this document?**
+
+  BI, Sales Team
+</Note>
+
+## Incoming Leads Account Stage Assignment
+
+| Initial Account Stage and Substage | Automation Rule | End Account Stage and Substage | Implementation Status BI team --- please write "Active" when you pushed it live |
+| --- | --- | --- | --- |
+| None | New inbound lead added to Salesforce that was assigned to SDR | Lifecycle Stage: Lead Assigned / Lifecycle Substage: Lead Assigned |  |
+| None | New inbound lead added to Salesforce that was NOT assigned to SDR | Lifecycle Stage: Prospecting / Lifecycle Substage: Inbound Unassigned | See assignment rules in this page: [Lead Assignment Rules & Notifications](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2931032140) |
+
+## Account Stage Changes Throughout SDR Lifecycle
+
+| Initial Account Stage and Substage | Automation Rule | End Account Stage and Substage | Implementation Status BI team --- please write "Active" when you pushed it live |
+| --- | --- | --- | --- |
+| Lifecycle Stage: Prospecting / Lifecycle Substage: Inbound Unassigned | Accounts in that stage and substage, AND owner changes, i.e. account is assigned | Lifecycle Stage: Lead Assigned / Lifecycle Substage: Lead Assigned |  |
+| Lifecycle Stage: Lead Assigned / Lifecycle Substage: Lead Assigned | Accounts in that stage and substage, AND the Account is added to a cadence | Lifecycle Stage: Cadence Started / Lifecycle Substage: Cadence Running |  |
+| Lifecycle Stage: Cadence Started / Lifecycle Substage: Cadence Running | Accounts in that stage and substage, AND the Lead Replied (excluding the replies with "stop", "remove me", "unsubscribe", etc) | Lifecycle Stage: Cadence Started / Lifecycle Substage: Replied (Engaged) |  |
+| Lifecycle Stage: Cadence Started / Lifecycle Substage: Replied (Engaged) | Accounts in that stage and substage, AND the lead has clearly indicated they are interested in moving forward by saying they want to meet or have a meeting soon ---\> Not sure how we can automate this | Lifecycle Stage: Confirmed Interest / Lifecycle Substage: Scheduling Qualification Call |  |
+| Lifecycle Stage: Confirmed Interest / Lifecycle Substage: Scheduling Qualification Call | Accounts in that stage and substage, AND there is a Qualification meeting scheduled with this account | Lifecycle Stage: Confirmed Interest / Lifecycle Substage: Qualification Call Scheduled |  |
+| Lifecycle Stage: Confirmed Interest / Lifecycle Substage: Qualification Call Scheduled | Accounts in that stage and substage, AND The lead passed the qualification criteria ---\> Not sure how we can automate this | Lifecycle Stage: Qualification Call Completed / Lifecycle Substage: Scheduling Discovery |  |
+| Lifecycle Stage: Qualification Call Completed / Lifecycle Substage: Scheduling Discovery | Accounts in that stage and substage, AND SDR has created an Opportunity in Salesforce, and has confirmed the potential customer has scheduled an appointment with an AE. | Lifecycle Stage: Active Sales Account / Lifecycle Substage: Open Opportunity / Opportunity Stage: Discovery Appointment Scheduled / Opportunity Substage: None |  |
+| Any Stage in the SDR pipeline | Account was Closed Lost for any reason, except: Unsubscribed — use when marketing gets a request from the Lead to not contact them again. SDRs and AEs shouldn't use this stage / Wrong Industry - use when the contact is not in real estate or property management at all. | Lifecycle Stage: Prospecting / Lifecycle Substage: Returned to Marketing |  |
+| Any Stage in the SDR pipe | Account was Closed Lost due to lead asking to be unsubscribed | Lifecycle Stage: Discard / Lifecycle Substage: Unsubscribed |  |
+| Any Stage in the SDR pipe | Account was Closed Lost due to lead claiming to not work in the Real Estate industry or property management | Lifecycle Stage: Discard / Lifecycle Substage: Wrong Industry |  |
+
+## Account Stage Changes Throughout AE Lifecycle
+
+| Initial Account Stage and Substage | Automation Rule | End Account Stage and Substage | Implementation Status BI team --- please write "Active" when you pushed it live |
+| --- | --- | --- | --- |
+| Any Stage in the AE pipe | Account is not a customer and had an Closed Lost Opportunity (Current customer that had a closed lost opportunity, maybe an upsell opportunity, should not have their account status changed) | Lifecycle Stage: Prospecting / Lifecycle Substage: Lost Opportunities |  |
