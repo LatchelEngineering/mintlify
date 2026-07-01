@@ -26,9 +26,9 @@ There are a few high level “stages” in activating the Yardi integration for 
 
 ### Stage 1 - Yardi Voyager Standard Interfaces Setup
 
-The following steps all occur within the customer’s Yardi. 
+The following steps all occur within the customer’s Yardi.
 
-**1 – Configure Vendor Options for Latchel** 
+**1 – Configure Vendor Options for Latchel**
 
 Menu Path: Basic iData Menu \> Interfaces \> Configuration \> Review Interface Vendors \> Interface Configuration
 
@@ -57,7 +57,7 @@ _Menu Path for a Property List:  Interfaces \> Configuration \> Bulk Property C
 3. Select Configure.
 4. Highlight Latchel from list of Available Agencies and click Save.  
 
-**3 – Configure the Interface User** 
+**3 – Configure the Interface User**
 
 Menu Path: System Administration \> Security \> Add User
 
@@ -80,7 +80,7 @@ Menu Path: System Administration \> Security \> Add User
   _Clients should always notify the third-party vendor of any changes to Voyager URL, database server or database name._
 </Note>
 
-_\*Mutual Clients should enter a case in Client Central if assistance is needed with any Step in this document.  _
+\_\*Mutual Clients should enter a case in Client Central if assistance is needed with any Step in this document.  \_
 
 ### Stage 2 — Existing Customer Data Migration
 
@@ -154,7 +154,7 @@ The following Property fields are brought over from Yardi to Latchel. Currently 
 | yardi building id: Property-\>Code | Integration data |
 
 <Note>
-  This is necessary by nature of Yardi’s platform. They do not expose property active status to the API. To account for this, Latchel runs an automated unit reconciliation each month. See the section below. 
+  This is necessary by nature of Yardi’s platform. They do not expose property active status to the API. To account for this, Latchel runs an automated unit reconciliation each month. See the section below.
 </Note>
 
 ### **Previously created Properties**
@@ -213,7 +213,7 @@ The following resident fields are brought over from Yardi to Latchel. Currently 
 | move\_out\_date | moveoutdate |
 
 <Note>
-  We need to set a primary phone number for the resident in Latchel. Our current logic states that when multiple numbers are provided, we will prioritize setting the primary phone number in the order listed in the table. 
+  We need to set a primary phone number for the resident in Latchel. Our current logic states that when multiple numbers are provided, we will prioritize setting the primary phone number in the order listed in the table.
 </Note>
 
 ### **Previously-created residents**
@@ -334,12 +334,12 @@ Once a Latchel work order is successful created in Yardi, we will set the Latche
 
 By default, we only the WO in Yardi when the WO moves to the ‘Canceled' or 'Completed’ statuses in Latchel. We do not update the status in Yardi when the work order moves to “Forwarded to PM.”
 
-#### **Integration Work Order Update conditions**
+#### **Work Order Update conditions**
 
-A customer can specify if they want WO updates to happen less often than by default. This settings is located  on a PM account details page → Miscellaneous Settings → Integration Work Order Update conditions. This setting is only accessible by admin users.
+A customer can specify if they want WO updates to happen less often than by default. This settings is located  on a PM company page → Integrations tab → Work Order Update conditions. This setting is only accessible by admin users.
 
 <Frame>
-  ![Image 20240819 174039](/images/image-20240819-174039.png)
+  ![Screenshot 2026 07 01 At 4 06 54 P M](/images/Screenshot-2026-07-01-at-4.06.54-p.m.png)
 </Frame>
 
 ### **WO Sync Status**
