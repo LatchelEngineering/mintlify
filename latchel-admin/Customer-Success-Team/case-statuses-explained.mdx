@@ -1,0 +1,52 @@
+---
+title: "Case Statuses Explained"
+---
+
+## **1. Case Statuses Descriptions**
+
+### **Open View**
+
+| **New:** New Cases that haven't been viewed yet. |
+| :-- |
+| **Open:** Cases that have been viewed but still need to be handled. |
+
+### **Pending View**
+
+| **Escalated:** Cases that need a reply from CS but need to be escalated to another department or a CSM (e.g.Deep Dives). If the Case should be handled by another department and CS is not in charge of the comunication (e.g. maintenance issues), once forwarded to the proper department, it should be closed as "Not Actionable". |
+| :-- |
+| **In Progress:** Cases that have actions in progress but are being handled in our department (CS). |
+| **Waiting for Customer:** Cases that need a response from the customer. |
+| **Scheduled Call:** A meeting/call has been scheduled but has not yet been finalized. After the call is concluded, the Case should be closed. |
+| **On Hold:** Used for cases that shouldn't automatically go to Open but we can't still close. |
+
+### **Closed View**
+
+| **Closed:** Cases that **pertain to Latchel** but don't need additional pending actions. Used when the request, issue or question has been solved. |
+| :-- |
+| **Closed Unresponsive:** Cases that **pertain to Latchel** but don't need additional pending actions. Used when we don't receive a response from the customer. |
+| **Merged:** Only for Cases that have already been merged. This assignment is automated when merging Cases. |
+
+## **2. Case Statuses Automations**
+
+<Note>
+  All automations are described in the [<u>Salesforce Case Status Schema</u>](https://docs.google.com/spreadsheets/d/1-yAPeROJHKgaCokaREr6IapBLZ57cLMafi8cHFWHxFg/edit#gid=0 "https://docs.google.com/spreadsheets/d/1-yAPeROJHKgaCokaREr6IapBLZ57cLMafi8cHFWHxFg/edit#gid=0").
+</Note>
+
+<Frame>
+  ![CSM 58](/images/CSM-58.png)
+</Frame>
+
+### **Flow Automations:**
+
+- [<u>FL - CS - CA - Status Equals to rest of Pending</u>](https://latchel.atlassian.net/wiki/spaces/~202287780/pages/2581266520 "https://latchel.atlassian.net/wiki/spaces/~202287780/pages/2581266520")
+- [<u>FL - CS - CA - Status Equals to Waiting for Customer</u>](https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2584707085 "https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2584707085")
+- [<u>FL - CS - CA - Status Equals to In Progress</u>](https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2981396512 "https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2981396512")
+
+### **Workflow Rules:**
+
+- [<u>WR - CS - New Email Drafted</u>](https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2584739872 "https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2584739872")
+- [<u>WR - CS - New Email Received</u>](https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2584838159 "https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2584838159")
+- [<u>WR - CS - New Email Sent</u>](https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2584707105 "https://latchel.atlassian.net/wiki/spaces/~625ecce80f5cf500697e36e3/pages/2584707105")
+- [<u>WR - CS - Scheduled Call Date/Time is set</u>](https://latchel.atlassian.net/wiki/spaces/~202287780/pages/2582380545 "https://latchel.atlassian.net/wiki/spaces/~202287780/pages/2582380545")
+
+\

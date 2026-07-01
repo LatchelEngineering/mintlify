@@ -1,0 +1,82 @@
+---
+title: "How to Define a Customer's Health in Salesforce"
+---
+
+CSMs need a simple, quick, low-cost way of assessing how well a customer is doing, with standardized criteria and minimum subjectivity (while acknowledging property managers are relationship-driven so in reality, the strength of customer relationship is likely to be a significant determinant of customer health).
+
+In the graph below, you will find a list of the health scores available on the customer page inside of Salesforce:
+
+<Frame>
+  ![CSM 57](/images/CSM-57.jpg)
+</Frame>
+
+Furthermore, any time **Some Risk**, **High Risk**, or **Severe Risk** is selected as the health score, the CSM will be required to fill out a risk theme. Here’s a close look at what those themes are:
+
+**Tech Request - High Impact**
+
+- Multiple/high-priority customers significantly impacted
+- Core maintenance operation is significantly impacted
+
+**Tech Request - Low Impact**
+
+- Single user/customer impacted
+- Core maintenance operation is slightly impacted
+
+**Tech Bug/Issue - High Impact**
+
+- Blocking core maintenance operation
+
+**Tech Bug/Issue - Low Impact**
+
+- Core maintenance operation is slightly impacted
+
+**Product Fit/Expectations**
+
+- Latchel doesn’t meet client’s current needs or client has unrealistic expectations we do not plan on solving for
+
+**Customer Disengaged**
+
+- Client is no longer engaged with our Success Team
+- Client is no longer submitting work orders in Latchel
+
+**Business Shift**
+
+- Moving maintenance in house, no longer offering maint for a portion of their properties, change in ownership, change in POC
+
+**Poor Experience (Work Orders)**
+
+- Client is frustrated over a payment related to maintenance requests
+- The outcome of a work order did not meet their expectations
+
+**Poor Experience (Support/Communication)**
+
+- Client has had a negative customer service experience
+- Client is less than satisfied with system notifications, wait times, webchat/SMS help, etc.
+
+**Poor Experience (Billing)**
+
+- Client is frustrated over billing and payment issues related to their subscription
+
+**No or Low Product Adoption & No Progression**
+
+- New client is struggling to become acclimated to the Latchel product
+- Not actively directing all work orders to Latchel
+
+**Software Change**
+
+- i.e. moving from Rent Manager where we have an integration to a new software with no integration
+
+<Note>
+  Please note, the examples provided under each Risk Theme do not include all possible scenarios. The examples are to help guide you to decide which theme is the most applicable selection.
+</Note>
+
+## **Instructions**
+
+Video Overview: [https://www.loom.com/share/b6a61b9a470246c5a951e85e62007564](https://www.loom.com/share/b6a61b9a470246c5a951e85e62007564) 
+
+1. Access the **Customer** record for the Management company in Salesforce
+2. From the Details tab, click the pencil icon next to the **Health Score** field to select from the drop-down.
+   - Any time the theme **Some Risk**, **High Risk**, or **Severe Risk** is selected as the health score, the CSM will be required to fill out a risk theme
+     - Click the pencil icon next to Risk Theme to select a theme from the drop-down menu
+
+3. Click **Save**

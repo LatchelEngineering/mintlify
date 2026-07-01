@@ -972,7 +972,16 @@
                           "latchel-admin/Customer-Success-Team/customer-success-call-guidelines"
                         ]
                       },
-                      "latchel-admin/Customer-Success-Team/porting-away-a-latchel-maintenance-number-twilio"
+                      "latchel-admin/Customer-Success-Team/porting-away-a-latchel-maintenance-number-twilio",
+                      "latchel-admin/Customer-Success-Team/latchel-2-0-latchel-service-provider-network"
+                    ]
+                  },
+                  {
+                    "group": "Salesforce",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/how-to-define-a-customers-health-in-salesforce",
+                      "latchel-admin/Customer-Success-Team/how-to-log-a-call-in-salesforce",
+                      "latchel-admin/Customer-Success-Team/case-statuses-explained"
                     ]
                   }
                 ]
