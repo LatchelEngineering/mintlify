@@ -1094,7 +1094,49 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/Sales-Team/sales-team-overview"
+              "latchel-admin/Sales-Team/sales-team-overview",
+              {
+                "group": "Sales Department Information",
+                "pages": [
+                  "latchel-admin/Sales-Team/sales-department-information",
+                  "latchel-admin/Sales-Team/sales-cycle-and-pipeline-overview",
+                  "latchel-admin/Sales-Team/sales-pipeline-metrics",
+                  "latchel-admin/Sales-Team/sales-goals",
+                  "latchel-admin/Sales-Team/lead-assignment-rules-and-notifications",
+                  "latchel-admin/Sales-Team/salesforce-account-stage-change-automations"
+                ]
+              },
+              {
+                "group": "AE Resources",
+                "pages": [
+                  "latchel-admin/Sales-Team/AE-Resources"
+                ]
+              },
+              {
+                "group": "SDR Resources",
+                "pages": [
+                  "latchel-admin/Sales-Team/sdr-resources"
+                ]
+              },
+              "latchel-admin/Sales-Team/product-information",
+              {
+                "group": "Sales Strategy",
+                "pages": [
+                  "latchel-admin/Sales-Team/sales-strategy"
+                ]
+              },
+              {
+                "group": "Industry Information",
+                "pages": [
+                  "latchel-admin/Sales-Team/industry-information"
+                ]
+              },
+              {
+                "group": "Marketing Team Resources",
+                "pages": [
+                  "latchel-admin/Sales-Team/marketing-team-resources"
+                ]
+              }
             ]
           },
           {

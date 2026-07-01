@@ -1,0 +1,35 @@
+---
+title: "Salesforce Account Stage Change Automations"
+---
+
+## Purpose
+
+**Purpose of this document**
+
+To provide a list on all the account stage change automations and the logic behind them.
+
+**Who should read this document?**
+
+BI, Sales Team
+
+## Content
+
+### Incoming Leads Account Stage Assignment
+
+| **Initial Account Stage and Substage** | **Automation Rule** | **End Account Stage and Substage** | **Implementation Status** |
+| --- | --- | --- | --- |
+| None | New inbound lead added to Salesforce that was assigned to SDR | **Lifecycle Stage:** Lead Assigned **Lifecycle Substage:** Lead Assigned |  |
+| None | New inbound lead added to Salesforce that was **NOT** assigned to SDR | **Lifecycle Stage:** Prospecting **Lifecycle Substage:** Inbound Unassigned |  |
+
+See assignment rules in this page: [Lead Assignment Rules & Notifications](/latchel-admin/Sales-Team/Lead-Assignment-Rules-and-Notifications)
+
+### Account Stage Changes Throughout SDR Lifecycle
+
+| **Initial Account Stage and Substage** | **Automation Rule** | **End Account Stage and Substage** | **Implementation Status** |
+| --- | --- | --- | --- |
+| Lead Assigned / Lead Assigned | SDR adds lead to a cadence | Cadence Started / Cadence Running |  |
+| Cadence Started / Cadence Running | Lead replies to SDR | Cadence Started / Replied (Engaged) |  |
+| Any | SDR confirms interest and schedules qualification | Confirmed Interest / Scheduling Qualification Call |  |
+| Confirmed Interest / Scheduling Qualification Call | Qualification call scheduled | Confirmed Interest / Qualification Call Scheduled |  |
+| Confirmed Interest / Qualification Call Scheduled | Qualification complete, discovery scheduled | Qualification Completed / Scheduling Discovery |  |
+| Qualification Completed / Scheduling Discovery | Opportunity created \+ discovery booked | Active Sales Account / Open Opportunity |  |

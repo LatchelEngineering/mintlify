@@ -1,0 +1,32 @@
+---
+title: "Lead Assignment Rules & Notifications"
+---
+
+## Purpose
+
+**Purpose of this document**
+
+To explain how leads are being assigned and categorized in Salesforce.
+
+**Who should read this document?**
+
+BI team, Sales Management, SDRs
+
+## Content
+
+**What happened prior to this step?**
+
+Contacts have been created in Salesforce and are categorized in Tiers. See the Glossary Page to learn about those definitions.
+
+### SDR & Account Stage Assignment
+
+Depending on the type of the lead, it will or not be assigned to an SDR via a Round Robin logic and SDRs will be notified in a Slack Channel.
+
+The inbound leads that are not auto-assigned to SDRs are expected to be continued to be nurtured by Marketing, so when they become a T1 or T2, they will be assigned.
+
+| **Lead Type** | **Auto Assigned to SDR?** | **Salesforce Assigned Account Status** | **Notifications of new leads** |
+| --- | --- | --- | --- |
+| Tier 1 | YES | **Lifecycle Stage:** Lead Assigned / **Lifecycle Substage:** Lead Assigned | [#tier-1-notifications](https://latchel.slack.com/archives/tier-1-notifications) |
+| Tier 2 | YES | **Lifecycle Stage:** Lead Assigned / **Lifecycle Substage:** Lead Assigned | [#tier-2-notifications](https://latchel.slack.com/archives/tier-2-notifications) |
+| Tier 3 | NO | **Lifecycle Stage:** Prospecting / **Lifecycle Substage:** Inbound Unassigned | #other-tier-notifications |
+| Tier 4 | NO | **Lifecycle Stage:** Prospecting / **Lifecycle Substage:** Inbound Unassigned | #other-tier-notifications |
