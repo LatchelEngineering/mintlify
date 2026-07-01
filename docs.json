@@ -1027,7 +1027,18 @@
                         ]
                       }
                     ]
-                  }
+                  },
+                  {
+                    "group": "Customer Comms",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/auto-assign-update-email",
+                      "latchel-admin/Customer-Success-Team/resident-responsible-normal-emergency-jobs-update"
+                    ]
+                  },
+                  "latchel-admin/Customer-Success-Team/home-assistant-collected-changes-by-month",
+                  "latchel-admin/Customer-Success-Team/adding-a-gl-account-app-folio",
+                  "latchel-admin/Customer-Success-Team/cs-admin-how-to-prep-home-assistant-materials-for-the-customer",
+                  "latchel-admin/Customer-Success-Team/cs-admin-how-to-buy-and-release-numbers-in-twilio"
                 ]
               }
             ]

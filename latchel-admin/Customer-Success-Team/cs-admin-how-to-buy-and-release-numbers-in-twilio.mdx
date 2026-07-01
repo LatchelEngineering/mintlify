@@ -1,0 +1,149 @@
+---
+title: "(CS/Admin) How to: Buy & Release Numbers in Twilio"
+---
+
+# **Objective**
+
+<Note>
+  **Why do we use Twilio?**
+
+  During the [<u>onboarding process</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/791347310 "https://latchel.atlassian.net/wiki/spaces/CS/pages/791347310"), we ask the Property Manager if they have a preferred local area code for their Latchel Assigned Phone Number, which is the number their residents will call to request maintenance. We cannot guarantee availability, however, if they have a preference, we ask for their top 3 choices to create this phone number.
+
+  If we do not have one phone number available with one of those area codes, their Latchel phone number is automatically assigned when the subscription is added to a new account and it will have the area code we have available. If we have a phone number with one of their preferred area codes, we can go to Twilio to assign a new phone number to the account and release their old number. 
+
+  After property managers end service, we disable their account and that phone number needs to be released. Right now, there is no mechanism to automatically release this phone number from Twilio when an account is disabled. If a resident tries calling in, the call center will inform them the account is disabled (we can tell them that when they try to call in). Since Latchel will no longer be actively using the number, we can take the steps below for releasing the unused number. _Note: If the client determines they want the number for their own use, they are able to notify our team within **30 days** of us releasing the number and we will be able to retrieve this number from Twilio._
+</Note>
+
+<Note>
+  **hat is happening prior to this process?**
+
+  If you are buying a new number for the Property Manager, you have asked for their top 3 preferred area codes. 
+
+  If you are releasing a number, you have confirmed the customer is offboarded and verified the inactive number will not affect any live accounts. You can verify the number is inactive by calling it to ensure it's no longer connected to our call flow. \_Note: Some Property Managers have multiple accounts with the same Latchel Assigned Phone Number. \_
+</Note>
+
+## **Step-by-Step Guide**
+
+### **Step 1 - Log in to Twilio here [<u>https://www.twilio.com/login</u>](https://www.twilio.com/login)**
+
+### Step 2 - How to Search for the Company's Latchel Assigned Phone Number (Twilio number)
+
+1. Click the 3 dot icon on the far lefthand side of the page. 
+   <Frame>
+     ![CSM 79](/images/CSM-79.png)
+   </Frame>
+2. Click **Programmable Voice**. 
+   <Frame>
+     ![CSM 80](/images/CSM-80.png)
+   </Frame>
+3. Click **Numbers** and then **Manage Numbers**. 
+   <Frame>
+     ![CSM 81](/images/CSM-81.png)
+   </Frame>
+4. Under Active numbers, you can search by the **Number** or by the **Friendly Name**. The Friendly Name should match the name of the Company's Latchel account. 
+   - Click Filter to narrow your search. 
+     <Frame>
+       ![CSM 82](/images/CSM-82.png)
+     </Frame>
+
+### Step 3 - How to release a Twilio number
+
+1. Access the **Active Numbers** page in [<u>Console</u>](https://www.twilio.com/console/phone-numbers/incoming "https://www.twilio.com/console/phone-numbers/incoming"). 
+   <Frame>
+     ![CSM 83](/images/CSM-83.png)
+   </Frame>
+2. Search for the number using the search tool and then click the desired phone number you wish to release. 
+   <Frame>
+     ![CSM 84](/images/CSM-84.png)
+   </Frame>
+   <Frame>
+     ![CSM 85](/images/CSM-85.png)
+   </Frame>
+3. At the bottom of your browser, you will see a fixed footer. Click **Release this Number**. 
+   <Frame>
+     ![CSM 86](/images/CSM-86.png)
+   </Frame>
+4. A pop-up will appear to verify the request. Click **Yes, release this number.** 
+   <Frame>
+     ![CSM 87](/images/CSM-87.png)
+   </Frame>
+
+### **Step 4 - How to buy a new Twilio number**
+
+1. Access the **Active Numbers** page in [<u>Console</u>](https://www.twilio.com/console/phone-numbers/incoming "https://www.twilio.com/console/phone-numbers/incoming"). 
+   <Frame>
+     ![CSM 88](/images/CSM-88.png)
+   </Frame>
+2. Next, click the plus icon to buy a new number. 
+   <Frame>
+     ![CSM 89](/images/CSM-89.png)
+   </Frame>
+3. From here, you will be able to search for available numbers. Type the desired area code in the search field, select **First part of number** from and then drop-down and then click **search**. 
+   <Frame>
+     ![CSM 90 1](/images/CSM-90-1.png)
+   </Frame>
+4. A list of phone numbers with that area code (if available) will populate. Ensure the phone number has voice, SMS, and MMS capabilities. Click **Buy**. 
+   <Frame>
+     ![CSM 91](/images/CSM-91.png)
+   </Frame>
+5. Review the phone number to ensure everything looks correct and then click **Buy**. 
+   <Frame>
+     ![CSM 92](/images/CSM-92.png)
+   </Frame>
+
+### **Step 5 - How to Configure the Latchel-Assigned Phone Number**
+
+1. Once you buy the phone number, you will need to configure the workflow settings for this number. 
+   - By default, the **Friendly Name** will be the phone number if you purchased the number directly from Twilio. Change the friendly name to the company name and click **Save**. 
+     <Frame>
+       ![CSM 96](/images/CSM-96.png)
+     </Frame>
+   - Under the **VOICE** section, match the configurations in the screenshot below.
+     1. Configure with → Webhooks, TwiML Bins, Functions, Studio or Proxy.
+     2. A call comes in → Studio Flow → Aggressive Web Routing: Hotline IVR Flow
+     3. Call Status Changes → DO NOT MODIFY // LEAVE AS IS (Link should automatically populate) 
+     4. Call name lookup → Disabled 
+        <Frame>
+          ![CSM 94](/images/CSM-94.png)
+        </Frame>
+   - Under the **MESSAGING** section, match the configurations in the screenshot below and then click **Save**.
+     1. Configure with → Webhooks, TwiML Bins, Functions, Studio or Proxy.
+     2. A message comes in → Studio Flow → ER Chatbot. 
+        <Frame>
+          ![CSM 95](/images/CSM-95.png)
+        </Frame>
+
+### Step 6 - How to Configure the Latchel Communication Phone Number
+
+1. Once you buy the phone number, you will need to configure the workflow settings for this number. 
+   - By default, the **Friendly Name** will be the phone number if you purchased the number directly from Twilio. Change the friendly name to the company name and click **Save**. 
+     <Frame>
+       ![CSM 96 1](/images/CSM-96-1.png)
+     </Frame>
+   - Under the Voice & Fax section match the settings in the screenshot below: 
+     <Frame>
+       ![CSM 97](/images/CSM-97.png)
+     </Frame>
+   - Under the Messaging section, match the settings in the screenshot below:  2. Use this webhook URL: [<u>https://app.latchel.com/apiv1/twilio/replies</u>](https://app.latchel.com/apiv1/twilio/replies)
+     <Frame>
+       ![CSM 98](/images/CSM-98.png)
+     </Frame>
+   - Click **SAVE**.
+
+### Step 7 - How to assign a Twilio number to a Property Manager's account
+
+Latchel Assigned Phone Number:
+
+1. Once the number is properly configured, f[<u>ind and enter the Property Manager Profile Page</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/813729656/How+to+Access+the+Property+Manager+Profile+Page#Howto:AccessthePropertyManagerProfilePage-step1FindandenterthePropertyManagerProfilePage "https://latchel.atlassian.net/wiki/spaces/CS/pages/813729656/How+to+Access+the+Property+Manager+Profile+Page#Howto:AccessthePropertyManagerProfilePage-step1FindandenterthePropertyManagerProfilePage").
+2. Copy the phone number in Twilio.
+3. In Latchel, under the Details tab, paste the number in the **Latchel Assigned Phone Number** the field under Maint. Communication Settings. Please note, by default Twilio puts a 1 before the phone number (the number pasted to Latchel should be 10 digits). Delete the "one" before the number once you paste the number in Latchel. Click **Save**. 
+   <Frame>
+     ![CSM 99 1](/images/CSM-99-1.png)
+   </Frame>
+
+**Latchel Communication Phone Number:**
+
+1. In Latchel, under the Details tab, paste the number in the **Latchel Communication Phone Number** the field under Maint. Communication Settings. Please note, by default Twilio puts a 1 before the phone number (the number pasted to Latchel should be 10 digits). Delete the "one" before the number once you paste the number in Latchel. Click **Save**. 
+   <Frame>
+     ![CSM 100](/images/CSM-100.png)
+   </Frame>
