@@ -40,11 +40,17 @@ T3, & Leadership Team
 
 ### Issue Type 1 - Your card was declined / Your card number is incorrect → Failed Customer
 
-![Latchel Analytics Work Order Metrics Line Chart 1 03 02 2026 11 55 AM](/images/CSM-1001.png)
+<Frame>
+  ![Latchel Analytics Work Order Metrics Line Chart 1 03 02 2026 11 55 AM](/images/CSM-1001.png)
+</Frame>
 
-![CSM 1001](/images/CSM-101.png)
+<Frame>
+  ![CSM 1001](/images/CSM-101.png)
+</Frame>
 
-![CSM 102](/images/CSM-102.png)
+<Frame>
+  ![CSM 102](/images/CSM-102.png)
+</Frame>
 
 **Steps to Resolve Issue Type 1:**
 
@@ -72,18 +78,63 @@ T3, & Leadership Team
   **Watch this video demo before diving into the steps below.**
 </Warning>
 
-![Screen Shot 2020-05-18 at 8.31.03 AM](/images/CSM-103.png)
+<Frame>
+  ![Screen Shot 2020-05-18 at 8.31.03 AM](/images/CSM-103.png)
+</Frame>
 
-![Copy invoice number](/images/CSM-104.gif)
+<Frame>
+  ![Copy invoice number](/images/CSM-104.gif)
+</Frame>
 
-![Search invoice in stripe](/images/CSM-105.gif)
+<Frame>
+  ![Search invoice in stripe](/images/CSM-105.gif)
+</Frame>
 
-![Issue card - deselect payment source](/images/CSM-106.gif)
+<Frame>
+  ![Issue card - deselect payment source](/images/CSM-106.gif)
+</Frame>
 
 <Accordion title="Steps to Resolve Issue Type 2:">
   <Note>
     Found in the #service\_provider\_team slack channel, this error will occur when the Service Provider attempts to run the card issued by Latchel and it is unsuccessful. If you see this error, you should be aware that the money has already been taken from the Property Manager, but not delivered to the Service Provider yet.
   </Note>
+
+  1. The first step is to always verify the money was in fact, taken by the Property Manager.
+     - To do this, log into [<u>Stripe</u>](https://dashboard.stripe.com/payments "https://dashboard.stripe.com/payments").
+  2. Next, find the work order in question from the Latchel console and copy the work order’s invoice number.
+
+  <Frame>
+    ![Copy Invoice Number](/images/Copy-invoice-number.gif)
+  </Frame>
+
+  - Paste the invoice number into Stripe to search for the charge. From here, you will see the charge from the drop-down. Select it to review the successful payment and ensure the work order number and invoice number match what is in the Latchel console.
+
+  <Frame>
+    ![Search Invoice In Stripe](/images/Search-invoice-in-stripe.gif)
+  </Frame>
+
+  3. On the work order, click **take action** to issue a card - **See → [<u>Step 2 - Issue a Card for Latchel Affiliate Service Providers</u>](https://latchel.atlassian.net/wiki/spaces/LTG/pages/759365655/Job+Aid+Service+Provider+Payment+Issue+a+Card#id-%E2%86%94JobAid:ServiceProviderPayment\(IssueaCard\)-step2Step2-IssueaCardforLatchelAffiliateServiceProviders "https://latchel.atlassian.net/wiki/spaces/LTG/pages/759365655/Job+Aid+Service+Provider+Payment+Issue+a+Card#id-%E2%86%94JobAid:ServiceProviderPayment(IssueaCard)-step2Step2-IssueaCardforLatchelAffiliateServiceProviders")**
+
+  - Be sure to click **Issue New Card**. 
+  - Deselect the **Payment Source**
+
+  <Frame>
+    ![Issue Card Deselect Payment Source](/images/Issue-card---deselect-payment-source.gif)
+  </Frame>
+
+  <Warning>
+    **WARNING**: This is going to determine who is paying for this charge. By default, the <u>Property Management Company</u> will be the payment source. Once the Payment Source is deselected, the text will state, “Latchel will pay for this card’s transaction” (**this is what you want to see**).
+  </Warning>
+
+  4.  [<u>Give the new card information to the Service Provider</u>](https://latchel.atlassian.net/wiki/spaces/LTG/pages/759365655/Job+Aid+Service+Provider+Payment+Issue+a+Card#id-%E2%86%94JobAid:ServiceProviderPayment\(IssueaCard\)-step3Step3-GivetheinformationtotheServiceProvider "https://latchel.atlassian.net/wiki/spaces/LTG/pages/759365655/Job+Aid+Service+Provider+Payment+Issue+a+Card#id-%E2%86%94JobAid:ServiceProviderPayment(IssueaCard)-step3Step3-GivetheinformationtotheServiceProvider")
+
+  ---
+
+  **<u>Please Note:</u>** If you are in the process of troubleshooting this issue type and see more than one charge in Stripe for the same work order/invoice number, this is a duplicate transaction that will need to be refunded. This happens if we issue 2 cards (both paid by the Property Manager and the Service Provider attempts to run each card). In this case, refund one payment and let the customer know by email that they will be receiving a refund for a duplicate payment is 7-10 business days.
+
+  <Check>
+    Hi there, we came across a duplicate charge for Work Order #XXXXX-XXX. We truly apologize for any inconvenience this may have caused you. We already issued a refund and you will see this post back to your account in 7-10 days. Thanks!
+  </Check>
 </Accordion>
 
 ---
@@ -96,23 +147,31 @@ T3, & Leadership Team
 
 **Steps to Resolve Issue Type 3:**
 
-This error occurs when a payment is attempting to be processed via direct deposit and the Service Provider never completed their bank account information. We need to make sure they enter their bank information and complete the full stripe verification process, otherwise, we cannot pay them.
+<Note>
+  This error occurs when a payment is attempting to be processed via direct deposit and the Service Provider never completed their bank account information. We need to make sure they enter their bank information and complete the full stripe verification process, otherwise, we cannot pay them.
+</Note>
 
-You can find incomplete steps on the Service Provider's company profile under the Payments tab in the Latchel portal (image a) or within Stripe (image b).
+1. You can find incomplete steps on the Service Provider's company profile under the Payments tab in the Latchel portal (image a) or within Stripe (image b).
 
-![Latchel - 2020-05-18T124801.170 (image a)](/images/CSM-107.png)
+<Frame>
+  ![Latchel - 2020-05-18T124801.170 (image a)](/images/CSM-107.png)
+</Frame>
 
-![Dashboard – Latchel – Stripe (image b)](/images/CSM-108.png)
+<Frame>
+  ![Dashboard – Latchel – Stripe (image b)](/images/CSM-108.png)
+</Frame>
 
-Contact the Service Provider to update their payment method/finish the verification process via the Latchel portal. You can advise the Service Provider to log into their Latchel portal, select Account Settings for the top right-hand side of their portal, and then to click on Payment Settings and Update Payment Account Info (Service Provider view shown in image a).
+2. Contact the Service Provider to update their payment method/finish the verification process via the Latchel portal. You can advise the Service Provider to log into their Latchel portal, select Account Settings for the top right-hand side of their portal, and then to click on Payment Settings and Update Payment Account Info (Service Provider view shown in image a).
 
-![Screen Shot 2020-05-21 at 4.29.30 PM](/images/CSM-109.png)
+<Frame>
+  ![Screen Shot 2020-05-21 at 4.29.30 PM](/images/CSM-109.png)
+</Frame>
 
-> Hi there, we are attempting to pay you for \[Work Order Title\], \[Property Address\].
+> "Hi there, we are attempting to pay you for \[Work Order Title\], \[Property Address\].
 >
 > You may add a new bank account to your account by going to Account Settings in Latchel on the top-right of your screen, then going to Payment Setting. From here, click on Update Payment Account Info to complete the verification process/update your account.
 >
-> Once updated, you will see a green confirmation message in your Latchel portal under Payment Settings. Funds will be released once this is taken care of. Thank you!
+> Once updated, you will see a green confirmation message in your Latchel portal under Payment Settings. Funds will be released once this is taken care of. Thank you!"
 
 Successful bank account connections should state, **Payment account is good to go!**
 
