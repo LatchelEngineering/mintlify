@@ -1116,7 +1116,12 @@
                   "latchel-admin/Sales-Team/sales-resource-or-content-management-process",
                   "latchel-admin/Sales-Team/sales-glossary",
                   "latchel-admin/Sales-Team/sop-how-to-reactivate-a-suspended-google-account",
-                  "latchel-admin/Sales-Team/sop-how-to-connect-your-latchel-gmail-account-to-salesforce"
+                  "latchel-admin/Sales-Team/sop-how-to-connect-your-latchel-gmail-account-to-salesforce",
+                  "latchel-admin/Sales-Team/sop-how-to-add-or-remove-users-to-sales-team-salesforce-and-amazon-connect",
+                  "latchel-admin/Sales-Team/sop-how-to-make-and-receive-calls-in-salesforce",
+                  "latchel-admin/Sales-Team/sop-how-to-create-and-modify-a-cadence-in-salesforce",
+                  "latchel-admin/Sales-Team/sop-growth-enablement",
+                  "latchel-admin/Sales-Team/sop-how-to-create-a-jira-ticket"
                 ]
               },
               {
@@ -1129,7 +1134,15 @@
               },
               {
                 "group": "Sales Strategy",
-                "pages": []
+                "pages": [
+                  "latchel-admin/Sales-Team/sales-strategy",
+                  "latchel-admin/Sales-Team/latchel-company-vision",
+                  "latchel-admin/Sales-Team/latchels-mission-tenets-and-plan-for-2024",
+                  "latchel-admin/Sales-Team/log-lines-and-latchel-messaging-guide",
+                  "latchel-admin/Sales-Team/latchels-ideal-customer-profile",
+                  "latchel-admin/Sales-Team/property-types-and-what-latchel-supports",
+                  "latchel-admin/Sales-Team/sales-strategy-2024"
+                ]
               },
               {
                 "group": "Industry Information",

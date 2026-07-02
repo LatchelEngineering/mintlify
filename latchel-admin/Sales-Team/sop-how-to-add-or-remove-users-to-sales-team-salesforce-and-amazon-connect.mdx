@@ -1,0 +1,460 @@
+---
+title: "SOP - How to Add or Remove Users to Sales Team - Salesforce and Amazon Connect"
+---
+
+## Purpose
+
+<Note>
+  **Purpose of this document**
+
+  This SOP will provide the steps needed to add a new user to the Sales team.
+</Note>
+
+<Note>
+  **Who should read this document?**
+
+  Sales Manager and BI team
+</Note>
+
+---
+
+## Adding Users
+
+When a new team member is hired into the Sales team, they will need access to Salesforce, which is where we store all customer accounts.
+
+If the team member will be making and receiving calls from customers, they will also need to have access to the Phone Dialer and will need to have an Account in Amazon Connect, our Telephony System.
+
+---
+
+## Creating a New User in Amazon Connect - Outbound and Inbound - Sales Team
+
+Use this process if the user will need to be able to make outbound calls and receive inbound calls
+
+### Step 1 - Create a Queue
+
+**What is a queue?** A queue is place to line up calls to be routed to someone to answer. It is like going to the grocery store and having to stand in a line for the cashier. Sometimes there is a line per cashier, sometimes there is one line for all cashiers. Therefore, when we want that a call goes directly to a specific user, we create a queue for that specific user. If we want a call to be routed to any user, we create a shared team queue.
+
+<Warning>
+  **ATTENTION – BEFORE CREATING A NEW QUEUE**
+
+  Before creating a new queue, check if there is any unused queue in the team and if so, re-utilize that one instead of creating a new one. Queues cannot be deleted, so as a good housekeeping practice, re-utilized unused ones before adding more to the list!
+</Warning>
+
+To create a queue, follow these steps:
+
+1. On the left side icon menu, click on the icon with the three arrows up and select "Queues"
+
+<Frame>
+  ![](/images/Sales-20.png)
+</Frame>
+
+2. Click on "Add queue" button on the up right side
+
+<Frame>
+  ![](/images/Sales-21.png)
+</Frame>
+
+3. Enter queue information
+   As standard, name the queue as "Sales Team - Name's queue". You can use the same template for the Name and Description field. Select Basic Hours under "Hours of Operation"
+
+<Frame>
+  ![](/images/Sales-22.png)
+</Frame>
+
+4. Enter the queue settings information
+   - The Default Caller ID is Latchel
+   - The Sales Team Phone Number is 1 866-906-0508. Use this same number to be displayed as an outbound caller ID number, so if the lead misses the call and decided to call back, the call will be routed to the Sales Team
+   - The Outbound Whisper Flow is "Sales Default Outbound".
+   - A Call Flow determines the steps a call will go through when a phone number is dialed. This outbound flow will let the customer know the call will be recorded.
+
+<Frame>
+  ![](/images/Sales-23.png)
+</Frame>
+
+5. On the top right corner, click on Save
+
+<Frame>
+  ![](/images/Sales-24.png)
+</Frame>
+
+---
+
+### Step 2 - Create a Routing Profile
+
+**What is a Routing Profile?** It is a configuration that we can use to define which type of calls a certain user will be answering to. Sometimes we will want an user to only receive calls that were indented to them, sometimes we will want that user to answer any calls, sometimes we want the user to be able to handle both. In a routing profile, you can configure which type of calls that "profile" will handle. When creating an user, you will define which profile you want them to have.
+
+<Warning>
+  **ATTENTION – BEFORE CREATING A NEW ROUTING PROFILE**
+
+  Before creating a new routing profile, check if there is any unused profile in the team and if so, re-utilize that one instead of creating a new one. Routing profiles cannot be deleted, so as a good housekeeping practice, re-utilized unused ones before adding more to the list!
+</Warning>
+
+To create a routing profile, you will then:
+
+1. Click on the user icon to see the menu. Select "Routing Profiles"
+
+<Frame>
+  ![](/images/Sales-25.png)
+</Frame>
+
+2. Click on the "Add routing profile" button
+
+<Frame>
+  ![](/images/Sales-26.png)
+</Frame>
+
+3. Name the profile - Use the template - Sales Team \[role\] - Team member's name
+   - For a SDR - each profile will have their own queue and the team shared queue, so they can answer phone calls from leads that are unsure who they should talk to. In the description, include this sentence - "Routing profile for SDRs - include individual queue and shared queue"
+   - For AEs - include only their individual queue - In the description, include this sentence - "Routing profile for AEs - only individual queue"
+
+<Frame>
+  ![](/images/Sales-27.png)
+</Frame>
+
+4. For channels, we will only be set-up for voice and to handle 1 contact at a time
+
+<Frame>
+  ![](/images/Sales-28.png)
+</Frame>
+
+5. For queues, first select the first queue, add team member individual queue. That is their priority 1.
+
+<Frame>
+  ![](/images/Sales-29.png)
+</Frame>
+
+For SDRs, click on the "add queue button", check the second queue, add the shared queue, and set priority for 2. This means that if two calls are received at the same time, the priority 1 will be the first answered.
+
+<Frame>
+  ![](/images/Sales-30.png)
+</Frame>
+
+6. For Outbound Default Queue, select the team member individual queue. That is the queue that will be used when the team member is making an outbound call
+
+<Frame>
+  ![](/images/Sales-31.png)
+</Frame>
+
+7. On the top right corner, click save
+
+<Frame>
+  ![](/images/Sales-32.png)
+</Frame>
+
+---
+
+### Step 3 - Create a User
+
+1. Click on the user icon to see the menu. Select "User Management"
+
+<Frame>
+  ![](/images/Sales-33.png)
+</Frame>
+
+2. Click on "Add New Users"
+
+<Frame>
+  ![](/images/Sales-34.png)
+</Frame>
+
+3. Add user information:
+   - Enter First and Last Name
+   - Enter the login or username the team member will use to log into Amazon Connect
+   - Enter the Latchel email address for both fields
+   - Enter the password - when creating the user, as an initial password, create a simple one (like Latchel1) that it is easy to communicate to the user, so they can use that to reset the password.
+
+<Warning>
+  **IMPORTANT**
+
+  The **Login MUST** be the same as the Salesforce e-mail address. For password, use anything easy to remember and after communicating that to the user, **ask them to reset the password to the same one they use in Salesforce,** so it is easier for them to log into both places every day.
+</Warning>
+
+<Frame>
+  ![](/images/Sales-35.png)
+</Frame>
+
+4. In settings, you will select:
+   - The Security Profile – this defines what level of permissions this person will have within Amazon Connect. For SDRs and AEs. For the team overall manager, or whoever you want to be able to change configurations, you can select "admin". If you only want to give access to manager views to see agent and queues performance, but no ability to change configurations, you can select CallCenter Manager.
+   - The Routing Profile - this defines with queues this person will handle. In the prior step we created the routing profiles for each person, so select the appropriate one.
+   - Phone - Select softphone. Do not select "auto-accept" calls as the call will be answered right away and surprise the team member
+   - After Call Work - this is the amount of time you will allow the "agent" to wrap-up a call before being available for the next one. Given that the sales team is not going to receive a lot of calls, we can set it up to be very short, like 30 seconds. For SDRs that is set-up for 60 seconds to enable them to enter the call results in the task generated by the cadence.
+
+<Frame>
+  ![](/images/Sales-36.png)
+</Frame>
+
+5. Leave all other configurations as is
+6. On the top right corner, click save
+
+<Frame>
+  ![](/images/Sales-37.png)
+</Frame>
+
+---
+
+### Step 4 - Update the Call Flow
+
+The Sales Team currently has an [IVR](https://en.wikipedia.org/wiki/Interactive_voice_response) set-up to allow the customers to select the person they want to talk to. Therefore, when adding a new user, you will need to add an [IVR](https://en.wikipedia.org/wiki/Interactive_voice_response) option for that new person and add their corresponding call flow in the Amazon Connect
+
+We have 2 call flows in Amazon Connect:
+
+- **Sales Inbound** - This is the entry point call flow and there is no user specific configuration. This call flow will set to collect and record all of the call information, and it will send records to salesforce. This flow will transfer the call to the Sales CS Transfer Flow
+- **Sales CS Transfer Flow** - This flow starts with playing a prompt to the customer that the call is being recorded, and presents the customer with the routing options. Press 1 to sales team, and let the customer know that Customer Success needs to be contacted by email. It has also a Press # option if unsure of who they want to contact. This option will route to the Sales shared queue that is under the SDR team routing profile.
+
+<Note>
+  If we want to change CS to be able to receive calls, we need to create a "Press 2" option and create a new branch for the team with their own individual routing menu. Also, each team member will need to have their own queue and profile, like it is set-up for the sales team.
+</Note>
+
+If the customer "Press 1" for Sales, a new menu will be presented to the customer to select the sales person they want to talk to. Here is where a new user will need to be added. To add the user:
+
+1. First, add a new option to the Sales Team sub-menu. Find the Sales Split box, click on the three dots and select edit settings.
+
+<Frame>
+  ![](/images/Sales-38.png)
+</Frame>
+
+2. Add the new person to the text, so the text-to-speech feature will let the customer know that option is available
+
+<Frame>
+  ![](/images/Sales-39.png)
+</Frame>
+
+3. Scroll down and add a "new condition" showing the option that they need to click to route to the new user. Make sure this option matches what you described above. Click Save.
+
+<Frame>
+  ![](/images/Sales-40.png)
+</Frame>
+
+4. Each option of the menu above will have a connection to where that option should be routed to:
+
+<Frame>
+  ![](/images/Sales-41.png)
+</Frame>
+
+5. If you are adding a new user, you will need to replicate the branch being used for a current user. To create a new branch, you will need to find each block in the block search on the left side of the screen. Once you find the block, you click and drag it to where you want to place it in the call flow.
+
+<Frame>
+  ![](/images/Sales-42.png)
+</Frame>
+
+6. Next, you will need to configure the block. To know how to configure each block, look at the configuration for another team member and do exactly the same thing. You will need to configure:
+   (1) the input and output arrows connecting the boxes (blocks);
+
+<Frame>
+  ![](/images/Sales-43.png)
+</Frame>
+
+(2) each block's settings, that you will access by clicking on the three dots on the top of the box
+
+<Frame>
+  ![](/images/Sales-44.png)
+</Frame>
+
+7. Once you are done creating the whole branch (i.e. all blocks) for each user, click on "Publish"
+
+<Frame>
+  ![](/images/Sales-45.png)
+</Frame>
+
+---
+
+## Creating a New User in Amazon Connect - Outbound only - Customer Success Team
+
+Use this process if the user will only need to be able to make outbound calls, i.e. you don't need the user to be able to receive calls
+
+The CS team is currently set-up to only make outbound calls. If the customer calls back the number the team used to call them, they will get the menu to press 1 for sales and will hear a message to contact the CS team via email.
+
+For outbound calls only, there is no need to create an individual inbound call flow, so the team can share the same queue and routing profile. If in the future, the team decides to have individual call routing, the team set-up will need to mirror the one for the Sales Team.
+
+---
+
+## Creating a New User in Salesforce
+
+### Step 1 - Create User in Salesforce
+
+- Use this SOP: [https://latchel.atlassian.net/wiki/spaces/~587161297/pages/2961997833](https://latchel.atlassian.net/wiki/spaces/~587161297/pages/2961997833)
+- Ensure the new person is assigned to one of the profiles currently configured to be able to see the call recording and records: SDR, AE, Customer Success, Customer Success Admin, System Administrator
+
+---
+
+### Step 2 - Add Users to Call Centers
+
+1. Go to the set-up page
+2. In the quick search, type "Call Centers"
+3. Click on Call Centers
+4. Skip the welcome screen
+
+<Frame>
+  ![](/images/Sales-46.png)
+</Frame>
+
+5. Click on AC Lighting Adapter
+
+<Frame>
+  ![](/images/Sales-47.png)
+</Frame>
+
+6. Click on Manage Call Center Users
+
+<Frame>
+  ![](/images/Sales-48.png)
+</Frame>
+
+7. Search for the users you want to add by selecting the search criteria (e.g. First Name - equals to - Adrian). Click on "find" to see the search result
+
+<Frame>
+  ![](/images/Sales-49.png)
+</Frame>
+
+8. Check the name of the users you want to add and click on "Add to Call Center"
+
+<Frame>
+  ![](/images/Sales-50.png)
+</Frame>
+
+---
+
+### Step 3 - Add users to a Permission Set for Amazon Connect
+
+1. Navigate to Setup \> Manage Users \> Permission Set
+2. These are the permissions available
+   - **AC\_Administrator** - assign to BI or anyone that will do system configurations - see more details on what is included with this permission in [this link](https://amazon-connect.github.io/amazon-connect-salesforce-cti/docs/classic/installation/02-guided-setup/#add-users-to-a-permission-set)
+     Note, with this permission, when trying to sign into the dialer, the user is redirected to an Amazon Connect Console Set-up Page. To be able to see the dialer, this user needs to sign into Amazon Connect into a separate window and refresh Salesforce, so the dialer will load.
+   - **AC\_Agent** - assign to everyone using the phone system (added as a call center user) - see more details on what is included with this permission in [this link](https://amazon-connect.github.io/amazon-connect-salesforce-cti/docs/classic/installation/02-guided-setup/#add-users-to-a-permission-set)
+   - **AC\_Manager** - assign to everyone that has a direct report using the phone system - see more details on what is included with this permission in [this link](https://amazon-connect.github.io/amazon-connect-salesforce-cti/docs/classic/installation/02-guided-setup/#add-users-to-a-permission-set)
+   - **AC\_AmazonQ** - not needed to be assigned, we don't know what this is for
+   - **AC\_CallRecordings** - assign to everyone that should be able to listen to recordings. In our case, it is recommended to enable all agents to listen to recordings for training purposes
+3. Choose the permission to be assigned.
+4. Choose Manage Assignments.
+5. Choose Add Assignments
+6. Select the users to assign the permissions, then choose Assign.
+
+#### Example of how to assign a permission set:
+
+1. Click on AC\_CallRecording – this is to give user access to play call recordings
+
+<Frame>
+  ![](/images/Sales-51.png)
+</Frame>
+
+2. Click on "Manage Assignments"
+
+<Frame>
+  ![](/images/Sales-52.png)
+</Frame>
+
+3. Click on "Add Assignment"
+
+<Frame>
+  ![](/images/Sales-53.png)
+</Frame>
+
+4. In the search bar, select the org the user is assigned to
+
+<Frame>
+  ![](/images/Sales-54.png)
+</Frame>
+
+5. Select the users that need the permission and click on "Next"
+
+<Frame>
+  ![](/images/Sales-55.png)
+</Frame>
+
+6. Select "Non-expiration date" and click on "Assign"
+
+<Frame>
+  ![](/images/Sales-56.png)
+</Frame>
+
+---
+
+### Step 4 - Add users to Sales Engagement
+
+1. Add a Sales Engagement License. There are 2 types of licenses:
+   - **Sales Engagement** → This gives admin rights to create and use standard cadences - All SDRs and SDR managers should have it.
+
+<Frame>
+  ![](/images/Sales-57.png)
+</Frame>
+
+- **Sales Engagement Basic** → Assign to everyone
+
+<Frame>
+  ![](/images/Sales-58.png)
+</Frame>
+
+2. Assign Permission Sets
+   - Navigate to Setup \> Manage Users \> Permission Set
+   - Give the following permission sets for all users
+
+<Frame>
+  ![](/images/Sales-59.png)
+</Frame>
+
+- For Managers and People that will be creating Cadences, assign the Sales Engagement Cadence Creator
+
+---
+
+### Step 5 - Add calendar link to the SDR user page
+
+When using cadences, there will be email templates that will share a link to the SDR calendar for the lead to schedule a meeting.
+
+In order for the templates be auto-populated with the specific SDR calendar link, the SDR user page needs to have that field filled up with their personal link.
+
+<Frame>
+  ![](/images/Sales-60.png)
+</Frame>
+
+To do that, go to the users page, then click on "Edit" on the top right side:
+
+<Frame>
+  ![](/images/Sales-61.png)
+</Frame>
+
+Add the link to the calendar on the "calendar link" field and click "Save"
+
+<Frame>
+  ![](/images/Sales-62.png)
+</Frame>
+
+---
+
+### Step 6 - SDR/User will need to connect their Latchel Gmail Account to Salesforce
+
+When using cadences, Salesforce will send emails to leads. In order to send those emails, Salesforce will need to access your Gmail Account, so you will need to enable that in salesforce. Use this SOP: [https://latchel.atlassian.net/wiki/spaces/SAL/pages/edit-v2/2917269517?draftShareId=a2f79ff9-e26b-4686-91cb-40122c9316a3](https://latchel.atlassian.net/wiki/spaces/SAL/pages/edit-v2/2917269517?draftShareId=a2f79ff9-e26b-4686-91cb-40122c9316a3)
+
+To confirm the email is connected, click on your profile icon, select settings, and on the left side menu, select "connected accounts" and "email and calendar accounts"
+
+<Frame>
+  ![](/images/Sales-63.png)
+</Frame>
+
+You may also want to install a [Salesforce Chrome Extension](https://chromewebstore.google.com/detail/salesforce/jjghhkepijgakdammjldcbnjehfkfmha) that enables you to see your to do lists and take actions from your Gmail Account
+
+---
+
+### Step 7 - SDR/User will need to enable Google Meet in Salesforce
+
+this will enable Einsten to capture and analyze the calls
+
+<Frame>
+  ![](/images/Sales-64.png)
+</Frame>
+
+---
+
+## Removing Users
+
+### Appendix A - Removing a User in Amazon Connect
+
+1. Remove that user from the inbound call flow:
+   - From the IVR options
+   - And their routing branch
+2. Delete the user
+
+---
+
+### Appendix B - Removing a User in Salesforce
+
+TBD
