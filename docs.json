@@ -1146,8 +1146,14 @@
               },
               {
                 "group": "Industry Information",
-                "pages": []
+                "pages": [
+                  "latchel-admin/Sales-Team/industry-information",
+                  "latchel-admin/Sales-Team/how-to-learn-about-the-industry-and-competition",
+                  "latchel-admin/Sales-Team/property-management-company-styles",
+                  "latchel-admin/Sales-Team/glossary-of-property-management-company-roles"
+                ]
               },
+              "latchel-admin/Sales-Team/product-information",
               {
                 "group": "Marketing Team Resources",
                 "pages": []
