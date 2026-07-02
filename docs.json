@@ -1125,14 +1125,6 @@
                 ]
               },
               {
-                "group": "AE Resources",
-                "pages": []
-              },
-              {
-                "group": "SDR Resources",
-                "pages": []
-              },
-              {
                 "group": "Sales Strategy",
                 "pages": [
                   "latchel-admin/Sales-Team/sales-strategy",
@@ -1153,9 +1145,23 @@
                   "latchel-admin/Sales-Team/glossary-of-property-management-company-roles"
                 ]
               },
-              "latchel-admin/Sales-Team/product-information",
+              {
+                "group": "SDR Resources",
+                "pages": [
+                  "latchel-admin/Sales-Team/sdr-resources",
+                  "latchel-admin/Sales-Team/sdr-role-expectations",
+                  "latchel-admin/Sales-Team/sdr-role-organize-your-day",
+                  "latchel-admin/Sales-Team/sdr-role-personal-meeting-tracker",
+                  "latchel-admin/Sales-Team/draft-sop-sdr-inbound-process-how-to-process-a-lead"
+                ]
+              },
               {
                 "group": "Marketing Team Resources",
+                "pages": []
+              },
+              "latchel-admin/Sales-Team/product-information",
+              {
+                "group": "AE Resources",
                 "pages": []
               }
             ]

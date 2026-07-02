@@ -1,0 +1,231 @@
+---
+title: "Draft - SOP - SDR Inbound Process: How to Process a Lead"
+---
+
+## Purpose
+
+<Note>
+  **Purpose of this document**
+
+  The purpose of this document is to provide the steps the SDR team takes to "process" an Inbound lead from getting it assigned to creating an Opportunity and passing the account to the Account Executive (AE)
+
+  To see an overview of the whole sales pipeline steps, refer to this page: [Sales Cycle and Pipeline Overview](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870509584/Sales+Cycle+and+Pipeline+Overview)
+</Note>
+
+<Note>
+  **Who should read this document?**
+
+  SDRs
+</Note>
+
+<Warning>
+  **Attention**
+
+  When we receive an Inbound lead, we should understand Why they requested more information
+
+  "How familiar are you with Latchel?"
+
+  It's more important to understand Why they are asking a certain question rather than answer it
+</Warning>
+
+---
+
+## SECTION A) Happy Path Process
+
+### Process Overview
+
+The flow below shows the steps of how a SDR will handle a lead from the time it is assigned until an Opportunity is created in Salesforce and the lead attends the Discovery Meeting, which at that time, the ownership of that lead is transferred to the Account Executive (AE).
+
+The "Happy Path" assumes that everything went well and the lead moved to the next step of the process. When there is an issue during that step, refer to Section B of this document to know how to proceed.
+
+These steps are aligned with the accounts stages and substages in Salesforce that we will use to track the status of each lead and measure performance of each process step. This tracking will enable us to define and prioritize process improvements.
+
+Throughout the process, you will be taking notes of your engagement with the lead and some key account information. Please refer to this SOP on where the notes should be left: [SOP - How to Leave Notes for an Opportunity in Salesforce](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2931032140)
+
+Chart may need to be adjusted to remove importing contact info?
+
+<Frame>
+  ![](/images/Sales-124.png)
+</Frame>
+
+To see all of the Salesforce Account and Opportunity Stages, refer to this page: [Sales Cycle and Pipeline Overview](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870509584/Sales+Cycle+and+Pipeline+Overview)
+
+<Note>
+  **How to access Salesforce?**
+
+  Use this link to access Salesforce - [https://login.salesforce.com/](https://login.salesforce.com/)
+</Note>
+
+---
+
+### Step 1 - Lead Assigned
+
+**How to work this step?**
+
+In Slack, inbound leads are given out in a round robin style distribution.
+
+If the lead hasn't been assigned to you in Salesforce, you will need to self-assign (how?)
+
+Unless Keyrenter, RPM and rent-manager ---\> checking with Jen what to do when this happens
+
+Before doing that, you should first verify if that contact is a member of another account already assigned in Salesforce. In order to do that, search accounts in Salesforce by the following inputs, if available:
+
+- Full contact name (to see if they pop up under a different company)
+- Phone number (to see if it pops up under different contact - indicates if its a shared number or not)
+- Contact email (not domain)
+- Company name (but only after a google search as some people have a DBA business names vs registered business names)
+
+If there is an existing company, check if that is assigned to another SDR. If yes, leave the assignment as is. If not, assign it to yourself by changing the account ownership to yourself.
+
+We have 3 channels that leads will be posted based on their Tiers.
+
+The definition of each Tier is continuously being adjusted. To find the latest information, search the [glossary page](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2902917222).
+
+The goal is that the higher Tier level, higher the potential of conversion. T1 \> T2 \> T3 \> T4. Therefore, SDRs should start working on the Tier 1 leads, then Tier 2 leads, etc.
+
+Some of those tiers will NOT be auto-assigned to SDRs and SDRs should only work on those if they have not leads assigned to them. See this page to understand which lead types are auto-assigned. In the case the SDR will work an unassigned lead, in addition to self-assign, the SDR also needs to update the stage to Lead Assigned.
+
+These are the Slack channels:
+
+- **#tier-1-notifications** - Tier 1 leads are the ones that have gone on to our website and clicked "Request a Demo". They're your best chance at booking a meeting.
+- **#tier-2-notifications**
+- **#other-tier-notifications**
+
+Note: As we implement Salesforce for SDRs and clean up current pipeline, we will adjust this process to have leads assigned directly in Salesforce vs. Slack channels, and have reporting for SDRs to see real time the leads that were assigned to them.
+
+**Salesforce Tracking**
+
+The Account Stage will be "Lead Assigned"
+
+This means: The lead has been assigned to the SDR and no action has been taken by the SDR yet
+
+How does the lead get to this stage? When the lead is auto-assigned, the Stage and Substage will be automatically set as "Lead Assigned". For Leads that are not auto-assigned, they will be created in Salesforce under Stage "Prospecting" and the Substage will be "Inbound Unassigned". In this case, the SDR should manually move the lead to Stage "Lead Assigned", Substage "Lead Assigned" when they self-assign a lead.
+
+How long should the lead be in this stage? Max duration = 1 day
+
+---
+
+### Step 2 - Move Lead from Salesforce into SalesLoft
+
+**How to work this step?**
+
+Using the Salesforce ID link in the Slack message, go to the Salesforce page for your new lead.
+
+Using the Salesloft icon in the upper right hand corner of the page, on the drop down menu select "Import Contacts"
+
+<Frame>
+  ![](/images/Sales-125.png)
+</Frame>
+
+This will open SalesLoft with the contacts from the account.
+
+Before proceeding with assigning a Cadence for this account, the SDR will need to check for duplicates (is this right?)
+
+**Salesforce Tracking**
+
+The "Account Stage" will remain as "Lead Assigned"
+
+The duration of this step is included in the max duration for the "Lead Assigned" mentioned above.
+
+---
+
+### Step 3 - Add Lead to a Cadence
+
+**How to work this step?**
+
+Select the contact that requested the demo.
+
+In Salesforce, use this help page to add the lead to the cadence
+
+In Salesloft: In the upper right hand button in SalesLoft, click on "Finish Import & Add to Cadence"
+
+<Frame>
+  ![](/images/Sales-126.png)
+</Frame>
+
+This will open a pop up to select the cadence. To select the correct cadence make sure you are under "Team Cadences".
+
+Select the appropriate cadence to be applied to this lead. The cadence will define how the SDR will engage that prospect (calls/emails) throughout a certain period of time.
+
+To select the cadence consider the following resource: [DRAFT - SOP - How to Select and Work on Cadences](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870804487)
+
+<Frame>
+  ![](/images/Sales-127.png)
+</Frame>
+
+Once the lead has been added to a cadence, SalesLoft will create tasks for SDRs to perform to complete the cadence
+
+**Salesforce Tracking**
+
+The Account Stage will be "Cadence Started"
+
+This means: The SDR is executing on the tasks of the cadence
+
+How does the lead get to this stage? Once the SDR assigns the lead to a cadence, the stage should be automatically assigned (TBC if it will be possible)
+
+Substages:
+
+- **Cadence Running** - This means the SDR has assigned this lead to a cadence. Ideally, the substage should automatically change to "Cadence Running" when this action is taken. If it is not possible to automate, we will start with changing substage manually (TBC if it will be possible)
+- **Replied (Engaged)** - This means the lead has replied to one of our attempts to engage them, i.e. either they answered the SDR call or the email cadence. This doesn't confirm interest, it only signals that the lead has replied to one of our outreach strategies. Ideally, the substage should automatically change to "Replied (Engaged)" when either a customer replies to the SDR (excluding the replies with "stop", "remove me", "unsubscribe", etc) or they answer the phone. But this can be quite complex to build, so we will start with the SDR changing substage manually. (TBC if it will be possible to automate)
+
+How long should the lead be in this stage? (i.e. Cadence Started) Max duration = 2 weeks
+
+---
+
+### Step 4 - Work Tasks
+
+**How to work this step?**
+
+Once the contact is successfully added to the cadence, SalesLoft will take you to the cadence page.
+
+You can simply return to your home screen from there and start the cadence steps to contact your lead!
+
+Use this page to guide you on your call with the lead: [Inbound Tier 1 - Communication Templates](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2872901638)
+
+Make sure to take notes while you are having a conversation with the Lead!
+
+If the lead doesn't answer the phone, leave a voicemail and send an email
+
+After the phone call, send email?
+
+If interested – template?
+
+If not interested – template?
+
+On a daily basis, check ?????? page to see what tasks are due that day.
+
+see what else from this file still applies – [https://docs.google.com/document/d/1rXOw5dYXoUxmAZP-BliJXYHyDta0esevVZEvWuYhqcI/edit](https://docs.google.com/document/d/1rXOw5dYXoUxmAZP-BliJXYHyDta0esevVZEvWuYhqcI/edit)
+
+Other potential responses scenarios:
+
+- If no response to email or phone calls, you could also explore finding and messaging the contact in Linkedin - [LinkedIn Messaging Guide](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2888630291)
+- During the interaction with the lead, if they ask for examples of companies that use Latchel and their feedback, you can share the link to the Latchel website with the case studies, but also ask to book a a discovery meeting so we can discuss how Latchel can help with their business
+- If the lead respond with a request to no longer receive communication with us or not be contacted, first access if the request is a "Do NOT contact me", "Unsubscribe from emails / Stop e-mailing me" or "Do not call"
+
+**Do not contact vs do not call**
+
+We need to be careful here so we don't get Latchel into trouble. It's really important to recognize the difference between these two phrases.
+
+Do not contact means all communication must stop going forward. In addition to removing the account from any cadence they are in, this account needs to be flagged to Marketing so they can move it into a "Do Not Contact" stage in Salesforce. ----- how to communicate this to marketing? – The same process applies if they ask to be "Unsubscribed from or e-mails" – confirm with Jen
+
+If they tell you not to call, they haven't said not to email. We don't need to turn this into a spam-fest, but we can still attempt to engage the prospect via email, SMS, or video messaging. Oftentimes, people have a kneejerk reaction and tell us not to call, without ever knowing what they are declining. This is still an opportunity to provide some value in order to get the prospect to take a call with us.
+
+**Salesforce Tracking**
+
+The Account Stage will remain "Cadence Started" and substage will be "Cadence Running" unless there was a reply from the Lead (see description in the prior step section)
+
+Note: At the end of the cadence, if the SDR hasn't received any reply (engaged) from the prospect, the lead should be moved into Account Stage "Prospecting"/ Substage "Marketing" and this will be sent back to the Marketing team.
+
+---
+
+### Step 5 - Set Appointment for Qualification Meeting
+
+**How to work this step?**
+
+Once there is a reply from a lead wanting to move forward, the SDR should qualify that account according to our current qualification criteria, which is done in the Qualification Meeting (step 6)
+
+In order to qualify the prospect, the SDR should schedule a meeting to collect the required information. This meeting should be schedule via ……..not sure how this works…
+
+Try to ask the lead about their timing to make a decision, so you know if we need to look for ways to expedite the process and avoid losing the opportunity. If they are on a short timeline, it is possible they are already in advanced conversations with our competitors.
+
+Try to also ask if
