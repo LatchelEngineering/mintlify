@@ -735,18 +735,18 @@
               "latchel-admin/Data Support Team/assembly",
               "latchel-admin/Data Support Team/calibration-guidelines-help-guide-audit",
               "latchel-admin/Data Support Team/calibration-guidelines-task-share-audit",
-              "latchel-admin/Data Support Team/completing-rentredi-and-nomad-casetickets",
+              "latchel-admin/Data Support Team/completing-rentredi-and-nomad-casestickets",
               "latchel-admin/Data Support Team/configuring-on-call-technicians",
               "latchel-admin/Data Support Team/cs-how-to-export-service-provider-information-appfolio",
               "latchel-admin/Data Support Team/cs-teamdata-support-job-aid-the-data-migration-project",
               "latchel-admin/Data Support Team/csadmin-how-to-create-configure-a-portfolio",
-              "latchel-admin/Data Support Team/cutomer-data-collection",
+              "latchel-admin/Data Support Team/customer-data-collection",
               "latchel-admin/Data Support Team/data-migration-integration-activation-guide",
               "latchel-admin/Data Support Team/data-support-associate-interview-guide",
               "latchel-admin/Data Support Team/data-support-associates-performance-rating-and-team-metric-goals",
               "latchel-admin/Data Support Team/data-support-how-to-handle-assembly-tickets",
               "latchel-admin/Data Support Team/data-support-quality-audit",
-              "latchel-admin/Data Support Team/data-support-requests-for-leonardo-247-customer",
+              "latchel-admin/Data Support Team/data-support-request-for-leonardo-247-customers",
               "latchel-admin/Data Support Team/data-support-requests",
               "latchel-admin/Data Support Team/data-support-team",
               "latchel-admin/Data Support Team/data-support-teams-task-cadence-and-prioritization",
@@ -764,7 +764,7 @@
               "latchel-admin/Data Support Team/how-to-complete-new-nomad-owner-details-for-latchel",
               "latchel-admin/Data Support Team/how-to-configure-customer-profile-information-details-page-in-latchel-admin",
               "latchel-admin/Data Support Team/how-to-configure-owner-and-communication-preferences",
-              "latchel-admin/Data Support Team/how-to-configure-preferred-service-provider-to-a-new-account",
+              "latchel-admin/Data Support Team/how-to-configure-preferred-service-providers-to-a-new-account",
               "latchel-admin/Data Support Team/how-to-create-a-custom-view",
               "latchel-admin/Data Support Team/how-to-create-a-customer-group",
               "latchel-admin/Data Support Team/how-to-create-publish-help-guides",
@@ -956,8 +956,7 @@
                           "latchel-admin/Customer-Success-Team/integration-demo",
                           "latchel-admin/Customer-Success-Team/how-to-activate-the-integration"
                         ]
-                      },
-                      "latchel-admin/Customer-Success-Team/api-training-session"
+                      }
                     ]
                   },
                   {
@@ -1180,20 +1179,21 @@
               {
                 "group": "Latchel Policies & Procedures",
                 "pages": [
-                  "code-of-conduct",
-                  "staffing-approval-and-hiring-policy-and-procedure",
-                  "referral-policy-and-procedure",
-                  "policy-employee-compensation-increase-process",
-                  "remote-work-policy",
-                  "sales-commission-payout-policy",
-                  "nondiscrimination-anti-harassment-policy-and-complaint-procedure",
-                  "team-member-complaint-procedure",
+                  "latchel-admin/Latchel-People-Ops/latchel-policies-and-procedures",
+                  "latchel-admin/Latchel-People-Ops/code-of-conduct",
+                  "latchel-admin/Latchel-People-Ops/staffing-approval-and-hiring-policy-and-procedure",
+                  "latchel-admin/Latchel-People-Ops/referral-policy-and-procedure",
+                  "latchel-admin/Latchel-People-Ops/policy-employee-compensation-increase-process",
+                  "latchel-admin/Latchel-People-Ops/remote-work-policy",
+                  "latchel-admin/Latchel-People-Ops/sales-commission-payout-policy",
+                  "latchel-admin/Latchel-People-Ops/nondiscrimination-anti-harassment-policy-and-complaint-procedure",
+                  "latchel-admin/Latchel-People-Ops/team-member-complaint-procedure",
                   {
                     "group": "Policy: Employee Time and Attendance",
                     "pages": [
-                      "policy-employee-time-and-attendance",
-                      "shortened-work-week-policy",
-                      "shortened-work-week-schedule-2026"
+                      "latchel-admin/Latchel-People-Ops/policy-employee-time-and-attendance",
+                      "latchel-admin/Latchel-People-Ops/shortened-work-week-policy",
+                      "latchel-admin/Latchel-People-Ops/shortened-work-week-schedule-2026"
                     ]
                   },
                   {
@@ -1224,15 +1224,15 @@
                       "latchel-admin/Latchel-People-Ops/policy-information-security"
                     ]
                   },
-                  "performance-and-salary-review-policy",
-                  "health-care-benefits-policy",
-                  "international-health-care-benefits-policy"
+                  "latchel-admin/Latchel-People-Ops/performance-and-salary-review-policy",
+                  "latchel-admin/Latchel-People-Ops/health-care-benefits-policy",
+                  "latchel-admin/Latchel-People-Ops/international-health-care-benefits-policy"
                 ]
               },
               {
                 "group": "Management Resource Center",
                 "pages": [
-                  "manager-resource-center",
+                  "latchel-admin/Latchel-People-Ops/manager-resource-center",
                   {
                     "group": "Toolkit: Performance Management",
                     "expanded": true,
