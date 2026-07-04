@@ -1180,20 +1180,21 @@
               {
                 "group": "Latchel Policies & Procedures",
                 "pages": [
-                  "code-of-conduct",
-                  "staffing-approval-and-hiring-policy-and-procedure",
-                  "referral-policy-and-procedure",
-                  "policy-employee-compensation-increase-process",
-                  "remote-work-policy",
-                  "sales-commission-payout-policy",
-                  "nondiscrimination-anti-harassment-policy-and-complaint-procedure",
-                  "team-member-complaint-procedure",
+                  "latchel-admin/Latchel-People-Ops/latchel-policies-and-procedures",
+                  "latchel-admin/Latchel-People-Ops/code-of-conduct",
+                  "latchel-admin/Latchel-People-Ops/staffing-approval-and-hiring-policy-and-procedure",
+                  "latchel-admin/Latchel-People-Ops/referral-policy-and-procedure",
+                  "latchel-admin/Latchel-People-Ops/policy-employee-compensation-increase-process",
+                  "latchel-admin/Latchel-People-Ops/remote-work-policy",
+                  "latchel-admin/Latchel-People-Ops/sales-commission-payout-policy",
+                  "latchel-admin/Latchel-People-Ops/nondiscrimination-anti-harassment-policy-and-complaint-procedure",
+                  "latchel-admin/Latchel-People-Ops/team-member-complaint-procedure",
                   {
                     "group": "Policy: Employee Time and Attendance",
                     "pages": [
-                      "policy-employee-time-and-attendance",
-                      "shortened-work-week-policy",
-                      "shortened-work-week-schedule-2026"
+                      "latchel-admin/Latchel-People-Ops/policy-employee-time-and-attendance",
+                      "latchel-admin/Latchel-People-Ops/shortened-work-week-policy",
+                      "latchel-admin/Latchel-People-Ops/shortened-work-week-schedule-2026"
                     ]
                   },
                   {
@@ -1224,15 +1225,15 @@
                       "latchel-admin/Latchel-People-Ops/policy-information-security"
                     ]
                   },
-                  "performance-and-salary-review-policy",
-                  "health-care-benefits-policy",
-                  "international-health-care-benefits-policy"
+                  "latchel-admin/Latchel-People-Ops/performance-and-salary-review-policy",
+                  "latchel-admin/Latchel-People-Ops/health-care-benefits-policy",
+                  "latchel-admin/Latchel-People-Ops/international-health-care-benefits-policy"
                 ]
               },
               {
                 "group": "Management Resource Center",
                 "pages": [
-                  "manager-resource-center",
+                  "latchel-admin/Latchel-People-Ops/manager-resource-center",
                   {
                     "group": "Toolkit: Performance Management",
                     "expanded": true,

@@ -55,7 +55,7 @@ To create a queue, follow these steps:
 </Frame>
 
 3. Enter queue information
-   As standard, name the queue as "Sales Team - Name's queue". You can use the same template for the Name and Description field. Select Basic Hours under "Hours of Operation"
+   a. As standard, name the queue as "Sales Team - Name's queue". You can use the same template for the Name and Description field. Select Basic Hours under "Hours of Operation"
 
 <Frame>
   ![](/images/Sales-22.png)
@@ -65,7 +65,7 @@ To create a queue, follow these steps:
    - The Default Caller ID is Latchel
    - The Sales Team Phone Number is 1 866-906-0508. Use this same number to be displayed as an outbound caller ID number, so if the lead misses the call and decided to call back, the call will be routed to the Sales Team
    - The Outbound Whisper Flow is "Sales Default Outbound".
-   - A Call Flow determines the steps a call will go through when a phone number is dialed. This outbound flow will let the customer know the call will be recorded.
+     - A Call Flow determines the steps a call will go through when a phone number is dialed. This outbound flow will let the customer know the call will be recorded.
 
 <Frame>
   ![](/images/Sales-23.png)
@@ -386,13 +386,11 @@ For outbound calls only, there is no need to create an individual inbound call f
 
 2. Assign Permission Sets
    - Navigate to Setup \> Manage Users \> Permission Set
-   - Give the following permission sets for all users
-
-<Frame>
-  ![](/images/Sales-59.png)
-</Frame>
-
-- For Managers and People that will be creating Cadences, assign the Sales Engagement Cadence Creator
+     - Give the following permission sets for all users
+       <Frame>
+         ![](/images/Sales-59.png)
+       </Frame>
+     - For Managers and People that will be creating Cadences, assign the Sales Engagement Cadence Creator
 
 ---
 
@@ -400,19 +398,19 @@ For outbound calls only, there is no need to create an individual inbound call f
 
 When using cadences, there will be email templates that will share a link to the SDR calendar for the lead to schedule a meeting.
 
-In order for the templates be auto-populated with the specific SDR calendar link, the SDR user page needs to have that field filled up with their personal link.
+1. In order for the templates be auto-populated with the specific SDR calendar link, the SDR user page needs to have that field filled up with their personal link.
 
 <Frame>
   ![](/images/Sales-60.png)
 </Frame>
 
-To do that, go to the users page, then click on "Edit" on the top right side:
+T2. o do that, go to the users page, then click on "Edit" on the top right side:
 
 <Frame>
   ![](/images/Sales-61.png)
 </Frame>
 
-Add the link to the calendar on the "calendar link" field and click "Save"
+3. Add the link to the calendar on the "calendar link" field and click "Save"
 
 <Frame>
   ![](/images/Sales-62.png)
@@ -424,19 +422,19 @@ Add the link to the calendar on the "calendar link" field and click "Save"
 
 When using cadences, Salesforce will send emails to leads. In order to send those emails, Salesforce will need to access your Gmail Account, so you will need to enable that in salesforce. Use this SOP: [https://latchel.atlassian.net/wiki/spaces/SAL/pages/edit-v2/2917269517?draftShareId=a2f79ff9-e26b-4686-91cb-40122c9316a3](https://latchel.atlassian.net/wiki/spaces/SAL/pages/edit-v2/2917269517?draftShareId=a2f79ff9-e26b-4686-91cb-40122c9316a3)
 
-To confirm the email is connected, click on your profile icon, select settings, and on the left side menu, select "connected accounts" and "email and calendar accounts"
+1. To confirm the email is connected, click on your profile icon, select settings, and on the left side menu, select "connected accounts" and "email and calendar accounts"
 
 <Frame>
   ![](/images/Sales-63.png)
 </Frame>
 
-You may also want to install a [Salesforce Chrome Extension](https://chromewebstore.google.com/detail/salesforce/jjghhkepijgakdammjldcbnjehfkfmha) that enables you to see your to do lists and take actions from your Gmail Account
+2. You may also want to install a [Salesforce Chrome Extension](https://chromewebstore.google.com/detail/salesforce/jjghhkepijgakdammjldcbnjehfkfmha) that enables you to see your to do lists and take actions from your Gmail Account
 
 ---
 
 ### Step 7 - SDR/User will need to enable Google Meet in Salesforce
 
-this will enable Einsten to capture and analyze the calls
+This will enable Einsten to capture and analyze the calls
 
 <Frame>
   ![](/images/Sales-64.png)

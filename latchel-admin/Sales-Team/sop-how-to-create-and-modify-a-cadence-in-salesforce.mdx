@@ -40,7 +40,7 @@ When building a cadence, you will select calls and emails that will be sent to t
 
 3. Fill up the form:
    - Name of the Call Script – use the template: CT - SA - \[situation or cadence in which it will be used\]
-   - Note - CT stands for Call Template - using Call Template vs. Call Script verbiage to avoid confusion with the CS from Customer Success Team
+     - Note - CT stands for Call Template - using Call Template vs. Call Script verbiage to avoid confusion with the CS from Customer Success Team
    - Description - include here when or which situation this script should be used
    - Body - enter the script or the link to another place where scripts are being stored
 
@@ -52,11 +52,11 @@ When building a cadence, you will select calls and emails that will be sent to t
   **Cloning current templates**
 
   Instead of creating a new template from scratch, you can also create a clone, edit the content and Save! Just find the email template you want to clone and click on it. On the drop right side of the window, click on "clone".
-</Note>
 
-<Frame>
-  ![](/images/Sales-91.png)
-</Frame>
+  <Frame>
+    ![](/images/Sales-91.png)
+  </Frame>
+</Note>
 
 ---
 
@@ -91,75 +91,57 @@ When building a cadence, you will select calls and emails that will be sent to t
 </Frame>
 
 4. Fill in the form:
-
-<Frame>
-  ![](/images/Sales-96.png)
-</Frame>
-
-5. Enter email template name -
-   Use this format: ET-SA-\[cadence will be used\] - \[Day of the cadence\]
-   Note: ET means Email Template, SA means Sales Team
-   Example: ETSA- Outbound Email - Day 1
-6. Select the folder
-
-<Frame>
-  ![](/images/Sales-97.png)
-</Frame>
-
-7. Enter the Subject (email subject line) and click on save
-
-<Frame>
-  ![](/images/Sales-98.png)
-</Frame>
-
-8. To add the email content, edit the HTML value by clicking on the pencil icon
+   - Enter email template name -
+     Use this format: ET-SA-\[cadence will be used\] - \[Day of the cadence\]
+     Note: ET means Email Template, SA means Sales Team
+     Example: ETSA- Outbound Email - Day 1
+     <Frame>
+       ![](/images/Sales-96.png)
+     </Frame>
+   - Select the folder
+     <Frame>
+       ![](/images/Sales-97.png)
+     </Frame>
+   - Enter the Subject (email subject line) and click on save
+     <Frame>
+       ![](/images/Sales-98.png)
+     </Frame>
+5. To add the email content, edit the HTML value by clicking on the pencil icon
 
 <Frame>
   ![](/images/Sales-99.png)
 </Frame>
 
-9. Enter the text and images of your email
+6. Enter the text and images of your email
 
 <Frame>
   ![](/images/Sales-100.png)
 </Frame>
 
-For images, you will need to have the image filed saved somewhere and upload it to the template
+- For images, you will need to have the image filed saved somewhere and upload it to the template
 
-To add fields to be automated filled when the email is sent out, like the name of the contact, first, you need to find the API name of the object that contains that information, then find the field API name.
-
-To find the Object API name,:
-
-- Go to Set-up - [https://latchel1.lightning.force.com/lightning/setup/SetupOneHome/home](https://latchel1.lightning.force.com/lightning/setup/SetupOneHome/home)
-- Click on Object Manager tab
-- Search for the Object
-
-<Frame>
-  ![](/images/Sales-101.png)
-</Frame>
-
-- Click on the object and then click on "Fields and Relationships"
-
-<Frame>
-  ![](/images/Sales-102.png)
-</Frame>
-
-- Search for the field you are looking for, like name
-- Then find the name you are looking for in and get the value of the second column (i.e. under Field Name)
-
-<Frame>
-  ![](/images/Sales-103.png)
-</Frame>
-
-Once you have the "Field Name", you will combine it with either Sender, Recipient or Organization using this syntax:
-
-`{{{Recipient.FIELD_NAME}}}`
-
-Example `{{{Recipient.FirstName}}}`
-
-Replace all customs fields with this syntax into your email template. With this, the automation will fill in the contact specific information in that field, or your own personal information, like your name and calendar link
-
-Some key syntaxes to use in your templates:
+7. To add fields to be automated filled when the email is sent out, like the name of the contact, first, you need to find the API name of the object that contains that information, then find the field API name.
+   - To find the Object API name,:
+     - Go to Set-up - [https://latchel1.lightning.force.com/lightning/setup/SetupOneHome/home](https://latchel1.lightning.force.com/lightning/setup/SetupOneHome/home)
+     - Click on Object Manager tab
+     - Search for the Object
+       <Frame>
+         ![](/images/Sales-101.png)
+       </Frame>
+     - Click on the object and then click on "Fields and Relationships"
+       <Frame>
+         ![](/images/Sales-102.png)
+       </Frame>
+     - Search for the field you are looking for, like name
+     - Then find the name you are looking for in and get the value of the second column (i.e. under Field Name)
+       <Frame>
+         ![](/images/Sales-103.png)
+       </Frame>
+     - Once you have the "Field Name", you will combine it with either Sender, Recipient or Organization using this syntax:
+       - `{{{Recipient.FIELD_NAME}}}` 
+       - Example `{{{Recipient.FirstName}}}` 
+   - Replace all customs fields with this syntax into your email template. With this, the automation will fill in the contact specific information in that field, or your own personal information, like your name and calendar link
+     - Some key syntaxes to use in your templates:
 
 - Pull lead name ---\> `{{{Recipient.FirstName}}}`
 - Include your calendar link ----\> `{{{Sender.Calendar_Link__c}}}`
