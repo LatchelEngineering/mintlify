@@ -1179,7 +1179,21 @@
               "latchel-admin/Sales-Team/product-information",
               {
                 "group": "AE Resources",
-                "pages": []
+                "pages": [
+                  "latchel-admin/Sales-Team/ae-resources",
+                  {
+                    "group": "AE Role - Expectations & Set-up",
+                    "pages": [
+                      "latchel-admin/Sales-Team/ae-role-expectations-and-set-up",
+                      "latchel-admin/Sales-Team/sop-how-to-send-implementation-fee-with-contract"
+                    ]
+                  },
+                  "latchel-admin/Sales-Team/draft-sop-ae-process-steps-how-to-process-an-opportunity",
+                  "latchel-admin/Sales-Team/draft-ae-process-in-salesforce",
+                  "latchel-admin/Sales-Team/sop-process-to-ensure-correct-sdr-commission-payments",
+                  "latchel-admin/Sales-Team/sop-how-to-run-a-discovery-meeting",
+                  "latchel-admin/Sales-Team/draft-sop-how-to-run-a-demo-meeting"
+                ]
               }
             ]
           },

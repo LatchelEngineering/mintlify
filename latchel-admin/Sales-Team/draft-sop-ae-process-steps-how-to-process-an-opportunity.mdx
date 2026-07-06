@@ -1,0 +1,304 @@
+---
+title: "DRAFT - SOP - AE Process Steps - How to Process an Opportunity"
+---
+
+<Note>
+  Purpose of this document
+
+  The purpose of this document is to provide the steps the Account Executive (AE) team takes to "process" an Opportunity from the time it is assigned to closing and sending it to Onboarding.
+
+  To see an overview of the whole sales pipeline steps, refer to this page: [Sales Cycle and Pipeline Overview](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870509584/DRAFT+-+Sales+Pipeline+Overview)
+</Note>
+
+<Note>
+  Who should read this document?
+
+  Account Executives
+</Note>
+
+## Step-by-Step Guide
+
+**What happened prior to this step?**
+
+Prior to the AE taking over the Opportunity, the SDRs went through their process to contact and qualify a lead. To learn more about their process, see this SOP: [Draft - SOP - SDR Inbound Process: How to Process a Lead](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2868543685/Draft+-+SOP+-+SDR+Inbound+Process+How+to+Process+a+Lead)
+
+## SECTION A) Happy Path Process
+
+### Process Overview
+
+The flow below shows the steps of how an AE will handle an Opportunity from the time the lead is transferred to them, from the SDR, during the Discovery Meeting, until the lead is sent to Onboarding (i.e. Onboarding Kick-Off meeting is scheduled AND the prospect is present), which at that time, the ownership of that account is transferred to the Onboarding Team.
+
+The "Happy Path" assumes that everything went well and the Opportunity moved to the next step of the process. When there is an issue during that step, refer to Section B of this document to know how to proceed.
+
+These steps are aligned with the Opportunity stages and substages in Salesforce that we will use to track the status of each lead and deal, and measure performance of each process step. This tracking will enable us to define and prioritize process improvements.
+
+Throughout the process, you will be taking notes of your engagement with the lead and some key account information. Please refer to this SOP on where the notes should be left [SOP - How to Leave Notes for an Opportunity in Salesforce](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2907144246)
+
+This [video recorded by Matt provides a walkthrough the process in Salesforce](https://www.loom.com/share/943227f928a9401bb0f322810b5b4173).
+
+<Warning>
+  Attention!!
+
+  In order to ensure the SDR's commissions are paid correctly, please follow the process in this page:
+
+  [SOP - Process to Ensure Correct SDR Commission Payments](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2883551253)
+</Warning>
+
+The AE process will slightly differ when the Opportunity is a Small Market Business (SMB) or a Mid-Market (MM).
+
+- SMB accounts are the ones with 700 units or less
+- MM accounts are the ones with over 700 units
+
+<Frame>
+  ![AE Process flowchart showing steps from Run Discovery Meeting through Send to Onboarding, mapped to their corresponding Opportunity Stages in Salesforce](/images/Sales-163.png)
+</Frame>
+
+To see all of the Salesforce Account and Opportunity Stages, refer to this page: [Sales Cycle and Pipeline Overview](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870509584/DRAFT+-+Sales+Pipeline+Overview)
+
+<Note>
+  How to access Salesforce?
+
+  Use this link to access Salesforce - [Login | Salesforce](https://login.salesforce.com/)
+</Note>
+
+### Step 1 - Discovery Meeting
+
+**How to work this step?**
+
+Find instructions on how to run this meeting in this page: [SOP - How to Run a Discovery Meeting](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2883518493/SOP+-+How+to+Run+a+Discovery+Meeting)
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Discovery Appointment Scheduled" until the meeting is complete
+- The "Discovery Appointment Scheduled" stage means: The meeting has been scheduled in the AE calendar by a SDR
+- How does the lead get to this stage? SDRs will schedule the meeting and create the Opportunity that will be at this stage
+- Substages: If the meeting needs to be reschedule for any reason, the substage should be changed to "Rescheduling Discovery Meeting". If one meeting wasn't enough to finalize the Discovery conversation, the substage should be changed to "Discovery Call Follow-up". If the lead is not moving forward, you will move the Opportunity to Disco Complete before Closing Lost, that way we can ensure the SDRs get their commission paid
+- How long should the opportunity be in this stage? Max 3 days
+
+### Step 2 - Book a Demo / Team Call
+
+**How to work this step?**
+
+The AE should already set the appointment for the Demo meeting during the Discovery Meeting to avoid creating delays in the process and creating a risk the lead will disengage
+
+If the Demo was not scheduled or needs to be rescheduled:
+
+- Include suggested demo times with calendar links in the follow-up email after the Discovery Meeting
+- Touch account with email or call every three days if no demo booked after Discovery Meeting
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Discovery Complete", substage should be either: (1) "Scheduling Demo (AE)" or "Demo Scheduled"
+- This stage means: The Discovery Meeting has happened and the deal will move forward, so the AE is either working on scheduling a Demo, or has already had it scheduled
+- How does the lead get to this stage? The AE changes to this stage at the end of the Discovery Meeting
+- Substages: If the AE has scheduled the meeting, the substage should be "Demo Scheduled". If the AE is working on scheduling the demo, the substage should be "Scheduling Demo (AE)". If the AE is struggling to get a response from the lead to schedule the meeting, they will engage the SDR to help with the re-engagement and demo scheduling. In this case, the substage should be "Scheduling Demo (SDR)" and the AE should change the substage as they engage SDRs to help with the scheduling. If there was already a demo meeting but it was not enough to cover all of the topics or the lead has more questions, the AE will schedule a follow-up meeting and change the stage to "Demo Call Follow-up". If the lead is not moving forward, you will move the Opportunity to Demo Complete before Closing Lost, that way we can ensure the SDRs get their commission paid
+- How long should the opportunity be in this stage? max 7 days
+
+### Step 3 - Run the Demo / Team Call
+
+**How to work this step?**
+
+Find instructions on how to run this meeting in this page: [Draft -- SOP - How to Run a Demo Meeting](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2891120719/Draft+--+SOP+-+How+to+Run+a+Demo+Meeting)
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Discovery Complete", substage "Demo Scheduled"
+- The "Demo Scheduled" substage means: The Demo meeting has been scheduled and the AE is waiting for the meeting date
+- How does the lead get to this stage? The AE manually changes to this substage when they schedule the Demo Meeting
+- How long should the opportunity be in this stage? max 7 days since booked
+
+### Step 4 - Demo Follow-up Call (MM only)
+
+**How to work this step?**
+
+If a follow-up session to the first demo needs to be schedule to finalize going over all the lead's questions about our products, we should schedule a follow-up demo session.
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Discovery Complete", substage "Demo call follow-up"
+- The "Demo call follow-up" substage means: The first demo was complete and the lead has remaining or additional questions that will need to be answered in another call. Or the first demo call was not enough time to complete the planned demo.
+- How does the lead get to this stage? The AE moves to this substage if needed, at the end of the first Demo meeting
+- How long should the opportunity be in this stage? max 7 days since booked
+
+### Step 5 - Build Contract
+
+[SOP - How to Create and Send a Contract in Salesforce](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2891087913)
+
+**How to work this step?**
+
+- Update fields on the contract page in the Opportunity
+- Click "New Document" on the contract page in the Opportunity.
+- Find the correct contract for what the PM is signing on with Latchel for.
+- Fill in any fields that were no auto-assigned from salesforce
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Demo Complete", substage "Building Contract"
+- The "Demo Complete" \+ substage "Building Contract" means: All of the demo calls needed were complete and the lead is ready to start working on a contract, so the AE is starting to fill up the contract templates to send to the lead
+- How does the lead get to this stage? After the last demo meeting, if multiple meetings, the AE changes the stage to "Demo Complete" and substage to "Building Contract"
+- How long should the opportunity be in this stage? 1 day?
+
+### Step 6 - Send Contract
+
+_From Shannon - I send a blank contract to review before the contract meeting and then I go over it with them on my contract signing call. The expectation is that they sign is asap_
+
+_But usually it's signed after a call not on the call. I fill it out live with them on the call to make it easy for them to send to_
+
+_JP – @Jen Sells need to standardize how this works – I think if they want to see a blank contract prior to signing, we can send a template, but the stage should remain as Demo Complete/building contract. It should only change to contract sent when the actual contract was sent for signature._
+
+**How to work this step?**
+
+Once the contract is filled out in Pandadoc, select "Email" to send to all recipients.
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Contract Sent", substage "Contract Sent"
+- The "Contract Sent" stage means: The AE has filled up the contract form with the lead's specific contract information that was discussed during the demo meeting and the contract was sent to the lead for signature
+- How does the lead get to this stage? The AE changes the stage when the contract is sent _--- is there an opportunity to automate this once the pandadoc file is sent?_
+- How long should the opportunity be in this stage? max 7 days, including time needed for meetings to discuss the contract
+
+### Step 7 - Set Contract Meeting / Implementation Call
+
+**How to work this step?**
+
+- Before sending the contract, the AE should know if the PM requires a contract meeting.
+- Send email after sending the contract, alerting the PM the contract has been sent, and summarize the terms that were discussed.
+- The AE can include a meeting link for PM to book time if needed.
+- Check and discuss about potential special property set-up in Latchel [Property Types and What Latchel Supports](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2920742923)
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Contract Sent", substage "Contract Sent"
+- The "Contract Sent" stage means: same as prior step
+- How does the lead get to this stage? same as prior step
+- Substages: same as prior step
+- How long should the opportunity be in this stage? same as prior step
+
+### Step 8 - Contract Meeting
+
+_(add Step 3 content beginning here, or delete this step)_
+
+**How to work this step?**
+
+_Add link for Contract Meeting SOP when completed_
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Contract Sent", substage "Contract Sent"
+- The "Contract Sent" stage means: same as prior step
+- How does the lead get to this stage? same as prior step
+- Substages: same as prior step
+- How long should the opportunity be in this stage? same as prior step
+
+### Step 9 - Sign contract
+
+**How to work this step?**
+
+The AE will receive an email notification from Pandadoc when a lead views, and then signs a contract.
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be ""Contract Sent" until the contract is signed. Once it is signed, the AE will change it to "Closed Won"
+- The "Contract Sent" stage means: same as prior step
+- How does the lead get to this stage? same as prior step
+- Substages: same as prior step
+- How long should the opportunity be in this stage? same as prior step
+
+### Step 10 - Send Invoice for Implementation fee
+
+Work with Finance to build the invoice, Use the [Sending a Closed Opportunity to Onboarding](https://latchel.atlassian.net/wiki/spaces/CS/pages/2707718145) process. Finance will create the invoice.
+
+_Need to add somewhere that the AE needs to confirm payment, as Onboarding does not_
+
+**How to work this step?**
+
+- Go to Slack - Accounts Receivable Channel - select the implementation invoice workflow.
+- Fill up the form and submit
+- Reply in the thread tagging the Customer Success org leader who will create the account in the Latchel Console and ensure it is synced with Salesforce.
+- Once that is completed, CS Org leader will tag finance in the thread and assign the CSM.
+
+This process is also described in this SOP - [Sending a Closed Opportunity to Onboarding](https://latchel.atlassian.net/wiki/spaces/CS/pages/2707718145). This is applicable for SMB and MM contracts.
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Closed Won", substage "Sent to Onboard"
+- The "Closed Won" stage means: The client has signed the contract. The AE is working on handing-off the client to Customer Success and to communicate to Finance that they need to send the invoice for the implementation fee.
+- How does the lead get to this stage? The AE changes the status once the client signs the contract
+- Substages: Waiting Setup Fee _--- is it still used?_ Phased Roll Out _--- is it still used?_ Send to Onboard. Onboarding Delay - Client Engaged _– when is this used? should Sales be tracking this?_
+- How long should the opportunity be in this stage? CS Takes over here
+
+### Step 11 - Send to Onboarding
+
+**How to work this step?**
+
+This [video shows how to "Closed Won" an Opportunity, send it to onboarding, and finance (if not completed yet)](https://www.loom.com/share/a35dcab93ec442dfbb7812765e622f1f)
+
+- Stage close Won, Substage "Send to Onboarding"
+- Slack - Accounts Receivable Channel - select the implementation invoice workflow. Fill up the form and submit, reply in the thread tagging the Customer Success leader who will create the account in the Latchel Console and ensure it is synced with Salesforce. Once that is completed, CS leader will tag finance in the thread and assign the CSM.
+- AE will then introduce the CSM to the customer success manager, so they can schedule the kick-off call
+- This process is also described in this SOP - [Sending a Closed Opportunity to Onboarding](https://latchel.atlassian.net/wiki/spaces/CS/pages/2707718145). This is applicable for SMB and MM contracts.
+- AE to set the expectation that the person in charge of leasing should attend the Kick Off call (for all contracts except maintenance only)
+- Use this SOP to send the account to onboarding - [Sending a Closed Opportunity to Onboarding](https://latchel.atlassian.net/wiki/spaces/CS/pages/2707718145)
+
+**Salesforce Tracking**
+
+- The Salesforce Opportunity Stage should be "Closed Won", substage "Sent to Onboard"
+- The "?????" stage means:
+- How does the lead get to this stage?
+- SubSsages:
+- How long should the opportunity be in this stage?
+
+## SECTION B) How to Handle Issues Along the Process
+
+General Guideline for Close Lost: At any step in the process, the deal may get stuck. If it the AE is unable to get the deal moving within 4 weeks, the deal should be moved to Closed Lost.
+
+The last sales person to communicate with a Contact associated with the Account should send a breakup email and the Account should move to "Prospecting/Lost Opportunities"
+
+Other Issues:
+
+While working through the steps above, the AE may face a technical issue, or the lead may not be responsive or may respond negatively and don't move forward. In those cases, refer to the table below to know how to proceed.
+
+| Process Step # | Process Step | Problem | Solution |
+| --- | --- | --- | --- |
+| 1 | Discovery Meeting | Disco no shows | The SDR (who should be on the call), reaches out to the lead to reschedule if they cannot get them on the call within 7min |
+| 1 | Discovery Meeting | Zoom isn't working/tech difficulties | Switch to google meet |
+| 1 | Discovery Meeting | Booked over another meeting | SDR needs to reschedule it |
+| 1 | Discovery Meeting | Not qualified opportunity | Disqualify ---\> How to - Depends on not qualified reason: (1) wrong segment (i.e. commercial or storage) we let them know we cannot service their portfolios (2) not a PM. End meeting |
+| 1 | Discovery Meeting | The lead is for a different segment | Send them to the correct person (MM → Shannon, multifamily → Ethan) |
+| 1 | Discovery Meeting | Lead is in the car or on phone or bad connection | Reschedule and let them know they need to be at a computer |
+| 2 | Book a Demo / Team Call | Don't want to book demo | Send follow up packet to help reestablish value - add link to the Disco meeting page where the follow-up pack is. Follow-up with lead in 3 days; Continue to follow-up for 9 biz days, if no response, closed lost |
+| 2 | Book a Demo / Team Call | Decision Maker doesn't want team call yet → | State value of team call; book with just the DM but still state expectations that a team call is necessary for total team buy in |
+| 2 | Book a Demo / Team Call | They are not making a decision until X time frame | Closed lost |
+| 2 | Book a Demo / Team Call | AE going on VACAY/out and they need a sooner time | Pass to VP REV to run |
+| 3 | Run the Demo / Team Call | No shows | AE must rebook, if not rebooked within 10 days, closed lost. Only request help from SDR if the lead doesn't respond |
+| 3 | Run the Demo / Team Call | The actual person who needs to see demo, is not there | Rebook a time to get that person on a follow-up call |
+| 3 | Run the Demo / Team Call | Lose power/internet | Use slack on phone to have someone step in, Let VP REV know so they can help |
+| 3 | Run the Demo / Team Call | Team is hard to sell to | State in advance that DM needs to be champion of Latchel, ask in advance for person who is most adverse to change and person who is usually a champion for change to be on the call, ask direct questions to the team on the call |
+| 3 | Run the Demo / Team Call | Team doesn't see value | Ask why the DM thought a demo was necessary, re-state pain points gathered in disco |
+| 3 | Run the Demo / Team Call | Live demo doesn't work | We look dumb. Use old canned demos and walk them through explaining changes to UX/UI |
+| 4 | Follow-up Call (MM only) | No shows | AE to reschedule it. Only request help from SDR if the lead doesn't respond |
+| 5 (SMB) or 8 (MM) | Build Contract | Salesforce/Pandadoc technical difficulties | Submit a help ticket or have VP of Revenue/CEO/COO/BI/or Legal send it |
+| 5 (SMB) or 8 (MM) | Build Contract | Contract Edits | Work with Legal and management to make edits in advance |
+| 5 (SMB) or 8 (MM) | Build Contract | We don't have a template for the product | Reach out to CEO/Legal to create |
+| 5 (SMB) or 8 (MM) | Build Contract | Want special pricing | Deal desk approval needed – Create post in #deal-desk Slack channel. Follow the Deal-Desk Approval Workflow. COO will approve/deny special pricing |
+| 5 (SMB) or 8 (MM) | Build Contract | Want special terms | Deal desk approval needed. Repeat deal desk process above for special terms |
+| 6 (SMB) or 8 (M | Send Contract | It doesn't send | Make sure to set a task in Salesforce to check in after 48 hrs |
+| 7 | Set Contract Meeting / Implementation Call | Might not be needed, if questions were answered via email | If meeting is not needed, proceed to next step |
+| 7 | Set Contract Meeting / Implementation Call | Disputed term change or special pricing | Deal desk approval needed. See above for deal desk approval process |
+| 8 | Contract Meeting /Implementation Call | No shows | AE Has 10 days to get back on, or put on Long Term Nurture, or closed lost. Only request help from SDR if the lead doesn't respond |
+| 8 | Contract Meeting /Implementation Call | Contract Edits | Work with Legal and management to make edits in advance |
+| 8 | Contract Meeting /Implementation Call | Redlines (contract alterations) | Deal desk approval needed. See above for deal desk approval process |
+| 8 | Contract Meeting /Implementation Call | Needs special product help | Director of Product must approve |
+| 8 | Contract Meeting /Implementation Call | Set up fee dispute | AE can negotiate or have VP of Revenue step in to help |
+| 8 | Contract Meeting /Implementation Call | They change their minds | Pull in or schedule time for VP of Revenue or Ethan to help |
+| 8 | Contract Meeting /Implementation Call | Someone new gets involved | Set new demo |
+| 9 | Sign Contract | Contract revision doesn't sync with salesforce | Need to send a follow-up email to track activity |
+| 9 | Sign Contract | They miss the 48 hr window | Resend in panda doc with new 48hr window |
+| 9 | Sign Contract | Need more than one person to sign | Add signers or CC parties that need to be on it |
+| 10 | Send Invoice for Implementation fee | Process is clunky, can fall through cracks | (1) AE must move deal in SF to send to onboard (2) Launch must create the account in Latchel so it creates in Ordway to generate an invoice at the same time (3) AE must complete ACCT. REC. slack flow to alert accounting of an invoice needing creation, finance must create invoice (can take several days) (4) AE needs to see thread with invoice and email it to the payee (5) AE must check the said invoice daily to see if it is paid |
+| 10 | Send Invoice for Implementation fee | See cost and ask for discounts | Deal desk approval needed --- Same process as before for deal desk |
+| 10 | Send Invoice for Implementation fee | Finance is slow | Follow-up with them. Follow-up with Finance and Director of Success in Slack. Add COO to conversation if time sensitive |
+| 10 | Send Invoice for Implementation fee | They never pay it | 1. They never pay and ghost, after 15 day, escalate to VP REV 2. They never pay, but show up to onboarding. Sometimes onboarding knows, sometimes they do not. Fee is supposed to be paid before a kickoff, but new CS launch process and ordway process makes that very hard. _Who checks for payment??? I heard there is not clear ownership between CS and Sales_ |
+| 10 | Send Invoice for Implementation fee | Pay too late for contact start date | AE must send an updated contract with new start date to be signed. |
+| 11 | Send to Onboarding | Onboard team is overwhelmed | Work to create clear timeline and expectations if delays |
+| 12 | Send to Onboarding | Customer requested to change start date | Onboarding team will put this opportunity into "Need Sales Help". Sales team will edit start date, send new contract with updated start date, and send it back to onboarding _--- this still needs to be discussed as Zach doesn't think this is the best process_ |
