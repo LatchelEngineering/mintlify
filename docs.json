@@ -1144,6 +1144,7 @@
                   "latchel-admin/Sales-Team/glossary-of-property-management-company-roles"
                 ]
               },
+              "latchel-admin/Sales-Team/product-information",
               {
                 "group": "SDR Resources",
                 "pages": [
@@ -1173,11 +1174,6 @@
                 ]
               },
               {
-                "group": "Marketing Team Resources",
-                "pages": []
-              },
-              "latchel-admin/Sales-Team/product-information",
-              {
                 "group": "AE Resources",
                 "pages": [
                   "latchel-admin/Sales-Team/ae-resources",
@@ -1201,6 +1197,15 @@
                   "latchel-admin/Sales-Team/sop-how-to-leave-notes-for-an-opportunity-in-salesforce",
                   "latchel-admin/Sales-Team/post-sale-playbook",
                   "latchel-admin/Sales-Team/sop-how-to-create-and-send-a-quote-in-hub-spot"
+                ]
+              },
+              {
+                "group": "Marketing Team Resources",
+                "pages": [
+                  "latchel-admin/Sales-Team/marketing-team-resources",
+                  "latchel-admin/Sales-Team/blank-page-example",
+                  "latchel-admin/Sales-Team/sop-webinar-process",
+                  "latchel-admin/Sales-Team/how-to-scrub-a-pms-user-list-in-se-mrush"
                 ]
               }
             ]
