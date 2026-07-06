@@ -1,0 +1,87 @@
+---
+title: "SOP - How to Recycle and Assign Accounts to SDRs"
+---
+
+## Purpose
+
+<Note>
+  **Purpose of this document**
+
+  Outline the process to configure the tool that will pull accounts in Salesforce and assign them to SDRs to initiate a new engagement.
+</Note>
+
+<Note>
+  **Who should read this document?**
+
+  Sales Management or SDR assigned to execute this process
+</Note>
+
+## Step-by-Step Guide
+
+**What happened prior to this step?**
+
+The SDRs need a certain amount of leads to work from every week.
+
+### Process Overview
+
+First, you will need to set up the criteria for selecting the accounts to be distributed and the criteria to assign to SDRs. Then, on Mondays at 6 am PT, the tool will automatically execute those rules and post a confirmation notification on the #Sales channel.
+
+### Step 1 - Set the parameters or rules to distribute the accounts
+
+1. Open the [Account Distribution \+ Recycling - Manager spreadsheet](https://docs.google.com/spreadsheets/d/1qLm7Mk8QTSEr5iFuWfYRAlrKTfGDvIFE1nqZ3wlLyOY/edit#gid=0) to set up the parameters for the distribution
+2. Select the number of accounts that should be distributed for each SDR or AE. If you don't want to assign accounts to a person, just select "0".
+
+<Frame>
+  ![Setting the number of accounts to distribute per SDR or AE](/images/Sales-155.png)
+</Frame>
+
+3. Select the Account Type that should be distributed
+   - The purpose of the Account Type feature was to provide users with flexibility in selecting the type of accounts to be distributed. Currently, there is only one default type, so there is no need to configure this option.
+   - Default: These are Accounts in Salesforce that pass the following filters.
+     - Last Activity more than 90 days ago OR Last Activity is blank
+     - Assigned API Admin
+     - In the "Prospecting" Lifecycle stage
+     - Not currently Customers
+
+<Frame>
+  ![Selecting the Account Type to be distributed](/images/Sales-156.png)
+</Frame>
+
+4. Select the Distro (distribution) Method for unit counts to be distributed
+   - The primary purpose of the Distro Method feature is to provide users with flexibility in selecting how account units are distributed among SDRs and AEs.
+   - The Distro Method feature offers two distinct options for distributing account units:
+     - **SDR \+ AE (Light Green)**: This option enables users to allocate different unit count ranges independently for SDRs and AEs. Users can customize the distribution based on the unique responsibilities and workload capacities of each role. When opting for the SDR\+AE option, users must specify separate unit count ranges for SDRs and AEs using the SDR Unit Count (min - max) and AE Unit Count (min - max) buttons below. This ensures granular control over the distribution process, allowing for tailored allocation based on the specific needs of each team.
+     - **General (Light Purple)**: In contrast, the General option provides a single unit count range that applies universally to both SDRs and AEs. This simplifies the distribution process for scenarios where uniform allocation is preferred. Choosing the General option entails setting a single unit count range which should be set in the General Unit Count (min - max) button below. This unique range will apply to both SDRs and AEs.
+
+<Frame>
+  ![Selecting the Distro Method for unit counts](/images/Sales-157.png)
+</Frame>
+
+### Step 2- Run the script to distribute the accounts
+
+This step is not needed anymore unless you need to do an additional distribution after the one that occurs every Monday at 6 am PT.
+
+1. Access [the script](https://colab.research.google.com/drive/1mxspWPBL0kUsdI2BcchjS_0ii2ewPhjR?usp=sharing) that will pull the accounts from Salesforce with the criteria defined in Step 1
+2. Run the Recycling Process by clicking on the button with an arrow that will show up next to the "cells hidden" message when you hover your mouse over it. This may take a minute.
+3. Run the Distribution Process by clicking on the button with an arrow that will show up next to the "cells hidden" message when you hover your mouse over it
+
+<Frame>
+  ![Running the Recycling and Distribution Process buttons](/images/Sales-158.png)
+</Frame>
+
+### Step 3 - Verify if the assignments were completed
+
+1. Return to the Account Distribution and Recycling tool and look at the Success/Error Message box to verify how many accounts were assigned to each person
+
+<Frame>
+  ![Success/Error Message box showing account assignments](/images/Sales-159.png)
+</Frame>
+
+2. If you encounter an error running this tool, report the issue in the [#data-bug-report](https://latchel.slack.com/archives/C04SLM85S6A) Slack channel.
+3. By this moment two confirmation messages should have been posted automatically in the [#sales channel](https://app.slack.com/client/T2M052QDC/C2Y2ZN9LL):
+   - One notification should contain the link to the spreadsheet containing the Accounts that were recycled.
+   - Another notification should contain the link to the spreadsheet containing the Accounts that were distributed.
+
+<Frame>
+  ![Confirmation notifications posted in the sales Slack channel](/images/Sales-160.png)
+</Frame>
