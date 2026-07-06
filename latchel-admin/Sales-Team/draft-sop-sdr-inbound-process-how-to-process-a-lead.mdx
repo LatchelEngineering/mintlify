@@ -9,7 +9,7 @@ title: "Draft - SOP - SDR Inbound Process: How to Process a Lead"
 
   The purpose of this document is to provide the steps the SDR team takes to "process" an Inbound lead from getting it assigned to creating an Opportunity and passing the account to the Account Executive (AE)
 
-  To see an overview of the whole sales pipeline steps, refer to this page: [Sales Cycle and Pipeline Overview](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870509584/Sales+Cycle+and+Pipeline+Overview)
+  To see an overview of the whole sales pipeline steps, refer to this page: [Sales Cycle and Pipeline Overview](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870509584)
 </Note>
 
 <Note>
@@ -23,12 +23,10 @@ title: "Draft - SOP - SDR Inbound Process: How to Process a Lead"
 
   When we receive an Inbound lead, we should understand Why they requested more information
 
-  "How familiar are you with Latchel?"
+  - "How familiar are you with Latchel?"
 
   It's more important to understand Why they are asking a certain question rather than answer it
 </Warning>
-
----
 
 ## SECTION A) Happy Path Process
 
@@ -36,67 +34,62 @@ title: "Draft - SOP - SDR Inbound Process: How to Process a Lead"
 
 The flow below shows the steps of how a SDR will handle a lead from the time it is assigned until an Opportunity is created in Salesforce and the lead attends the Discovery Meeting, which at that time, the ownership of that lead is transferred to the Account Executive (AE).
 
-The "Happy Path" assumes that everything went well and the lead moved to the next step of the process. When there is an issue during that step, refer to Section B of this document to know how to proceed.
+The "Happy Path" assumes that everything went well and the lead moved to the next step of the process. When there is an issue during that step, refer to [Section B](#section-b-how-to-handle-issues-along-the-process) of this document to know how to proceed.
 
 These steps are aligned with the accounts stages and substages in Salesforce that we will use to track the status of each lead and measure performance of each process step. This tracking will enable us to define and prioritize process improvements.
 
-Throughout the process, you will be taking notes of your engagement with the lead and some key account information. Please refer to this SOP on where the notes should be left: [SOP - How to Leave Notes for an Opportunity in Salesforce](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2931032140)
+Throughout the process, you will be taking notes of your engagement with the lead and some key account information. Please refer to this SOP on where the notes should be left: [SOP - How to Leave Notes for an Opportunity in Salesforce](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2907144246)
 
-Chart may need to be adjusted to remove importing contact info?
+**Chart may need to be adjusted to remove importing contact info?**
 
 <Frame>
-  ![](/images/Sales-124.png)
+  ![Account Stages in Salesforce flow chart](/images/Sales-124.png)
 </Frame>
 
-To see all of the Salesforce Account and Opportunity Stages, refer to this page: [Sales Cycle and Pipeline Overview](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870509584/Sales+Cycle+and+Pipeline+Overview)
+To see all of the Salesforce Account and Opportunity Stages, refer to this page: [Sales Cycle and Pipeline Overview](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870509584)
 
 <Note>
   **How to access Salesforce?**
 
-  Use this link to access Salesforce - [https://login.salesforce.com/](https://login.salesforce.com/)
+  Use this link to access Salesforce - [Login | Salesforce](https://login.salesforce.com/)
 </Note>
-
----
 
 ### Step 1 - Lead Assigned
 
 **How to work this step?**
 
-A. In Slack, inbound leads are given out in a round robin style distribution.
+1. In Slack, inbound leads are given out in a round robin style distribution.
+   1. If the lead hasn't been assigned to you in Salesforce, you will need to self-assign **(how?)**
+      1. Unless Keyrenter, RPM and rent-manager --\> **checking with Jen what to do when this happens**
+   2. Before doing that, you should first verify if that contact is a member of another account already assigned in Salesforce. In order to do that, search accounts in Salesforce by the following inputs, if available:
+      1. Full contact name (to see if they pop up under a different company)
+      2. Phone number (to see if it pops up under different contact - indicates if its a shared number or not)
+      3. Contact email (not domain)
+      4. Company name (but only after a google search as some people have a DBA business names vs registered business names)
+   3. If there is an existing company, check if that is assigned to another SDR. If yes, leave the assignment as is. If not, [assign it to yourself by changing the account ownership to yourself](https://help.salesforce.com/s/articleView?id=sf.account_owner.htm&type=5).
+   4. We have 3 channels that leads will be posted based on their Tiers.
+      1. The definition of each Tier is continuously being adjusted. To find the latest information, [search the glossary page](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2902917222).
+      2. The goal is that the higher Tier level, higher the potential of conversion. T1 \> T2 \> T3 \> T4. Therefore, SDRs should start working on the Tier 1 leads, then Tier 2 leads, etc.
+      3. Some of those tiers will NOT be auto-assigned to SDRs and SDRs should only work on those if they have not leads assigned to them. [See this page to understand which lead types are auto-assigned](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2931032140). In the case the SDR will work an unassigned lead, in addition to self-assign, the SDR also needs to update the stage to Lead Assigned.
+   5. These are the Slack channels:
+      1. [#tier-1-notifications](https://latchel.slack.com/archives/C06LT74QJQZ) - Tier 1 leads are the ones that have gone on to our website and clicked "Request a Demo". They're your best chance at booking a meeting.
+      2. [#tier-2-notifications](https://latchel.slack.com/archives/C06LEH8CX7U)
+      3. [#other-tier-notifications](https://latchel.slack.com/archives/C06LBLMUWVB)
 
-1. If the lead hasn't been assigned to you in Salesforce, you will need to self-assign (how?)
-   - Unless Keyrenter, RPM and rent-manager ---\> checking with Jen what to do when this happens
-2. Before doing that, you should first verify if that contact is a member of another account already assigned in Salesforce. In order to do that, search accounts in Salesforce by the following inputs, if available:
-   - Full contact name (to see if they pop up under a different company)
-   - Phone number (to see if it pops up under different contact - indicates if its a shared number or not)
-   - Contact email (not domain)
-   - Company name (but only after a google search as some people have a DBA business names vs registered business names)
-3. If there is an existing company, check if that is assigned to another SDR. If yes, leave the assignment as is. If not, assign it to yourself by changing the account ownership to yourself.
-
-B. We have 3 channels that leads will be posted based on their Tiers.
-
-1. The definition of each Tier is continuously being adjusted. To find the latest information, search the [glossary page](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2902917222).
-2. The goal is that the higher Tier level, higher the potential of conversion. T1 \> T2 \> T3 \> T4. Therefore, SDRs should start working on the Tier 1 leads, then Tier 2 leads, etc.
-   - Some of those tiers will NOT be auto-assigned to SDRs and SDRs should only work on those if they have not leads assigned to them. See this page to understand which lead types are auto-assigned. In the case the SDR will work an unassigned lead, in addition to self-assign, the SDR also needs to update the stage to Lead Assigned.
-3. These are the Slack channels:
-   - **#tier-1-notifications** - Tier 1 leads are the ones that have gone on to our website and clicked "Request a Demo". They're your best chance at booking a meeting.
-   - **#tier-2-notifications**
-   - **#other-tier-notifications**
-   - Note: As we implement Salesforce for SDRs and clean up current pipeline, we will adjust this process to have leads assigned directly in Salesforce vs. Slack channels, and have reporting for SDRs to see real time the leads that were assigned to them.
+<Note>
+  As we implement Salesforce for SDRs and clean up current pipeline, we will adjust this process to have leads assigned directly in Salesforce vs. Slack channels, and have reporting for SDRs to see real time the leads that were assigned to them. 🙏
+</Note>
 
 **Salesforce Tracking**
 
-The Account Stage will be "Lead Assigned"
-
-1. This means:
-   - The lead has been assigned to the SDR and no action has been taken by the SDR yet
-2. How does the lead get to this stage?
-   - When the lead is auto-assigned, the Stage and Substage will be automatically set as "Lead Assigned".
-   - For Leads that are not auto-assigned, they will be created in Salesforce under Stage "Prospecting" and the Substage will be "Inbound Unassigned". In this case, the SDR should manually move the lead to Stage "Lead Assigned", Substage "Lead Assigned" when they self-assign a lead.
-3. How long should the lead be in this stage?
-   - Max duration = 1 day
-
----
+- The Account Stage will be "Lead Assigned"
+  - This means:
+    - The lead has been assigned to the SDR and no action has been taken by the SDR yet
+  - How does the lead get to this stage?
+    - When the lead is auto-assigned, the Stage and Substage will be automatically set as "Lead Assigned"
+    - For Leads that are not auto-assigned, they will be created in Salesforce under Stage "Prospecting" and the Substage will be "Inbound Unassigned". In this case, the SDR should manually move the lead to Stage "Lead Assigned", Substage "Lead Assigned" when they self-assign a lead.
+  - How long should the lead be in this stage?
+    - Max duration = 1 day
 
 ### Step 2 - Move Lead from Salesforce into SalesLoft
 
@@ -106,7 +99,7 @@ The Account Stage will be "Lead Assigned"
 2. Using the Salesloft icon in the upper right hand corner of the page, on the drop down menu select "Import Contacts"
 
 <Frame>
-  ![](/images/Sales-125.png)
+  ![Salesloft Import Contacts menu option](/images/Sales-125.png)
 </Frame>
 
 3. This will open SalesLoft with the contacts from the account.
@@ -114,107 +107,231 @@ The Account Stage will be "Lead Assigned"
 
 **Salesforce Tracking**
 
-The "Account Stage" will remain as "Lead Assigned"
-
-The duration of this step is included in the max duration for the "Lead Assigned" mentioned above.
-
----
+- The "Account Stage" will remain as "Lead Assigned"
+- The duration of this step is included in the max duration for the "Lead Assigned" mentioned above.
 
 ### Step 3 - Add Lead to a Cadence
 
 **How to work this step?**
 
 1. Select the contact that requested the demo.
-2. In Salesforce, use this help page to add the lead to the cadence
+2. In Salesforce, [use this help page to add the lead to the cadence](https://help.salesforce.com/s/articleView?id=sf.hvs_cadences_add_targets.htm&type=5)
 3. In Salesloft: In the upper right hand button in SalesLoft, click on "Finish Import & Add to Cadence"
 
 <Frame>
-  ![](/images/Sales-126.png)
+  ![Salesloft Finish Import and Add to Cadence button](/images/Sales-126.png)
 </Frame>
 
-This will open a pop up to select the cadence. To select the correct cadence make sure you are under "Team Cadences".
-
-Select the appropriate cadence to be applied to this lead. The cadence will define how the SDR will engage that prospect (calls/emails) throughout a certain period of time.
-
-To select the cadence consider the following resource: [DRAFT - SOP - How to Select and Work on Cadences](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870804487)
+4. This will open a pop up to select the cadence. To select the correct cadence make sure you are under "Team Cadences".
+5. Select the appropriate cadence to be applied to this lead. The cadence will define how the SDR will engage that prospect (calls/emails) throughout a certain period of time.
+   - To select the cadence consider the following resource: [DRAFT - SOP - How to Select and Work on Cadences](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2870804487/DRAFT+-+SOP+-+How+to+Select+and+Work+on+Cadences)
 
 <Frame>
-  ![](/images/Sales-127.png)
+  ![Add People to Cadence pop-up in Salesloft](/images/Sales-127.png)
 </Frame>
 
-Once the lead has been added to a cadence, SalesLoft will create tasks for SDRs to perform to complete the cadence
+6. Once the lead has been added to a cadence, SalesLoft will create tasks for SDRs to perform to complete the cadence
 
 **Salesforce Tracking**
 
-The Account Stage will be "Cadence Started"
-
-This means: The SDR is executing on the tasks of the cadence
-
-How does the lead get to this stage? Once the SDR assigns the lead to a cadence, the stage should be automatically assigned (TBC if it will be possible)
-
-Substages:
-
-- **Cadence Running** - This means the SDR has assigned this lead to a cadence. Ideally, the substage should automatically change to "Cadence Running" when this action is taken. If it is not possible to automate, we will start with changing substage manually (TBC if it will be possible)
-- **Replied (Engaged)** - This means the lead has replied to one of our attempts to engage them, i.e. either they answered the SDR call or the email cadence. This doesn't confirm interest, it only signals that the lead has replied to one of our outreach strategies. Ideally, the substage should automatically change to "Replied (Engaged)" when either a customer replies to the SDR (excluding the replies with "stop", "remove me", "unsubscribe", etc) or they answer the phone. But this can be quite complex to build, so we will start with the SDR changing substage manually. (TBC if it will be possible to automate)
-
-How long should the lead be in this stage? (i.e. Cadence Started) Max duration = 2 weeks
-
----
+- The Account Stage will be "Cadence Started"
+  - This means:
+    - The SDR is executing on the tasks of the cadence
+  - How does the lead get to this stage?
+    - Once the SDR assigns the lead to a cadence, the stage should be automatically assigned (TBC if it will be possible)
+  - Substages:
+    - **Cadence Running**
+      - This means the SDR has assigned this lead to a cadence
+      - Ideally, the substage should automatically change to "Cadence Running" when this action is taken. If it is not possible to automate, we will start with changing substage manually (TBC if it will be possible)
+    - **Replied (Engaged)**
+      - This means the lead has replied to one of our attempts to engage them, i.e. either they answered the SDR call or the email cadence. This doesn't confirm interest, it only signals that the lead has replied to one of our outreach strategies.
+      - Ideally, the substage should automatically change to "Replied (Engaged)" when either a customer replies to the SDR (excluding the replies with "stop", "remove me", "unsubscribe", etc) or they answer the phone. But this can be quite complex to build, so we will start with the SDR changing substage manually. (TBC if it will be possible to automate)
+  - How long should the lead be in this stage? (i.e. Cadence Started)
+    - Max duration = 2 weeks
 
 ### Step 4 - Work Tasks
 
 **How to work this step?**
 
-Once the contact is successfully added to the cadence, SalesLoft will take you to the cadence page.
-
-You can simply return to your home screen from there and start the cadence steps to contact your lead!
-
-Use this page to guide you on your call with the lead: [Inbound Tier 1 - Communication Templates](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2872901638)
-
-Make sure to take notes while you are having a conversation with the Lead!
-
-If the lead doesn't answer the phone, leave a voicemail and send an email
-
-After the phone call, send email?
-
-If interested – template?
-
-If not interested – template?
-
-On a daily basis, check ?????? page to see what tasks are due that day.
-
-see what else from this file still applies – [https://docs.google.com/document/d/1rXOw5dYXoUxmAZP-BliJXYHyDta0esevVZEvWuYhqcI/edit](https://docs.google.com/document/d/1rXOw5dYXoUxmAZP-BliJXYHyDta0esevVZEvWuYhqcI/edit)
-
-Other potential responses scenarios:
-
-- If no response to email or phone calls, you could also explore finding and messaging the contact in Linkedin - [LinkedIn Messaging Guide](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2888630291)
-- During the interaction with the lead, if they ask for examples of companies that use Latchel and their feedback, you can share the link to the Latchel website with the case studies, but also ask to book a a discovery meeting so we can discuss how Latchel can help with their business
-- If the lead respond with a request to no longer receive communication with us or not be contacted, first access if the request is a "Do NOT contact me", "Unsubscribe from emails / Stop e-mailing me" or "Do not call"
-
-**Do not contact vs do not call**
-
-We need to be careful here so we don't get Latchel into trouble. It's really important to recognize the difference between these two phrases.
-
-Do not contact means all communication must stop going forward. In addition to removing the account from any cadence they are in, this account needs to be flagged to Marketing so they can move it into a "Do Not Contact" stage in Salesforce. ----- how to communicate this to marketing? – The same process applies if they ask to be "Unsubscribed from or e-mails" – confirm with Jen
-
-If they tell you not to call, they haven't said not to email. We don't need to turn this into a spam-fest, but we can still attempt to engage the prospect via email, SMS, or video messaging. Oftentimes, people have a kneejerk reaction and tell us not to call, without ever knowing what they are declining. This is still an opportunity to provide some value in order to get the prospect to take a call with us.
+1. Once the contact is successfully added to the cadence, SalesLoft will take you to the cadence page.
+2. You can simply return to your home screen from there and start the cadence steps to contact your lead!
+3. Use this page to guide you on your call with the lead: [Inbound Tier 1 - Communication Templates](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2872901638)
+   - Make sure to take notes while you are having a conversation with the Lead!
+4. If the lead doesn't answer the phone, leave a [voicemail](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2872901638/Script+-+Inbound+Tier+1+-+Communication+Templates#Script--for-Voicemail) and send an [email](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2872901638/Script+-+Inbound+Tier+1+-+Communication+Templates#Email-Template)
+5. After the phone call, **send email?**
+   1. If interested – **template?**
+   2. If not interested – **template?**
+6. **On a daily basis, check ?????? page to see what tasks are due that day.**
+7. **see what else from this file still applies –** [https://docs.google.com/document/d/1rXOw5dYXoUxmAZP-BliJXYHyDta0esevVZEvWuYhqcI/edit](https://docs.google.com/document/d/1rXOw5dYXoUxmAZP-BliJXYHyDta0esevVZEvWuYhqcI/edit) **Can't find link**
+8. **Other potential responses scenarios:**
+   1. If no response to email or phone calls, you could also explore finding and messaging the contact in Linkedin - [LinkedIn Messaging Guide](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2888630291)
+   2. During the interaction with the lead, if they ask for examples of companies that use Latchel and their feedback, you can share the link to the [Latchel website with the case studies](https://latchel.com/case-studies/), but also ask to book a discovery meeting so we can discuss how Latchel can help with their business
+   3. If the lead respond with a request to no longer receive communication with us or not be contacted, first access if the request is a "Do NOT contact me", "Unsubscribe from emails / Stop e-mailing me" or "Do not call"
+      - **Do not contact vs do not call**
+      - We need to be careful here so we don't get Latchel into trouble. It's really important to recognize the difference between these two phrases.
+      - Do not contact means all communication must stop going forward. In addition to removing the account from any cadence they are in, this account needs to be flagged to Marketing so they can move it into a "Do Not Contact" stage in Salesforce. ----- how to communicate this to marketing? – The same process applies if they ask to be "Unsubscribed from or e-mails" – confirm with Jen
+      - If they tell you not to call, they haven't said not to email. We don't need to turn this into a spam-fest, but we can still attempt to engage the prospect via email, SMS, or video messaging. Oftentimes, people have a kneejerk reaction and tell us not to call, without ever knowing what they are declining. This is still an opportunity to provide some value in order to get the prospect to take a call with us.
 
 **Salesforce Tracking**
 
-The Account Stage will remain "Cadence Started" and substage will be "Cadence Running" unless there was a reply from the Lead (see description in the prior step section)
+- The Account Stage will remain "Cadence Started" and substage will be "Cadence Running" unless there was a reply from the Lead (see description in the prior step section)
 
-Note: At the end of the cadence, if the SDR hasn't received any reply (engaged) from the prospect, the lead should be moved into Account Stage "Prospecting"/ Substage "Marketing" and this will be sent back to the Marketing team.
-
----
+<Note>
+  At the end of the cadence, if the SDR hasn't received any reply (engaged) from the prospect, the lead should be moved into Account Stage "Prospecting"/ Substage "Marketing" and this will be sent back to the Marketing team.
+</Note>
 
 ### Step 5 - Set Appointment for Qualification Meeting
 
 **How to work this step?**
 
-Once there is a reply from a lead wanting to move forward, the SDR should qualify that account according to our current qualification criteria, which is done in the Qualification Meeting (step 6)
+1. Once there is a reply from a lead wanting to move forward, the SDR should qualify that account according to our current qualification criteria, which is done in the Qualification Meeting (step 6)
+2. In order to qualify the prospect, the SDR should schedule a meeting to collect the required information. This meeting should be schedule via ……..**not sure how this works…**
+   1. Try to ask the lead about their timing to make a decision, so you know if we need to look for ways to expedite the process and avoid losing the opportunity. If they are on a short timeline, it is possible they are already in advanced conversations with our competitors.
+   2. Try to also ask if they are exploring other options, but do NOT engage in discussing how we compare with them, or what makes us better, or talk about pricing. If the lead asks any question in that direction, say that the AE is the best person to answer their questions, and you can work on finding a time with them asap.
 
-In order to qualify the prospect, the SDR should schedule a meeting to collect the required information. This meeting should be schedule via ……..not sure how this works…
+<Note>
+  If the AE needs to reschedule a meeting to meet with this lead, before committing to that, make sure you are considering, or have discussed with the AE, the size of this opportunity, so we are not creating churn for the AE for something very small. For example, if it is a deal ~700 units, it is likely it could take priority over other appointments.
+</Note>
 
-Try to ask the lead about their timing to make a decision, so you know if we need to look for ways to expedite the process and avoid losing the opportunity. If they are on a short timeline, it is possible they are already in advanced conversations with our competitors.
+3. **Do we send reminders X days or hours prior to the meeting? … template? .**
 
-Try to also ask if
+**Salesforce Tracking**
+
+- The Account Stage will be "Confirmed Interest"
+  - This means:
+    - The lead has clearly indicated they are interested in moving forward by saying they want to meet or have a meeting soon; therefore, they are engaged in scheduling a meeting.
+    - This status should NOT be used if the lead asked for more information via email or asked to talk at a later date. Therefore, a vague indication of interest should NOT be considered as Confirmed Interest.
+    - If the SDR is unable to confirm interest within 30 days, the SDR should move the account to "Account Stage "Prospecting"/ Substage "Marketing" and the lead should be returned to Marketing
+  - How does the lead get to this stage?
+    - The SDR assesses the prospect's level of interest according to the criteria described above and manually moves the lead to this stage
+  - Substages:
+    - **Scheduling Qualification Call**
+      - This means the SDR and the lead are working together to find a common time that the meeting attendees are available to schedule the Qualification meeting.
+      - The SDR will move the lead to this substage manually.
+      - If unable to confirm interest and schedule the qualification call within 30 days, the SDR should move the account to "Account Stage "Prospecting"/ Substage "Marketing" and the lead should be returned to Marketing
+    - **Qualification Call Scheduled**
+      - This means the Qualification Call has been scheduled
+      - The SDR will move the account to this substage manually or can this be automated? (TBC if it will be possible to automate)
+      - What if the lead asks to reschedule or the SDR needs to reschedule? SDR moves substage back to "Scheduling Qualification Call" and try to reschedule the meeting
+      - What if the lead requests to cancel? SDR moves substage back to "Scheduling Qualification Call" and try to reschedule the meeting
+      - What if the lead is a no-show in the Qualification call? SDR moves substage back to "Scheduling Qualification Call" and try to reschedule the meeting
+    - **Qualification Call Follow-up (incomplete)**
+      - This means the Qualification Call has happened (i.e. Lead showed up and they talked), but the meeting time was not enough to complete the Qualification and another meeting will need to happen. The account will remain in this state while the follow-up call is being scheduled and the call is happening.
+      - The SDR will move the account to this substage manually
+      - If unable to finalize the qualification 30 days, the SDR should move the account to "Account Stage "Prospecting"/ Substage "Marketing" and the lead should be returned to Marketing
+  - How long should the lead be in this stage (i.e. Confirmed Interest)?
+    - Max duration = 1 week
+
+### Step 6 - Run Qualification Meeting
+
+**How to work this step?**
+
+1. Log into the meeting
+   - If the lead hasn't showed up to the meeting, send email reminder ???
+   - Is there an agenda? and some talking points to kick-off the meeting?
+2. Use the [Qualification Meeting Questions](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2868248756) to decide if the lead should be Qualified or disqualified
+3. If Qualified, move to next step (Create Opportunity and Schedule Discovery) and set expectations with the lead for the next steps (template??)
+   - The goal should be to have the Discovery Meeting scheduled during the Qualification Meeting, so you mitigate the risk of losing the opportunity to schedule it. It is harder to get people to schedule appointments via email.
+   - If you were not able to ask in the prior step about their timeline to make a decision or if they are exploring other alternatives to Latchel, attempt to ask that during this meeting.
+4. If Disqualified, **Close Lost??? select disqualification reason?**
+
+**Salesforce Tracking**
+
+- The Account Stage will remain as "Confirmed Interest" until the qualification is completed. At that point, the Account Stage will be changed to "Qualification Completed"
+  - This means:
+    - The lead passed the qualification criteria.
+  - How does the lead get to this stage?
+    - The SDR will manually move the lead to this stage at the end of the qualification meeting.
+  - SubStages:
+    - **Scheduling Discovery**
+      - This means the SDR is working with the lead to find a common time that the meeting attendees are available to schedule the Discovery Meeting
+      - The SDR will move the account to this substage manually.
+      - If unable to schedule the meeting within 30 days, move the account back to "Account Stage "Prospecting"/ Substage "Marketing".
+  - How long should the lead be in this stage (i.e. Qualification Completed)?
+    - Max duration = 1 week? (considering they will be scheduling discovery)
+
+### Step 7 - Create Opportunity
+
+**How to work this step?**
+
+1. To create an Opportunity in Salesforce, follow this SOP - [SOP - How to Create an Opportunity in Salesforce](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2880143483)
+
+**Salesforce Tracking**
+
+- The Account Stage will be "Active Sales Account" and Substage will be "Open Opportunity". In the Opportunity pipeline, the Stage will be "Discovery Appointment Scheduled"
+  - This means:
+    - The SDR has created an Opportunity in Salesforce and has confirmed the potential customer has scheduled an appointment with an AE.
+    - Once the account is moved into "Active Sales Account" stage, the ownership is moved to the AE, unless there is an issue with the Discovery Meeting Scheduling or the Lead is a "No-Show" in the meeting, or the meeting needs to be rescheduled for any reason:
+      - What if the lead asks to reschedule or someone in Latchel needs to reschedule?
+        - SDR leaves Account in Stage "Active Sales Account" and substage "Open Opportunity".
+        - SDR leaves Opportunity stage as "Discovery Appointment Scheduled" and changes substage to "Rescheduling Discovery Appointment" (Max duration = 2 weeks)
+
+<Note>
+  We considered changing the process to not create an opportunity until the discovery meeting starts and the lead is present, but this will require major changes to current automations and reports, so we decided to keep the process as is, at least for now.
+</Note>
+
+- What if the lead requests to cancel?
+  - SDR will try to reschedule, while this is happening, the account and opportunity stages and substages are adjusted as described in the item above
+- What if the lead is a no-show in the Discovery Meeting?
+  - SDR will try to reschedule, while this is happening, the account and opportunity stages and substages are adjusted as described in the item above
+- If SDR is unable to reschedule within 30 days, the Opportunity will be "Close Lost" and Account will be moved to "Account Stage "Prospecting"/ Substage "Marketing"
+- How does the lead get to this stage?
+  - This will be the new default when an opportunity is created. Ideally, when an Opportunity is created, the account will automatically move to Stage "Active Sales Account", substage " Open Opportunity" (TBC)
+- How long should the lead be in this stage (i.e. Discovery Appointment Scheduled)?
+  - Max duration = TBD
+
+### Step 8 - Set Appointment for Discovery Meeting
+
+**How to work this step?**
+
+1. To create an appointment, **not sure how this works…**
+2. Try to schedule the meeting as soon as possible. The sooner the better, as the lead may be looking for other solutions and we don't want to be too late for the game!
+3. **X hours/days to the meeting, please send a reminder using … template?**
+
+**Salesforce Tracking**
+
+- The account stages and substages will work the same way as in the prior step "Create an Opportunity"
+
+### Step 9 - Confirm Prospect Presence at Discovery Meeting
+
+**How to work this step?**
+
+1. Log into the meeting and verify the lead is present
+2. If yes, then the AE will take ownership moving forward
+3. If not, then send email reminder to the lead (template?)
+
+**Salesforce Tracking**
+
+- The account stages and substages will work the same way as in "Create an Opportunity"
+- From here forward, all of the progress of this potential deal will be tracked at the Opportunity level and it is owned by the AE. Therefore, if the lead joined the Discovery meeting, the account will be fully owned by the AE (i.e. AE ownership starts when Account Stage is "Active Sales Account", substage " Open Opportunity", and Opportunity Stage is different from "Appointment Schedule / "Rescheduling Discovery Meeting").
+
+## SECTION B) How to Handle Issues Along the Process
+
+While working through the steps above, the SDR may face a technical issue, or the prospect may not be responsive or may respond negatively and don't move forward. In those cases, refer to the table below to know how to proceed.
+
+**_Review what is only applicable to salesloft_**
+
+| Process Step # | Process Step | Problem | Solution |
+| --- | --- | --- | --- |
+| 1 | Lead Assigned | No new accounts/contacts assigned | Run [account distribution script](https://latchel.atlassian.net/wiki/spaces/SAL/pages/2914877481/SOP+-+How+to+Recycle+and+Assign+Accounts+to+SDRs) Or Restart computer |
+| 2 | Import Company/Contact Info | Salesloft chrome plugin dies | Uninstall & reinstall plugin – how to do this? |
+| 2 | Import Company/Contact Info | Contact or account duplicates | If there are duplicated accounts, the SDR will need to merge the accounts in Salesforce. To do that, follow the instructions in this video: "[How to Merge Accounts in Salesforce](https://www.loom.com/share/362ccd49635e4be896beb6cd50959153?sid=1f1ec064-06c3-41a2-ae5c-d8f46ff5f418)" |
+| 2 | Import Company/Contact Info | Lead conversion to account/contact broken (In Salesforce) | If the contact information in Salesforce came as a "lead" object instead of a "account", follow the following process to convert: Go to Lead page on SF, click drop down to the right of the "edit" button. Click convert, select the box that says "do not create new opportunity" and make sure the account is in your name. Click convert. |
+| 3 | Add Lead to a Cadence | Contact opted out of emails | if inbound req. reenable email contact → how to do this? |
+| 3 | Add Lead to a Cadence | Contact already in another cadence | Check if it is an old cadence and remove if need be → how to do this? |
+| 4 | Work Tasks in Salesloft | Its not very clear in SL what's due today | how? keep cadence steps manageable - any "tasks" in addition to cadences steps will be under rhythm tab in salesloft. Also, Navigate directly to current running cadences. – probably need more info on this one |
+| 4 | Work Tasks in Salesloft - Calls | Unresponsive to calls | keep with the entire cadence flow (what does it mean?) - they may not pick up on first call |
+| 4 | Work Tasks in Salesloft - Calls | Wrong phone number | Try to find different number. Website, [FastPeopleSearch.com](http://fastpeoplesearch.com/), etc. |
+| 4 | Work Tasks in Salesloft - Calls | GK won't transfer when making calls – what is GK? | Try to find way past GK (see if the SDR can reach out via email or linkedin) |
+| 4 | Work Tasks in Salesloft - Calls | Salesloft unresponsive when making calls | Restart Salesloft, Restart computer. |
+| 4 | Work Tasks in Salesloft - Emails | No response | keep with the entire cadence flow - they may not respond on first email |
+| 4 | Work Tasks in Salesloft - Emails | Email bounced | Try to find different email – |
+| 4 | Work Tasks in Salesloft - Emails | Goes DNC – what is DNC? | Mark DNC in system if not already reflected |
+| 5 | Set Appointment for Qualification Meeting | Missed Appointment | Re-schedule it |
+| 5 | Set Appointment for Qualification Meeting | Need more then 1 person on calendar invite | Ask owner of calendar meeting (the AE) to add any additional emails for additional people to be added / in salesloft under attendees type in second email address if known |
+| 6 | Run Qualification Meeting | Unqualified | Close Lost\*\*\* we don't do opp until after qual – need to clarify |
+| 6 | Run Qualification Meeting | Prospect given option for both google meetings & zoom for meetings | Confirm with prospect we're in zoom - send meeting info in email or text |
+| 6 | Run Qualification Meeting | Late to meeting | Wait 3 mins, call/text/email (in that order) to see if they're still coming. Leave meeting after 10 mins or confirmed not gonna make it |
+| 7 | Create Opportunity | Create opportunity link broken | Manually create opportunity in SalesForce - how? |
+| 8 | Set Appointment for Discovery Meeting | Missed Appointment | Re-schedule it |
+| 9 | Confirm Prospect Presence at Discovery Meeting | No Show | Add to Long term nurture cadence |
