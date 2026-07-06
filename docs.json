@@ -1255,8 +1255,7 @@
             },
             "pages": [
               "latchel-admin/HR-Documents/hr-documents-overview",
-              "latchel-admin/HR-Documents/Employee-Attrition-Announcement",
-              "latchel-admin/HR-Documents/Informational-Documents-for-US-Employees"
+              "latchel-admin/HR-Documents/Employee-Attrition-Announcement"
             ]
           }
         ]
