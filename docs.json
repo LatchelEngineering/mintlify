@@ -1094,6 +1094,17 @@
             ]
           },
           {
+            "dropdown": "BI Team",
+            "icon": "code",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
+            "pages": [
+              "latchel-admin/bi-team/bi-team-overview"
+            ]
+          },
+          {
             "dropdown": "Sales Team",
             "icon": "money-bill-trend-up",
             "color": {
@@ -1301,6 +1312,28 @@
             "pages": [
               "latchel-admin/HR-Documents/hr-documents-overview",
               "latchel-admin/HR-Documents/Employee-Attrition-Announcement"
+            ]
+          },
+          {
+            "dropdown": "Customer Profitability Team",
+            "icon": "hand-holding-circle-dollar",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
+            "pages": [
+              "latchel-admin/cpt/cpt-overview"
+            ]
+          },
+          {
+            "dropdown": "Accounting",
+            "icon": "file-invoice-dollar",
+            "color": {
+              "light": "#ff9b8a",
+              "dark": "#ff9b8a"
+            },
+            "pages": [
+              "latchel-admin/accounting/accounting-overview"
             ]
           }
         ]
