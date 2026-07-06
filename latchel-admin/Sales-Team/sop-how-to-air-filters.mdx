@@ -1,0 +1,42 @@
+---
+title: "SOP - How To: Air Filters"
+---
+
+## SOP for Sales
+
+### Talking points for Demo
+
+Cover the following points with the customer, then add a summary for onboarding to the Closed Won notes.
+
+1. How much filter information (quantity and sizes for each unit) does the customer already have?
+2. Where is their filter information stored currently?
+   1. In their PMS? Our team can pull it from there.
+   2. In another format? Can they share it with us?
+   3. Don't have it documented yet? Ask them to start filling out [HVAC:PM Upload Template.xlsx](https://docs.google.com/spreadsheets/d/1ARBUfqExwDFM3x00fR-mdJjS4NBswllw/edit?usp=drive_link&ouid=117786264093177982831&rtpof=true&sd=true) (make a copy for them and link in Closed Won notes) between now and the Kick Off call.
+   4. Last option (only upon customer request), Latchel can set up a survey to collect information directly from their residents. We will likely need their support in following up with unresponsive residents.
+3. Explain to the customer that Latchel collects 3 months of payment before sending the first filter shipment. Ex: If they have an April 1 launch, we'll bill them for filters on April, May & June invoices and the first shipment will go out mid-June.
+
+### Email Template: Intro to CSM for customers who don't yet have filter info documented
+
+_Hi \[customer name\]!_
+
+_I'm excited to introduce you to your Customer Success Manager, \[CSM Name\], who will be in touch to schedule your Kick Off Call!_
+
+_Between now and then, it'd be awesome if you can start working on compiling your properties' filter information in the attached doc \[make a copy of [HVAC:PM Upload Template.xlsx](https://docs.google.com/spreadsheets/d/1ARBUfqExwDFM3x00fR-mdJjS4NBswllw/edit?usp=drive_link&ouid=117786264093177982831&rtpof=true&sd=true) for the customer and attach\] so our team can get to work organizing your residents' first shipment. As a reminder, the first shipment goes out about 3.5 months after your Service Start Date. Let us know if you have any questions!_
+
+_AE Name_
+
+## Salesforce Configuration
+
+When signing a new contract with filters, or upgrading a current customer to filters:
+
+1. Complete the **Marketplace Benefits Start Date** field in the Opportunity. This will normally be the same as the Service Start Date. Select the 1st day of the month when the customer will start adding the charge to new/renewing leases (when Latchel will start billing). For example, if the customer will start ledgering in December 2023, select 12/1/2023.
+2. Complete the **Filter Subscription Option** field in the Opportunity.
+3. Verify that we have a signed Addendum for Third Party Products and Services in the **Opportunity**.
+4. Move the Opportunity to **Closed Won**. This will trigger a Slack notification in [#sales](https://latchel.slack.com/archives/C2Y2ZN9LL) and for CPT in [#cpt-updates](https://latchel.slack.com/archives/C04TZ3Y8ZLK), and automatically update the filter fields in the Customer and Account objects.
+
+<Warning>
+  If for any reason you need to update the Marketplace Benefits Start Date or Filter Subscription Option fields after moving the Opportunity to Closed Won, you must make the updates manually in the Customer object. These changes will not trigger a Slack notification, so you must also manually create a post in [#cpt-updates](https://latchel.slack.com/archives/C04TZ3Y8ZLK) to inform the team. In the future, we will automate this.
+</Warning>
+
+[This Salesforce report](https://latchel1.lightning.force.com/lightning/r/Report/00OUS0000003n932AA/view) shows all customers with Filter Subscriptions.
