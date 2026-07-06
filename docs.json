@@ -735,18 +735,18 @@
               "latchel-admin/Data Support Team/assembly",
               "latchel-admin/Data Support Team/calibration-guidelines-help-guide-audit",
               "latchel-admin/Data Support Team/calibration-guidelines-task-share-audit",
-              "latchel-admin/Data Support Team/completing-rentredi-and-nomad-casetickets",
+              "latchel-admin/Data Support Team/completing-rentredi-and-nomad-casestickets",
               "latchel-admin/Data Support Team/configuring-on-call-technicians",
               "latchel-admin/Data Support Team/cs-how-to-export-service-provider-information-appfolio",
               "latchel-admin/Data Support Team/cs-teamdata-support-job-aid-the-data-migration-project",
               "latchel-admin/Data Support Team/csadmin-how-to-create-configure-a-portfolio",
-              "latchel-admin/Data Support Team/cutomer-data-collection",
+              "latchel-admin/Data Support Team/customer-data-collection",
               "latchel-admin/Data Support Team/data-migration-integration-activation-guide",
               "latchel-admin/Data Support Team/data-support-associate-interview-guide",
               "latchel-admin/Data Support Team/data-support-associates-performance-rating-and-team-metric-goals",
               "latchel-admin/Data Support Team/data-support-how-to-handle-assembly-tickets",
               "latchel-admin/Data Support Team/data-support-quality-audit",
-              "latchel-admin/Data Support Team/data-support-requests-for-leonardo-247-customer",
+              "latchel-admin/Data Support Team/data-support-request-for-leonardo-247-customers",
               "latchel-admin/Data Support Team/data-support-requests",
               "latchel-admin/Data Support Team/data-support-team",
               "latchel-admin/Data Support Team/data-support-teams-task-cadence-and-prioritization",
@@ -764,7 +764,7 @@
               "latchel-admin/Data Support Team/how-to-complete-new-nomad-owner-details-for-latchel",
               "latchel-admin/Data Support Team/how-to-configure-customer-profile-information-details-page-in-latchel-admin",
               "latchel-admin/Data Support Team/how-to-configure-owner-and-communication-preferences",
-              "latchel-admin/Data Support Team/how-to-configure-preferred-service-provider-to-a-new-account",
+              "latchel-admin/Data Support Team/how-to-configure-preferred-service-providers-to-a-new-account",
               "latchel-admin/Data Support Team/how-to-create-a-custom-view",
               "latchel-admin/Data Support Team/how-to-create-a-customer-group",
               "latchel-admin/Data Support Team/how-to-create-publish-help-guides",
@@ -956,8 +956,7 @@
                           "latchel-admin/Customer-Success-Team/integration-demo",
                           "latchel-admin/Customer-Success-Team/how-to-activate-the-integration"
                         ]
-                      },
-                      "latchel-admin/Customer-Success-Team/api-training-session"
+                      }
                     ]
                   },
                   {
