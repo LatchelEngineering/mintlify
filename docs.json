@@ -1108,11 +1108,25 @@
               {
                 "group": "Change Management/Product Releases",
                 "pages": [
-                  "change-management-product-releases",
-                  "change-management-product-input-template",
-                  "cs-product-intake-updates-may-2023",
-                  "imminent-churn-risk-product-escalation",
-                  "work-orders-overview-page"
+                  "latchel-admin/product-engineering-team/change-management-product-releases",
+                  "latchel-admin/product-engineering-team/change-management-product-input-template",
+                  "latchel-admin/product-engineering-team/cs-product-intake-updates-may-2023",
+                  "latchel-admin/product-engineering-team/imminent-churn-risk-product-escalation",
+                  "latchel-admin/product-engineering-team/work-orders-overview-page",
+                  "latchel-admin/product-engineering-team/diagnostic-flow-data-capture-explainer",
+                  "latchel-admin/product-engineering-team/filter-sms-by-portfolio-and-pm-sms-tagging",
+                  "latchel-admin/product-engineering-team/service-ops-sms-tagging-and-pm-360-degree-communication-view",
+                  "latchel-admin/product-engineering-team/tagging-video-calls-to-a-wo",
+                  "latchel-admin/product-engineering-team/consolidating-the-ability-to-change-wo-severity",
+                  "latchel-admin/product-engineering-team/editing-or-adding-resident-profiles-for-call-center-flow",
+                  "latchel-admin/product-engineering-team/limiting-evening-availability-for-non-emergency-wos",
+                  "latchel-admin/product-engineering-team/updated-troubleshooting-flow-with-problem-location-and-skill-change-option",
+                  "latchel-admin/product-engineering-team/updated-lcn-label-definition",
+                  "latchel-admin/product-engineering-team/flexible-service-provider-assignment",
+                  "latchel-admin/product-engineering-team/new-pm-dashboard",
+                  "latchel-admin/product-engineering-team/wo-detail-page-2-0",
+                  "latchel-admin/product-engineering-team/customizable-quick-view",
+                  "latchel-admin/product-engineering-team/service-provider-schedules"
                 ]
               }
             ]

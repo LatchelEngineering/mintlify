@@ -1,0 +1,90 @@
+---
+title: "New PM Dashboard"
+---
+
+## What is the Product Release?
+
+We are thrilled to announce that we are launching a new and improved design for the maintenance dashboard. This redesign includes several new features that will make it easier and more efficient to know exactly where your attention and expertise are needed and improves overall visibility of your maintenance. Updates include:
+
+- A new look and feel, bringing a modern touch to your work order management
+- Clear separation between work orders that need your approval and ones you might want to take a look at
+- Ability to take action on work orders directly from the dashboard
+- Ability to hide notifications you don't want to see on your dashboard
+
+<Frame>
+  ![Default view of new PM dashboard](/images/Eng-110.png)
+</Frame>
+
+## What was the Previous State?
+
+The previous PM dashboard was attempting to do a lot of things. It was intended to show PMs where their attention was needed and also be the main place for PMs to search and find work orders. The previous PM dashboard did not do a good job delineating between work orders that needed immediate attention from those that could be dealt with later. Users had to work really hard to see all the ways Latchel was adding value.
+
+<Frame>
+  ![PM view of previous dashboard](/images/Eng-111.png)
+</Frame>
+
+## Who Is Impacted?
+
+PM users are primarily impacted. Latchel Admins will have a way to view what the PMs dashboard looks like.
+
+## When Is It Relevant?
+
+The new design will eventually become the new landing page for PMs in Latchel.
+
+## How Is It Used?
+
+The new dashboard represents a feed of "events" happening on the PM's work orders. These events are driven by tasks, job state changes and some special conditions (e.g. resident left a 5 star review).
+
+PMs will use the new dashboard differently depending on their needs but we expect the daily flow for a maintenance coordinator to go something like this:
+
+1. Set filters to review "Requires Approval" only. Some companies may also choose to filter further by emergencies.
+2. Take action on all jobs that require approval.
+3. Repeat steps for "Open Tasks" as desired.
+4. Explore "Highlights" and "Other Activity" as desired.
+
+Here is a video overview of the new dashboard: [Latchel Dashboard Beta](https://www.youtube.com/watch?v=OyFIR-VuwDw)
+
+### Accessing The New Dashboard
+
+There are several way to access the new dashboard. Its ok to play around on your own but **PLEASE COORDINATE WITH PRODUCT BEFORE OFFERING TO SHOW ANY CUSTOMER THE NEW DASHBOARD.** Lots of stuff still in progress/not working so we want to make sure folks have a good experience when they visit the new dashboard.
+
+- As an admin user, you can view any PM's dashboard by visiting [https://app.latchel.com/admin/feed/{pm\_company\_id}](https://app.latchel.com/admin/feed/{pm_company_id}) for example [https://app.latchel.com/admin/feed/2](https://app.latchel.com/admin/feed/2)
+- As a PM user, you can access the new dashboard in one of two ways.
+  - By having the feature flag turned on for "feed"
+  - By navigating directly to [https://app.latchel.com/admin/feed](https://app.latchel.com/admin/feed/2)
+
+### High-Level List of Changes and New Functionalities compared to previous dashboard
+
+There are four "Main" filters on the left hand side of the page that are unique to the new dashboard:
+
+- **Highlights**: An event that happens in relation to a work order that "highlights" to the user something positive that happened as a result of Latchel's automation and their settings, e.g. "The resident submitted a five star review!"
+- **Open Tasks**: A tile in this category is generated when a task is created that is assigned to a PM user that is not categorized as an "approval" task (see below). This follows similar logic as the "Action Required" list on the existing PM dashboard.
+- **Requires Approval**: A tile in this category is created when a task designated as an "approval" is created and assigned to a PM. There are two sub-types, Budget Approval and The methodology to determine these was all the states where a job would show up in the "pending" column of the PM dashboard.
+- **Other Activity**: A tile in this category is created when certain conditions are met on a job. For now they are all state-based but could see this being more dynamic in the future. These are meant to convey general activity happening on the work order, especially where we can be confident about the validity of the data being provided.
+- **Feed Item Counter**: Under "My Feed" a dynamic counter will tell the user how many feed items match the filters they have set.
+
+"Secondary" Filters: In addition to the "Main" filter described above, users can filter by five initial dimensions. We decided to prioritize these filters because they are the highest usage filters on our existing dashboard but its possible we will add more based on PM feedback.
+
+- Filter by state: Based on the state of the job the feed tile is related to.
+- Filter by time: Based on the time the feed tile was created.
+- Filter by portfolio: Based on the portfolio of the property related to the feed tile.
+- Filter by Emergencies only: Based on the severity of the work order the tile is related to.
+- Sort by newest to oldest (default): Based on the time the feed tile was created.
+
+**Key Insights**: We ported over key insights from the old dashboard (calls handled, work orders completed and median resolution time) and plan to add more. We added the ability to filter Key Insights by preset time ranges.
+
+**Advanced Analytics**: PMs can now access their advanced analytics dashboard by pressing "View All" in the bottom right of.
+
+**Resident Reviews**: We ported over resident reviews from the old dashboard. We added the ability to filter by preset time ranges.
+
+**Hiding Tiles**: All tile types can be hidden. Hidden tiles can be found in the "Hidden" list and can also be unhidden.
+
+**Taking Action**: PMs can take action on work orders directly from the dashboard. We expect this to be useful for things like approving or denying work orders and budget increases. Completed tiles show up in the "Completed" list.
+
+## What Are Some Risks or Ways Things Could Go Wrong?
+
+We're going to start with inviting one PM to the beta on 6/29. This is a new product concept with lots of new features so there is plenty that could go wrong but we're going to mitigate risk by controlling PM access to the new features.
+
+## When Will This Change Be Effective?
+
+6/29 for one PM. Further rollout beyond that is TBD.

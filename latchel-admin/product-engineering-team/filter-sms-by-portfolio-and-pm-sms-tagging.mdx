@@ -1,0 +1,253 @@
+---
+title: "Filter SMS by Portfolio & PM SMS Tagging"
+---
+
+## What is the Product Release?
+
+We have built the ability for PMs to filter their incoming SMS by portfolio. We do this through a new auto-tagging logic that determines what work order the person is sending an SMS about. However, due to the logic ultimately being an estimation, we've also built the functionality for PMs to update the tag and/or forward the conversation to the proper portfolio. Please note that every conversation having a tag is also the stepping stone to being able to see specific SMS conversations on WO pages.
+
+<Frame>
+  ![Filter SMS by Portfolio feature overview](/images/Eng-18.png)
+</Frame>
+
+## What was the Previous State?
+
+Previously, PMs would receive all their incoming SMS in one inbox. Enterprise customers would especially have trouble with this because there was no way to effectively split up the work amongst their team based on ownership lanes (portfolios).
+
+## Who Is Impacted?
+
+PMs will be using this set of features actively. Residents, Service Providers, and Owners will benefit from PMs being able to respond to them more quickly.
+
+## When Is It Relevant?
+
+Filter SMS by Portfolio is relevant for PMs managing incoming SMS conversations. SMS tagging and forwarding is relevant for any time a PM is having an SMS conversation.
+
+## How Is It Used?
+
+### Filter SMS by Portfolio
+
+See demo [here](https://www.loom.com/share/f5504339c3664e9e9f898f7b39735133).
+
+Press the incoming SMS icon at the top right of the page.
+
+Click the "Filter by Portfolio" on the top left of the drop down (see orange arrow in screenshot below).
+
+<Frame>
+  ![Filter by Portfolio dropdown](/images/Eng-19.png)
+</Frame>
+
+Pick and choose which portfolios you'd like to see incoming SMS conversations for. Please note that "Conversations Unrelated to a Portfolio" are those where the new estimation logic was unable to identify a work order tag for.
+
+<Frame>
+  ![Portfolio selection list](/images/Eng-20.png)
+</Frame>
+
+Then press "Done" and the incoming SMS conversations should be filtered by portfolio. The "Filter by Portfolio" will now have a number next to it that indicates how many portfolios have been chosen for the filter (see orange arrow in screenshot below).
+
+<Frame>
+  ![Filtered SMS conversations by portfolio](/images/Eng-21.png)
+</Frame>
+
+### Managing Conversation Tags and Forwarding for Incoming SMS
+
+While we do have a new auto-tagging logic that determines what work order the person is sending an SMS is about, there will be some instances when the logic may not be correct. As a result, this section outlines the options that PMs can take to update those tags and/or forward it to the proper portfolio.
+
+Please see loom [here](https://www.loom.com/share/695e8aa764944b76b380c6f6cf7f3f55) for an overall explanation and demo of how PMs can manage their SMS conversation tags.
+
+#### Auto-Tagging Logic for Incoming SMS
+
+See demo [here](https://www.loom.com/share/c85d275ea3354803900eea10818698fe).
+
+All incoming SMS conversations will have logic where they will be automatically tagged to the same WO tag as the conversation right before it. We found in our research that many incoming SMS were in relation to the conversations before it.
+
+Please note that if the conversation before it does not have a tag, then the incoming SMS will also not have a WO tag. However, PMs will always be warned if someone tries to end a conversation without tagging it.
+
+#### Updating the Tag on an Existing SMS Conversation
+
+This functionality is applicable for when a PM would like to edit the tag on the current conversation that they are having with the Owner, Resident, or Service Provider. Some examples of this include:
+
+- Our initial auto-tagging logic was incorrect in determining that the incoming SMS was about a WO at 159 Weidmann in NJ, but it's actually about 258 Livingston in NJ. The PM who opened this incoming SMS owns the NJ portfolio and is able to help the person on this question, but needs to update the tag to the proper WO first. This is so they can reference this SMS conversation at a later date on the WO page (note that this is a future feature).
+  - This example can also work for if the incoming SMS does not come in with a tag at all.
+- Our initial auto-tagging logic was incorrect in determining that the incoming SMS was about a WO at 159 Weidmann in NJ, but it's actually about 425 Route 31 in NY. The PM who opened this incoming SMS owns the NJ portfolio so is unable to help the person on this question. As a result, the PM updates the tag to the proper WO and then chooses to forward it so that the proper NY portfolio owner can help them.
+
+Please see the SOP for this workflow below. Due to this splitting out into two separate workflows at the end, the demo links will be referenced there.
+
+Open incoming SMS and check to see what WO it's tagged to by looking at the header. In the screenshot below, you can see that this SMS conversation is tagged to the WO "(URGENT) Air Conditioner is Leaking".
+
+<Frame>
+  ![SMS conversation header showing WO tag](/images/Eng-22.png)
+</Frame>
+
+Confirm with the person who's sending the incoming SMS that the WO tag is correct. If the person says it's not correct, click on the "Edit Tag" link that's in the header under the WO tag. See orange arrow in the screenshot below.
+
+<Frame>
+  ![Edit Tag link in SMS header](/images/Eng-23.png)
+</Frame>
+
+This will then bring up a UI that allows you to tag to the correct WO. There are two components:
+
+List of Most Recent WOs - The list on the bottom is a list of the most recent work orders that are associated with that person.
+
+<Frame>
+  ![List of most recent work orders](/images/Eng-24.png)
+</Frame>
+
+Search - The search allows you to manually search against all WOs that are related to that person (as long as we recognize their profile in our system). You are able to search by WO #, WO title, or Property Address.
+
+<Frame>
+  ![Search for work orders](/images/Eng-25.png)
+</Frame>
+
+Choose the WO that the person is actually sending an SMS about and click "Next".
+
+<Frame>
+  ![Choose WO and click Next](/images/Eng-26.png)
+</Frame>
+
+The workflow will then ask you "Do you want to continue chatting with this person?" and give you the following choices:
+
+<Frame>
+  ![Continue chatting prompt](/images/Eng-27.png)
+</Frame>
+
+"Yes, I want to continue chatting" - If you choose this option, the conversation will continue to be assigned to you. The expectation is that you are able to help the person with their question.
+
+After you click this option, press "Confirm". This will take you back to the SMS conversation so you can continue to help the person. You'll notice that the WO tag in the header has been updated to the one you chose and there will be an internal note letting you know that the tag has been updated (see orange arrows in screenshot below).
+
+<Frame>
+  ![Updated WO tag and internal note](/images/Eng-28.png)
+</Frame>
+
+See demo for this workflow [here](https://www.loom.com/share/2cae9690763341f383d6960ca52e6b1d).
+
+"No, forward to another PM" - If you choose this option, it means that you are unable to help the person with their question and would like to forward so that another PM can help them. This option is typically for if the person is asking about a work order that is not in your portfolio. For example, the auto-tagging logic originally thought the incoming SMS was about a work order in the new Jersey portfolio. However, turns out it was actually about one in the New York portfolio, which you don't own.
+
+After you click this option, press Confirm. This will actually immediately end the conversation for you and then forward it as a new unread incoming SMS conversation inbox.
+
+For the next PM who ends up opening the forwarded SMS, the tag in the SMS window header will be updated to the one you chose (see orange arrow in the screenshot below) and there will also be a system generated message that indicates that it's a forwarded conversation with the WO it's tagged to (see green arrow in the screenshot below).
+
+See demo for this workflow [here](https://www.loom.com/share/de2a6d7be9624ba79e0f1f290f65fb98).
+
+<Frame>
+  ![Forwarded SMS conversation with updated tag](/images/Eng-29.png)
+</Frame>
+
+#### Starting New Conversations within an SMS Window
+
+This functionality is applicable for when the person sending an incoming SMS has more than one question about different work orders. Some examples of this include:
+
+- Our initial auto-tagging logic was correct in determining that the incoming SMS was about a WO at 159 Weidmann in NJ. However, the person has another question about a different WO, which is at another property 258 Livingston in NJ. The PM who opened this incoming SMS owns the NJ portfolio and is able to help the person on both these questions. However, the PM will need to start a conversation for the 2nd question because it's for a different WO.
+- Our initial auto-tagging logic was correct in determining that the incoming SMS was about a WO at 159 Weidmann in NJ. However, the person has another question about a different WO, which is at another property 425 Route 31 in NY. The PM who opened this incoming SMS owns the NJ portfolio so they can help with the first question. However, they are unable to answer the second one about the property in NY. As a result, the PM answers the first question and then has to start a new conversation and then chooses to forward it so that the proper NY portfolio owner can help them.
+
+Please see the SOP for this workflow below. Due to this splitting out into two separate workflows at the end, the demo links will be referenced there.
+
+In this scenario, you will have already used the current SMS conversation to answer the person about a WO that you're able to help them with.
+
+The person you're chatting with then mentions that they have another question about a different WO. Due to the current conversation being about a separate WO, you always want to start a new conversation for that user. This is important because we will be using this tag data to have specific SMS conversations on WO pages at a later date.
+
+Click the "New Conversation" icon (see orange arrow in the screenshot below).
+
+<Frame>
+  ![New Conversation icon](/images/Eng-30.png)
+</Frame>
+
+This will then bring up a UI that allows you to start a new conversation with this person with a new WO tag. There are two components:
+
+List of Most Recent WOs - The list on the bottom is a list of the most recent work orders that are associated with that person.
+
+<Frame>
+  ![List of most recent work orders](/images/Eng-24.png)
+</Frame>
+
+Search - The search allows you to manually search against all WOs that are related to that person (as long as we recognize their profile in our system). You are able to search by WO #, WO title, or Property Address.
+
+<Frame>
+  ![Search for work orders](/images/Eng-25.png)
+</Frame>
+
+Choose the WO that the person is actually sending an SMS about and click "Next".
+
+<Frame>
+  ![Choose WO and click Next](/images/Eng-31.png)
+</Frame>
+
+The workflow will then ask you "Do you want to continue chatting with this person?" and give you the following choices:
+
+<Frame>
+  ![Continue chatting prompt](/images/Eng-32.png)
+</Frame>
+
+"Yes, I'll handle it" - If you choose this option, the new conversation that you're about to start will be assigned to you. The expectation is that you are able to help the person with their question.
+
+After you click this option, press "Confirm". This will take you back to the SMS window with that person. You'll see an internal note letting you know that you started a new conversation with that person and what WO it tagged to (it will be the one that you just chose). You'll also notice that the WO tag in the header has been updated to the one you chose. See orange arrows in screenshot below for both the internal note and updated WO tag header.
+
+See demo for this workflow [here](https://www.loom.com/share/8c74675b82dc468196226a4fea2f8e74).
+
+<Frame>
+  ![New conversation internal note and updated WO tag](/images/Eng-33.png)
+</Frame>
+
+"No, I'll forward to another PM" - If you choose this option, it means that you are unable to help the person with their question and would like to forward so that another PM can help them. This option is typically for if the person is asking about a WO that is not in your portfolio. For example, the initial incoming SMS was about something in your portfolio. However, the person had another question about another WO that's not in your portfolio.
+
+After you click this option, press "Confirm". This will actually immediately end the conversation for you and then forward it as a new unread incoming SMS conversation inbox.
+
+For the next PM who ends up opening the forwarded SMS, the tag in the SMS window header will be updated to the one you chose (see orange arrow in the screenshot below) and there will also be a system generated message that indicates that it's a forwarded conversation with the WO that it's tagged to (see green arrow in the screenshot below).
+
+See demo for this workflow [here](https://www.loom.com/share/47cf009c6cbb4782869040c497789b7b).
+
+<Frame>
+  ![Forwarded conversation with system generated message](/images/Eng-34.png)
+</Frame>
+
+### Starting a New Conversation as a PM Outside of an SMS Window
+
+PMs have the following two experiences when starting a new SMS conversation through the SMS icon within the Latchel console.
+
+**Start an SMS Conversation from a Specific WO Page**
+
+See demo [here](https://www.loom.com/share/7c7d3f354e22419b93e15c29dab8d356).
+
+When a PM clicks on the SMS icon under a person within a WO page and sends an SMS, that newly started conversation will always automatically tag to that WO.
+
+However, please note that it does not automatically tag to that WO if you click on an SMS icon for a person within a task.
+
+**Start an SMS Conversation from a Non-WO Page ("General" Page)**
+
+See demo [here](https://www.loom.com/share/93cc9a5804544377bbec6a88f0fc45fb).
+
+For any other place within the Latchel console that has an SMS icon, PMs will need to choose the WO to tag it to before they start the conversation (see screenshot of UI below). It's important to note that choosing a WO in this UI does not actually tag it to that WO until the PM sends an SMS to that person.
+
+If the PM would like to start a conversation with someone without tagging it to a WO, they can choose the "Not related to a recent Work Order" option (see orange arrow in the screenshot below). The intention of including this is to account for situations where PMs may want to ask about general account questions that may not tie to a specific WO.
+
+<Frame>
+  ![Not related to a recent Work Order option](/images/Eng-35.png)
+</Frame>
+
+**No Tag Warning**
+
+See demo here.
+
+If a PM tries to end an SMS conversation without tagging it to a WO, there will be the following warning.
+
+<Frame>
+  ![No tag warning](/images/Eng-36.png)
+</Frame>
+
+"Yes" - Pressing this option means the PM wants to tag the SMS conversation. It will take them back to the SMS conversation so he/she can tag it.
+
+"No" - Pressing this option means the PM does not want to tag the SMS conversation. It will close the window and end the conversation for them.
+
+## What Are Some Risks or Ways Things Could Go Wrong?
+
+With this launch, PMs can only tag each conversation to one WO. As a result, they will have to start new conversations each time the topic changes. We'd like to change this in the future, but this was to de-risk the P0 launch.
+
+PMs must always finish any conversation they are having with the Owner/Resident/Service Provider before forwarding an SMS conversation to another PM. Due to all SMS conversations operating from one phone number, continuing a conversation with the Owner/Resident/Service Provider after it has been forwarded will result in the forwarded message not being shown as an unread message for another PM to pick up.
+
+## When Will This Change Be Effective?
+
+We plan to deploy this on 2/14 based on the following dependencies:
+
+- Share this change management article for CS to learn.
+- Complete userpilot video and email comm to PMs by 2/8.
+- Send out email comm to PMs by 2/10.
+- Ops training to complete for SMS Tagging on 2/13.

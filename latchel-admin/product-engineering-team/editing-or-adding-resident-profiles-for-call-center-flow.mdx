@@ -1,0 +1,142 @@
+---
+title: "Editing or Adding Resident Profiles for Call Center Flow"
+---
+
+## What is the Product Release?
+
+We will allow a Call Center Agent to create a work order without a Need-to-Verify (NTV) email as long as the Caller provides a valid address in our system.
+
+## What was the Previous State?
+
+Previously, when a Resident calls Latchel to submit a WO (30% of all WOs) and they indicate they are a Resident at a property in our system but does not provide a valid phone number, we send the Call Center Agent through a flow that will end up creating a NTV ticket (~600 per month). This means that a WO will not be created and it will be reliant on a manual and labor-intensive Ops process to review the submission, validate that the Resident is a real Resident, and then create the WO on their behalf. Since there are property-damaging emergencies, the Ops team has to staff this as a critical process, especially attempting to handle them real-time. This has lead to two bad outcomes for Latchel:
+
+- Legitimate WOs are delayed in getting dispatched.
+- Latchel is spending a lot of money staffing this process.
+
+## Who Is Impacted?
+
+- Latchel Ops - They will no longer have to validate NTV emails for Residents who have confirmed that they live at a property in our system.
+- PMs - WO creation will no longer be delayed for those where a Resident has confirmed that they live at a property in our system.
+
+## When Is It Relevant?
+
+This is relevant for when a Resident provides a phone number that's not in our system, but provide an address that is in our system.
+
+## How Is It Used?
+
+See demo of overall workflow [here](https://www.loom.com/share/4fa25d54dbdf4dfd895cff95a0672994).
+
+Go to the Call Center Portal and click "Handle New Call".
+
+Choose "Caller is a Resident".
+
+<Frame>
+  ![Caller is a Resident option](/images/Eng-49.png)
+</Frame>
+
+Choose "Maintenance or Home Services".
+
+<Frame>
+  ![Maintenance or Home Services option](/images/Eng-50.png)
+</Frame>
+
+Type in the Caller Name. Then type in a Callback Phone Number that is not in our system. Please note that we edited the scripting prompt on this page to "Can I get your name and a callback phone number in case we get disconnected?".
+
+<Frame>
+  ![Caller Name and Callback Phone Number fields](/images/Eng-51.png)
+</Frame>
+
+The workflow will show you the information that you just typed in there. Press "Next".
+
+<Frame>
+  ![Resident Identification summary](/images/Eng-52.png)
+</Frame>
+
+Type in an address that you know is in the system. The search will yield a property to click on if you typed in something that's in the system (see orange arrow in the screenshot below). Click on that property.
+
+<Frame>
+  ![Address search results](/images/Eng-53.png)
+</Frame>
+
+The system will then prompt you with a script that explains that while the property address the Caller gave us in on file, the phone number is not. We then provide a list of existing Residents that we have for that property. The reason for providing this list of Residents that are already tied to the property is so that you can check with the Caller on if any of these existing profiles is theirs.
+
+<Frame>
+  ![List of existing Residents on property](/images/Eng-54.png)
+</Frame>
+
+From the screen above, the Call Center has two options:
+
+Choose One of the "Existing Resident(s) on Property" - Choosing one of the Existing Residents means that the Caller has confirmed that one of those Resident profiles is them. If you identify this, click on the Resident.
+
+Then, you will be prompted with a modal asking if you'd like to update the primary phone number for the Resident profile. On the left, you'll see the primary phone number that's currently on the Resident's profile. On the right, you'll see the phone number that was newly provided by the Caller that you're on the phone with right now. It's important to get the correct phone number on file for the Resident because that's where all their confirmations and notifications will be going. You then have the two options to move forward:
+
+"Update Primary Phone" - Choosing this button means you'd like to update the primary phone number on the Resident's profile with the new one that the Caller provided (on the right).
+
+<Warning>
+  IMPORTANT NOTE: The primary phone number on the existing Resident profile will be updated as soon as you press the "Update Primary Phone" button. The primary phone number that was previously on the Resident profile will move to secondary.
+</Warning>
+
+Please also note that updating the primary phone number through this workflow will specify in the Resident's log that the call center flow updated it.
+
+<Frame>
+  ![Update Primary Phone confirmation](/images/Eng-55.png)
+</Frame>
+
+"Keep Existing Primary Phone" - Choosing this option means that you want to keep the primary phone number on the Resident profile as is. No changes will happen
+
+<Frame>
+  ![Keep Existing Primary Phone modal](/images/Eng-56.png)
+</Frame>
+
+Choose "Create a New Resident Profile" - Choosing this option means none of the existing Resident profiles matches the Caller. As a result, you'll have to create a new Resident profile for them to tie to this property. When you identify this, click on "Create a New Resident Profile".
+
+Then, you will be prompted with a modal that inputs the Caller's Name and Phone Number that you collected in the beginning of the call. These are not editable. If you need to edit them, you'll need to go back to the beginning of the call center workflow.
+
+There will be a field for you to type in their email address, as well. Let the Caller know that this is for any notifications. There is also an option to not provide an email.
+
+<Warning>
+  IMPORTANT NOTE: The new Resident profile will NOT be created until you've gone through the entire WO submission process. This is to prevent any unnecessary Resident profiles from being created if they decide to not go through with the WO submission in that call.
+</Warning>
+
+<Frame>
+  ![Create a New Resident Profile modal](/images/Eng-57.png)
+</Frame>
+
+After choosing either one of those options, you will then be taken through the same workflows you're used to today (duplicate checks, diagnostic workflow, and Resident availability with permission to enter). Please follow your existing SOPs for that.
+
+### PMs With Active Integration
+
+Call Center Agents will go through a different workflow for Callers that provide an address under a PM Company wit an active integration. They will not have the option to update the primary phone number for an existing Resident profile or create a new Resident profile.
+
+See demo [here](https://www.loom.com/share/63a3d04face248a18d5ed4d4bf110d29).
+
+Once you type in an address that has a match in our system with a Caller's phone number that does not exist in our system, the system will provide you with the following UI.
+
+<Frame>
+  ![PM with active integration UI](/images/Eng-58.png)
+</Frame>
+
+From the screen above, the Call Center has two options:
+
+- Choose One of the "Existing Resident(s) on Property" - Choosing one of the existing Residents means that the Caller is ok with all notifications and calls for the work order going to the phone number that we already have on file. There is no option in this workflow to update the primary phone number.
+- Choose "None of these Residents Match the Caller" - Choosing this option means that none of the existing Residents match the Caller.
+
+Once you submit the WO at the end of the workflow, it will actually create it with a vacant property.
+
+The WO will start in "Pending" state with an email to the PM letting them know that a WO has been created without any access instructions.
+
+In addition, the WO description will provide the following pieces of information (see orange arrows in the screenshot below) to indicate that the Caller was not in our system.
+
+<Frame>
+  ![WO description indicating Caller not in system](/images/Eng-59.png)
+</Frame>
+
+## What Are Some Risks or Ways Things Could Go Wrong?
+
+Customers may be inconvenienced by bad actors submitting WOs for their properties. This would impact Residents, SPs, and PMs through unnecessary WOs and illegitimate Resident profiles. Should this happen, Latchel will also be impacted as a result of unhappy customers. However, we believe this risk is low. While it would be very easy to create unnecessary WOs, we don't see people being motivated to do so, as there would be no monetary incentive for the bad actor.
+
+Active Integration PMs may experience a bottleneck for WOs that are created for Callers that do not choose an existing Resident profile. These WOs will start in Pending and send an email to PMs letting them know that the WO needs access instructions. However, this is how we create WOs for these situations today and does not impact the current state.
+
+## When Will This Change Be Effective?
+
+We would like to deploy this by or before 2/9. We're handing off to Ops to review and send out to the org for training on 2/2.
