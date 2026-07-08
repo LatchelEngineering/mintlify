@@ -1143,7 +1143,22 @@
                   "latchel-admin/product-engineering-team/latchel-on-call",
                   "latchel-admin/product-engineering-team/intake-settings-harmonia-and-harmonia-x"
                 ]
-              }
+              },
+              "latchel-admin/Product-Engineering/task-assignment-reference-guide",
+              "latchel-admin/Product-Engineering/runbooks-play-books",
+              {
+                "group": "Devops",
+                "pages": [
+                  "latchel-admin/Product-Engineering/devops",
+                  "latchel-admin/Product-Engineering/updating-scheduler-env"
+                ]
+              },
+              "latchel-admin/Product-Engineering/vendor-actions-by-state",
+              "latchel-admin/Product-Engineering/vendor-auto-assign-queue-aaq-state-logic",
+              "latchel-admin/Product-Engineering/latchel-vendor-network-faqs",
+              "latchel-admin/Product-Engineering/latchel-engineering-day-to-day-expectations",
+              "latchel-admin/Product-Engineering/latchel-contractor-dispatch",
+              "latchel-admin/Product-Engineering/ssl-certificate-renewal"
             ]
           },
           {

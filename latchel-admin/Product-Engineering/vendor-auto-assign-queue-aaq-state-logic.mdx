@@ -1,0 +1,17 @@
+---
+title: "Vendor Auto Assign Queue (AAQ) State Logic"
+---
+
+<Note>
+  **NOTE**: A couple of small bugs exist that are preventing the state logic to perform exactly as described below. We are working to clean them up. You can see the details here: [https://latchel.atlassian.net/browse/LA-7014](https://latchel.atlassian.net/browse/LA-7014Pending)
+</Note>
+
+| **State** | **Logic** | **Type\*** |
+| :-- | :-- | :-- |
+| Active | AAQ in progress, contacting eligible vendors | Transient |
+| Cancelled | AAQ manually cancelled due to <ul><li>state change</li><li>vendor assigned</li><li>skill removed</li><li>property removed (probably impossible but technically not impossible)</li><li>property has no timezone (probably impossible but technically not impossible)</li></ul> | Terminal |
+| Exhausted | One minute after the last vendor contacted | Transient |
+| Exhausted-complete | 24 hours after the last vendor contacted | Terminal |
+| Successful | AAQ vendor assigned to the WO <ul><li>this could be from them accepting it</li><li>OR from the vendor being manually assigned, after being contacted via AAQ</li></ul> | Terminal |
+
+\*All auto queue sessions will eventually end up in a terminal state

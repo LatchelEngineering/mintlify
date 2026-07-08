@@ -1,0 +1,16 @@
+---
+title: "Updating Scheduler ENV"
+---
+
+1. Add the value to scheduler’s Bitbucket repository variables (alternatively they can be hard coded into the docker repo but I think we might prefer using bitbucket)
+2. Add equivalent staging, local and example values to scheduler repo
+   - Remember .env.staging is automatically pulled into staging environments
+3. Make the following changes to the docker repo
+4. Add the variables to the docker repo’s [env.prod](http://env.prod) with blank values
+   - example: [https://bitbucket.org/latchel/docker/pull-requests/26Can't](https://bitbucket.org/latchel/docker/pull-requests/26Can't)[ find link](https://bitbucket.org/latchel/docker/pull-requests/26)
+5. Add the variables to the docker repo’s [docker-compose.prod](http://docker-compose.prod).yaml
+   - The variables will need to go in four places for each respective deploy process: demo, papi, prod
+   - Here is an example: [https://bitbucket.org/latchel/docker/pull-requests/27Can't](https://bitbucket.org/latchel/docker/pull-requests/27Can't)[ find link](https://bitbucket.org/latchel/docker/pull-requests/27)
+6. Add the value to the legacy EC2 scheduler server
+7. Merge to docker master and let pipeline run
+8. Run Scheduler deploy pipeline after docker pipeline completes.

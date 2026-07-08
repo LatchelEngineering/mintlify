@@ -1,0 +1,32 @@
+---
+title: "SSL Certificate Renewal"
+---
+
+SSL certs are issued through easyDNS
+
+- Will has access to easyDNS. Will will need to purchase the new certificate
+- Convert .pem to .crt
+  - [Convert .pem to .crt and .key](https://stackoverflow.com/questions/13732826/convert-pem-to-crt-and-key)
+- Two places to update certs. replace /etc/ssl/latchel.bundle.pem file with new pem. The existing private key can stay.
+  - EC2 servers
+    - PAPI
+    - Staging
+    - Integrations - web
+    - Broadcast
+  - [AWS cert manager](https://us-west-2.console.aws.amazon.com/acm/home?region=us-west-2#/certificates/list "https://us-west-2.console.aws.amazon.com/acm/home?region=us-west-2#/certificates/list")
+    - First section of pem goes into first box
+    - Private key (get from ec2) goes into 2nd box
+    - All three certs in pem go into chain (not optional for server to server connections)
+- Local
+  - Ideally set up a self generating cert
+  - Until then pass cert files to engineers
+  -  
+
+## **Local instructions for Engineers**
+
+1. Replace existing ~/latchel-cli/docker/nginx/ssl/default.crt contents with the contents of this pem file
+2. shut down your docker containers if running
+3. from ~/latchel-cli/docker run docker-compose build --no-cache nginx
+4. boot up your containers and enjoy another trip around the sun.
+
+ 
