@@ -1,0 +1,42 @@
+---
+title: "Communication Incident Process & Template"
+---
+
+## Summary
+
+As part of our Q4 focus on reducing new-customer churn, Customer Success and Product leadership have determined that we need better, faster communication when we resolve an incident that may have impacted multiple customers. Proactive notification and follow-up will greatly improve the Latchel user experience in the immediate term while we work on reducing incidents generally. The purpose of this document is to seek feedback and alignment on this topic between product and engineering.
+
+## Definition
+
+A communication incident is defined as a post in #tech-high-sev-escalations or other high severity outage where
+
+- The impact to the customer is functional (as opposed to a styling issue or a typo)
+- Is verified to have impacted \>1 customer
+
+AND functionality was impacted in one of the following areas
+
+- Integrations OR plugin sync
+- WO creation
+- On-call notifications
+- Vendor auto queue
+- Communication features
+- Invoicing or payment features
+
+## Process
+
+1. Issue posted in #tech-high-sev-escalations
+2. Product denotes whether the issue is/is not a communication incident, reminds assigned engineer of these requirements
+3. Once issue is resolved/stabilized, assigned engineer posts a draft answer to these questions in the #tech-high-sev-escalations thread and tags @Will Gordon, @Jennifer Folch, @cs-team, and @ps-team
+   - What happened? (How did the customers feel it, how many users were impacted)
+   - What caused the issue?
+   - How are we fixing it?
+   - Anything else customers need to know?
+4. @maddie drafts customer communication
+5. @Jennifer Folch reviews communication
+6. @Will Gordon approves communication for @maddie to send
+   - If @Will Gordon is out, @Ethan Lieber acts as his backup.
+7. Assigned engineer will post final version of the answers in the Jira ticket before closing
+
+<Frame>
+  ![Communication incident process swimlane diagram](/images/Eng-4.png)
+</Frame>

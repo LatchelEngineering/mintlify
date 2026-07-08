@@ -1,0 +1,102 @@
+---
+title: "Change Management Product Input Template"
+---
+
+## Overview
+
+The purpose of this page is to show a concrete example of set Product inputs that are to be provided to the Main Stakeholder Team Champion. This template contains key information that the Champion will need in order to properly execute the change and measure compliance for.
+
+## Change Management Product Input Example
+
+### P0 Emergency WO Service Provider Auto-Assign
+
+#### What is the Product Release?
+
+We are introducing Service Provider auto-assign for Emergency WOs that allows us to automatically send out WO offers to a PM's preferred Service Providers for Emergency WOs that require immediate dispatch. The reason for building this was to contribute to our Latchel company goal of getting our time to dispatch Emergency WOs to 20 min. We expect this iteration of the feature to reduce the time that Troubleshooters spend on calling preferred Service Providers.
+
+<Frame>
+  ![Emergency WO auto-assign screenshot](/images/Eng-7.png)
+</Frame>
+
+#### Who Is Impacted?
+
+The following groups are impacted:
+
+- Ops Troubleshooters will be triggering this feature in their workflow for Emergency WOs.
+- Service Providers will now have the opportunity to accept offers for Emergency WOs through their dashboards.
+
+#### When Is It Relevant?
+
+This feature should only be used for Emergency WOs that require immediate dispatch and do not have any pre-dispatch instructions that ask to include or exclude certain Service Providers for Emergency WOs.
+
+#### What was the Previous State?
+
+Prior to this product release, Troubleshooters would follow this process for dispatching Emergency WOs that require immediate dispatch:
+
+1. Troubleshooter reads pre-dispatch notes to see if there are any specific Service Providers he/she should include or exclude from Emergency WO dispatch.
+2. Based on the pre-dispatch notes, the Troubleshooter would then call each eligible Service Provider one by one until someone confirmed that he/she could take the WO on the phone.
+
+#### How Is It Used?
+
+[\[Change Management\] Product Input Template](#how-is-it-used)
+
+**Ops Troubleshooter Workflow**
+
+See loom demo [here](https://www.loom.com/share/ffc4c58822ea4524a566ff0666042498).
+
+When an Ops Troubleshooter confirms that an Emergency WO is an emergency and requires immediate dispatch, he/she will be taken through a guided workflow that asks if he/she wants to use auto-assign. Similar to non-emergency auto-assign, the emergency auto-assign will send offers to all preferred SPs for that PM.
+
+This screen will also show the pre-dispatch instructions, which were added to help the Ops Troubleshooter make a decision on whether or not it's appropriate to use the auto-assign queue or not.
+
+<Frame>
+  ![Emergency WO auto-assign screenshot](/images/Eng-7.png)
+</Frame>
+
+If Auto-Assign is NOT chosen (press "No"), then the standard work will remain the same as it does today for an Ops Troubleshooter.
+
+If Auto-Assign is chosen (press "Yes"), the next screen will ask to input Resident availability over the next 2 calendar days.
+
+Once availability is submitted, the WO will go into Finding Service Provider state and auto-assign will be kicked off. At default, the offers will be sent to each Service Provider on the PM's Preferred Service Provider list with a buffer time of 1 min (if you'd like this buffer to be changed see the "Service Provider Auto-Assign Buffer" section below).
+
+While the auto-assign offers are being sent out, the Ops Troubleshooter will follow his/her current standard work of calling each Preferred Service Provider in parallel.
+
+If a Service Provider accepts an offer while the WO is in Finding Service Provider state, a visual notification will pop up on the screen so that the Ops Troubleshooter knows to stop calling more Service Providers.
+
+<Frame>
+  ![Service Provider accepted offer notification](/images/Eng-8.png)
+</Frame>
+
+The WO will then go into Awaiting Work Date state.
+
+**Service Provider Workflow**
+
+See loom demo [here](https://www.loom.com/share/6f6cef6c8136402bb6d6d23caf6dcb42).
+
+Service Providers will follow the same workflow as they do for our Non-Emergency WO auto-assign.
+
+**Service Provider Auto-Assign Buffer**
+
+The default response buffer for Emergency WOs is currently set to 1 min. However, this can be changed by going to the PM Company Details tab \> Service Provider Assignment Automation section (see screenshot below).
+
+<Frame>
+  ![Service Provider Auto-Assign Buffer setting screenshot](/images/Eng-9.png)
+</Frame>
+
+#### What Are Some Risks or Ways Things Could Go Wrong?
+
+We've identified the following risks with this P0 launch:
+
+- Since the button to trigger emergency auto-assign is manual, it may take some time to be fully compliant for situations where it's appropriate to use emergency auto-assign.
+- This version does not have a way to take back offers from Service Providers who have been passed in the queue if someone else ends up taking it. As a result, we may see escalations where a Service Provider wakes up in the middle of the night to an offer, tries to accept it, and then sees that someone else had already taken it.
+
+#### When Will This Change Be Effective?
+
+We plan to roll this out on Tuesday, June 7th. All Ops Troubleshooters have been briefed and trained on this new SOP the week prior.
+
+#### As an Ops Manager, How Do I Measure Compliance?
+
+Product will provide the following queries:
+
+- % of Emergency WOs that used auto-assign
+- % of dispatched emergencies that used auto-assign
+- % of Emergency WOs accepted by Service Providers through Service Provider dashboards

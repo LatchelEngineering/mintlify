@@ -1,0 +1,102 @@
+---
+title: "Work Orders Overview Page"
+---
+
+## What is the Product Release?
+
+We are introducing a new page for customers dedicated to searching and viewing work orders.
+
+<Frame>
+  ![Work Orders Overview page screenshot](/images/Eng-11.png)
+</Frame>
+
+### Why is this important to customers?
+
+Searching for and finding work orders is one of the core tasks of our maintenance coordinator users.
+
+## Who Is Impacted?
+
+The following groups are impacted:
+
+- Property Managers
+- Admin users
+- (coming soon) Service Providers
+
+## When Is It Relevant?
+
+We expect this to be one of the most heavily-used pages in Latchel for Property Managers. Any time a maintenance coordinator wants to search or view particular work orders, this is the place to do it!
+
+## What was the Previous State?
+
+Prior to this product release, PMs would use the PM Dashboard to search and view Work Orders.
+
+<Frame>
+  ![Previous PM Dashboard state screenshot](/images/Eng-12.png)
+</Frame>
+
+## How Is It Used?
+
+See loom demo [here](https://www.loom.com/share/d28e623229414213b7cb9d8a056b95b4).
+
+**Start**
+
+PMs will still be directed to the PM Dashboard when they land on Latchel. To access the new page they click the Work Orders tab.
+
+<Frame>
+  ![Work Orders tab navigation screenshot](/images/Eng-13.png)
+</Frame>
+
+**List & Kanban view**
+
+PM's will start on the list view but they can select the icon circled in the picture below to access the Kanban view
+
+<Frame>
+  ![List and Kanban view toggle screenshot](/images/Eng-14.png)
+</Frame>
+
+**Search**
+
+PMs can search for WOs here. This search works the exact same as the one that currently exists in the /admin/jobs page and the PM dashboard.
+
+<Frame>
+  ![Work order search screenshot](/images/Eng-15.png)
+</Frame>
+
+**Filters**
+
+PMs can filter the results shown by toggling the filter menu.
+
+<Frame>
+  ![Work order filters screenshot](/images/Eng-16.png)
+</Frame>
+
+**Smart Filters**
+
+Latchel "remembers" the last filters you had applied on the /work-orders page. Whether you are clicking the "back" button, clicking the "Work Orders" navigation menu item or logging in for the day, Latchel will set up your filters exactly as you had them before.
+
+**Color-coded States**
+
+Color-coded states provide simple visual clues to help new Latchel users understand Latchel's automation and WO state designations. Color-coded states are shown on both the board and list views on the Work Orders Overview page.
+
+<Frame>
+  ![Color-coded work order states screenshot](/images/Eng-17.png)
+</Frame>
+
+**Colors De-coded**
+
+Here is a simple way to understand what each of the colors are intended to communicate
+
+| Color Scheme | Intended Meaning |
+| --- | --- |
+| Yellow | Needs PM attention |
+| Blue | Latchel automation is running. Good outcomes still possible without PM intervention, depending on PM's preferences. |
+| Green | Done, no action needed. |
+| Gray | No action needed. |
+
+## What Are Some Risks or Ways Things Could Go Wrong?
+
+We've identified the following risks with this P0 launch:
+
+## When Will this Change Be Effective
+
+We plan to roll this out on Wednesday, October 26th!

@@ -1090,6 +1090,30 @@
                   "latchel-admin/product-engineering-team/latchel-integrations-wiki/buildium-reference-guide",
                   "latchel-admin/product-engineering-team/latchel-integrations-wiki/rentvine-reference-guide"
                 ]
+              },
+              {
+                "group": "Product/Engineering Processes",
+                "pages": [
+                  "latchel-admin/product-engineering-team/product-engineering-processes",
+                  "latchel-admin/product-engineering-team/design-handoff-process",
+                  "latchel-admin/product-engineering-team/product-ownership-domains",
+                  "latchel-admin/product-engineering-team/product-lifecycle-pdlc",
+                  "latchel-admin/product-engineering-team/tech-intake-process-and-documentation",
+                  "latchel-admin/product-engineering-team/communication-incident-process-and-template",
+                  "latchel-admin/product-engineering-team/tech-high-severity-escalations-process",
+                  "latchel-admin/product-engineering-team/backend-endpoint-performance-optimization-guidelines",
+                  "latchel-admin/product-engineering-team/lcd-manual-payment-and-payout-sop"
+                ]
+              },
+              {
+                "group": "Change Management/Product Releases",
+                "pages": [
+                  "change-management-product-releases",
+                  "change-management-product-input-template",
+                  "cs-product-intake-updates-may-2023",
+                  "imminent-churn-risk-product-escalation",
+                  "work-orders-overview-page"
+                ]
               }
             ]
           },

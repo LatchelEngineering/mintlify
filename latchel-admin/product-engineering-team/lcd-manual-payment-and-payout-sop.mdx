@@ -1,0 +1,124 @@
+---
+title: "LCD Manual Payment & Payout SOP"
+---
+
+## Purpose
+
+<Info>
+  **Purpose of this document**
+
+  This is an SOP on how to process payments and payouts in our Latchel Contractor Dispatch pilot with RentRedi.
+</Info>
+
+<Info>
+  **Who should read this document?**
+
+  Anyone authorized to conduct manual payments. Right now its only @Taylor Wilson (Unlicensed).
+</Info>
+
+<Info>
+  **Which tools and permissions are required?**
+
+  - Admin access to [https://lvn.latchel.com/](https://lvn.latchel.com/)
+  - Access to Latchel's Stripe account: [https://dashboard.stripe.com/dashboard](https://dashboard.stripe.com/dashboard)
+  - Access to Latchel's google voice account (TBD)
+</Info>
+
+## Step-by-Step Guide
+
+<Info>
+  **What happened prior to this step?**
+
+  Prior to this step, an LVN vendor completed some work and uploaded an invoice to [https://lvn.latchel.com/](https://lvn.latchel.com/)
+</Info>
+
+## Process Overview
+
+_Loom video placeholder_
+
+<Frame>
+  ![LCD manual payment process overview diagram](/images/Eng-6.png)
+</Frame>
+
+### Step 1 - Identify an invoice that requires manual payment
+
+1. Access the invoices page in the LVN application: [https://lvn.latchel.com/admin/invoices](https://lvn.latchel.com/admin/invoices)
+2. Filter for invoices with the "N/A" status
+3. Sort filtered invoices by the WO number (lowest to highest)
+4. Click on the first invoice that appears
+5. Download the generated invoice file
+6. Save the file to a location you can find it later
+
+### Step 2- Charge the customer in stripe
+
+1. Find the customer in stripe by viewing the "payments" tab of their profile in LVN
+2. Click "Create payment"
+3. Enter the exact amount of the "total" from the invoice in Step 1
+4. Enter the following note in the description "Services rendered for vendor request: (work order number)"
+5. Click "Create payment"
+6. Click the Ellipsis next to the payment
+7. Select "View payment details"
+8. Under "Receipt history" click "View receipt"
+9. Copy the "permalink" at the bottom of pop out and paste it in a place to you can access later
+
+### Step 3 - Payout the vendor
+
+1. Find the vendor's connected account in Stripe. For example, here is Puls's account: [https://dashboard.stripe.com/connect/accounts/acct\_1NcbPFIsYS2lmbLL/activity](https://dashboard.stripe.com/connect/accounts/acct_1NcbPFIsYS2lmbLL/activity)
+2. In the top right corner, click the ellipses and select "View dashboard as (vendor name)"
+3. From the menu on the left, select "Payments"
+4. Select "Create payment" → "Manual Payment"
+5. In the "Amount" field, enter 90% of the amount from Step 2
+6. In the "Description" field, enter "For invoice# (invoice number from step 1)
+7. Enter the credit card info provided by @Taylor Wilson (Unlicensed)
+8. Click "Submit payment"
+9. Click the Ellipsis next to the payment
+10. Select "View payment details"
+11. Under "Receipt history" click "View receipt"
+12. Copy the "permalink" at the bottom of pop out and paste it in a place to you can access later
+
+### Step 4 - Mark the invoice as paid
+
+1. Find the invoice from Step 1
+2. Mark the invoice as paid in [lvn.latchel.com](https://lvn.latchel.com/)
+
+### Step 5 - Communicate to the customer the payment is complete
+
+1. Find the customer's phone number from the work order related to the invoice from step 1
+2. Open up google voice
+3. Create a message to the customer with the following message. Each
+   - Confirmation: payment complete for (WO#) has been completed
+   - You can find a receipt for any charges rendered here: (stripe link)
+   - In a few moments, we'll send you the invoice submitted by your contractor
+   - Need help? You can submit a help request via your (partner\_name) dashboard at any time.
+   - Powered by Latchel
+4. Send the customer the pdf attachment from Step 1
+
+### Step 6 - Communicate to the vendor that the payment is complete
+
+1. Find the invoice from Step 1
+2. Find the vendor's email address by finding their account via the invoice from step 1
+3. Create an email to the vendor from the [lcdsupport@latchel.com](mailto:lcdsupport@latchel.com) freshdesk account
+4. Use the following template for content
+   Subject: Payment Processed: Invoice (invoice number)
+   Hi (job.vendor.name),
+   Invoice (invoice number) was successfully processed.
+   Payment should be deposited in your bank account within approximately one business day.
+   You can find a link to the transaction here: (stripe link from step 4)
+   And a link to the Latchel invoice here: (link to Latchel invoice from step 1)
+   Powered by Latchel
+   \*This is an auto-generated email. For inquiries, please request help from your Latchel dashboard or email us at [lcdsupport@latchel.com](mailto:lcdsupport@latchel.com)
+
+### Step 7 - Mark the job completed in Latchel
+
+1. Find the work order related to the invoice from step 1
+2. Mark the job complete in [lvn.latchel.com](https://lvn.latchel.com/)
+
+### Step 8 - Record everything in the payments tracker
+
+TBD
+
+[https://docs.google.com/spreadsheets/d/1E5-XETkugFTFkipA470LMrniHSJPS4hMLSs0EE9x6X8/edit#gid=0](https://docs.google.com/spreadsheets/d/1E5-XETkugFTFkipA470LMrniHSJPS4hMLSs0EE9x6X8/edit#gid=0)
+
+### Step 9 - Repeat
+
+1. Repeat steps 1-8 until no invoices remain that are in the "N/A" status
