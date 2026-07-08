@@ -29,7 +29,9 @@ These changes apply to the WO creation workflow for PMs and Latchel Admins on th
 
 ### PM User Experience
 
-See the overall demo for the [PM user experience here](https://www.loom.com/share/15eb328fb1054ac1b093d8acb74f4470).
+See the overall demo for the PM user experience here.
+
+<iframe src="https://www.loom.com/embed/15eb328fb1054ac1b093d8acb74f4470" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 - Click "Create Work Order" in the top right corner of the dashboard or /work-orders page.
 
@@ -167,10 +169,65 @@ This form consists of the following:
 
 The Ops user experience is exactly the same as the PM user experience, but just has one more option to find the property for the work order. As a result, this section will only focus on that one additional option.
 
-See the overall demo for the [Ops user experience here](https://www.loom.com/share/18bccc700112447f87e9cf4a1412dddc).
+See the overall demo for the Ops user experience here.
+
+<iframe src="https://www.loom.com/embed/18bccc700112447f87e9cf4a1412dddc" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 - Click "Create Work Order" in the top right corner of your Latchel homepage (/work-orders).
 
 <Frame>
   ![Create Work Order button on Latchel homepage](/images/Eng-204.png)
 </Frame>
+
+- You will have the following options to find the property for the work order that you are creating:
+
+<Frame>
+  ![Options to find the property, Ops view](/images/Eng-205.png)
+</Frame>
+
+- **Search by Resident Phone Number** - See PM User Experience above.
+- **Search by Property Address** - See PM User Experience above.
+- **Search by Property Management Company** - Select this option if you'd like to find the property by searching by the property management company.
+  - You will be prompted to search by a property management company.
+
+<Frame>
+  ![Search by property management company](/images/Eng-206.png)
+</Frame>
+
+- Once you type in a property management company in the search bar, you'll have a list of matches. Select the company that you're looking for.
+
+<Frame>
+  ![List of property management company matches](/images/Eng-207.png)
+</Frame>
+
+- Then you will be shown a list of properties that are part of the property management company that you've chosen. Search and choose the property that you want to create the work order for.
+
+<Frame>
+  ![List of properties under property management company](/images/Eng-208.png)
+</Frame>
+
+- You will be prompted with a duplicate check to ensure you're not creating a duplicate work order.
+- You will then be shown a list of residents associated with that property. You have the following options:
+  - **Choose a Resident** - Select the Resident that you want to assign as the primary contact for the work order.
+
+<Frame>
+  ![Choose a resident, Ops view](/images/Eng-209.png)
+</Frame>
+
+- **Mark Property as Vacant** - Select this option if you don't want to assign a primary contact for the work order or if the property is vacant. This means that the service provider does not have to communicate with a resident or work with them to determine an appointment time that works for them (i.e. they can set it to any time they want).
+
+<Frame>
+  ![Mark property as vacant, Ops view](/images/Eng-210.png)
+</Frame>
+
+- After identifying the property and resident/primary contact for the work order, you will be prompted to fill out Basic Details. See the PM user experience section above for those steps.
+
+## What Are Some Risks or Ways Things Could Go Wrong?
+
+One of the biggest changes that we are making with this deployment is the removal of choosing the PLC while creating a WO. While this does not impact PMs, there was a call out that Ops may have certain situations where they may need to create a WO to assign a PLC that doesn't exist in the diagnostic workflow (through the call center flow). However, our research showed that 4% of all WOs are being created through the internal web form by Latchel Ops/Admins. From there, 15.7% of those WOs did not get created with the diagnostic workflow (either by the admin in the wo creation workflow or by the resident during diagnosing issue). Then, 7.7% of those did have a PLC assigned to them. This is 0.04% of all WOs. I shared this list of WOs with Ops to validate if they actually could not be created through the diagnostic workflow in the call-center flow and they confirmed that they could have been.
+
+Since our data shows that we don't really need Latchel Ops/Admins to choose a PLC, we decided to move forward without supporting adding a PLC for P0. We will instead closely watch out for this after we deploy and make a decision on if we need to support the custom PLC functionality for Latchel Ops.
+
+## When Will This Change Be Effective?
+
+This feature will deploy on xx/xx.
