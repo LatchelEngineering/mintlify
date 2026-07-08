@@ -6,7 +6,9 @@ We capture data every time a user clicks a diagnostic flow "tile." This is a gen
 
 ## Video Summary
 
-[Capture data the diagnostic flow!](https://www.loom.com/share/813310a4b7724e149bc8e109259dd95e)
+Capture data the diagnostic flow!
+
+<iframe src="https://www.loom.com/embed/813310a4b7724e149bc8e109259dd95e" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 ## Highlights
 
@@ -34,21 +36,21 @@ If a job is created as a result of the diagnostic flow instance, the associated 
 The most recent outcome of the diagnostic flow instance
 
 1. **troubleshooting\_started**
-   1. This is the default/starting state of each diagnostic flow. This diagnostic outcome means that a user has **started** but **has not completed** a diagnostic flow.
-      1. Entry Condition: User selects at least **one** answer in a diagnostic flow.
-      2. Exit Condition: User selects the **final** answer in a diagnostic flow. (A final answer is considered one with an action of "create\_work\_order" or "success\_outcome.")
+   - This is the default/starting state of each diagnostic flow. This diagnostic outcome means that a user has **started** but **has not completed** a diagnostic flow.
+     - Entry Condition: User selects at least **one** answer in a diagnostic flow.
+     - Exit Condition: User selects the **final** answer in a diagnostic flow. (A final answer is considered one with an action of "create\_work\_order" or "success\_outcome.")
 2. **troubleshooting\_completed**
-   1. This diagnostic outcome means that a user has both started and completed a diagnostic flow.
-      1. Entry Condition: User selects the final answer in a diagnostic flow.
-      2. Exit Condition: User continues through the WO creation process (e.g. job details & job info) and successfully creates a WO.
+   - This diagnostic outcome means that a user has both started and completed a diagnostic flow.
+     - Entry Condition: User selects the final answer in a diagnostic flow.
+     - Exit Condition: User continues through the WO creation process (e.g. job details & job info) and successfully creates a WO.
 3. **troubleshooting\_resolved**
-   1. This diagnostic outcome means that a user has started and completed a diagnostic flow, but has not created a WO.
-      1. Entry Condition: User selects a final answer in a diagnostic flow with the action success\_outcome.
-      2. Exit Condition: N/A
+   - This diagnostic outcome means that a user has started and completed a diagnostic flow, but has not created a WO.
+     - Entry Condition: User selects a final answer in a diagnostic flow with the action success\_outcome.
+     - Exit Condition: N/A
 4. **wo\_created**
-   1. This diagnostic outcome means that a user has started and completed a diagnostic and has created a WO.
-      1. Entry Condition: User has successfully completed the WO creation process (diagnostic flow, job details, & job info).
-      2. Exit Condition: N/A
+   - This diagnostic outcome means that a user has started and completed a diagnostic and has created a WO.
+     - Entry Condition: User has successfully completed the WO creation process (diagnostic flow, job details, & job info).
+     - Exit Condition: N/A
 
 ### questions
 

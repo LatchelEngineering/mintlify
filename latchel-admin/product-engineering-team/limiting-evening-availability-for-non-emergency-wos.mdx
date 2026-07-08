@@ -28,46 +28,47 @@ PMs can choose to apply this to any property, portfolio, or their entire company
 
 ## How Is It Used?
 
-See demo of overall workflow [here](https://www.loom.com/share/1144db68f44c4d99bdf0711f0a74c03a).
+See demo of overall workflow here.
+
+<iframe src="https://www.loom.com/embed/1144db68f44c4d99bdf0711f0a74c03a" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 ### Disabling the Evening Window
 
 See demo [here](https://www.loom.com/share/68f4896db61c4759a2b908c1e650bf74).
 
-Latchel Users will be able to disable evening windows at the property, portfolio, or company level.
+<iframe src="https://www.loom.com/embed/68f4896db61c4759a2b908c1e650bf74" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
-Once the User decides on the level, they need to then go to the property, portfolio, or company page.
+- Latchel Users will be able to disable evening windows at the property, portfolio, or company level.
+- Once the User decides on the level, they need to then go to the property, portfolio, or company page.
+- In those pages at the bottom left is a header called "Non-Emergency Scheduling" and expand it.
+  <Frame>
+    ![Non-Emergency Scheduling header](/images/Eng-62.png)
+  </Frame>
+- There will be a toggle for "Disable Evening Time Slots". When the toggle is turned on (see screenshot below), it means that evening windows have been disabled for that property, portfolio, or company.
+  <Frame>
+    ![Disable Evening Time Slots toggle](/images/Eng-63.png)
+  </Frame>
 
-In those pages at the bottom left is a header called "Non-Emergency Scheduling" and expand it.
-
-<Frame>
-  ![Non-Emergency Scheduling header](/images/Eng-62.png)
-</Frame>
-
-There will be a toggle for "Disable Evening Time Slots". When the toggle is turned on (see screenshot below), it means that evening windows have been disabled for that property, portfolio, or company.
-
-<Frame>
-  ![Disable Evening Time Slots toggle](/images/Eng-63.png)
-</Frame>
-
-<Info>
+<Note>
   Please note that inheritance for this toggle will work as it does for everything else in Latchel today. So, for example, if you start with disabling evening time slots for the entire company, it'll apply it to all portfolios and properties in that company. If you'd like to allow some of those properties to schedule for evening windows, then you'll have to turn the toggle off for those specific properties.
-</Info>
+</Note>
 
 ### What Happens for Vacant Properties
 
-See demo [here](https://www.loom.com/share/7d6211f160444a8da21d63910316ba6b).
+See demo here.
 
-For properties that are marked as vacant and also have their evening windows disabled:
+<iframe src="https://www.loom.com/embed/7d6211f160444a8da21d63910316ba6b" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
-- Service Providers will be limited to setting the start time of their appointments to 4:00 PM and the end time of their appointments to 6:00 PM.
-- PMs and Admins will not be limited to disabling the evening windows. However, if they choose an appointment that starts past 4:00 PM and ends past 6:00 PM, they will be given a warning message (see below). PMs and Admins can choose to override this warning by pressing "Yes". Pressing "No" will take them back to allow them to change their times to something that is before the evening window.
+- For properties that are marked as vacant and also have their evening windows disabled:
+  - Service Providers will be limited to setting the start time of their appointments to 4:00 PM and the end time of their appointments to 6:00 PM.
+  - PMs and Admins will not be limited to disabling the evening windows. However, if they choose an appointment that starts past 4:00 PM and ends past 6:00 PM, they will be given a warning message (see below). PMs and Admins can choose to override this warning by pressing "Yes". Pressing "No" will take them back to allow them to change their times to something that is before the evening window.
+    <Frame>
+      ![Evening window override warning message](/images/Eng-64.png)
+    </Frame>
 
-<Frame>
-  ![Evening window override warning message](/images/Eng-64.png)
-</Frame>
-
-Please note that the warning message in the screenshot above is dynamic. It will inform the User at what level the evening window disability is taking place. In the screenshot above, it says that the Property has its evening windows disabled. However, if it were to be happening on the Portfolio or Company level, it will say that instead.
+<Note>
+  Please note that the warning message in the screenshot above is dynamic. It will inform the User at what level the evening window disability is taking place. In the screenshot above, it says that the Property has its evening windows disabled. However, if it were to be happening on the Portfolio or Company level, it will say that instead.
+</Note>
 
 ## What Are Some Risks or Ways Things Could Go Wrong?
 

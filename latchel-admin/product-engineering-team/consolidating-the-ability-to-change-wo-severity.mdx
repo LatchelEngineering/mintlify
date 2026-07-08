@@ -14,13 +14,13 @@ We have consolidated the ability to change a WO's severity within the Take Actio
 
 Previously, the ability to change the severity lived in two different places:
 
-- "Escalate to an Emergency" through Take Action Drop Down - This was also problematic because we would show this option even when the work order was already in Emergency severity.
+1. "Escalate to an Emergency" through Take Action Drop Down - This was also problematic because we would show this option even when the work order was already in Emergency severity.
 
 <Frame>
   ![Escalate to an Emergency option in Take Action drop down](/images/Eng-47.png)
 </Frame>
 
-- Severity Drop Down - While this drop down is more intuitive for the User, it did not contain any logic other than changing the severity label for the work order.
+2. Severity Drop Down - While this drop down is more intuitive for the User, it did not contain any logic other than changing the severity label for the work order.
 
 <Frame>
   ![Severity drop down](/images/Eng-48.png)
@@ -40,22 +40,24 @@ Any time Latchel Ops needs to change the severity of a work order.
 
 The "Change Severity" option is dynamic and only shows certain options based on the current severity of the work order. See demo in this [loom](https://www.loom.com/share/1144db68f44c4d99bdf0711f0a74c03a).
 
-When a work order is **Normal**, Latchel Ops will have the option to:
+1. When a work order is **Normal**, Latchel Ops will have the option to:
 
 - Escalate to an Emergency - This follows today's workflow for when Latchel Ops chooses "Escalate to Emergency" under the Take Action drop down.
 - Escalate to Urgent - This simply changes the severity label of the work order to Urgent.
 
-When a work order is **Urgent**, Latchel Ops will have the option to:
+2. When a work order is **Urgent**, Latchel Ops will have the option to:
 
 - Escalate to an Emergency - This follows today's workflow for when Latchel Ops chooses "Escalate to Emergency" under the Take Action drop down.
 - De-Escalate to Normal - This simply changes the severity label of the work order to Normal.
 
-When a work order is in **Emergency**, Latchel Ops will have the option to:
+3. When a work order is in **Emergency**, Latchel Ops will have the option to:
 
 - De-Escalate to Urgent - This simply changes the severity label of the work order to Urgent.
 - De-Escalate to Normal - This simply changes the severity label of the work order to Normal.
 
-Please note that Latchel Ops will not have the option to change severity until after a work order has been moved out of Troubleshooting.
+<Warning>
+  Please note that Latchel Ops will not have the option to change severity until after a work order has been moved out of Troubleshooting.
+</Warning>
 
 ## What Are Some Risks or Ways Things Could Go Wrong?
 
