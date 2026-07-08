@@ -1158,7 +1158,15 @@
               "latchel-admin/Product-Engineering/latchel-vendor-network-faqs",
               "latchel-admin/Product-Engineering/latchel-engineering-day-to-day-expectations",
               "latchel-admin/Product-Engineering/latchel-contractor-dispatch",
-              "latchel-admin/Product-Engineering/ssl-certificate-renewal"
+              "latchel-admin/Product-Engineering/ssl-certificate-renewal",
+              {
+                "group": "Roadmap",
+                "pages": [
+                  "latchel-admin/Product-Engineering/roadmap",
+                  "latchel-admin/Product-Engineering/2023-product-roadmap",
+                  "latchel-admin/Product-Engineering/2023-product-roadmap-q1-archive"
+                ]
+              }
             ]
           },
           {
