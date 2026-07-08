@@ -1126,7 +1126,12 @@
                   "latchel-admin/product-engineering-team/new-pm-dashboard",
                   "latchel-admin/product-engineering-team/wo-detail-page-2-0",
                   "latchel-admin/product-engineering-team/customizable-quick-view",
-                  "latchel-admin/product-engineering-team/service-provider-schedules"
+                  "latchel-admin/product-engineering-team/service-provider-schedules",
+                  "latchel-admin/product-engineering-team/work-order-transcripts",
+                  "latchel-admin/product-engineering-team/pm-impersonation",
+                  "latchel-admin/product-engineering-team/changing-severity",
+                  "latchel-admin/product-engineering-team/updated-sms-tagging-designs-for-ops",
+                  "latchel-admin/product-engineering-team/pm-and-admin-work-order-creation-updates"
                 ]
               }
             ]
