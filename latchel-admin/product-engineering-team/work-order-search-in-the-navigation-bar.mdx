@@ -1,0 +1,103 @@
+---
+title: "Work order search in the navigation bar"
+---
+
+## What is the Product Release?
+
+All users can now search for work orders from a search tool in the navigation bar! This makes our users most common search pattern accessible from every page in Latchel.
+
+<Frame>
+  ![Work order search tool in navigation bar](/images/Eng-211.png)
+</Frame>
+
+## What was the Previous State?
+
+Previously users could only search for work orders from the /work-orders or /dashboard pages directly.
+
+## Who Is Impacted?
+
+The following groups are impacted:
+
+- PMs
+- Latchel Admins/Ops
+- Service Providers
+
+## When Is It Relevant?
+
+These changes apply when a user wants to find a particular work order they are looking for.
+
+## How Is It Used?
+
+### PM User Experience
+
+See the overall demo for the PM user experience here.
+
+#### Features
+
+##### Which work order fields can I search for?
+
+You can search for the same fields as you can in the existing search tools! As a reminder they are:
+
+- Work order name
+- Work order number
+- Property management company name
+- Resident name
+- Service provider name
+- Service provider company name
+- Property address associated with the work order
+
+##### Suggestion List
+
+Click in to the "Search work orders" field to open up the suggestion list. By default, the five most recently updated work orders will be shown. As you type in your search criteria the list will update with potential matches.
+
+<Frame>
+  ![Suggestion list for work order search](/images/Eng-212.png)
+</Frame>
+
+##### Direct link to work order
+
+Clicking on a particular WO suggestion will take you directly to that work order's detail page (e.g. [https://app.latchel.com/admin/work-order/GyDCr](https://app.latchel.com/admin/work-order/GyDCr))
+
+<Frame>
+  ![Direct link to work order detail page](/images/Eng-213.png)
+</Frame>
+
+##### Seeing all search results
+
+If you don't see your work order in the suggestion list, you can click "See all results" to view all matching results on the Work Orders page (e.g. [https://app.latchel.com/admin/work-orders](https://app.latchel.com/admin/work-orders))
+
+<Frame>
+  ![See all results link](/images/Eng-214.png)
+</Frame>
+
+##### Mobile experience
+
+The experience works similarly on a mobile device. Users can trigger the search experience by clicking on the magnifying glass icon in the navigation bar. This will open a full width menu for searching work orders.
+
+<Frame>
+  ![Mobile search experience, magnifying glass icon](/images/Eng-215.png)
+</Frame>
+
+<Frame>
+  ![Mobile search full width menu](/images/Eng-216.png)
+</Frame>
+
+### Service Operations User Experience
+
+The svc ops user experience is nearly identical to the PMs experience!
+
+### Service Provider User Experience
+
+This feature is only available to service providers who are logged-in to their Latchel dashboard. It is not available on the "public" service provider dashboard.
+
+<Frame>
+  ![Service provider search experience](/images/Eng-217.png)
+</Frame>
+
+## What Are Some Risks or Ways Things Could Go Wrong?
+
+Customers might get confused over which search tool to use for finding work orders. Users might try to search for more than just work orders from the search tool in the navigation.
+
+## When Will This Change Be Effective?
+
+This feature will deploy on 10/11.

@@ -1131,7 +1131,12 @@
                   "latchel-admin/product-engineering-team/pm-impersonation",
                   "latchel-admin/product-engineering-team/changing-severity",
                   "latchel-admin/product-engineering-team/updated-sms-tagging-designs-for-ops",
-                  "latchel-admin/product-engineering-team/pm-and-admin-work-order-creation-updates"
+                  "latchel-admin/product-engineering-team/pm-and-admin-work-order-creation-updates",
+                  "latchel-admin/product-engineering-team/work-order-search-in-the-navigation-bar",
+                  "latchel-admin/product-engineering-team/bid-requests",
+                  "latchel-admin/product-engineering-team/messaging-ui-redesign",
+                  "latchel-admin/product-engineering-team/message-resident-and-service-provider-on-work-order",
+                  "latchel-admin/product-engineering-team/color-coded-work-order-states"
                 ]
               }
             ]

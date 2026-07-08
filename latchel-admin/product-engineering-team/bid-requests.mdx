@@ -1,0 +1,159 @@
+---
+title: "Bid Requests"
+---
+
+## What is the Product Release?
+
+Property Managers can now ask multiple Service Providers to provide estimates for a (typically large) job request. This helps them feel confident that they are choosing the best Service Provider and price for the job. They will also be able to track these requests in a batched view.
+
+## What was the Previous State?
+
+Prior to this release, the process for asking for bids was very cumbersome and manual. They'd have to create individual WOs for each Service Provider they wanted to ask for a bid, manually assign them, and then ask each Service Provider to look for the "Add an Estimate" option within their public dashboard to submit their bid. The PM would also have to keep track of all the individual WOs so that they could compare the estimates to each other. This process is so cumbersome so many PMs just collected bids through email (outside of Latchel).
+
+## Who Is Impacted?
+
+The following groups are impacted:
+
+- **PMs** - PMs will be the only user group to be able to create bids and see the new Bid Requests page.
+- **Latchel Admins/Ops** - Latchel Admins/Ops will only see the individual bid request WOs. These WOs will be marked with \[Bid Request\] in the title and just go through the normal WO flow as normal severity WOs. If a PM needs help with their bid request page or creating a bid, Latchel Admins can see what they are seeing through impersonation.
+
+## When Is It Relevant?
+
+This feature is relevant for when a PM wants to ask one or more Service Providers for a bid request for a single job. They will also have the ability to track and manage the individual requests within a bid request after they've been sent out.
+
+## How Is It Used?
+
+See [overall demo here](https://www.loom.com/share/2886a381dabe4da28b200d4320ee4b32).
+
+### Creating a Bid
+
+- Click on the "Maintenance" drop down in the Latchel header. Choose "Bid Requests" (see orange arrow in the screenshot below).
+
+<Frame>
+  ![Maintenance dropdown, Bid Requests option](/images/Eng-218.png)
+</Frame>
+
+- Click the "Create Bid Request" button in the top right corner of the page. It's important to note that bids can only be created on the Bid Requests page.
+
+<Frame>
+  ![Create Bid Request button](/images/Eng-219.png)
+</Frame>
+
+- Go through the workflow for creating a bid request. Note that this is mostly the same as creating a WO except for a new step to assign Service Providers at the end.
+  - **Assign a Property and Resident** - Assign a property for the bid request by searching by Resident phone number or the property address. You will also have the option to assign a primary resident or mark the property as vacant.
+
+<Frame>
+  ![Assign a property and resident](/images/Eng-220.png)
+</Frame>
+
+- **Basic Details** - Fill out the following Basic Details. These details will be shown to every Service Provider who is asked to submit a bid.
+
+<Frame>
+  ![Basic Details form for bid request](/images/Eng-221.png)
+</Frame>
+
+- **Assign a Service Provider(s)** - This part of the workflow allows you to choose one or more Service Providers you want to request a bid from.
+
+<Frame>
+  ![Assign Service Provider(s) step](/images/Eng-222.png)
+</Frame>
+
+- The pre-populated list will be a list of all the your Preferred Service Providers that are assigned to the skill that you chose in the previous Basic Details step.
+- If you'd like to search for another one of your Preferred Service Providers who is not assigned to the skill you've chosen, you can do so through the search bar.
+
+<Frame>
+  ![Search for another Preferred Service Provider](/images/Eng-223.png)
+</Frame>
+
+- Once you've chosen all your Service Providers, press "Review Bid Request" at the top right corner.
+- You will then be taken to a screen to review all your choices from the workflow. The top square will list out the SP companies that you've chosen to send a bid request to.
+
+<Frame>
+  ![Review Bid Request screen](/images/Eng-224.png)
+</Frame>
+
+- Please note that this screen is read only and if you'd like to change anything, click through the navigation in the left pane of the screen (see orange box in the screenshot below).
+
+<Frame>
+  ![Left navigation pane on Review Bid Request screen](/images/Eng-225.png)
+</Frame>
+
+- Once you're good with all your choices on the Review Bid Request screen, scroll to the bottom and click "Submit Bid Request". This will then take you to the overall bid request page that you just created.
+- An overall bid request consists of individual work orders assigned to each of the Service Providers that have been chosen to provide the bids. So in example within this section, we've chosen Brandon Wisoky from Lesch Ltd and Dr. Nels Batz from Koepp Ltd to provide us a bid for the potential job of installing new kitchen appliances. The system will then create two separate WOs within an overall installing new kitchen appliances bid request where one is assigned to Brandon Wisoky from Lesch Ltd and the other is assigned to Dr. Nels Batz from Koepp Ltd. This allows each Service Provider to have his own WO to schedule his appointment, track, and send in his bid to you. In addition, once you accept one of the bids, you can continue the work and track it on the same work order.
+
+### Managing Your Bid Requests
+
+This section shows you how to access your bid request and track the status of each service provider who has been chosen to provide a bid. See overall demo here.
+
+- Click on the "Maintenance" drop down in the Latchel header. Choose "Bid Requests" (see orange arrow in the screenshot below).
+
+<Frame>
+  ![Maintenance dropdown, Bid Requests option](/images/Eng-226.png)
+</Frame>
+
+- You will then be taken to the bid request page that lists out all the bid requests that have been created. To see each bid request in detail, click on the bid request number.
+
+<Frame>
+  ![Bid requests list page](/images/Eng-227.png)
+</Frame>
+
+- Once you click on the bid request, you will see the bid request details on default.
+
+<Frame>
+  ![Bid request details view](/images/Eng-228.png)
+</Frame>
+
+- Click on "Work Orders" within the navigation pane on the left of the page to see all the individual WOs that are part of the bid request. You can use this view to check the progress of each WO and compare them to each other. This will be helpful to see if the service providers have scheduled their appointments to collect their estimates and provided their estimates.
+
+<Frame>
+  ![Work Orders tab within bid request](/images/Eng-229.png)
+</Frame>
+
+- Click on the work order number to see each individual work order in detail.
+- Click on "Files" within the navigation pane on the left of the page to see all the files that are attached to each of the work orders.
+
+<Frame>
+  ![Files tab within bid request](/images/Eng-230.png)
+</Frame>
+
+### Bid Request Work Order Lifecycle
+
+See overall demo here.
+
+<Frame>
+  ![Bid request work order lifecycle diagram](/images/Eng-231.png)
+</Frame>
+
+Once a bid request is created, individual work orders are created and assigned to each of the Service Providers that have been chosen to provide a bid. While each of these work orders will be grouped as part of the overall bid request, they will individually go through the following lifecycle:
+
+- **Scheduling** - Depending on what information is available, each WO will go through different states to schedule an appointment for collecting the bid. These states can be:
+  - **Scheduling with Resident** - If the Resident has not provided any availability within Latchel.
+  - **Scheduling with Service Provider** - This state requires the Service Provider to choose a time that works for them based on the Resident's availability.
+- **Awaiting Work Date** - Once the Service Provider has scheduled the appointment time for providing a bid, the WO will go into awaiting work date.
+- **Awaiting Estimate** - This is a NEW state that only applies to WOs that are part of an overall bid request. Once the scheduled appointment time has past for a WO that's part of an overall bid request, the WO will automatically convert to this new "Awaiting Estimate" state. This indicates that we are waiting on the Service Provider to provide an estimate.
+- **Needs Approval** - Once the Service Provider has submitted their estimate, the WO will go into Needs Approval for a PM to approve or deny. PMs are welcome to wait for the other WOs to go into "Needs Approval" state before making a final decision.
+
+As a PM receives WOs in the "Needs Approval" state, he/she can choose to:
+
+- **Deny** - Denying an estimate for an individual WO within a bid request will only impact that WO and move it to "Awaiting Invoice" state. The reason for it going into this state is so that the Service Provider can be paid for the time/work done to create the bid (if applicable).
+- **Approve** - Approving an estimate for an individual WO within a bid request does the following:
+  - Moves that specific WO into scheduling so that the Service Provider can then schedule the work date to do the actual work for his/her approved bid.
+  - Automatically denies or cancels the other WOs in that bid request. The action depends on what state the other WOs in the bid request are at. If the other WOs in the bid request are in the following states, there will be an automated action on them when a WO within the bid request is approved:
+    - **Scheduling with Resident or Scheduling with Service Provider** - The WO will be cancelled.
+    - **Awaiting Work Date** - The WO will be cancelled.
+    - **Awaiting Estimate** - The WO will be moved to Awaiting Invoice so that the Service Provider can be paid for the time/work done to create the bid (if applicable).
+    - **Needs Approval** - The estimate on this WO will be automatically denied and moved to Awaiting Invoice. There will be a log item specifying that the estimate was denied due to another WO within the bid request being approved.
+
+<Frame>
+  ![Estimate automatically denied log entry](/images/Eng-232.png)
+</Frame>
+
+## What Are Some Risks or Ways Things Could Go Wrong?
+
+Because we kept the "Awaiting Work Date" state name the same, Service Providers could potentially miss that the WO is a request for a bid and instead end up doing the actual work. The way that we've tried to mitigate this was by putting \[Bid Request\] in the WO title and making the main action for these WOs to "Add an Estimate". As a result, we find that the risk is pretty minimal.
+
+Note that this is definitely a P0 version of bid requests and we anticipate that we'll continually add features and iterate to support more use cases.
+
+## When Will This Change Be Effective?
+
+We will deploy this feature on 10/31. We will send out comms to PMs by 10/27 and SPs by 10/30.
