@@ -1,0 +1,65 @@
+---
+title: "How to: Generate a Transaction by detail report"
+---
+
+<Note>
+The purpose of this document is to be a guide for generating a Transaction by detail report in Buildium for the Tracker process.
+</Note>
+
+<Check>
+**<u>Every last day of the month</u>**, after the [**Weekly review**](https://latchel.atlassian.net/wiki/spaces/AL/pages/2645360650/Weekly+review+of+Property+Managers) of each Property Manager, you need to download the **Transaction by detail report** to do the [**GL Code Deep Dive Reporting**](https://latchel.atlassian.net/wiki/spaces/AL/pages/2852651110/How+to+do+the+GL+Code+Deep+Dive+Reporting)**,** to detect any issues related to the GL Code charge.
+</Check>
+
+## Step-by-step guide
+
+### **Step 1 - Configure and generate the cash-basis transaction report**
+
+a.** Trigger:** This report should be run on the **last day of each month**, after the final weekly review for that PM is complete.
+
+b. Log in to the PM's Buildium account and navigate to **Reports**.
+
+<Frame>
+  <img src="/images/CPT-161.jpg" alt="" />
+</Frame>
+
+c. Find and select the **"Transaction details by Account"** report.
+
+d. In the configuration options, apply the following settings **exactly**:
+
+- `Account(s)`: Select the specific **Latchel GL Account name** (e.g., "Resident Benefits").
+- `Date Range`: **Custom**
+- `From`: The customer's **service start date**.
+- `To`: The **last day of the current month**.
+- `Accounting Basis`: **Cash**. (This is the most critical setting for this report).
+
+e. Click **"Run Report"**.
+
+<Frame>
+  <img src="/images/CPT-162.jpg" alt="" />
+</Frame>
+
+### **Step 2 - Export the report in the correct format for review**
+
+a. After the report preview loads, click the **"Export"** button.
+
+b. Select **PDF - Portrait** from the options to download the report. Note that this is different from the usual Excel format.
+
+<Frame>
+  <img src="/images/CPT-163.jpg" alt="" />
+</Frame>
+
+### **Step 3 - Begin the deep dive analysis of the report**
+
+a. Open the downloaded PDF.
+
+b. Scan the report to identify all residents who have a Latchel GL code charge.
+
+c. Use the **"Date"** column to verify if a payment was made within the period you are investigating.
+
+<Warning>
+**Important:** A single resident may appear multiple times in the report (e.g., a charge and a payment). Your goal is to find a payment entry that corresponds to the charge for a specific month.
+</Warning>
+
+<Frame>
+  <img src="/images/CPT-164.jpg" alt="" />
+</Frame>
