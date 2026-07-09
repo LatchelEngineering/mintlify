@@ -1429,14 +1429,14 @@
                         "pages": [
                           "latchel-admin/cpt/appfolio",
                           "latchel-admin/cpt/how-to-do-the-weekly-review-for-assisted-ledgering-appfolio",
-                          "latchel-admin/cpt/checking-leases-and-addendums-in-appfolio",
-                          "latchel-admin/cpt/checking-gl-codes-in-appfolio",
                           "latchel-admin/cpt/how-to-generate-a-rent-roll-report-in-appfolio",
-                          "latchel-admin/cpt/how-to-conduct-a-property-by-property-review-for-assisted-ledgering-appfolio",
-                          "latchel-admin/cpt/how-to-create-an-assisted-ledgering-tab-appfolio-customers",
+                          "latchel-admin/cpt/checking-gl-codes-in-appfolio",
+                          "latchel-admin/cpt/checking-leases-and-addendums-in-appfolio",
                           "latchel-admin/cpt/identifying-property-types-in-appfolio",
                           "latchel-admin/cpt/scheduling-reports-in-appfolio",
-                          "latchel-admin/cpt/how-to-do-a-gl-code-deep-dive-in-appfolio"
+                          "latchel-admin/cpt/how-to-do-a-gl-code-deep-dive-in-appfolio",
+                          "latchel-admin/cpt/how-to-conduct-a-property-by-property-review-for-assisted-ledgering-appfolio",
+                          "latchel-admin/cpt/how-to-create-an-assisted-ledgering-tab-appfolio-customers"
                         ]
                       }
                     ]
