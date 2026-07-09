@@ -1402,6 +1402,7 @@
               {
                 "group": "Training Hub",
                 "pages": [
+                  "latchel-admin/cpt/training-hub",
                   "latchel-admin/cpt/onboarding-and-fundamentals",
                   "latchel-admin/cpt/cpt-tracker",
                   "latchel-admin/cpt/benefits-cpt-tracker",
@@ -1410,6 +1411,21 @@
                   "latchel-admin/cpt/cpt-tasks",
                   "latchel-admin/cpt/other-resources",
                   "latchel-admin/cpt/resident-benefits-program-support-services"
+                ]
+              },
+              {
+                "group": "Assisted Ledgering Contract",
+                "pages": [
+                  "latchel-admin/cpt/assisted-ledgering-contract",
+                  "latchel-admin/cpt/assisted-ledgering-glossary",
+                  {
+                    "group": "Assisted Ledgering",
+                    "pages": [
+                      "latchel-admin/cpt/assisted-ledgering",
+                      "latchel-admin/cpt/generating-rent-roll-reports",
+                      "latchel-admin/cpt/generating-gl-reports"
+                    ]
+                  }
                 ]
               }
             ]
