@@ -1,0 +1,81 @@
+---
+title: "Additional resources: Understanding the General Ledger Report"
+---
+
+<Note>
+The purpose of this document is to provide the information required to understand the General Ledger report, what it displays and how to identify the data we need.
+</Note>
+
+### **Step 1 - Confirm the report's scope and identify key columns**
+
+a. Open the downloaded General Ledger report.
+
+The General Ledger Report (GL Report) needs to be sent to our Finance department the last day of each month, therefore the** date range** selected needs to be from the 1st of the month, to the last day of the previous month.
+
+<Frame>
+  <img src="/images/CPT-302.png" alt="20.png" />
+</Frame>
+
+b. First, confirm the report covers the correct date range, which should be from the **1st of the month** to the **last day of the month.**
+
+c. Identify the key columns you will be working with:
+
+- `Description`: Contains property/tenant details.
+- `Credit`: Contains the **income** charges we need to count.
+- `Debit`: Contains the **expense** charges we need to ignore.
+
+<Frame>
+  <img src="/images/CPT-303.png" alt="41.png" />
+</Frame>
+
+<Warning>
+In the report there will be other charges listed as **(expense)**, that are usually reflected in the **debit** column, and that do not have a tenant’s name. We will <u>not </u>include these charges in our monthly record.
+</Warning>
+
+<Frame>
+  <img src="/images/CPT-304.png" alt="50.png" />
+</Frame>
+
+### **Step 2 - Filter out irrelevant data to isolate income charges**
+
+a. Focus **only** on transactions listed as `(income)`.
+
+b. These are the charges you will count, and they are typically found in the **Credit** column.
+
+c. **Ignore** all transactions listed as `(expense)`.
+
+d. These are usually found in the **Debit** column and often do not have a tenant's name attached. These should **not** be included in your final count.
+
+<Frame>
+  <img src="/images/CPT-305.png" alt="42.png" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-306.png" alt="" />
+</Frame>
+
+When the total of tenants with the Latchel charge is not included, the count will have to be manual.
+
+## How to manually calculate the GL codes total.
+
+### **Step 1 - Calculate the total count of billable GL codes**
+
+a. First, check the very end of the report. Some reports will provide a total count of tenants who have the Latchel charge. If so, your work is done.
+
+b. If no total count is provided, you must calculate it manually using one of the following two methods:
+
+- **Method A (The "Easy Path"): If all income charges are for the same amount (e.g., $20):** Divide the total sum from the `Credit` column by the standard charge amount.
+
+_Example: `$4,140 (Total Credit) / $20 (Standard Charge) = 207 total GL codes._
+
+- **Method B (The "Manual Count"): If the income charges have varying amounts:**
+
+You must manually count each individual `(income)` / `Credit` line item one by one to get the accurate total.
+
+<Frame>
+  <img src="/images/CPT-307.png" alt="" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-308.png" alt="" />
+</Frame>
