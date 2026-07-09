@@ -1075,20 +1075,20 @@
               {
                 "group": "Latchel Integrations Wiki",
                 "pages": [
-                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/latchel-integrations-wiki",
-                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/propertyware-reference-guide",
-                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/rent-manager-reference-guide",
-                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/yardi-reference-guide",
+                  "latchel-admin/Product-Engineering/latchel-integrations-wiki/latchel-integrations-wiki",
+                  "latchel-admin/Product-Engineering/latchel-integrations-wiki/propertyware-reference-guide",
+                  "latchel-admin/Product-Engineering/latchel-integrations-wiki/rent-manager-reference-guide",
+                  "latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide",
                   {
                     "group": "Appfolio Reference Guide (The Latchel Data Sync)",
                     "pages": [
-                      "latchel-admin/product-engineering-team/appfolio-reference-guide-the-latchel-data-sync",
-                      "latchel-admin/product-engineering-team/failed-work-order-syncs",
-                      "latchel-admin/product-engineering-team/communication-guidelines-appfolio-plugin-sync"
+                      "latchel-admin/Product-Engineering/appfolio-reference-guide-the-latchel-data-sync",
+                      "latchel-admin/Product-Engineering/failed-work-order-syncs",
+                      "latchel-admin/Product-Engineering/communication-guidelines-appfolio-plugin-sync"
                     ]
                   },
-                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/buildium-reference-guide",
-                  "latchel-admin/product-engineering-team/latchel-integrations-wiki/rentvine-reference-guide"
+                  "latchel-admin/Product-Engineering/latchel-integrations-wiki/buildium-reference-guide",
+                  "latchel-admin/Product-Engineering/latchel-integrations-wiki/rentvine-reference-guide"
                 ]
               },
               {
