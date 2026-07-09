@@ -1466,7 +1466,16 @@
                       },
                       {
                         "group": "Rent Manager",
-                        "pages": []
+                        "pages": [
+                          "latchel-admin/cpt/rent-manager",
+                          "latchel-admin/cpt/how-to-do-the-weekly-review-for-assisted-ledgering-rent-manager",
+                          "latchel-admin/cpt/how-to-generate-a-rent-roll-report-in-rent-manager",
+                          "latchel-admin/cpt/how-to-generate-a-general-ledger-report-in-rent-manager",
+                          "latchel-admin/cpt/scheduling-reports-in-rent-manager",
+                          "latchel-admin/cpt/identifying-types-of-reports-in-rent-manager",
+                          "latchel-admin/cpt/additional-resources-understanding-the-general-ledger-report",
+                          "latchel-admin/cpt/additional-resources-user-roles-section"
+                        ]
                       },
                       {
                         "group": "RentVine",
