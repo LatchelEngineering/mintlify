@@ -1,0 +1,131 @@
+---
+title: "How to: Do a GL code Deep Dive in Appfolio"
+---
+
+<Note>
+The purpose of this article is to provide a guide on how to identify the paid and unpaid GL codes of a resident in Appfolio. You will find here the instructions on how to read the tenant’s ledger, to do a GL code deep dive and identify the different scenarios for a GL code charge. The goal of this "deep dive" is to perform a detailed audit of a tenant's ledger to determine the actual payment status (paid or unpaid) of every Latchel GL code charge.
+</Note>
+
+## Step by step
+
+### **Step 1 - Gather preliminary data from the tenant's profile**
+
+a. Log in to the specific Property Manager's Appfolio account.
+
+b. Use the search bar to find the tenant you will be reviewing.
+
+c. On the tenant's profile, scroll down to the **"Recurring Charges"** section.
+
+d. Find the Latchel GL code and note the date it was added. This date serves as a starting clue for your investigation in the ledger.
+
+<Frame>
+  <img src="/images/CPT-109.png" alt="" />
+</Frame>
+
+### **Step 2 - Access the tenant's detailed transaction ledger**
+
+a. Scroll back to the top of the tenant's profile page.
+
+b. Click on the hyperlinked **"Current Balance"** amount. This will open the tenant's complete transaction ledger in a new tab.
+
+<Frame>
+  <img src="/images/CPT-110.png" alt="" />
+</Frame>
+
+### **Step 3 - Audit each Latchel charge to determine its payment status**
+
+a. In the tenant ledger, charges are listed chronologically (oldest at the top). Use the date you found in Step 1 as a guide to locate the approximate first charge.
+
+<Check>
+The date in the recurring charges profile is not always accurate. You must manually scan the entire ledger to ensure no earlier charges are missed.
+</Check>
+
+<Frame>
+  <img src="/images/CPT-111.png" alt="" />
+</Frame>
+
+b. Once you identify a Latchel charge, click on the **charge amount** to open the "Tenant charge" detail window.
+
+<Frame>
+  <img src="/images/CPT-112.png" alt="" />
+</Frame>
+
+c. Inside this window, determine the status of the charge (e.g., "Paid," "Open," "Unpaid"). This tells you if the resident actually paid for that specific month.
+
+<Frame>
+  <img src="/images/CPT-113.png" alt="" />
+</Frame>
+
+d. Repeat this process for **every Latchel GL code charge** found in the ledger, from the oldest to the most recent, to build a complete payment history.
+
+<Frame>
+  <img src="/images/CPT-114.png" alt="" />
+</Frame>
+
+## Different scenarios found for the Tenant Charge
+
+<Accordion title="GL code monthly charge paid in the right period">
+When the **Tenant Charge** tab opens up, there are 2 items you need to check.
+
+1. If the GL code has been completely paid for that month, you will see a legend saying **“Paid in full” **in the Amount Paid .
+2. You will find the payment date in the **Paid by **section. Here you will be able to confirm if the GL code was paid in the same period that it was charged.
+
+Keep in mind that the period goes from the 1st of the month, to the last day of the month.
+
+Example: <u>April’s period</u> goes from April 1st, to April 30th. 
+Therefore the GL code should be paid within these days to be considered as paid in the right period.
+
+<Frame>
+  <img src="/images/CPT-115.png" alt="" />
+</Frame>
+
+You may encounter a scenario where there is more than 1 payment in the “Paid By” section, however, if all the payments fall in the same period, this is considered a full paid month, in the right period.
+
+<Frame>
+  <img src="/images/CPT-116.png" alt="" />
+</Frame>
+
+</Accordion>
+
+<Accordion title="GL code monthly charge currently not paid">
+If the GL code has not been paid, you will see <u>$0.00</u> in the Amount paid, and the “Paid By” section will not show.
+
+In this example, you can see that the charge for September has not been paid.
+
+<Frame>
+  <img src="/images/CPT-117.png" alt="" />
+</Frame>
+
+</Accordion>
+
+<Accordion title="GL code monthly charge paid in another period">
+In this scenario, you will see the “Paid in full” legend as well, which means the GL code has been paid, however in the “Paid By” section you will see that the date corresponds to another period.
+
+In the image, you can see that September’s charge was paid in October’s period.
+
+<Frame>
+  <img src="/images/CPT-118.png" alt="" />
+</Frame>
+
+</Accordion>
+
+<Accordion title="GL code monthly charge partially paid">
+If the GL code has been partially paid, in the **Amount Paid** section you will see the amount of the partial payment the tenant made.
+
+<Frame>
+  <img src="/images/CPT-119.png" alt="" />
+</Frame>
+
+The partial payment can be made either in the right period, or in another period. If the payment is made in another period this will be noted in the [Findings Tracker](https://docs.google.com/spreadsheets/d/1lwV1V3kYmiTB6n0DtjxKjV15IDOYJCEv2ChJyXwG1lU/edit#gid=1647621856) as a separate issue, besides the partial payment.
+</Accordion>
+
+<Accordion title="GL code monthly charge paid in 2 different periods">
+Sometimes the month’s charge shows as fully paid, however in the **Paid By** section you can see that part of the charge was paid in the right period, but the rest was paid in another period.
+
+In this example, you can see that September’s charge was partially paid in September’s period, but the rest was paid in October’s period.
+
+<Frame>
+  <img src="/images/CPT-120.png" alt="99.png" />
+</Frame>
+
+</Accordion>

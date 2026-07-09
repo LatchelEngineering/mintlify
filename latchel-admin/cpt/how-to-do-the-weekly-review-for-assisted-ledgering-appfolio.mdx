@@ -1,0 +1,381 @@
+---
+title: "How to do the Weekly Review for Assisted Ledgering (Appfolio)"
+---
+
+<Note>
+The objective of this SOP is to ensure accurate tracking of properties with GL codes through weekly reviews, identify any newly added or vacant properties, and maintain a record of GL codes that are paid, unpaid, or partially paid.
+</Note>
+
+<Warning>
+In **Assisted Ledgering**, **once their contract reaches the 12-month period, it will end**; you should stop doing their review. <u>Make sure to check regularly the </u>**<u>service start date</u>**<u> for your PMs assigned to Assisted Ledgering</u>.
+</Warning>
+
+## Step by step
+
+### **Step 1: How to Generate Rent Roll in the PMS**
+
+a. Log in to the Property Management Software (PMS) – AppFolio.
+
+b. Navigate to the top menu and click on **Reporting**.
+
+c. Select **Reports** from the dropdown menu.
+
+d. Click on **Rent Roll (Itemized)** to open the report.
+
+<Frame>
+  <img src="/images/CPT-30.png" alt="" />
+</Frame>
+
+### **Step 2: Filter and Update the Rent Roll Report**
+
+a. Search for the GL Code
+
+b. You can find the GL code for the Property Manager (PM) in the [**<u>CPT Tracker</u>**](https://docs.google.com/spreadsheets/d/1bQ45AVpZG5-ONwnSLFlJP8M5GCl7J__VczN1rfeCFQI/edit?gid=0#gid=0), under the
+
+**Overview Details** tab.
+
+c. Set the Filters
+
+d.** Units:** Select **"Show Active Units"**
+
+e.** As of Date:** Enter the date of your review
+
+f. Click** "Update"** to generate the filtered report.
+
+<Frame>
+  <img src="/images/CPT-31.png" alt="" />
+</Frame>
+
+### **Step 3: Customize and Export the Rent Roll Report**
+
+a. Click on Customize Columns and ensure the following fields are selected:
+
+- _Unit _
+- _Status_
+- _Property Address_
+- _Tenant_
+- _Lease From_
+- _Lease To_
+- _Eligible For Rent Increase_
+- _Move-in_
+- _Move-out_
+
+b. Once customized, go to Actions and click Export as CSV.
+
+<Check>
+**Note: **_Always verify the unit count before proceeding to ensure accuracy._
+</Check>
+
+<Frame>
+  <img src="/images/CPT-32.png" alt="" />
+</Frame>
+
+### **Step 4: Set Up the Spreadsheet**
+
+a. Open a new spreadsheet (Google Sheets)
+
+b. Click the blank cell in the upper-left corner (between Column A and Row 1) to select the entire sheet.
+
+c. Click the Filter icon (or go to Data > Create a Filter) to enable filters for all columns.
+
+<Frame>
+  <img src="/images/CPT-33.png" alt="" />
+</Frame>
+
+### **Step 5: Import the Exported Rent Roll File**
+
+a. In your new spreadsheet, go to **File > Import**.
+
+b. Click the **Upload** tab.
+
+c. Click **Browse** and select the **CSV file** you exported from PMS.
+
+d. When prompted, choose **"Replace data at selected cell"**.
+
+e. Click **Import data** to load the data into your spreadsheet.
+
+<Frame>
+  <img src="/images/CPT-34.png" alt="" />
+</Frame>
+
+f.** **Move **Column A (Unit) to Column C** to match the required format.
+
+<Frame>
+  <img src="/images/CPT-35.png" alt="" />
+</Frame>
+
+### **Step 6: Sort and Verify the Data**
+
+a. Click the Filter icon on the column headers.
+
+b. Sort the data A to Z to organize the properties.
+
+<Check>
+**Note:**_ If the report contains more than 300 properties, click Column B, right-click, and select "Sort sheet A to Z". _
+</Check>
+
+<Frame>
+  <img src="/images/CPT-36.png" alt="" />
+</Frame>
+
+c. Verify that the unit counts match the PMS report for accuracy.
+
+### **Step 7: Paste Data into the CPT Tracker**
+
+a. In the current Rent Roll sheet, copy **Columns A to J starting from Row 2 (A1 to J1)** down to the last row, ensuring the number of properties matches the count in the PMS report.
+
+b. Open the CPT Tracker and go to the tab of the PM you are reviewing.
+Paste the copied data into the sheet starting at** Column AI to AR, using CTRL + SHIFT + V** to paste without formatting.
+
+<Check>
+**Note: **_After pasting, please avoid clicking elsewhere. Scroll down to the bottom of the last property to verify that the unit counts match the PMS report._
+</Check>
+
+<Frame>
+  <img src="/images/CPT-37.png" alt="" />
+</Frame>
+
+<Warning>
+**     Impo**_**rtant:**_
+
+_Before deleting the address, if a property was removed by the Property Management from the PMS report you just pasted, please take a screenshot and save it for reference and count it to report it in the Billing inputs doc at the end of the month. To restore the formula, click on Columns M to Q (do not drag your mouse across the sheet)._
+</Warning>
+
+<Check>
+**Note: **_Do not manually drag down; just select the full columns._
+</Check>
+
+### **Step 8: Compare Current and Previous Reports**
+
+a. Focus on Columns **M to Q** (with "NO") to identify the properties that need to be changed.
+
+b. Compare the data with the newly pasted PMS report.
+
+<Frame>
+  <img src="/images/CPT-38.png" alt="" />
+</Frame>
+
+<Note>
+_ "Is Tenant Same” _**Column M**_ - Check _**Column AM**_ to determine if there is a new resident or if the property has recently become vacant._
+</Note>
+
+<Note>
+_“Is  GL code same” _**Column N **- Check** Column AN**_** **to check if the GL code has been removed or added_
+</Note>
+
+<Note>
+_“Is same address” _**Column P -  **Check **Column AJ** to determine if the property address has been changed or removed. If the property in **Row 2 (Column AI)** now appears in **Row 3 (Column AI)**, this may indicate that a new property has been added.
+</Note>
+
+<Note>
+_ “Is Lease to same” - _Check **Column AO** to verify if the lease end date has been changed. If there is an update, reflect the change in **Column G** accordingly.
+</Note>
+
+c. If a **NEW PROPERTY**  has been added, copy the data from **Columns AI to AR**. Select the entire row above where the new property should be inserted, right-click, and choose 'Insert Row Below.' Paste the copied data using **CTRL+SHIFT+V** into the newly added row. Then, enter the new address in Column A of that row, make sure to delete the blank cells from AI to AR by selecting them and right click > delete cells > delete cells and shift up. Then select columns M-Q and drag the formula down to reformulate.  **Note**:_ Always repopulate the formulas in **Columns M to Q** to ensure the formulas are correctly updated throughout the report._
+
+<Frame>
+  <img src="/images/CPT-39.png" alt="" />
+</Frame>
+
+d. If a property address has been **REMOVED** from the previous report, select Columns AI to AR of the new report side, right-click, to add a new row, then select the whole row from the number and right-click, choose 'Delete row'
+
+<Check>
+**Note:** _Always repopulate the formulas in Columns M to Q to ensure the formulas are correctly updated throughout the report. Ensure that you check the properties in the PMS and mark them accordingly in the PMs tab you’re reviewing._
+</Check>
+
+<Frame>
+  <img src="/images/CPT-40.png" alt="" />
+</Frame>
+
+### **Step 9: Verify the Property and Resident in AppFolio **
+
+a. Click on the resident’s name (_current tenant_).
+
+b. Identify and select the affected property.
+
+c. Open AppFolio and search for the resident and property.
+
+d. Cross-check that the information in AppFolio matches the data in the CPT Tracker.
+
+<Frame>
+  <img src="/images/CPT-41.png" alt="" />
+</Frame>
+
+### **Step 10:  Review Resident Details**
+
+a. Scroll down and check the **Recurring Charges** section.
+
+b. If **no lease is found**, it is **not ledgerable**. **(Update Column L**)
+
+c. If the **Lease Information tab** is not visible in PMS, go to the **Attachments** tab to locate and review the lease document.
+
+d. Click on the **file/lease document** to confirm that it is under the **Property Manager (PM)** you are currently reviewing.
+
+<Frame>
+  <img src="/images/CPT-42.png" alt="" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-43.png" alt="" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-44.png" alt="" />
+</Frame>
+
+<Warning>
+**Reminder: **Even if the property doesn't meet standard conditions, such as being **HOA**, **Section 8**, **Commercial**, or lacking a **lease** or **addendum**, if a **GL code is present**, the unit is considered **ledgerable**.
+</Warning>
+
+### **Step 11:  Update Property Details**
+
+a. Update the **Type** _(**Column R**)_ to:
+
+- _ _**Residential**_- If the lease document explicitly states **"Residential or is a 12 month lease"**, then the unit should be classified as **Residential**._
+- **HOA / Section 8**_ - To determine if a unit is classified under HOA or Section 8, open the lease document, press CTRL + F, and search for keywords such as "HOA" or "Section 8"._
+- **Monthly**- check the PMS (AppFolio). This information is located at the top-right corner of the resident’s profile page.
+
+<Frame>
+  <img src="/images/CPT-45.png" alt="" />
+</Frame>
+
+- **Signed before the Onboarding Date** of the PM _(The Onboarding Date is in the CPT Tracker – Column N)_
+
+<Frame>
+  <img src="/images/CPT-46.png" alt="" />
+</Frame>
+
+_b. Check the **lease document** to confirm the lease start date. _
+
+<Frame>
+  <img src="/images/CPT-47.png" alt="" />
+</Frame>
+
+c. In AppFolio (PMS), review the Recurring Charges section to confirm whether a GL code has been added (**Update Column S in CPT tracker**). If no GL code, proceed to **Step 13.**
+
+** **
+
+<Frame>
+  <img src="/images/CPT-48.png" alt="" />
+</Frame>
+
+<Warning>
+#### **Important Note:**
+
+- _Always check the date and year of the lease._
+- _Make sure you are reviewing the most recent lease when verifying addendums or lease details._
+</Warning>
+
+d. Click on the **file/lease document** to confirm that it is under the **Property Manager (PM)** you are currently reviewing.
+
+<Frame>
+  <img src="/images/CPT-49.png" alt="" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-50.png" alt="" />
+</Frame>
+
+### **Step 12:  Go to the Lease Documents section. Press Ctrl + F and search for any of the following keywords.**
+
+a. “**Latchel”**
+
+b. **“Resident Benefits”**
+
+<Note>
+**Important:** The lease must clearly show one of the following: **“Resident benefits package  or anything similar”** with the **corresponding amount**, or the word **“Latchel”**
+</Note>
+
+<Frame>
+  <img src="/images/CPT-51.png" alt="" />
+</Frame>
+
+c. If confirmed, **update Column U** to reflect that the addendum is included.
+
+d. **If a GL code was added**, go back to the PMS. At the top of the resident’s profile, click “Current Balance.”
+
+<Frame>
+  <img src="/images/CPT-52.png" alt="" />
+</Frame>
+
+e. **Look for the month** you are reviewing. Check if there is a GL code charge listed for that month.
+
+<Frame>
+  <img src="/images/CPT-53.png" alt="" />
+</Frame>
+
+f. Locate the **charge amount** (e.g., **$25.00**), and check if it was paid or not. Update **Column V.**
+
+<Frame>
+  <img src="/images/CPT-54.png" alt="" />
+</Frame>
+
+g. Make sure to note if the GL code was paid in the notes section of the PMs tab you’re reviewing.
+
+<Frame>
+  <img src="/images/CPT-55.png" alt="" />
+</Frame>
+
+h. Complete Columns **AC to AE** if the resident has a future lease. Leave these columns blank if there is no future lease.
+
+### **Step 13: What are the Missed Opportunities **
+
+a. New or renewed leases are sometimes entered without a GL code in their recurring charges. This happens even when there’s a Latchel addendum or a lease uploaded. Without the GL code, these charges can’t be tracked properly, leading to reporting and accounting issues. Ensure you mark these accordingly by selecting any of the following options if that’s the case:
+
+<Frame>
+  <img src="/images/CPT-56.png" alt="" />
+</Frame>
+
+<Note>
+_**Reminder:** Will renew in the next 15-60 days - If there is a current lease that is about to expire soon, and the resident is likely to renew_
+</Note>
+
+- _Just renewed, and no GL code was added; enter the lease start date._
+- _Month to Month with no GL code added- If the resident is on a month-to-month lease _
+- _New tenant and no GL code added - If the resident moved in after the PM’s onboarding date, and no GL code has been added in the PMS_
+
+b. ** **Insert the lease start date in **Column X. **If no matching information is found, proceed to **Step 14**.
+
+### **Step 14: Future Lease columns and Notes section**
+
+a. Complete **Columns Z **and **AA**, and enter the date of your review in **Column AB.**
+
+<Frame>
+  <img src="/images/CPT-57.png" alt="" />
+</Frame>
+
+b. ** In Column AG **_(Notes)_, enter any relevant notes from your review in **Column AG**. For example, note 'Had a GL code in July' if the GL code was recently removed but was present in the previous month. Leave the column blank if no notes are necessary.
+
+<Check>
+**Note: **_Go to the PMS and navigate to the 'Recurring Charges' tab. Check the date associated with the (GL code)._
+</Check>
+
+### **Step 15: Clean and Verify Report Data**
+
+a. In the CPT Tracker report, navigate to **Column E** and open the Filters section to verify how many GL codes the Property Manager has.
+
+- Select all numbers with specific values (e.g., 15, 25, etc.). Please refer to the photos below to verify the GL code counts.
+
+<Frame>
+  <img src="/images/CPT-58.png" alt="" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-59.png" alt="" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-60.png" alt="" />
+</Frame>
+
+b. Go to the Compliance Timeline tab. Update the Compliance Timeline in the corresponding week. Scroll to the right to find the corresponding week. Ensure you fill in the number showing in column E for the number of GL codes and the percentage shown in column D next to the GL codes amount.
+
+<Frame>
+  <img src="/images/CPT-61.png" alt="image-20250730-165211.png" />
+</Frame>
+
+c. Cross-check the information to ensure it aligns accurately between the PMs tab and the Compliance Timeline tab.
+
+d. Update the date in the overall details tab of the CPT Tracker to reflect the current entry. **Column C.**
+
+The onboarding and Review Process for New PMs (Assisted Ledgering) begins with a **property-by-property review**. Please refer to the following job aid: [https://latchel.atlassian.net/wiki/spaces/AL/pages/3584589826/How+to+Conduct+a+Property-by-Property+Review+for+Assisted+Ledgering+AppFolio?atlOrigin=eyJpIjoiYjI1ODRlNWI0MmU0NGZlYTg1M2VhZmFiMjAzMGUxZGQiLCJwIjoiYyJ9](https://latchel.atlassian.net/wiki/spaces/AL/pages/3584589826/How+to+Conduct+a+Property-by-Property+Review+for+Assisted+Ledgering+AppFolio)
