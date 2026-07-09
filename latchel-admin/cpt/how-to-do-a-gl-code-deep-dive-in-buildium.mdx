@@ -1,9 +1,9 @@
 ---
-title: "How to: Do a GL code Deep Dive in Buildium"
+title: "How to: Do a GL code Deep Dive in Buildium   "
 ---
 
 <Note>
-The purpose of this article is to provide a guide on how to identify the paid and unpaid GL codes of a resident in Buildium. You will find here the instructions on how to read the tenant’s ledger, to do a GL code deep dive and identify the different scenarios for a GL code payment.
+  The purpose of this article is to provide a guide on how to identify the paid and unpaid GL codes of a resident in Buildium. You will find here the instructions on how to read the tenant’s ledger, to do a GL code deep dive and identify the different scenarios for a GL code payment.
 </Note>
 
 ## Step by step
@@ -12,10 +12,10 @@ The purpose of this article is to provide a guide on how to identify the paid an
 
 a. Log in to the PM's Buildium account.
 
-b. Use the search bar to find the tenant, and navigate to their ledger (**Financials > Ledger**).
+b. Use the search bar to find the tenant, and navigate to their ledger (**Financials \> Ledger**).
 
 <Frame>
-  <img src="/images/CPT-191.png" alt="" />
+  ![](/images/CPT-191.png)
 </Frame>
 
 c. Click on the **"By account"** tab.
@@ -25,15 +25,15 @@ d. Find the specific account for the Latchel charge (e.g., "Resident Benefits").
 e. Check the final balance at the bottom. A `$0.00` balance suggests all charges have been paid.
 
 <Check>
-A non-zero balance does **not** always mean the Latchel charge is unpaid. The payment could have been misapplied to a different account (like rent). Use step 2 to confirm.
+  A non-zero balance does **not** always mean the Latchel charge is unpaid. The payment could have been misapplied to a different account (like rent). Use step 2 to confirm.
 </Check>
 
 <Frame>
-  <img src="/images/CPT-192.png" alt="" />
+  ![](/images/CPT-192.png)
 </Frame>
 
 <Frame>
-  <img src="/images/CPT-193.png" alt="" />
+  ![](/images/CPT-193.png)
 </Frame>
 
 ### **Step 2 - Check the GL codes "By date" View for a Quick Overview**
@@ -47,181 +47,177 @@ c. Locate the subsequent **"Payment"** transaction (they are colored green).
 d. Click on the green, hyperlinked text of the payment to open its detailed breakdown.
 
 <Frame>
-  <img src="/images/CPT-194.png" alt="" />
+  ![](/images/CPT-194.png)
 </Frame>
 
 <Check>
-In this example you can see that for this tenant, the first time Latchel’s charge (Identified as <u>Resident Benefits </u>for this PM) was added on June 1st, 2023, as there is no previous record of charges with that account. You can see as well that in the** Transaction** column this item is labeled as “Charge”.
+  In this example you can see that for this tenant, the first time Latchel’s charge (Identified as <u>Resident Benefits </u>for this PM) was added on June 1st, 2023, as there is no previous record of charges with that account. You can see as well that in the\*\* Transaction\*\* column this item is labeled as “Charge”.
 </Check>
 
 <Frame>
-  <img src="/images/CPT-195.png" alt="" />
+  ![](/images/CPT-195.png)
 </Frame>
 
 ### **Step 3 - Confirm payment allocation within the transaction details**
 
 a. Inside the payment details window, you will see a list of all charges that this payment was applied to.
 
-b.** Confirm Payment:** Look for the Latchel charge in this list. If it's there with the full amount applied, the charge for that period was successfully paid.
+b.\*\* Confirm Payment:\*\* Look for the Latchel charge in this list. If it's there with the full amount applied, the charge for that period was successfully paid.
 
 c. Repeat this process for every month to build a complete, accurate payment history for the tenant.
 
 <Frame>
-  <img src="/images/CPT-196.png" alt="" />
+  ![](/images/CPT-196.png)
 </Frame>
 
 ## Different scenarios found for the Tenant Charge
 
 <Accordion title="GL code monthly charge paid in the right period">
-- If you are checking it in the** By account** section (recommended):
+  - If you are checking it in the\*\* By account\*\* section (recommended):
 
-Look for the charge of the date you need to confirm paid. Right after the charge you should see the payment transaction, click on it to display the transaction’s details.
+  Look for the charge of the date you need to confirm paid. Right after the charge you should see the payment transaction, click on it to display the transaction’s details.
 
-<Frame>
-  <img src="/images/CPT-197.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-197.png)
+  </Frame>
 
-In this example the payment date we will consider is 12/6/2023, as this is the date when the payment was funded. Therefore we can still consider this payment as made on time for December’s period.
+  In this example the payment date we will consider is 12/6/2023, as this is the date when the payment was funded. Therefore we can still consider this payment as made on time for December’s period.
 
-- If you are checking it in the** By date** section:
+  - If you are checking it in the\*\* By date\*\* section:
 
-Look for the immediate next payment of the charge you need to confirm paid, click on it to display the transaction’s details.
+  Look for the immediate next payment of the charge you need to confirm paid, click on it to display the transaction’s details.
 
-_Next Steps:_
+  _Next Steps:_
 
-When the **Payment** chart opens up, there are 3 items you need to check.
+  When the **Payment** chart opens up, there are 3 items you need to check.
 
-1. At the top of the chart you will see the date when the **payment was funded,** this is the date you will consider to confirm the charge was paid in the right period.
-2. In the **Application to balances** section you will identify where the Latchel’s charge is located, based on the Account’s name the PM gave to our GL code.
-3. In the **Amount **column you will confirm if the monthly charge was fully paid. The amount should be for the total of the charge that the PM charges per month.
+  1. At the top of the chart you will see the date when the **payment was funded,** this is the date you will consider to confirm the charge was paid in the right period.
+  2. In the **Application to balances** section you will identify where the Latchel’s charge is located, based on the Account’s name the PM gave to our GL code.
+  3. In the \*\*Amount \*\*column you will confirm if the monthly charge was fully paid. The amount should be for the total of the charge that the PM charges per month.
 
-<Frame>
-  <img src="/images/CPT-198.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-198.png)
+  </Frame>
 
-<Warning>
-You should not pay attention to the **Balance **column to confirm if the GL code was paid for that month, as the balance reflects unpaid GL codes for any month in general.
-</Warning>
+  <Warning>
+    You should not pay attention to the \*\*Balance \*\*column to confirm if the GL code was paid for that month, as the balance reflects unpaid GL codes for any month in general.
+  </Warning>
 
-If the charge does not show as paid in the transaction you opened, this doesn't mean the GL code has not been paid. Sometimes there is more than one transaction in one month’s period. For this, look for the next payment to confirm if Latchel’s charge was paid in that transaction.
+  If the charge does not show as paid in the transaction you opened, this doesn't mean the GL code has not been paid. Sometimes there is more than one transaction in one month’s period. For this, look for the next payment to confirm if Latchel’s charge was paid in that transaction.
 
-<Check>
-In this example you can see that there are 3 transactions for the same period, therefore you should check the 3 of them to confirm if the Latchel’s charge has been paid in the right period.
-</Check>
+  <Check>
+    In this example you can see that there are 3 transactions for the same period, therefore you should check the 3 of them to confirm if the Latchel’s charge has been paid in the right period.
+  </Check>
 
-<Frame>
-  <img src="/images/CPT-199.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-199.png)
+  </Frame>
 
-Keep in mind that the period goes from the 1st of the month, to the last day of the current month.
+  Keep in mind that the period goes from the 1st of the month, to the last day of the current month.
 
-Example: <u>September’s period</u> goes from September 1st, to September 30th. 
-Therefore the GL code should be paid within these days to be considered as paid in the right period.
+  Example: <u>September’s period</u> goes from September 1st, to September 30th. Therefore the GL code should be paid within these days to be considered as paid in the right period.
 </Accordion>
 
 <Accordion title="GL code monthly charge currently not paid">
-- If you are checking it in the** By account** section (recommended):
+  - If you are checking it in the\*\* By account\*\* section (recommended):
 
-Look for the charge of the date you need to confirm paid, if there is no payment transaction on that date this means the charge has not been paid. (Keep in mind sometimes there are payment transactions displayed, however if they are not in green, they were not successful). You will also see remaining balance in the total amount owed.
+  Look for the charge of the date you need to confirm paid, if there is no payment transaction on that date this means the charge has not been paid. (Keep in mind sometimes there are payment transactions displayed, however if they are not in green, they were not successful). You will also see remaining balance in the total amount owed.
 
-<Frame>
-  <img src="/images/CPT-200.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-200.png)
+  </Frame>
 
-- If you are checking it in the** By date** section:
+  - If you are checking it in the\*\* By date\*\* section:
 
-If you have checked all the payment’s transactions within the period you need to confirm as paid, and all of them show $0 in the **Amount **column, this means the GL code was not paid, (at least not in the right period).
+  If you have checked all the payment’s transactions within the period you need to confirm as paid, and all of them show \$0 in the \*\*Amount \*\*column, this means the GL code was not paid, (at least not in the right period).
 
-<Frame>
-  <img src="/images/CPT-201.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-201.png)
+  </Frame>
 
-<Warning>
-There are instances when the **Amount **shows as $0 in all the period’s transactions, however the GL code was paid in time. This happens when Latchel’s charge is paid together with rent or any other Account. To identify this, you need to pay attention to the **Balance **column.
-</Warning>
+  <Warning>
+    There are instances when the \*\*Amount \*\*shows as \$0 in all the period’s transactions, however the GL code was paid in time. This happens when Latchel’s charge is paid together with rent or any other Account. To identify this, you need to pay attention to the \*\*Balance \*\*column.
+  </Warning>
 
-Look carefully at this example. When Latchel’s GL code was charged, the remaining balance was for $2019.00, the next payment the tenant made was exactly for that amount, leaving the balance in $0, which means all the month’s charges were covered with that payment.
+  Look carefully at this example. When Latchel’s GL code was charged, the remaining balance was for \$2019.00, the next payment the tenant made was exactly for that amount, leaving the balance in \$0, which means all the month’s charges were covered with that payment.
 
-<Frame>
-  <img src="/images/CPT-202.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-202.png)
+  </Frame>
 
-However, if you open the payment transaction you will see the **Amount **paid for the Latchel’s charge shows $0. But if you look at the amount paid for <u>Rent</u>, you will see that the payment is covering all the charges. This means that Latchel’s charge was paid in time, however it was paid in another account.
+  However, if you open the payment transaction you will see the \*\*Amount \*\*paid for the Latchel’s charge shows \$0. But if you look at the amount paid for <u>Rent</u>, you will see that the payment is covering all the charges. This means that Latchel’s charge was paid in time, however it was paid in another account.
 
-<Frame>
-  <img src="/images/CPT-203.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-203.png)
+  </Frame>
 
-You may also identify this is happening when you see that the tenant’s overall balance is $0, but still when you open a payment transaction, you see Latchel’s charge with a remaining balance.
+  You may also identify this is happening when you see that the tenant’s overall balance is \$0, but still when you open a payment transaction, you see Latchel’s charge with a remaining balance.
 
-<Frame>
-  <img src="/images/CPT-204.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-204.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/CPT-205.png" alt="" />
-</Frame>
-
+  <Frame>
+    ![](/images/CPT-205.png)
+  </Frame>
 </Accordion>
 
 <Accordion title="GL code monthly charge paid in another period">
-This is when you have identified the payment transaction where the Latchel’s charge was paid, however the date no longer corresponds to the same period where the charge was made. It will be considered as <u>“Paid in another period”.</u>
+  This is when you have identified the payment transaction where the Latchel’s charge was paid, however the date no longer corresponds to the same period where the charge was made. It will be considered as <u>“Paid in another period”.</u>
 
-<Check>
-In this example you can see that after September's charge there are 2 payments. Latchel’s charge was not paid in the first one (9/1/2023), but it was paid in the second transaction (10/01/2023). However, this second payment already falls in October’s period.
-</Check>
+  <Check>
+    In this example you can see that after September's charge there are 2 payments. Latchel’s charge was not paid in the first one (9/1/2023), but it was paid in the second transaction (10/01/2023). However, this second payment already falls in October’s period.
+  </Check>
 
-<Frame>
-  <img src="/images/CPT-206.png" alt="1001.png" />
-</Frame>
-
+  <Frame>
+    ![1001.png](/images/CPT-206.png)
+  </Frame>
 </Accordion>
 
 <Accordion title="GL code monthly charge partially paid">
-When you identify only 1 payment for Latchel’s charge within the same period, and the amount is not fully paid, this is considered as a month partially paid .
+  When you identify only 1 payment for Latchel’s charge within the same period, and the amount is not fully paid, this is considered as a month partially paid .
 
-<Check>
-In this example you can see that Latchel’s charge is for $20. There is only 1 payment in this period, in which the tenant only paid $10, therefore this is a month partially paid .
-</Check>
+  <Check>
+    In this example you can see that Latchel’s charge is for $20. There is only 1 payment in this period, in which the tenant only paid $10, therefore this is a month partially paid .
+  </Check>
 
-<Frame>
-  <img src="/images/CPT-207.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-207.png)
+  </Frame>
 
-<Warning>
-When there is more than 1 payment transaction, and you identify a partial payment, you should check all the payments to confirm if the rest of Latchel’s charge was paid. Sometimes tenants make partial payments in different transactions, however if they all fall within the same period, this will be considered as fully paid, in the right period.
-</Warning>
+  <Warning>
+    When there is more than 1 payment transaction, and you identify a partial payment, you should check all the payments to confirm if the rest of Latchel’s charge was paid. Sometimes tenants make partial payments in different transactions, however if they all fall within the same period, this will be considered as fully paid, in the right period.
+  </Warning>
 </Accordion>
 
 <Accordion title="GL code monthly charge paid in 2 different periods">
-This is when a tenant makes a partial payment in one period, and then covers the rest of the charge in another period.
+  This is when a tenant makes a partial payment in one period, and then covers the rest of the charge in another period.
 
-<Check>
-In this example you can see that the tenant made a partial payment for $9.58 in October’s period, and then paid November’s charge and the rest of October’s charge, in November’s period. This means that October was fully paid, but in 2 different periods.
-</Check>
+  <Check>
+    In this example you can see that the tenant made a partial payment for \$9.58 in October’s period, and then paid November’s charge and the rest of October’s charge, in November’s period. This means that October was fully paid, but in 2 different periods.
+  </Check>
 
-<Frame>
-  <img src="/images/CPT-208.png" alt="" />
-</Frame>
+  <Frame>
+    ![](/images/CPT-208.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/CPT-209.png" alt="" />
-</Frame>
-
+  <Frame>
+    ![](/images/CPT-209.png)
+  </Frame>
 </Accordion>
 
 <Note>
-You may see payment transactions labeled as **“Applied Prepayment”**. This means that the tenant deposited the month’s charges in advance, therefore when the month charges are added, they will be deducted automatically from the credit balance. In this transaction you will not see the legend _“This payment was funded on…”_ because the charge is paid right at the moment it is added. You will consider the GL code as paid on the date that is at the top of the Transaction’s details chart.
+  You may see payment transactions labeled as **“Applied Prepayment”**. This means that the tenant deposited the month’s charges in advance, therefore when the month charges are added, they will be deducted automatically from the credit balance. In this transaction you will not see the legend _“This payment was funded on…”_ because the charge is paid right at the moment it is added. You will consider the GL code as paid on the date that is at the top of the Transaction’s details chart.
 </Note>
 
 <Frame>
-  <img src="/images/CPT-210.png" alt="" />
+  ![](/images/CPT-210.png)
 </Frame>
 
 <Warning>
-You will encounter payment transactions with a <u>red</u> or <u>blue </u>description. These transactions are reversed payments, therefore you should not open these transactions to check paid GL codes.
+  You will encounter payment transactions with a <u>red</u> or <u>blue </u>description. These transactions are reversed payments, therefore you should not open these transactions to check paid GL codes.
 </Warning>
 
 <Frame>
-  <img src="/images/CPT-211.png" alt="" />
+  ![](/images/CPT-211.png)
 </Frame>

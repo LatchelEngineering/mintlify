@@ -1441,7 +1441,16 @@
                       },
                       {
                         "group": "Buildium",
-                        "pages": []
+                        "pages": [
+                          "latchel-admin/cpt/buildium",
+                          "latchel-admin/cpt/checking-gl-codes-in-buildium",
+                          "latchel-admin/cpt/checking-leases-and-addendums-in-buildium",
+                          "latchel-admin/cpt/how-to-do-a-gl-code-deep-dive-in-buildium",
+                          "latchel-admin/cpt/how-to-do-the-weekly-review-for-assisted-ledgering-buildium",
+                          "latchel-admin/cpt/how-to-generate-a-rent-roll-report-in-buildium",
+                          "latchel-admin/cpt/how-to-generate-a-transaction-by-detail-report",
+                          "latchel-admin/cpt/identifying-property-types-in-buildium"
+                        ]
                       },
                       {
                         "group": "Propertyware",
