@@ -1454,7 +1454,15 @@
                       },
                       {
                         "group": "Propertyware",
-                        "pages": []
+                        "pages": [
+                          "latchel-admin/cpt/propertyware",
+                          "latchel-admin/cpt/how-to-do-the-weekly-review-for-assisted-ledgering-propertyware",
+                          "latchel-admin/cpt/additional-resources-identifying-types-of-reports-in-propertyware",
+                          "latchel-admin/cpt/additional-resources-understanding-the-general-ledger-report-in-propertyware",
+                          "latchel-admin/cpt/how-to-generate-a-gl-reports-in-propertyware",
+                          "latchel-admin/cpt/scheduling-reports-in-propertyware",
+                          "latchel-admin/cpt/additional-resources-user-roles-section-in-propertyware"
+                        ]
                       },
                       {
                         "group": "Rent Manager",
