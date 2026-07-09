@@ -1082,9 +1082,9 @@
                   {
                     "group": "Appfolio Reference Guide (The Latchel Data Sync)",
                     "pages": [
-                      "latchel-admin/Product-Engineering/appfolio-reference-guide-the-latchel-data-sync",
-                      "latchel-admin/Product-Engineering/failed-work-order-syncs",
-                      "latchel-admin/Product-Engineering/communication-guidelines-appfolio-plugin-sync"
+                      "latchel-admin/Product-Engineering/latchel-integrations-wiki/appfolio-reference-guide-the-latchel-data-sync",
+                      "latchel-admin/Product-Engineering/latchel-integrations-wiki/failed-work-order-syncs",
+                      "latchel-admin/Product-Engineering/latchel-integrations-wiki/communication-guidelines-appfolio-plugin-sync"
                     ]
                   },
                   "latchel-admin/Product-Engineering/latchel-integrations-wiki/buildium-reference-guide",
