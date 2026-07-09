@@ -1438,6 +1438,26 @@
                           "latchel-admin/cpt/how-to-conduct-a-property-by-property-review-for-assisted-ledgering-appfolio",
                           "latchel-admin/cpt/how-to-create-an-assisted-ledgering-tab-appfolio-customers"
                         ]
+                      },
+                      {
+                        "group": "Buildium",
+                        "pages": []
+                      },
+                      {
+                        "group": "Propertyware",
+                        "pages": []
+                      },
+                      {
+                        "group": "Rent Manager",
+                        "pages": []
+                      },
+                      {
+                        "group": "RentVine",
+                        "pages": []
+                      },
+                      {
+                        "group": "DoorLoop",
+                        "pages": []
                       }
                     ]
                   }
