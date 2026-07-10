@@ -1489,7 +1489,15 @@
                       },
                       {
                         "group": "DoorLoop",
-                        "pages": []
+                        "pages": [
+                          "latchel-admin/cpt/doorloop",
+                          "latchel-admin/cpt/how-to-generate-a-rent-roll-report-in-doorloop",
+                          "latchel-admin/cpt/how-to-generate-a-transaction-details-report-in-doorloop",
+                          "latchel-admin/cpt/how-to-generate-a-transactions-list-report-in-doorloop",
+                          "latchel-admin/cpt/checking-leases-and-addendums-in-doorloop",
+                          "latchel-admin/cpt/additional-resources-identifying-types-of-reports-in-doorloop",
+                          "latchel-admin/cpt/checking-gl-codes-in-doorloop"
+                        ]
                       }
                     ]
                   }
