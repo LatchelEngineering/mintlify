@@ -3,10 +3,10 @@ title: "How to Handle Piñata Invoices"
 ---
 
 <Note>
-The purpose of this SOP is to provide a step-by-step guide on how to accurately verify and approve the monthly Piñata invoice by calculating the monthly totals reported by CPT in the** **[**Billing Inputs Master Doc**](https://docs.google.com/spreadsheets/d/1HG_bRF-JM8DqSz1lusDrfJVGIpohvJwBP4fNAipclvM/edit?gid=1596062573#gid=1596062573)
+  The purpose of this SOP is to provide a step-by-step guide on how to accurately verify and approve the monthly Piñata invoice by calculating the monthly totals reported by CPT in the [**Billing Inputs Master Doc**](https://docs.google.com/spreadsheets/d/1HG_bRF-JM8DqSz1lusDrfJVGIpohvJwBP4fNAipclvM/edit?gid=1596062573#gid=1596062573)
 </Note>
 
-**Piñata bills us per unit** added in the monthly report sent, not per resident, and they charge **$2.00 per unit**. Their invoicing can be inconsistent. Minor discrepancies where they have under-billed us are acceptable and do not require follow-up. **<u>They typically send the invoices after the 5th of each month</u>**<u>. If, for some reason, they don’t send it, no follow-up is needed</u>.
+**Piñata bills us per unit** added in the monthly report sent, not per resident, and they charge **\$2.00 per unit**. Their invoicing can be inconsistent. Minor discrepancies where they have under-billed us are acceptable and do not require follow-up. **<u>They typically send the invoices after the 5th of each month</u>**<u>. If, for some reason, they don’t send it, no follow-up is needed</u>.
 
 ## Step by step
 
@@ -15,26 +15,25 @@ The purpose of this SOP is to provide a step-by-step guide on how to accurately 
 a. Open the Assisted Ledgering inbox and type in the search bar “Piñata invoice”, it will display the most recent one received.
 
 <Frame>
-  <img src="/images/CPT-837.png" alt="image-20250919-213703.png" />
+  ![image-20250919-213703.png](/images/CPT-837.png)
 </Frame>
 
-b. Scroll down in the opened email and look for the attached invoice
-c. In the Date section, you will find the period that the invoice corresponds to. **For example:** _If it says 08/30/2025, it means the amount charged is for the month of August, and we have 30 days to process the payment._
+b. Scroll down in the opened email and look for the attached invoice c. In the Date section, you will find the period that the invoice corresponds to. **For example:** _If it says 08/30/2025, it means the amount charged is for the month of August, and we have 30 days to process the payment._
 
 <Frame>
-  <img src="/images/CPT-838.png" alt="image-20250919-214013.png" />
+  ![image-20250919-214013.png](/images/CPT-838.png)
 </Frame>
 
 d. Look for the number of units charged on the invoice next to the description section.
 
 <Frame>
-  <img src="/images/CPT-839.png" alt="image-20250919-214959.png" />
+  ![image-20250919-214959.png](/images/CPT-839.png)
 </Frame>
 
-e. Then multiply the number of units by the Piñata charge to verify if it matches the total amount. **Example:** _2,134 units × $2 = $4,268._
+e. Then multiply the number of units by the Piñata charge to verify if it matches the total amount. **Example:** _2,134 units ×_ \$2 = \$_4,268._
 
 <Frame>
-  <img src="/images/CPT-840.png" alt="image-20250919-215216.png" />
+  ![image-20250919-215216.png](/images/CPT-840.png)
 </Frame>
 
 ### Step 2: **Calculate Units from the Billing Inputs** **Master Doc:**
@@ -42,59 +41,60 @@ e. Then multiply the number of units by the Piñata charge to verify if it match
 a. Open the [**Billing Inputs Master Doc**](https://docs.google.com/spreadsheets/d/1HG_bRF-JM8DqSz1lusDrfJVGIpohvJwBP4fNAipclvM/edit?gid=1596062573#gid=1596062573) and navigate to the tab for the corresponding billing month. **Example:** _If you are checking the invoice for August units, you should look for the September tab._
 
 <Frame>
-  <img src="/images/CPT-841.png" alt="image-20250919-215444.png" />
+  ![image-20250919-215444.png](/images/CPT-841.png)
 </Frame>
 
-b. Scroll to the right to the **# Piñata Enrollments column** and** add up all the units for Piñata enrollments**,**<u> except those for New Age Realty Group</u>**, since they are billed differently.
+b. Scroll to the right to the **# Piñata Enrollments column** and add up all the units for Piñata enrollments, **<u>except those for New Age Realty Group</u>**, since they are billed differently.
 
 The number shown in that column for New Age Realty Group equals the total of GL codes. For them, we will follow additional steps to add their Piñata totals to the sum.
 
 <Frame>
-  <img src="/images/CPT-842.png" alt="image-20250919-220019.png" />
+  ![image-20250919-220019.png](/images/CPT-842.png)
 </Frame>
 
-c.**<u> Count all the displayed totals and hold the sum to add New Age’s numbers</u>**. For them, please refer to the following section.
+c. **<u>Count all the displayed totals and hold the sum to add New Age’s numbers</u>**. For them, please refer to the following section.
 
 <Accordion title="Calculate Units for the New Age Account:">
-1. Go to the Assisted Ledgering email and open the **New Age Piñata Rent Roll** spreadsheet. Look for the corresponding month’s tab.** Example:**_ If you are checking the August units, you should look for the September tab._ 
-<Frame>
-  <img src="/images/CPT-843.png" alt="image-20250919-220824.png" />
-</Frame>
+  1. Go to the Assisted Ledgering email and open the **New Age Piñata Rent Roll** spreadsheet. Look for the corresponding month’s tab. Example: If you are checking the August units, you should look for the September tab.
 
-2. Create a temporary helper column to merge the property address and unit number columns.
+  <Frame>
+    ![image-20250919-220824.png](/images/CPT-843.png)
+  </Frame>
 
-- Add this formula in column J, row 3, and drag it down to the last row with resident information. **=CONCATENATE(H3,I3)**
-- Add this formula in column J, in the next empty row, to count all the units with resident info. Example: **=COUNTUNIQUE(J3:J1276)**
+  2. Create a temporary helper column to merge the property address and unit number columns.
 
-<Frame>
-  <img src="/images/CPT-844.png" alt="image-20250919-222025.png" />
-</Frame>
+  - Add this formula in column J, row 3, and drag it down to the last row with resident information. **=CONCATENATE(H3,I3)**
+  - Add this formula in column J, in the next empty row, to count all the units with resident info. Example: **=COUNTUNIQUE(J3:J1276)**
 
-<Frame>
-  <img src="/images/CPT-845.png" alt="image-20250919-222130.png" />
-</Frame>
+  <Frame>
+    ![image-20250919-222025.png](/images/CPT-844.png)
+  </Frame>
 
-1. Count the total number of unique values in the newly merged column. **Add this number to the total sum of all property managers you previously had** 
-<Frame>
-  <img src="/images/CPT-846.png" alt="image-20250919-222247.png" />
-</Frame>
+  <Frame>
+    ![image-20250919-222130.png](/images/CPT-845.png)
+  </Frame>
 
-<Warning>
-Don’t forget to delete the merged column after confirming the total numbers. This will prevent agents from getting confused about the totals to be reported, since New Age follows a different reporting process. For more information, see the following job aid: [https://latchel.atlassian.net/wiki/spaces/AL/pages/3577184297/How+to+Report+the+Monthly+Pi+ata+Totals+for+New+Age+Realty+Group?atlOrigin=eyJpIjoiY2VhZmUyNmM1ZTQxNGM1NjgyMmJlNTkzNWZlNzY2NjAiLCJwIjoiYyJ9](https://latchel.atlassian.net/wiki/spaces/AL/pages/3577184297/How+to+Report+the+Monthly+Pi+ata+Totals+for+New+Age+Realty+Group)
-</Warning>
+  3. Count the total number of unique values in the newly merged column. **Add this number to the total sum of all property managers you previously had**
+
+  <Frame>
+    ![image-20250919-222247.png](/images/CPT-846.png)
+  </Frame>
+
+  <Warning>
+    Don’t forget to delete the merged column after confirming the total numbers. This will prevent agents from getting confused about the totals to be reported, since New Age follows a different reporting process. For more information, see the following job aid: [How to Report the Monthly Piñata Totals for New Age Realty Group](https://latchel.atlassian.net/wiki/spaces/AL/pages/3577184297/How+to+Report+the+Monthly+Pi+ata+Totals+for+New+Age+Realty+Group)
+  </Warning>
 </Accordion>
 
 ### Step 3: **Determine the Final Expected Count:**
 
-a. **Add your two results together** to get the grand total: **Expected Units = Total A + Total B**.
-In the case of August it is**: 1298 + 868 = 2166 Piñata units**
+a. **Add your two results together** to get the grand total: **Expected Units = Total A \+ Total B**. In the case of August it is: 1298 \+ 868 = 2166 Piñata units
 
-b.** **Compare your **Expected Units** count with the "Quantity" listed on the Piñata invoice.
+b. Compare your **Expected Units** count with the "Quantity" listed on the Piñata invoice.
 
 c. If the invoiced quantity matches or is slightly less than your calculated total, the invoice is considered correct.
 
 <Frame>
-  <img src="/images/CPT-847.png" alt="image-20250919-222859.png" />
+  ![image-20250919-222859.png](/images/CPT-847.png)
 </Frame>
 
 d. If the invoiced quantity is higher, contact Piñata to resolve the discrepancy before proceeding.
@@ -103,13 +103,19 @@ d. If the invoiced quantity is higher, contact Piñata to resolve the discrepanc
 
 a. Once an invoice is confirmed as correct, forward the original email to Accounts Payable (AP).
 
-- **Recipient:** @Samantha Terreros** **(AP)
-- **Body:**  _Hi Sammy, _ _This invoice is approved for payment. _ _Thank you._
+- **Recipient:** @Samantha Terreros(AP)
+- **Body:**
 
-b. **Click on reply all **and add Sammy if she’s not added in the original email.
+> _Hi Sammy,_ 
+>
+> _This invoice is approved for payment._ 
+>
+> _Thank you._
+
+b. Click on reply all and add Sammy if she’s not added in the original email.
 
 <Frame>
-  <img src="/images/CPT-848.png" alt="image-20250919-223300.png" />
+  ![image-20250919-223300.png](/images/CPT-848.png)
 </Frame>
 
 c. Click **send**.
