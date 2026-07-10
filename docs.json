@@ -1481,10 +1481,10 @@
                         "group": "RentVine",
                         "pages": [
                           "latchel-admin/cpt/rentvine",
-                          "latchel-admin/cpt/how-to-generate-a-rent-roll-report-in-rentvine",
-                          "latchel-admin/cpt/how-to-generate-the-lease-recurring-charges-report-in-rentvine",
+                          "latchel-admin/cpt/understanding-type-of-reports-in-rentvine",
                           "latchel-admin/cpt/scheduling-reports-in-rentvine",
-                          "latchel-admin/cpt/understanding-type-of-reports-in-rentvine"
+                          "latchel-admin/cpt/how-to-generate-a-rent-roll-report-in-rentvine",
+                          "latchel-admin/cpt/how-to-generate-the-lease-recurring-charges-report-in-rentvine"
                         ]
                       },
                       {
