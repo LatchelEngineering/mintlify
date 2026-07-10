@@ -1498,6 +1498,13 @@
                           "latchel-admin/cpt/additional-resources-identifying-types-of-reports-in-doorloop",
                           "latchel-admin/cpt/checking-gl-codes-in-doorloop"
                         ]
+                      },
+                      {
+                        "group": "Reporting to Finance",
+                        "pages": [
+                          "latchel-admin/cpt/reporting-to-finance",
+                          "latchel-admin/cpt/how-to-report-to-finance-the-monthly-billing-inputs"
+                        ]
                       }
                     ]
                   }
