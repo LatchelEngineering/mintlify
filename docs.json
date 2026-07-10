@@ -1559,6 +1559,7 @@
               {
                 "group": "Optional Benefits",
                 "pages": [
+                  "latchel-admin/cpt/optional-benefits",
                   "latchel-admin/cpt/how-to-generate-a-rent-roll-report",
                   "latchel-admin/cpt/how-to-do-property-by-property-review-for-new-pms-on-optional-benefits",
                   "latchel-admin/cpt/how-to-request-activationdeactivation-of-properties-in-latchel-console-for-optional-benefits-only-and-maintenance-optional-benefits-customers",
@@ -1592,7 +1593,19 @@
               },
               {
                 "group": "Special Processes for Property Managers",
-                "pages": []
+                "pages": [
+                  "latchel-admin/cpt/special-processes-for-property-managers",
+                  "latchel-admin/cpt/how-to-provide-billing-inputs-for-customers-on-fixed-monthly-payment-schedule",
+                  "latchel-admin/cpt/how-to-do-the-weeklymonthly-review-and-reporting-jandd-management",
+                  "latchel-admin/cpt/how-to-do-the-pinata-review-in-rentvine",
+                  "latchel-admin/cpt/how-to-do-the-monthly-pinata-report-in-rentvine",
+                  "latchel-admin/cpt/how-to-update-gl-code-totals-for-property-managers-who-submit-their-monthly-gl-report",
+                  "latchel-admin/cpt/how-to-update-gl-code-totals-for-property-managers-with-exceptions",
+                  "latchel-admin/cpt/how-to-do-the-monthly-review-in-appfolio-for-clients-whose-optional-benefits-contract-has-ended",
+                  "latchel-admin/cpt/how-to-report-the-monthly-pinata-totals-for-new-age-realty-group",
+                  "latchel-admin/cpt/how-to-prepare-the-monthly-pinata-report-for-new-age-realty-group",
+                  "latchel-admin/cpt/how-to-do-the-monthly-review-in-optional-benefits-for-customers-in-rent-manager"
+                ]
               },
               {
                 "group": "Marketplace Customer Churn Tracker",
