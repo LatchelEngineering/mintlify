@@ -1,0 +1,186 @@
+---
+title: "How to Update the Real-Time Monthly Scorecard Tab with Newly Onboarded PMs"
+---
+
+<Note>
+The purpose of this SOP is to provide a step-by-step guide on how to add Newly Onboarded PMs to the Real-Time Monthly Scorecard Tab.
+</Note>
+
+## Step by step
+
+### Step 1: Navigate to the CPT Tracker and open the Real-Time Monthly Scorecard tab.
+
+<Frame>
+  <img src="/images/CPT-415.png" alt="image-20250916-205414.png" />
+</Frame>
+
+### Step 2: In the CPT Tracker, go to either the _Optional Benefits_ tab or the _Overall Details_ tab for (Assisted Ledgering), depending on the PM’s contract, to copy the new PM’s company name.
+
+a. Copy the PM Company name and Paste it in the 'Real Time Monthly Scorecard' tab.
+
+<Frame>
+  <img src="/images/CPT-416.png" alt="image-20250916-210813.png" />
+</Frame>
+
+### Step 3: Update the columns as needed and reformulate the formulas accordingly.
+
+<Frame>
+  <img src="/images/CPT-417.png" alt="image-20250916-214125.png" />
+</Frame>
+
+a. **Column B:** _Type of Contract_
+
+- Select the contract type for the new PM’s subscription (e.g., Optional Benefits, Assisted Ledgering, etc.).
+
+b. **Column C: **_CSM_
+
+- You can check who the CSM is in the [#sales](https://latchel.slack.com/archives/C2Y2ZN9LL) or [#cpt-updates](https://latchel.slack.com/archives/C04TZ3Y8ZLK) channel.
+
+<Warning>
+**Verify the PM is enrolled in the applicable benefits (e.g., Assisted Ledgering, Optional Benefits) before adding.**
+</Warning>
+
+<Frame>
+  <img src="/images/CPT-418.png" alt="da2c3235-9248-4705-942c-7acf086cce51.png" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-419.png" alt="image-20250916-214955.png" />
+</Frame>
+
+c. **Column D: **_Months on Service_
+
+In the formula `=DATEDIF('Optional Benefits Overall Details'!P17, TODAY(), "M")+1`, and with corresponding Columns, replace `P17` with the corresponding row number of the new PM from the Optional Benefits Overall Details Tab.
+
+<Frame>
+  <img src="/images/CPT-420.png" alt="image-20250916-220928.png" />
+</Frame>
+
+<Check>
+**Example: **For the new PM, _Insite Property Solutions_ is in (**row 18**) in the Optional Benefits Overall Details tab, update the formula as follows:
+
+=DATEDIF('Optional Benefits Overall Details'!P**18**, TODAY(), "M")+1
+</Check>
+
+<Frame>
+  <img src="/images/CPT-421.png" alt="image-20250916-221846.png" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-422.png" alt="image-20250916-222107.png" />
+</Frame>
+
+d. **Column E:** _Active Units for the Month_
+
+<Frame>
+  <img src="/images/CPT-423.png" alt="image-20250916-223029.png" />
+</Frame>
+
+e. **Column F:** _% Profitability Attained to Date_
+
+<Frame>
+  <img src="/images/CPT-424.png" alt="image-20250916-223702.png" />
+</Frame>
+
+f. **Column H:** _Is the PM receiving concessions?_
+
+- In this column, it is specified whether the PM is receiving concessions or not. **Example:** <u>If the PM is profitable, it will be marked </u>**<u>“No”,</u>**<u> and if the PM is still in the RTP (</u>**Road to Profitability Percentage**),<u> it will be marked </u>**<u>“Yes”</u>**<u>.</u>
+
+g. **Column I:** _Expected % Profitability after 12 months on Latchel._
+
+- Update the formula to reflect the PM’s correct row number in the '_**Real Time Monthly Scorecard**_' tab.
+
+<Frame>
+  <img src="/images/CPT-425.png" alt="image-20250916-225116.png" />
+</Frame>
+
+h. **Columns J to M: **_Total Units Ledgered To Date, Units needed to hit profitability/breakeven, Amount that Opted-in to Benefits, Opportunities Missed this Month_
+
+- Ensure the formula is updated to reflect the correct PM row reference from the ‘_**Optional Benefits Overall Details**_’ tab 
+<Frame>
+  <img src="/images/CPT-426.png" alt="8c3c4e32-a78e-4102-8da7-003e3981251c.png" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-427.png" alt="image-20250918-154357.png" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-428.png" alt="image-20250918-154510.png" />
+</Frame>
+
+i. **Column N:** _Opportunities Missed this Month_
+
+- Update the formula to reflect the PM’s correct row number in the '_**Real Time Monthly Scorecard**_' tab.
+
+<Frame>
+  <img src="/images/CPT-429.png" alt="image-20250918-162441.png" />
+</Frame>
+
+j. **Columns O:** _Total Opportunities this Month_
+
+From **Column O** onward, ensure you follow the applicable SOP before adding the formulas; otherwise, an error will occur. Please refer to the following job aids:
+[How to Create an Assisted Ledgering Tab (Appfolio Customers)](https://latchel.atlassian.net/wiki/spaces/AL/pages/3584524391/How+to+Create+an+Assisted+Ledgering+Tab+Appfolio+Customers) 
+[How to Create an Optional Benefits Tab (Appfolio Customers)](https://latchel.atlassian.net/wiki/spaces/AL/pages/3585278033/How+to+Create+an+Optional+Benefits+Tab+Appfolio+Customers)
+
+<Check>
+For example, if the new PM company name is _Insite Property Solutions_, update the formula as shown below (note that the row numbers `T2:T2548` and `K2:K2548` stay the same):
+
+=ARRAYFORMULA(SUM((MONTH('_Optional Benefits - Insite Property Solutions_'!T**2**:T2548) = MONTH(TODAY())) *
+(YEAR('_Optional Benefits - Insite Property Solutions_'!T**2**:T2548) = YEAR(TODAY())) *
+('_Optional Benefits - Insite Property Solutions_'!K**2**:K2548 = "Yes")))
+</Check>
+
+<Warning>
+When copying formulas, note that the cell ranges may shift automatically. Always verify and update the ranges as needed. This applies to **Columns O to S.** For example:
+
+**Update the PM company name in the formulas as needed. The row number should remain unchanged.**
+</Warning>
+
+<Frame>
+  <img src="/images/CPT-430.png" alt="image-20250918-170346.png" />
+</Frame>
+
+k. **Column P**: _New Leases with No GL code_
+
+<Frame>
+  <img src="/images/CPT-431.png" alt="image-20250918-170610.png" />
+</Frame>
+
+l.** Column Q:** _Renewals with no GL code_
+
+<Frame>
+  <img src="/images/CPT-432.png" alt="image-20250918-163838.png" />
+</Frame>
+
+m.** Column R: **_New Month to Month Leases with no GL code_
+
+<Frame>
+  <img src="/images/CPT-433.png" alt="image-20250918-172201.png" />
+</Frame>
+
+n. **Column S:** _Total Month to Month Leases with no GL code_
+
+<Frame>
+  <img src="/images/CPT-434.png" alt="image-20250918-172354.png" />
+</Frame>
+
+o. **Column T: **_Total Missed Opportunities with lease and addendum for the month_
+
+- Update the formula to reference the new PM’s company tab in the CPT Tracker or Benefits CPT Tracker.
+
+<Frame>
+  <img src="/images/CPT-435.png" alt="image-20250918-174916.png" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-436.png" alt="image-20250918-174431.png" />
+</Frame>
+
+p. **Column U: **_Total Missed Opportunities of the month_
+
+- Update the Formula according to the row Number of the New PM in_ the ‘Real Time Monthly Scorecard’_
+
+<Frame>
+  <img src="/images/CPT-437.png" alt="image-20250918-175151.png" />
+</Frame>
