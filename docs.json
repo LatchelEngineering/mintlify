@@ -1548,6 +1548,13 @@
                   "latchel-admin/cpt/how-to-do-monthly-report-for-pinata",
                   "latchel-admin/cpt/how-to-create-a-pinata-tab-appfolio-customers"
                 ]
+              },
+              {
+                "group": "Cover Pest",
+                "pages": [
+                  "latchel-admin/cpt/cover-pest",
+                  "latchel-admin/cpt/how-to-prepare-the-monthly-coverpest-report"
+                ]
               }
             ]
           },
