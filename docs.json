@@ -1555,6 +1555,38 @@
                   "latchel-admin/cpt/cover-pest",
                   "latchel-admin/cpt/how-to-prepare-the-monthly-coverpest-report"
                 ]
+              },
+              {
+                "group": "Optional Benefits",
+                "pages": []
+              },
+              {
+                "group": "Q&A",
+                "pages": []
+              },
+              {
+                "group": "Stakeholders Resources",
+                "pages": []
+              },
+              {
+                "group": "Special Processes for Property Managers",
+                "pages": []
+              },
+              {
+                "group": "Marketplace Customer Churn Tracker",
+                "pages": []
+              },
+              {
+                "group": "Monthly Scorecard",
+                "pages": []
+              },
+              {
+                "group": "Missed Opportunities Monthly Scorecard",
+                "pages": []
+              },
+              {
+                "group": "Marketplace Benefits Invoices",
+                "pages": []
               }
             ]
           },
