@@ -1558,15 +1558,37 @@
               },
               {
                 "group": "Optional Benefits",
-                "pages": []
+                "pages": [
+                  "latchel-admin/cpt/how-to-generate-a-rent-roll-report",
+                  "latchel-admin/cpt/how-to-do-property-by-property-review-for-new-pms-on-optional-benefits",
+                  "latchel-admin/cpt/how-to-request-activationdeactivation-of-properties-in-latchel-console-for-optional-benefits-only-and-maintenance-optional-benefits-customers",
+                  "latchel-admin/cpt/how-to-do-the-monthly-review-for-optional-benefits",
+                  "latchel-admin/cpt/how-to-create-an-optional-benefits-tab-appfolio-customers"
+                ]
               },
               {
                 "group": "Q&A",
-                "pages": []
+                "pages": [
+                  "latchel-admin/cpt/q-and-a",
+                  "latchel-admin/cpt/how-to-use-the-time-tracker-and-the-cpt-productivity-tracker"
+                ]
               },
               {
                 "group": "Stakeholders Resources",
-                "pages": []
+                "pages": [
+                  "latchel-admin/cpt/stakeholders-resources",
+                  "latchel-admin/cpt/how-to-read-the-monthly-scorecard",
+                  "latchel-admin/cpt/onboarding-resources-access-level-required-for-appfolio",
+                  "latchel-admin/cpt/onboarding-resources-access-level-required-for-buildium",
+                  "latchel-admin/cpt/onboarding-resources-access-level-required-for-rent-manager",
+                  "latchel-admin/cpt/onboarding-resources-access-level-required-for-propertyware",
+                  "latchel-admin/cpt/onboarding-resources-access-level-required-for-rentvine",
+                  "latchel-admin/cpt/onboarding-resources-access-level-required-for-doorloop",
+                  "latchel-admin/cpt/how-to-guide-a-property-manager-on-resending-an-account-activation-email-in-appfolio",
+                  "latchel-admin/cpt/how-to-handle-inquiries-received-by-ops-for-marketplace-benefits",
+                  "latchel-admin/cpt/how-to-update-cpt-summary-information-tracking-sheet",
+                  "latchel-admin/cpt/how-to-update-ledger-report-access"
+                ]
               },
               {
                 "group": "Special Processes for Property Managers",
