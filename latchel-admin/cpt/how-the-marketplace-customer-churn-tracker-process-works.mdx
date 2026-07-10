@@ -1,0 +1,70 @@
+---
+title: "How: the Marketplace Customer Churn tracker process works"
+---
+
+<Note>
+The purpose of this SOP is to define a clear process for detecting Marketplace-Benefits churn signals, coordinating prompt Customer Success follow-ups, and sending partner-specific cancellation notices—ensuring data accuracy in the Churn Tracker, consistent team communication, and swift action to safeguard active partnerships.
+</Note>
+
+## Step by step
+
+### Step 1: Monitor Slack and Populate the Tracker
+
+a. The Script continuously watches the [#service-changes](https://latchel.slack.com/archives/CKA2W1KJA) Slack channel.
+
+<Frame>
+  <img src="/images/CPT-778.png" alt="image-20250512-202133.png" />
+</Frame>
+
+b. Whenever a **“Desire-to-Churn”** notification appears, the script checks whether the **Property-Manager Company** is listed as an **active Marketplace Benefits** **customer**.
+
+c. If it finds a match, the script writes the relevant data to the correct partner tab (Piñata, Filters, Coverpest, Obie, etc.) in the [**Marketplace Customer Churn Tracker**](https://docs.google.com/spreadsheets/d/1FycRv5tniwSGDvGfGED8u4_bujlczMMheiPWjIys56E/edit?gid=1536833690#gid=1536833690).
+
+**Note: **The full list of the active marketplace benefits PMs can be found in the PM Reference tab.
+
+<Frame>
+  <img src="/images/CPT-779.png" alt="image-20250512-202240.png" />
+</Frame>
+
+<Accordion title="In the PM Reference tab, the data source columns are:">
+**Column A:** Customer Name – List of active property managers
+**Column B:** Partner – Type of marketplace benefit they have
+**Column C:** Partnership Notifications Email / Slack Channel – Destination for cancellation notifications
+**Column D:** Slack User IDs to Tag – Piñata users who will be tagged in cancellation notifications
+**Column E:** DM Name – Decision maker’s name, included in the cancellation template
+**Column F:** DM Email – Decision maker’s email, included in the cancellation template
+
+<Frame>
+  <img src="/images/CPT-780.png" alt="image-20250512-202426.png" />
+</Frame>
+
+</Accordion>
+
+d. CPT will promptly follow up with the CSM in the relevant “Desire to Churn” alert thread for each property manager and update the **Churn Status** column in that partner’s tab.
+
+<Frame>
+  <img src="/images/CPT-781.png" alt="image-20250512-204501.png" />
+</Frame>
+
+To ensure timely, consistent communication, follow-up templates have been created for every possible status in the **Churn Status** column of the Marketplace Customer Churn Tracker. Whenever a follow-up is needed, the matching template will be posted in the “Desire to Churn” workflow thread for Marketplace Benefits property managers, keeping the process streamlined.
+
+| Churn Status | Follow-Up Purpose & Template | Recommended Timing |
+| --- | --- | --- |
+| 🟧 **CSM follow-up meeting in process** | _Confirm the customer meeting and gather notes._ _**Template**:_ `Hi [CSM Name],` `We see that you're in the process of scheduling a call with this PM. Could you let us know once that's scheduled? We are closely following the outcome since they are on Marketplace Benefits.` `Thank you in advance!` | Send if no update within **5 business days** |
+| 🟪 **Pending CSM updates** | _Remind the CSM that progress updates are needed._ _**Template: **_ `Hi [CSM Name],` `We see there's a save attempt in progress for this PM. Could you please help us by sharing any relevant updates regarding the customer's situation? Thank you in advance!` | Repeat **every 5 days** until status changes |
+| 🟩 **Churn Prevented – Customer Staying Onboard** | _Celebrate success and capture what worked._ _**Template:**_ `Hi [CSM Name]! 🎉` `Great to see that [Customer Name] is staying onboard!` `Could you briefly share what actions or efforts helped prevent the churn? This helps us replicate successful strategies with other accounts. ` `Awesome work, and thank you!` | Send **once**, immediately after the save is confirmed |
+
+If the client confirms their cancellation after all retention outreach, no additional follow-up is required from the CSM. However, the CPT must follow the next steps to change the status to **“CSM follow-up completed — client still canceled”** in the** **[**Marketplace Customer Churn Tracker**](https://docs.google.com/spreadsheets/d/1FycRv5tniwSGDvGfGED8u4_bujlczMMheiPWjIys56E/edit?gid=1536833690#gid=1536833690)**.**
+
+#### When the Client Confirms Cancellation:
+
+**a) Open **[**HubSpot**](https://app.hubspot.com/contacts/23701847/objects/0-3/views/45332833/list) → open the customer record and check the _“Churn Status”_ column to confirm the client has canceled.
+
+**b) In the Tracker** → Select in the _**Churn Status column**_ the status **“CSM follow-up completed — Client still canceled.”**
+
+**c) Automatic next step** → the script will send the appropriate cancellation notification
+
+- Cancellation **emails** are sent to _<u>Filters, Coverpest, and Obie partners</u>_.
+- For **Piñata**, a **“Marketplace Benefits Churn” bot** posts the workflow message and tags **Clara** and **Ben** when a cancellation is detected.
+
+For more reference, see the SOP guide [Marketplace Customer Churn Tracker](https://latchel.atlassian.net/wiki/spaces/AL/pages/3473113118/Marketplace+Customer+Churn+Tracker) & [How to Update the Benefits Tracker if a Marketplace Benefits Contract Has Been Terminated/Cancelled](https://latchel.atlassian.net/wiki/spaces/AL/pages/3642884099/How+to+Update+the+Benefits+Tracker+if+a+Marketplace+Benefits+Contract+Has+Been+Terminated+Cancelled)

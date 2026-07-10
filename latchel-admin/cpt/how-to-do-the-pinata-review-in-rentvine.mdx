@@ -1,0 +1,182 @@
+---
+title: "How to do the Piñata review in RentVine"
+---
+
+<Note>
+The purpose of this SOP is to provide a step-by-step process for generating the Rent Roll in RentVine PMS and performing a monthly review to ensure accurate reporting and proper GL code counts.
+</Note>
+
+## Step-by-step guide:
+
+### Step 1: Log into RentVine PMS
+
+a. Navigate to Benefits Tracker and open the Piñata tab
+
+b. Locate the PM with a RentVine PMS account that you are reviewing.
+
+c. Open the provided link, then log in to RentVine. Enter credentials to access PMS.
+
+<Frame>
+  <img src="/images/CPT-616.png" alt="image-20250805-162524.png" />
+</Frame>
+
+d. After logging in, you will be prompted to select the **PM’s profile**. Click on the profile to proceed.
+
+<Frame>
+  <img src="/images/CPT-617.png" alt="image-20250805-163026.png" />
+</Frame>
+
+### Step 2: Generate Rent Roll
+
+a. Locate and click on the **"Reports"** section in RentVine PMS.
+
+b. Click on **"Rent Roll"** report.
+
+**Note:**  _Residents with GL codes are not included in the Rent Roll export. They must be added manually by checking the Lease recurring charges report._
+
+<Frame>
+  <img src="/images/CPT-618.png" alt="image-20250805-163900.png" />
+</Frame>
+
+### Step 3: Customize Columns
+
+a. Click on **"Columns"** to customize the report view.
+
+<Warning>
+**Important:** _Ensure the Date is set to the last date of the month._
+</Warning>
+
+<Frame>
+  <img src="/images/CPT-619.png" alt="image-20250805-165158.png" />
+</Frame>
+
+b. Select the following columns:
+
+- Unit Address
+- Unit Address 2
+- Unit City
+- Unit State
+- Unit Postal Code
+- Primary Tenant Name
+- Lease Start Date
+- Lease End Date
+- Monthly Rent Amount
+
+<Frame>
+  <img src="/images/CPT-620.png" alt="image-20250805-165926.png" />
+</Frame>
+
+### Step 4: **Export Rent Roll**
+
+a. Export the customized report in CSV format.
+
+<Frame>
+  <img src="/images/CPT-621.png" alt="image-20250805-170400.png" />
+</Frame>
+
+### **Step 5: Process the Rent Roll Data**
+
+a. Open a new spreadsheet.
+
+<Frame>
+  <img src="/images/CPT-622.png" alt="image-20250805-171429.png" />
+</Frame>
+
+b. **File > Import > Upload the CSV file**.
+
+c. Select **Replace all data at selected cell**.
+
+<Frame>
+  <img src="/images/CPT-623.png" alt="image-20250805-171615.png" />
+</Frame>
+
+e. **Delete** the 'Rent Roll' details. **> Left-click > Delete Cells and Shift Up**
+
+<Frame>
+  <img src="/images/CPT-624.png" alt="image-20250805-171807.png" />
+</Frame>
+
+f. Rearrange the columns in the following order:
+
+- _Unit Address_
+- _Unit Address 2_
+- _Unit City_
+- _Unit State_
+- _Unit Postal Code_
+- _Primary Tenant Name_
+- _Lease Start Date_
+- _Lease End Date_
+- _Monthly Rent Amount_
+
+<Check>
+**Note: **_Reapply “Filter”_
+</Check>
+
+<Frame>
+  <img src="/images/CPT-625.png" alt="image-20250805-173244.png" />
+</Frame>
+
+g. Copy the exported report and paste **(CTRL+SHIFT+V)** it into **Column U** of the **PM GL Codes** tab in the **Benefits Tracker**.
+
+<Frame>
+  <img src="/images/CPT-626.png" alt="image-20250805-174259.png" />
+</Frame>
+
+### Step 6: Verify GL Codes in PMS
+
+a. Return to RentVine PMS to check GL codes.
+
+b. Navigate to **"Lease Recurring Charges"** and select appropriate criteria (e.g., GL code of PM, active lease charges).
+
+<Frame>
+  <img src="/images/CPT-627.png" alt="image-20250805-174554.png" />
+</Frame>
+
+c. Build the report to confirm GL code details.
+
+- In the **ACCOUNT** field, select **EQUALS**.
+- Search for the **PM’s GL code**.
+- In the **Lease Charge Active** field, select **YES**.
+- Click **Build Report**.
+
+<Frame>
+  <img src="/images/CPT-628.png" alt="image-20250805-175037.png" />
+</Frame>
+
+d. The report will display only the property address. Click each address one by one to view the resident’s name and search it in the **PM GL Codes** tab of the **Benefits Tracker.**
+
+- Check addresses to match resident names from PMS to the GL Codes Tab (Benefits Tracker).
+
+<Frame>
+  <img src="/images/CPT-629.png" alt="image-20250805-175601.png" />
+</Frame>
+
+e. Filter **GL codes** in **Column J (Benefits GL Code)** and compare them with the **Leasing Recurring Charges Report from PMS** to ensure accuracy.
+
+<Frame>
+  <img src="/images/CPT-630.png" alt="image-20250805-183603.png" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-631.png" alt="image-20250805-183836.png" />
+</Frame>
+
+f. If there is a **NEW RESIDENT **with a GL code, record the GL code amount from PMS in the **PM GL Codes** tab of the **Benefits Tracker**, entering it in both **Column J** (Benefits GL code) and **Column AD **(Piñata GL code).
+
+- In **Column K (Is 1st GL Code Same)**, enter **“Yes”**.
+
+<Warning>
+If there is a **NEW RESIDENT**, highlight the entry with a color to indicate that a new GL code has been added and should be included in the Monthly report.
+</Warning>
+
+<Frame>
+  <img src="/images/CPT-632.png" alt="image-20250805-180607.png" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-633.png" alt="image-20250805-180835.png" />
+</Frame>
+
+<Frame>
+  <img src="/images/CPT-634.png" alt="image-20250805-181155.png" />
+</Frame>
