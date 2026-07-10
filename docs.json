@@ -1525,6 +1525,20 @@
                   "latchel-admin/cpt/how-to-check-the-assisted-ledgering-email",
                   "latchel-admin/cpt/how-to-update-the-real-time-monthly-scorecard-tab-with-newly-onboarded-pms"
                 ]
+              },
+              {
+                "group": "Air Filters",
+                "pages": [
+                  "latchel-admin/cpt/adding-a-new-property-manager-to-the-air-filters-benefit",
+                  "latchel-admin/cpt/air-filters",
+                  "latchel-admin/cpt/how-to-create-a-filter-tab-appfolio-customers",
+                  "latchel-admin/cpt/how-to-do-monthly-filters-review",
+                  "latchel-admin/cpt/how-to-do-weekly-filters-review",
+                  "latchel-admin/cpt/how-to-follow-up-on-an-air-filter-issue-report",
+                  "latchel-admin/cpt/how-to-process-the-filter-shipment",
+                  "latchel-admin/cpt/how-to-report-to-the-operations-support-specialist-when-they-need-to-collect-air-filter-information-from-residents",
+                  "latchel-admin/cpt/identifying-types-of-filters-subscriptions"
+                ]
               }
             ]
           },
