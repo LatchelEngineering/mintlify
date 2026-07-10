@@ -1509,6 +1509,22 @@
                     ]
                   }
                 ]
+              },
+              {
+                "group": "How-to articles",
+                "pages": [
+                  "latchel-admin/cpt/how-to-add-newly-onboarded-property-managers-to-the-appropriate-tracker",
+                  "latchel-admin/cpt/how-to-articles",
+                  "latchel-admin/cpt/how-to-check-the-assisted-ledgering-email",
+                  "latchel-admin/cpt/how-to-confirm-in-rillet-if-property-managers-invoices-are-paid",
+                  "latchel-admin/cpt/how-to-follow-up-on-concession-reports",
+                  "latchel-admin/cpt/how-to-get-access-to-the-property-managers-pms",
+                  "latchel-admin/cpt/how-to-organize-monthly-gl-reports",
+                  "latchel-admin/cpt/how-to-send-monthly-updates-to-marketplace-benefits-customers",
+                  "latchel-admin/cpt/how-to-update-active-units",
+                  "latchel-admin/cpt/how-to-update-the-real-time-monthly-scorecard-tab-with-newly-onboarded-pms",
+                  "latchel-admin/cpt/how-to-use-hubspot"
+                ]
               }
             ]
           },
