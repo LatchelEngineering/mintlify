@@ -1,0 +1,544 @@
+---
+title: "How To: Identify and Handle Past Due Subscription Invoices"
+---
+
+## <strong>Purpose</strong>
+
+This document outlines a clear workflow for efficiently managing past-due balances, ensuring overdue accounts are addressed in a structured and timely manner. It also includes the generic templates sent to property managers' billing points of contact (and, if applicable, their Ultimate Decision Maker), tailored to the age and number of overdue invoices.
+
+## <strong>Target Audience</strong>
+
+This document is intended for the Accounts Receivable team to manage customer account statuses based on account balances and to standardize the process and communication for accounts that are past due. It also serves as a resource for the Product Support and Customer Success teams to understand account statuses and provide accurate, informed support.
+
+## <strong>Past Due Vocabulary</strong>
+
+1. <strong>Past Due </strong>
+  - This pertains to a late or unpaid invoice
+  - Synonymous with overdue and open invoice
+2. <strong>AR Aging Report</strong>
+  - This is used to identify customers with open invoices, track how long those invoices have been outstanding, and review the current status of each account by categorizing them into age from current, 1-30 days, 31-60 days, and 90+ days old.
+
+<strong>How To Generate the AR Aging Report</strong>
+
+Step 1:  Go to Rillet and navigate to Reporting > AR Aging.
+
+Step 2: Export the report by verifying that the date range is current. Once confirmed, proceed to download the report as a CSV file.
+
+1. <strong>Aging and Payment Checker</strong>
+  - This tracker is created monthly to monitor past due invoices and review the overall status of each account. It consolidates key details such as outstanding balances, autopay settings, payment terms, and other relevant internal factors to support accurate follow-ups and account management.
+2. <strong>Automated Payment Reminders </strong>
+  - Each Rillet customer profile includes a toggle that controls whether automated past-due payment reminders are sent.
+  - For customers not enrolled in autopay, this toggle should be turned on. For customers on autopay, the toggle should be turned off to prevent unnecessary reminders.
+  - Rillet is currently configured to send two automated reminders for open invoices:
+    1. First reminder: Sent on the invoice due date
+    2. Second reminder: Sent 7 days after the first reminder
+3. <strong>Expected Failed </strong>
+
+- This is a list of customers who are on autopay with a bank account but have missing Stripe mandate IDs.
+- Manually processing failed payments for these accounts is an internal AR action done after the invoices are due, and autopay fails; it doesn’t require customer involvement.
+
+1. <strong>Unexpected Failed </strong>
+
+- This is a list of customers who are on autopay, but payment failed due to several reasons (e.g., insufficient balance, card is blocked, etc).
+- There are two reasons why an account can be listed on this tab:
+
+1. <strong>Payment Terms</strong>
+
+- There are several terms of payment based on the customers’ contracts, which are counted in days from the invoice date
+  1. Net 5 - 5 days after the 10th of the month when the invoices are sent out
+  2. Net 15 - 15 days after the 10th of the month when the invoices are sent out
+  3. Net 21 - 21 days after the 10th of the month when the invoices are sent out
+  4. Net 30 - 30 days after the 10th of the month when the invoices are sent out
+  5. Net 45 - 45 days after the 10th of the month when the invoices are sent out
+
+1. <strong>Past Due Communication Day  </strong>
+
+- This refers to the days when past due reminders, whether auto or manual, are being monitored and sent out.
+- As the due date depends on terms, <a href="https://docs.google.com/document/d/1uoF2jdyGVVQSZltRdh3rZ7xvQSsbr8wyLzkYcx03V_g/edit?tab=t.0#heading=h.5oym26a5706v">here</a> is the calendar guide of when the past due communications are sent
+
+1. <a href="https://docs.google.com/spreadsheets/d/1ngsVJmLTE_vSbyZ131tdwEQufSpx9P6gk6WGXullwcg/edit?gid=1658342962#gid=1658342962"><strong>PMs with Add-Ons</strong></a>
+
+- This is a list of PMs with add-ons like Filter, Pinata, and CoverPest
+- It is important to consider this when tracking past-due accounts, as it directly impacts the property managers' access to the associated benefits. This information should be communicated alongside the past-due reminder.
+- This should be raised in the <em>#ledgering-mkt-opt-benefits</em> Slack channel for visibility every Thursday.
+
+## <strong>Past Due Process</strong>
+
+The past-due workflow is designed to provide a structured and comprehensive approach to addressing overdue balances, ensuring that accounts are monitored and managed effectively. This process involves systematic tracking, communication, and escalation to either recover outstanding payments or, if necessary, terminate the account for non-payment. Each step is tailored to the account's payment terms and number of overdue invoices and ensures a consistent resolution process for every account.
+
+### <a href="https://www.canva.com/design/DAG-T7cBEeo/Ivz5fUw7FzuDd4AixhjRZg/edit?utm_content=DAG-T7cBEeo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"><strong>Visual Graph of Past Due Workflow</strong></a>
+
+<Frame>
+  <img src="/images/AR-46.png" alt="Visual Graph of Past Due Workflow.png" />
+</Frame>
+
+### <strong>How to Identify and Monitor Past Due</strong>
+
+1. <strong>Create the Monthly Aging and Payment Check Tracker</strong>
+
+The tracker is prepared monthly and serves as the basis for reviewing all accounts with outstanding invoices. During the monthly AR Aging Sync, all accounts are discussed to determine the most appropriate follow-up actions.
+
+Follow the steps outlined in the <a href="https://docs.google.com/document/d/1mjFnM7bPuVacCEOO4z-sX7N9rFm0m1QjYFkCUqchg9g/edit?tab=t.0#heading=h.aw00aijtdgz6">How to Create the  Aging and Payment Checker</a> for more details.
+
+1. <strong>Track the past due accounts  </strong>
+
+Using the Monthly Aging and Payment Check Tracker, it is easier to identify customers with open invoices. The tracker should be updated based on each account’s net terms, which determine the invoice due dates and when the past due should be checked.
+
+Please refer to the list of dates below for when the tracker should be updated.
+
+<table>
+  <tr>
+    <th><strong> </strong><strong>Payment Terms</strong></th>
+    <th><strong>Check 1 </strong><strong>First reminder</strong></th>
+    <th><strong>Check 2</strong><strong>Second reminder</strong></th>
+    <th><strong>Check 3</strong><strong>Third reminder</strong></th>
+    <th><strong>Check 4</strong><strong>Fourth reminder</strong></th>
+    <th><strong>Check 5</strong><strong>Start of termination</strong></th>
+    <th><strong>Final check </strong><strong>Termination</strong></th>
+  </tr>
+  <tr>
+    <td><strong>Net 5</strong></td>
+    <td>15th of the current month</td>
+    <td>22nd of the Current Month</td>
+    <td>15th of the Second Month</td>
+    <td>22nd of the Second Month</td>
+    <td>15th of the Third Month</td>
+    <td>End of the Third Month</td>
+  </tr>
+  <tr>
+    <td><strong>Net 15</strong></td>
+    <td>25th of the Current Month</td>
+    <td>1st or 2nd of the Second Month</td>
+    <td>25th of the Second Month</td>
+    <td>1st or 2nd of the Third Month</td>
+    <td>25th of the Third Month</td>
+    <td>1st or 2nd of the Fourth Month</td>
+  </tr>
+  <tr>
+    <td><strong>Net 30</strong></td>
+    <td>9th or 10th of the Second Month</td>
+    <td>16th or 17th of the Second Month</td>
+    <td>9th or 10th of the Third Month</td>
+    <td>16th or 17th of the Third Month</td>
+    <td>9th or 10th of the Fourth Month</td>
+    <td>End of the Fourth  Month</td>
+  </tr>
+  <tr>
+    <td><strong>Net 45</strong></td>
+    <td>25th of the Second Month</td>
+    <td>1st or 2nd of the Third Month</td>
+    <td>25th of the Third Month</td>
+    <td>1st or 2nd of the Fourth Month</td>
+    <td>25th of the Fourth Month</td>
+    <td>1st or 2nd of the Fifth  Month</td>
+  </tr>
+</table>
+
+<Note>
+Open balances are tracked based on each customer’s net terms. Accounts with different net terms are reviewed and handled on separate timelines. For example, Net 5 overdue balances are not addressed on the same day as accounts with longer terms. Similarly, reminder notices are not sent to Net 30 customers on the 22nd of the month simply because Net 5 accounts are reviewed on that date.
+
+Although past-due accounts are reviewed multiple times each month, each account with open invoices is monitored a total of six (6) times before it is terminated. This equates to approximately three months of monitoring per account, covering up to three unpaid invoices.
+</Note>
+
+#### <strong>One Overdue Invoice </strong>
+
+##### <strong>Check 1 – (Due Date of the First Invoice)</strong>
+
+On the exact due date of an invoice, we begin the past-due process for that account. The first step involves generating the Aging and Payment Checker and cross-referencing it with the Aging Report to ensure all information is accurate.
+
+###### <em><strong>Invoice: Unpaid; Autopay: No </strong></em>
+
+For overdue invoices where the customer is not enrolled in Autopay, the AR team should first verify whether automated payment reminders have already been sent. If reminders have been sent, no immediate action is required, but continuous monitoring of the account is still necessary to ensure timely follow-up.
+
+If a past-due reminder has not been sent, the AR team must ensure that the Payment Reminders toggle in Rillet is turned on and that there is a valid billing POC email associated with the account. If both settings are correct but the automated reminder still does not send, the AR team should manually send the Check 1 template reminder and raise the issue with the Rillet Team for resolution.
+
+<Accordion title="Check 1.1 Template - Manual Paying Customers">
+<em><strong>Subject:</strong> Latchel (PM Company Name) (Month) Monthly Subscription Past Due Invoice</em>
+
+<em><strong>Sent to:</strong> billing point of contact (POC).</em>
+
+<em>Hi [Customer Name],</em>
+
+<em>We hope this message finds you well.</em>
+
+<em>We’re reaching out to inform you that payment for your invoice, $INVOICE_NUMBER dated $INVOICE_DATE in the amount of $AMOUNT_DUE, has not yet been received and is now past due. To make things easier for you, we’ve attached a copy of the invoice for your reference.</em>
+
+<em>Please arrange payment of the unpaid balance within seven (7) days of this notice. If you have recently sent in payment for this invoice, please disregard this email. </em>
+
+<em>If you have any questions or need assistance, feel free to reply to this email—we’re here to help in any way we can!</em>
+
+<em>Thank you for your attention to this. Your satisfaction is our top priority, and we’re here to support you.</em>
+</Accordion>
+
+<Accordion title="Check 1.2 Template - New Customer with no Implementation Fee (No Payment Method on File)">
+<em><strong>Subject:</strong> Latchel (PM Company Name) (Month) Monthly Subscription Past Due Invoice</em>
+
+<em><strong>Sent to:</strong> billing point of contact (POC).</em>
+
+<em>Hi [Customer Name],</em>
+
+<em>We hope this message finds you well.</em>
+
+<em>We are reaching out to kindly inform you that payment for your [MONTH] subscription invoice has not yet been received and is now past due. For your convenience, a copy of the invoice has been attached to this email for your reference.</em>
+
+<em>As a valued new customer, we want to ensure your experience with us is smooth and straightforward. Please arrange payment of the outstanding balance within seven (7) days of this notice.</em>
+
+<em>To initiate payment, we highly recommend setting up autopay with another payment method to ensure your monthly subscription payments remain hassle-free and seamless. You can easily set this up using [this link]. Alternatively, you can click the “Set up automatic payments” link on your attached invoice. Please note that Latchel recommends using a bank account as a default payment method, as 3.5% processing fee applies for credit card payments.  </em>
+
+<em>If payment has already been sent, please disregard this message. Should you have any questions or need further assistance, don’t hesitate to let us know. We are here to ensure your satisfaction and provide any support you may need.</em>
+
+<em>Thank you for your prompt attention to this matter.</em>
+</Accordion>
+
+###### <em><strong>Invoice: Unpaid; Autopay: Yes</strong></em>
+
+At this point in the process, attention is focused on <strong>failed payments</strong>, which are accounts that require intervention. Before taking any action, it is important to <strong>categorize the overdue invoice</strong> as either an <strong>Expected Failed</strong> or <strong>Unexpected Failed</strong> payment.
+
+<strong>Expected Failed </strong>
+
+These customers are ideally set up for automatic payment, but AR intervention is necessary to ensure that their payments can be processed successfully. We monitor customers who are enrolled in Autopay using a bank account but have missing Stripe mandate IDs. These customers are ideally set up for automatic payment, but AR intervention is necessary to ensure that their payments can be processed successfully.
+
+The list of customers under this category includes the following:
+
+<table>
+  <tr>
+    <td>Anchor Property Management</td>
+    <td>C&C Property Management</td>
+  </tr>
+  <tr>
+    <td>CIT Property Group</td>
+    <td>Foundation First Property Group</td>
+  </tr>
+  <tr>
+    <td>Judit Martinez Bauza - LLC</td>
+    <td>Kavanagh Enterprises LLC</td>
+  </tr>
+  <tr>
+    <td>Landmark Management Services CW LLC</td>
+    <td>Legacy Oak Realty</td>
+  </tr>
+  <tr>
+    <td>Luna Properties, LLC</td>
+    <td>Mission Property Management</td>
+  </tr>
+  <tr>
+    <td>New Age Realty Group</td>
+    <td>Post Real Estate Group</td>
+  </tr>
+  <tr>
+    <td>Properties Managed, LLC</td>
+    <td>Real Property Management Diamond</td>
+  </tr>
+  <tr>
+    <td>Real Property Management New Jersey Elite</td>
+    <td>Scarpa Properties</td>
+  </tr>
+  <tr>
+    <td>The RVA Group</td>
+    <td>Vision Management</td>
+  </tr>
+  <tr>
+    <td>Chosen Property Management</td>
+    <td>Chicagoland Realty Group Partners</td>
+  </tr>
+  <tr>
+    <td>Synergy Property Management</td>
+    <td>SpringView Property Management</td>
+  </tr>
+</table>
+
+<strong>Unexpected Failed Payments</strong>
+
+Unexpected failed payments refer to customers who are on Autopay but whose payments fail due to various reasons, such as insufficient funds, blocked or expired cards, stolen cards, or unauthorized transactions. Unlike the “Expected Failed” list, which is limited to customers missing Stripe mandate IDs, the unexpected failed list can include any Autopay customer whose payment does not go through.
+
+Identifying these customers promptly is critical so that immediate action can be taken. Since reprocessing payments via a bank account can take 5–7 business days, consistent follow-up and monitoring are essential to ensure timely resolution.
+
+Once a failed payment is identified, the “Unexpected Failed Payment” template is sent immediately to the respective billing POC. Similar to other unpaid invoices, these accounts are tracked carefully to maintain accurate records and ensure proper follow-up until the payment is successfully processed.
+
+For all the customers above, we will have to manually run the autopay.
+
+<Accordion title="Check 1.3 Template - Autopay Failed">
+<em><strong>Subject:</strong> Latchel (PM Company Name) (Month) Monthly Subscription Past Due Invoice</em>
+
+<em><strong>Sent to:</strong> billing point of contact (POC).</em>
+
+<em>Hi [Customer Name],</em>
+
+<em>We hope this message finds you well.</em>
+
+<em>We’re reaching out to inform you that the auto payment of your (MONTH) subscription invoice with a (PAYMENT METHOD and the last 4) has failed. As a result, the attached invoice is now past due.</em>
+
+<em>Please arrange payment of the outstanding balance within seven (7) days of this notice. If you have already submitted payment, kindly disregard this email.</em>
+
+<em>We highly recommend setting up autopay with another payment method to ensure your monthly subscription payments remain hassle-free and seamless. You can easily set this up using </em><a href="https://app.rillet.io/customers/dea63d10-0045-43fa-a2c2-858d0aafa036/invoicing/autopayment"><em>this link</em></a><em>. Alternatively, you can click the “Set up automatic payments” link on your attached invoice.</em>
+
+<em>If you have any questions or need assistance, feel free to reply to this email—we’re here to help in any way we can!</em>
+</Accordion>
+
+##### <strong>Check 2 - 1 Invoice (A week after the first due date) </strong>
+
+Following the first check, where the AR aging report is cross-referenced in the Past Due Summary, we can now review any remaining overdue invoices and follow up on communications accordingly.
+
+###### <em><strong>Invoice: Unpaid; Autopay: No </strong></em>
+
+For customers who are manually paying, confirm if the second automated reminder is already sent.
+
+<Accordion title="Check 2.1 Template - Manual Paying customers">
+<em>Subject: Latchel (PM Company Name) (Month) Monthly Subscription Past Due Invoice</em>
+
+<em>Send to the billing POC and Ultimate Decision Maker (this may be the same person).</em>
+
+<em>Hi [insert customer name],</em>
+
+<em>We hope this message finds you well.</em>
+
+<em>We are writing to inform you that payment for your January monthly subscription invoice is still past due. For your reference, we’ve attached all open invoices for your account.</em>
+
+<em>(If applicable) We have noticed an alternative payment method on file ([card type/bank name] ending in [Last 4 Digits of Payment Method]). If no payment has been received by [7 days from today’s date], we will proceed with charging this method to settle the outstanding balance for all open invoices.</em>
+
+<em>(Late fee in contract) A late fee of $100 will be applied to any invoice that is more than 30 days overdue.</em>
+
+<em>(Late fee as per MSA) A late fee of 1.5% of the unpaid balance will be applied to any invoice that is more than 30 days overdue.</em>
+
+<em>(If applicable, depending on the add-on) Also, please note that this will result in delayed shipping of filters to your residents. </em>
+
+<em>We expect your prompt attention to this matter. Thank you for your cooperation as we work to ensure a smooth and efficient process.</em>
+</Accordion>
+
+###### <strong>Invoice: Unpaid; Autopay: Yes</strong>
+
+At this stage, we will also be able to verify whether any manually processed payments from the previous week have successfully gone through. AR team should follow up on both Expected and Unexpected Failed customers to confirm the status of their payments.
+
+If a payment has been successful, no further action is needed. If the payment is still in Pending status, no immediate action is required either, as processing can sometimes take more than a week. However, if an Unexpected Failed payment has not gone through, two critical points must be checked before proceeding with a second contact attempt.
+
+Before sending the second contact attempt, two key points must be confirmed, as they influence the content of the second contact attempt:
+
+1. <strong>Alternative Payment Method on File</strong>
+  1. Review the customer’s Stripe profile via the Overview tab in their Rillet profile. Check if an alternative bank account or credit card is available that can be charged for the open invoices.
+  2. If there is, make sure that you also track this separately, as you will need to attempt running it after a week. For Net 5, Net 15, and Net 21, this is on Column E of each sheet, while it is on Column D for Net 30.
+2. <strong>Late Fee Applicability</strong>
+  1. If a late fee is included in the customer’s contract, this should be included in the email to remind the customer.
+  2. If the account is marked as “NO” for late fees, the <a href="https://latchel.com/terms-of-use-msa/"><em>Latchel, Inc. — Master Services Agreement</em></a> takes precedence. A late fee of (1.5%) of the unpaid balance per month should be assessed.
+
+Note: The late fee is mentioned in communications to make the customer aware of the amount they may incur if payment is not received. The actual application of the late fee to the invoice will occur with the generation of the third invoice if the payment remains outstanding, and only after it has been approved by the manager.
+
+<Accordion title="Check 2.2 Template - Unexpected Failed Payment">
+<em>Subject: Latchel (PM Company Name) (Month) Monthly Subscription Failed Payment</em>
+
+<em>Sent to the billing point of contact (POC).</em>
+
+<em>Hi PM NAME Team,</em>
+
+<em>We hope this message finds you well.</em>
+
+<em>We’re reaching out to inform you that the payment of your (MONTH ) subscription invoice with (payment method used) has failed. As a result, the attached invoice is now past due.</em>
+
+<em>We have noticed an alternative payment method on file ([card type/bank name] ending in [Last 4 Digits of Payment Method]). If no payment has been received by [7 days from today’s date], we will proceed with charging this method to settle the outstanding balance for all open invoices.</em>
+
+<em>Please arrange payment of the outstanding balance within seven (7) days of this notice. If you have already submitted payment, kindly disregard this email.</em>
+
+<em>We highly recommend setting up autopay with another payment method to ensure your monthly subscription payments remain hassle-free and seamless. You can easily set this up using [this link]. Alternatively, you can click the “Set up automatic payments” link on your attached invoice. Please note that Latchel recommends using bank account as a default payment method as 3.5% processing fee applies for credit card payments.  </em>
+
+<em>If you have any questions or need assistance, feel free to reply to this email—we’re here to help in any way we can!</em>
+
+<em>Thank you for your attention to this. Your satisfaction is our top priority, and we’re here to support you.</em>
+</Accordion>
+
+<strong>Check 2.2  (A week after the second communication was sent) </strong>
+
+This step is performed one week after the previous check and primarily applies to customers with overdue balances who have an alternative payment method on file. This only applies to customers who have been previously notified that a payment attempt will be made using their alternative payment method. This information must been communicated to the Property Manager (PM). At this stage, the AR team will manually run the payment toward the alternative account to fulfill the attempt and ensure the overdue balance is addressed.
+
+<Accordion title="Alternative Payment Method on File was Successful">
+<em>Hi PM,  </em>
+
+<em>We hope this message finds you well.</em>
+
+<em>As mentioned in our previous past-due communication regarding your <strong>[month] subscription invoice</strong>, we successfully processed the payment using your alternative payment method (<strong>[Payment Method], ending in [last 4 digits]</strong>).</em>
+
+<em>To ensure seamless future payments, we’ve updated this payment method to be your default. If you’d like to use a different payment method, you can update your preferences anytime by visiting this link to your billing portal and setting up a new default payment method.</em>
+
+<em>If you have any questions or need assistance with updating your payment settings, please don’t hesitate to reply to this email—we’re here to help!</em>
+
+<em>Thank you for your attention, and we’re glad we could resolve this promptly. Your satisfaction remains our top priority, and we appreciate your continued partnership.</em>
+</Accordion>
+
+<Accordion title="Alternative Payment Method on File was Declined">
+<em>Hi PM,  </em>
+
+<em>We hope this message finds you well.</em>
+
+<em>As mentioned in our previous past-due communication regarding your <strong>[month] subscription invoice</strong>, we attempted to process payment using your other payment method on file (<strong>[Payment Method], ending in [last 4 digits]</strong>), but the transaction was unsuccessful. As a result, the attached invoice remains past due.</em>
+
+<em>Please arrange payment of the outstanding balance within <strong>seven (7) days</strong> of this notice. If you have already submitted payment, kindly disregard this email.</em>
+
+<em>To avoid future interruptions, we strongly recommend setting up autopay with an alternative payment method. You can easily do this via [this LINK] or by clicking the “Set up automatic payments” link on your attached invoice.</em>
+
+<em>If you have any questions or require assistance, don’t hesitate to reply to this email—we’re happy to help!</em>
+
+<em>Thank you for your prompt attention to this matter. Your satisfaction is important to us, and we’re here to support you.</em>
+</Accordion>
+
+#### <strong>Two Invoices Due</strong>
+
+Once the first and second contact attempts have been sent as reminders for one overdue invoice, the billing cycle for the next month’s invoice will also commence. The subsequent month’s invoice will be issued and will also be due, resulting in two overdue invoices on the account.
+
+Similar to the approach for the first overdue invoice, we will contact the customer twice regarding the second overdue invoice.
+
+<Accordion title="Check 3 – (Due Date of the Second Invoice)">
+<em><strong>Subject: </strong> Latchel (PM Company Name) (Month) and (Month) Action Required for Past Due Invoices </em>
+
+<em><strong>Send</strong> to all account contacts</em>
+
+<em>Hello Team,</em>
+
+<em>We hope you're having a wonderful day.</em>
+
+<em>We’re reaching out to notify you that the payments for your October and November monthly subscription invoices remain outstanding. To assist with your review, we’ve attached all open invoices associated with your account.</em>
+
+<em>As a gentle reminder, if the (Month1 Past Due) invoice remains unpaid by the end of the month, a late fee of [$100] [1.5% of the Month1 Past Due Total] will be added to your next month’s invoice in accordance with our billing policy. We want to ensure you have ample time to review and take any necessary action before this occurs.</em>
+
+<em>Additionally, please note that the shipping of filters to your residents is currently on hold until payment is received.</em>
+
+<em>We kindly ask for your attention to these open balances. If there’s anything you need, please don’t hesitate to reach out. We’re here to help and want to make this process as smooth as possible for your team.</em>
+
+<em>Thank you for your cooperation and partnership.</em>
+</Accordion>
+
+<Accordion title="Check 4 - (A week after the due date of the second invoice )">
+<em><strong>Subject:</strong> Latchel (PM Company Name) (Month) and (Month) Action Required for Past Due Invoices </em>
+
+<em><strong>Send</strong> to all account contacts with the Customer Success Manager (CSM) copied.</em>
+
+<em>Hello [insert customer name],</em>
+
+<em>Hope you’re doing well.</em>
+
+<em>We are following up regarding the past-due invoices for [Month1] and [Month2], as payment has still not been received. Despite our previous reminder, the matter remains unresolved. For your reference, we have attached the open invoices again.</em>
+
+<em>As mentioned in our previous communication, a <strong>late fee of ($$) for your [Month 1]</strong> past due invoice will appear on your <strong>[Month3]’s invoice</strong>. To avoid any service disruptions or additional charges, we kindly request payment within <strong>seven (7) days</strong> or before the issuance of next month’s invoice. If payment has already been made, please disregard this email. </em>
+
+<em>Your immediate attention to this matter is required. Thank you for your cooperation in ensuring that we can continue to provide you with uninterrupted service.</em>
+</Accordion>
+
+#### <strong>Three Past Due Invoices</strong>
+
+For accounts with overdue payments extending across three invoices, the first and second contact attempts will be repeated for the first and second overdue invoices as part of the ongoing payment recovery efforts. If no payments are received after a total of four communications, the account will progress to the Third Invoice Due stage.
+
+##### <strong>Check 5: Day After Invoice Due Date</strong>
+
+At this stage, Accounts Receivable (AR) will take the following actions:
+
+1. <strong>Activate the Banner on the Customer’s Profile</strong>
+
+This will occur on the business day following the third invoice's due date. For instance, for a Net 5 account that has not paid since the October invoice, the banner will be activated on December 17th. (See the Mia Management Group scenario for reference.)
+
+- Display the "Urgent Action Required" banner on the customer's profile.
+
+<strong>How to Activate the Banner:</strong>
+
+- <a href="https://docs.google.com/document/d/1aocZFAjJS1sCYRS3Xlekco4b1lMvN6BZjK6xoTn48_M/edit?tab=t.0#heading=h.ub8qzbptyboq">How to Set Up the Non-Payment Reminder Banner</a>
+- Additional Context: <a href="https://drive.google.com/file/d/1Ectu_G4xJUt3oFPnyRAXtQGWFwDuNlj3/view?usp=drive_web">[Userpilot for Accounts Receivable – 2024/11/06 11:30 EST – Recording].</a>
+
+1. <strong>Post in the #accounts-receivable Slack Channel.</strong>
+
+Notify the Customer Success Manager (CSM) and the HubSpot "Deal Owner" about the activation of the "Urgent Action Required" banner.
+
+Refer below for sample posts:
+
+- <strong>Scarpa Properties Group </strong><a href="https://latchel.slack.com/archives/C05N2RRD14P/p1732139287898839">https://latchel.slack.com/archives/C05N2RRD14P/p1732139287898839</a>
+
+<Frame>
+  <img src="/images/AR-47.png" alt="image-20260223-191056.png" />
+</Frame>
+
+- <strong>Mia Management Group </strong><a href="https://latchel.slack.com/archives/C05N2RRD14P/p1734466265319129">https://latchel.slack.com/archives/C05N2RRD14P/p1734466265319129</a>
+
+<Frame>
+  <img src="/images/AR-48.png" alt="image-20260223-191137.png" />
+</Frame>
+
+1. <strong>Send the Termination Warning Email</strong>
+
+- Send a termination warning email to the Property Manager (PM). Ensure all account contacts and the CSM are copied on the email to maintain transparency and accountability.
+- The most critical detail in the termination warning email is to ensure the termination date is accurate. Since Latchel bills by month, we give the customer up to the last day of the month when the warning email is sent to settle their outstanding balance or finalize their decision before the account is officially terminated.
+
+<Accordion title="Warning of Termination due to Non-Payment">
+Subject: Latchel (PM Name) Warning of Termination due to Non-Payment
+
+Send to all account contacts with the Customer Success Manager (CSM) copied.
+
+<em>Hi PM Company Name, </em>
+
+<em>We hope this message finds you well.</em>
+
+<em>We are writing to inform you that, due to non-payment of your subscription invoices (Month1 to Month3), your account with us is at risk of termination effective on (last day of the current month). To avoid termination, please arrange payment of the attached invoices immediately.</em>
+
+<em>(If applicable) As advised in our previous email, we attempted to charge your available methods and unfortunately, they were declined.</em>
+
+<em>Please note that any services associated with your account will be suspended as of the termination date. If you would like to discuss payment arrangements, please contact us immediately at </em><a href="mailto:billing@latchel.com"><em>billing@latchel.com</em></a><em>.</em>
+
+<em>We appreciate your understanding.</em>
+</Accordion>
+
+NOTE: Accounts flagged for potential termination should be closely monitored. As part of the AR tasks and monthly calendar, a weekly review of the #accounts-receivable-by-status Slack list is conducted, along with a last day of each month review for those with three open invoices.  Any updates regarding payments or responses should be recorded on this list. If no payment or response is confirmed, account termination should proceed accordingly.
+
+#### <strong>Final Check: Termination Date  </strong>
+
+As the termination warning email was sent two weeks ago, the final check will be done.
+
+1. <em><strong>If the customer responds and successfully clears all overdue balances before the termination or suspension process is carried out, the "Urgent Action Required" banner must be removed from the customer’s profile.</strong></em>
+
+Below are the steps to take:
+
+1. Confirm that all overdue invoices have been paid and no outstanding balances remain.
+2. Update the <a href="https://docs.google.com/spreadsheets/d/1ngsVJmLTE_vSbyZ131tdwEQufSpx9P6gk6WGXullwcg/edit?gid=1658342962#gid=1658342962">Failed Payments/Past Due Tracker</a> to reflect the cleared balances.
+3. Notify the CSM via the Slack thread to provide visibility and confirm the removal of the banner.
+  1. How to Remove the Banner:
+Refer to this Loom video for step-by-step instructions: [Taking Down the Banner – Loom](insert link).
+4. Acknowledge the customer’s cooperation and willingness to keep the service. Communicate that their account is up to date and that service will not be interrupted.
+
+<Accordion title="Unsuccesful Termination - Customer Paid Template">
+<em>Hi [PM's Name],</em>
+
+<em>Good day!</em>
+
+<em>We’re reaching out to confirm that we’ve received your payment for all outstanding invoices, and your account is now current. We truly appreciate your cooperation and commitment to keeping the service active.</em>
+
+<em>With your payment processed, there will be no service interruptions, and the payment reminder banner has been removed.</em>
+
+<em>Please let us know if there’s anything else we can assist you with—we’re happy to help!</em>
+</Accordion>
+
+1. <em><strong> If no payment or response is received by the termination date specified in the warning of termination email template, it is essential to proceed with the account termination. </strong></em>
+
+Below are the steps to take:
+
+1. Once it is confirmed that no payment/payment intents are made, send the <a href="https://docs.google.com/document/d/1uoF2jdyGVVQSZltRdh3rZ7xvQSsbr8wyLzkYcx03V_g/edit?tab=t.0#heading=h.cw9by44r4ngb">Termination email</a>.
+
+<Accordion title="Termination Email">
+<em>Subject: Latchel (PM Name) Termination due to Non-Payment </em>
+
+<em>Send to all account contacts with the Customer Success Manager (CSM) copied.</em>
+
+<em>Hi PM,  </em>
+
+<em>We hope this message finds you well.</em>
+
+<em>Regrettably, we must inform you that your account with us will be terminated effective today due to continued non-payment. As outlined in our previous notices, including the termination warning sent on [date], the outstanding balance of [amount] remains unpaid.</em>
+
+<em>Latchel will suspend all services today. Additionally, any unpaid amount may be referred to collections, and you will be responsible for any reasonable attorneys’ fees, costs, and expenses incurred by Latchel in collecting overdue payments.</em>
+
+<em>We appreciate your understanding and hope to work with you again in the future if circumstances allow.</em>
+</Accordion>
+
+1. Update the Slack thread to advise the CSM that the termination process is confirmed, and the termination email was sent.
+2. On the same thread, advise the CSM to complete the steps outlined in the<a href="https://latchel.atlassian.net/wiki/spaces/SR/pages/2802647041/SOP+Account+Termination+Steps"> <strong>Account Termination Steps SOP</strong></a> on the same day.
+  1. If no action is taken after one day, follow up on the thread to ensure the necessary steps are taken.
+  2. If no action is taken after two days, tag the CS Head for a reminder to complete the steps.
+3. Once the Account Termination Notification is posted in the #service-changes Slack channel, proceed with the final termination steps as outlined in the <a href="https://docs.google.com/document/d/179B13gZyUQnrsNRCAIM1r5vnS6xpkeiPOuxKz4F4n7Y/edit?tab=t.0"><strong>Terminated Accounts SOP</strong></a>.
+
+#### <strong>Post-Termination Process </strong>
+
+After an account is terminated and there are still open invoices, these invoices will be included in the Monthly AR Aging list. Although these invoices are technically past due, no further past-due communication should be sent.
+
+Accounts Receivable (AR) should write off any open invoices 90 days after termination, and no additional past-due communications should be initiated. Follow the steps outlined for in the <a href="https://docs.google.com/document/d/1PGpRQtcWU7p6mK6ZjMzzeXpNDpHC3OHVIn3XZtzbTDw/edit?tab=t.0">How To Terminate Accounts</a> document to ensure proper handling of these accounts.

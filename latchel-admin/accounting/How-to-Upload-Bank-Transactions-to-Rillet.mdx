@@ -1,0 +1,108 @@
+---
+title: "How to Upload Bank Transactions to Rillet"
+---
+
+## Purpose
+
+The purpose of this document is to outline the steps to take when checks received in NetImage are not syncing to the Rillet Cash Reconciliation page.
+Transactions are typically created automatically since Rillet is synced with our bank account. However, there might be instances when the uploaded checks in NetImage are not reflected in Rillet, then transactions can be manually uploaded into Rillet using a preformatted template.
+
+## Uploading Transactions Manually
+
+Follow these steps to manually upload your bank transactions:
+
+1. Go to the <a href="https://docs.google.com/document/d/10wf3CCxS2gqCYyJjV_QxNrFsUSaF_tWFxFerzibAv5U/edit"><strong>Cash Reconciliation page</strong></a>.
+2. From the <strong>All Accounts</strong> search bar (top left), select a bank account.
+
+<Frame>
+  <img src="/images/AR-35.png" alt="image-20260318-170142.png" />
+</Frame>
+
+1. Click <strong>Upload Transaction </strong>in the upper middle section of the page.
+
+<Frame>
+  <img src="/images/AR-36.png" alt="image-20260318-170209.png" />
+</Frame>
+2. Click <strong>Download Template</strong> to get the Rillet upload file.
+
+<Frame>
+  <img src="/images/AR-37.png" alt="image-20260318-170317.png" />
+</Frame>
+
+1. Fill in the required fields in the template (see field descriptions below) and click save to completed file.
+
+<Frame>
+  <img src="/images/AR-38.png" alt="image-20260318-170349.png" />
+</Frame>
+2. Click <strong>Select File</strong> in Rillet.
+
+<Frame>
+  <img src="/images/AR-39.png" alt="image-20260318-170412.png" />
+</Frame>
+3. Click <strong>Upload</strong>.
+
+<Frame>
+  <img src="/images/AR-40.png" alt="image-20260318-170444.png" />
+</Frame>
+
+Your transactions will now appear in the bank feed.
+
+## Required and Optional Fields
+
+The Rillet upload template includes several fields that define each transaction. Make sure you complete all required fields before uploading. Optional fields can be used to provide additional transaction details for more accurate reporting.
+
+<table>
+  <tr>
+    <th>Field Header</th>
+    <th>Required?</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Amount</td>
+    <td>Yes</td>
+    <td>The amount of the transaction. This is positive for cash receipts and negative for cash payments.</td>
+  </tr>
+  <tr>
+    <td>Balance</td>
+    <td>No</td>
+    <td>The balance of the account after the transaction. This is helpful in automated cash reconciliation</td>
+  </tr>
+  <tr>
+    <td>Currency</td>
+    <td>Yes</td>
+    <td>The currency your transaction. This must be the same as the bank account currency</td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td>Yes</td>
+    <td>The date of the transaction. Supported formats are MM/DD/YYYY, MM/DD/YY or YYYY-MM-DD</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>Yes</td>
+    <td>A description of the transaction. This will be visible in your bank feed</td>
+  </tr>
+  <tr>
+    <td>External Account ID</td>
+    <td>Yes</td>
+    <td>The account number</td>
+  </tr>
+  <tr>
+    <td>External Transaction ID</td>
+    <td>Yes</td>
+    <td>The transaction ID number. This must be a unique transaction ID even across multiple uploads. This ID can be used to override previous upload information too</td>
+  </tr>
+  <tr>
+    <td>Merchant</td>
+    <td>No</td>
+    <td>The merchant associated with your transaction. This field will appear on your bank feed</td>
+  </tr>
+</table>
+
+<Note>
+<strong>NOTE: </strong>
+
+- The External Transaction ID is a unique identifier. Never reuse IDs, even across multiple uploads.
+- To correct an uploaded transaction, use the same External Transaction ID to override previous data.
+- Save a copy of your completed template to simplify future updates or corrections.
+</Note>
