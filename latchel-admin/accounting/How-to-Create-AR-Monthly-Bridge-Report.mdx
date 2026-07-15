@@ -1,0 +1,138 @@
+---
+title: "How to Create AR Monthly Bridge Report"
+---
+
+<Note>
+**Purpose**
+
+This document explains what a Bridge Report is and why it is necessary for creating invoices and revenue reporting. It also provides a step-by-step guide on how the Bridge Report is created, reviewed, and handled to ensure accurate invoicing and proper tracking of billing data and revenue movement.
+</Note>
+
+## Overview
+
+The Bridge Report is a critical component of the billing process, performed both before and after invoices are finalized each month. Before sending invoices on the 10th, it is generated to identify unusual fluctuations such as sudden increases in charges and to confirm whether these changes are valid or the result of errors, including incorrect rates, unit counts, or unapplied discounts. Necessary corrections are made before invoices are released to ensure accuracy.
+
+The Bridge Report also tracks movements in Monthly Recurring Revenue (MRR), highlights the number of new customers, updates to contracts, and churns, enabling the team to address any unusual trends proactively.
+
+At the end of the month, the report is updated again to capture mid-month adjustments that may affect the Income Statement. Performing the Bridge Report at both checkpoints ensures all changes are accurately documented, billing errors are minimized, and Finance receives reliable data, maintaining the integrity of financial reporting.
+
+## 1. Initialize Report File
+
+- Open a new Excel spreadsheet.
+- Name the file: Bridge Report (Month) (e.g., Bridge Report April).
+
+## 2. Export Current Month Data
+
+Go to the Reporting tab in Rillet and export the Income Statement Report for the current month. I am currently working for May, so I will be exporting in May 2025.
+
+<Frame>
+  ![](/images/AR-85.png)
+</Frame>
+
+<Frame>
+  ![](/images/AR-86.png)
+</Frame>
+
+<Frame>
+  ![](/images/AR-87.png)
+</Frame>
+
+Import this report into your Excel file as a new sheet.
+
+Rename the tab to: Current Raw.
+
+## 3. Create Pivot Table for Current Month
+
+- Highlight cell A6 and all the data cells below it.
+- Insert a Pivot Table in a new worksheet.
+- Rename this new sheet as: Current Cleaned.
+
+## 4. Configure Pivot Table
+
+In the Pivot Table:
+
+- Set Vendor/Customer as the Row value.
+- Add Debit and Credit under Values, ensuring both are set to Sum.
+- In cell D1, enter: Revenue.
+- In cell D2, enter the formula: `=C2-B2` (Revenue = Credit - Debit).
+- Double-click the bottom-right corner of cell D2 to autofill the column.
+
+Confirm totals:
+
+The sum of Column B (Debit) + Column D (Revenue) should equal Column C (Credit).
+
+## 5. Repeat for Prior Month
+
+Repeat Steps 2 to 4 for the previous month's Income Statement Report.
+
+- Rename the raw sheet as Prior Raw.
+- Rename the pivot sheet as Prior Cleaned.
+
+## 6. Create Comparison Table
+
+Insert a new sheet and rename it: Compare.
+
+From Current Cleaned, copy columns A and D (Vendor/Customer and Revenue) by pasting values only.
+
+Paste into the Compare sheet columns A and B.
+
+## 7. Label Columns in Compare Sheet
+
+Rename:
+
+- Column B: (Current Month) Revenue
+- Column C: (Previous Month) Revenue
+- Column D: \$Delta
+- Column E: \$Delta Flag
+- Column F: %Delta
+- Column G: %Delta Flag
+- Column H: Classification
+- Column I: Sub-Category
+- Column J: Notes
+
+## 8. Apply Formulas in Compare Sheet
+
+In cell C2, enter: `=VLOOKUP(A2,'Prior Cleaned'!\$A\$2:\$D\$225,4,FALSE)`
+
+In D2: `=B2-C2`
+
+In E2: `=IF(D2>500,"True","False")`. Put in a Conditional Formatting to highlight differences that are over or less than 15%
+
+In F2: `=IFERROR(D2/C2,1)`
+
+In G2: `=IF(F2>0.10,"True","False")`
+
+In H2: Insert a Dropdown with the following Classifications:
+
+<Tip>
+You can copy and paste the Classification column from the previous month
+</Tip>
+
+- **New Customer – Implementation Fee** — Used when last month's invoice included an implementation fee, and either the previous or current month shows \$0.
+- **Expansion – AUC Increase** — Applied when revenue increased due to a higher unit count.
+- **New Customer – First Invoice** — Used when either the previous or current month reflects a customer's first invoice.
+- **Expansion – Contract Upgrade / Price Increase** — Selected when revenue increased due to a contract upgrade or a rate increase.
+- **Contraction – AUC Decrease** — Used when revenue decreased due to a lower unit count.
+- **Contraction – Contract Downgrade** — Applied when revenue decreased due to a downgraded contract.
+- **Churned** — Used when a customer with a revenue difference has fully churned (canceled service).
+- **N/A** — Selected when there is no change in revenue between the previous and current month.
+- **Credit Added** — Used when revenue decreased because a credit was applied.
+- **Concession Decreased** — Applied when the credit applied to the invoice was lower, resulting in higher revenue.
+- **Concession Increased** — Used when the credit applied to the invoice was higher, resulting in lower revenue.
+- **Late Fee Added / Removed** — Applied when revenue changed because a late fee was added or removed.
+- **Company Name Change** — Selected when a name change caused either the previous or current month's revenue to appear as \$0. Always add a detailed note describing the change and indicating which row(s) were impacted
+- **AUC Error** — Used when revenue discrepancies were caused by an incorrect unit count.
+- **Credit Reduced / Removed** — Applied when revenue increased because a credit was reduced or removed.
+
+In I2: Insert another dropdown or copy and paste the one from the previous month with the following SubCategories
+
+- **Permanent** – Applied when the change in revenue is due to long-term effects such as churn, contract upgrades or downgrades, or gradual per-unit price increases.
+- **One-Off** – Applied when the change in revenue is specific to that month only, such as credits being applied or removed.
+- **Regular** – Applied to fluctuations caused by unit increases or decreases that occur on a monthly basis
+
+In J2: Always provide a note explaining why the selected category and subcategory were chosen.
+
+## 9. Finalize
+
+- Drag formulas from Row 2 downward to apply to all rows with values.
+- Manually assign values in Column H (Classification) and Column I (Subcategories) as needed for reporting purposes.

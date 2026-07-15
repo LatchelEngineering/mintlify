@@ -1,0 +1,363 @@
+---
+title: "How To Set Up a New Customer"
+---
+
+<Note>
+**Purpose**
+
+This document provides a step-by-step guide for creating new contracts for new customers. It also outlines the Accounts Receivable tasks that are handled even before the contract is finalized, ensuring proper setup, accurate billing, and smooth onboarding.
+</Note>
+
+## Pre-Set Up Process
+
+### Step 1: Watch for Sales Announcements
+
+When the Sales team secures a signed contract, whether from a new customer or an existing customer making changes (e.g., upgrades or downgrades), they post an update in the #sales channel. AR is automatically tagged on these announcements, so you will receive a Slack notification when a new post goes up.
+
+<Frame>
+  ![](/images/AR-1.png)
+</Frame>
+
+### Step 2: Add the Post to the New Contract Tracker
+
+After being notified, locate the post in Slack and click the "More Actions > Add to List" option (found in the upper right corner of the post). Add the post to the [New Contract Tracker](https://latchel.slack.com/lists/T2M052QDC/F07PWLW7ZCM) Slack list.
+
+<Frame>
+  ![](/images/AR-2.png)
+</Frame>
+
+When you navigate to the New Contract Tracker, you will see that a new line item has been added to the list. Click on the post to open it in a split window.
+
+Make sure that you add the PM Company Name to the Customer Name column in the Tracker.
+
+<Frame>
+  ![](/images/AR-3.png)
+</Frame>
+
+<Frame>
+  ![](/images/AR-4.png)
+</Frame>
+
+<Frame>
+  ![](/images/AR-5.png)
+</Frame>
+
+### Step 3: Confirm Tracker Update in the Thread
+
+As mentioned above, notifications about new contracts or contract updates can come in at any time during the month and sometimes, months in advance. These updates typically include a specific billing start date, and they only affect Accounts Receivable starting from that date when invoices are generated.
+
+To maintain clarity and avoid confusion, AR responds to the Slack thread twice:
+
+**First Response: Upon receiving the sales notification**
+
+> "🎉 Hooray for this sale!
+>
+> Confirming that this new customer has been added to our New Contract Tracker and that automatic payments in HubSpot have been turned off. -
+>
+> The complete account setup will be finalized before the billing start date.
+
+**Second Response: Once the full account setup is completed, at least one business day before the billing start date**
+
+> Confirming that (PM) is fully set for June billing. The following updates have been completed:
+>
+> - Rillet Customer Overview page has been updated.
+> - Tax status: ( )
+> - CC Fee/Autopay Tracker and PMs Vital AR Details have been updated.
+> - Hubspot Subscription had been turned off
+> - Account has been added to the AR Contract Minimum Renewals Tracker.
+> - Billing Inputs Master Doc has been updated.
+> - Contract details in Rillet have been updated accordingly.
+> - The \$(_) implementation fee has been received and reconciled for bookkeeping purposes.
+
+## Actual Customer Set Up Process
+
+Currently, AR considers it a best practice to wait to finalize new customer contracts in Rillet until it is time to prepare for the invoice month of their billing start date. This ensures there is no chance of invoicing a customer early. Also, there is often a lot of discussion in a new customer thread, and sometimes the contract terms are impacted. Giving CSMs time to complete this discussion reduces the chance that updating the contract would be needed. However, a lot of the steps below can be completed without creating the actual Rillet contract.
+
+### Overview
+
+To execute the new customer set-up process, you will take the following actions:
+
+1. Fill out the customer overview page in Rillet.
+2. (If applicable) Calculate and apply tax and add the customer to Latchel Sales Tax Reporting
+3. Add the customer to the AR CC Fee/Autopay Tracker.
+4. Add the customer to the PM's Vital AR Details tracker
+5. (If Applicable) Add the customer to the AR Contract Minimum Renewals Tracker
+6. (If applicable) Confirm the customer has been added to the Billing Inputs Master Doc or Bill by Portfolio/Billing Exceptions Tracker
+7. Finish filling out the Rillet contract to match what is in Hubspot, setting up additional years if required, and turning off the Hubspot subscription
+8. (If applicable) Create an invoice for the implementation fee and match the payment.
+9. Link the Stripe account to the customer's Rillet profile and set up autopay Rillet Stripe Matching
+10. Update the #sales thread with actions taken.
+11. Update the New Contract Tracker.
+
+### Step 1: Fill out the customer overview page in Rillet.
+
+When a Deal in HubSpot is moved to the "Closed Won" stage, it automatically triggers a notification in the Slack #sales channel and simultaneously creates a customer profile in Rillet with a draft contract. This draft contract must be completed before the account becomes active. This marks the starting point of the new customer setup process.
+
+From any page in Rillet, use CTRL+K to bring up a search box and search for the customer you are ready to update.
+
+<Frame>
+  ![](/images/AR-6.png)
+</Frame>
+
+<Note>
+If the customer name contains an ampersand (&), the Rillet search function will not work. You will need to navigate to the side menu > Accounts Receivable > Customers.
+</Note>
+
+On the customer overview page, scroll down to the Settings section:
+
+- Validate that the Company Name and Invoicing Name match the name in HubSpot.
+- Validate that the Address matches the address listed in the contract. You can find it on the upper left side of the Order Form.
+- Validate that the email address matches the contract billing POC. This is sometimes listed on the front page of the contract, other times in the body of the contract.
+- Automatic Invoicing and Automatic reminders should be toggled off. Online payments should be toggled on.
+
+<Note>
+The toggle for Automatic Payments will be grayed out at this point in the process.
+</Note>
+
+- Payment terms should be set based on what is stated in the contract. In most cases, contracts are set for net 5. This sets 5 days as the default payment terms for any contract created for this customer. It means the invoice will always have a due date of 5 days from the invoice date. If the customer is on autopay, the payment will be processed on the due date (UTC).
+- As of this writing, the Tax rate is only applicable for customers with physical addresses in WA or TN.
+- Make sure to click Save changes before moving on to the next step.
+
+### Step 2: If applicable, apply tax.
+
+Complete this step only if the customer has a physical address in either WA or TN. See explanation above.
+
+If the new customer requires tax, follow the [Latchel Sales Tax Process](https://docs.google.com/document/d/1GL1xr5MY-Z_xyBgH4QhhTfrGIJu3mekPGncpm_o4uH8/edit?tab=t.0).
+
+### Step 3: Add the customer to the AR CC Fee/Autopay Tracker.
+
+It is AR's responsibility to ensure that the [AR CC Fee/Autopay Tracker](https://docs.google.com/spreadsheets/d/1pEcYzTsw3W2rCsJ0wq2GkrRYHCmcn6eZlZCAfHBlPjc/edit?gid=0#gid=0) remains 100% up to date.
+
+Every customer has a credit card/processing fee added to their Rillet contract. It is the data in this tracker that determines which customers get the fee applied to their invoices each month. Rillet does not currently support adding fees, so it must be tracked manually outside of Rillet.
+
+Autopay status is a setting in Rillet, but in the event of a failed payment, it can sometimes be turned off automatically without notification or a log to record the action. For this reason, the AR CC Fee/Autopay Tracker is our only source of truth for which customers should or should not be on autopay.
+
+Add the customer name. Select Yes for both the CC fee and Autopay statuses and add the note "(MM/YY) is the billing start date; for checking on (NEXT MONTH) on how invoice was paid. Turning on autopay as confirmed by Will for new customers with CC fee on file" in the Justification column. This will be helpful when you return to update the statuses in preparation for the next month's invoices.
+
+<Note>
+As approved by Will, all new customers who have paid for the implementation fee should be tagged as Yes for both CC Fee and autopay unless specifically advised not to.
+</Note>
+
+### Step 4: Add the customer to the PM's Vital AR Details Tracker
+
+This tracker contains key AR-related details of each customer, including their status, demographics (essential for tax determination), billing points of contact, autopay status, payment terms, tax rates, and associated Stripe accounts.
+
+Once the Rillet Overview page is updated, this tracker should also be updated accordingly. Keeping both in sync ensures we have accurate information readily available for handling past-due accounts and other billing-related processes.
+
+### Step 5:(If Applicable) Add the customer to AR Contract Minimum Renewals Tracker
+
+When reviewing a customer's contract, one of the first things to verify is whether they are under a minimum contract. While most of our newer customers are, there are still some who are not—so it's important to check every time a new customer is onboarded.
+
+You can find this information in Section 2.B.ii (Fees) of the contract. This section also states the specific minimum amount. The most common minimum is \$200, but we've seen other amounts as low as \$150, \$100, or even \$40 in some cases.
+
+<Frame>
+  ![](/images/AR-7.png)
+</Frame>
+
+To fill out this tracker, please input the following details:
+
+- PM's Name
+- Minimum Contract Amount per Month
+- Rillet Contract Start and End Dates
+- Date When the New Contract Is Needed
+
+You may also include any specific reminders or notes in the "Notes" section as needed.
+
+### Step 6: (If applicable) Confirm the customer has been added to 2026 Billing Inputs Master Doc and/or Bill by Portfolio/Billing Exceptions Tracker
+
+The Billing Inputs Master Doc is a shared tracker maintained monthly by the AR team and the CPT. It serves as a centralized reference for key billing-related information for customers with Assisted Ledgering, Optional Benefits, Marketplace Benefits, a minimum monthly unit rate, or a fixed monthly payment schedule. These details are typically pulled from the signed contract or the notes provided in the sales announcement thread under the Benefit Information and Assisted Ledgering sections.
+
+<Frame>
+  ![](/images/AR-8.png)
+</Frame>
+
+### Step 7: Turn off the Hubspot subscription and finish filling out the Rillet contract to match what is in Hubspot, setting up additional years if required, and turning off the Hubspot subscription
+
+**Step 7. A: Turning Off HubSpot Subscription (If Applicable)**
+
+This step only applies to customers with an Implementation Fee. While most new customers are billed this fee, some may have it waived.
+
+When applicable, customers provide their payment details in HubSpot. As a result, once a subscription (or the corresponding line item in the order form) becomes due—starting from the billing start date—it is automatically charged to the payment method on file.
+
+Since this charge is not invoiced and often based on an initial or mock unit count provided by the CSM, it is typically incorrect. To prevent these inaccurate charges from being drafted from the payment method on file, the HubSpot subscription must be canceled.
+
+The detailed process for doing so is documented in this SOP: [How to Cancel a Subscription in HubSpot](https://latchel.atlassian.net/wiki/spaces/~587161297/pages/3462955016).
+
+**Step 7.B Filling Out Rillet**
+
+From the customer page in Rillet, click Contracts.
+
+<Frame>
+  ![](/images/AR-9.png)
+</Frame>
+
+There should be a contract there under the Pending Review tab. Click on the contract name.
+
+<Frame>
+  ![](/images/AR-10.png)
+</Frame>
+
+<Note>
+If you cannot locate the customer, confirm the status of the Hubspot Deal is "Closed Won." If the status is "Closed Won" and you cannot find the contract, file a help request in the #latchel-rillet Slack channel.
+</Note>
+
+The first field to update is Contract Name.
+
+To determine the contract name, open Rillet in another tab and navigate to Accounts Receivable > Contracts. Remove the filter
+
+<Frame>
+  ![](/images/AR-11.png)
+</Frame>
+
+b. Remove the Start Date After criteria from the filter menu and click Apply.
+
+<Frame>
+  ![](/images/AR-12.png)
+</Frame>
+
+c. Click the Contract Name header twice to find the most recent S-number and use the next available number for your contract name. In the example below, the next available S-number is S-00681.
+
+<Note>
+These short identifiers are easy to read in the Rillet usage template, and the chronological order is helpful for quickly determining which contracts are newer in a list.
+</Note>
+
+<Frame>
+  ![](/images/AR-13.png)
+</Frame>
+
+Contract Type defaults to "New Sales." For brand new customers, this is the right choice. The other choices are: Existing (updating a Rillet contract for an existing customer that isn't an upgrade or a downgrade - mostly used for fixing errors), Expansion (an existing customer that is upgrading to a contract with higher revenue), Reactivation (a former customer that is returning to Latchel), and Contraction (an existing customer that is downgrading to a contract with lower revenue).
+
+<Frame>
+  ![](/images/AR-14.png)
+</Frame>
+
+Close Date should match the Hubspot Deal. From the Stage Updates tab, scroll down to Stage History.
+
+<Frame>
+  ![](/images/AR-15.png)
+</Frame>
+
+<Frame>
+  ![](/images/AR-16.png)
+</Frame>
+
+Update the Start Date to match what you recorded in the New Contract Tracker.
+
+Select "Open Ended" only if the customer is not under a minimum contract. For customers with a Minimum Contract, select the appropriate duration from the dropdown based on the contract terms.
+
+Click Next Step.
+
+Click the trash icon to delete the default product(s).
+
+Click Add Product. Copy the products listed in the Order Form from the HubSpot Deal. Make sure that rates and discounts are applied as they should be.
+
+<Frame>
+  ![](/images/AR-17.png)
+</Frame>
+
+After adding the listed products or subscriptions, scroll to find and click Processing Fee - 3.5%...Usage Monthly.
+
+Add Late Fee.
+
+There are two types of Late Fees listed in the product options:
+
+- If the Fees section does not specifically state a \$100 Late Fee, apply the 1.5% Late Fee instead.
+- If the \$100 Late Fee is stated, use the "Late Fee" line item.
+
+12. Add the rest of the products and services based on what is listed in the Products and Services section of the Order Form, including any addenda.
+
+You may see the Implementation Fee included in the list—please do not add this to the product setup, as it is a one-time fee due immediately and is paid directly via HubSpot.
+
+<Note>
+In case the HubSpot quote/contract does not match the Slack message, please contact the sales team.
+</Note>
+
+<Note>
+There is a tax toggle on every product you add. If you are adding products to the Rillet contracts of taxed customers (currently only WA and TN), you will need to toggle tax on for every product you add, including the processing fee.
+</Note>
+
+a. Finish adding the remaining products. When you collapse the product details, your contract will look something like this:
+
+<Frame>
+  ![](/images/AR-18.png)
+</Frame>
+
+When all applicable products have been added, check the Usage cycle field to ensure it says "Monthly" and then click Next Step.
+
+<Frame>
+  ![](/images/AR-19.png)
+</Frame>
+
+For customers under Minimum Contract Terms, this is the stage at which it's essential to identify the agreed-upon minimum monthly contract amount. This figure will be used to calculate the total minimum commitment by multiplying it by the number of months indicated in the "Duration" dropdown in Step 7.8.
+
+For example, if the order form specifies a 1-year term and the minimum monthly amount is \$200, you would multiply \$200 by 12 months, resulting in a total of \$2,400. This amount should then be entered under the "Minimum Contract Commitment" tab.
+
+Update the Day of the month field to the 10th. Frequency should say "Monthly" and Payment Terms should read "Custom", "5 days" (depending on the net terms indicated in the Order Form). Then click Next Step.
+
+Make sure you scroll to do a full final review of the draft contract. If all looks good, click Confirm contract.
+
+The Status will have updated to "Imported (Hubspot)" and you'll see a green "Contract created" success message in the bottom right of the screen. The contract will now appear in the Rillet usage template for creating invoices!
+
+<Frame>
+  ![](/images/AR-20.png)
+</Frame>
+
+For customers under a minimum contract, once the contract is saved, and you navigate to the Invoice tab, you'll see a list of future-dated unbilled invoices corresponding to the length of the contract term. For example, if the term is set for one year, there will be 12 future-dated unbilled invoices—one for each month of the term.
+
+### Step 8: (If applicable) Create an invoice for the implementation fee and match the payment.
+
+a. Start by going to the Invoice Tab and clicking on "Add Invoice." This will take you to the invoice creation page.
+
+b. Fill out the necessary details. For the Rillet Invoicing Account, select Stripe, as Implementation Fees are processed through this platform. Use the date the payment was received as the Invoice Date. The Due Date will automatically populate based on the account's Net terms
+
+c. Under the Products section, search for the Implementation Fee, which may be \$500 or \$1,000, depending on what's listed in the sales contract.
+
+<Frame>
+  ![](/images/AR-21.png)
+</Frame>
+
+d. Make sure the quantity is set to 1. Once selected, the invoice preview will be displayed for review. If everything looks correct, click "Save" to generate the invoice. At this point, the invoice will have a status of "Unbilled."
+
+e. Since Unbilled invoices cannot receive payments, you'll need to update the status to allow payment matching. To do this, click "Mark as Sent" (and not "Sent") to avoid any email notification being sent to the customer and causing confusion
+
+### Step 9: Link the Stripe account to the customer's Rillet profile and set up autopay Rillet Stripe Matching
+
+To enable autopay, the Rillet profile must have the corresponding Stripe profile linked on its Overview page. For this to happen, we need assistance from the Rillet team to connect the two accounts.
+
+a. Fill out the Rillet-Stripe Matching Tracker by providing the following details:
+
+- Name – Enter the Property Management (PM) Company Name.
+- Rillet Customer ID – Copy and paste the URL from the Rillet profile's Overview Page.
+- Stripe Customer ID – This is the unique customer ID used in Stripe.
+- Stripe Customer URL – Provide the URL link of the customer profile in Stripe that shows the payment.
+
+<Frame>
+  ![](/images/AR-22.png)
+</Frame>
+
+The Rillet-Stripe Matching Tracker is typically filled out before the end of the month or before the invoice creation process. Once all required details have been added for new customers, the tracker should be submitted to the Rillet team so they can proceed with syncing the accounts.
+
+b. Once you receive confirmation that the profiles have been linked, ensure that the payment method on file used to pay the implementation fee is set as the default payment method.
+
+c. Toggle on the autopay option in the customer's Rillet profile
+
+### Step 10: Update the #sales thread with actions taken.
+
+Once the full account setup is completed, at least one business day before the billing start date, the template below is used to make sure the thread is updated with the progress of the setup
+
+> Confirming that (PM) is fully set for June billing. The following updates have been completed:
+>
+> - The Rillet Customer Overview page has been updated.
+> - Tax status: ( )
+> - CC Fee/Autopay Tracker and Payment Terms/Failed Payments/Past Due Tracker have been updated.
+> - Hubspot Subscription had been turned off
+> - The account has been added to the AR Contract Minimum Renewals Tracker.
+> - Billing Inputs Master Doc has been updated.
+> - Contract details in Rillet have been updated accordingly.
+> - The \$(_) implementation fee has been received and reconciled for bookkeeping purposes.
+
+### Step 11: Update the New Contract Tracker.
+
+a. Mark the implementation fee as paid, add any notes if needed, and update the status to Done.
+
+b. The default list view filters out line items marked "Done," so after the update, the customer will disappear from the list. You can always revisit the complete list by navigating to the AR Status filter menu and selecting Remove filter.

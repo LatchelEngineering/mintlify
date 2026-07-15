@@ -1,0 +1,45 @@
+---
+title: "How to Set Up the Non-Payment Reminder Banner"
+---
+
+<Note>
+**Purpose**
+
+The purpose of this document is to provide a step-by-step guide on how the AR team sets up the non-payment reminder banner. This banner serves as a visible reminder to PMs of an open balance on their account.
+</Note>
+
+## Steps in Setting Up Non-Payment Banner
+
+### Step 1. Log in to Userpilot
+
+Using your Latchel email's credentials, log in to the [UserPilot](https://run.userpilot.io/spotlights/99/settings) dashboard.
+
+### Step 2. Once logged in, navigate to the left-hand menu and click on Engagement, then select Spotlight. From there, click on Settings.
+
+<Frame>
+  ![](/images/AR-47.png)
+</Frame>
+
+In the Settings section, you will see four configuration areas: Environment, Domain, Page, and Audience. These fields are generally pre-filled and should remain as follows:
+
+- Environment: Production Environment
+- Domain: All
+- Page: Only on Specific Paths
+
+<Frame>
+  ![](/images/AR-48.png)
+</Frame>
+
+### Step 3. The primary section that requires attention is the Audience tab. This section is pre-configured to ensure that the banner is displayed to all PM users, regardless of their role.
+
+<Frame>
+  ![](/images/AR-49.png)
+</Frame>
+
+### Step 4. In the example configuration, there is an active banner set up for PM-39443 (LBK Residential). To add another customer, click on Add Condition and ensure that the fields match the existing configuration. Specifically, for field #8, enter the unique last digits from the PM company URL found in the console.
+
+<Frame>
+  ![](/images/AR-50.png)
+</Frame>
+
+### Step 5. After all conditions have been correctly set, click Push Updates. Once published, the non-payment reminder banner will become visible to all PM users associated with that PM company.

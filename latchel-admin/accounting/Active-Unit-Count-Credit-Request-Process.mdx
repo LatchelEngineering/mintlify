@@ -1,0 +1,124 @@
+---
+title: "Active Unit Count Credit Request Process"
+---
+
+<Note>
+**Purpose**
+
+This document provides clear guidelines on Latchel's policies for processing and approving credits, with a focus on adjustments related to active unit count disputes or inaccuracies. While most credit requests, such as goodwill credits, concessions, and overpayments, are straightforward, active unit count adjustments are more complex and require a specific, step-by-step approach to ensure accuracy and consistency.
+
+**Target Audience**
+
+This document is primarily intended for the Accounts Receivable team as a guide for addressing billing disputes arising from inaccurate unit counts. It also serves as a resource for the Product Support and Customer Success teams to familiarize themselves with the adjustment policies and ensure proper expectations are set with customers.
+</Note>
+
+## Overview
+
+The unit count is logged at midnight UTC on the last day of the previous month in the Unit Count Data sheet, which serves as the primary source for billing in the current month. Maintaining accurate unit counts before this data is pulled is critical to ensuring precise invoicing.
+
+## Steps in Handling Active Unit Count Credit Request
+
+Similar to other credit types outlined in the Types of Credits section, Active Unit Count Credits follow the Credit Approval Policy and Workflow described in the [How to Handle Monthly Subscription Invoice Adjustments](https://help.latchel.com/latchel-admin/accounting/How-to-Handle-Monthly-Subscription-Invoice-Adjustments) document. However, unlike more straightforward credits, Unit Count Credit requests may require additional investigation depending on the specific circumstances.
+
+### Step 1. Determine the Invoice being disputed
+
+Invoices related to adjustment requests are typically attached to the customer's email or mailed and include the billed units, charges, and invoice date. If the invoice number or date is missing, it should be requested from the submitter to ensure proper handling.
+
+**Disputing an invoice within 45 days**
+
+For invoices that are within the 45 days timeline, proceed to Step 2.
+
+**Disputing Invoice/s over 45 days**
+
+<Warning>
+Requests submitted after 45 days are considered outside the standard adjustment window and must be escalated to the Head of Finance for review and approval. The CSM should also be involved if the issue indicates an onboarding gap requiring a full account review. AR should note such requests in the tracker and inform the Property Manager or the requester that the request is under review due to timing constraints.
+</Warning>
+
+- Ask the PM to send the list of properties they were expecting to be billed for the months in question (preferably in a csv file format)
+- Below is a template you can modify and send to the customer for adjustments over 45 days: Active Unit Count Discrepancy Template
+- Request that the PM provide a list of properties they expected to be billed for the months in question, preferably in CSV file format.
+- Once the file is received, submit an Account Update Request via the Typeform in the data-support-request channel for the Data Team to update the property list in the console based on the customer-provided data. Inform the PM that the request has been submitted to ensure their property list is accurately reflected.
+- [Here is an example](https://latchel.slack.com/archives/C05CGVC9FPV/p1769519854309629)
+- While waiting for the Data Team to update the properties in the console, proceed to Step 5 and continue with the subsequent workflow steps.
+
+### Step 2. Validate the Discrepancy:
+
+Review the following sources to confirm the discrepancy.
+
+- The invoice issued in [Rillet](https://app.rillet.io/) - This shows the actual unit count billed to the customer and the corresponding charges.
+- Unit Count Data - this sheet is the reference for invoice creation based on the data pulled from the console
+- 2026 Billing Inputs Master Doc - This sheet includes details about any additional benefits or add-ons the customer has, which also serves as a reference for unit counts for a specific list of customers.
+- Bill by Portfolio/Billing Exceptions Tracker - This sheet helps identify the unit count for customers who are billed by portfolio.
+- [Latchel Console](https://app.latchel.com/admin/work-orders) - This is an optional reference that provides a real-time view of the number of active units for the customer.
+
+### Step 3. Research Threads or Communications that Could Likely Be Related or Could Have Affected the Unit Count
+
+Investigate any threads or communications that may be linked to the unit count issue.
+
+If any internal errors (e.g., clerical errors, technical issues, or bugs) are identified, ensure that these are clearly noted in the communication thread or post as the potential cause of the discrepancy.
+
+### Step 4. Confirm the Frequency of the Unit Count Credit Request
+
+Active unit count adjustments are a one-time exception per customer. However, if the active unit count discrepancy is proven to be due to a Latchel bug or Latchel internal process failure, the one-time rule does not apply.
+
+The adjustment must be the customer's first request, as recorded in the Billing Error Tracker 2026
+
+### Step 5. Compute the amount to be credited.
+
+Aside from the thorough review conducted to analyze the reason, frequency, and any related threads associated with unit count credit requests, AR is also responsible for providing the approver with the precise amount for approval.
+
+See this sample scenario of how a unit count adjustment is raised and handled.
+
+<Frame>
+  ![](/images/AR-41.png)
+</Frame>
+
+All monthly adjustments, including processing fee adjustments and prorated charges, are recorded in the Billing Adjustment Computation Sheet 2026. The process is simplified by pre-built templates and formulas, which can be easily copied and applied as needed.
+
+### Step 6. Raise the result of the first five actions conducted and tag the designated approver
+
+Ensure that all relevant links, screenshots, and the appropriate template are included to provide the approver with a clear understanding of the context, rationale, and amount for approval. Additionally, verify that the approver is accurately tagged based on the approval amount threshold.
+
+**For Requests Submitted by the PS Team and AR:**
+
+- Credits up to \$250: Tag the account's CSM for approval.
+- Credits over \$250: Tag the Head of Customer Success (@will) for approval.
+
+**For Requests Submitted by CSMs:**
+
+- Credits up to \$250: Proceed with credit processing following the guidelines based on the time of request.
+- Credits over \$250: Tag the Head of Customer Success (@will) for approval and make sure that CSM is looped in on the thread.
+
+If there is no response from the designated approver within two days, follow up on the thread for confirmation.
+
+### Step 7. Apply the approved credit based on the time of the request
+
+The timing of approval significantly impacts how credits are applied and determines the next steps for the AR team.
+
+**Adjustments Before the 8th calendar day of the Month**
+
+- Requests for unit count billing adjustments that are submitted and approved before the 8th calendar day of the month will be applied to the current month's invoice.
+- These adjustments will be reflected immediately since the notice is received before invoices are sent
+- Add credits to draft invoices as needed. See the step-by-step guide on how to apply credit and create a credit memo on this SOP: Invoice creation process
+
+**Adjustments on or After the 8th calendar day of the Month**
+
+- Requests for unit count billing adjustments submitted and approved on the 8th business day or later will be recorded in the AR Rolling Credits/Discounts Tracker.
+- These adjustments will be applied to the next month's invoice, as the current month's invoices have already been finalized.
+
+### Step 8. Document the actions taken
+
+AR updates the thread to ensure the requester and all relevant stakeholders are informed of the credit request status.
+
+- Considering the timing of the approval, include either the credited invoice or a snip of the AR Credit Tracker 2026 showing the approved credit
+- The updated invoice with the credit memo applied
+
+<Frame>
+  ![](/images/AR-42.png)
+</Frame>
+
+- A reference to the AR Credit Tracker 2026, confirming that the credit is tracked for application in the following month.
+
+<Frame>
+  ![](/images/AR-43.png)
+</Frame>

@@ -1,0 +1,141 @@
+---
+title: "How To Terminate Accounts from AR's Perspective"
+---
+
+<Note>
+**Purpose**
+
+This SOP outlines the Accounts Receivable (AR) team's responsibilities when processing customer account terminations. While account termination is a cross-functional process involving multiple teams and systems, this document focuses specifically on the AR-related steps required to ensure billing records are updated accurately.
+
+Other teams may be responsible for actions within the Latchel Console (disabling services and portfolios) and HubSpot (updating deal and contract statuses, including churn records). From the AR perspective, this SOP covers the actions required in Rillet, including ending contracts, stopping future billing, calculating termination fees when applicable, and crediting unbilled invoices for customers on minimum-term contracts.
+
+The purpose of this process is to ensure billing accuracy, compliance with contract terms, and a smooth customer offboarding experience.
+</Note>
+
+## Overview
+
+When the "Account Terminated" workflow is triggered in #service-changes, the AR team will take the following actions:
+
+- Ending the Rillet contract or Applying Credit Memos to Unbilled Invoices
+- Update the AR CC Fee/Autopay Tracker to "Terminated."
+- Update the PM's status in the AR Contract Minimum Renewals Tracker to "Terminated."
+- Delete the PM from the PMs Vital AR Details tracker.
+- Remove the PM from the Billing Inputs Master Doc (If applicable).
+- Draft and send the final invoice (If Requested)
+- Update the thread in #service-changes with a summary of the actions completed.
+
+## Actual Termination Process
+
+Slack threads notifying the company of a terminated account are generated as part of the Account Terminated workflow in the #service-changes Slack channel. See example below.
+
+<Frame>
+  ![](/images/AR-89.png)
+</Frame>
+
+### Step 1. Ending the Rillet contract or Applying Credit Memos to Unbilled Invoices
+
+**A. If Customer is Not Under Minimum Contract**
+
+On the customer's Contracts page, find the line item for the active contract and click the 3 dots on the far right to open a menu. Click End Contract.
+
+When ending a contract in Rillet, you'll be asked to enter a Close Date. This is sometimes specified in the Slack message. If not, you can use the date the termination notification was created.
+
+The primary goal when selecting a Close Date is to prevent any invoice from being generated post-termination.
+
+After you have entered the Close date click Confirm.
+
+Success!
+
+**B. If the Customer is Under a Minimum Contract**
+
+As outlined in the [How to Set Up a New Customer](https://help.latchel.com/latchel-admin/accounting/How-To-Set-Up-a-New-Customer), when a contract with a minimum monthly commitment is created, future-dated unbilled invoices for the entire term are automatically generated. If the customer terminates their account before the contract term is completed, the system does not automatically delete these pre-generated unbilled invoices. This is one of the known limitations in Rillet.
+
+As a workaround, it is the responsibility of the Accounts Receivable team to ensure that no further invoices are generated for accounts that have already been terminated. To prevent further billing, a credit memo should be applied to the remaining unbilled invoices.
+
+**Applying Credit Memos to Unbilled Invoices**
+
+To prevent future billing on terminated accounts, credit memos must be applied to any remaining unbilled invoices.
+
+Follow the steps below to apply a credit memo correctly:
+
+Go to the Invoice Tab
+
+Locate the unbilled invoice that needs to be credited. Click on the three dots next to the invoice.
+
+Before proceeding, take note of the invoice amount and invoice date—you'll need these when creating the credit memo.
+
+<Frame>
+  ![](/images/AR-90.png)
+</Frame>
+
+Create the Credit Memo
+
+- Select "Credit" from the dropdown menu
+- Confirm that the invoice number and invoice date are correct.
+- In the Memo field, include the reason for the credit (e.g., "Contract terminated before term end - invoice canceled.")
+- Enter the invoice amount in the Amount field.
+- Set the Quantity to 1, and make sure the toggle for tax is on if need be
+- For Revenue Recognition, make sure to input the correct date that aligns with when the invoice would have been sent.
+
+<Frame>
+  ![](/images/AR-91.png)
+</Frame>
+
+<Frame>
+  ![](/images/AR-92.png)
+</Frame>
+
+After filling out and reviewing all fields, click Save.
+
+**Post-Creation of Credit Memos**
+
+The invoice status will update from Unbilled to Credited. This ensures the invoice will not be sent to the customer.
+
+<Note>
+The application of credit memos is an internal action and should not involve customer communication. This is for internal financial accuracy only
+</Note>
+
+### Step 2. Update the AR CC Fee/Autopay Tracker statuses to Terminated.
+
+### Step 3: Update the PM's status in the AR Contract Minimum Renewals Tracker to "Terminated"
+
+### Step 4. Delete the PM from the PMs Vital AR Details
+
+As this tracker contains all of our active customers, it's important to keep it up to date by regularly reviewing and removing any customers who are no longer active.
+
+### Step 5. Remove the PM from the Billing Inputs Master Doc (if applicable)
+
+Just as it's important to add a new customer with Optional Benefits to the Billing Inputs Master Doc, it's equally essential to remove them when their account is terminated. This helps prevent confusion for both AR and the CPT during monthly processing.
+
+To do this, delete the row corresponding to the terminated customer. This ensures they won't be included in the list for the next month's billing.
+
+### Step 6. Draft and send the final invoice (If Requested)
+
+This step is not always required here because it might have already been completed during the Desire To Churn phase, or maybe their last monthly subscription is going to act as their final invoice.
+
+CSM usually includes requests in the thread if this action is necessary; otherwise, no further action is needed other than the other outlined steps.
+
+### Step 7. Update the thread in #service-changes with a summary of the actions completed.
+
+**Template for Account Termination Request:**
+
+> Contract has been ended in Rillet with the end date (_) so no further invoices will be generated for this PM. See the screenshot attached.
+>
+> This account has (_) outstanding balance.
+>
+> Other AR Notes:
+>
+> - AR/CC Fee tracker statuses have been updated to terminated. See the screenshot attached.
+> - PM has been deleted from the PMs Vital AR Details tracker
+> - Billing Inputs Master Doc has been updated
+
+**Template for Account Termination Request if with Minimum Contract**
+
+> Since PM was under Contract Minimum, the contract in Rillet cannot be ended, but all succeeding unbilled invoices had been credited. No invoice will be generated
+>
+> This account has no outstanding balance.
+>
+> Other AR Notes:
+>
+> - AR/CC Fee tracker statuses have been updated to terminated. See the screenshot attached.
+> - PM has been deleted from the Payment Terms/Failed Payments/Past Due Tracker and AR Contract Minimum Renewals Tracker
