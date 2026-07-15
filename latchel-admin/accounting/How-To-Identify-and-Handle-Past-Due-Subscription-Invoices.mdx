@@ -15,11 +15,11 @@ sidebarTitle: "Overview"
 
 ## Past Due Vocabulary
 
-**Past Due**
+1. **Past Due**
 
 This pertains to a late or unpaid invoice. Synonymous with overdue and open invoice.
 
-**AR Aging Report**
+2. **AR Aging Report**
 
 This is used to identify customers with open invoices, track how long those invoices have been outstanding, and review the current status of each account by categorizing them into age from current, 1-30 days, 31-60 days, and 90\+ days old.
 
@@ -28,32 +28,28 @@ _How To Generate the AR Aging Report_
 - Step 1: Go to Rillet and navigate to Reporting \> AR Aging.
 - Step 2: Export the report by verifying that the date range is current. Once confirmed, proceed to download the report as a CSV file.
 
-**Aging and Payment Checker**
+3. **Aging and Payment Checker**
 
 This tracker is created monthly to monitor past due invoices and review the overall status of each account. It consolidates key details such as outstanding balances, autopay settings, payment terms, and other relevant internal factors to support accurate follow-ups and account management.
 
-**Automated Payment Reminders**
+4. **Automated Payment Reminders**
 
-Each Rillet customer profile includes a toggle that controls whether automated past-due payment reminders are sent.
+- Each Rillet customer profile includes a toggle that controls whether automated past-due payment reminders are sent.
+- For customers not enrolled in autopay, this toggle should be turned on. For customers on autopay, the toggle should be turned off to prevent unnecessary reminders.
+- Rillet is currently configured to send two automated reminders for open invoices:
+  - First reminder: Sent on the invoice due date
+  - Second reminder: Sent 7 days after the first reminder
 
-For customers not enrolled in autopay, this toggle should be turned on. For customers on autopay, the toggle should be turned off to prevent unnecessary reminders.
+5. **Expected Failed**
 
-Rillet is currently configured to send two automated reminders for open invoices:
+- This is a list of customers who are on autopay with a bank account but have missing Stripe mandate IDs.
+- Manually processing failed payments for these accounts is an internal AR action done after the invoices are due, and autopay fails; it doesn't require customer involvement.
 
-- First reminder: Sent on the invoice due date
-- Second reminder: Sent 7 days after the first reminder
-
-**Expected Failed**
-
-This is a list of customers who are on autopay with a bank account but have missing Stripe mandate IDs.
-
-Manually processing failed payments for these accounts is an internal AR action done after the invoices are due, and autopay fails; it doesn't require customer involvement.
-
-**Unexpected Failed**
+6. **Unexpected Failed**
 
 This is a list of customers who are on autopay, but payment failed due to several reasons (e.g., insufficient balance, card is blocked, etc). There are two reasons why an account can be listed on this tab.
 
-**Payment Terms**
+7. **Payment Terms**
 
 There are several terms of payment based on the customers' contracts, which are counted in days from the invoice date
 
@@ -63,21 +59,16 @@ There are several terms of payment based on the customers' contracts, which are 
 - Net 30 - 30 days after the 10th of the month when the invoices are sent out
 - Net 45 - 45 days after the 10th of the month when the invoices are sent out
 
-**Past Due Communication Day**
+8. **Past Due Communication Day**
 
-This refers to the days when past due reminders, whether auto or manual, are being monitored and sent out.
+- This refers to the days when past due reminders, whether auto or manual, are being monitored and sent out.
+- As the due date depends on terms, here is the calendar guide of when the past due communications are sent
 
-As the due date depends on terms, here is the calendar guide of when the past due communications are sent
+9. **PMs with Add-Ons**
 
-**PMs with Add-Ons**
-
-This is a list of PMs with add-ons like Filter, Pinata, and CoverPest
-
-It is important to consider this when tracking past-due accounts, as it directly impacts the property managers' access to the associated benefits. This information should be communicated alongside the past-due reminder.
-
-<Note>
-  This should be raised in the #ledgering-mkt-opt-benefits Slack channel for visibility every Thursday.
-</Note>
+- This is a list of PMs with add-ons like Filter, Pinata, and CoverPest
+- It is important to consider this when tracking past-due accounts, as it directly impacts the property managers' access to the associated benefits. This information should be communicated alongside the past-due reminder.
+- This should be raised in the #ledgering-mkt-opt-benefits Slack channel for visibility every Thursday.
 
 ## Past Due Process
 
@@ -91,13 +82,13 @@ The past-due workflow is designed to provide a structured and comprehensive appr
 
 ## How to Identify and Monitor Past Due
 
-**Create the Monthly Aging and Payment Check Tracker**
+1. **Create the Monthly Aging and Payment Check Tracker**
 
 The tracker is prepared monthly and serves as the basis for reviewing all accounts with outstanding invoices. During the monthly AR Aging Sync, all accounts are discussed to determine the most appropriate follow-up actions.
 
 Follow the steps outlined in the [How to Create the Aging and Payment Checker](https://help.latchel.com/latchel-admin/accounting/How-to-Create-the-Aging-and-Payment-Checker) for more details.
 
-**Track the past due accounts**
+2. **Track the past due accounts**
 
 Using the Monthly Aging and Payment Check Tracker, it is easier to identify customers with open invoices. The tracker should be updated based on each account's net terms, which determine the invoice due dates and when the past due should be checked.
 
@@ -110,9 +101,11 @@ Please refer to the list of dates below for when the tracker should be updated.
 | Net 30 | 9th or 10th of the Second Month | 16th or 17th of the Second Month | 9th or 10th of the Third Month | 16th or 17th of the Third Month | 9th or 10th of the Fourth Month | End of the Fourth Month |
 | Net 45 | 25th of the Second Month | 1st or 2nd of the Third Month | 25th of the Third Month | 1st or 2nd of the Fourth Month | 25th of the Fourth Month | 1st or 2nd of the Fifth Month |
 
-Open balances are tracked based on each customer's net terms. Accounts with different net terms are reviewed and handled on separate timelines. For example, Net 5 overdue balances are not addressed on the same day as accounts with longer terms. Similarly, reminder notices are not sent to Net 30 customers on the 22nd of the month simply because Net 5 accounts are reviewed on that date.
+<Note>
+  Open balances are tracked based on each customer's net terms. Accounts with different net terms are reviewed and handled on separate timelines. For example, Net 5 overdue balances are not addressed on the same day as accounts with longer terms. Similarly, reminder notices are not sent to Net 30 customers on the 22nd of the month simply because Net 5 accounts are reviewed on that date.
 
-Although past-due accounts are reviewed multiple times each month, each account with open invoices is monitored a total of six (6) times before it is terminated. This equates to approximately three months of monitoring per account, covering up to three unpaid invoices.
+  Although past-due accounts are reviewed multiple times each month, each account with open invoices is monitored a total of six (6) times before it is terminated. This equates to approximately three months of monitoring per account, covering up to three unpaid invoices.
+</Note>
 
 ## One Overdue Invoice
 
@@ -265,8 +258,12 @@ If a payment has been successful, no further action is needed. If the payment is
 
 Before sending the second contact attempt, two key points must be confirmed, as they influence the content of the second contact attempt:
 
-- **Alternative Payment Method on File** — Review the customer's Stripe profile via the Overview tab in their Rillet profile. Check if an alternative bank account or credit card is available that can be charged for the open invoices. If there is, make sure that you also track this separately, as you will need to attempt running it after a week. For Net 5, Net 15, and Net 21, this is on Column E of each sheet, while it is on Column D for Net 30.
-- **Late Fee Applicability** — If a late fee is included in the customer's contract, this should be included in the email to remind the customer. If the account is marked as "NO" for late fees, the [Latchel, Inc. — Master Services Agreement](https://latchel.com/terms-of-use-msa/) takes precedence. A late fee of (1.5%) of the unpaid balance per month should be assessed.
+1. **Alternative Payment Method on File**
+   1. Review the customer's Stripe profile via the Overview tab in their Rillet profile. Check if an alternative bank account or credit card is available that can be charged for the open invoices. 
+   2. If there is, make sure that you also track this separately, as you will need to attempt running it after a week. For Net 5, Net 15, and Net 21, this is on Column E of each sheet, while it is on Column D for Net 30.
+2. **Late Fee Applicability**
+   1. If a late fee is included in the customer's contract, this should be included in the email to remind the customer. 
+   2. If the account is marked as "NO" for late fees, the [Latchel, Inc. — Master Services Agreement](https://latchel.com/terms-of-use-msa/) takes precedence. A late fee of (1.5%) of the unpaid balance per month should be assessed.
 
 <Note>
   The late fee is mentioned in communications to make the customer aware of the amount they may incur if payment is not received. The actual application of the late fee to the invoice will occur with the generation of the third invoice if the payment remains outstanding, and only after it has been approved by the manager.
@@ -382,19 +379,18 @@ For accounts with overdue payments extending across three invoices, the first an
 
 At this stage, Accounts Receivable (AR) will take the following actions:
 
-**Activate the Banner on the Customer's Profile**
+1. **Activate the Banner on the Customer's Profile**
 
 This will occur on the business day following the third invoice's due date. For instance, for a Net 5 account that has not paid since the October invoice, the banner will be activated on December 17th. (See the Mia Management Group scenario for reference.)
 
 Display the "Urgent Action Required" banner on the customer's profile.
 
-_How to Activate the Banner:_
+**_How to Activate the Banner:_**
 
-[How to Set Up the Non-Payment Reminder Banner](https://help.latchel.com/latchel-admin/accounting/How-to-Set-Up-the-Non-Payment-Reminder-Banner)
+- [How to Set Up the Non-Payment Reminder Banner](https://help.latchel.com/latchel-admin/accounting/How-to-Set-Up-the-Non-Payment-Reminder-Banner)
+- Additional Context: \[Userpilot for Accounts Receivable – 2024/11/06 11:30 EST – Recording\].
 
-Additional Context: \[Userpilot for Accounts Receivable – 2024/11/06 11:30 EST – Recording\].
-
-Post in the #accounts-receivable Slack Channel.
+2. **Post in the #accounts-receivable Slack Channel.**
 
 Notify the Customer Success Manager (CSM) and the HubSpot "Deal Owner" about the activation of the "Urgent Action Required" banner.
 
@@ -412,11 +408,10 @@ Refer below for sample posts:
   ![](/images/AR-46.png)
 </Frame>
 
-**Send the Termination Warning Email**
+3. **Send the Termination Warning Email**
 
-Send a termination warning email to the Property Manager (PM). Ensure all account contacts and the CSM are copied on the email to maintain transparency and accountability.
-
-The most critical detail in the termination warning email is to ensure the termination date is accurate. Since Latchel bills by month, we give the customer up to the last day of the month when the warning email is sent to settle their outstanding balance or finalize their decision before the account is officially terminated.
+- Send a termination warning email to the Property Manager (PM). Ensure all account contacts and the CSM are copied on the email to maintain transparency and accountability.
+- The most critical detail in the termination warning email is to ensure the termination date is accurate. Since Latchel bills by month, we give the customer up to the last day of the month when the warning email is sent to settle their outstanding balance or finalize their decision before the account is officially terminated.
 
 <Accordion title="Warning of Termination due to Non-Payment">
   Subject: Latchel (PM Name) Warning of Termination due to Non-Payment
@@ -444,17 +439,15 @@ The most critical detail in the termination warning email is to ensure the termi
 
 As the termination warning email was sent two weeks ago, the final check will be done.
 
-If the customer responds and successfully clears all overdue balances before the termination or suspension process is carried out, the "Urgent Action Required" banner must be removed from the customer's profile.
+1. If the customer responds and successfully clears all overdue balances before the termination or suspension process is carried out, the "Urgent Action Required" banner must be removed from the customer's profile.
 
 Below are the steps to take:
 
 - Confirm that all overdue invoices have been paid and no outstanding balances remain.
 - Update the Failed Payments/Past Due Tracker to reflect the cleared balances.
 - Notify the CSM via the Slack thread to provide visibility and confirm the removal of the banner.
-
-_How to Remove the Banner:_ Refer to this Loom video for step-by-step instructions: \[Taking Down the Banner – Loom\](insert link).
-
-Acknowledge the customer's cooperation and willingness to keep the service. Communicate that their account is up to date and that service will not be interrupted.
+  - _How to Remove the Banner:_ Refer to this Loom video for step-by-step instructions: \[Taking Down the Banner – Loom\](insert link).
+- Acknowledge the customer's cooperation and willingness to keep the service. Communicate that their account is up to date and that service will not be interrupted.
 
 <Accordion title="Unsuccesful Termination - Customer Paid Template">
   Hi \[PM's Name\],
@@ -468,7 +461,7 @@ Acknowledge the customer's cooperation and willingness to keep the service. Comm
   Please let us know if there's anything else we can assist you with—we're happy to help!
 </Accordion>
 
-If no payment or response is received by the termination date specified in the warning of termination email template, it is essential to proceed with the account termination.
+2. If no payment or response is received by the termination date specified in the warning of termination email template, it is essential to proceed with the account termination.
 
 Below are the steps to take:
 
