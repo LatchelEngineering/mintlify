@@ -1,13 +1,15 @@
 ---
 title: "How To Create Monthly Subscription Invoices"
+description: "Overview"
+sidebarTitle: "Overview"
 ---
 
 <Note>
-**Purpose**
+  **Purpose**
 
-This SOP serves as the main guide followed by the Accounts Receivable team in creating monthly subscription invoices in Rillet, both via upload and manual creation. It outlines the end-to-end process for generating accurate invoices from different billing sources and ensures consistency in invoicing practices across all accounts.
+  This SOP serves as the main guide followed by the Accounts Receivable team in creating monthly subscription invoices in Rillet, both via upload and manual creation. It outlines the end-to-end process for generating accurate invoices from different billing sources and ensures consistency in invoicing practices across all accounts.
 
-This SOP is intended to reduce errors, standardize invoice creation, and ensure all adjustments are properly reflected in Rillet.
+  This SOP is intended to reduce errors, standardize invoice creation, and ensure all adjustments are properly reflected in Rillet.
 </Note>
 
 ## Pre-Invoice Creation Checklist (1st of the month)
@@ -57,9 +59,9 @@ Inside the new folder, create the following folders: (1) Usage Templates, (2) Br
   ![](/images/AR-52.png)
 </Frame>
 
-Inside the Usage Templates folder, create the following 2 folders: (1) [month year]_Fix Files and (2) [month year]_Usage Templates_Invoices
+Inside the Usage Templates folder, create the following 2 folders: (1) \[month year\]\_Fix Files and (2) \[month year\]\_Usage Templates\_Invoices
 
-From the [Rillet](https://drive.google.com/drive/folders/1iJZQk21-wSMZgSncZ8bxcNtDS8JpnIxp) side menu, navigate to Accounts Receivable > Contracts.
+From the [Rillet](https://drive.google.com/drive/folders/1iJZQk21-wSMZgSncZ8bxcNtDS8JpnIxp) side menu, navigate to Accounts Receivable \> Contracts.
 
 <Frame>
   ![](/images/AR-53.png)
@@ -73,7 +75,7 @@ Click the 3-dot menu in the upper right corner and then click Upload usage.
 
 Click Download Template.
 
-Rename the file and upload it to the new Usage Templates_Invoices folder [month] [year] v1 rillet-usage-template_FIRST PASS_formulas added
+Rename the file and upload it to the new Usage Templates\_Invoices folder \[month\] \[year\] v1 rillet-usage-template\_FIRST PASS\_formulas added
 
 Open the uploaded file in Google Sheets and then close it
 
@@ -110,10 +112,10 @@ Return to the first tab. Click the first cell under the USAGE header (H2) and de
 Copy the formula below and paste it into the formula bar (while cell H2 is still highlighted) and press Enter. Data will populate in cell H2.
 
 <Note>
-It is extremely important to ensure that you have copied and pasted the entire formula.
+  It is extremely important to ensure that you have copied and pasted the entire formula.
 </Note>
 
-```
+```text
 =if(AND(OR(F2="Latchel Services",F2="Base Platform Access",F2="Latchel Services (Discount)",F2="Latchel Chargeback Benefits",F2="Maintenance: Lifecycle Software",F2="Home Assistant: Chargeback Benefits",F2="24/7 Emergency",F2="24/7 Emergency, Autopilot",F2="24/7 Emergency, Home Assistant",F2="After Hours Emergency",F2="After Hours Emergency + Home Assistant",F2="Atwood Management - Full Platform Units",F2="Atwood Management - HOA Units",F2="Basic, Autopilot",F2="Citygate - Durham: Balfour West",F2="Citygate- Village of Pickwick",F2="Home Assistant + 24/7 Emergency (Autopilot)",F2="Home Assistant Opt-Ins (Benefits Only)",F2="Latchel Basic",F2="Latchel Basic, Home Assistant",F2="Latchel Premium",F2="Lighthouse Living Management LLC - N/A",F2="Lighthouse Living Management LLC - The Atwood",F2="Lighthouse Living Management LLC - The Duet",F2="Lighthouse Living Management LLC- One Dekalb Ave",F2="Self Sign Up Basic Autopilot, 24/7 Emergency",F2="Maintenance: 24/7 Emergency",F2="Home Assistant+Maintenance",F2="Home Assistant Only",F2="Maintenance Autopilot"),IF(ISBLANK(D2),TODAY()+1,D2)>TODAY(),C2<=TODAY()),IFNA(VLOOKUP(A2,EOMbySub!B:F,5,false),"#NOT FOUND#"),IF(AND(IF(ISBLANK(D2),TODAY()+1,D2)>TODAY(),F2="Base Fee - Legacy"),1,if(C2>TODAY(),"contract not started",if(or(isblank(D2),D2>Today()),F2,"contract expired"))))
 ```
 
@@ -121,7 +123,7 @@ It is extremely important to ensure that you have copied and pasted the entire f
   ![](/images/AR-57.png)
 </Frame>
 
-Click cell H2 > CTRL + C > CTRL + SHIFT + down arrow > CTRL + V. Your tab will look something like the below, with data now populating the usage column.
+Click cell H2 \> CTRL \+ C \> CTRL \+ SHIFT \+ down arrow \> CTRL \+ V. Your tab will look something like the below, with data now populating the usage column.
 
 <Frame>
   ![](/images/AR-58.png)
@@ -131,13 +133,13 @@ Click cell H2 > CTRL + C > CTRL + SHIFT + down arrow > CTRL + V. Your tab will l
 
 Copy the formula below. Go to the EOMbySub tab of FIRST PASS. Scroll to the right and click cell L2. Paste the formula into the formula bar but do not press Enter yet.
 
-```
+```text
 =IF(IFERROR(find("(test)",lower(B2)),0),"(Test)",COUNTIFS('Sept 2024 v1 rillet-usage-template_FIRST PASS_formulas added'!A:A,B2,'Sept 2024 v1 rillet-usage-template_FIRST PASS_formulas added'!D:D,"")+COUNTIFS('Sept 2024 v1 rillet-usage-template_FIRST PASS_formulas added'!A:A,B2,'Sept 2024 v1 rillet-usage-template_FIRST PASS_formulas added'!D:D,">"&TODAY()))
 ```
 
 OR
 
-```
+```text
 =COUNTIF('First Pass'!A2:A2088, B2)>0
 ```
 
@@ -147,7 +149,7 @@ Hover over the bottom right corner of the cell where you pasted the formula and 
 
 The result will look something like this:
 
-Click on the "L" column header to highlight the column, then go to Format > Conditional formatting.
+Click on the "L" column header to highlight the column, then go to Format \> Conditional formatting.
 
 <Frame>
   ![](/images/AR-59.png)
@@ -159,7 +161,7 @@ Now find the 0s. These should all be accounted for before moving on to the next 
 
 **Step 4: Add a duplicate check.**
 
-Ideally, there is only one contract per customer in Rillet with start and end dates that include the current invoicing period. This would mean that there would be only one open contract per customer available to receive usage data. Unfortunately, due to a Rillet limitation(s), that is not the case. It is not always possible to end an existing Rillet contract after adding a new one, so there can be 2+ contracts for a single PM that have already started but are not yet expired. The formula adds usage data to all the contracts in the usage template meeting that criteria. If uploaded without correction, these duplicate usage entries would create multiple invoices for a single PM when they are only meant to have one. The duplicate check points out these duplicate entries so AR can manually delete from the usage template the line items that belong to the older versions of contracts.
+Ideally, there is only one contract per customer in Rillet with start and end dates that include the current invoicing period. This would mean that there would be only one open contract per customer available to receive usage data. Unfortunately, due to a Rillet limitation(s), that is not the case. It is not always possible to end an existing Rillet contract after adding a new one, so there can be 2\+ contracts for a single PM that have already started but are not yet expired. The formula adds usage data to all the contracts in the usage template meeting that criteria. If uploaded without correction, these duplicate usage entries would create multiple invoices for a single PM when they are only meant to have one. The duplicate check points out these duplicate entries so AR can manually delete from the usage template the line items that belong to the older versions of contracts.
 
 To the right of the USAGE column, add a header for Duplicate Check.
 
@@ -169,7 +171,7 @@ To the right of the USAGE column, add a header for Duplicate Check.
 
 Click on the cell I2. Copy the formula below, paste it in the formula bar (while I2 is highlighted) and press Enter.
 
-```
+```text
 =IF(AND(COUNTIFS(F:F,F2,A:A,A2,H:H,H2)>1,left(H2,8 <>"contract"),COUNTIFS(F:F,F2,A:A,A2,H:H,H2),"")
 ```
 
@@ -177,7 +179,7 @@ Click on the cell I2. Copy the formula below, paste it in the formula bar (while
   ![](/images/AR-61.png)
 </Frame>
 
-Click cell I2 > CTRL + C > CTRL + SHIFT + down arrow > CTRL + V. The column will remain mostly empty, but when you scroll down, you will see some numbers throughout the I column. These numbers point out duplicate usage line items and the numbers tell you how many repeated usage counts the PM has.
+Click cell I2 \> CTRL \+ C \> CTRL \+ SHIFT \+ down arrow \> CTRL \+ V. The column will remain mostly empty, but when you scroll down, you will see some numbers throughout the I column. These numbers point out duplicate usage line items and the numbers tell you how many repeated usage counts the PM has.
 
 <Frame>
   ![](/images/AR-62.png)
@@ -189,7 +191,7 @@ Before adding the usage for the special billing customers, it helps to clean up 
 
 **Clean up 1: Expired and future contracts**
 
-Click on cell A1 > CTRL + Shift + down arrow > CTRL + Shift + right arrow. Then click the filter icon.
+Click on cell A1 \> CTRL \+ Shift \+ down arrow \> CTRL \+ Shift \+ right arrow. Then click the filter icon.
 
 <Frame>
   ![](/images/AR-63.png)
@@ -238,15 +240,15 @@ There is another formula to add for special billing usage, but it covers only a 
 
 As this is done manually, it is recommended to have the Bill by Portfolio/Billing Exceptions Tracker filled out in advance for easier processing during the actual invoice creation.
 
-*Special Billing (Unit Count Data)*
+_Special Billing (Unit Count Data)_
 
 1: Preserve the regular billing inputs and start a new file to add special billing.
 
 From your month's Rillet folder, make a copy of the FIRST PASS usage template
 
-Rename the copied file [month] [year] v1 rillet-usage-template_SECOND PASS_special billing.
+Rename the copied file \[month\] \[year\] v1 rillet-usage-template\_SECOND PASS\_special billing.
 
-*Special Billing (Unit Count Data)*
+_Special Billing (Unit Count Data)_
 
 2: Add the formula to populate usage for some of the bill-by-portfolio customers
 
@@ -262,7 +264,7 @@ Update the formula in three places: where there is an "A245", replace 245 with t
 
 Press Enter.
 
-```
+```text
 =Index('EOM AU by Portfolio'!E:E, match(right(A245, len(A245)-find(" - ",A245)-2),'EOM AU by Portfolio'!D:D,0))
 ```
 
@@ -280,13 +282,13 @@ Hover your cursor over the bottom right corner of the cell where you pasted the 
 
 The next step is to solve for any results that returned #N/A, which has the equivalent meaning to #NOTFOUND#.
 
-Once the #N/A results are accounted for, it is time to copy the usage data in column J, and paste it in the usage column. Your filter for #NOTFOUND# should still be on! Highlight the cells in column J until you reach the bottom of the results list and then use CTRL+C to copy.
+Once the #N/A results are accounted for, it is time to copy the usage data in column J, and paste it in the usage column. Your filter for #NOTFOUND# should still be on! Highlight the cells in column J until you reach the bottom of the results list and then use CTRL\+C to copy.
 
 <Frame>
   ![](/images/AR-68.png)
 </Frame>
 
-Click the first cell under the usage header and CTRL + Shift + V to paste just the values.
+Click the first cell under the usage header and CTRL \+ Shift \+ V to paste just the values.
 
 Remove the filter from the USAGE column and then you are ready to finish filling in the usage for the remaining bill-by-portfolio customers.
 
@@ -313,7 +315,7 @@ When transferring inputs from the Billing Inputs Master Doc to the Monthly Usage
 - Violet – Populates via formula (only for RHOME)
 - Black – No data needed
 
-*Contents of the Billing Input Master Doc*
+_Contents of the Billing Input Master Doc_
 
 **Assisted Ledgering**
 
@@ -337,7 +339,7 @@ When customers have zero boxes checked, it typically means the usage data is pro
 
 **Step 8: Save your progress and start a new file for final clean-up.**
 
-*Avoiding Usage Upload for Customers with Credits or Concessions*
+_Avoiding Usage Upload for Customers with Credits or Concessions_
 
 Before uploading the usage data, review the list of customers with applicable credits or concessions for the month. These customers will have their invoices created manually, so they must be excluded from the usage upload sheet to prevent duplicate or incorrect invoicing.
 
@@ -345,14 +347,14 @@ In the example shown below, there are 7 customers scheduled to receive credits. 
 
 All your billing inputs are in! Time to start a new file and clean it up for the Rillet upload.
 
-Make a copy of your SECOND PASS usage template and rename it [month] [year] v1 rillet-usage-template_THIRD PASS_prep for upload.
+Make a copy of your SECOND PASS usage template and rename it \[month\] \[year\] v1 rillet-usage-template\_THIRD PASS\_prep for upload.
 
 Open up THIRD PASS and complete the following actions:
 
 - Delete the By Portfolio column.
 - All duplicates flagged by the duplicate check in Column I need to be resolved (exception: RentRedi and Citygate are expected - you can ignore these flags).
 - Click the filter icon on the USAGE column. Use the filter option on the USAGE column to limit search results to non-number inputs (minus processing fees) so that those rows can be deleted.
-- Create a copy of THIRD PASS and rename it [month] [year] v2 rillet-usage-template_Processing Fee.
+- Create a copy of THIRD PASS and rename it \[month\] \[year\] v2 rillet-usage-template\_Processing Fee.
 - Return to your THIRD PASS file and use the filter on your USAGE column to delete all remaining non-number lines (should only be processing fee related at this point).
 
 Your usage template should look something like the below at this point - you are ready to upload!
@@ -387,7 +389,7 @@ After a very long pause (depending on your internet speed), you will see a succe
   ![](/images/AR-74.png)
 </Frame>
 
-When you navigate to Accounts Receivable > Invoices, you will now see a long list of Unbilled invoices like this:
+When you navigate to Accounts Receivable \> Invoices, you will now see a long list of Unbilled invoices like this:
 
 <Frame>
   ![](/images/AR-75.png)
@@ -417,7 +419,7 @@ Your usage template will look something like this:
 
 **Step 3: Export the unbilled invoice report and add it to the processing fee usage template.**
 
-When you navigate to Accounts Receivable > Invoices, the search results should default to the list of unbilled invoices you just created. In the upper right corner of the page, click the 3 dots to open a menu and select Export invoices.
+When you navigate to Accounts Receivable \> Invoices, the search results should default to the list of unbilled invoices you just created. In the upper right corner of the page, click the 3 dots to open a menu and select Export invoices.
 
 <Frame>
   ![](/images/AR-77.png)
@@ -435,7 +437,7 @@ Add a new tab and call it CCFeeCalc.
 
 Paste the formula below into cell A1 of CCFeeCalc and press enter
 
-```
+```text
 =UNIQUE(Invoices!A:A)
 ```
 
@@ -477,7 +479,7 @@ Duplicate the Third Pass Tab and rename it Upload.
 
 Delete the data in H2, paste the formula below into the formula bar, and press Enter.
 
-```
+```text
 =Ifna(VLOOKUP(A2,CCFeeCalc!A:D,4,false),"")
 ```
 
@@ -485,7 +487,7 @@ Delete the data in H2, paste the formula below into the formula bar, and press E
   ![](/images/AR-80.png)
 </Frame>
 
-Select H2 > CTRL + C > CTRL + Shift + down arrow > CTRL + V
+Select H2 \> CTRL \+ C \> CTRL \+ Shift \+ down arrow \> CTRL \+ V
 
 Filter the USAGE column for blanks, delete the blank rows, and then remove the filter.
 
@@ -512,7 +514,7 @@ Since uploading 0 usage does not create an invoice, we issue manual \$0 invoices
 
 **How to create a manual invoice**
 
-From the customer invoice page click + Add Invoice.
+From the customer invoice page click \+ Add Invoice.
 
 Start filling out the invoice:
 
@@ -553,7 +555,7 @@ To add:
 </Frame>
 
 <Note>
-When a customer receives a credit or concession for an invoice that is not fully credited and has an applicable processing fee, add the processing fee as a separate line item manually.
+  When a customer receives a credit or concession for an invoice that is not fully credited and has an applicable processing fee, add the processing fee as a separate line item manually.
 </Note>
 
 To calculate the processing fee:
@@ -569,7 +571,7 @@ For example, McGraw Properties has an applicable processing fee, and the credit 
 
 Proration typically applies to the first invoice when the account setup is not finalized before the agreed billing start date.
 
-*Prorated Billing Rules*
+_Prorated Billing Rules_
 
 **A. Go-Live Date between the 10th and 25th**
 
@@ -581,7 +583,7 @@ Proration typically applies to the first invoice when the account setup is not f
 
 - Do not create a separate manual invoice.
 - Add the prorated amount to the next regular invoice (first full-month billing).
-- Clearly label the line item as "Prorated Charges – [Start Date to End of Month]."
+- Clearly label the line item as "Prorated Charges – \[Start Date to End of Month\]."
 
 For example, with Michigan Management, billing was scheduled to begin on 07/01, but the account went live only on 07/15. Below is the CSM's request and the resulting prorated invoice.
 
@@ -595,7 +597,7 @@ For this month, we have a case with Pam T Property Management where AR was not n
 
 **Step 2: Prepare a new usage template.**
 
-Download a new usage template from the Rillet contracts page and rename it rillet-usage-template_FIX_[PM name(s)_date.
+Download a new usage template from the Rillet contracts page and rename it rillet-usage-template\_FIX\_\[PM name(s)\_date.
 
 Upload it to the fix file folder you created for the month in the shared drive. Open the file in Google Sheets to correct the file type and then delete the original upload.
 
@@ -668,7 +670,7 @@ Additionally, AR should ensure that the draft invoice is posted in the Slack thr
 
 ### 10. On the 10th of the month, send the invoices to customers via Rillet.
 
-- Navigate to Accounts Receivable > Invoices.
+- Navigate to Accounts Receivable \> Invoices.
 - Adjust the filter to match the criteria below and then click Apply.
   - Status: Unbilled
   - Invoice Date: Dates of the current invoice month
