@@ -4,7 +4,7 @@ title: "How To Handle Desire To Churn Alerts"
 
 ## Overview
 
-When a customer communicates to Latchel that they would like to cancel their account, it triggers a workflow that includes a new thread in the [#service-changes](https://latchel.slack.com/archives/CKA2W1KJA/p1753793064963459) Slack channel, titled "Desire to Churn Alert." See the screenshot below and this link for an example.
+When a customer communicates to Latchel that they would like to cancel their account, it triggers a workflow that includes a new thread in the [#service-changes](https://latchel.slack.com/archives/CKA2W1KJA/p1753793064963459) Slack channel, titled "Desire to Churn Alert." See the screenshot below and [this link](https://latchel.slack.com/archives/CKA2W1KJA/p1753793064963459) for an example.
 
 <Frame>
   ![](/images/AR-93.png)
@@ -14,12 +14,12 @@ When a customer communicates to Latchel that they would like to cancel their acc
 
 In response to the customer's intent to churn, CSMs will meet with the customer to try to prevent the account from being terminated. They will need the following information from AR:
 
-- An understanding of the customer's contract terms from a billing perspective:
-  - Is there a contract?
-  - How many months are left in their current term?
-  - What is the fee for terminating early?
-- A screenshot of a draft final invoice: Using the contract terms described above, AR will create (but not confirm in Rillet) a final draft invoice so that CSMs can communicate to the customer what they would need to pay if they decided to terminate their contract early.
-- The customer's current account status: Are all invoices paid? Are there any open invoices? Past due?
+1. An understanding of the customer's contract terms from a billing perspective:
+   1. Is there a contract?
+   2. How many months are left in their current term?
+   3. What is the fee for terminating early?
+2. A screenshot of a draft final invoice: Using the contract terms described above, AR will create (but not confirm in Rillet) a final draft invoice so that CSMs can communicate to the customer what they would need to pay if they decided to terminate their contract early.
+3. The customer's current account status: Are all invoices paid? Are there any open invoices? Past due?
 
 ## Actual Process
 
@@ -29,27 +29,27 @@ In response to the customer's intent to churn, CSMs will meet with the customer 
 
 **Step 2:** In HubSpot, focus on the Quotes and Attachments sections of the deal. These sections contain the contract or order form, including the PDF copy of the agreement the customer signed.
 
-There are two types of results for this, which result in two different ways of handling
+**There are two types of results for this, which result in two different ways of handling**
 
 **A. No contract found in the Quotes or Attachment sections**
 
-Please see the example below. If the Quotes and Attachments sections are empty or if they do not contain a signed contract, there are no contract terms to fulfill. In this case, a final invoice will not be required, as there is no contractual basis for one.
+1. Please see the example below. If the Quotes and Attachments sections are empty or if they do not contain a signed contract, there are no contract terms to fulfill. In this case, a final invoice will not be required, as there is no contractual basis for one.
 
 <Frame>
   ![](/images/AR-94.png)
 </Frame>
 
-If this is the case, skip the next steps and proceed to Step 3.
+2. If this is the case, skip the next steps and proceed to Step 3.
 
 **B. A contract is found in the Quotes or Attachment sections**
 
-Click on the attachment, and it will open the PDF copy of the Order Form in another window.
+1. Click on the attachment, and it will open the PDF copy of the Order Form in another window.
 
 <Frame>
   ![](/images/AR-95.png)
 </Frame>
 
-Scroll down to Purchase Terms or Payments to Latchel section (usually number 2.b. article 4)
+2. Scroll down to Purchase Terms or Payments to Latchel section (usually number 2.b. article 4)
 
 This is the most important part to check when handling desire-to-churn alerts, as the standard termination computations can vary depending on what is stated in this section.
 
@@ -77,29 +77,16 @@ The number of months remaining in the term is determined by the Initial Term end
 
 ### 2. Creating a draft final invoice
 
-Review the customer's contract terms to determine the applicable termination fee, remaining contract term, pricing, processing fees, and any tax requirements.
-
-Navigate to the customer's Invoices page in Rillet and click + Add Invoice.
-
-<Warning>
-Confirm that the Rillet Invoicing Account is set to Analyzed Checking. Do not change this setting, as it ensures that the ACH payment instructions appear at the bottom of the invoice. The Invoice Date and Terms will default to the current date and can be left unchanged unless otherwise instructed.
-</Warning>
-
-Review the customer's most recent invoice. Use it as a reference to ensure the draft invoice aligns with the customer's contract terms, pricing structure, and billing setup.
-
-Add the applicable product(s) to the invoice based on the remaining contract obligation. For each product, update the product name by adding "- Termination Fee (Month)" to clearly identify the charge as a termination fee.
-
-Determine the number of months remaining on the contract. Add a separate line item for each remaining contract month and update the Description, Price, Quantity, and Revenue Recognition Month fields as appropriate. The description should clearly indicate the contract month being billed.
-
-If the customer is located in a taxable state, ensure that tax is enabled for each applicable product line item. Customers in Tennessee (TN) and Washington (WA) should also be charged tax on any processing fee line items.
-
-If a processing fee applies, add the processing fee product as the final line item so it appears at the bottom of the invoice. The usage amount should be based on the total invoice amount due, rounded down to the nearest whole dollar.
-
-<Warning>
-Collapse each product section by clicking the arrow beside the line item to shorten the invoice preview. Once all line items have been reviewed and verified, take a screenshot of the draft invoice for the CSM to use when discussing termination fees and next steps with the customer.
-
-The invoice created in this process is for review purposes only and should not be posted to the customer's account. After taking the screenshot, either close the invoice tab without saving, or if a PDF copy is needed, save the invoice, download the PDF, and immediately delete the invoice from Rillet. Verify that no draft termination fee invoice remains on the customer's account after completing this step.
-</Warning>
+1. Review the customer's contract terms to determine the applicable termination fee, remaining contract term, pricing, processing fees, and any tax requirements.
+2. Navigate to the customer's Invoices page in Rillet and click \+ Add Invoice.
+3. Confirm that the Rillet Invoicing Account is set to Analyzed Checking. Do not change this setting, as it ensures that the ACH payment instructions appear at the bottom of the invoice. The Invoice Date and Terms will default to the current date and can be left unchanged unless otherwise instructed.
+4. Review the customer's most recent invoice. Use it as a reference to ensure the draft invoice aligns with the customer's contract terms, pricing structure, and billing setup.
+5. Add the applicable product(s) to the invoice based on the remaining contract obligation. For each product, update the product name by adding "- Termination Fee (Month)" to clearly identify the charge as a termination fee.
+6. Determine the number of months remaining on the contract. Add a separate line item for each remaining contract month and update the Description, Price, Quantity, and Revenue Recognition Month fields as appropriate. The description should clearly indicate the contract month being billed.
+7. If the customer is located in a taxable state, ensure that tax is enabled for each applicable product line item. Customers in Tennessee (TN) and Washington (WA) should also be charged tax on any processing fee line items.
+8. If a processing fee applies, add the processing fee product as the final line item so it appears at the bottom of the invoice. The usage amount should be based on the total invoice amount due, rounded down to the nearest whole dollar.
+9. Collapse each product section by clicking the arrow beside the line item to shorten the invoice preview. Once all line items have been reviewed and verified, take a screenshot of the draft invoice for the CSM to use when discussing termination fees and next steps with the customer.
+10. The invoice created in this process is for review purposes only and should not be posted to the customer's account. After taking the screenshot, either close the invoice tab without saving, or if a PDF copy is needed, save the invoice, download the PDF, and immediately delete the invoice from Rillet. Verify that no draft termination fee invoice remains on the customer's account after completing this step.
 
 ### 3. Updating the Desire to Churn Alert
 
@@ -109,19 +96,19 @@ The invoice created in this process is for review purposes only and should not b
 
 **A. Customer without a contract template:**
 
-> Hi @[CSM]:
+> Hi @\[CSM\]:
 >
 > Contract terms: N/A (no contract in Hubspot)
 >
 > Final draft invoice: N/A
 >
-> Billing status: As of [date] this customer has no unpaid invoices. [Month] invoice has been generated and is scheduled to be sent this [day], [date].
+> Billing status: As of \[date\] this customer has no unpaid invoices. \[Month\] invoice has been generated and is scheduled to be sent this \[day\], \[date\].
 
 Sample Slack Thread: [link](https://latchel.slack.com/archives/CKA2W1KJA/p1746709682043889?thread_ts=1746554866.484789&cid=CKA2W1KJA)
 
 **B. Customer with a contract template:**
 
-> Hi @[CSM], please see contract details below:
+> Hi @\[CSM\], please see contract details below:
 >
 > The termination fee is equal to: BASED ON THE TERM X remaining months in the term. See the screenshot attached.
 >
@@ -136,5 +123,5 @@ Sample Slack Thread: [link](https://latchel.slack.com/archives/CKA2W1KJA/p174670
 Sample Slack Thread: [link](https://latchel.slack.com/archives/CKA2W1KJA/p1748619948240889?thread_ts=1748546823.408689&cid=CKA2W1KJA)
 
 <Note>
-After sharing the draft invoice with the CSM, continue to monitor the thread for any follow-up questions, requested revisions, intended prorations, or other changes that may impact the final termination fee calculation. If updates are requested, revise the draft invoice accordingly and provide an updated screenshot or PDF as needed.
+  After sharing the draft invoice with the CSM, continue to monitor the thread for any follow-up questions, requested revisions, intended prorations, or other changes that may impact the final termination fee calculation. If updates are requested, revise the draft invoice accordingly and provide an updated screenshot or PDF as needed.
 </Note>
