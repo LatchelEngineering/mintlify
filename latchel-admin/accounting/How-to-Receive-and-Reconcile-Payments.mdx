@@ -13,8 +13,8 @@ sidebarTitle: "Overview"
 
 In Rillet's Cash Reconciliation, there are two accounts where AR tracks receipt of invoice payments:
 
-- Stripe Clearing
-- Avidbank Checking x5949 (Analyzed Checking)
+1. Stripe Clearing
+2. Avidbank Checking x5949 (Analyzed Checking)
 
 <Frame>
   ![](/images/AR-23.png)
@@ -55,9 +55,11 @@ Once the line item is identified, on the left side, click the payment you want t
   Through this search, you can also identify payments related to implementation fees rather than monthly subscription invoices. Implementation payments are easily recognizable as they will total either \$500 or \$1000 or \$250. You can know more details about the implementation fee on Step 8 of [How to Set Up a New Customer](https://help.latchel.com/latchel-admin/accounting/How-To-Set-Up-a-New-Customer)
 </Note>
 
-If no invoice or journal entry that corresponds to the payments shows up, [open up Stripe](https://dashboard.stripe.com/dashboard) using this link and search for the amount received.
+2. Open Stripe to identify the customer
 
-To calculate the amount received, add the two numbers listed on the far right of the payment. Note the total and the date of the payment.
+a. If no invoice or journal entry that corresponds to the payments shows up, open up Stripe using [this link](https://dashboard.stripe.com/dashboard) and search for the amount received.
+
+b. To calculate the amount received, add the two numbers listed on the far right of the payment. Note the total and the date of the payment.
 
 c. Typically, you will be able to identify the PM by the information you find on the payment details page.
 
@@ -71,34 +73,32 @@ f. Success!
 
 There are two main ways to check for Accounts Receivable-related payments in the Analyzed Checking account that need to be reconciled:
 
-- Search for "Lockbox" to find check deposits.
-- Sort by amount and rule out positive transactions.
+1. Search for "Lockbox" to find check deposits.
+2. Sort by amount and rule out positive transactions.
 
 **Lockbox payments**
 
 Lockbox is the name of the service we pay to receive and deposit checks into our bank account (Avidbank checking x5949, Analyzed Checking), and that is the account where you will find unmatched Lockbox payments on the Cash Reconciliation page. Unlike many of the other payment types, Lockbox payments are never automatically matched and must always be manually reconciled by AR. Each Lockbox payment may contain one or many checks and you will use NetImageRemit to view the checks that were scanned and match the Lockbox payments to the corresponding invoices.
 
-In Cash Reconciliation, from the All accounts menu, select Avidbank Checking x5949 Analyzed Checking.
-
-In the search bar, type Lockbox. If there are any Lockbox deposits available to be matched they will show up in the search results.
-
-Click on the Lockbox deposit and note the date. In this example it is 10/01/2024.
+1. In Cash Reconciliation, from the All accounts menu, select Avidbank Checking x5949 Analyzed Checking.
+2. In the search bar, type Lockbox. If there are any Lockbox deposits available to be matched they will show up in the search results.
+3. Click on the Lockbox deposit and note the date. In this example it is 10/01/2024.
 
 **Net Image Tool**
 
-Navigate to [NetImageRemit](https://netimagelr7.fisglobal.com/netimageremit/default.aspx?entity=800888#!/login) and log in.
+1. Navigate to [NetImageRemit](https://netimagelr7.fisglobal.com/netimageremit/default.aspx?entity=800888#!/login) and log in.
 
 <Frame>
   ![](/images/AR-26.png)
 </Frame>
 
-On the Dashboard menu, select Items.
+2. On the Dashboard menu, select Items.
 
 <Frame>
   ![](/images/AR-27.png)
 </Frame>
 
-Update the search range to cover the day of the Lockbox deposit. In the example below with a Lockbox deposit date of 04/13/2026, I selected a Start Date of 04/13/2026 and an End Date of 04/13/2026. Then click Search.
+3. Update the search range to cover the day of the Lockbox deposit. In the example below with a Lockbox deposit date of 04/13/2026, I selected a Start Date of 04/13/2026 and an End Date of 04/13/2026. Then click Search.
 
 <Note>
   Sometimes there is a day lag between the date the Lockbox deposit shows up in Avidbank and the date listed in Rillet's Cash Reconciliation. If the one-day range above doesn't turn up the checks you are looking for, expand the search to include the previous day.
@@ -108,44 +108,36 @@ Update the search range to cover the day of the Lockbox deposit. In the example 
   ![](/images/AR-28.png)
 </Frame>
 
-The search results page will include:
-
-- An image of the deposited check.
-- A list of the search results.
-
-<Note>
-  Each check has two line items so you only need to click on every other result (the rows that don't have \$0.00 in the Amount column).
-</Note>
-
-- A total at the bottom that should match the amount of the Lockbox deposit in Rillet.
+4. The search results page will include:
+   1. An image of the deposited check.
+   2. A list of the search results.
+      <Note>
+        Each check has two line items so you only need to click on every other result (the rows that don't have \$0.00 in the Amount column).
+      </Note>
+   3. A total at the bottom that should match the amount of the Lockbox deposit in Rillet.
 
 <Frame>
   ![](/images/AR-29.png)
 </Frame>
 
-Look at the check image for the first result. Note the following:
-
-- The name of the sender, which usually (but not always) matches a PM with an open invoice in Rillet.
-- The dollar amount, which usually (but not always) matches the balance of an open invoice in Rillet.
-- An alternate way to view the dollar amount of the check.
+5. Look at the check image for the first result. Note the following:
+   1. The name of the sender, which usually (but not always) matches a PM with an open invoice in Rillet.
+   2. The dollar amount, which usually (but not always) matches the balance of an open invoice in Rillet.
+   3. An alternate way to view the dollar amount of the check.
 
 <Frame>
   ![](/images/AR-30.png)
 </Frame>
 
-Back on the Rillet Cash Reconciliation page, use the search function on the right side of the page to search for the PM name.
-
-Select the oldest invoice matching the PM name and check amount.
-
-Repeat the process with the remaining checks. Once you have finished finding the matching invoices, the Amount and Selected should match, and the Difference should be \$0.00 as shown below.
-
-Click Match.
-
-Success! The invoices you selected will now have a status of "Paid."
+6. Back on the Rillet Cash Reconciliation page, use the search function on the right side of the page to search for the PM name.
+7. Select the oldest invoice matching the PM name and check amount.
+8. Repeat the process with the remaining checks. Once you have finished finding the matching invoices, the Amount and Selected should match, and the Difference should be \$0.00 as shown below.
+9. Click Match.
+10. Success! The invoices you selected will now have a status of "Paid."
 
 **Sorting by Amount**
 
-On the Cash Reconciliation page with the Analyzed Checking account selected, click Sort and then click Amount.
+1. On the Cash Reconciliation page with the Analyzed Checking account selected, click Sort and then click Amount.
 
 <Frame>
   ![](/images/AR-31.png)
@@ -175,20 +167,19 @@ They sent \$2,535.61 on February 10th to pay their January invoice. However, inv
   ![](/images/AR-32.png)
 </Frame>
 
-Highlight the payment line item from the left part of the Cash Reconciliation tab. Make sure that the total amount paid in the lower right is already totaled together with the processing fee.
-
-As discussed in the steps above, look for the invoice number in the right tab. On the lower right, you can see the excess or difference between the payment received and the invoiced amount, which is \$85.72. Take note of the amount difference.
+1. Highlight the payment line item from the left part of the Cash Reconciliation tab. Make sure that the total amount paid in the lower right is already totaled together with the processing fee.
+2. As discussed in the steps above, look for the invoice number in the right tab. On the lower right, you can see the excess or difference between the payment received and the invoiced amount, which is \$85.72. Take note of the amount difference.
 
 <Frame>
   ![](/images/AR-33.png)
 </Frame>
 
-Click the Match and Adjust option and fill out the pop-up with the necessary details:
+3. Click the Match and Adjust option and fill out the pop-up with the necessary details:
 
 - Vendor: This field is tagged as optional, but it is recommended to fill it in with the name of the customer for proper tracking of which customer the excess payment is for. Then click Create.
 - Account: From the dropdown, select Over Payment, as this is an instance of an overpayment.
 
-Then, click Create and Match to create Journal Entry for the overpayment. The matched line item will then disappear from the Cash Reconciliation Tab.
+4. Then, click Create and Match to create Journal Entry for the overpayment. The matched line item will then disappear from the Cash Reconciliation Tab.
 
 <Frame>
   ![](/images/AR-34.png)
@@ -198,6 +189,5 @@ Then, click Create and Match to create Journal Entry for the overpayment. The ma
   To verify if the overpayment was created correctly and review the journal entry created, go to the Balance Sheet from the Reporting tab in Rillet. Scroll down to the OverPayment header and click on the current month amount. This will display all customers with excess payments, and you should be able to see the one you just created.
 </Note>
 
-To ensure that the overpayment will be applied to the customer's future invoices, track the overpayment on the AR Credit and Overpayment Tracker 2026 and fill out the necessary columns. Make sure to indicate in Column K that the reason for the credit is due to overpayment. Refer to this SOP for more details on how to fill out the tracker: [How to Fill Out and Use the AR Credit and Overpayment Tracker 2026](https://help.latchel.com/latchel-admin/accounting/How-to-Fill-Out-and-Use-the-AR-Credit-and-Overpayment-Tracker-2026).
-
-Make sure to apply the overpayment through a credit memo with the correct account on the next invoice. More details on how to apply overpayment credit memos can be found here: [How To Create Monthly Subscription Invoices](https://help.latchel.com/latchel-admin/accounting/How-To-Create-Monthly-Subscription-Invoices).
+5. To ensure that the overpayment will be applied to the customer's future invoices, track the overpayment on the AR Credit and Overpayment Tracker 2026 and fill out the necessary columns. Make sure to indicate in Column K that the reason for the credit is due to overpayment. Refer to this SOP for more details on how to fill out the tracker: [How to Fill Out and Use the AR Credit and Overpayment Tracker 2026](https://help.latchel.com/latchel-admin/accounting/How-to-Fill-Out-and-Use-the-AR-Credit-and-Overpayment-Tracker-2026).
+6. Make sure to apply the overpayment through a credit memo with the correct account on the next invoice. More details on how to apply overpayment credit memos can be found here: [How To Create Monthly Subscription Invoices](https://help.latchel.com/latchel-admin/accounting/How-To-Create-Monthly-Subscription-Invoices).
