@@ -1177,7 +1177,30 @@
               "dark": "#ff9b8a"
             },
             "pages": [
-              "latchel-admin/bi-team/bi-team-overview"
+              "latchel-admin/bi-team/bi-team-overview",
+              "latchel-admin/bi-team/Account-Update-MQL-Date-Tier-2-3",
+              "latchel-admin/bi-team/Case-Assignment-Rules",
+              "latchel-admin/bi-team/Case-Auto-Response-Rules",
+              "latchel-admin/bi-team/Cases-Workflows",
+              "latchel-admin/bi-team/Contact-Discovery-Meeting-Playbook",
+              "latchel-admin/bi-team/Contact-Qualification-Playbook",
+              "latchel-admin/bi-team/CS-Priority-to-High",
+              "latchel-admin/bi-team/Decision",
+              "latchel-admin/bi-team/Email-to-Case",
+              "latchel-admin/bi-team/Field-Dependencies-between-Type-and-Case-Motive-fields",
+              "latchel-admin/bi-team/FL-CS-CA-Status-Equals-to-rest-of-Pending",
+              "latchel-admin/bi-team/FL-MK-LE-Inbound-Lead-Convert-Assign-Notify",
+              "latchel-admin/bi-team/FL-MK-LE-Match-Lead-and-Account-Domain",
+              "latchel-admin/bi-team/FL-SA-AC-Full-Tub-Flow",
+              "latchel-admin/bi-team/FL-SL-MK-LE-Manually-Assign-Round-Robin",
+              "latchel-admin/bi-team/How-to-articles",
+              "latchel-admin/bi-team/Lead-Qualification-Playbook",
+              "latchel-admin/bi-team/Meeting-notes",
+              "latchel-admin/bi-team/Opportunity-Furthest-Stage-Opportunity-Stage-Updates",
+              "latchel-admin/bi-team/Product-requirements",
+              "latchel-admin/bi-team/Salesforce-Documentation",
+              "latchel-admin/bi-team/Sample-Pages",
+              "latchel-admin/bi-team/WR-CS-Scheduled-Call-Date-Time-is-set"
             ]
           },
           {
