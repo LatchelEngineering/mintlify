@@ -1184,6 +1184,7 @@
                   {
                     "group": "Sample Pages",
                     "pages": [
+                      "latchel-admin/bi-team/Sample-Pages",
                       "latchel-admin/bi-team/Meeting-notes",
                       "latchel-admin/bi-team/Decision",
                       "latchel-admin/bi-team/Product-requirements",
@@ -1193,6 +1194,7 @@
                   {
                     "group": "Salesforce Documentation",
                     "pages": [
+                      "latchel-admin/bi-team/Salesforce-Documentation",
                       "latchel-admin/bi-team/Cases-Workflows",
                       "latchel-admin/bi-team/Email-to-Case",
                       "latchel-admin/bi-team/Case-Assignment-Rules",
@@ -1208,6 +1210,7 @@
                 "group": "CS-Priority to High",
                 "pages": [
                   "latchel-admin/bi-team/CS-Priority-to-High",
+                  "latchel-admin/bi-team/FL-CS-CA-Status-Equals-to-rest-of-Pending",
                   "latchel-admin/bi-team/WR-CS-Scheduled-Call-Date-Time-is-set",
                   "latchel-admin/bi-team/Contact-Discovery-Meeting-Playbook",
                   "latchel-admin/bi-team/Account-Update-MQL-Date-Tier-2-3",
@@ -1215,12 +1218,9 @@
                   "latchel-admin/bi-team/FL-SA-AC-Full-Tub-Flow",
                   "latchel-admin/bi-team/FL-MK-LE-Inbound-Lead-Convert-Assign-Notify",
                   "latchel-admin/bi-team/FL-SL-MK-LE-Manually-Assign-Round-Robin",
-                  "latchel-admin/bi-team/FL-CS-CA-Status-Equals-to-rest-of-Pending",
                   "latchel-admin/bi-team/FL-MK-LE-Match-Lead-and-Account-Domain"
                 ]
-              },
-              "latchel-admin/bi-team/Salesforce-Documentation",
-              "latchel-admin/bi-team/Sample-Pages"
+              }
             ]
           },
           {
