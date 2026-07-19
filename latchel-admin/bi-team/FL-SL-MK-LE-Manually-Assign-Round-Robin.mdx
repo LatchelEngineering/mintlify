@@ -1,0 +1,33 @@
+---
+title: "FL - SL/MK - LE - Manually Assign Round Robin"
+---
+
+<Note>
+For non-demo requests inbound lead distribution through a round robin. This flow re assigns certain Contacts to another SDR. It should be used for cases where the MQLs have not been touched in more than 7 days since their assignment.
+
+The report that you can check to see the list of those MQLs with no activity in the last 7 days is the following: [Salesforce Report](https://latchel1.lightning.force.com/lightning/r/Report/00O5e000008FdogEAC/view)
+</Note>
+
+## Technical aspects
+
+| New Name | Old Name | Expected person to trigger the flow |
+| --- | --- | --- |
+| FL - SL/MK - LE - Manually Assign Round Robin | Inbound Lead: Marketing: Manually Assign Round Robin | SF Admin |
+
+**Salesforce User IDs included in the flow:** -
+
+**User’s emails included in the flow:** diego@latchel.com
+
+## Trigger
+
+To trigger this Flow, you should go to a Contact Page under the Pardot tab and click on the “Round Robin to SDR” button. ( SF Admin User required)
+
+<Frame>
+  <img src="/images/MC-35.png" alt="Round Robin to SDR button" />
+</Frame>
+
+## Flow Schema
+
+<Frame>
+  <img src="/images/MC-36.png" alt="FL - SL/MK - LE - Manually Assign Round Robin schema" />
+</Frame>

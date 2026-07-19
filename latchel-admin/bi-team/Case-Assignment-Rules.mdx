@@ -1,0 +1,23 @@
+---
+title: "Case Assignment Rules"
+---
+
+These rules will route Cases everytime they are created or updated. The order number works as follows. Everytime a case is created or updated the rules will be tested in that order, once a criteria is satisfied, the assignment will proceed and the rest of the rules won’t be tested.
+
+Currently, the rules have been separated into two parts.
+
+## A. When a Case is created by a user
+
+These rules are designed for Cases that are created by the users so that the user creator is assigned as the Case owner. In other words, without these rules, if a user creates a Case, it would be assigned to the default user (the default user can be modified in the Salesforce classic version). Every time a new Case user is added to Salesforce, a new rule should be created here.
+
+<Frame>
+  <img src="/images/MC-5.png" alt="Case Assignment Rules - created by user" />
+</Frame>
+
+## B. When a Case is created by Email-to-Case
+
+These rules are designed to assign spam Cases to the Spam queue. The list contains everyemail or subject that we consider should not be processed by Latchel users. It’s important that every rule here has its counterpart on the Case Auto-Response settings, this way an unwanted email is also not automatically replied.
+
+<Frame>
+  <img src="/images/MC-6.png" alt="Case Assignment Rules - Email-to-Case" />
+</Frame>

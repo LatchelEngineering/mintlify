@@ -1,0 +1,19 @@
+---
+title: "Cases - Workflows"
+---
+
+<Note>
+**Purpose of this document**: The purpose of this article is to explain the Workflows that are generating an impact on the Cases object on Salesforce.
+</Note>
+
+| RULE NAME | DESCRIPTION | OBJECT |
+| --- | --- | --- |
+| Priority to High | Change the Case Priority to ‘High’ based on the CRMM ( Greater than $4999). The Case field ‘Total CMRR’ reflects the number setted on the Customer field named ‘Total CMRR’. | Case |
+| WR - Email Message Update | Any update on the Email Message object will trigger an update on the field "Last Modified Date". | Email Message |
+| WR - New Email Drafted | Workflow Rule that changes the Case status to "Open" WHEN a new Email Message is being drafted AND has the "Pending" Status. | Email Message |
+| WR - New Email Received | Workflow Rule that updates the Case status from "Closed" OR "Pending" to Open WHEN a new Email Message is received. | Email Message |
+| WR - New Email Sent | Workflow Rule that changes the Case status from "Open" to "Waiting for Customer" WHEN a new Email Message is sent. | Email Message |
+| WR - Status Equals to rest of Pending | Workflow Rule that changes the Case status to "Open" when the Case has stayed on "Escalated", "In Progress" OR "Scheduled Call" more than 7 days. | Case |
+| WR - Status Equals to Waiting for Customer | Workflow Rule that changes the Case status to "Open" when the Case has stayed on "Waiting for Customer" for more than 3 days. | Case |
+| Gets First Reply Date/Time | Gets the Date/Time of the first replied email from one of the CS team members. This field is used on several reports to track the metrics of the Agents. | Email Message |
+| Get Last Reply Date/Time | Gets the Date/Time of the last replied email from one of the CS team members. This field is used on several reports to track the metrics of the Agents. | Email Message |

@@ -1,0 +1,51 @@
+---
+title: "Lead: Qualification Playbook"
+---
+
+## Technical aspects
+
+| Name on Salesforce | Process type | Group involved | Flow API Name |
+| --- | --- | --- | --- |
+| Lead: Qualifciation Playbook | Screen Flow | SDR | Lead_Qualifciation_Playbook |
+
+## Description
+
+During the Discovery meeting call, the SDR qualifies the prospect and attempts to schedule a Demo meeting with the AE. This Flow shows a list of advice ¹ to the SDRs to help them to achieve the objectives and also, shows a template that helps the Rep assess whether the prospect is a good fit for our services. The SDR has to manually enter essential information into the template. ²
+
+This Flow has a Subflow that referenced a “Master Flow” named Qualification Playbook and this is the one that has the template mentioned in the previous paragraph. QuasacascascaacsascascaslifiQcation Playbook
+
+¹
+
+<Frame>
+  <img src="/images/MC-15.png" alt="List of advice to the SDRs" />
+</Frame>
+
+²
+
+<Frame>
+  <img src="/images/MC-16.png" alt="Qualification template" />
+</Frame>
+
+To trigger this flow our agent should click on the Button named Qualification Playbook on the Lead page.
+
+<Frame>
+  <img src="/images/MC-17.png" alt="Qualification Playbook button on Lead page" />
+</Frame>
+
+## Flow Schema
+
+Lead: Qualification Playbook
+
+<Frame>
+  <img src="/images/MC-18.png" alt="Lead: Qualification Playbook flow schema" />
+</Frame>
+
+Subflow mentioned: Qualification Playbook
+
+<Frame>
+  <img src="/images/MC-19.png" alt="Qualification Playbook subflow schema" />
+</Frame>
+
+## Additional Information
+
+This flow has kind of been replaced with the SL Qualification but it still exists inside of Salesforce.
