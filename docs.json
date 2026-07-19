@@ -818,247 +818,252 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "pages": [
-              "latchel-admin/Customer-Success-Team/customer-success-overview",
-              "latchel-admin/Customer-Success-Team/Recurring-Meetings",
-              "latchel-admin/Customer-Success-Team/time-off",
-              "latchel-admin/Customer-Success-Team/getting-around-slack",
+            "groups": [
               {
-                "group": "CSMs (Account Management)",
+                "group": "Customer Success Team Pages",
                 "pages": [
-                  "latchel-admin/Customer-Success-Team/A-Day-in-the-Life-of-a-CSM"
-                ]
-              },
-              {
-                "group": "CSM: Communication SOPs",
-                "pages": [
-                  "latchel-admin/Customer-Success-Team/sop-how-to-do-all-email-work-in-salesforce",
-                  "latchel-admin/Customer-Success-Team/sop-calling-and-texting",
-                  "latchel-admin/Customer-Success-Team/sop-booking-and-logging-meetings"
-                ]
-              },
-              {
-                "group": "Executive Business Reviews",
-                "pages": [
-                  "latchel-admin/Customer-Success-Team/executive-business-reviews",
-                  "latchel-admin/Customer-Success-Team/assisted-ledgering-monthly-scorecard-meeting"
-                ]
-              },
-              {
-                "group": "Onboarding",
-                "pages": [
-                  "latchel-admin/Customer-Success-Team/cs-admin-job-aid-onboarding-flow-and-communications-maintenance-only",
-                  "latchel-admin/Customer-Success-Team/complete-onboarding-journey",
+                  "latchel-admin/Customer-Success-Team/customer-success-overview",
+                  "latchel-admin/Customer-Success-Team/Recurring-Meetings",
+                  "latchel-admin/Customer-Success-Team/time-off",
+                  "latchel-admin/Customer-Success-Team/getting-around-slack",
                   {
-                    "group": "Sales -> Onboarding Handoff",
+                    "group": "CSMs (Account Management)",
                     "pages": [
-                      "latchel-admin/Customer-Success-Team/sending-a-closed-opportunity-to-onboarding"
+                      "latchel-admin/Customer-Success-Team/A-Day-in-the-Life-of-a-CSM"
                     ]
                   },
                   {
-                    "group": "Onboarding Call Agendas",
+                    "group": "CSM: Communication SOPs",
                     "pages": [
-                      "latchel-admin/Customer-Success-Team/onboarding-call-agendas",
-                      "latchel-admin/Customer-Success-Team/pre-kickoff-preparation-45-minutes",
-                      "latchel-admin/Customer-Success-Team/kickoff-call-45-minutes",
-                      "latchel-admin/Customer-Success-Team/configuration-call-60-minutes",
-                      "latchel-admin/Customer-Success-Team/onboarding-review-60-minutes"
+                      "latchel-admin/Customer-Success-Team/sop-how-to-do-all-email-work-in-salesforce",
+                      "latchel-admin/Customer-Success-Team/sop-calling-and-texting",
+                      "latchel-admin/Customer-Success-Team/sop-booking-and-logging-meetings"
                     ]
                   },
                   {
-                    "group": "Training Call Agendas",
+                    "group": "Executive Business Reviews",
                     "pages": [
-                      "latchel-admin/Customer-Success-Team/training-1-maintenance-console-navigation",
-                      "latchel-admin/Customer-Success-Team/training-2-maintenance-working-session",
-                      "latchel-admin/Customer-Success-Team/training-3-resident-benefits"
+                      "latchel-admin/Customer-Success-Team/executive-business-reviews",
+                      "latchel-admin/Customer-Success-Team/assisted-ledgering-monthly-scorecard-meeting"
                     ]
                   },
                   {
-                    "group": "Additional Onboarding Resources",
+                    "group": "Onboarding",
                     "pages": [
+                      "latchel-admin/Customer-Success-Team/cs-admin-job-aid-onboarding-flow-and-communications-maintenance-only",
+                      "latchel-admin/Customer-Success-Team/complete-onboarding-journey",
                       {
-                        "group": "Maintenance Configurations - Defined",
+                        "group": "Sales -> Onboarding Handoff",
                         "pages": [
-                          "latchel-admin/Customer-Success-Team/maintenance-configurations-defined",
-                          "latchel-admin/Customer-Success-Team/intake-only-no-dispatch-after-hours-emergency",
-                          "latchel-admin/Customer-Success-Team/intake-only-no-dispatch-24-7-emergency",
-                          "latchel-admin/Customer-Success-Team/intake-after-hours-emergency-only-dispatch",
-                          "latchel-admin/Customer-Success-Team/intake-24-7-emergency-only-dispatch",
-                          "latchel-admin/Customer-Success-Team/intake-24-7-emergency-saas-needs-pre-approval",
-                          "latchel-admin/Customer-Success-Team/intake-24-7-emergency-saas"
+                          "latchel-admin/Customer-Success-Team/sending-a-closed-opportunity-to-onboarding"
                         ]
                       },
-                      "latchel-admin/Customer-Success-Team/cs-diagnostic-workflow-assignment-guide",
-                      "latchel-admin/Customer-Success-Team/delayed-launches-reporting-and-next-action-steps",
-                      "latchel-admin/Customer-Success-Team/glossary-of-terms-onboarding-stages",
                       {
-                        "group": "Update Latchel Assigned Number in Twilio",
+                        "group": "Onboarding Call Agendas",
                         "pages": [
-                          "latchel-admin/Customer-Success-Team/update-latchel-assigned-number-in-twilio",
-                          "latchel-admin/Customer-Success-Team/moving-twilio-phone-numbers-to-another-twilio-account"
+                          "latchel-admin/Customer-Success-Team/onboarding-call-agendas",
+                          "latchel-admin/Customer-Success-Team/pre-kickoff-preparation-45-minutes",
+                          "latchel-admin/Customer-Success-Team/kickoff-call-45-minutes",
+                          "latchel-admin/Customer-Success-Team/configuration-call-60-minutes",
+                          "latchel-admin/Customer-Success-Team/onboarding-review-60-minutes"
+                        ]
+                      },
+                      {
+                        "group": "Training Call Agendas",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/training-1-maintenance-console-navigation",
+                          "latchel-admin/Customer-Success-Team/training-2-maintenance-working-session",
+                          "latchel-admin/Customer-Success-Team/training-3-resident-benefits"
+                        ]
+                      },
+                      {
+                        "group": "Additional Onboarding Resources",
+                        "pages": [
+                          {
+                            "group": "Maintenance Configurations - Defined",
+                            "pages": [
+                              "latchel-admin/Customer-Success-Team/maintenance-configurations-defined",
+                              "latchel-admin/Customer-Success-Team/intake-only-no-dispatch-after-hours-emergency",
+                              "latchel-admin/Customer-Success-Team/intake-only-no-dispatch-24-7-emergency",
+                              "latchel-admin/Customer-Success-Team/intake-after-hours-emergency-only-dispatch",
+                              "latchel-admin/Customer-Success-Team/intake-24-7-emergency-only-dispatch",
+                              "latchel-admin/Customer-Success-Team/intake-24-7-emergency-saas-needs-pre-approval",
+                              "latchel-admin/Customer-Success-Team/intake-24-7-emergency-saas"
+                            ]
+                          },
+                          "latchel-admin/Customer-Success-Team/cs-diagnostic-workflow-assignment-guide",
+                          "latchel-admin/Customer-Success-Team/delayed-launches-reporting-and-next-action-steps",
+                          "latchel-admin/Customer-Success-Team/glossary-of-terms-onboarding-stages",
+                          {
+                            "group": "Update Latchel Assigned Number in Twilio",
+                            "pages": [
+                              "latchel-admin/Customer-Success-Team/update-latchel-assigned-number-in-twilio",
+                              "latchel-admin/Customer-Success-Team/moving-twilio-phone-numbers-to-another-twilio-account"
+                            ]
+                          }
+                        ]
+                      },
+                      "latchel-admin/Customer-Success-Team/latchel-company-creation-automation-ui-selectors-and-api-integration-guide"
+                    ]
+                  },
+                  {
+                    "group": "Off-boarding - Desire to Churn",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/off-boarding-desire-to-churn",
+                      {
+                        "group": "SOP: Handling Client Churn Requests",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/sop-handling-client-churn-requests",
+                          "latchel-admin/Customer-Success-Team/churn-categories-defined",
+                          "latchel-admin/Customer-Success-Team/desire-to-churn-talk-tracks"
                         ]
                       }
                     ]
                   },
-                  "latchel-admin/Customer-Success-Team/latchel-company-creation-automation-ui-selectors-and-api-integration-guide"
-                ]
-              },
-              {
-                "group": "Off-boarding - Desire to Churn",
-                "pages": [
-                  "latchel-admin/Customer-Success-Team/off-boarding-desire-to-churn",
                   {
-                    "group": "SOP: Handling Client Churn Requests",
+                    "group": "Property Management Software (PMS) Resources",
                     "pages": [
-                      "latchel-admin/Customer-Success-Team/sop-handling-client-churn-requests",
-                      "latchel-admin/Customer-Success-Team/churn-categories-defined",
-                      "latchel-admin/Customer-Success-Team/desire-to-churn-talk-tracks"
+                      "latchel-admin/Customer-Success-Team/app-folio-resources",
+                      "latchel-admin/Customer-Success-Team/rent-manager-resources",
+                      "latchel-admin/Customer-Success-Team/propertyware-resources",
+                      "latchel-admin/Customer-Success-Team/buildium-resources"
+                    ]
+                  },
+                  {
+                    "group": "(Needs review) Customer Success Library - Landing Page",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/needs-review-customer-success-library-landing-page",
+                      {
+                        "group": "Integrations",
+                        "pages": [
+                          {
+                            "group": "Propertyware",
+                            "pages": [
+                              "latchel-admin/Customer-Success-Team/propertyware-integration-steps-new-customers",
+                              "latchel-admin/Customer-Success-Team/propertyware-integration-steps-existing-customers-data-migration",
+                              "latchel-admin/Customer-Success-Team/rent-manager-integration-steps-existing-customers"
+                            ]
+                          },
+                          {
+                            "group": "Appfolio",
+                            "pages": [
+                              "latchel-admin/Customer-Success-Team/how-to-install-the-chrome-plug-in-appfolio",
+                              "latchel-admin/Customer-Success-Team/cs-admin-how-to-troubleshoot-the-latchel-plug-in"
+                            ]
+                          },
+                          {
+                            "group": "RentCheck",
+                            "pages": [
+                              "latchel-admin/Customer-Success-Team/rent-check-latchel-rollout",
+                              "latchel-admin/Customer-Success-Team/scripting-around-the-beta-experience",
+                              "latchel-admin/Customer-Success-Team/integration-demo",
+                              "latchel-admin/Customer-Success-Team/how-to-activate-the-integration"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Customer Account Management SOPs",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/job-aid-send-grid-training-unblocking-bounced-emails",
+                          {
+                            "group": "Customer Meetings",
+                            "pages": [
+                              "latchel-admin/Customer-Success-Team/meeting-cadence-for-latchel-customers-post-sale",
+                              "latchel-admin/Customer-Success-Team/ad-hoc-meeting-agenda-template",
+                              "latchel-admin/Customer-Success-Team/customer-success-call-guidelines"
+                            ]
+                          },
+                          "latchel-admin/Customer-Success-Team/porting-away-a-latchel-maintenance-number-twilio",
+                          "latchel-admin/Customer-Success-Team/latchel-2-0-latchel-service-provider-network"
+                        ]
+                      },
+                      {
+                        "group": "Salesforce",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/how-to-define-a-customers-health-in-salesforce",
+                          "latchel-admin/Customer-Success-Team/how-to-log-a-call-in-salesforce",
+                          "latchel-admin/Customer-Success-Team/case-statuses-explained"
+                        ]
+                      },
+                      {
+                        "group": "Reimbursements/Billing Resources",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/how-to-submit-a-refund-request",
+                          "latchel-admin/Customer-Success-Team/in-progress-draft-how-to-handle-lcn-vendors-that-charge-residents-on-the-spot",
+                          "latchel-admin/Customer-Success-Team/job-aid-refunds-and-reimbursements-definitions-and-guidelines",
+                          "latchel-admin/Customer-Success-Team/how-to-request-a-customer-billing-exception",
+                          "latchel-admin/Customer-Success-Team/customer-discounts-escalation-matrix",
+                          "latchel-admin/Customer-Success-Team/billing-exception-requests-slack-channels",
+                          "latchel-admin/Customer-Success-Team/property-manager-profit-calculator",
+                          {
+                            "group": "Ordway Training Videos",
+                            "pages": [
+                              "latchel-admin/Customer-Success-Team/ordway-how-to-search-for-a-customer-account-in-ordway",
+                              "latchel-admin/Customer-Success-Team/ordway-how-to-find-the-price-per-unit",
+                              "latchel-admin/Customer-Success-Team/ordway-how-to-find-the-active-unit-count-latchel-invoiced-for",
+                              "latchel-admin/Customer-Success-Team/ordway-how-to-view-the-customers-default-subscription-payment-method-on-file",
+                              "latchel-admin/Customer-Success-Team/ordway-how-to-view-customer-billing-contacts-and-invoice-email-history",
+                              "latchel-admin/Customer-Success-Team/ordway-how-to-view-and-download-customer-subscription-invoices",
+                              "latchel-admin/Customer-Success-Team/ordway-parent-and-child-accounts-in-ordway",
+                              "latchel-admin/Customer-Success-Team/ordway-how-to-look-at-invoices-for-pms-with-multiple-subscriptions"
+                            ]
+                          },
+                          "latchel-admin/Customer-Success-Team/faqs-monthly-subscription-invoicing-accounts-receivable",
+                          "latchel-admin/Customer-Success-Team/job-aid-billing-past-due-accounts",
+                          "latchel-admin/Customer-Success-Team/finance-cs-google-drive",
+                          "latchel-admin/Customer-Success-Team/finance-cs-q3-powow"
+                        ]
+                      },
+                      "latchel-admin/Customer-Success-Team/customer-profitability-score-the-spotlight-approach",
+                      "latchel-admin/Customer-Success-Team/this-is-a-draft-job-aid-latchel-renters-insuranc",
+                      {
+                        "group": "Upgrading Accounts",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/upgrade-talk-track",
+                          "latchel-admin/Customer-Success-Team/upgrade-lunch-and-learn-deck",
+                          {
+                            "group": "Customer Upgrades",
+                            "pages": [
+                              "latchel-admin/Customer-Success-Team/draft-sales-cs-admin-customer-upgrade-process-flow"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Customer Comms",
+                        "pages": [
+                          "latchel-admin/Customer-Success-Team/auto-assign-update-email",
+                          "latchel-admin/Customer-Success-Team/resident-responsible-normal-emergency-jobs-update"
+                        ]
+                      },
+                      "latchel-admin/Customer-Success-Team/home-assistant-collected-changes-by-month",
+                      "latchel-admin/Customer-Success-Team/adding-a-gl-account-app-folio",
+                      "latchel-admin/Customer-Success-Team/cs-admin-how-to-prep-home-assistant-materials-for-the-customer",
+                      "latchel-admin/Customer-Success-Team/cs-admin-how-to-buy-and-release-numbers-in-twilio"
+                    ]
+                  },
+                  {
+                    "group": "Archived",
+                    "pages": [
+                      "latchel-admin/Customer-Success-Team/draft-cs-admin-job-aid-home-assistant-onboarding-flow",
+                      "latchel-admin/Customer-Success-Team/how-to-update-the-meeting-cadence-pipeline-in-salesforce",
+                      "latchel-admin/Customer-Success-Team/service-provider-stripe-reconciliation",
+                      "latchel-admin/Customer-Success-Team/work-order-monitoring-process",
+                      "latchel-admin/Customer-Success-Team/cs-meetings-agendas-action-items-notes",
+                      "latchel-admin/Customer-Success-Team/2019-06-26-customer-success-meeting-notes",
+                      "latchel-admin/Customer-Success-Team/2019-07-12-customer-success-meeting-notes",
+                      "latchel-admin/Customer-Success-Team/2019-10-03-premium-application-process-meeting-notes",
+                      "latchel-admin/Customer-Success-Team/2019-04-17-meeting-notes",
+                      "latchel-admin/Customer-Success-Team/archive-pre-configuration-call-agenda",
+                      "latchel-admin/Customer-Success-Team/archive-contract-review-call-agenda",
+                      "latchel-admin/Customer-Success-Team/job-aid-how-to-execute-go-live-checklist",
+                      "latchel-admin/Customer-Success-Team/customer-onboarding-information-checklist",
+                      "latchel-admin/Customer-Success-Team/onboarding-flow-communications",
+                      "latchel-admin/Customer-Success-Team/archive-customer-offboarding",
+                      "latchel-admin/Customer-Success-Team/customer-success-roadmap"
                     ]
                   }
-                ]
-              },
-              {
-                "group": "Property Management Software (PMS) Resources",
-                "pages": [
-                  "latchel-admin/Customer-Success-Team/app-folio-resources",
-                  "latchel-admin/Customer-Success-Team/rent-manager-resources",
-                  "latchel-admin/Customer-Success-Team/propertyware-resources",
-                  "latchel-admin/Customer-Success-Team/buildium-resources"
-                ]
-              },
-              {
-                "group": "(Needs review) Customer Success Library - Landing Page",
-                "pages": [
-                  "latchel-admin/Customer-Success-Team/needs-review-customer-success-library-landing-page",
-                  {
-                    "group": "Integrations",
-                    "pages": [
-                      {
-                        "group": "Propertyware",
-                        "pages": [
-                          "latchel-admin/Customer-Success-Team/propertyware-integration-steps-new-customers",
-                          "latchel-admin/Customer-Success-Team/propertyware-integration-steps-existing-customers-data-migration",
-                          "latchel-admin/Customer-Success-Team/rent-manager-integration-steps-existing-customers"
-                        ]
-                      },
-                      {
-                        "group": "Appfolio",
-                        "pages": [
-                          "latchel-admin/Customer-Success-Team/how-to-install-the-chrome-plug-in-appfolio",
-                          "latchel-admin/Customer-Success-Team/cs-admin-how-to-troubleshoot-the-latchel-plug-in"
-                        ]
-                      },
-                      {
-                        "group": "RentCheck",
-                        "pages": [
-                          "latchel-admin/Customer-Success-Team/rent-check-latchel-rollout",
-                          "latchel-admin/Customer-Success-Team/scripting-around-the-beta-experience",
-                          "latchel-admin/Customer-Success-Team/integration-demo",
-                          "latchel-admin/Customer-Success-Team/how-to-activate-the-integration"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Customer Account Management SOPs",
-                    "pages": [
-                      "latchel-admin/Customer-Success-Team/job-aid-send-grid-training-unblocking-bounced-emails",
-                      {
-                        "group": "Customer Meetings",
-                        "pages": [
-                          "latchel-admin/Customer-Success-Team/meeting-cadence-for-latchel-customers-post-sale",
-                          "latchel-admin/Customer-Success-Team/ad-hoc-meeting-agenda-template",
-                          "latchel-admin/Customer-Success-Team/customer-success-call-guidelines"
-                        ]
-                      },
-                      "latchel-admin/Customer-Success-Team/porting-away-a-latchel-maintenance-number-twilio",
-                      "latchel-admin/Customer-Success-Team/latchel-2-0-latchel-service-provider-network"
-                    ]
-                  },
-                  {
-                    "group": "Salesforce",
-                    "pages": [
-                      "latchel-admin/Customer-Success-Team/how-to-define-a-customers-health-in-salesforce",
-                      "latchel-admin/Customer-Success-Team/how-to-log-a-call-in-salesforce",
-                      "latchel-admin/Customer-Success-Team/case-statuses-explained"
-                    ]
-                  },
-                  {
-                    "group": "Reimbursements/Billing Resources",
-                    "pages": [
-                      "latchel-admin/Customer-Success-Team/how-to-submit-a-refund-request",
-                      "latchel-admin/Customer-Success-Team/in-progress-draft-how-to-handle-lcn-vendors-that-charge-residents-on-the-spot",
-                      "latchel-admin/Customer-Success-Team/job-aid-refunds-and-reimbursements-definitions-and-guidelines",
-                      "latchel-admin/Customer-Success-Team/how-to-request-a-customer-billing-exception",
-                      "latchel-admin/Customer-Success-Team/customer-discounts-escalation-matrix",
-                      "latchel-admin/Customer-Success-Team/billing-exception-requests-slack-channels",
-                      "latchel-admin/Customer-Success-Team/property-manager-profit-calculator",
-                      {
-                        "group": "Ordway Training Videos",
-                        "pages": [
-                          "latchel-admin/Customer-Success-Team/ordway-how-to-search-for-a-customer-account-in-ordway",
-                          "latchel-admin/Customer-Success-Team/ordway-how-to-find-the-price-per-unit",
-                          "latchel-admin/Customer-Success-Team/ordway-how-to-find-the-active-unit-count-latchel-invoiced-for",
-                          "latchel-admin/Customer-Success-Team/ordway-how-to-view-the-customers-default-subscription-payment-method-on-file",
-                          "latchel-admin/Customer-Success-Team/ordway-how-to-view-customer-billing-contacts-and-invoice-email-history",
-                          "latchel-admin/Customer-Success-Team/ordway-how-to-view-and-download-customer-subscription-invoices",
-                          "latchel-admin/Customer-Success-Team/ordway-parent-and-child-accounts-in-ordway",
-                          "latchel-admin/Customer-Success-Team/ordway-how-to-look-at-invoices-for-pms-with-multiple-subscriptions"
-                        ]
-                      },
-                      "latchel-admin/Customer-Success-Team/faqs-monthly-subscription-invoicing-accounts-receivable",
-                      "latchel-admin/Customer-Success-Team/job-aid-billing-past-due-accounts",
-                      "latchel-admin/Customer-Success-Team/finance-cs-google-drive",
-                      "latchel-admin/Customer-Success-Team/finance-cs-q3-powow"
-                    ]
-                  },
-                  "latchel-admin/Customer-Success-Team/customer-profitability-score-the-spotlight-approach",
-                  "latchel-admin/Customer-Success-Team/this-is-a-draft-job-aid-latchel-renters-insuranc",
-                  {
-                    "group": "Upgrading Accounts",
-                    "pages": [
-                      "latchel-admin/Customer-Success-Team/upgrade-talk-track",
-                      "latchel-admin/Customer-Success-Team/upgrade-lunch-and-learn-deck",
-                      {
-                        "group": "Customer Upgrades",
-                        "pages": [
-                          "latchel-admin/Customer-Success-Team/draft-sales-cs-admin-customer-upgrade-process-flow"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Customer Comms",
-                    "pages": [
-                      "latchel-admin/Customer-Success-Team/auto-assign-update-email",
-                      "latchel-admin/Customer-Success-Team/resident-responsible-normal-emergency-jobs-update"
-                    ]
-                  },
-                  "latchel-admin/Customer-Success-Team/home-assistant-collected-changes-by-month",
-                  "latchel-admin/Customer-Success-Team/adding-a-gl-account-app-folio",
-                  "latchel-admin/Customer-Success-Team/cs-admin-how-to-prep-home-assistant-materials-for-the-customer",
-                  "latchel-admin/Customer-Success-Team/cs-admin-how-to-buy-and-release-numbers-in-twilio"
-                ]
-              },
-              {
-                "group": "Archived",
-                "pages": [
-                  "latchel-admin/Customer-Success-Team/draft-cs-admin-job-aid-home-assistant-onboarding-flow",
-                  "latchel-admin/Customer-Success-Team/how-to-update-the-meeting-cadence-pipeline-in-salesforce",
-                  "latchel-admin/Customer-Success-Team/service-provider-stripe-reconciliation",
-                  "latchel-admin/Customer-Success-Team/work-order-monitoring-process",
-                  "latchel-admin/Customer-Success-Team/cs-meetings-agendas-action-items-notes",
-                  "latchel-admin/Customer-Success-Team/2019-06-26-customer-success-meeting-notes",
-                  "latchel-admin/Customer-Success-Team/2019-07-12-customer-success-meeting-notes",
-                  "latchel-admin/Customer-Success-Team/2019-10-03-premium-application-process-meeting-notes",
-                  "latchel-admin/Customer-Success-Team/2019-04-17-meeting-notes",
-                  "latchel-admin/Customer-Success-Team/archive-pre-configuration-call-agenda",
-                  "latchel-admin/Customer-Success-Team/archive-contract-review-call-agenda",
-                  "latchel-admin/Customer-Success-Team/job-aid-how-to-execute-go-live-checklist",
-                  "latchel-admin/Customer-Success-Team/customer-onboarding-information-checklist",
-                  "latchel-admin/Customer-Success-Team/onboarding-flow-communications",
-                  "latchel-admin/Customer-Success-Team/archive-customer-offboarding",
-                  "latchel-admin/Customer-Success-Team/customer-success-roadmap"
                 ]
               }
             ]
