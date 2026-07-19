@@ -1235,112 +1235,117 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "pages": [
-              "latchel-admin/Sales-Team/sales-team-overview",
+            "groups": [
               {
-                "group": "Sales Department Information",
+                "group": "Sales Team Pages",
                 "pages": [
-                  "latchel-admin/Sales-Team/sales-department-information",
-                  "latchel-admin/Sales-Team/sales-cycle-and-pipeline-overview",
-                  "latchel-admin/Sales-Team/sales-pipeline-metrics",
-                  "latchel-admin/Sales-Team/sales-goals",
-                  "latchel-admin/Sales-Team/lead-assignment-rules-and-notifications",
-                  "latchel-admin/Sales-Team/salesforce-account-stage-change-automations",
-                  "latchel-admin/Sales-Team/content-creation-and-management-standards",
-                  "latchel-admin/Sales-Team/sales-resource-or-content-management-process",
-                  "latchel-admin/Sales-Team/sales-glossary",
-                  "latchel-admin/Sales-Team/sop-how-to-reactivate-a-suspended-google-account",
-                  "latchel-admin/Sales-Team/sop-how-to-connect-your-latchel-gmail-account-to-salesforce",
-                  "latchel-admin/Sales-Team/sop-how-to-add-or-remove-users-to-sales-team-salesforce-and-amazon-connect",
-                  "latchel-admin/Sales-Team/sop-how-to-make-and-receive-calls-in-salesforce",
-                  "latchel-admin/Sales-Team/sop-how-to-create-and-modify-a-cadence-in-salesforce",
-                  "latchel-admin/Sales-Team/sop-growth-enablement",
-                  "latchel-admin/Sales-Team/sop-how-to-create-a-jira-ticket"
-                ]
-              },
-              {
-                "group": "Sales Strategy",
-                "pages": [
-                  "latchel-admin/Sales-Team/sales-strategy",
-                  "latchel-admin/Sales-Team/latchel-company-vision",
-                  "latchel-admin/Sales-Team/latchels-mission-tenets-and-plan-for-2024",
-                  "latchel-admin/Sales-Team/log-lines-and-latchel-messaging-guide",
-                  "latchel-admin/Sales-Team/latchels-ideal-customer-profile",
-                  "latchel-admin/Sales-Team/property-types-and-what-latchel-supports",
-                  "latchel-admin/Sales-Team/sales-strategy-2024"
-                ]
-              },
-              {
-                "group": "Industry Information",
-                "pages": [
-                  "latchel-admin/Sales-Team/industry-information",
-                  "latchel-admin/Sales-Team/how-to-learn-about-the-industry-and-competition",
-                  "latchel-admin/Sales-Team/property-management-company-styles",
-                  "latchel-admin/Sales-Team/glossary-of-property-management-company-roles"
-                ]
-              },
-              "latchel-admin/Sales-Team/product-information",
-              {
-                "group": "SDR Resources",
-                "pages": [
-                  "latchel-admin/Sales-Team/sdr-resources",
-                  "latchel-admin/Sales-Team/sdr-role-expectations",
-                  "latchel-admin/Sales-Team/sdr-role-organize-your-day",
-                  "latchel-admin/Sales-Team/sdr-role-personal-meeting-tracker",
-                  "latchel-admin/Sales-Team/draft-sop-sdr-inbound-process-how-to-process-a-lead",
-                  "latchel-admin/Sales-Team/draft-sop-how-to-select-and-work-on-cadences",
-                  "latchel-admin/Sales-Team/qualification-meeting-questions",
-                  "latchel-admin/Sales-Team/sop-how-to-create-an-opportunity-in-salesforce",
-                  "latchel-admin/Sales-Team/sop-how-to-recycle-and-assign-accounts-to-sdrs",
-                  "latchel-admin/Sales-Team/linked-in-messaging-guide",
-                  "latchel-admin/Sales-Team/sdr-faq",
+                  "latchel-admin/Sales-Team/sales-team-overview",
                   {
-                    "group": "SCRIPTS and TEMPLATES",
+                    "group": "Sales Department Information",
                     "pages": [
-                      "latchel-admin/Sales-Team/scripts-and-templates",
-                      "latchel-admin/Sales-Team/inbound-tier-1-communication-templates",
-                      "latchel-admin/Sales-Team/inbound-tier-2-communication-templates",
-                      "latchel-admin/Sales-Team/draft-inbound-tier-3-communication-templates",
-                      "latchel-admin/Sales-Team/book-discovery-meeting-communication-templates",
-                      "latchel-admin/Sales-Team/special-email-templates",
-                      "latchel-admin/Sales-Team/script-outbound-call"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "AE Resources",
-                "pages": [
-                  "latchel-admin/Sales-Team/ae-resources",
-                  {
-                    "group": "AE Role - Expectations & Set-up",
-                    "pages": [
-                      "latchel-admin/Sales-Team/ae-role-expectations-and-set-up",
-                      "latchel-admin/Sales-Team/sop-how-to-send-implementation-fee-with-contract"
+                      "latchel-admin/Sales-Team/sales-department-information",
+                      "latchel-admin/Sales-Team/sales-cycle-and-pipeline-overview",
+                      "latchel-admin/Sales-Team/sales-pipeline-metrics",
+                      "latchel-admin/Sales-Team/sales-goals",
+                      "latchel-admin/Sales-Team/lead-assignment-rules-and-notifications",
+                      "latchel-admin/Sales-Team/salesforce-account-stage-change-automations",
+                      "latchel-admin/Sales-Team/content-creation-and-management-standards",
+                      "latchel-admin/Sales-Team/sales-resource-or-content-management-process",
+                      "latchel-admin/Sales-Team/sales-glossary",
+                      "latchel-admin/Sales-Team/sop-how-to-reactivate-a-suspended-google-account",
+                      "latchel-admin/Sales-Team/sop-how-to-connect-your-latchel-gmail-account-to-salesforce",
+                      "latchel-admin/Sales-Team/sop-how-to-add-or-remove-users-to-sales-team-salesforce-and-amazon-connect",
+                      "latchel-admin/Sales-Team/sop-how-to-make-and-receive-calls-in-salesforce",
+                      "latchel-admin/Sales-Team/sop-how-to-create-and-modify-a-cadence-in-salesforce",
+                      "latchel-admin/Sales-Team/sop-growth-enablement",
+                      "latchel-admin/Sales-Team/sop-how-to-create-a-jira-ticket"
                     ]
                   },
-                  "latchel-admin/Sales-Team/draft-sop-ae-process-steps-how-to-process-an-opportunity",
-                  "latchel-admin/Sales-Team/draft-ae-process-in-salesforce",
-                  "latchel-admin/Sales-Team/sop-process-to-ensure-correct-sdr-commission-payments",
-                  "latchel-admin/Sales-Team/sop-how-to-run-a-discovery-meeting",
-                  "latchel-admin/Sales-Team/draft-sop-how-to-run-a-demo-meeting",
-                  "latchel-admin/Sales-Team/sop-how-to-create-and-send-a-contract-in-salesforce",
-                  "latchel-admin/Sales-Team/contract-guidance-need-to-review-last-updated-on-jan-05-2023",
-                  "latchel-admin/Sales-Team/contract-types-and-pricing",
-                  "latchel-admin/Sales-Team/sop-how-to-air-filters",
-                  "latchel-admin/Sales-Team/placeholder-how-to-run-a-contract-signing-meeting",
-                  "latchel-admin/Sales-Team/sop-how-to-leave-notes-for-an-opportunity-in-salesforce",
-                  "latchel-admin/Sales-Team/post-sale-playbook",
-                  "latchel-admin/Sales-Team/sop-how-to-create-and-send-a-quote-in-hub-spot"
-                ]
-              },
-              {
-                "group": "Marketing Team Resources",
-                "pages": [
-                  "latchel-admin/Sales-Team/marketing-team-resources",
-                  "latchel-admin/Sales-Team/blank-page-example",
-                  "latchel-admin/Sales-Team/sop-webinar-process",
-                  "latchel-admin/Sales-Team/how-to-scrub-a-pms-user-list-in-se-mrush"
+                  {
+                    "group": "Sales Strategy",
+                    "pages": [
+                      "latchel-admin/Sales-Team/sales-strategy",
+                      "latchel-admin/Sales-Team/latchel-company-vision",
+                      "latchel-admin/Sales-Team/latchels-mission-tenets-and-plan-for-2024",
+                      "latchel-admin/Sales-Team/log-lines-and-latchel-messaging-guide",
+                      "latchel-admin/Sales-Team/latchels-ideal-customer-profile",
+                      "latchel-admin/Sales-Team/property-types-and-what-latchel-supports",
+                      "latchel-admin/Sales-Team/sales-strategy-2024"
+                    ]
+                  },
+                  {
+                    "group": "Industry Information",
+                    "pages": [
+                      "latchel-admin/Sales-Team/industry-information",
+                      "latchel-admin/Sales-Team/how-to-learn-about-the-industry-and-competition",
+                      "latchel-admin/Sales-Team/property-management-company-styles",
+                      "latchel-admin/Sales-Team/glossary-of-property-management-company-roles"
+                    ]
+                  },
+                  "latchel-admin/Sales-Team/product-information",
+                  {
+                    "group": "SDR Resources",
+                    "pages": [
+                      "latchel-admin/Sales-Team/sdr-resources",
+                      "latchel-admin/Sales-Team/sdr-role-expectations",
+                      "latchel-admin/Sales-Team/sdr-role-organize-your-day",
+                      "latchel-admin/Sales-Team/sdr-role-personal-meeting-tracker",
+                      "latchel-admin/Sales-Team/draft-sop-sdr-inbound-process-how-to-process-a-lead",
+                      "latchel-admin/Sales-Team/draft-sop-how-to-select-and-work-on-cadences",
+                      "latchel-admin/Sales-Team/qualification-meeting-questions",
+                      "latchel-admin/Sales-Team/sop-how-to-create-an-opportunity-in-salesforce",
+                      "latchel-admin/Sales-Team/sop-how-to-recycle-and-assign-accounts-to-sdrs",
+                      "latchel-admin/Sales-Team/linked-in-messaging-guide",
+                      "latchel-admin/Sales-Team/sdr-faq",
+                      {
+                        "group": "SCRIPTS and TEMPLATES",
+                        "pages": [
+                          "latchel-admin/Sales-Team/scripts-and-templates",
+                          "latchel-admin/Sales-Team/inbound-tier-1-communication-templates",
+                          "latchel-admin/Sales-Team/inbound-tier-2-communication-templates",
+                          "latchel-admin/Sales-Team/draft-inbound-tier-3-communication-templates",
+                          "latchel-admin/Sales-Team/book-discovery-meeting-communication-templates",
+                          "latchel-admin/Sales-Team/special-email-templates",
+                          "latchel-admin/Sales-Team/script-outbound-call"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "AE Resources",
+                    "pages": [
+                      "latchel-admin/Sales-Team/ae-resources",
+                      {
+                        "group": "AE Role - Expectations & Set-up",
+                        "pages": [
+                          "latchel-admin/Sales-Team/ae-role-expectations-and-set-up",
+                          "latchel-admin/Sales-Team/sop-how-to-send-implementation-fee-with-contract"
+                        ]
+                      },
+                      "latchel-admin/Sales-Team/draft-sop-ae-process-steps-how-to-process-an-opportunity",
+                      "latchel-admin/Sales-Team/draft-ae-process-in-salesforce",
+                      "latchel-admin/Sales-Team/sop-process-to-ensure-correct-sdr-commission-payments",
+                      "latchel-admin/Sales-Team/sop-how-to-run-a-discovery-meeting",
+                      "latchel-admin/Sales-Team/draft-sop-how-to-run-a-demo-meeting",
+                      "latchel-admin/Sales-Team/sop-how-to-create-and-send-a-contract-in-salesforce",
+                      "latchel-admin/Sales-Team/contract-guidance-need-to-review-last-updated-on-jan-05-2023",
+                      "latchel-admin/Sales-Team/contract-types-and-pricing",
+                      "latchel-admin/Sales-Team/sop-how-to-air-filters",
+                      "latchel-admin/Sales-Team/placeholder-how-to-run-a-contract-signing-meeting",
+                      "latchel-admin/Sales-Team/sop-how-to-leave-notes-for-an-opportunity-in-salesforce",
+                      "latchel-admin/Sales-Team/post-sale-playbook",
+                      "latchel-admin/Sales-Team/sop-how-to-create-and-send-a-quote-in-hub-spot"
+                    ]
+                  },
+                  {
+                    "group": "Marketing Team Resources",
+                    "pages": [
+                      "latchel-admin/Sales-Team/marketing-team-resources",
+                      "latchel-admin/Sales-Team/blank-page-example",
+                      "latchel-admin/Sales-Team/sop-webinar-process",
+                      "latchel-admin/Sales-Team/how-to-scrub-a-pms-user-list-in-se-mrush"
+                    ]
+                  }
                 ]
               }
             ]
@@ -1352,78 +1357,83 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "pages": [
-              "latchel-admin/Latchel-People-Ops/latchel-people-ops-home",
-              "latchel-admin/Latchel-People-Ops/latchel-handbook",
-              "latchel-admin/Latchel-People-Ops/team-member-employee-contractor-term-sheet",
+            "groups": [
               {
-                "group": "Latchel Policies & Procedures",
+                "group": "Latchel People Ops Pages",
                 "pages": [
-                  "latchel-admin/Latchel-People-Ops/latchel-policies-and-procedures",
-                  "latchel-admin/Latchel-People-Ops/code-of-conduct",
-                  "latchel-admin/Latchel-People-Ops/staffing-approval-and-hiring-policy-and-procedure",
-                  "latchel-admin/Latchel-People-Ops/referral-policy-and-procedure",
-                  "latchel-admin/Latchel-People-Ops/policy-employee-compensation-increase-process",
-                  "latchel-admin/Latchel-People-Ops/remote-work-policy",
-                  "latchel-admin/Latchel-People-Ops/sales-commission-payout-policy",
-                  "latchel-admin/Latchel-People-Ops/nondiscrimination-anti-harassment-policy-and-complaint-procedure",
-                  "latchel-admin/Latchel-People-Ops/team-member-complaint-procedure",
+                  "latchel-admin/Latchel-People-Ops/latchel-people-ops-home",
+                  "latchel-admin/Latchel-People-Ops/latchel-handbook",
+                  "latchel-admin/Latchel-People-Ops/team-member-employee-contractor-term-sheet",
                   {
-                    "group": "Policy: Employee Time and Attendance",
+                    "group": "Latchel Policies & Procedures",
                     "pages": [
-                      "latchel-admin/Latchel-People-Ops/policy-employee-time-and-attendance",
-                      "latchel-admin/Latchel-People-Ops/shortened-work-week-policy",
-                      "latchel-admin/Latchel-People-Ops/shortened-work-week-schedule-2026"
+                      "latchel-admin/Latchel-People-Ops/latchel-policies-and-procedures",
+                      "latchel-admin/Latchel-People-Ops/code-of-conduct",
+                      "latchel-admin/Latchel-People-Ops/staffing-approval-and-hiring-policy-and-procedure",
+                      "latchel-admin/Latchel-People-Ops/referral-policy-and-procedure",
+                      "latchel-admin/Latchel-People-Ops/policy-employee-compensation-increase-process",
+                      "latchel-admin/Latchel-People-Ops/remote-work-policy",
+                      "latchel-admin/Latchel-People-Ops/sales-commission-payout-policy",
+                      "latchel-admin/Latchel-People-Ops/nondiscrimination-anti-harassment-policy-and-complaint-procedure",
+                      "latchel-admin/Latchel-People-Ops/team-member-complaint-procedure",
+                      {
+                        "group": "Policy: Employee Time and Attendance",
+                        "pages": [
+                          "latchel-admin/Latchel-People-Ops/policy-employee-time-and-attendance",
+                          "latchel-admin/Latchel-People-Ops/shortened-work-week-policy",
+                          "latchel-admin/Latchel-People-Ops/shortened-work-week-schedule-2026"
+                        ]
+                      },
+                      {
+                        "group": "Latchel Leave Policies",
+                        "pages": [
+                          "latchel-admin/Latchel-People-Ops/latchel-leave-policies",
+                          "latchel-admin/Latchel-People-Ops/Vacation-Leave-Policy",
+                          "latchel-admin/Latchel-People-Ops/Sick-Leave-Policy",
+                          "latchel-admin/Latchel-People-Ops/Bereavement-Leave-Policy",
+                          "latchel-admin/Latchel-People-Ops/Employee-Birthing-Parental-Leave-Policy-and-Procedure",
+                          "latchel-admin/Latchel-People-Ops/Employee-Non-Birthing-Parental-Leave-Policy-and-Procedure",
+                          "latchel-admin/Latchel-People-Ops/Job-Abandonment-Policy",
+                          "latchel-admin/Latchel-People-Ops/International-Team-Member-Birthing-Parental-Leave-Policy",
+                          "latchel-admin/Latchel-People-Ops/International-Team-Member-Non-Birthing-Parental-Leave-Policy"
+                        ]
+                      },
+                      {
+                        "group": "Paid Holidays",
+                        "pages": [
+                          "latchel-admin/Latchel-People-Ops/Paid-Holidays",
+                          "latchel-admin/Latchel-People-Ops/2026-Scheduled-Holidays"
+                        ]
+                      },
+                      {
+                        "group": "Latchel Security Policies",
+                        "pages": [
+                          "latchel-admin/Latchel-People-Ops/asset-management-policy",
+                          "latchel-admin/Latchel-People-Ops/policy-information-security"
+                        ]
+                      },
+                      "latchel-admin/Latchel-People-Ops/performance-and-salary-review-policy",
+                      "latchel-admin/Latchel-People-Ops/health-care-benefits-policy",
+                      "latchel-admin/Latchel-People-Ops/international-health-care-benefits-policy"
                     ]
                   },
                   {
-                    "group": "Latchel Leave Policies",
+                    "group": "Management Resource Center",
                     "pages": [
-                      "latchel-admin/Latchel-People-Ops/latchel-leave-policies",
-                      "latchel-admin/Latchel-People-Ops/Vacation-Leave-Policy",
-                      "latchel-admin/Latchel-People-Ops/Sick-Leave-Policy",
-                      "latchel-admin/Latchel-People-Ops/Bereavement-Leave-Policy",
-                      "latchel-admin/Latchel-People-Ops/Employee-Birthing-Parental-Leave-Policy-and-Procedure",
-                      "latchel-admin/Latchel-People-Ops/Employee-Non-Birthing-Parental-Leave-Policy-and-Procedure",
-                      "latchel-admin/Latchel-People-Ops/Job-Abandonment-Policy",
-                      "latchel-admin/Latchel-People-Ops/International-Team-Member-Birthing-Parental-Leave-Policy",
-                      "latchel-admin/Latchel-People-Ops/International-Team-Member-Non-Birthing-Parental-Leave-Policy"
+                      "latchel-admin/Latchel-People-Ops/manager-resource-center",
+                      {
+                        "group": "Toolkit: Performance Management",
+                        "expanded": true,
+                        "pages": [
+                          "latchel-admin/Latchel-People-Ops/toolkit-performance-management",
+                          "latchel-admin/Latchel-People-Ops/performance-review-process-documentation"
+                        ]
+                      }
                     ]
                   },
-                  {
-                    "group": "Paid Holidays",
-                    "pages": [
-                      "latchel-admin/Latchel-People-Ops/Paid-Holidays",
-                      "latchel-admin/Latchel-People-Ops/2026-Scheduled-Holidays"
-                    ]
-                  },
-                  {
-                    "group": "Latchel Security Policies",
-                    "pages": [
-                      "latchel-admin/Latchel-People-Ops/asset-management-policy",
-                      "latchel-admin/Latchel-People-Ops/policy-information-security"
-                    ]
-                  },
-                  "latchel-admin/Latchel-People-Ops/performance-and-salary-review-policy",
-                  "latchel-admin/Latchel-People-Ops/health-care-benefits-policy",
-                  "latchel-admin/Latchel-People-Ops/international-health-care-benefits-policy"
+                  "latchel-admin/Latchel-People-Ops/onboarding-flow-communications"
                 ]
-              },
-              {
-                "group": "Management Resource Center",
-                "pages": [
-                  "latchel-admin/Latchel-People-Ops/manager-resource-center",
-                  {
-                    "group": "Toolkit: Performance Management",
-                    "expanded": true,
-                    "pages": [
-                      "latchel-admin/Latchel-People-Ops/toolkit-performance-management",
-                      "latchel-admin/Latchel-People-Ops/performance-review-process-documentation"
-                    ]
-                  }
-                ]
-              },
-              "latchel-admin/Latchel-People-Ops/onboarding-flow-communications"
+              }
             ]
           },
           {
@@ -1701,45 +1711,50 @@
               "light": "#ff9b8a",
               "dark": "#ff9b8a"
             },
-            "pages": [
-              "latchel-admin/accounting/Accounts-Receivable-Tasks",
-              "latchel-admin/accounting/How-to-Handle-Basic-AR-Requests",
-              "latchel-admin/accounting/How-to-Upload-Bank-Transactions-to-Rillet",
-              "latchel-admin/accounting/How-To-Set-Up-a-New-Customer",
-              "latchel-admin/accounting/How-To-Create-Monthly-Subscription-Invoices",
+            "groups": [
               {
-                "group": "How to Receive and Reconcile Payments",
+                "group": "Accounting Pages",
                 "pages": [
-                  "latchel-admin/accounting/How-to-Receive-and-Reconcile-Payments",
-                  "latchel-admin/accounting/How-to-Upload-Bank-Transactions-to-Rillet"
-                ]
-              },
-              {
-                "group": "How to Handle Monthly Subscription Invoice Adjustments",
-                "pages": [
-                  "latchel-admin/accounting/How-to-Handle-Monthly-Subscription-Invoice-Adjustments",
-                  "latchel-admin/accounting/Active-Unit-Count-Credit-Request-Process"
-                ]
-              },
-              {
-                "group": "How To: Identify and Handle Past Due Subscription Invoices",
-                "pages": [
-                  "latchel-admin/accounting/How-To-Identify-and-Handle-Past-Due-Subscription-Invoices",
-                  "latchel-admin/accounting/How-to-Create-the-Aging-and-Payment-Checker",
-                  "latchel-admin/accounting/How-to-Set-Up-the-Non-Payment-Reminder-Banner"
-                ]
-              },
-              {
-                "group": "How To Create Monthly Subscription Invoices",
-                "pages": [
+                  "latchel-admin/accounting/Accounts-Receivable-Tasks",
+                  "latchel-admin/accounting/How-to-Handle-Basic-AR-Requests",
+                  "latchel-admin/accounting/How-to-Upload-Bank-Transactions-to-Rillet",
+                  "latchel-admin/accounting/How-To-Set-Up-a-New-Customer",
                   "latchel-admin/accounting/How-To-Create-Monthly-Subscription-Invoices",
-                  "latchel-admin/accounting/How-to-Create-AR-Monthly-Bridge-Report",
-                  "latchel-admin/accounting/How-to-Create-Monthly-Latchel-Autopay-Checker",
-                  "latchel-admin/accounting/How-to-Fill-Out-and-Use-the-AR-Credit-and-Overpayment-Tracker-2026"
+                  {
+                    "group": "How to Receive and Reconcile Payments",
+                    "pages": [
+                      "latchel-admin/accounting/How-to-Receive-and-Reconcile-Payments",
+                      "latchel-admin/accounting/How-to-Upload-Bank-Transactions-to-Rillet"
+                    ]
+                  },
+                  {
+                    "group": "How to Handle Monthly Subscription Invoice Adjustments",
+                    "pages": [
+                      "latchel-admin/accounting/How-to-Handle-Monthly-Subscription-Invoice-Adjustments",
+                      "latchel-admin/accounting/Active-Unit-Count-Credit-Request-Process"
+                    ]
+                  },
+                  {
+                    "group": "How To: Identify and Handle Past Due Subscription Invoices",
+                    "pages": [
+                      "latchel-admin/accounting/How-To-Identify-and-Handle-Past-Due-Subscription-Invoices",
+                      "latchel-admin/accounting/How-to-Create-the-Aging-and-Payment-Checker",
+                      "latchel-admin/accounting/How-to-Set-Up-the-Non-Payment-Reminder-Banner"
+                    ]
+                  },
+                  {
+                    "group": "How To Create Monthly Subscription Invoices",
+                    "pages": [
+                      "latchel-admin/accounting/How-To-Create-Monthly-Subscription-Invoices",
+                      "latchel-admin/accounting/How-to-Create-AR-Monthly-Bridge-Report",
+                      "latchel-admin/accounting/How-to-Create-Monthly-Latchel-Autopay-Checker",
+                      "latchel-admin/accounting/How-to-Fill-Out-and-Use-the-AR-Credit-and-Overpayment-Tracker-2026"
+                    ]
+                  },
+                  "latchel-admin/accounting/How-To-Terminate-Accounts-from-ARs-Perspective",
+                  "latchel-admin/accounting/How-To-Handle-Desire-to-Churn-Alerts"
                 ]
-              },
-              "latchel-admin/accounting/How-To-Terminate-Accounts-from-ARs-Perspective",
-              "latchel-admin/accounting/How-To-Handle-Desire-to-Churn-Alerts"
+              }
             ]
           }
         ]
