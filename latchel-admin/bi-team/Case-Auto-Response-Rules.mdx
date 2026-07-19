@@ -3,16 +3,16 @@ title: "Case Auto-Response Rules"
 ---
 
 <Note>
-**Purpose of this document**: The purpose of this article is to explain the criterias used for the trigger that will send the template to the customer each time a new Email-To-Case is generated.
+  **Purpose of this document**: The purpose of this article is to explain the criterias used for the trigger that will send the template to the customer each time a new Email-To-Case is generated.
 </Note>
 
-<Note>
-**Important comment**: Every rule that has been added in this formula has a correspondant rule in the “Case Assignment Rule”. The purpose of this is to not only redirect spam Cases to “7. All Spam Cases” but also to not send an Auto-Response to those senders.
-</Note>
+<Warning>
+  **Important comment**: Every rule that has been added in this formula has a correspondant rule in the “Case Assignment Rule”. The purpose of this is to not only redirect spam Cases to “7. All Spam Cases” but also to not send an Auto-Response to those senders.
+</Warning>
 
 ## FORMULA CRITERIA
 
-```
+```text
 (ISPICKVAL(Origin, "Email"))
 &&
 NOT(
@@ -67,24 +67,24 @@ CONTAINS(SuppliedEmail, "@v2properties.ma")
 )
 ```
 
-This formula listed all the different email senders that, based on the experience, do not require sending an auto-response email. Most of them are ‘Do not reply’ email addresses from customers or email addresses which doesn’t correspond to Customers (events@loom.com). Another part of the formula is listing several email subjects that can easily identify that they do not need an auto-response. (Subject, "Your video has been viewed).
+This formula listed all the different email senders that, based on the experience, do not require sending an auto-response email. Most of them are ‘Do not reply’ email addresses from customers or email addresses which doesn’t correspond to Customers ([events@loom.com](mailto:events@loom.com)). Another part of the formula is listing several email subjects that can easily identify that they do not need an auto-response. (Subject, "Your video has been viewed).
 
 The Auto-Response Rule will work for all the scenarios that do not fall into the mentioned rule.
 
-The email template used in the Rule is the following and is going to be sent from that email: Success Team (success+auto-response@latchel.com) and the subject will be Latchel: Case (Case.CaseNumber)
+The email template used in the Rule is the following and is going to be sent from that email: Success Team ([success\+auto-response@latchel.com](mailto:success+auto-response@latchel.com)) and the subject will be **Latchel: Case (Case.CaseNumber)**
 
 **Template of the Response:**
 
-Hi,
-
-Thanks for contacting Latchel Customer Success for your inquiry.
-
-We strive to provide excellent service and will respond to your request as soon as possible.
-
-In the meantime, feel free to check out our help center to help answer any questions and resolve issues:
-
-[Latchel Help Center](https://latchel.com/latchel-help-center/)
-
-Sincerely,
-
-Latchel Customer Success
+> Hi,
+>
+> Thanks for contacting Latchel Customer Success for your inquiry.
+>
+> We strive to provide excellent service and will respond to your request as soon as possible.
+>
+> In the meantime, feel free to check out our help center to help answer any questions and resolve issues:
+>
+> [Latchel Help Center](https://latchel.com/latchel-help-center/)
+>
+> Sincerely,
+>
+> Latchel Customer Success

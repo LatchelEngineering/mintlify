@@ -2,26 +2,30 @@
 title: "WR - CS - Scheduled Call Date/Time is set"
 ---
 
-If a CSM, after a scheduled call or meeting, forgets to close the related Case, this workflow rule should reopen it 24 hours after the programmed event.
+<Tip>
+  If a CSM, after a scheduled call or meeting, forgets to close the related Case, this workflow rule should reopen it 24 hours after the programmed event.
+</Tip>
 
-This Workflow Rule triggers a Field Update if the status equals to “Escalated”, ”In Progress”, “Waiting for Customer”, ”Scheduled Call”, or ”On Hold” and if 24 hours have passed since the “Scheduled Call Date/Time” and if the field “24 Hours After Call” is set to False.
+<Note>
+  This Workflow Rule triggers a Field Update if the status equals to “Escalated”, ”In Progress”, “Waiting for Customer”, ”Scheduled Call”, or ”On Hold” and if 24 hours have passed since the “Scheduled Call Date/Time” and if the field “24 Hours After Call” is set to False.
+</Note>
 
-**Current configuration:**
-
-<Frame>
-  <img src="/images/MC-24.png" alt="Current configuration" />
-</Frame>
-
-**Workflow Actions:**
+### **Current configuration:**
 
 <Frame>
-  <img src="/images/MC-25.png" alt="Workflow Actions" />
+  ![Current configuration](/images/MC-24.png)
 </Frame>
 
-**Case Status Schema:**
+### **Workflow Actions:**
+
+<Frame>
+  ![Workflow Actions](/images/MC-25.png)
+</Frame>
+
+### **Case Status Schema:**
 
 This schema can be accessed [here](https://docs.google.com/spreadsheets/d/1-yAPeROJHKgaCokaREr6IapBLZ57cLMafi8cHFWHxFg/edit#gid=0).
 
 <Frame>
-  <img src="/images/MC-26.png" alt="Case Status Schema" />
+  ![Case Status Schema](/images/MC-26.png)
 </Frame>

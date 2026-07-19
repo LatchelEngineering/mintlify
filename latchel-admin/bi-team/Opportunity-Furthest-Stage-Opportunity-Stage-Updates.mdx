@@ -6,23 +6,22 @@ title: "Opportunity: Furthest Stage & Opportunity Stage Updates"
 
 | Name on Salesforce | Process type | Group involved | Flow API Name |
 | --- | --- | --- | --- |
-| Opportunity: Furthest Stage & Opportunity Stage Updates | Autolaunched Flow | Sales | Opportunity_Furthest_Stage_Opportunity_Stage_Updates |
+| Opportunity: Furthest Stage & Opportunity Stage Updates | Autolaunched Flow | Sales | Opportunity\_Furthest\_Stage\_Opportunity\_Stage\_Updates |
 
 ## Description
 
-This flow manages all the changes that happened to an opportunity related to the updates in their stages.
+This flow manages all the changes that happened to an opportunity related to the updates in their stages. 
+
 As it is designed today, it does not work to tell us the furthest stage but it is still working to tell us all the previous stages where the opportunity was, who made the change, and the time of all these changes. You can access this data by looking at the right column of the Opportunity page.
 
 <Frame>
-  <img src="/images/MC-31.png" alt="Opportunity page right column" />
+  ![Opportunity page right column](/images/MC-31.png)
 </Frame>
-
-QuasacascascaacsascascaslifiQcatiod
 
 ## Flow Schema
 
 <Frame>
-  <img src="/images/MC-32.png" alt="Opportunity: Furthest Stage & Opportunity Stage Updates flow schema" />
+  ![Opportunity: Furthest Stage & Opportunity Stage Updates flow schema](/images/MC-32.png)
 </Frame>
 
 ## Additional Information
@@ -31,8 +30,6 @@ As we mentioned, this flow is not working to capture the furthest stage of the O
 
 It was originally designed to work in that way:
 
-A formula field will assign to each of the Opp Stages one number based on the order that it means in the Lyfecycle Stage
-
-Every time an Opps changes its Stage, this flow will check and compare the numbers assigned to the previous and the new stage. If the new one is higher, let’s put it in there.
-
-The problem happened when we created a lot of new stages and pipelines because there are stages from different pipelines that should match their assisgned numbers because they are saying the same. Those required changes were not made and are still pending.
+- A formula field will assign to each of the Opp Stages one number based on the order that it means in the Lyfecycle Stage
+- Every time an Opps changes its Stage, this flow will check and compare the numbers assigned to the previous and the new stage. If the new one is higher, let’s put it in there.
+- The problem happened when we created a lot of new stages and pipelines because there are stages from different pipelines that should match their assisgned numbers because they are saying the same. Those required changes were not made and are still pending.
