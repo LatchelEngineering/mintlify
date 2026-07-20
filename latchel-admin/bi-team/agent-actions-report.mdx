@@ -1,0 +1,84 @@
+---
+title: "Agent Actions Report"
+---
+
+| **Pipeline owner** | @Jose Leon S (Unlicensed) |
+| :-- | :-- |
+| **Informed** | @Jennifer Folch |
+| **Status** | **In production** |
+| **Last date updated** | May 4, 2023 |
+
+<Accordion title="Pipeline Overview">
+  | **Name** | **Description** |
+  | :-- | :-- |
+  | **Python Code** | This Python script retrieves operational data about agent actions from a PostgreSQL database, processes it, and uploads the data to a Google Sheet. Key components of the code: <ol><li>Import required libraries: oauth2client, gspread, pandas, psycopg2, datetime.</li><li>Google credentials are specified using a JSON key file.</li><li>`pg_connection` function: This function creates a connection to the PostgreSQL database and returns a tuple with connection and cursor objects.</li><li>Connect to the PostgreSQL database and execute an SQL query to retrieve agent actions data, including tasks deferred, tasks created, tasks completed, notes created, status updates, conversations replied, work orders created, calls placed, and SMS sent.</li><li>Convert the retrieved data into a pandas dataframe, normalize the date format, and fill NaNs with empty strings.</li><li>Upload the processed dataframe to the specified Google Sheet worksheet.</li></ol> In summary, the script processes data related to agent actions, along with their corresponding timestamps, and uploads it to a Google Sheet for further analysis. |
+  | **VM Configuration** | json file on the VM `'/home/jsalgado/data-analytics-warehouse-VM_Key.json'` |
+  | **Refresh frequency** | Every Monday at 19:00 UTC / 12:00 PST |
+  | **Google Sheet** | [Agent Action Raw](https://docs.google.com/spreadsheets/d/1p1w5zWAoH_TvqFXNCJufR28kDg8H5NcfeZOmNKZGSpA/edit#gid=0) |
+  | **Final Product** | [Agent Action Raw](https://docs.google.com/spreadsheets/d/1p1w5zWAoH_TvqFXNCJufR28kDg8H5NcfeZOmNKZGSpA/edit#gid=0) |
+</Accordion>
+
+### **Pipeline Notes**
+
+ 
+
+1. Please note that the json file used in the code is the auth key from BigQuery. Follow [this documentation](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys") as guidance.
+2. The script runs from the [following VM](https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse "https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse") , follow these steps to configure “Chrome Remote Desktop” to access the VM.
+3. Use Zeit to modify the cronjob
+
+## **Final Product**
+
+[Agent Action Raw](https://docs.google.com/spreadsheets/d/1p1w5zWAoH_TvqFXNCJufR28kDg8H5NcfeZOmNKZGSpA/edit#gid=0)
+
+## **Code**
+
+```text
+#!/usr/bin/env python3
+
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
+import psycopg2
+from datetime import datetime
+import gspread
+import os
+
+# Load Google credentials
+creds = ServiceAccountCredentials.from_json_keyfile_name(filename='data-analytics-warehouse-VM_Key.json')
+client = gspread.authorize(creds)
+
+# Google Sheet ID
+Agent_Actions_Raw = '1p1w5zWAoH_TvqFXNCJufR28kDg8H5NcfeZOmNKZGSpA'
+
+# Function to create connection to PostgreSQL database
+def pg_connection():
+    con = psycopg2.connect(
+        host="latchel-prod-read.c3jvgr6a8pgv.us-west-2.rds.amazonaws.com",
+        database="latchelstage",
+        user="jsalgado",
+        password='t55Y-MkBy3NR!y*XhH-Hru_m3!rsNyPW',
+        port=5432)
+    cur = con.cursor()
+    return con, cur
+
+# Connect to the PostgreSQL database and execute SQL query
+con, cur = pg_connection()
+cur.execute("""(SQL_QUERY_CONTENT)""")
+
+# Convert the retrieved data into a pandas dataframe and process it
+df_Duel = pd.DataFrame(cur.fetchall(), columns=[...])
+df_Duel['time_action_taken'] = df_Duel['time_action_taken'].dt.strftime('%Y-%m-%d %H:%M:%S')
+df_Duel = df_Duel.fillna("")
+
+# Upload the processed dataframe to the specified Google Sheet worksheet
+Agent_Actions_Raw_sh = client.open_by_key(Agent_Actions_Raw).get_worksheet(0)
+Agent_Actions_Raw_sh.update('A2', df_Duel.values.tolist())
+
+# Print the current timestamp for log
+now = datetime.now()
+print("Agent_Activity Ran successfully at ", now)
+```
+
+## **References and documentation**
+
+- [Authenticate using API keys](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys")
+- [psycopg2](https://pypi.org/project/psycopg2/ "https://pypi.org/project/psycopg2/")

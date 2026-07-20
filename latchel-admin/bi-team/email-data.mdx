@@ -1,0 +1,92 @@
+---
+title: "Email Data"
+---
+
+| **Pipeline owner** | @Jose Leon S (Unlicensed) |
+| :-- | :-- |
+| **Informed** | @Jennifer Folch |
+| **Status** | **In production** |
+| **Last date updated** | May 4, 2023 |
+
+<Accordion title="Pipeline Overview">
+  | **Name** | **Description** |
+  | :-- | :-- |
+  | **Python Code** | This Python script retrieves data about ZenDesk ticket metrics via the ZenDesk API, processes it, and uploads the data to a Google BigQuery table. Key components of the code: <ol><li>Import required libraries: oauth2client, requests, pandas, gspread, os, json, numpy, and [google.cloud](http://google.cloud) (bigquery).</li><li>Google credentials are specified using a JSON key file.</li><li>ZenDesk credentials and API endpoint are specified.</li><li>Request data from the ZenDesk API iteratively for multiple pages and store the 'ticket\_metrics' information into a pandas dataframe `df_metrics`.</li><li>Process the `df_metrics` dataframe by dropping unnecessary columns.</li><li>Upload the processed `df_metrics` dataframe to the Google BigQuery table `data-analytics-warehouse.latchel_stage_bigquery.zendesk_tickets_metrics` with the specified schema.</li></ol> In summary, the script processes data about ZenDesk ticket metrics from the ZenDesk API and uploads the data to a Google BigQuery table for further analysis. |
+  | **VM Configuration** | json file on the VM `'/home/jsalgado/data-analytics-warehouse-VM_Key.json'` |
+  | **Refresh frequency** | Every 5 minutes |
+  | **BigQuery Table** | `data-analytics-warehouse.latchel_stage_bigquery.zendesk_tickets_metrics` |
+  | **Final Product** | [<u>Productivity Dashboard</u>](https://lookerstudio.google.com/u/0/reporting/badff70a-ed59-424b-bf41-25dcc9834745/page/p_5x900yoe0c/edit "https://lookerstudio.google.com/u/0/reporting/badff70a-ed59-424b-bf41-25dcc9834745/page/p_5x900yoe0c/edit") |
+</Accordion>
+
+### **Pipeline Notes**
+
+1. Please note that the json file used in the code is the auth key from BigQuery. Follow [this documentation](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys") as guidance.
+2. The script runs from the [following VM](https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse "https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse"), follow these steps to configure “Chrome Remote Desktop” to access the VM.
+3. Use Zeit to modify the cronjob
+4. This pipeline feeds the email portion of the productivity dashboard. It uploads the data into BigQuery and from there, it is transformed using several views.
+
+## **Final Product**
+
+[Productivity Dashboard](https://lookerstudio.google.com/u/0/reporting/badff70a-ed59-424b-bf41-25dcc9834745/page/p_5x900yoe0c/edit "https://lookerstudio.google.com/u/0/reporting/badff70a-ed59-424b-bf41-25dcc9834745/page/p_5x900yoe0c/edit")
+
+## Code
+
+```text
+#!/usr/bin/env python3
+
+from oauth2client.service_account import ServiceAccountCredentials
+import requests
+import pandas as pd
+import gspread
+import os
+import json
+import numpy as np
+from google.cloud import bigquery
+
+# Load Google credentials
+creds = ServiceAccountCredentials.from_json_keyfile_name(filename='data-analytics-warehouse-VM_Key.json')
+client = gspread.authorize(creds)
+
+# ZenDesk credentials and API endpoint
+credentials = ('EMAIL_ADDRESS', 'API_KEY')
+session = requests.Session()
+session.auth = credentials
+zendesk = 'https://latchel.zendesk.com/'
+
+# Fetch data from the ZenDesk API and store it in a dataframe
+df_metrics = pd.DataFrame()
+next_page = 1
+for page_iter in range(1000):
+    url = f'{zendesk}/api/v2/ticket_metrics.json?page={next_page}'
+    response = session.get(url)
+    if response.status_code != 200:
+        print(f'Error with status code {response.status_code}')
+        exit()
+    data = response.json()
+    metrics_dict = data['ticket_metrics']
+    df_metrics = pd.concat([df_metrics, pd.DataFrame(metrics_dict)])
+    next_page = next_page + 1
+
+# Process the 'df_metrics' dataframe
+df_metrics.drop(columns=[...], inplace=True)
+
+# Upload the processed dataframe to Google BigQuery table
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '/home/jsalgado/data-analytics-warehouse-VM_Key.json'
+client = bigquery.Client()
+table_id = "data-analytics-warehouse.latchel_stage_bigquery.zendesk_tickets_metrics"
+job_config = bigquery.LoadJobConfig(schema=[...])
+job = client.load_table_from_dataframe(df_metrics, table_id, job_config=job_config)
+job.result()
+
+# Print the result of the operation
+table = client.get_table(table_id)
+print(
+    "Loaded {} rows and {} columns to {}".format(
+        table.num_rows, len(table.schema), table_id
+    )
+)
+```
+
+## **References and documentation**
+
+- [Google Cloud Docs](https://cloud.google.com/python/docs/reference "https://cloud.google.com/python/docs/reference")

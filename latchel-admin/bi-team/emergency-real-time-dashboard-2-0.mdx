@@ -1,0 +1,103 @@
+---
+title: "Emergency Real Time Dashboard 2.0"
+---
+
+| **Pipeline owner** | @Jose Leon S (Unlicensed) |
+| :-- | :-- |
+| **Informed** | @Jennifer Folch |
+| **Status** | **In production** |
+| **Last date updated** | May 4, 2023 |
+
+<Accordion title="Pipeline Overview">
+  | **Name** | **Description** |
+  | :-- | :-- |
+  | **Python Code** | his Python script retrieves emergency work order data from the PostgreSQL database, processes it, and uploads the data to a BigQuery table. Key components in the code: <ol><li>Import required libraries: gspread, psycopg2, pandas, oauth2client, datetime, and [google.cloud](http://google.cloud) (bigquery).</li><li>Google credentials: OAuth2 is used to authorize a Google Sheets service account.</li><li>`pg_connection` function: The function creates a connection to the PostgreSQL database and returns a tuple with connection and cursor objects.</li><li>SQL query: The SQL code retrieves information about emergency work orders' various timestamps in the last 30 days. This includes job\_id, enter\_troubleshooting time, job status change times (de\_escalated, enter\_fwd\_to\_pm, etc.), first call times, and job URL.</li><li>Data processing: The retrieved data is converted into a pandas dataframe, and the datetime columns are converted to string in 'MM/DD/YYYY HH:MM:SS' format.</li><li>Set Job ID to string: The Job ID column is converted to strings in the dataframe.</li><li>Upload to Google BigQuery: The pre-processed dataframe is uploaded to the BigQuery table `data-analytics-warehouse.latchelstage_bigquery.emergency_WO_timestamp`, replacing the existing table with the new data.</li></ol> In summary, the script processes and uploads information about emergency work orders, their related timestamps, calls, and job URLs to a Google BigQuery table for further analysis. |
+  | **VM Configuration** | json file on the VM `'/home/jsalgado/data-analytics-warehouse-VM_Key.json'` |
+  | **Refresh frequency** | Every 5 minutes |
+  | **BigQuery Table** | `data-analytics-warehouse.latchelstage_bigquery.emergency_WO_timestamp` |
+  | **Final Product** | [<u>Emergency Real Time 2.0</u>](https://lookerstudio.google.com/u/0/reporting/d9160663-a5a3-4f78-936f-75d92cc93fb6/page/FXltC/edit "https://lookerstudio.google.com/u/0/reporting/d9160663-a5a3-4f78-936f-75d92cc93fb6/page/FXltC/edit") |
+</Accordion>
+
+### **Pipeline Notes**
+
+1. Please note that the json file used in the code is the auth key from BigQuery. Follow [this documentation](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys") as guidance.
+2. The script runs from the [following VM](https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse "https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse"), follow these steps to configure “Chrome Remote Desktop” to access the VM.
+3. Use Zeit to modify the cronjob
+
+## **Final Product**
+
+[Emergency Real Time 2.0](https://lookerstudio.google.com/u/0/reporting/d9160663-a5a3-4f78-936f-75d92cc93fb6/page/FXltC/edit "https://lookerstudio.google.com/u/0/reporting/d9160663-a5a3-4f78-936f-75d92cc93fb6/page/FXltC/edit")
+
+## **Code**
+
+```text
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr 25 16:09:36 2022
+
+@author: joseleonsalgado
+"""
+#import necessary libraries
+from oauth2client.service_account import ServiceAccountCredentials
+import psycopg2
+import pandas as pd
+from datetime import datetime
+from google.cloud import bigquery
+import os
+
+# Authorize Google Cloud service account using OAuth2
+creds = ServiceAccountCredentials.from_json_keyfile_name(filename='data-analytics-warehouse-11249e2cff0c.json')
+
+
+
+# Function to create connection to PostgreSQL database
+def pg_connection():
+    con = psycopg2.connect(
+        host = "latchel-prod-read.c3jvgr6a8pgv.us-west-2.rds.amazonaws.com",
+        database = "latchelstage",
+        user = "jsalgado",
+        password = 't55Y-MkBy3NR!y*XhH-Hru_m3!rsNyPW',
+        port = 5432)
+    cur = con.cursor()
+    return con,cur
+
+# Connect to the PostgreSQL database
+con,cur = pg_connection()
+
+# Execute query to retrieve data about emergency work orders
+cur.execute("""
+       (SQL_QUERY_CONTENT)
+            """)
+
+# Convert the retrieved data into a pandas dataframe and process datetime columns
+df_Emergency_Times=pd.DataFrame(cur.fetchall(), columns=['ts.job_id', 'ts.enter_troubleshooting', (...), 'pm'])
+(df_Emergency_Times['COLUMN_NAME'] = df_Emergency_Times['COLUMN_NAME'].dt.strftime('%m/%d/%Y %H:%M:%S')) for all columns
+
+# Rename the columns in the dataframe
+df_Emergency_Times.columns=['job_id','enter_troubleshooting','de_escalated','enter_fwd_to_pm','enter_wait_for_pm','enter_completed','enter_cancelled','enter_finding_vendor','enter_awaiting_work_date','deferred','first_call','first_res_call','first_nonres_call','job_url','pm']
+
+# Convert Job ID column to string
+df_Emergency_Times["job_id"]=df_Emergency_Times["job_id"].apply(str)
+
+# Upload the processed dataframe to Google BigQuery table
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]='PATH/TO/PROJECT-KEY.json'
+table_id = "data-analytics-warehouse.latchelstage_bigquery.emergency_WO_timestamp"
+
+job = client.load_table_from_dataframe(
+    df_Emergency_Times, table_id, job_config=job_config)
+job.result()
+
+#sucess message
+table = client.get_table(table_id)
+
+print(
+    "Emergency WO Life Loaded {} rows and {} columns to {}".format(
+        table.num_rows, len(table.schema), table_id
+    )
+)
+```
+
+## **References and documentation**
+
+- [psycopg2](https://pypi.org/project/psycopg2/ "https://pypi.org/project/psycopg2/")

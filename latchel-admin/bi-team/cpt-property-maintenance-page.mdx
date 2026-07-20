@@ -1,0 +1,659 @@
+---
+title: "CPT (Property Maintenance Page)"
+---
+
+| **Pipeline owner** | @Jose Leon S (Unlicensed) |
+| :-- | :-- |
+| **Informed** | @Lauyumi Michelle Rojas Brindis (Unlicensed) |
+| **Status** | Development |
+| **Last date updated** | Aug 1, 2023 |
+
+<Accordion title="Code Overview">
+  | **Name** | **Description** |
+  | :-- | :-- |
+  | **Code** | This code provides a comprehensive web application for managing and maintaining property data. Its functionality can be summarized in two parts: database queries (handled by Google Cloud's BigQuery) and user interface operations (managed by Google Apps Scripts). <ol><li>**Database Queries Operations (Google Cloud's BigQuery):** <ul><li>Selection of distinct property manager names, property ids, and unit data from relevant tables.</li><li>Fetch unit-specific data like ledgerable status, GL code presence, lease status, addendum, paid status, etc.</li><li>Record or update unit form data to the database.</li></ul></li><li>**User Interface Operations (Google Apps Scripts):** <ul><li>Display a form enabling users to select a Property Manager, then a Property, and then a Unit.</li><li>Based on the user's selections, it fetches and displays relevant data for a specific unit.</li><li>Allows users to modify the data and submit the changes.</li><li>On form submission, the app collects the form data and updates the database.</li></ul></li></ol> This web app is a user-friendly interface for managing and maintaining property data by interacting with a back-end database. It ensures users can view, add, or update property-specific data effectively and conveniently. |
+  | Script Location | [Apps Script  \|  Google for Developers](https://script.google.com/home/projects/1vWbXFe_lt6y33JArdLoSEb5QFF-exw7g3EqgYu0KC5PCXipoZ-ELdN9q/edit) |
+  | **Final Product** | [<u>Properties Maintenance Page</u>](https://sites.google.com/latchel.com/cpt-team/properties-maintenance "https://sites.google.com/latchel.com/cpt-team/properties-maintenance") |
+</Accordion>
+
+### **Code Details**
+
+1. `code.gs`
+   Google App Script code responsible for interacting with Google Cloud's BigQuery to manage and retrieve data. Key functions include:
+   1. `doGet()` - Entry point of a web app.
+   2. `getPropertyManagers()`, `getPropertyIds(managerId)`, `getUnits(managerId, address)` - These functions send SQL-like queries to BigQuery, fetching distinct values from the 'data-analytics-warehouse' project, 'cpt\_team' dataset, 'weekly\_reports' table.
+   3. `getFormData(unitId)` - Fetches and processes unit information from the 'unit\_information\_history' table.
+   4. `formatDate(dateStr)` - Convert date `dateStr` to ISO format.
+   5. `updateFormData(data)` - Inserts data into the 'unit\_information\_history' table.
+2. `PropertyForm.html`
+   1. This is an HTML script constructing a web form for property maintenance. This form interacts with the Google App Script functions defined in `code.gs`:
+      1. Form Elements - Include drop-down menus for property manager, property, unit, plus ledger-able, has GL code, has lease, addendum, paid status, missed opportunities, others, has future GL code, future date GL code, month detect, has future lease, future lease date, need to be checked, note, updated at.
+      2. Javascript Functions - Manage form dynamics, data population, and call relevant GAS functions.
+      JavaScript functions include:
+   2. `loadManagers()` - Populates Property Managers.
+   3. `populateManagerSelect(managers) and loadProperties()` - Fetches and populates Property Information.
+   4. `loadUnits()` - Fetches and populates Unit Information.
+   5. `loadPropertyData()` - Fetch and populate property data retrieved from `getFormData(unitId)`.
+   6. `clearFormFields()` - Clears the form.
+   7. `submitForm()` - Collates form data and invokes `updateFormData(formData)` to update the record.
+
+## **Final Product**
+
+[Properties Maintenance Page](https://sites.google.com/latchel.com/cpt-team/properties-maintenance "https://sites.google.com/latchel.com/cpt-team/properties-maintenance")
+
+## Code
+
+```text
+//Entry point of a web app.
+function doGet() {
+return HtmlService.createTemplateFromFile("PropertyForm").evaluate();
+}
+
+//getPropertyManagers(), getPropertyIds(managerId), getUnits(managerId, address) - 
+//These functions send SQL-like queries to BigQuery, fetching distinct values from the 'data-analytics-warehouse' project, 'cpt_team' dataset, 'weekly_reports' table.
+function getPropertyManagers() {
+const projectId = "data-analytics-warehouse";
+const datasetName = "cpt_team";
+const tableName = "weekly_reports";
+
+
+const query = `
+SELECT distinct(pm_company_id) as name
+FROM \`${projectId}.${datasetName}.${tableName}\`
+`;
+const request = {
+query: query,
+useLegacySql: false
+};
+const response = BigQuery.Jobs.query(request, projectId);
+
+
+const rows = response.rows;
+Logger.log(rows);
+if (rows) {
+const propertyManagers = rows.map(row => ({ name: row.f[0].v }));
+return propertyManagers;
+} else {
+return [];
+}
+}
+
+
+function getPropertyIds(managerId) {
+  const projectId = "data-analytics-warehouse";
+  const datasetName = "cpt_team";
+  const tableName = "weekly_reports";
+
+  const query = `
+  SELECT distinct(property_address) as label
+  FROM \`${projectId}.${datasetName}.${tableName}\` a
+  WHERE cast(a.pm_company_id as string) = "${managerId}"
+  `;
+
+  const request = {
+    query: query,
+    useLegacySql: false
+  };
+  
+  const response = BigQuery.Jobs.query(request, projectId);
+  
+  const rows = response.rows;
+  Logger.log(rows);
+  if (rows) {
+    const properties = rows.map(row => ({ label: row.f[0].v }));
+    return properties;
+  } else {
+    return [];
+  }
+}
+
+
+function getUnits(managerId, address) {
+  const projectId = "data-analytics-warehouse";
+  const datasetName = "cpt_team";
+  const tableName = "weekly_reports";
+
+  const query = `
+  SELECT distinct(property_id) as id, unit as label
+  FROM \`${projectId}.${datasetName}.${tableName}\` a
+  WHERE cast(a.pm_company_id as string) = "${managerId}" AND a.property_address = "${address}"
+  `;
+  
+  const request = {
+    query: query,
+    useLegacySql: false
+  };
+  
+  const response = BigQuery.Jobs.query(request, projectId);
+  
+  const rows = response.rows;
+  Logger.log(rows);
+  if (rows) {
+    const units = rows.map(row => ({ id: row.f[0].v, label: row.f[1].v }));
+    return units;
+  } else {
+    return [];
+  }
+}
+//Fetches and processes unit information from the 'unit_information_history' table.
+function getFormData(unitId) {
+    try {
+        const projectId = "data-analytics-warehouse";
+        const datasetName = "cpt_team";
+        const tableName = "unit_information_history";
+
+        const query = `
+            SELECT
+                property_id,
+                ledgerable,
+                has_gl_code,
+                has_lease,
+                addendum,
+                has_paid,
+                missed_opportunities,
+                others,
+                has_future_gl_code,
+                future_date_gl_code,
+                month_detect,
+                has_future_lease,
+                future_lease_date,
+                need_to_be_checked,
+                notes,
+                updated_at,
+                record_date
+            FROM \`${projectId}.${datasetName}.${tableName}\`
+            WHERE property_id = @unitId
+        `;
+
+        const queryParameters = [
+            {
+                name: 'unitId',
+                parameterType: { type: 'STRING' },
+                parameterValue: { value: unitId }
+            }
+        ];
+
+        const request = {
+            query: query,
+            useLegacySql: false,
+            queryParameters: queryParameters
+        };
+    
+        const response = BigQuery.Jobs.query(request, projectId);
+        const rows = response.rows;
+
+        if (rows) {
+            return {
+                id: rows[0].f[0].v,
+                ledgerable: rows[0].f[1].v,
+                has_gl_code: rows[0].f[2].v,
+                has_lease: rows[0].f[3].v,
+                addendum: rows[0].f[4].v,
+                has_paid: rows[0].f[5].v,
+                missed_opportunities: rows[0].f[6].v,
+                others: rows[0].f[7].v,
+                has_future_gl_code: rows[0].f[8].v,
+                future_date_gl_code: formatDate(rows[0].f[9].v),
+                month_detect: formatDate(rows[0].f[10].v),
+                has_future_lease: rows[0].f[11].v,
+                future_lease_date: formatDate(rows[0].f[12].v),
+                need_to_be_checked: rows[0].f[13].v,
+                notes: rows[0].f[14].v,
+                updated_at: formatDate(rows[0].f[15].v)
+            };
+        } else {
+            return null;
+        }
+    } catch (error) {
+        Logger.log("Error in getFormData function: " + error);
+        throw error;
+    }
+}
+
+//Convert date dateStr to ISO format.
+function formatDate(dateStr) {
+if (!dateStr) {
+return null;
+}
+const dateObj = new Date(dateStr);
+return dateObj.toISOString().substring(0, 10);
+}
+
+// Inserts data into the 'unit_information_history' table.
+function updateFormData(data) {
+try {
+const projectId = "data-analytics-warehouse";
+const datasetName = "cpt_team";
+const tableName = "unit_information_history";
+
+
+const query = `
+    INSERT INTO \`${projectId}.${datasetName}.${tableName}\`
+    (record_date, property_id, ledgerable, has_gl_code, has_lease, addendum, has_paid,
+    missed_opportunities, others, has_future_gl_code, future_date_gl_code, month_detect,
+    has_future_lease, future_lease_date, need_to_be_checked, notes, updated_at)
+    VALUES (TIMESTAMP(DATETIME(CURRENT_TIMESTAMP(), "America/Los_Angeles")), @unitId,@ledgerable, @has_gl_code, @has_lease, @addendum, @has_paid,
+    @missed_opportunities, @others, @has_future_gl_code, @future_date_gl_code, @month_detect,
+    @has_future_lease, @future_lease_date, @need_to_be_checked, @notes, @updated_at)
+    `;
+
+Logger.log("Running following query: ", query);
+const queryParameters = [
+{
+    name: 'unitId',
+    parameterType: { type: 'STRING' },
+    parameterValue: { value: data.unitId }
+  },
+{
+name: 'ledgerable',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.ledgerable }
+},
+{
+name: 'has_gl_code',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.has_gl_code }
+},
+{
+name: 'has_lease',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.has_lease }
+},
+{
+name: 'addendum',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.addendum }
+},
+
+{
+name: 'has_paid',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.has_paid }
+},
+{
+name: 'missed_opportunities',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.missed_opportunities }
+},
+{
+name: 'others',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.others }
+},
+{
+name: 'has_future_gl_code',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.has_future_gl_code }
+},
+{
+name: 'future_date_gl_code',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.future_date_gl_code }
+},
+{
+name: 'month_detect',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.month_detect }
+},
+{
+name: 'has_future_lease',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.has_future_lease }
+},
+{
+name: 'future_lease_date',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.future_lease_date }
+},
+{
+name: 'need_to_be_checked',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.need_to_be_checked }
+},
+{
+name: 'notes',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.notes }
+},
+{
+name: 'updated_at',
+parameterType: { type: 'STRING' },
+parameterValue: { value: data.updated_at }
+}
+];
+
+
+  const request = {
+     query: query,
+     useLegacySql: false,
+     queryParameters: queryParameters
+   };
+
+   const response = BigQuery.Jobs.query(request, projectId);
+   Logger.log(response); 
+
+   return {
+     query: query,
+     request: request,
+     response: response
+   };
+
+ } catch (error) {
+   Logger.log("Error encountered in updateFormData function: ", error);
+   throw error; // 
+ }
+}
+
+```
+
+## PropertyForm.html
+
+```text
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<style>
+body {
+background-color: #fbfbf3;
+font-family: Arial, sans-serif;
+color: #747c7c;
+}
+h2 {
+background-color: #ad9cf6;
+padding: 20px;
+border-radius: 5px;
+text-align: center;
+}
+form {
+display: flex;
+flex-direction: column;
+gap: 12px;
+max-width: 500px;
+min-height: 600px;
+margin: auto;
+background-color: #7ed6d6;
+padding: 30px;
+border-radius: 5px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+label {
+font-weight: bold;
+}
+select, input[type="date"], input[type="text"] {
+width: 100%;
+padding: 5px;
+border: 1px solid #747c7c;
+border-radius: 3px;
+}
+button {
+background-color: #fd9c88;
+border: none;
+padding: 10px;
+color: #ffffff;
+font-weight: bold;
+border-radius: 5px;
+cursor: pointer;
+}
+button:hover {
+opacity: 0.8;
+}
+</style>
+</head>
+<body>
+<h2>Property Maintenance</h2>
+<form id="propertyForm">
+<label for="managerId">Property Manager:</label>
+<select id="managerId" name="managerId" onchange="loadProperties();"></select>
+<label for="propertyId">Property:</label>
+<select id="propertyId" name="propertyId" onchange="loadUnits();"></select>
+<label for="unitId">Unit:</label>
+ <select id="unitId" name="unitId" onchange="loadPropertyData();"></select>
+
+
+<label for="ledgerable">Ledgerable:</label>
+<select id="ledgerable" name="ledgerable">
+<option value="">Select an option</option>
+<option value="YES">YES</option>
+<option value="NO">NO</option>
+</select>
+<label for="has_gl_code">Has GL code:</label>
+<select id="has_gl_code" name="has_gl_code">
+<option value="">Select an option</option>
+<option value="true">True</option>
+<option value="false">False</option>
+</select>
+<label for="has_lease">Has lease:</label>
+<select id="has_lease" name="has_lease">
+<option value="">Select an option</option>
+<option value="true">True</option>
+<option value="false">False</option>
+</select>
+
+
+
+
+<label for="addendum">Addendum:</label>
+<input type="text" id="addendum" name="addendum">
+
+
+<label for="has_paid">Has paid:</label>
+<select id="has_paid" name="has_paid">
+<option value="">Select an option</option>
+<option value="true">True</option>
+<option value="false">False</option>
+</select>
+
+
+<label for="missed_opportunities">missed_opportunities:</label>
+<input type="text" id="missed_opportunities" name="missed_opportunities">
+
+
+<label for="others">others:</label>
+<input type="text" id="others" name="others">
+<label for="has_future_gl_code">Has future GL code:</label>
+<select id="has_future_gl_code" name="has_future_gl_code">
+<option value="">Select an option</option>
+<option value="true">True</option>
+<option value="false">False</option>
+</select>
+
+
+<label for="future_date_gl_code">Future date GL Code:</label>
+<input type="date" id="future_date_gl_code" name="future_date_gl_code">
+<label for="month_detect">month detect:</label>
+<input type="text" id="month_detect" name="month_detect">
+<label for="has_future_lease">Has future lease:</label>
+<select id="has_future_lease" name="has_future_lease">
+<option value="">Select an option</option>
+<option value="true">True</option>
+<option value="false">False</option>
+</select>
+
+
+<label for="future_lease_date">Future Lease Date:</label>
+<input type="date" id="has_future_lease" name="has_future_lease">
+
+<label for="future_lease_date">Future Lease Date:</label>
+<input type="date" id="future_lease_date" name="future_lease_date">
+
+
+<label for="need_to_be_checked">Need to be checked:</label>
+<select id="need_to_be_checked" name="need_to_be_checked">
+<option value="">Select an option</option>
+<option value="true">True</option>
+<option value="false">False</option>
+</select>
+
+
+<label for="notes">Notes:</label>
+<input type="text" id="notes" name="notes">
+
+
+<label for="updated_at">Updated at:</label>
+<input type="date" id="updated_at" name="updated_at">
+<button type="button" onclick="submitForm();">Submit</button>
+<span id="msg"></span>
+</form>
+
+
+<script>
+
+  //Populates Property Managers.
+function loadManagers() {
+google.script.run.withSuccessHandler(populateManagerSelect)
+.getPropertyManagers();
+}
+
+//utility function to show messages on screen. 
+function showMessage(msg) {
+document.getElementById('msg').innerHTML = msg;
+setTimeout(() => {
+document.getElementById('msg').innerHTML = '';
+}, 3000);
+}
+
+//populateManagerSelect(managers) and loadProperties() - Fetches and populates Property Information.
+function populateManagerSelect(managers) {
+const managerSelect = document.getElementById("managerId");
+managerSelect.innerHTML =
+'<option value="">Select a property manager</option>' +
+managers.map(manager => `<option value="${manager.name}">${manager.name}</option>`).join('');
+managerSelect.onchange = loadProperties;
+}
+function loadProperties() {
+   const managerId = document.getElementById("managerId").value;
+   if (managerId) {
+     google.script.run.withSuccessHandler(populatePropertySelect).getPropertyIds(managerId);
+     clearFormFields();
+   }
+ }
+
+// Fetches and populates Unit Information.
+ function loadUnits() {
+   const managerId = document.getElementById("managerId").value;
+   const address = document.getElementById("propertyId").value;
+   if (managerId && address) {
+     google.script.run.withSuccessHandler(populateUnitSelect).getUnits(managerId, address);
+     clearFormFields();
+   }
+ }
+
+//This function populates the "Property" dropdown select element with property data retrieved based on the selected property manager. 
+//It's called upon the successful completion of the getPropertyIds(managerId) script run, and the properties passed to it are used to dynamically build the dropdown options.
+function populatePropertySelect(properties) {
+  const propertySelect = document.getElementById("propertyId");
+  propertySelect.innerHTML =
+    '<option value="">Select a property</option>' +
+    properties.map(property => `<option value="${property.label}">${property.label}</option>`).join('');
+}
+
+//this function populates the "Unit" dropdown select element but with unit data. 
+//It's called upon successful completion of the getUnits(managerId, address) script run, and it builds the Unit dropdown options based on the units passed into it.
+function populateUnitSelect(units) {
+  const unitSelect = document.getElementById("unitId");
+  unitSelect.innerHTML =
+     '<option value="">Select a unit</option>' +
+     units.map(unit => `<option value="${unit.id}">${unit.label}</option>`).join('');
+}
+
+//Fetch and populate property data retrieved from getFormData(unitId)
+function loadPropertyData() {
+  const unitId = document.getElementById("unitId").value;
+  if (unitId) {
+    google.script.run.withSuccessHandler(populateFormFields).getFormData(unitId);
+  }
+}
+
+//Populates form fields based on the Unit selected.
+function populateFormFields(formData) {
+if (formData) {
+document.getElementById("ledgerable").value = formData.ledgerable;
+document.getElementById("has_gl_code").value = formData.has_gl_code;
+document.getElementById("has_lease").value = formData.has_lease;
+document.getElementById("addendum").value = formData.addendum;
+document.getElementById("has_paid").value = formData.has_paid;
+document.getElementById("missed_opportunities").value = formData.missed_opportunities;
+document.getElementById("others").value = formData.others;
+document.getElementById("has_future_gl_code").value = formData.has_future_gl_code;
+document.getElementById("future_date_gl_code").value = formData.future_date_gl_code;
+document.getElementById("month_detect").value = formData.month_detect;
+document.getElementById("has_future_lease").value = formData.has_future_lease;
+document.getElementById("future_lease_date").value = formData.future_lease_date;
+document.getElementById("need_to_be_checked").value = formData.need_to_be_checked;
+document.getElementById("notes").value = formData.notes;
+document.getElementById("updated_at").value = formData.updated_at;
+}
+}
+
+// Clears the form when a new property or property manager  is selected.
+function clearFormFields() {
+document.getElementById("ledgerable").value = '';
+document.getElementById("has_gl_code").value = '';
+document.getElementById("has_lease").value = '';
+document.getElementById("addendum").value = '';
+document.getElementById("has_paid").value = '';
+document.getElementById("missed_opportunities").value = '';
+document.getElementById("others").value = '';
+document.getElementById("has_future_gl_code").value = '';
+document.getElementById("future_date_gl_code").value = '';
+document.getElementById("future_lease_date").value='';
+document.getElementById("month_detect").value = '';
+document.getElementById("has_future_lease").value = '';
+document.getElementById("need_to_be_checked").value = '';
+document.getElementById("notes").value = '';
+document.getElementById("updated_at").value = '';
+}
+
+//Collates form data and invokes updateFormData(formData) to update the record.
+function submitForm() {
+    const getElementValue = (id) => {
+        const element = document.getElementById(id);
+        return element ? element.value : null;
+    }
+
+     const formData = {
+        managerId: document.getElementById("managerId").value,
+        unitId: document.getElementById("unitId").value,
+        propertyAddress: document.getElementById("propertyId").value,
+        ledgerable: document.getElementById("ledgerable").value,
+        has_gl_code: document.getElementById("has_gl_code").value,
+        has_lease: document.getElementById("has_lease").value,
+        addendum: document.getElementById("addendum").value,
+        has_paid: document.getElementById("has_paid").value,
+        missed_opportunities: document.getElementById("missed_opportunities").value,
+        others: document.getElementById("others").value,
+        has_future_gl_code: document.getElementById("has_future_gl_code").value,
+        future_date_gl_code: document.getElementById("future_date_gl_code").value,
+        month_detect: document.getElementById("month_detect").value,
+        has_future_lease: document.getElementById("has_future_lease").value,
+        future_lease_date: document.getElementById("future_lease_date").value,
+        need_to_be_checked: document.getElementById("need_to_be_checked").value,
+        notes: document.getElementById("notes").value,
+        updated_at: document.getElementById("updated_at").value
+    };
+    console.log("Form data before submission: ", formData);
+
+    google.script.run
+    .withSuccessHandler(function (serverData) { 
+         showMessage('Data recorded successfully.');
+
+    })
+    .withFailureHandler(function (err) {
+        console.error("Encountered an error while saving data: ", err);
+    })
+    .updateFormData(formData);
+}
+
+
+// Load property managers when the page is loaded
+ window.addEventListener("load", loadManagers);
+ window.addEventListener("load", loadProperties);
+
+</script>
+</body>
+</html>
+
+
+
+```

@@ -1,0 +1,100 @@
+---
+title: "Troubleshooting Ratings Report"
+---
+
+| **Pipeline owner** | @Jose Leon S (Unlicensed) |
+| :-- | :-- |
+| **Informed** | @Jennifer Folch |
+| **Status** | **In production** |
+| **Last date updated** | May 4, 2023 |
+
+<Accordion title="Pipeline Overview">
+  | **Name** | **Description** |
+  | :-- | :-- |
+  | **Python Code** | This Python script retrieves troubleshooting ratings data from a PostgreSQL database, processes it, sorts it by date, and uploads the data to a Google BigQuery table. Key components of the code: <ol><li>Import required libraries: gspread, pandas, psycopg2, datetime, oauth2client, [google.cloud](http://google.cloud) (bigquery), and os.</li><li>`pg_connection` function: This function creates a connection to the PostgreSQL database and returns a tuple with connection and cursor objects.</li><li>Connect to the PostgreSQL database, and execute an SQL query to retrieve data about troubleshooting ratings, comments, creation timestamp, rated item, status, URL, property manager information, and whether the company is SaaS or not.</li><li>Convert the retrieved data into a pandas dataframe and process it.</li><li>Sort the dataframe by the 'created\_at' column.</li><li>Convert the datetime columns to strings in the 'YYYY-MM-DD HH:MM:SS' format.</li><li>Upload the processed dataframe to the Google BigQuery table `data-analytics-warehouse.latchelstage_bigquery.troubleshooting_ratings` with the specified schema.</li></ol> |
+  | **VM Configuration** | json file on the VM `'/home/jsalgado/data-analytics-warehouse-VM_Key.json'` |
+  | **Refresh frequency** | Daily at 00:10 UTC |
+  | **BigQuery Table** | `data-analytics-warehouse.latchelstage_bigquery.troubleshooting_ratings` |
+  | **Final Product** | [<u>Troubleshooting Ratings Dashboard</u>](https://lookerstudio.google.com/u/0/reporting/50507490-a4b8-4c7a-9568-d7b29a3c68a4/page/p_bp7ohe0gvc "https://lookerstudio.google.com/u/0/reporting/50507490-a4b8-4c7a-9568-d7b29a3c68a4/page/p_bp7ohe0gvc") |
+</Accordion>
+
+### **Pipeline Notes**
+
+ 
+
+1. Please note that the json file used in the code is the auth key from BigQuery. Follow [this documentation](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys") as guidance.
+2. The script runs from the [following VM](https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse "https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse") , follow these steps to configure “Chrome Remote Desktop” to access the VM.
+3. Use Zeit to modify the cronjob
+
+Other notes:
+
+## **Final Product**
+
+[Troubleshooting Ratings Dashboard](https://lookerstudio.google.com/u/0/reporting/50507490-a4b8-4c7a-9568-d7b29a3c68a4/page/p_bp7ohe0gvc "https://lookerstudio.google.com/u/0/reporting/50507490-a4b8-4c7a-9568-d7b29a3c68a4/page/p_bp7ohe0gvc")
+
+## Code
+
+```text
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 22 10:04:21 2022
+
+@author: joseleonsalgado
+"""
+
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
+import psycopg2
+from datetime import datetime, timedelta
+from google.cloud import bigquery
+import os
+
+# Function to create connection to PostgreSQL database
+def pg_connection():
+    con = psycopg2.connect(
+        host="latchel-prod-read.c3jvgr6a8pgv.us-west-2.rds.amazonaws.com",
+        database="latchelstage",
+        user="jsalgado",
+        password='t55Y-MkBy3NR!y*XhH-Hru_m3!rsNyPW',
+        port=5432)
+    cur = con.cursor()
+    return con, cur
+
+# Connect to PostgreSQL database and execute SQL query
+con, cur = pg_connection()
+cur.execute("""(SQL_QUERY_CONTENT)""")
+
+# Convert the retrieved data into a pandas dataframe and process it
+df = pd.DataFrame(cur.fetchall(), columns=[...])
+df['created_at'] = pd.to_datetime(df['created_at'])
+(df['COLUMN_NAME'] = df['COLUMN_NAME'].astype(str)) for all columns
+
+# Sort dataframe by 'created_at' column
+df = df.sort_values(by="created_at")
+
+# Convert datetime columns to strings
+df['created_at'] = df['created_at'].dt.strftime('%Y-%m-%d %H:%M:%S')
+df['Date_Rated'] = df['Date_Rated'].dt.strftime('%Y-%m-%d %H:%M:%S')
+
+# Upload the processed dataframe to Google BigQuery table
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '/home/jsalgado/data-analytics-warehouse-VM_Key.json'
+client = bigquery.Client()
+table_id = "data-analytics-warehouse.latchelstage_bigquery.troubleshooting_ratings"
+job_config = bigquery.LoadJobConfig(schema=[...])
+job = client.load_table_from_dataframe(df, table_id, job_config=job_config)
+job.result()
+
+# Print the result of the operation
+table = client.get_table(table_id)
+print(
+    "Troubleshooting Ratings Loaded {} rows and {} columns to {}".format(
+        table.num_rows, len(table.schema), table_id
+    )
+)
+```
+
+## **References and documentation**
+
+- [Authenticate using API keys](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys")
+- [psycopg2](https://pypi.org/project/psycopg2/ "https://pypi.org/project/psycopg2/")

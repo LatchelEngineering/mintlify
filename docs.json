@@ -1263,6 +1263,20 @@
                   "latchel-admin/bi-team/Enrichment-HubSpot-Segments-Overview",
                   "latchel-admin/bi-team/HubSpot-MCP-Connector-Cheat-Sheet"
                 ]
+              },
+              {
+                "group": "BI Team Technical Documentation Page",
+                "pages": [
+                  "latchel-admin/bi-team/bi-team-technical-documentation-page",
+                  "latchel-admin/bi-team/console-actions",
+                  "latchel-admin/bi-team/cpt-property-maintenance-page",
+                  "latchel-admin/bi-team/troubleshooting-ratings-report",
+                  "latchel-admin/bi-team/agent-actions-report",
+                  "latchel-admin/bi-team/deputy-timesheet-report",
+                  "latchel-admin/bi-team/emergency-call-backs",
+                  "latchel-admin/bi-team/email-data",
+                  "latchel-admin/bi-team/emergency-real-time-dashboard-2-0"
+                ]
               }
             ]
           },

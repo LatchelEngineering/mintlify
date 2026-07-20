@@ -1,0 +1,103 @@
+---
+title: "Emergency Call Backs"
+---
+
+| **Pipeline owner** | @Jose Leon S (Unlicensed) |
+| :-- | :-- |
+| **Informed** | @Jennifer Folch |
+| **Status** | **In production** |
+| **Last date updated** | May 4, 2023 |
+
+<Accordion title="Pipeline Overview">
+  | **Name** | **Description** |
+  | :-- | :-- |
+  | **Python Code** | his Python script retrieves operational data about emergency call-backs from a PostgreSQL database, processes it, filters it based on the last date recorded in the BigQuery table, and appends the data to the BigQuery table. Key components of the code: <ol><li>Import required libraries: gspread, pandas, psycopg2, datetime, oauth2client, [google.cloud](http://google.cloud) (bigquery), and os.</li><li>`pg_connection` function: This function creates a connection to the PostgreSQL database and returns a tuple with connection and cursor objects.</li><li>Connect to the PostgreSQL database and execute an SQL query to retrieve data about emergency call-back times, user who initiated the call, their name, user type, and minutes taken to make the call.</li><li>Convert the retrieved data into a pandas dataframe and process it by converting necessary columns to string format.</li><li>Query the maximum date from the BigQuery table and filter the dataframe based on this date.</li><li>Sort the dataframe by 'created\_at' column.</li><li>Append the filtered dataframe to the BigQuery table `data-analytics-warehouse.latchelstage_bigquery.emergency_call_back` with the specified schema.</li></ol> |
+  | **VM Configuration** | json file on the VM `'/home/jsalgado/data-analytics-warehouse-VM_Key.json'` |
+  | **Refresh frequency** | Every day at 8:00 UTC. |
+  | **BigQuery Route** | `data-analytics-warehouse.latchelstage_bigquery.emergency_call_back` |
+  | **Final Product** | [<u>Emergency Call Backs</u>](https://lookerstudio.google.com/u/0/reporting/054e803b-a218-4e67-93eb-0b231d83535f/page/p_0vf0mlh8rc/edit "https://lookerstudio.google.com/u/0/reporting/054e803b-a218-4e67-93eb-0b231d83535f/page/p_0vf0mlh8rc/edit") |
+</Accordion>
+
+### **Pipeline Notes**
+
+1. Please note that the json file used in the code is the auth key from BigQuery. Follow [this documentation](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys") as guidance.
+2. The script runs from the [following VM](https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse "https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse"), follow these steps to configure “Chrome Remote Desktop” to access the VM.
+3. Use Zeit to modify the cronjob
+
+## **Final Product**
+
+[Emergency Call backs](https://lookerstudio.google.com/u/0/reporting/054e803b-a218-4e67-93eb-0b231d83535f/page/p_0vf0mlh8rc/edit "https://lookerstudio.google.com/u/0/reporting/054e803b-a218-4e67-93eb-0b231d83535f/page/p_0vf0mlh8rc/edit")
+
+## **Code**
+
+```text
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 22 10:04:21 2022
+
+@author: joseleonsalgado
+"""
+
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
+import psycopg2
+from datetime import datetime, timedelta
+from google.cloud import bigquery
+import os
+
+# Initialize BigQuery client
+client = bigquery.Client()
+
+# Google credentials
+creds = ServiceAccountCredentials.from_json_keyfile_name(filename='data-analytics-warehouse-VM_Key.json')
+
+# Function to create connection to PostgreSQL database
+def pg_connection():
+    con = psycopg2.connect(
+        host = "latchel-prod-read.c3jvgr6a8pgv.us-west-2.rds.amazonaws.com",
+        database = "latchelstage",
+        user = "jsalgado",
+        password = 't55Y-MkBy3NR!y*XhH-Hru_m3!rsNyPW',
+        port = 5432)
+    cur = con.cursor()
+    return con,cur
+
+# Connect to the PostgreSQL database and execute SQL query
+con,cur = pg_connection()
+cur.execute("""(SQL_QUERY_CONTENT)""")
+
+# Convert the retrieved data into a pandas dataframe and process it
+df=pd.DataFrame(cur.fetchall(), columns=[...])
+df['created_at']=pd.to_datetime(df['created_at'])
+(df['COLUMN_NAME']=df['COLUMN_NAME'].astype(str)) for all columns
+
+# Query the maximum date from BigQuery table and filter the dataframe
+query_string = """
+SELECT MAX(created_at) as created_at FROM `data-analytics-warehouse.latchelstage_bigquery.emergency_call_back` 
+"""
+last_date_str=str(client.query(query_string).to_dataframe().iloc[0,0])
+date_dt2 = datetime.strptime(last_date_str, '%Y-%m-%d %H:%M:%S') + timedelta(minutes=1)
+df = df[(df['created_at']>date_dt2)]
+
+# Sort dataframe by 'created_at' column
+df = df.sort_values(by="created_at")
+
+# Append the processed and filtered dataframe to the BigQuery table
+table_id = "data-analytics-warehouse.latchelstage_bigquery.emergency_call_back"
+job_config = bigquery.LoadJobConfig(schema=[...])
+job = client.load_table_from_dataframe(df, table_id, job_config=job_config)
+job.result()
+
+# Print the result of the operation
+table = client.get_table(table_id)
+print(
+    "Loaded {} rows and {} columns to {}".format(
+        table.num_rows, len(table.schema), table_id
+    )
+)
+```
+
+## **References and documentation**
+
+- [psycopg2](https://pypi.org/project/psycopg2/ "https://pypi.org/project/psycopg2/")

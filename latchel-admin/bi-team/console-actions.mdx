@@ -1,0 +1,111 @@
+---
+title: "Console Actions"
+---
+
+| **Pipeline owner** | @Jose Leon S (Unlicensed) |
+| :-- | :-- |
+| **Informed** | @Jennifer Folch |
+| **Status** | **In production** |
+| **Last date updated** | May 4, 2023 |
+
+<Accordion title="Pipeline Overview">
+  | **Name** | **Description** |
+  | :-- | :-- |
+  | **Python Code** | This Python script retrieves operational data of admins from a PostgreSQL database, processes it, filters it based on a Google Sheet worksheet, and appends the data to the Google Sheet. Key components of the code: <ol><li>Import required libraries: gspread, pandas, psycopg2, datetime, oauth2client, [google.cloud](http://google.cloud) (bigquery), os, numpy, and time.</li><li>`pg_connection` function: This function creates a connection to the PostgreSQL database and returns a tuple with connection and cursor objects.</li><li>`run_query` function: This function does the following: a. Authorizes Google Sheets service account. b. Establishes a connection to PostgreSQL database and executes SQL query to retrieve admins' operational data. Data includes tasks deferred, tasks created, tasks completed, notes created, status updates, conversations replied, work orders created, calls placed, and SMS sent. c. Converts the retrieved data into a pandas dataframe, `df`. d. Connects to the Google Sheet worksheet and downloads its existing data. e. Processes and filters the dataframe based on the last date recorded in the Google Sheet. f. Converts the datetime columns to strings in 'MM/DD/YYYY HH:MM:SS' format and fills null values. g. Appends the processed and filtered dataframe to the relevant Google Sheet worksheet.</li><li>The `run_query` function is wrapped within a `try-except` block to handle exceptions and retry until is successful.</li></ol> |
+  | **VM Configuration** | json file on the VM `'/home/jsalgado/data-analytics-warehouse-VM_Key.json'` |
+  | **Refresh frequency** | Every Monday at 730 UTC. It needs to run at this time to allow enough time for the Ops Sups to clean up the timesheets. |
+  | **Google Sheet** | [Console Actions Raw Data Sheet](https://docs.google.com/spreadsheets/d/1wBhiMmWIzkSHo5z4B79vCFJX6YNtpbmDLES9q7GhiHQ/edit#gid=1244548632 "https://docs.google.com/spreadsheets/d/1wBhiMmWIzkSHo5z4B79vCFJX6YNtpbmDLES9q7GhiHQ/edit#gid=1244548632") |
+  | **Final Product** | [Productivity Hours Worked](https://docs.google.com/spreadsheets/d/1wBhiMmWIzkSHo5z4B79vCFJX6YNtpbmDLES9q7GhiHQ/edit#gid=2084252977 "https://docs.google.com/spreadsheets/d/1wBhiMmWIzkSHo5z4B79vCFJX6YNtpbmDLES9q7GhiHQ/edit#gid=2084252977") |
+</Accordion>
+
+## **Pipeline Notes**
+
+1. Please note that the json file used in the code is the auth key from BigQuery. Follow [this documentation](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys") as guidance.
+2. The script runs from the [following VM](https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse "https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse"), follow these steps to configure “Chrome Remote Desktop” to access the VM.
+3. Use Zeit to modify the cronjob
+
+## **Final Product**
+
+[Emergency Real Time 2.0](https://lookerstudio.google.com/u/0/reporting/d9160663-a5a3-4f78-936f-75d92cc93fb6/page/FXltC/edit "https://lookerstudio.google.com/u/0/reporting/d9160663-a5a3-4f78-936f-75d92cc93fb6/page/FXltC/edit")
+
+### Code
+
+```text
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr  4 10:18:32 2022
+
+@author: joseleonsalgado
+"""
+
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
+import gspread
+import psycopg2
+from datetime import datetime, timedelta
+from google.cloud import bigquery
+import os
+import numpy as np
+import time
+
+# Function to create connection to PostgreSQL database
+def pg_connection():
+    con = psycopg2.connect(
+        host = "latchel-prod-read.c3jvgr6a8pgv.us-west-2.rds.amazonaws.com",
+        database = "latchelstage",
+        user = "jsalgado",
+        password = 't55Y-MkBy3NR!y*XhH-Hru_m3!rsNyPW',
+        port = 5432)
+    cur = con.cursor()
+    return con,cur
+
+# Function that contains the main process
+def run_query():
+    success= False
+    while not success:
+        try:
+            # Authorize Google Sheets service account
+            os.environ["GOOGLE_APPLICATION_CREDENTIALS"]='/home/jsalgado/data-analytics-warehouse-VM_Key.json'
+            creds = ServiceAccountCredentials.from_json_keyfile_name(filename='data-analytics-warehouse-VM_Key.json')
+            client = gspread.authorize(creds)
+
+            # Connect to PostgreSQL database and execute SQL query
+            con,cur = pg_connection()
+            cur.execute("""(SQL_QUERY_CONTENT)""")
+            df=pd.DataFrame(cur.fetchall(), columns=[...])
+
+            # Process dataframe and download Google Sheet data
+            console_Actions_Data_sh = client.open_by_key(Console_Actions_Data_Key).worksheet('CONSOLE ACTIONS RAW DATA')
+            new_cell = 'D' + str(len(console_Actions_Data_sh.col_values(1)))
+            last_date_str=console_Actions_Data_sh.row_values(new_cell)[0]
+
+            # Filter dataframe based on last date in Google Sheet
+            date_dt2 = datetime.strptime(last_date_str, '%m/%d/%Y %H:%M:%S')
+            df['time_action_taken']=pd.to_datetime(df['time_action_taken'])
+            df=df[(df['time_action_taken']>date_dt2)]
+
+            # Process datetime columns and fill null values
+            df['time_action_taken'] = df['time_action_taken'].dt.strftime('%m/%d/%Y %H:%M:%S')
+            df['user_added'] = df['user_added'].dt.strftime('%m/%d/%Y %H:%M:%S')
+            df.fillna("", inplace=True)
+
+            # Append processed dataframe to Google Sheet
+            console_Actions_Data_sh = client.open_by_key(Console_Actions_Data_Key).worksheet('CONSOLE ACTIONS RAW DATA')
+            new_cell = 'A' + str(len(console_Actions_Data_sh.col_values(1))+1)
+            console_Actions_Data_sh.update (new_cell,df.values.tolist())
+
+            success=True
+
+        except Exception as e:
+          print(f"Error occurred: {e}")
+          print("Retrying in 10 seconds...")
+          time.sleep(10)
+
+# Run the main function
+run_query()
+```
+
+## **References and documentation**
+
+- [psycopg2](https://pypi.org/project/psycopg2/ "https://pypi.org/project/psycopg2/")

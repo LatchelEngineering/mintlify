@@ -1,0 +1,104 @@
+---
+title: "Deputy Timesheet Report"
+---
+
+| **Pipeline owner** | @Jose Leon S (Unlicensed) |
+| :-- | :-- |
+| **Informed** | @Jennifer Folch |
+| **Status** | **In production** |
+| **Last date updated** | May 4, 2023 |
+
+<Accordion title="Pipeline Overview">
+  | **Name** | **Description** |
+  | :-- | :-- |
+  | **Python Code** | This Python script retrieves operational data about employee timesheets from a Deputy API, processes it, and uploads the data to a Google BigQuery table. Key components of the code: <ol><li>Import required libraries: oauth2client, pandas, psycopg2, datetime, [google.cloud](http://google.cloud) (bigquery), os.</li><li>`pg_connection` function: This function creates a connection to the PostgreSQL database and returns a tuple with connection and cursor objects.</li><li>Read configuration file 'deputy.config' for accessing the Deputy API.</li><li>Fetch data using the Deputy API in the form of resources like Employee, Roster, Timesheet, LeaveRules, and OperationalUnit.</li><li>Convert the retrieved resources data into respective pandas dataframes.</li><li>Process and merge dataframes to create the 'consol\_data' dataframe containing relevant timesheet data.</li><li>Clean and format 'consol\_data' dataframe columns as needed.</li><li>Upload the processed 'consol\_data' dataframe to the Google BigQuery table `data-analytics-warehouse.latchel_stage_bigquery.deputy_timesheet` with the specified schema.</li></ol> |
+  | **VM Configuration** | json file on the VM `'/home/jsalgado/data-analytics-warehouse-VM_Key.json'` |
+  | **Refresh frequency** | Every Monday at 19:00 UTC / 12:00 PST |
+  | **BigQuery Table** | ` data-analytics-warehouse.latchel_stage_bigquery.deputy_timesheet` |
+  | **Final Product** | [Deputy Timesheet](https://docs.google.com/spreadsheets/d/1wBhiMmWIzkSHo5z4B79vCFJX6YNtpbmDLES9q7GhiHQ/edit#gid=397279966 "https://docs.google.com/spreadsheets/d/1wBhiMmWIzkSHo5z4B79vCFJX6YNtpbmDLES9q7GhiHQ/edit#gid=397279966") |
+</Accordion>
+
+### **Pipeline Notes**
+
+1. Please note that the json file used in the code is the auth key from BigQuery. Follow [this documentation](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys") as guidance.
+2. The script runs from the [following VM](https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse "https://console.cloud.google.com/compute/instancesDetail/zones/us-east4-c/instances/analytics-python-automation-full?project=data-analytics-warehouse") , follow these steps to configure “Chrome Remote Desktop” to access the VM.
+3. Use Zeit to modify the cronjob
+4. This script uses this [Deputy Library](https://github.com/tonyallan/deputy "https://github.com/tonyallan/deputy") which helps configure and manage API calls.
+
+## **Final Product**
+
+[<u>Deputy Timesheet</u>](https://docs.google.com/spreadsheets/d/1wBhiMmWIzkSHo5z4B79vCFJX6YNtpbmDLES9q7GhiHQ/edit#gid=397279966 "https://docs.google.com/spreadsheets/d/1wBhiMmWIzkSHo5z4B79vCFJX6YNtpbmDLES9q7GhiHQ/edit#gid=397279966")
+
+## Code
+
+```text
+#!/usr/bin/env python3
+
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
+import psycopg2
+from datetime import datetime, timedelta
+from google.cloud import bigquery
+import os
+
+# Function to create connection to PostgreSQL database
+def pg_connection():
+    con = psycopg2.connect(
+        host="latchel-prod-read.c3jvgr6a8pgv.us-west-2.rds.amazonaws.com",
+        database="latchelstage",
+        user="jsalgado",
+        password='t55Y-MkBy3NR!y*XhH-Hru_m3!rsNyPW',
+        port=5432)
+    cur = con.cursor()
+    return con, cur
+
+# Read configuration file 'deputy.config'
+config_file = 'deputy.config'
+config = configparser.ConfigParser()
+config.read(os.path.expanduser(config_file))
+api_endpoint   = get_config(config, 'DEPUTY', 'api_endpoint')
+access_token   = get_config(config, 'DEPUTY', 'access_token')
+
+# Fetch data using the Deputy API
+deputy = Deputy(args.endpoint, args.token, args.timeout)
+api_resp = deputy.api('me')
+roster = deputy.resource('Roster')
+Employee = deputy.resource('Employee')
+timesheet = deputy.resource('Timesheet')
+leave_types = deputy.resource('LeaveRules')
+op_unit = deputy.resource('OperationalUnit')
+
+# Convert the API resources into pandas dataframes
+df_ts = pd.DataFrame.from_dict(timesheet).T
+df_Roster = pd.DataFrame.from_dict(roster).T
+df_people = pd.DataFrame.from_dict(Employee).T
+df_leaves = pd.DataFrame.from_dict(leave_types).T
+df_op_unit = pd.DataFrame.from_dict(op_unit).T
+
+# Process and merge dataframes to create 'consol_data' dataframe
+(processing steps, join operations)
+
+# Clean and format 'consol_data' dataframe columns
+(clean, convert, and format columns)
+
+# Upload the processed 'consol_data' dataframe to Google BigQuery table
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '/home/jsalgado/data-analytics-warehouse-VM_Key.json'
+client = bigquery.Client()
+table_id = "data-analytics-warehouse.latchel_stage_bigquery.deputy_timesheet"
+job_config = bigquery.LoadJobConfig(schema=[...])
+job = client.load_table_from_dataframe(consol_data, table_id, job_config=job_config)
+job.result()
+
+# Print the result of the operation
+table = client.get_table(table_id)
+print(
+    "Loaded {} rows and {} columns to {}".format(
+        table.num_rows, len(table.schema), table_id
+    )
+)
+```
+
+** References and documentation**
+
+- [Authenticate using API keys](https://cloud.google.com/docs/authentication/api-keys "https://cloud.google.com/docs/authentication/api-keys")
+- [Deputy Library](https://github.com/tonyallan/deputy "https://github.com/tonyallan/deputy")
