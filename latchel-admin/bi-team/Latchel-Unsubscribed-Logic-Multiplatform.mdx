@@ -1,0 +1,54 @@
+---
+title: "Latchel Unsubscribed Logic (Multiplatform)"
+---
+
+<Note>
+The following documentation is a set of rules applied in Salesforce, Rift, and Hubspot to standardize and unify the unsubscribe requests on different levels (emails, calls, and texts).
+</Note>
+
+<Check>
+All the explained logic is achieved using the flow [FL - SA - CO - Email Unsubscribe Logic](https://latchel1.lightning.force.com/builder_platform_interaction/flowBuilder.app?flowId=301US0000097ytVYAQ) and the validation rule [VR_SA_CO_Do_Not_Resubscribe](https://latchel1.lightning.force.com/lightning/setup/ObjectManager/Contact/ValidationRules/03dUS0000003XttYAE/view).
+</Check>
+
+## Hubspot
+
+Hubspot manages three unsubscribe-related fields (Unsubscribed from all emails, Opted out of email marketing information, and Opted out of email: one to one). These fields are automatically updated to and from Salesforce throughout a plugin and using three Salesforce fields (Email Opt Out, Opt Out of Marketing Emails, and Opt Out of 1 to 1 Emails). See the Multiplatform mapping diagram below.
+
+## Rift
+
+Rift manages one single stage field that contains multiple values. All those values are mimiced in Salesforce using a plugin and a Salesforce field "Rift Stage". Even though all values are synced into Salesforce, we are mainly interested in the Unsubscribed ones. However, only when the stage is changed from Unsubscribed to any other value, the Salesforce Contact field "Email Opt Out" is set to unchecked; if the stage changes from any state to Unsubscribed, "Email Opt Out" is set to checked.
+
+Rift stages:
+
+- New
+- Active
+- Inactive
+- Interested
+- Converted
+- Unsubscribed
+- OOO
+- Not Interested
+
+## SDR manual update
+
+Whenever an SDR receives a request to unsubscribe a Contact from emails, calls, or SMSs, they can manually check any of the Salesforce Contact fields (yellow box on the diagram). However, if the checkbox is already checked they won't be able to uncheck them (contact the Salesforce Admin for cases like this).
+
+<Frame caption="Multiplatform mapping">
+  <img src="/images/DA-32.png" alt="Multiplatform mapping" />
+</Frame>
+
+## Salesforce Contact fields
+
+Additionally, to the logic explained before, we have a few more rules:
+
+### Email Opt Out
+
+- Whenever "Email Opt Out" is checked, "Opt Out of Marketing Emails" will be checked
+- Whenever "Email Opt Out" is checked, "Opt Out of 1 to 1 Emails" will be checked
+- Whenever "Opt Out of Marketing Emails" and "Opt Out of 1 to 1 Emails" are checked at the same time, "Email Opt Out" will be checked.
+
+### Do Not Contact
+
+- Whenever "Do Not Contact" is checked, "Do Not Call" will be checked
+- Whenever "Do Not Contact" is checked, "Do Not Text" will be checked
+- Whenever "Do Not Call" and "Do Not Text" are checked at the same time, "Do Not Contact" will be checked.

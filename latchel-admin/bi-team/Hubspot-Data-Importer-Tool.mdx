@@ -1,0 +1,109 @@
+---
+title: "Hubspot Data Importer Tool"
+---
+
+<Check>
+This SOP aims to explain how to use this tool so that you can import data into Hubspot easily, quickly, and without creating new duplicates.
+</Check>
+
+<Note>
+Make sure you have access to the '[Hubspot Data Importer](https://docs.google.com/spreadsheets/d/1KvHKSAP1n0mItypfWhLekCRXZflRinECTH9H6EyLXc4)' spreadsheet. You will handle everything from it.
+</Note>
+
+## Step-by-step execution process
+
+### Step 1: Template
+
+<Check>
+Goal: Prepare data for import.
+</Check>
+
+<Note>
+This process is crucial for a clean and accurate import, any mistakes could corrupt our existing Hubspot data.
+</Note>
+
+1. Access the template:
+   - Open the [Hubspot Data Importer - 'Template'](https://docs.google.com/spreadsheets/d/1KvHKSAP1n0mItypfWhLekCRXZflRinECTH9H6EyLXc4/edit#gid=1709769824) tab
+2. Fill out the template with your lead data:
+   - For columns, First Name and Last Name, any value with only one character will be removed. If the Last Name is missing and is a Contact that needs to be created, it will be replaced with a dash '-'.
+   - Any field value found in Hubspot, but missing in the template, won't be clear.
+   - Ensure all mandatory columns (highlighted in purple) are completed.
+   - Emails: These are 100% mandatory. Records without an email address will be removed.
+   - Account Name: This field serves as an additional way to match the contact with an existing Hubspot account. If missing, and if the account needs to be created it will be filled with the email address of one of the related contacts in the template.
+   - Website: If a website is not provided, the system will attempt to retrieve it from the domain. However, if the domain is a general one (e.g., Gmail) and no Account Name match is found, the contact will not be created in Hubspot.
+   - Ensure numbers don't have any #ERROR! cells. If you see any of those, double-click the cell and remove the '=' and '+' signs.
+   - Ensure the values for these fields are placed in the correct column. The system now automatically recognizes various formats and supports multiple values. You no longer need to match values exactly with Hubspot picklists. Simply copy and paste your data into the correct columns as follows:
+     - Software (column X)
+     - Current Maintenance (column Y)
+     - Company Structure (column Z)
+     - Property Structure Type (column AA)
+
+<Frame caption="Email is mandatory for all contacts.">
+  <img src="/images/DA-37.png" alt="Email is mandatory for all contacts." />
+</Frame>
+
+<Frame caption="Numbers with errors will be removed, and this valuable data will be lost.">
+  <img src="/images/DA-38.png" alt="Numbers with errors will be removed, and this valuable data will be lost." />
+</Frame>
+
+<Frame caption="Information on these columns must be one of the picklist values.">
+  <img src="/images/DA-39.png" alt="Information on these columns must be one of the picklist values." />
+</Frame>
+
+### Step 2: Control Panel
+
+<Check>
+Goal: Set the tool parameters correctly to have an import adjusted to our needs.
+</Check>
+
+<Note>
+Additionally, in this step, you will monitor the program's execution, including any error messages that may arise.
+</Note>
+
+1. Access the Control Panel:
+   - Open the [Hubspot Data Importer - 'Control Panel'](https://docs.google.com/spreadsheets/d/1KvHKSAP1n0mItypfWhLekCRXZflRinECTH9H6EyLXc4) tab
+2. Panel Options:
+   - Assignee User ID: Select the first and last name of the user to whom the records will be assigned. If you don't want to assign the leads, select 'API Admin'.
+   - Account Source and Account Source Detail: Optionally, select the source and provide additional details about the accounts. If you want to add a brand new value, please contact your Hubspot Admin.
+   - Contact and Account Tags: Add appropriate tags for contacts and accounts for easier tracking after the import. We recommend to use this format 'AAAA-MM-DD Tag Name'.
+   - Lifecycle Stage and Lifecycle Substage: Set the lifecycle stage and substage for the records. We recommend to select Prospecting and Return to Marketing.
+   - Update Options: These next four options aim to tailor the import to your needs. The default values are always 'NO', however, you're free to change any of them to 'YES'.
+     - Update Customer Records? Select 'YES' or 'NO' to indicate if existing customer records should be updated.
+     - Update Active Sales Account Records? Select 'YES' or 'NO' to indicate if active sales account records should be updated.
+     - Update Website on Existing SF Accounts? Select 'YES' or 'NO' to update the website information on existing Hubspot accounts.
+     - Move Existing Contacts to Different SF Accounts? Select 'YES' or 'NO' to indicate if contacts should be moved to a different Hubspot account if found in the wrong account.
+3. Ready to Go:
+   - Confirm all settings and select 'YES' to indicate that you are ready to start the import process. The program will be executed at the 0th, 15th, 30th, and 45th minute of every hour.
+4. Monitor Execution:
+   - The "Message Box" on the Control Panel will display status updates and any errors that occur during the import process.
+   - The "Last Execution" timestamp will show the most recent run time of the import process.
+
+### Step 3: Outcome Summary
+
+<Check>
+Goal: This step aims to provide a summary of the import results. This could be used to later track what and when the data was imported.
+</Check>
+
+<Note>
+The outcome data is divided into three sections.
+</Note>
+
+1. Logged related data:
+   - Brand New Contacts Imported: Contacts that were successfully imported and did not previously exist in Hubspot.
+   - New Contacts Imported: Contacts that were successfully added to existing accounts in Hubspot.
+   - New Accounts Imported: Accounts that were successfully created in Hubspot.
+   - Contacts Updated: Existing contacts in Hubspot that were updated with new information.
+2. Results related to custom buttons:
+   - Customer Records Found and Not Updated: Records that were found in Hubspot but not updated because of the option chosen by the user.
+   - Active Sales Account Records Found and Not Updated: Records that were found in Hubspot but not updated because of the option chosen by the user.
+   - Wrong Website on Existing SF Accounts Found and Not Updated: Accounts in Hubspot with incorrect website information that were not updated.
+   - Contacts Found in Wrong Account and Not Moved: Contacts that were identified as belonging to the wrong account but were not moved.
+3. Duplicate findings:
+   - Duplicate Contacts found in Hubspot: If more than one Contact in Hubspot were found with the same email address.
+   - Duplicate Website found in Hubspot: If more than one Account in Hubspot were found with the same website.
+   - New Accounts Failed to Create: If you find accounts here, it also means the related contacts were not imported.
+
+## Tutorial videos
+
+- [Hubspot Data Importer - Part 1](https://www.loom.com/share/9189715c989a471992893fa3bd91ef60?sid=511b4f4b-fa09-4825-a1f0-7cb07ba3f202)
+- [Hubspot Data Importer - Part 2](https://www.loom.com/share/ff572f5ba720482fa819de02b86993cb?sid=e04648d2-5705-47d2-84e6-ce5af09d668f)

@@ -1,0 +1,132 @@
+---
+title: "Salesforce Account Pipeline Stages"
+---
+
+<Note>
+Pipeline Stages for Accounts are called Lifecycle Stages and Lifecycle Substages.
+</Note>
+
+## How to see and edit an Opportunity record stage and substage?
+
+<Tip>
+You can open any Account record page and you'll be able to see the Lifecycle Stage in the path on top (1).
+</Tip>
+
+<Tip>
+You can see the Lifecycle Substage of an Account record on the details layout (3).
+</Tip>
+
+<Tip>
+In order to update a Lifecycle Stage or Lifecycle Substage click on the "Mark Lifecycle Stage as Complete" button (2), then edit the dependencies (4), and then click on Done.
+</Tip>
+
+<Frame caption="View of an Account record page">
+  <img src="/images/DA-1.png" alt="View of an Account record page" />
+</Frame>
+
+<Frame caption="View of the Lifecycle Stage and lifecycle Substage editor">
+  <img src="/images/DA-2.png" alt="View of the Lifecycle Stage and lifecycle Substage editor" />
+</Frame>
+
+## Current active Lifecycle Stages and Lifecycle Substages:
+
+<Frame caption="Current Salesforce Account Pipeline Lifecycle Stages and Lifecycle Substages">
+  <img src="/images/DA-3.png" alt="Current Salesforce Account Pipeline Lifecycle Stages and Lifecycle Substages" />
+</Frame>
+
+## How to configure the Account Pipeline Stages?
+
+<Check>
+In Salesforce there are different configurations that involve the Pipeline Stages. The first one is the field configuration.
+
+Go to Setup > Object Manager > Account > Fields & Relationships
+</Check>
+
+Once here you should be able to access and configure the Lifecycle Stage and Lifecycle Substage fields:
+
+<Frame caption="Lifecycle Stage">
+  <img src="/images/DA-4.png" alt="Lifecycle Stage" />
+</Frame>
+
+<Frame caption="Lifecycle Substage">
+  <img src="/images/DA-5.png" alt="Lifecycle Substage" />
+</Frame>
+
+## What's the relationship between these two fields?
+
+<Check>
+There are dependencies for these two fields.
+
+Go to Setup > Object Manager > Account > Fields & Relationships > Field Dependencies > Edit (Lifecycle Stage controlling field)
+</Check>
+
+Here you will be able to see and reassign the dependencies of the two fields:
+
+<Frame caption="View of the Field Dependencies editor">
+  <img src="/images/DA-6.png" alt="View of the Field Dependencies editor" />
+</Frame>
+
+📌 For the Account is mandatory to have these two fields filled out, otherwise, an error will be prompted when saving the Account record.
+
+## How do I configure the Path?
+
+<Check>
+Go to Setup > Search for "path settings" in the Quick Find text box > Click on Path Settings > Click on Edit on the "Account Lifecycle Sales" path. > Click on Next
+</Check>
+
+Here you should be able to see the Path.
+
+In order to configure the order of the Lifecycle stages, you will have to go to the "Fields & Relationships" configuration on each of the Lifecycle Stage and Lifecycle Substage fields.
+
+<Frame caption="View of the edit screen of the Account Lifecycle Sales path">
+  <img src="/images/DA-7.png" alt="View of the edit screen of the Account Lifecycle Sales path" />
+</Frame>
+
+If you create new stages that are not added to the "Master Account" Record Type, they will not show in the path.
+
+<Check>
+To fix this go to Setup > Object Manager > Account > Record Types > Master Account > Edit "Lifecycle Stage" or "Lifecycle Substage".
+</Check>
+
+<Frame>
+  <img src="/images/DA-8.png" alt="" />
+</Frame>
+
+## Flows related to the pipeline stages:
+
+<Check>
+To see Flows in Salesforce go to Setup > Search for "flows" in the Quick Find text box. > Click on Flows
+</Check>
+
+- FL - SA - AC - Full Tub Flow 2.0
+- FL - SA - AC - Full Tub Flow
+- FL - SA - AC - Lifecycle Stage Updates & Furthest Stage
+- FL - MA - CO - Updates Lifecycle Stage to MQL
+
+## Process builder automations:
+
+<Check>
+To access the Process Builder automations in Salesforce go to Setup > Search for "process builder" in the Quick Find text box. > Click on Process Builder
+</Check>
+
+- Process Builder - Account: Opportunity Won, update Lifecycle
+
+## Other fields related to the pipeline stages:
+
+<Check>
+Go to Setup > Object Manager > Account > Fields & Relationships
+</Check>
+
+- Account_Lifecycle_Update
+- Furthest_Lifecycle_Stage
+- Stage_Number
+- Enrichment_Score
+- TIme_Entered_Lifecycle
+
+## Other objects related to the pipeline stages:
+
+<Check>
+Go to Setup > Object Manager
+</Check>
+
+- Account Lifecycle Update

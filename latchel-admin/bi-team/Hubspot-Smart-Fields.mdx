@@ -1,0 +1,348 @@
+---
+title: "Hubspot Smart Fields"
+---
+
+<Check>
+Hubspot Smart Fields are designed to ensure standardized data across the platform. These fields come with internal automations or embedded code that activate whenever the fields are updated.
+</Check>
+
+<Note>
+This process can update the field itself and/or synchronize changes with other related fields.
+</Note>
+
+## Company Smart Fields
+
+### 1. Employee Number
+
+<Check>
+The goals of this automation:
+
+- Keep employee count information accurate and consistent by interpreting the 'Employee Range' field and updating the 'Number of employees' field when needed.
+- Support different ways of entering employee ranges (like 10-20, >10, <20, 15k) and convert them into a single, clear number.
+- Only update the number of employees when it makes sense based on the range provided.
+</Check>
+
+<Note>
+Fields included:
+
+- Company → Employee Range
+- Company → Number of employees
+</Note>
+
+Whenever the 'Employee Range' field is updated, the automation will:
+
+1. Read Both Fields: It looks at both the 'Employee Range' and 'Number of Employees' values.
+2. Understand the Employee Range:
+
+The automation can handle:
+
+- Ranges like 10-20 (meaning between 10 and 20 employees)
+- Open-ended ranges like <20 (less than 20 employees) or >10 (more than 10 employees)
+- Single numbers like 15
+- Numbers with 'k' or 'K' for thousands (e.g., 15k means 15,000)
+
+If the range is written in a confusing way (for example, mixing symbols like >200-5), it will be ignored.
+
+3. How the Number of Employees is Updated:
+
+- If the range is bounded on both sides (like 10-20), the 'Number of Employees' field will always be updated to that lower number (e.g., 10).
+- If the range means "up to" a certain number (like <20), the 'Number of Employees' field will be updated to that upper number (e.g., 20). If the current number of employees is already lower than the "up to" value, nothing will change.
+- If the range means "more than" a certain number (like >10), the 'Number of Employees' field will only be updated if the new number is higher than what's already there. If the current number of employees is already higher than the "more than" value, nothing will change.
+
+<Tip>
+Exception:
+
+Whenever a range is bounded on both sides and the lowest value is less than 5 (like 2-20), the 'Number of Employees' field will be updated to 4.
+</Tip>
+
+| Employee Range | What It Means | What Happens to Number of Employees |
+| --- | --- | --- |
+| 10-20 | From 10 to 20 employees | Updated to 10 |
+| <50 | Less than 50 | Updated to 50 only if current value is higher |
+| >100 | More than 100 | Updated to 100 only if current value is lower |
+| 15k | 15,000 employees | Updated to 15,000 |
+| 2-20 | From 2 to 20 employees | Updated to 4 because of the exception |
+| >200-5 | Invalid/unclear | No update |
+
+### 2. Unit Count
+
+<Check>
+The goals of this automation:
+
+- Keep estimated unit count information consistent for prospects by aligning the 'Estimated Unit Count' field with the selected 'Estimated Unit Count Range'.
+- Automatically update the unit count if it does not match the selected range.
+</Check>
+
+<Note>
+Fields included:
+
+- Company → Estimated Unit Count
+- Company → Estimated Unit Count Range
+</Note>
+
+Whenever the 'Estimated Unit Count Range' field is updated, the automation checks both the selected range and the current value in the 'Estimated Unit Count' field:
+
+1. Check the Current Value: The automation looks at the current 'Estimated Unit Count' and the selected 'Estimated Unit Count Range'.
+2. Compare Value to Range:
+   - If the current unit count is within the selected range, nothing changes.
+   - If the current unit count is outside the selected range (or is empty), the automation updates the unit count to the lowest number in the range plus one (see table below).
+
+| Estimated Unit Count Range | New Unit Count Value |
+| --- | --- |
+| 0-49 | 1 |
+| 50-199 | 51 |
+| 200-699 | 201 |
+| 700+ | 701 |
+
+### 3. PMS Software
+
+<Check>
+The goals of this automation:
+
+- Ensure consistency between the 'Software' and 'PMS Software' fields.
+- Extract only PMS (Property Management System) software from the broader 'Software' list.
+- Provide a single, clear value in the 'PMS Software' field, or indicate if multiple PMS are used.
+</Check>
+
+<Note>
+Fields included:
+
+- Company → Software
+- Company → PMS Software
+</Note>
+
+Whenever you update either the 'Software' or 'PMS Software' fields, the automation will:
+
+1. Review the Software List: The automation checks all the software options selected in the 'Software' field.
+2. Identify PMS Software: It looks for any software in the list that matches the approved PMS options:
+   - Appfolio (including Appfolio Stack)
+   - Buildium
+   - DoorLoop
+   - Entrata
+   - MRI
+   - Property Boss
+   - PropertyWare
+   - RealPage
+   - Rent Manager
+   - RenTec
+   - RentVine
+   - ResMan
+   - Salesforce
+   - TenantCloud
+   - Yardi (including Yardi-Voyager)
+   - Custom
+
+<Tip>
+Note:
+
+- Appfolio and Appfolio Stack are treated as the same and will be shown as "Appfolio".
+- Yardi and Yardi-Voyager are treated as the same and will be shown as "Yardi".
+</Tip>
+
+3. Set the PMS Software Field:
+   - If only one PMS is found, that value is set in the 'PMS Software' field.
+   - If more than one PMS is found, the 'PMS Software' field is set to Multiple.
+   - If no PMS is found, the 'PMS Software' field is cleared.
+
+| Software Selected | PMS Software Result |
+| --- | --- |
+| Appfolio, Buildium | Multiple |
+| Appfolio Stack, Yardi-Voyager | Multiple |
+| Appfolio Stack | Appfolio |
+| Appfolio, Appfolio Stack | Appfolio |
+| Yardi | Yardi |
+| HappyCo, Zinspector, Other | (cleared) |
+| MRI | MRI |
+
+### 4. Address
+
+<Check>
+The goals of this automation:
+
+- Keep company address information accurate and consistent by automatically cleaning and correcting address fields.
+- Standardize state, country, and postal code information for US and non-US addresses.
+- Clear address details if the company is not in the US.
+</Check>
+
+<Note>
+Fields included:
+
+- Company → Street address
+- Company → Street address 2
+- Company → City
+- Company → Stage/Region
+- Company → State/Region Code
+- Company → Country/Region
+- Company → Country/Region Code
+- Company → Postal Code
+</Note>
+
+Whenever any of the company address fields are updated, the automation reviews and corrects the information as follows:
+
+1. Check and Clean the Postal Code:
+   - The automation checks if the postal code (ZIP code) is in a valid format (like 12345 or 12345-6789).
+   - If the ZIP code is valid, it is kept and used for further checks.
+   - If the ZIP code is not valid, it is cleared.
+2. Validate and Correct State and Country:
+   - The automation checks the state and country fields for accuracy, correcting common misspellings or variations (for example, "Calif." becomes "CA").
+   - If the state or state code is provided, it is checked and corrected.
+   - If only the ZIP code is provided, the automation tries to determine the state from the ZIP code.
+   - If only the country is provided, it checks if it matches the United States (including variations like "USA" or "America").
+3. Handle Non-US and Special Cases:
+   - If the address is not in the US, all address fields (street, city, etc.) are cleared.
+   - If the address is in a US territory (like Puerto Rico or Guam) or a non-continental state (Alaska or Hawaii), the information is kept, but marked accordingly.
+
+<Tip>
+Special Cases:
+
+- Overseas Territories: If the address is in a US territory (such as Puerto Rico, Guam, American Samoa, US Virgin Islands, or Northern Mariana Islands), the information is kept, but the state code and country are marked as an "Overseas Territory."
+- Non-Continental States: If the address is in Alaska (AK) or Hawaii (HI), the information is kept, but these are marked as "Non-Continental" to distinguish them from the continental US states.
+</Tip>
+
+| Input Address Fields | What Happens |
+| --- | --- |
+| State: "Calif.", ZIP: "90001" | State corrected to "CA", ZIP kept as "90001" |
+| Country: "United States", no state or ZIP | Country set to "US", other fields left as is |
+| State: "Ontario", Country: "Canada" | All address fields cleared (not a US address) |
+| ZIP: "12345-6789", no state | State determined from ZIP, ZIP kept as is |
+| State: "AK" (Alaska), ZIP: "99501" | Marked as "Non-Continental", address kept |
+
+### 5. Website URL
+
+<Check>
+The goals of this automation:
+
+- Standardize all website URLs to a consistent format (e.g., https://www.nebulacorp.com).
+- Validate that the input is a valid website address.
+- Clear the Website field if the input is not a valid website.
+- Update the Domain field to match the domain from the standardized website URL (e.g., nebulacorp.com).
+</Check>
+
+<Note>
+Fields included:
+
+- Company → Website
+- Company → Domain
+</Note>
+
+Whenever a value is added or updated in the 'Website' field, the automation runs. It performs the following steps:
+
+1. Validation: The automation checks if the entered value is a valid website URL.
+2. Formatting: If valid, the website is reformatted to a standard structure: https://www.[domain].com. For example, if the input is nebulacorp.com or http://nebulacorp.com, it will be converted to https://www.nebulacorp.com.
+3. Invalid Input Handling: If the input is not a valid website, the 'Website' field is cleared.
+4. Domain Update: The 'Domain' field is updated to reflect the domain part of the website (e.g., nebulacorp.com).
+
+| Website Original Input | Website Updated To | Domain Updated To |
+| --- | --- | --- |
+| nebulacorp.com | https://www.nebulacorp.com | nebulacorp.com |
+| http://nebulacorp.com | https://www.nebulacorp.com | nebulacorp.com |
+| www.nebulacorp.com | https://www.nebulacorp.com | nebulacorp.com |
+| not-a-website | (field cleared) | (field cleared) |
+
+### 6. Phone Number
+
+<Check>
+The goals of this automation:
+
+- Standardize all phone numbers to a consistent format.
+- Remove duplicate phone numbers.
+- Store a single phone number in the main phone number field if only one unique number exists.
+</Check>
+
+<Note>
+Fields included:
+
+- Company → Phone Number
+- Company → Phone Number Extension
+- Company → Other Phone
+- Company → Other Phone Extension
+</Note>
+
+Whenever a 'Phone Number' or 'Other Phone' is added or updated, the automation starts. It pulls both numbers and checks if they are US numbers and not duplicates. If a number is not a US number or is a duplicate, it is cleared.
+
+The remaining numbers are then formatted to the US standard: +1 (area code) number (for example, +1 (555) 123-4567).
+
+The fields are updated:
+
+- If only one valid number remains, it (and its extension, if any) is saved in the 'Phone Number' and 'Phone Number Extension' fields.
+- If both numbers are valid and unique, the first is saved in 'Phone Number' and the second in 'Other Phone'. Its extensions, if any, are saved in 'Phone Extension' and 'Other Phone Extension' respectively.
+
+This ensures all phone numbers are US-based, unique, and consistently formatted.
+
+<Warning>
+The automation does not extract the extension from the phone number. If a phone number includes the extension within the main number field, it will exceed the standard length for US numbers and will be treated as an invalid number.
+</Warning>
+
+## Contact Smart Fields
+
+### 1. Phone Number
+
+<Check>
+The goals of this automation:
+
+- Standardize all phone numbers to a consistent format.
+- Remove duplicate phone numbers.
+- Store a single phone number in the main phone number field if only one unique number exists.
+</Check>
+
+<Note>
+Fields included:
+
+- Contact → Phone Number
+- Contact → Phone Extension
+- Contact → Other Phone
+- Contact → Other Phone Extension
+</Note>
+
+Whenever a 'Phone Number' or 'Other Phone' is added or updated, the automation starts. It pulls both numbers and checks if they are US numbers and not duplicates. If a number is not a US number or is a duplicate, it is cleared.
+
+The remaining numbers are then formatted to the US standard: +1 (area code) number (for example, +1 (555) 123-4567).
+
+- If only one valid number remains, it (and its extension, if any) is saved in the 'Phone Number' and 'Phone Extension' fields.
+- If both numbers are valid and unique, the first is saved in 'Phone Number' and the second in 'Other Phone'. Its extensions, if any, are saved in 'Phone Extension' and 'Other Phone Extension' respectively.
+
+This ensures all phone numbers are US-based, unique, and consistently formatted.
+
+<Warning>
+The automation does not extract the extension from the phone number. If a phone number includes the extension within the main number field, it will exceed the standard length for US numbers and will be treated as an invalid number.
+</Warning>
+
+| Original Input | After Standardization | Explanation |
+| --- | --- | --- |
+| 123-456-7890 | +1 (123) 456-7890 | It's interpreted as a US-based number because 10 digits were found. |
+| 1123-456-7890 | +1 (123) 456-7890 | It's interpreted as a US-based number because 11 digits were found, and the first one is 1. |
+| +1 234 567 890 | +1 (123) 456-7890 | 1 is interpreted as part of the area code. |
+| +1 (123) 456-7890 ext456 | (field cleared) | More than 11 digits were found. Extensions must be added in the extension fields. |
+| +45 1234 567 890 | (field cleared) | Non-US Phone Number |
+
+### 2. Job Title
+
+<Check>
+The job title fields in HubSpot help keep data consistent and make contact management easier by standardizing and categorizing job titles.
+</Check>
+
+<Note>
+Fields included:
+
+- Contact → Job Title
+- Contact → Job Title (Cleaned)
+- Contact → Job Title (Category)
+</Note>
+
+This automation includes three fields and can only be triggered by modifying the Job Title field. Once this happens, Job Title (Cleaned) and Job Title (Category) are automatically updated. This automation shouldn't take more than a minute to complete after Job Title is modified.
+
+- Job Title: This field captures and retains the exact job title as entered by the user. It is primarily used for enriching contact information. For instance, if you enter "Senior Vice President of Sales and Marketing," this precise value will be stored.
+- Job Title (Cleaned): Once Job Title is modified, this field is automatically updated to reflect a standardized version of the job title whenever the Job Title field is modified. For example, "Senior Vice President of Sales and Marketing" will be standardized to "Vice President." If the entered job title does not correspond to any of the predefined standardized titles (mostly property management related and office type of jobs), this field will become blank.
+- Job Title (Category): This field assigns a specific category to the job title based on the standardized version found in Job Title (Cleaned). For example, if the cleaned job title is "Vice President," it will be categorized under "Broker/Owner." The system includes four categories: "Broker/Owner," "Director of Maintenance," "Property Manager," and "Other" to ensure comprehensive classification. If Job Title or Job Title (Cleaned) fields are empty, no category is assigned (blank). This categorization helps in organizing and analyzing job titles effectively when adding list filters.
+
+Further information related to the categories and the standardized job titles can be found in the [Hubspot Smart Fields - Job Title](https://help.latchel.com/Hubspot-Smart-Fields-Job-Title) dashboard.
+
+### 3. Address
+
+<Check>
+The goals of this automation:
+
+- Keep contact address information accurate and consistent by automatically cleaning and correcting address fields.
+- Standardize state, country, and postal code information for US and non-US addresses.
+- Clear address details if the contact is not in the US.
+</Check>

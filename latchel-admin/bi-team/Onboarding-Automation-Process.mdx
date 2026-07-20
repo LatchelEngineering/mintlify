@@ -1,0 +1,204 @@
+---
+title: "Onboarding Automation Process"
+---
+
+<Note>
+The Onboarding Automation Process replaces manual onboarding tasks with automated workflows to ensure a smooth, efficient, and error-free transition from deal closure to onboarding. This saves time and allows teams to focus on providing a great customer experience.
+</Note>
+
+<Check>
+The goal of this project is to automate key onboarding tasks, such as contract verification, customer record creation, email confirmations, and setup of essential tools. This reduces manual effort, minimizes errors, and speeds up the onboarding process.
+</Check>
+
+## 1. Required Fields for a Smooth Process
+
+You can find all required fields under the 'Onboarding Automation' tab in each deal record.
+
+<Frame>
+  <img src="/images/DA-40.png" alt="Onboarding Automation tab" />
+</Frame>
+
+### Automation Bypass Options:
+
+These fields are used to bypass specific steps in the process.
+
+- Skip Console Creation – Set to Yes if you don't want the Latchel console page to be created
+- Skip Onboarding Email – Set to Yes if you don't want the onboarding email to be sent
+- Skip Quote Payment – Set to Yes if the quote doesn't need a payment to trigger all the automations. If so, the trigger will occur at the signing moment.
+
+<Note>
+The onboarding packet will always be created; this process can't be skipped.
+</Note>
+
+### Latchel Console Properties:
+
+Fields needed for the Latchel console page creation.
+
+- Appfolio Slug – Optional, but if you'd like the Appfolio integration to be configured automatically, enter the slug here.
+- Subscription – This is a mandatory multi-picklist field. The selections you make here determine two things:
+  - Which subscription(s) will be activated in the Latchel console.
+  - Which documents will be included in the onboarding packet.
+
+<Check>
+To create the Maintenance Onboarding Tracker, you must select one of the following options: "24/7 Emergency", "After-Hours Emergency", or "SAAS."
+</Check>
+
+<Check>
+To create the Benefits Onboarding Tracker, you need to select "Home Assistant".
+</Check>
+
+### Benefits Properties
+
+The following fields determine which sections are included in the Benefits and Maintenance Onboarding Trackers. To exclude a section, leave the field blank or enter "N/A."
+
+- Pinata Status – Leave blank or enter "N/A" to exclude this section.
+- RentCheck Inspection Status – Leave blank or enter "N/A" to exclude this section.
+- Filters Status – Leave blank or enter "N/A" to exclude this section.
+- Cover Pest Status – Leave blank or enter "N/A" to exclude this section.
+- Sure Status – Leave blank or enter "N/A" to exclude this section.
+
+### Onboarding Packet Properties
+
+The following fields are required to populate specific values in the onboarding documents:
+
+- Contract Start Date (Mandatory) – The official start date of the contract.
+- Service Start Date – The date services are expected to begin. In most cases, this should match the Contract Start Date.
+- Software – The Property Management Software (PMS) being used. This will later be used to verify that the integration was correctly configured.
+- Benefits Enrollment Preference – Determines how residents are enrolled in Latchel services:
+  - Blank – Both opt-in and opt-out sections will be excluded.
+  - Opt-in – Residents must actively choose to enroll in Latchel/benefits offered by the property manager.
+  - Opt-out – Residents are automatically enrolled and must take action to unenroll from Latchel/benefits offered by the property manager.
+
+Additionally, certain fields are automatically pulled from records associated with the deal record.
+
+### Company Record Fields
+
+These fields are not mandatory; however, if they are missing, they will not be included in the Latchel console page.
+
+- Address – Includes Street Address, Street Address 2, City, State/Region, Postal Code, and Country/Region. If available, these will be added to the Latchel console.
+- Website – If provided, this will also be added to the Latchel console page.
+
+### Contact Record Fields
+
+The following fields are required and must come from the contact associated with the deal record. The association label must be set to Ultimate Decision Maker:
+
+- Email
+- Phone
+- First Name
+- Last Name
+
+## 2. How It Works
+
+The process is triggered at different stages of the customer journey:
+
+<Frame>
+  <img src="/images/DA-41.png" alt="Onboarding automation trigger stages" />
+</Frame>
+
+### Trigger 1: Contract Sent
+
+- When an AE manually marks a deal as "Contract Sent", the system checks if key contract details are logged.
+- If any information needed for the Latchel console creation is missing, a Slack notification is sent.
+
+### Trigger 2: Contract Signed
+
+- The system updates the deal stage to "Closed Won", the substage to 'Waiting Stup Fee' and assigns a CSM.
+- The Customer record is automatically created, and contact labels are migrated from the Deal record.
+- If any information needed for the onboarding email is missing, a Slack notification is sent.
+
+### Trigger 3: Payment Received
+
+This is a 3-step process, each one conducted by a workflow in Hubspot.
+
+<Frame>
+  <img src="/images/DA-42.png" alt="Onboarding Automation Process" />
+</Frame>
+
+#### WF - CS - QU - Quote is Paid Master Trigger
+
+<Tip>
+The only way to trigger this flow is by paying a quote.
+</Tip>
+
+- A [payment confirmation email](https://23701847.hubspotpreview-na1.com/_hcms/preview/email/187066782486) is sent to the contract signer, informing them that we'll set up their Latchel console page and onboarding files.
+- The deal substage is updated to "Send to Onboard."
+- The workflow adds the deal data to a [Console Page Trigger (Automated)](https://docs.google.com/spreadsheets/d/1QydmOtksKlKciVc2jtpI7qKpN6zoL7tjP5G_67Lby94/edit). This is the trigger for a python code that will create the Latchel console page.
+
+#### WF - CS - CU - Onboarding Packet Trigger
+
+<Tip>
+This flow is triggered when the Customer's property 'Onboarding Packet Trigger' is filled out or updated. This way, if the previous process failed, you will have to manually create the Latchel console page and then complete the following:
+
+- Go to the Hubspot Customer record
+  - Add the Latchel ID
+  - Add the Latchel Assigned Number.
+  - Add the Resident Work Order Submission URL.
+  - Add the Resident Dashboard URL.
+- Go to the Console
+  - Make sure the Product Package is added
+  - Make sure the Subscription is active
+  - Add the Website URL
+  - Add the Address
+  - Apply Default | Needs Pre-Approval | Keeps Emergency Severity/Responsibility
+- Add or update the Onboarding Packet Trigger property with the [Deal ID](#how-to-get-the-deal-id). THIS WILL TRIGGER THIS AND ALL THE NEXT FLOWS.
+</Tip>
+
+- The workflow adds the deal data to a [Onboarding Packet Trigger (Automated)](https://docs.google.com/spreadsheets/d/1QydmOtksKlKciVc2jtpI7qKpN6zoL7tjP5G_67Lby94/edit). This is the trigger for a python code that will create the onboarding packet in Google Drive.
+
+#### WF - CS - CU - Onboarding Email Trigger
+
+<Tip>
+This flow is triggered when the Customer's property 'Onboarding Email Trigger' is filled out or updated. This way, if the previous process failed, you will have to manually create the onboarding packet and then complete the following:
+
+- Go to the Hubspot Customer record
+  - Add the Google Drive Folder URL.
+- Add or update the Onboarding Email Trigger property with the [Deal ID](#how-to-get-the-deal-id). THIS WILL TRIGGER THIS AND ALL THE NEXT FLOWS.
+</Tip>
+
+- The workflow sends the [onboarding email](https://23701847.hubspotpreview-na1.com/_hcms/preview/email/185746564102) to the Ultimate Decision Maker with the CSM's calendar link and the onboarding folder URL.
+
+### Trigger 4: Kickoff Scheduled
+
+- When a customer books a meeting via Calendly, the deal stage updates to "Kickoff Scheduled."
+
+### How to get the Deal ID.
+
+1. Go to a Hubspot Deal record
+2. Go the URL
+3. The Deal ID is the number right after https://app.hubspot.com/contacts/23701847/record/2-34860958/
+
+In the following example, the ID is 20237584905.
+
+<Frame>
+  <img src="/images/DA-43.png" alt="Deal ID example" />
+</Frame>
+
+## 3. Templates Formatting & Content Guidelines
+
+<Note>
+Follow these instructions when editing any of the spreadsheet templates.
+</Note>
+
+<Check>
+Spreadsheet templates:
+
+- [Maintenance Onboarding Tracker - TEMPLATE](https://docs.google.com/spreadsheets/d/1PRjKKNdWpO5TIaZZmd3zfRyGVgnxPa7SmAp8VByhjd8/edit?gid=613049582#gid=613049582)
+- [Benefits Onboarding Tracker - TEMPLATE](https://docs.google.com/spreadsheets/d/1sXaUFQ0hNR6Z1WjKiQ0-nvh0RC5_1m--reGGlv8vv_4/edit?gid=1771634607#gid=1771634607)
+</Check>
+
+- No columns can be inserted, moved, or renamed.
+- Any row with no action item will be removed.
+- All action items must be unique.
+- All software-specific actions must be placed in sections.
+- You can add, edit, or remove sections as needed. If you want to target specific customers, be sure to include keywords. Keywords are not case-sensitive.
+  - Software Keywords = 'Appfolio', 'Buildium Standard', 'Buildium Premium', 'DoorLoop', 'Entrata', 'HappyCo', 'Inspect and Cloud', 'MRI', 'OneSite', 'OnSight Pros', 'Property Boss', 'Property Meld', 'PropertyWare', 'RealPage', 'Rentec Direct', 'Rent Manager', 'RentRedi', 'RentVine', 'ResMan', 'Salesforce', 'Snapinspect', 'TenantCloud', 'Yardi', 'Yardi-Voyager', 'Zinspector', 'no integration'
+  - Benefits Keywords = 'pinata', 'rentcheck', 'filter', 'cover pest', 'sure', 'optional latchel benefits', 'opt-in optional', 'opt-out optional'
+  - Sections without keywords will be included for all customers.
+- Sections with no action items will be removed.
+- Tab names must not change.
+- Use [RESIDENT WO URL], [RESIDENT DASHBOARD URL], [LATCHEL ASSIGNED PHONE], [LATCHEL CONSOLE URL], [CSM], or [DATA TEMPLATE URL] placeholders.
+  - Cells with placeholders will lose their formatting.
+
+<Frame caption="To include a section in the final version for the PM, the section title needs to have one of the keywords listed above.">
+  <img src="/images/DA-44.png" alt="To include a section in the final version for the PM, the section title needs to have one of the keywords listed above." />
+</Frame>

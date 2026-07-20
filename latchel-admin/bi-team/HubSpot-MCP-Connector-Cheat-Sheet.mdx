@@ -1,0 +1,570 @@
+---
+title: "HubSpot MCP Connector — Cheat Sheet"
+---
+
+End-to-end commands used to get the HubSpot MCP server running on a Google Cloud VM with HTTPS, connected to Claude.
+
+**Stack:** Ubuntu 24.04 LTS on GCE e2-micro · Python (uv) · Caddy (auto-HTTPS) · DuckDNS · systemd
+**Domain:** `latchel-hubspot-mcp.duckdns.org` · **VM user:** `diego`
+
+## 1. Local development (Windows / PowerShell)
+
+Run these from the project folder in VS Code's integrated terminal.
+
+```powershell
+# Allow venv activation scripts (one-time only)
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+# Create and activate the virtual environment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# Install the project in editable mode
+# (PowerShell can eat the trailing dot — use ./ or --editable)
+uv pip install -e ./
+
+# Start the local server (OAuth happens per-session, no token file needed)
+hubspot-mcp
+```
+
+Local health check (run in a second terminal):
+
+```bash
+curl http://localhost:8000/healthz
+```
+
+DNS sanity check:
+
+```bash
+nslookup latchel-hubspot-mcp.duckdns.org
+```
+
+External health check, once deployed:
+
+```bash
+curl https://latchel-hubspot-mcp.duckdns.org/healthz
+```
+
+## 2. GCP VM creation (Cloud Console)
+
+Done via the web UI, not the CLI, but worth recording the choices:
+
+- Name: `latchel-mcp-servers`
+- Machine type: `e2-micro`
+- Region: US free-tier (us-central1-a or similar)
+- Boot disk: Ubuntu 24.04 LTS, 30 GB standard persistent
+- Firewall: ✅ Allow HTTP traffic · ✅ Allow HTTPS traffic
+- External IP: Reserve a static IP (or promote the ephemeral one afterward)
+
+After the VM exists, point DuckDNS at the external IP (not the internal 10.x.x.x one) at [https://www.duckdns.org](https://www.duckdns.org).
+
+## 3. VM setup (SSH window, run as diego)
+
+### Install system packages and tooling
+
+```bash
+# Update and install base packages
+sudo apt update && sudo apt install -y \
+  python3-pip python3-venv git curl unzip \
+  debian-keyring debian-archive-keyring apt-transport-https
+
+# Add Caddy's official APT repo and install
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' \
+  | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' \
+  | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update && sudo apt install -y caddy
+
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source $HOME/.local/bin/env
+
+# Verify
+caddy version
+```
+
+### Upload and install the project
+
+After uploading `hubspot-mcp.zip` via the SSH window's gear menu:
+
+```bash
+cd ~
+unzip hubspot-mcp.zip
+cd hubspot_mcp
+uv venv
+source .venv/bin/activate
+uv pip install -e .
+
+# Quick smoke test (then Ctrl+C)
+hubspot-mcp
+```
+
+## 4. systemd service
+
+```bash
+sudo nano /etc/systemd/system/hubspot-mcp.service
+```
+
+File contents:
+
+```ini
+[Unit]
+Description=HubSpot MCP Server
+After=network.target
+
+[Service]
+Type=simple
+User=diego
+WorkingDirectory=/home/diego/hubspot_mcp
+ExecStart=/home/diego/hubspot_mcp/.venv/bin/hubspot-mcp
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable, start, verify:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable hubspot-mcp
+sudo systemctl start hubspot-mcp
+sudo systemctl status hubspot-mcp
+
+# Local check
+curl http://localhost:8000/healthz  # → {"status":"ok","tools":12}
+```
+
+## 5. Caddy reverse proxy + auto-HTTPS
+
+```bash
+sudo nano /etc/caddy/Caddyfile
+```
+
+Replace the entire contents with:
+
+```
+latchel-mcp-servers.duckdns.org {
+  reverse_proxy localhost:8000
+}
+```
+
+Reload and watch the cert get issued:
+
+```bash
+sudo systemctl reload caddy
+sudo journalctl -u caddy -f
+# Look for: certificate obtained successfully (Ctrl+C to exit)
+```
+
+## 6. Renaming the DuckDNS subdomain
+
+Example: changing `latchel-mcp-servers.duckdns.org` → `latchel-hubspot-mcp.duckdns.org`.
+
+DuckDNS subdomains aren't renamed — you create the new one and delete the old. Three places need updating: DuckDNS, the Caddyfile, and the connector URL in Claude. The VM and the hubspot-mcp service are untouched.
+
+### Step 1 — Add the new subdomain on DuckDNS
+
+1. Go to [https://www.duckdns.org](https://www.duckdns.org) and sign in.
+2. In the sub domain box, type `latchel-hubspot-mcp` and click add domain.
+3. In the new row, paste your VM's external IP (the same one the old subdomain points to — check Google Cloud Console → VM instances → your VM → Network interfaces → External IP).
+4. Click update ip.
+
+Don't delete the old subdomain yet — keeping it lets you roll back if something goes wrong.
+
+Verify from PowerShell:
+
+```powershell
+nslookup latchel-hubspot-mcp.duckdns.org
+```
+
+The address must match the VM's external IP. If it shows an internal 10.x.x.x, you pasted the wrong IP into DuckDNS — fix it before continuing, or Let's Encrypt will fail.
+
+### Step 2 — Update the Caddyfile
+
+SSH into the VM, then:
+
+```bash
+sudo nano /etc/caddy/Caddyfile
+```
+
+Change the first line so the file reads:
+
+```
+latchel-hubspot-mcp.duckdns.org {
+  reverse_proxy localhost:8000
+}
+```
+
+Save (Ctrl+O / Enter / Ctrl+X), then reload Caddy and watch it fetch a fresh cert for the new name:
+
+```bash
+sudo systemctl reload caddy
+sudo journalctl -u caddy -f
+```
+
+Wait for `certificate obtained successfully for latchel-hubspot-mcp.duckdns.org` (10–20 seconds), then Ctrl+C.
+
+### Step 3 — Test from outside the VM
+
+From PowerShell:
+
+```powershell
+curl https://latchel-hubspot-mcp.duckdns.org/healthz
+```
+
+Should return `{"status":"ok","tools":12}`.
+
+### Step 4 — Update the connector in Claude
+
+Settings → Connectors → open the HubSpot connector → edit the URL to:
+
+```
+https://latchel-hubspot-mcp.duckdns.org/mcp
+```
+
+Save and reconnect. Run one tool call to confirm it works end-to-end.
+
+### Step 5 — Clean up the old subdomain
+
+Once the new name works in Claude:
+
+1. Back on duckdns.org, find the `latchel-mcp-servers` row and click the red X / delete button.
+2. Optional but tidy — remove the old hostname from any other configs (browser bookmarks, scripts, README files).
+
+The old Caddy-issued certificate for the previous name will just expire on its own; no manual cleanup needed on the VM.
+
+### Gotchas specific to renaming
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| New domain returns 404 or "connection refused" | Forgot to reload Caddy | `sudo systemctl reload caddy` |
+| `certificate obtained successfully` never appears for the new name | DuckDNS still pointing at internal IP or wrong IP | Re-check the IP in the DuckDNS row, then reload Caddy |
+| Old URL still works after the change | Expected — the old DuckDNS row still resolves until you delete it | Delete the old subdomain on DuckDNS once you've verified the new one |
+| Caddy serves both names | You kept both in the Caddyfile | That's actually fine during transition. Remove the old name once Claude is on the new URL |
+
+## 7. Updating the code on the VM (new zip)
+
+When you've made changes locally and want to push a fresh `hubspot-mcp.zip` to the VM. Since auth happens through OAuth per-session in Claude, there's no token file on the VM to preserve — the update is just replace code, reinstall, restart.
+
+### Step 1 — Stop the running service
+
+So no process is holding the old files open while you delete them:
+
+```bash
+sudo systemctl stop hubspot-mcp
+sudo systemctl status hubspot-mcp  # should show "inactive (dead)" — press q
+```
+
+### Step 2 — Upload the new zip
+
+In the SSH window's top-right corner: gear icon → Upload file → select `hubspot-mcp.zip`. It lands in `/home/diego/`.
+
+Verify:
+
+```bash
+ls -la ~/hubspot-mcp.zip
+```
+
+### Step 3 — Remove the old code
+
+```bash
+cd ~
+rm -rf ~/hubspot_mcp  # blow away the old project folder
+ls -la  # confirm hubspot-mcp.zip is still there (plus dotfiles)
+```
+
+<Danger>
+`rm -rf` is irreversible — double-check the path before pressing Enter. You should be deleting `~/hubspot_mcp` (the folder), not `~/hubspot-mcp.zip` (the new archive).
+</Danger>
+
+If you want a safer alternative, rename instead of delete on the first try:
+
+```bash
+mv ~/hubspot_mcp ~/hubspot_mcp.old
+# ... do the rest, confirm everything works, then later:
+rm -rf ~/hubspot_mcp.old
+```
+
+### Step 4 — Unpack the new zip and reinstall
+
+```bash
+cd ~
+unzip hubspot-mcp.zip
+cd hubspot_mcp
+
+# Recreate the venv and install
+uv venv
+source .venv/bin/activate
+uv pip install -e .
+```
+
+### Step 5 — Restart the service and verify
+
+```bash
+sudo systemctl start hubspot-mcp
+sudo systemctl status hubspot-mcp  # should show "active (running)" — press q
+
+# Local check
+curl http://localhost:8000/healthz  # → {"status":"ok","tools":...}
+
+# External check (from PowerShell)
+# curl https://latchel-hubspot-mcp.duckdns.org/healthz
+```
+
+If the tool count changed (because you added or removed tools), that's a quick visual confirmation the new code is live.
+
+Final test: trigger a real tool call from Claude. The first call after a fresh deploy may prompt you to re-authorize via OAuth — that's expected.
+
+### Step 6 — Clean up
+
+Once you've confirmed the new version works end-to-end:
+
+```bash
+rm ~/hubspot-mcp.zip  # the archive — code is unpacked, archive no longer needed
+```
+
+Leave it alone if you'd rather keep it around for a rollback window.
+
+### One-shot script version
+
+Once you've done this a couple of times and trust it, here's the whole thing as a sequence — paste after uploading the new zip:
+
+```bash
+sudo systemctl stop hubspot-mcp && \
+rm -rf ~/hubspot_mcp && \
+cd ~ && unzip hubspot-mcp.zip && \
+cd hubspot_mcp && \
+uv venv && source .venv/bin/activate && uv pip install -e . && \
+sudo systemctl start hubspot-mcp && \
+sleep 2 && curl http://localhost:8000/healthz && echo
+```
+
+The `&&` chain means if any step fails, the rest stops — so you won't end up with a broken install and no service running.
+
+### Gotchas specific to code updates
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| Service won't start: `ModuleNotFoundError` or missing entry point | Skipped `uv pip install -e .` after replacing files | `cd ~/hubspot_mcp && source .venv/bin/activate && uv pip install -e .`, then restart |
+| `unzip` complains the folder already exists | Didn't delete the old `~/hubspot_mcp` first | `rm -rf ~/hubspot_mcp` and re-run unzip |
+| Health check returns the old tool count | Old systemd process still running | `sudo systemctl restart hubspot-mcp` |
+| First tool call from Claude prompts for OAuth again | Expected after a redeploy — the session is fresh | Click through the OAuth flow once, then it's good |
+| Service running but Claude says "connection failed" | Caddy or DuckDNS issue, not code | See section 8 — check Caddy status and external curl |
+
+## 8. Diagnostic commands (when things break)
+
+### Service health
+
+```bash
+sudo systemctl status hubspot-mcp --no-pager
+sudo systemctl status caddy --no-pager
+sudo journalctl -u hubspot-mcp -n 80 --no-pager
+sudo journalctl -u caddy -n 80 --no-pager
+```
+
+### Configuration inspection
+
+```bash
+cat /etc/systemd/system/hubspot-mcp.service
+cat /etc/caddy/Caddyfile
+```
+
+### Network / ports
+
+```bash
+sudo ss -tlnp | grep -E ':(80|443|8000)'
+```
+
+Expected: Caddy on `:80` and `:443`, hubspot-mcp on `:8000`.
+
+### DNS
+
+```bash
+# From Windows
+nslookup latchel-hubspot-mcp.duckdns.org
+```
+
+The address returned must be the VM's external IP (e.g. `34.x.x.x`), not an internal `10.x.x.x`.
+
+### Apply config changes after editing
+
+```bash
+sudo systemctl daemon-reload      # after editing a .service file
+sudo systemctl restart hubspot-mcp  # after code changes
+sudo systemctl reload caddy       # after editing the Caddyfile
+```
+
+## 9. Gotchas hit during setup
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| `pip install -e .` fails in PowerShell | PowerShell drops the bare `.` | Use `uv pip install -e ./` or `--editable .` |
+| `Activate.ps1` refuses to run | Default execution policy | `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` |
+| `systemd status=217/USER` | `User=` in service file is wrong | Match it to `whoami` output (was `diego`, not `arizm`) |
+| `Failed to run 'start' task: No such file (status=resources)` | `EnvironmentFile=` in service points to a `.env` that doesn't exist | Remove the `EnvironmentFile=` line (OAuth means no token file needed), then daemon-reload and start |
+| Caddy never says "certificate obtained" | DuckDNS pointed to internal 10.x.x.x | Put the external IP into duckdns.org, then `sudo systemctl reload caddy` |
+| `curl http://...` fails after Caddy is up | Caddy redirects 80 → 443 | Use `https://...` |
+| Let's Encrypt challenge timeout | Port 80 blocked at GCP firewall | Confirm both "Allow HTTP" and "Allow HTTPS" rules exist and apply to the VM |
+
+## 10. Setting Up Your .env File
+
+Before the HubSpot MCP server can run, you need to create and configure a `.env` file with your OAuth credentials and JWT secret.
+
+### Steps to Create .env
+
+1. SSH into the server and navigate to the project directory:
+
+   ```bash
+   cd ~/hubspot_mcp
+   ```
+
+2. Copy the template from `.env.example`:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Edit the file with your credentials:
+
+   ```bash
+   nano .env
+   ```
+
+4. Fill in these four required values:
+   - `HUBSPOT_CLIENT_ID` — from your HubSpot Developer Account → Apps → Public App → Auth tab
+   - `HUBSPOT_CLIENT_SECRET` — same location as above (keep this secret!)
+   - `MCP_JWT_SECRET` — a random cryptographic key. Generate it with:
+
+     ```bash
+     python3 -c 'import secrets; print(secrets.token_urlsafe(64))'
+     ```
+
+     Copy the output and paste it as the value
+   - `PUBLIC_BASE_URL` — the public HTTPS address of your server (e.g., `https://latchel-hubspot-mcp.duckdns.org`)
+5. Leave the other values unchanged (they have sensible defaults)
+6. Save and exit nano: Ctrl+O → Enter → Ctrl+X
+7. Fix file permissions so systemd can read it:
+
+   ```bash
+   chmod 644 ~/hubspot_mcp/.env
+   ```
+
+### Example .env (filled in)
+
+```
+HUBSPOT_CLIENT_ID=a1b2c3d4-e5f6-47g8-h9i0-j1k2l3m4n5o6
+HUBSPOT_CLIENT_SECRET=pat-na1-abc123def456...
+HUBSPOT_REDIRECT_URI=https://latchel-hubspot-mcp.duckdns.org/oauth/hubspot/callback
+ALLOWED_PORTAL_IDS=23701847
+OAUTH_DB_PATH=/home/diego/hubspot_mcp/data/oauth.db
+MCP_JWT_SECRET=<your-generated-64-char-string>
+PUBLIC_BASE_URL=https://latchel-hubspot-mcp.duckdns.org
+MCP_HOST=0.0.0.0
+MCP_PORT=8000
+LOG_LEVEL=INFO
+```
+
+## 11. Testing the Server
+
+After deploying the code and configuring `.env`, run these four smoke tests to confirm everything is working.
+
+### Prerequisites
+
+- Server is running: `sudo systemctl status hubspot-mcp` should show `Active: active (running)`
+- Systemd logs are clean: `sudo journalctl -u hubspot-mcp -n 10 --no-pager` should show `Application startup complete`
+
+### Test 1: Health Endpoint (No Auth Required)
+
+Confirms the server is listening and responding.
+
+```bash
+curl https://latchel-hubspot-mcp.duckdns.org/healthz
+```
+
+Expected response:
+
+```json
+{"status":"ok","tools":12}
+```
+
+### Test 2: Protected Resource Metadata (PRM)
+
+Confirms Claude Desktop can discover the OAuth server.
+
+```bash
+curl https://latchel-hubspot-mcp.duckdns.org/.well-known/oauth-protected-resource
+```
+
+Expected response:
+
+```json
+{
+  "resource": "https://latchel-hubspot-mcp.duckdns.org/mcp",
+  "authorization_servers": ["https://latchel-hubspot-mcp.duckdns.org"],
+  "scopes_supported": ["mcp.access"],
+  "bearer_methods_supported": ["header"],
+  "resource_documentation": "https://latchel-hubspot-mcp.duckdns.org/"
+}
+```
+
+### Test 3: Authorization Server Metadata
+
+Confirms the OAuth endpoints are advertised correctly.
+
+```bash
+curl https://latchel-hubspot-mcp.duckdns.org/.well-known/oauth-authorization-server
+```
+
+Expected response:
+
+```json
+{
+  "issuer": "https://latchel-hubspot-mcp.duckdns.org",
+  "authorization_endpoint": "https://latchel-hubspot-mcp.duckdns.org/oauth/authorize",
+  "token_endpoint": "https://latchel-hubspot-mcp.duckdns.org/oauth/token",
+  "registration_endpoint": "https://latchel-hubspot-mcp.duckdns.org/oauth/register",
+  "response_types_supported": ["code"],
+  "grant_types_supported": ["authorization_code"],
+  "token_endpoint_auth_methods_supported": ["none"],
+  "code_challenge_methods_supported": ["S256"],
+  "scopes_supported": ["mcp.access"]
+}
+```
+
+### Test 4: Unauthenticated /mcp Request (Expect 401)
+
+Confirms the bearer-token middleware is protecting the endpoint.
+
+```bash
+curl -v https://latchel-hubspot-mcp.duckdns.org/mcp/
+```
+
+Expected response:
+
+- HTTP status: `401 Unauthorized`
+- Header: `WWW-Authenticate: Bearer realm="hubspot-mcp", error="invalid_token", ...`
+- Body: JSON error with `resource_metadata` URL pointing back to Test 2
+
+If you see this, the OAuth flow is wired correctly and Claude Desktop will be able to discover and authenticate.
+
+### Troubleshooting
+
+| Issue | Cause | Fix |
+| --- | --- | --- |
+| `RuntimeError: MCP_JWT_SECRET is missing` | `.env` not configured | Run step 2 under "Setting Up Your .env File" |
+| Server won't start after restart | File permissions or missing `.env` | Check `ls -la ~/hubspot_mcp/.env` and `chmod 644 ~/hubspot_mcp/.env` |
+| Test 2/3 return 404 | Server crashed or not running | `sudo journalctl -u hubspot-mcp -n 30 --no-pager` to find the error |
+| Test 4 returns 200 instead of 401 | Middleware not wired | Check logs for `BearerAuthMiddleware` errors |
+
+## 12. Connect Claude
+
+Claude → Settings → Connectors → Add custom connector:
+
+1. Remove the old HubSpot connector from Claude Desktop (if you had one)
+2. Add a new custom connector in Claude Desktop:
+   - Name: `Latchel HubSpot`
+   - URL: `https://latchel-hubspot-mcp.duckdns.org/mcp`
+3. Claude Desktop will open a browser → you'll authorize with HubSpot → done
+4. Start asking Claude about your Customer records!
