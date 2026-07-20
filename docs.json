@@ -1239,24 +1239,29 @@
               {
                 "group": "Diego Arizmendi",
                 "pages": [
-                  "latchel-admin/bi-team/Automated-Slack-notifications",
-                  "latchel-admin/bi-team/Enrichment-HubSpot-Segments-Overview",
-                  "latchel-admin/bi-team/How-cancel-a-subscription-in-HubSpot",
-                  "latchel-admin/bi-team/How-to-add-a-new-user-in-Salesforce",
+                  {
+                    "group": "Saleforce Account Pipeline Stages",
+                    "pages": [
+                      "latchel-admin/bi-team/Salesforce-Account-Pipeline-Stages",
+                      "latchel-admin/bi-team/Salesforce-Record-Ownership-Documentation"
+                    ]
+                  },
                   "latchel-admin/bi-team/Hubspot-Active-Customer-Contacts-List",
+                  "latchel-admin/bi-team/Marketing-Lists-Comparison-Tools",
+                  "latchel-admin/bi-team/Salesforce-Opportunity-Pipeline-Stages",
+                  "latchel-admin/bi-team/Website-Form-Notification-Automation",
+                  "latchel-admin/bi-team/Automated-Slack-notifications",
+                  "latchel-admin/bi-team/How-to-add-a-new-user-in-Salesforce",
+                  "latchel-admin/bi-team/Latchel-Unsubscribed-Logic-Multiplatform",
+                  "latchel-admin/bi-team/Salesforce-Phone-Number-Format-Standard",
+                  "latchel-admin/bi-team/How-cancel-a-subscription-in-HubSpot",
                   "latchel-admin/bi-team/Hubspot-Data-Importer-Tool",
+                  "latchel-admin/bi-team/Onboarding-Automation-Process",
+                  "latchel-admin/bi-team/Enrichment-HubSpot-Segments-Overview",
+                  "latchel-admin/bi-team/SDR-Pipeline-Automation",
                   "latchel-admin/bi-team/HubSpot-MCP-Connector-Cheat-Sheet",
                   "latchel-admin/bi-team/Hubspot-Smart-Fields-Job-Title",
-                  "latchel-admin/bi-team/Hubspot-Smart-Fields",
-                  "latchel-admin/bi-team/Latchel-Unsubscribed-Logic-Multiplatform",
-                  "latchel-admin/bi-team/Marketing-Lists-Comparison-Tools",
-                  "latchel-admin/bi-team/Onboarding-Automation-Process",
-                  "latchel-admin/bi-team/Salesforce-Account-Pipeline-Stages",
-                  "latchel-admin/bi-team/Salesforce-Opportunity-Pipeline-Stages",
-                  "latchel-admin/bi-team/Salesforce-Phone-Number-Format-Standard",
-                  "latchel-admin/bi-team/Salesforce-Record-Ownership-Documentation",
-                  "latchel-admin/bi-team/SDR-Pipeline-Automation",
-                  "latchel-admin/bi-team/Website-Form-Notification-Automation"
+                  "latchel-admin/bi-team/Hubspot-Smart-Fields"
                 ]
               }
             ]
