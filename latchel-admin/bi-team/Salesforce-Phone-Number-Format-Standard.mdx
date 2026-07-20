@@ -3,15 +3,15 @@ title: "Salesforce Phone Number Format Standard"
 ---
 
 <Note>
-Starting from April 11th, phone numbers in Salesforce must follow a certain format. All previous phone-related records were first saved on this [spreadsheet](https://docs.google.com/spreadsheets/d/1jU9a_42VqS19dytC-rclHsEIOr9d0xURuJ8eWNry5SQ/edit#gid=0), then updated to follow the nes format, and finally re-imported in Salesforce.
+  Starting from April 11th, phone numbers in Salesforce must follow a certain format. All previous phone-related records were first saved on this [spreadsheet](https://docs.google.com/spreadsheets/d/1jU9a_42VqS19dytC-rclHsEIOr9d0xURuJ8eWNry5SQ/edit#gid=0), then updated to follow the nes format, and finally re-imported in Salesforce.
 </Note>
 
 ## Motivation and assumptions
 
 <Note>
-This format was designed to facilitate functionalities like phone search or click-to-dial.
+  This format was designed to facilitate functionalities like phone search or click-to-dial.
 
-Our assumption is that all phone numbers stored in Salesforce are associated with the United States.
+  Our assumption is that all phone numbers stored in Salesforce are associated with the United States.
 </Note>
 
 ## Format Standard
@@ -19,22 +19,22 @@ Our assumption is that all phone numbers stored in Salesforce are associated wit
 At the moment of updating any phone-related field in Salesforce, the following rules will be automatically applied to the input.
 
 <Check>
-- Removing Non-Digit Characters: We will only keep the numbers. Any symbols or spaces will be removed.
-- Required Length: Phone numbers must have either 10 or 11 digits. If there are more or fewer digits, the system will save a NULL value.
-- Removing Country Code: If the phone number has 11 digits, and the first digit is a '1', the system will automatically remove it; if the phone number has 11 digits and the first digit is not a '1', the system will save a NULL value.
+  1. Removing Non-Digit Characters: We will only keep the numbers. Any symbols or spaces will be removed.
+  2. Required Length: Phone numbers must have either 10 or 11 digits. If there are more or fewer digits, the system will save a NULL value.
+  3. Removing Country Code: If the phone number has 11 digits, and the first digit is a '1', the system will automatically remove it; if the phone number has 11 digits and the first digit is not a '1', the system will save a NULL value.
 </Check>
 
 ## Examples
 
 Here are a few examples of how the phone numbers will be stored and displayed after saving a record:
 
-- `Input: +1 (451) 123-4567` &nbsp; `Stored Value: 4511234567` &nbsp; `Displayed Value: (451) 123-4567`
-- `Input: (451) 123-4567` &nbsp; `Stored Value: 4511234567` &nbsp; `Displayed Value: (451) 123-4567`
-- `Input: email@email.com` &nbsp; `Stored Value: NULL` &nbsp; `Displayed Value:`
-- `Input: +1.(451)..123-{4567*` &nbsp; `Stored Value: 4511234567` &nbsp; `Displayed Value: (451) 123-4567`
-- `Input: +4.(451)..123-{4567*` &nbsp; `Stored Value: NULL` &nbsp; `Displayed Value:`
-- `Input: (451) 123-456` &nbsp; `Stored Value: NULL` &nbsp; `Displayed Value:`
-- `Input: +1 (451) 123-45670` &nbsp; `Stored Value: NULL` &nbsp; `Displayed Value:`
+- `Input: +1 (451) 123-4567`   `Stored Value: 4511234567`   `Displayed Value: (451) 123-4567`
+- `Input: (451) 123-4567`   `Stored Value: 4511234567`   `Displayed Value: (451) 123-4567`
+- `Input: email@email.com`   `Stored Value: NULL`   `Displayed Value:`
+- `Input: +1.(451)..123-{4567*`   `Stored Value: 4511234567`   `Displayed Value: (451) 123-4567`
+- `Input: +4.(451)..123-{4567*`   `Stored Value: NULL`   `Displayed Value:`
+- `Input: (451) 123-456`   `Stored Value: NULL`   `Displayed Value:`
+- `Input: +1 (451) 123-45670`   `Stored Value: NULL`   `Displayed Value:`
 
 ## Phone-Related Fields
 
@@ -48,7 +48,7 @@ These are the available phone number fields in Salesforce:
 - Other Phone Extension
 
 <Frame>
-  <img src="/images/DA-30.png" alt="Account level phone fields layout" />
+  ![Account level phone fields layout](/images/DA-30.png)
 </Frame>
 
 `Contact level:`
@@ -60,12 +60,12 @@ These are the available phone number fields in Salesforce:
 - Mobile
 
 <Frame>
-  <img src="/images/DA-31.png" alt="Contact level phone fields layout" />
+  ![Contact level phone fields layout](/images/DA-31.png)
 </Frame>
 
 ## Background tools
 
-We used a mix of two flows + one APEX Class to validate the format every time a record is saved.
+We used a mix of two flows \+ one APEX Class to validate the format every time a record is saved.
 
 `The flows are:`
 

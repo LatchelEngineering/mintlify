@@ -3,21 +3,21 @@ title: "SDR Pipeline Automation"
 ---
 
 <Check>
-This SOP will describe how the various stages and substages for Account and Contact records in Salesforce are connected.
+  This SOP will describe how the various stages and substages for Account and Contact records in Salesforce are connected.
 </Check>
 
 <Frame caption="Pipeline schema showing all different stages and substages.">
-  <img src="/images/DA-33.png" alt="Pipeline schema showing all different stages and substages." />
+  ![Pipeline schema showing all different stages and substages.](/images/DA-33.png)
 </Frame>
 
 ## Account Pipeline vs. Contact Pipeline
 
 <Note>
-Although the stages and substages are identical for both Accounts and Contacts, the Stage and Substage displayed under an Account reflect the highest Stage/Substage achieved by any of the associated Contacts.
+  Although the stages and substages are identical for both Accounts and Contacts, the Stage and Substage displayed under an Account reflect the highest Stage/Substage achieved by any of the associated Contacts.
 </Note>
 
 <Frame>
-  <img src="/images/DA-34.png" alt="Account vs Contact pipeline" />
+  ![Account vs Contact pipeline](/images/DA-34.png)
 </Frame>
 
 ## Substages listed by numerical order:
@@ -44,72 +44,72 @@ The highest substage with its respective stage is assigned to the Account.
 ## Pipeline schema
 
 <Note>
-The following schema describes the various automations that connect each stage. They are grouped by color, with each color representing a different trigger.
+  The following schema describes the various automations that connect each stage. They are grouped by color, with each color representing a different trigger.
 </Note>
 
 <Frame caption="Pipeline schema showing all different flows">
-  <img src="/images/DA-35.png" alt="Pipeline schema showing all different flows" />
+  ![Pipeline schema showing all different flows](/images/DA-35.png)
 </Frame>
 
 ## Automation triggers
 
 <Note>
-The Stage and Substage changes will occur whenever any of the following triggers are activated.
+  The Stage and Substage changes will occur whenever any of the following triggers are activated.
 </Note>
 
 <Frame>
-  <img src="/images/DA-36.png" alt="Automation triggers" />
+  ![Automation triggers](/images/DA-36.png)
 </Frame>
 
 ### Lead Genesis Trigger:
 
 1. The unassigned contact stage is set to (Prospecting/Prospecting)
 2. The unassigned contact stage is set to (Prospecting/Return to Marketing)
-3. The unassigned contact submitted a website form, but didn't pass the unit count threshold -> (Prospecting/Inbound Unassigned)
+3. The unassigned contact submitted a website form, but didn't pass the unit count threshold -\> (Prospecting/Inbound Unassigned)
 
 ### Unsubscribe Trigger:
 
-1. At any point if the contact unsubscribes from emails or calls -> (Discard/Unsubscribed)
+1. At any point if the contact unsubscribes from emails or calls -\> (Discard/Unsubscribed)
 
 ### Ownership Trigger:
 
-1. If the contact changes from API Admin to any Salesforce User -> (Lead Assigned/Lead Assigned)
+1. If the contact changes from API Admin to any Salesforce User -\> (Lead Assigned/Lead Assigned)
 
 ### Cadence Trigger:
 
-1. If the contact is assigned and added into a cadence -> (Cadence Started/Cadence Running)
-2. If the contact ends a cadence with no meeting requested, the owner changes to API Admin -> (Prospecting/Return to Marketing)
+1. If the contact is assigned and added into a cadence -\> (Cadence Started/Cadence Running)
+2. If the contact ends a cadence with no meeting requested, the owner changes to API Admin -\> (Prospecting/Return to Marketing)
 
 ### Call Result Trigger:
 
-1. If the contact had a positive interaction but no meeting was requested -> (Cadence Started/Replied(Engaged))
-2. If Call Result is set to "Meeting Requested" -> (Confirmed Interest/Scheduling Qualification Call)
-3. If Call Result is set to "Not Interested" -> (Prospecting/Return to Marketing)
-4. If Call Result is set to "Unqualified" -> (Prospecting/Return to Marketing) *
-5. If Call Result is set to "Wrong Industry" -> (Discard/Wrong Industry) *
+1. If the contact had a positive interaction but no meeting was requested -\> (Cadence Started/Replied(Engaged))
+2. If Call Result is set to "Meeting Requested" -\> (Confirmed Interest/Scheduling Qualification Call)
+3. If Call Result is set to "Not Interested" -\> (Prospecting/Return to Marketing)
+4. If Call Result is set to "Unqualified" -\> (Prospecting/Return to Marketing) \*
+5. If Call Result is set to "Wrong Industry" -\> (Discard/Wrong Industry) \*
 
 ### Event Trigger:
 
-1. If a Google Calendar meeting with an SDR is created -> (Confirmed Interest/Qualification Call Scheduled)
-2. If "Qualification Meeting Disposition" is set to "Requested Follow-up Meeting" -> (Confirmed Interest/Qualification Call Follow-Up (Incomplete))
-3. If "Qualification Meeting Disposition" is set to "Passed Qualification Criteria" -> (Qualification Completed/Scheduling Discovery)
-4. If "Qualification Meeting Disposition" is set to "No Interested" -> (Prospecting/Return to Marketing)
-5. If "Qualification Meeting Disposition" is set to "Unqualified" -> (Prospecting/Return to Marketing) *
-6. If "Qualification Meeting Disposition" is set to "Wrong Industry" -> (Discard/Wrong Industry) *
+1. If a Google Calendar meeting with an SDR is created -\> (Confirmed Interest/Qualification Call Scheduled)
+2. If "Qualification Meeting Disposition" is set to "Requested Follow-up Meeting" -\> (Confirmed Interest/Qualification Call Follow-Up (Incomplete))
+3. If "Qualification Meeting Disposition" is set to "Passed Qualification Criteria" -\> (Qualification Completed/Scheduling Discovery)
+4. If "Qualification Meeting Disposition" is set to "No Interested" -\> (Prospecting/Return to Marketing)
+5. If "Qualification Meeting Disposition" is set to "Unqualified" -\> (Prospecting/Return to Marketing) \*
+6. If "Qualification Meeting Disposition" is set to "Wrong Industry" -\> (Discard/Wrong Industry) \*
 
 ### Opportunity Trigger:
 
-1. If an Opportunity is created and the Account stage reached "Scheduling Discovery" -> (Active Sales Account/Open Opportunity) *
-2. If an Opportunity stage is changed to "Closed Won" -> (Customer/New Customer) *
-3. If an Opportunity stage is changed to "Live" -> (Customer/Live Customer) *
-4. If an Opportunity stage is changed to "Closed Lost" -> (Prospecting/Lost Opportunities) *
-5. If an Opportunity stage is changed to "Churned" -> (Prospecting/Lost Opportunities) *
+1. If an Opportunity is created and the Account stage reached "Scheduling Discovery" **-\> (Active Sales Account/Open Opportunity) \***
+2. If an Opportunity stage is changed to "Closed Won" **-\> (Customer/New Customer) \***
+3. If an Opportunity stage is changed to "Live" **-\> (Customer/Live Customer) \***
+4. If an Opportunity stage is changed to "Closed Lost" **-\> (Prospecting/Lost Opportunities) \***
+5. If an Opportunity stage is changed to "Churned" **-\> (Prospecting/Lost Opportunities) \***
 
 ### Customer Trigger:
 
-1. If a Customer is deactivated from the Latchel console -> (Prospecting/Lost Opportunities) *
+1. If a Customer is deactivated from the Latchel console **-\> (Prospecting/Lost Opportunities) \***
 
-\* Applied to Account and all Contacts.
+**\* Applied to Account and all Contacts.**
 
 ## Important Notes
 

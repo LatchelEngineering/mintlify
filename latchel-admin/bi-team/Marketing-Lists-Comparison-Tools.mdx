@@ -3,7 +3,7 @@ title: "Marketing Lists Comparison Tools"
 ---
 
 <Note>
-This SOP guides the use of three Python scripts for seamless data comparison between marketing lists and Salesforce. Designed for the Marketing team, these tools provide a self-service solution for efficient comparison of company or contact data. The following sections offer specific instructions and best practices for independent tool utilization, contributing to our organization's overall data-driven success.
+  This SOP guides the use of three Python scripts for seamless data comparison between marketing lists and Salesforce. Designed for the Marketing team, these tools provide a self-service solution for efficient comparison of company or contact data. The following sections offer specific instructions and best practices for independent tool utilization, contributing to our organization's overall data-driven success.
 </Note>
 
 ## 1. Required Resources
@@ -11,97 +11,89 @@ This SOP guides the use of three Python scripts for seamless data comparison bet
 - Edit Permissions to the Google Drive [tool](https://drive.google.com/drive/folders/1mcxqzhcUd0p5868z6WVNcYZ3INKwbSzw) folder
 - Google Colaboratory App installed in your Google Drive. If you don't have it installed yet, follow these steps.
   1. Go to any folder in Google Drive
-  2. Right click > More > +Connect more apps
-
+  2. Right click \> More \> \+Connect more apps
      <Frame>
-       <img src="/images/DA-21.png" alt="Connect more apps menu" />
+       ![Connect more apps menu](/images/DA-21.png)
      </Frame>
   3. Search for Google Colaboratory and install the app
 
 ## 2. Some Considerations (HIGHLY IMPORTANT)
 
 <Warning>
-In case you only have email address data:
+  In case you only have email address data:
 
-- Email addresses are mandatory
-- All contacts that lack of an email address will be removed
-- All duplicate email addresses will be removed
-- You will use the script [01 Compares Contacts.ipynb](https://colab.research.google.com/drive/1NVK8VlxTo6TvDwdOxWcTMN6cTOiDG_H4)
-- You will get the results in [04 Contact Data Comparison](https://docs.google.com/spreadsheets/d/1B2-pk4mEKHPBim0ovcVl8775tjUlw90sjueGWh26cx0/edit#gid=0)
+  - Email addresses are mandatory
+  - All contacts that lack of an email address will be removed
+  - All duplicate email addresses will be removed
+  - You will use the script [01 Compares Contacts.ipynb](https://colab.research.google.com/drive/1NVK8VlxTo6TvDwdOxWcTMN6cTOiDG_H4)
+  - You will get the results in [04 Contact Data Comparison](https://docs.google.com/spreadsheets/d/1B2-pk4mEKHPBim0ovcVl8775tjUlw90sjueGWh26cx0/edit#gid=0)
 
-In case you only have website data:
+  In case you only have website data:
 
-- Websites are mandatory
-- All lines that lack of a website will be removed
-- All duplicate Websites will be removed
-- You will use the script [02 Compares Companies.ipynb](https://colab.research.google.com/drive/1dg8VT-ijdLfe1PuhNWwNAS2WG4FVjtId)
-- You will get the results in [05 Company Data Comparison](https://docs.google.com/spreadsheets/d/1YfndyaNFnBt2rlyKPIPbIlZ2m0PzxXZFFqmS2Y2fG74/edit#gid=1006985321)
+  - Websites are mandatory
+  - All lines that lack of a website will be removed
+  - All duplicate Websites will be removed
+  - You will use the script [02 Compares Companies.ipynb](https://colab.research.google.com/drive/1dg8VT-ijdLfe1PuhNWwNAS2WG4FVjtId)
+  - You will get the results in [05 Company Data Comparison](https://docs.google.com/spreadsheets/d/1YfndyaNFnBt2rlyKPIPbIlZ2m0PzxXZFFqmS2Y2fG74/edit#gid=1006985321)
 
-In case you have both email address & website data:
+  In case you have both email address & website data:
 
-- Email addresses are mandatory
-- Websites are mandatory
-- All contacts that lack of an email address will be removed
-- All contacts that lack of a website will be removed
-- All duplicate email addresses will be removed
-- You will use the script [03 Compares Contacts + Companies.ipynb](https://colab.research.google.com/drive/1vypXqe6khqQ4mtinG2RwUCKOn7pRKlh1#scrollTo=7uIpdB89TE1C)
-- You will get the results in [06 Contact + Company Comparison](https://docs.google.com/spreadsheets/d/1YZET0oiRC7HecM6Pj_GjSl9_fugDx0WAsGRgowYUWLc/edit#gid=0)
+  - Email addresses are mandatory
+  - Websites are mandatory
+  - All contacts that lack of an email address will be removed
+  - All contacts that lack of a website will be removed
+  - All duplicate email addresses will be removed
+  - You will use the script [03 Compares Contacts \+ Companies.ipynb](https://colab.research.google.com/drive/1vypXqe6khqQ4mtinG2RwUCKOn7pRKlh1#scrollTo=7uIpdB89TE1C)
+  - You will get the results in [06 Contact \+ Company Comparison](https://docs.google.com/spreadsheets/d/1YZET0oiRC7HecM6Pj_GjSl9_fugDx0WAsGRgowYUWLc/edit#gid=0)
 </Warning>
 
 <Danger>
-Please remember that when any of the three scripts are executed, ALL the output spreadsheets will be cleared (INCLUDING THE ONES THAT ARE NOT ASSIGNED TO THAT SCRIPT). Therefore, before running any script, make sure to save any output that you require.
+  Please remember that when any of the three scripts are executed, ALL the output spreadsheets will be cleared (INCLUDING THE ONES THAT ARE NOT ASSIGNED TO THAT SCRIPT). Therefore, before running any script, make sure to save any output that you require.
 </Danger>
 
 ## 3. Step-by-Step Execution Process
 
 <Check>
-Open the [folder](https://drive.google.com/drive/folders/1mcxqzhcUd0p5868z6WVNcYZ3INKwbSzw).
-
-Open [00 SF Data Import Template](https://docs.google.com/spreadsheets/d/1-Z7nfNFvJ1i1oyNQ-nJ30fFTN7tKKp7I8sTwBZyn_QY/edit#gid=1325477124)
-
-Clear all template data (from column A to X) from the previous execution. Do not rename or add new tabs.
-
-Fill out the template with your data. Do not add, edit, or reorder any column labels.
-
-Open [01 Compares Contacts.ipynb](https://colab.research.google.com/drive/1NVK8VlxTo6TvDwdOxWcTMN6cTOiDG_H4), [02 Compares Companies.ipynb](https://colab.research.google.com/drive/1dg8VT-ijdLfe1PuhNWwNAS2WG4FVjtId), or [03 Compares Contacts + Companies.ipynb](https://colab.research.google.com/drive/1vypXqe6khqQ4mtinG2RwUCKOn7pRKlh1#scrollTo=7uIpdB89TE1C) depending on your data.
-
-Execute the script by clicking on Runtime > Run All
-
-Once the execution is completed, open [04 Contact Data Comparison](https://docs.google.com/spreadsheets/d/1B2-pk4mEKHPBim0ovcVl8775tjUlw90sjueGWh26cx0/edit#gid=0), [05 Company Data Comparison](https://docs.google.com/spreadsheets/d/1YfndyaNFnBt2rlyKPIPbIlZ2m0PzxXZFFqmS2Y2fG74/edit#gid=1006985321), or [06 Contact + Company Comparison](https://docs.google.com/spreadsheets/d/1YZET0oiRC7HecM6Pj_GjSl9_fugDx0WAsGRgowYUWLc/edit#gid=0) depending on the script you used. You should see 4 tabs filled out. Do not rename, add, or remove any tabs.
-
-Now you can download the data as CSV files and then upload them to a new folder in Old Lists for data safety. There is no need to clear 04 Contact Data Comparison or 05 Company Data Comparison, or 06 Contact + Company Comparison, this is automatically done.
+  1. Open the [folder](https://drive.google.com/drive/folders/1mcxqzhcUd0p5868z6WVNcYZ3INKwbSzw).
+  2. Open [00 SF Data Import Template](https://docs.google.com/spreadsheets/d/1-Z7nfNFvJ1i1oyNQ-nJ30fFTN7tKKp7I8sTwBZyn_QY/edit#gid=1325477124)
+  3. Clear all template data (from column A to X) from the previous execution. Do not rename or add new tabs.
+  4. Fill out the template with your data. Do not add, edit, or reorder any column labels.
+  5. Open [01 Compares Contacts.ipynb](https://colab.research.google.com/drive/1NVK8VlxTo6TvDwdOxWcTMN6cTOiDG_H4), [02 Compares Companies.ipynb](https://colab.research.google.com/drive/1dg8VT-ijdLfe1PuhNWwNAS2WG4FVjtId), or [03 Compares Contacts \+ Companies.ipynb](https://colab.research.google.com/drive/1vypXqe6khqQ4mtinG2RwUCKOn7pRKlh1#scrollTo=7uIpdB89TE1C) depending on your data.
+  6. Execute the script by clicking on Runtime \> Run All
+  7. Once the execution is completed, open [04 Contact Data Comparison](https://docs.google.com/spreadsheets/d/1B2-pk4mEKHPBim0ovcVl8775tjUlw90sjueGWh26cx0/edit#gid=0), [05 Company Data Comparison](https://docs.google.com/spreadsheets/d/1YfndyaNFnBt2rlyKPIPbIlZ2m0PzxXZFFqmS2Y2fG74/edit#gid=1006985321), or [06 Contact \+ Company Comparison](https://docs.google.com/spreadsheets/d/1YZET0oiRC7HecM6Pj_GjSl9_fugDx0WAsGRgowYUWLc/edit#gid=0) depending on the script you used. You should see 4 tabs filled out. Do not rename, add, or remove any tabs.
+  8. Now you can download the data as CSV files and then upload them to a new folder in Old Lists for data safety. There is no need to clear 04 Contact Data Comparison or 05 Company Data Comparison, or 06 Contact \+ Company Comparison, this is automatically done.
 </Check>
 
 ## 4. Export Spreadsheets
 
-### 04 Contact Data Comparison:
+### [04 Contact Data Comparison:](https://docs.google.com/spreadsheets/d/1B2-pk4mEKHPBim0ovcVl8775tjUlw90sjueGWh26cx0/edit#gid=0)
 
 <Check>
-The following tabs will be updated:
+  The following tabs will be updated:
 
-- Compared Contact Data Summary: Same imported data (except for duplicates, see section 2) with two additional columns that indicate if the contact was found in the SF Customer and/or the SF Non-Customer list.
-- sf_customer_contacts_(found): Contacts pulled from the template that matched with Salesforce active customer contacts based on the email address.
-- sf_customer_contacts_(not_found): Contacts pulled from the template that didn't match with Salesforce active customer contacts based on the email address.
-- sf_non_customer_contacts_(found): Contacts pulled from the template that matched with Salesforce non-active customer contacts based on the email address.
-- sf_non_customer_contacts_(not_found): Contacts pulled from the template that didn't match with Salesforce non-active customer contacts based on the email address
+  - Compared Contact Data Summary: Same imported data (except for duplicates, see section 2) with two additional columns that indicate if the contact was found in the SF Customer and/or the SF Non-Customer list.
+  - sf\_customer\_contacts\_(found): Contacts pulled from the template that matched with Salesforce active customer contacts based on the email address.
+  - sf\_customer\_contacts\_(not\_found): Contacts pulled from the template that didn't match with Salesforce active customer contacts based on the email address.
+  - sf\_non\_customer\_contacts\_(found): Contacts pulled from the template that matched with Salesforce non-active customer contacts based on the email address.
+  - sf\_non\_customer\_contacts\_(not\_found): Contacts pulled from the template that didn't match with Salesforce non-active customer contacts based on the email address
 </Check>
 
-### 05 Company Data Comparison:
+### [05 Company Data Comparison:](https://docs.google.com/spreadsheets/d/1YfndyaNFnBt2rlyKPIPbIlZ2m0PzxXZFFqmS2Y2fG74/edit#gid=1006985321)
 
 <Check>
-The following tabs will be updated:
+  The following tabs will be updated:
 
-- Compared Company Data Summary: Same imported data (except for duplicates, see section 2) with two additional columns that indicate if the contact was found in the SF Customer and/or the SF Non-Customer list.
-- sf_customer_companies_(found): Companies pulled from the template that matched with Salesforce active customer accounts based on the website.
-- sf_customer_companies_(not_found): Companies pulled from the template that didn't match with Salesforce active customer accounts based on the website.
-- sf_non_customer_companies_(found): Companies pulled from the template that matched with non-customer Salesforce accounts based on the website.
-- sf_non_customer_companies_(not_found): Companies pulled from the template that didn't match with non-customer Salesforce accounts based on the website.
+  - Compared Company Data Summary: Same imported data (except for duplicates, see section 2) with two additional columns that indicate if the contact was found in the SF Customer and/or the SF Non-Customer list.
+  - sf\_customer\_companies\_(found): Companies pulled from the template that matched with Salesforce active customer accounts based on the website.
+  - sf\_customer\_companies\_(not\_found): Companies pulled from the template that didn't match with Salesforce active customer accounts based on the website.
+  - sf\_non\_customer\_companies\_(found): Companies pulled from the template that matched with non-customer Salesforce accounts based on the website.
+  - sf\_non\_customer\_companies\_(not\_found): Companies pulled from the template that didn't match with non-customer Salesforce accounts based on the website.
 </Check>
 
-### 06 Contact + Company Comparison:
+### [06 Contact \+ Company Comparison:](https://docs.google.com/spreadsheets/d/1YZET0oiRC7HecM6Pj_GjSl9_fugDx0WAsGRgowYUWLc/edit#gid=0)
 
 <Check>
-The following tabs will be updated:
+  The following tabs will be updated:
 
-- Compared Data Summary: Same imported data (except for duplicates, see section 2) with two additional columns that indicate if the contact was found in the SF Customer and/or the SF Non-Customer list.
+  - Compared Data Summary: Same imported data (except for duplicates, see section 2) with two additional columns that indicate if the contact was found in the SF Customer and/or the SF Non-Customer list.
 </Check>

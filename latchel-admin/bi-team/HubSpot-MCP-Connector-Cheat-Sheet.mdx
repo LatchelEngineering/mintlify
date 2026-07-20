@@ -4,8 +4,7 @@ title: "HubSpot MCP Connector — Cheat Sheet"
 
 End-to-end commands used to get the HubSpot MCP server running on a Google Cloud VM with HTTPS, connected to Claude.
 
-**Stack:** Ubuntu 24.04 LTS on GCE e2-micro · Python (uv) · Caddy (auto-HTTPS) · DuckDNS · systemd
-**Domain:** `latchel-hubspot-mcp.duckdns.org` · **VM user:** `diego`
+**Stack:** Ubuntu 24.04 LTS on GCE e2-micro · Python (uv) · Caddy (auto-HTTPS) · DuckDNS · systemd **Domain:** `latchel-hubspot-mcp.duckdns.org` · **VM user:** `diego`
 
 ## 1. Local development (Windows / PowerShell)
 
@@ -136,7 +135,7 @@ sudo systemctl status hubspot-mcp
 curl http://localhost:8000/healthz  # → {"status":"ok","tools":12}
 ```
 
-## 5. Caddy reverse proxy + auto-HTTPS
+## 5. Caddy reverse proxy \+ auto-HTTPS
 
 ```bash
 sudo nano /etc/caddy/Caddyfile
@@ -144,7 +143,7 @@ sudo nano /etc/caddy/Caddyfile
 
 Replace the entire contents with:
 
-```
+```text
 latchel-mcp-servers.duckdns.org {
   reverse_proxy localhost:8000
 }
@@ -170,8 +169,7 @@ DuckDNS subdomains aren't renamed — you create the new one and delete the old.
 2. In the sub domain box, type `latchel-hubspot-mcp` and click add domain.
 3. In the new row, paste your VM's external IP (the same one the old subdomain points to — check Google Cloud Console → VM instances → your VM → Network interfaces → External IP).
 4. Click update ip.
-
-Don't delete the old subdomain yet — keeping it lets you roll back if something goes wrong.
+5. Don't delete the old subdomain yet — keeping it lets you roll back if something goes wrong.
 
 Verify from PowerShell:
 
@@ -191,20 +189,20 @@ sudo nano /etc/caddy/Caddyfile
 
 Change the first line so the file reads:
 
-```
+```text
 latchel-hubspot-mcp.duckdns.org {
   reverse_proxy localhost:8000
 }
 ```
 
-Save (Ctrl+O / Enter / Ctrl+X), then reload Caddy and watch it fetch a fresh cert for the new name:
+Save (Ctrl\+O / Enter / Ctrl\+X), then reload Caddy and watch it fetch a fresh cert for the new name:
 
 ```bash
 sudo systemctl reload caddy
 sudo journalctl -u caddy -f
 ```
 
-Wait for `certificate obtained successfully for latchel-hubspot-mcp.duckdns.org` (10–20 seconds), then Ctrl+C.
+Wait for `certificate obtained successfully for latchel-hubspot-mcp.duckdns.org` (10–20 seconds), then Ctrl\+C.
 
 ### Step 3 — Test from outside the VM
 
@@ -220,7 +218,7 @@ Should return `{"status":"ok","tools":12}`.
 
 Settings → Connectors → open the HubSpot connector → edit the URL to:
 
-```
+```text
 https://latchel-hubspot-mcp.duckdns.org/mcp
 ```
 
@@ -276,7 +274,7 @@ ls -la  # confirm hubspot-mcp.zip is still there (plus dotfiles)
 ```
 
 <Danger>
-`rm -rf` is irreversible — double-check the path before pressing Enter. You should be deleting `~/hubspot_mcp` (the folder), not `~/hubspot-mcp.zip` (the new archive).
+  `rm -rf` is irreversible — double-check the path before pressing Enter. You should be deleting `~/hubspot_mcp` (the folder), not `~/hubspot-mcp.zip` (the new archive).
 </Danger>
 
 If you want a safer alternative, rename instead of delete on the first try:
@@ -415,45 +413,36 @@ Before the HubSpot MCP server can run, you need to create and configure a `.env`
 ### Steps to Create .env
 
 1. SSH into the server and navigate to the project directory:
-
    ```bash
    cd ~/hubspot_mcp
    ```
-
 2. Copy the template from `.env.example`:
-
    ```bash
    cp .env.example .env
    ```
-
 3. Edit the file with your credentials:
-
    ```bash
    nano .env
    ```
-
 4. Fill in these four required values:
    - `HUBSPOT_CLIENT_ID` — from your HubSpot Developer Account → Apps → Public App → Auth tab
    - `HUBSPOT_CLIENT_SECRET` — same location as above (keep this secret!)
    - `MCP_JWT_SECRET` — a random cryptographic key. Generate it with:
-
      ```bash
      python3 -c 'import secrets; print(secrets.token_urlsafe(64))'
      ```
-
      Copy the output and paste it as the value
    - `PUBLIC_BASE_URL` — the public HTTPS address of your server (e.g., `https://latchel-hubspot-mcp.duckdns.org`)
 5. Leave the other values unchanged (they have sensible defaults)
-6. Save and exit nano: Ctrl+O → Enter → Ctrl+X
+6. Save and exit nano: Ctrl\+O → Enter → Ctrl\+X
 7. Fix file permissions so systemd can read it:
-
    ```bash
    chmod 644 ~/hubspot_mcp/.env
    ```
 
 ### Example .env (filled in)
 
-```
+```text
 HUBSPOT_CLIENT_ID=a1b2c3d4-e5f6-47g8-h9i0-j1k2l3m4n5o6
 HUBSPOT_CLIENT_SECRET=pat-na1-abc123def456...
 HUBSPOT_REDIRECT_URI=https://latchel-hubspot-mcp.duckdns.org/oauth/hubspot/callback

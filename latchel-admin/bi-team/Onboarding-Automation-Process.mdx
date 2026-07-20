@@ -3,11 +3,11 @@ title: "Onboarding Automation Process"
 ---
 
 <Note>
-The Onboarding Automation Process replaces manual onboarding tasks with automated workflows to ensure a smooth, efficient, and error-free transition from deal closure to onboarding. This saves time and allows teams to focus on providing a great customer experience.
+  The Onboarding Automation Process replaces manual onboarding tasks with automated workflows to ensure a smooth, efficient, and error-free transition from deal closure to onboarding. This saves time and allows teams to focus on providing a great customer experience.
 </Note>
 
 <Check>
-The goal of this project is to automate key onboarding tasks, such as contract verification, customer record creation, email confirmations, and setup of essential tools. This reduces manual effort, minimizes errors, and speeds up the onboarding process.
+  The goal of this project is to automate key onboarding tasks, such as contract verification, customer record creation, email confirmations, and setup of essential tools. This reduces manual effort, minimizes errors, and speeds up the onboarding process.
 </Check>
 
 ## 1. Required Fields for a Smooth Process
@@ -15,7 +15,7 @@ The goal of this project is to automate key onboarding tasks, such as contract v
 You can find all required fields under the 'Onboarding Automation' tab in each deal record.
 
 <Frame>
-  <img src="/images/DA-40.png" alt="Onboarding Automation tab" />
+  ![Onboarding Automation tab](/images/DA-40.png)
 </Frame>
 
 ### Automation Bypass Options:
@@ -27,7 +27,7 @@ These fields are used to bypass specific steps in the process.
 - Skip Quote Payment – Set to Yes if the quote doesn't need a payment to trigger all the automations. If so, the trigger will occur at the signing moment.
 
 <Note>
-The onboarding packet will always be created; this process can't be skipped.
+  The onboarding packet will always be created; this process can't be skipped.
 </Note>
 
 ### Latchel Console Properties:
@@ -40,11 +40,11 @@ Fields needed for the Latchel console page creation.
   - Which documents will be included in the onboarding packet.
 
 <Check>
-To create the Maintenance Onboarding Tracker, you must select one of the following options: "24/7 Emergency", "After-Hours Emergency", or "SAAS."
+  To create the Maintenance Onboarding Tracker, you must select one of the following options: "24/7 Emergency", "After-Hours Emergency", or "SAAS."
 </Check>
 
 <Check>
-To create the Benefits Onboarding Tracker, you need to select "Home Assistant".
+  To create the Benefits Onboarding Tracker, you need to select "Home Assistant".
 </Check>
 
 ### Benefits Properties
@@ -92,7 +92,7 @@ The following fields are required and must come from the contact associated with
 The process is triggered at different stages of the customer journey:
 
 <Frame>
-  <img src="/images/DA-41.png" alt="Onboarding automation trigger stages" />
+  ![Onboarding automation trigger stages](/images/DA-41.png)
 </Frame>
 
 ### Trigger 1: Contract Sent
@@ -111,13 +111,13 @@ The process is triggered at different stages of the customer journey:
 This is a 3-step process, each one conducted by a workflow in Hubspot.
 
 <Frame>
-  <img src="/images/DA-42.png" alt="Onboarding Automation Process" />
+  ![Onboarding Automation Process](/images/DA-42.png)
 </Frame>
 
 #### WF - CS - QU - Quote is Paid Master Trigger
 
 <Tip>
-The only way to trigger this flow is by paying a quote.
+  The only way to trigger this flow is by paying a quote.
 </Tip>
 
 - A [payment confirmation email](https://23701847.hubspotpreview-na1.com/_hcms/preview/email/187066782486) is sent to the contract signer, informing them that we'll set up their Latchel console page and onboarding files.
@@ -127,20 +127,20 @@ The only way to trigger this flow is by paying a quote.
 #### WF - CS - CU - Onboarding Packet Trigger
 
 <Tip>
-This flow is triggered when the Customer's property 'Onboarding Packet Trigger' is filled out or updated. This way, if the previous process failed, you will have to manually create the Latchel console page and then complete the following:
+  This flow is triggered when the Customer's property 'Onboarding Packet Trigger' is filled out or updated. This way, if the previous process failed, you will have to manually create the Latchel console page and then complete the following:
 
-- Go to the Hubspot Customer record
-  - Add the Latchel ID
-  - Add the Latchel Assigned Number.
-  - Add the Resident Work Order Submission URL.
-  - Add the Resident Dashboard URL.
-- Go to the Console
-  - Make sure the Product Package is added
-  - Make sure the Subscription is active
-  - Add the Website URL
-  - Add the Address
-  - Apply Default | Needs Pre-Approval | Keeps Emergency Severity/Responsibility
-- Add or update the Onboarding Packet Trigger property with the [Deal ID](#how-to-get-the-deal-id). THIS WILL TRIGGER THIS AND ALL THE NEXT FLOWS.
+  1. Go to the Hubspot Customer record
+  2. Add the Latchel ID
+  3. Add the Latchel Assigned Number.
+  4. Add the Resident Work Order Submission URL.
+  5. Add the Resident Dashboard URL.
+  6. Go to the Console
+     1. Make sure the Product Package is added
+     2. Make sure the Subscription is active
+     3. Add the Website URL
+     4. Add the Address
+     5. Apply Default | Needs Pre-Approval | Keeps Emergency Severity/Responsibility
+  7. Add or update the Onboarding Packet Trigger property with the [Deal ID](#how-to-get-the-deal-id). THIS WILL TRIGGER THIS AND ALL THE NEXT FLOWS.
 </Tip>
 
 - The workflow adds the deal data to a [Onboarding Packet Trigger (Automated)](https://docs.google.com/spreadsheets/d/1QydmOtksKlKciVc2jtpI7qKpN6zoL7tjP5G_67Lby94/edit). This is the trigger for a python code that will create the onboarding packet in Google Drive.
@@ -148,11 +148,11 @@ This flow is triggered when the Customer's property 'Onboarding Packet Trigger' 
 #### WF - CS - CU - Onboarding Email Trigger
 
 <Tip>
-This flow is triggered when the Customer's property 'Onboarding Email Trigger' is filled out or updated. This way, if the previous process failed, you will have to manually create the onboarding packet and then complete the following:
+  This flow is triggered when the Customer's property 'Onboarding Email Trigger' is filled out or updated. This way, if the previous process failed, you will have to manually create the onboarding packet and then complete the following:
 
-- Go to the Hubspot Customer record
-  - Add the Google Drive Folder URL.
-- Add or update the Onboarding Email Trigger property with the [Deal ID](#how-to-get-the-deal-id). THIS WILL TRIGGER THIS AND ALL THE NEXT FLOWS.
+  1. Go to the Hubspot Customer record
+  2. Add the Google Drive Folder URL.
+  3. Add or update the Onboarding Email Trigger property with the [Deal ID](#how-to-get-the-deal-id). THIS WILL TRIGGER THIS AND ALL THE NEXT FLOWS.
 </Tip>
 
 - The workflow sends the [onboarding email](https://23701847.hubspotpreview-na1.com/_hcms/preview/email/185746564102) to the Ultimate Decision Maker with the CSM's calendar link and the onboarding folder URL.
@@ -165,25 +165,25 @@ This flow is triggered when the Customer's property 'Onboarding Email Trigger' i
 
 1. Go to a Hubspot Deal record
 2. Go the URL
-3. The Deal ID is the number right after https://app.hubspot.com/contacts/23701847/record/2-34860958/
+3. The Deal ID is the number right after [https://app.hubspot.com/contacts/23701847/record/2-34860958/](https://app.hubspot.com/contacts/23701847/record/2-34860958/)
 
 In the following example, the ID is 20237584905.
 
 <Frame>
-  <img src="/images/DA-43.png" alt="Deal ID example" />
+  ![Deal ID example](/images/DA-43.png)
 </Frame>
 
 ## 3. Templates Formatting & Content Guidelines
 
 <Note>
-Follow these instructions when editing any of the spreadsheet templates.
+  Follow these instructions when editing any of the spreadsheet templates.
 </Note>
 
 <Check>
-Spreadsheet templates:
+  Spreadsheet templates:
 
-- [Maintenance Onboarding Tracker - TEMPLATE](https://docs.google.com/spreadsheets/d/1PRjKKNdWpO5TIaZZmd3zfRyGVgnxPa7SmAp8VByhjd8/edit?gid=613049582#gid=613049582)
-- [Benefits Onboarding Tracker - TEMPLATE](https://docs.google.com/spreadsheets/d/1sXaUFQ0hNR6Z1WjKiQ0-nvh0RC5_1m--reGGlv8vv_4/edit?gid=1771634607#gid=1771634607)
+  - [Maintenance Onboarding Tracker - TEMPLATE](https://docs.google.com/spreadsheets/d/1PRjKKNdWpO5TIaZZmd3zfRyGVgnxPa7SmAp8VByhjd8/edit?gid=613049582#gid=613049582)
+  - [Benefits Onboarding Tracker - TEMPLATE](https://docs.google.com/spreadsheets/d/1sXaUFQ0hNR6Z1WjKiQ0-nvh0RC5_1m--reGGlv8vv_4/edit?gid=1771634607#gid=1771634607)
 </Check>
 
 - No columns can be inserted, moved, or renamed.
@@ -191,14 +191,14 @@ Spreadsheet templates:
 - All action items must be unique.
 - All software-specific actions must be placed in sections.
 - You can add, edit, or remove sections as needed. If you want to target specific customers, be sure to include keywords. Keywords are not case-sensitive.
-  - Software Keywords = 'Appfolio', 'Buildium Standard', 'Buildium Premium', 'DoorLoop', 'Entrata', 'HappyCo', 'Inspect and Cloud', 'MRI', 'OneSite', 'OnSight Pros', 'Property Boss', 'Property Meld', 'PropertyWare', 'RealPage', 'Rentec Direct', 'Rent Manager', 'RentRedi', 'RentVine', 'ResMan', 'Salesforce', 'Snapinspect', 'TenantCloud', 'Yardi', 'Yardi-Voyager', 'Zinspector', 'no integration'
-  - Benefits Keywords = 'pinata', 'rentcheck', 'filter', 'cover pest', 'sure', 'optional latchel benefits', 'opt-in optional', 'opt-out optional'
-  - Sections without keywords will be included for all customers.
+- Software Keywords = 'Appfolio', 'Buildium Standard', 'Buildium Premium', 'DoorLoop', 'Entrata', 'HappyCo', 'Inspect and Cloud', 'MRI', 'OneSite', 'OnSight Pros', 'Property Boss', 'Property Meld', 'PropertyWare', 'RealPage', 'Rentec Direct', 'Rent Manager', 'RentRedi', 'RentVine', 'ResMan', 'Salesforce', 'Snapinspect', 'TenantCloud', 'Yardi', 'Yardi-Voyager', 'Zinspector', 'no integration'
+- Benefits Keywords = 'pinata', 'rentcheck', 'filter', 'cover pest', 'sure', 'optional latchel benefits', 'opt-in optional', 'opt-out optional'
+- Sections without keywords will be included for all customers.
 - Sections with no action items will be removed.
 - Tab names must not change.
-- Use [RESIDENT WO URL], [RESIDENT DASHBOARD URL], [LATCHEL ASSIGNED PHONE], [LATCHEL CONSOLE URL], [CSM], or [DATA TEMPLATE URL] placeholders.
-  - Cells with placeholders will lose their formatting.
+- Use \[RESIDENT WO URL\], \[RESIDENT DASHBOARD URL\], \[LATCHEL ASSIGNED PHONE\], \[LATCHEL CONSOLE URL\], \[CSM\], or \[DATA TEMPLATE URL\] placeholders.
+- Cells with placeholders will lose their formatting.
 
 <Frame caption="To include a section in the final version for the PM, the section title needs to have one of the keywords listed above.">
-  <img src="/images/DA-44.png" alt="To include a section in the final version for the PM, the section title needs to have one of the keywords listed above." />
+  ![To include a section in the final version for the PM, the section title needs to have one of the keywords listed above.](/images/DA-44.png)
 </Frame>
