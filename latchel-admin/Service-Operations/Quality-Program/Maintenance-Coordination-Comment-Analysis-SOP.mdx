@@ -5,45 +5,64 @@ title: "Maintenance Coordination Comment Analysis SOP"
 ### 🧠 What This Process Is Trying to Solve
 
 <Note>
-This process helps Latchel identify patterns in maintenance coordination issues by analyzing weekly customer feedback. The goal is to surface the most common pain points (and wins) directly mentioned by residents, so that Operations and Product can take data-informed action. By consistently categorizing feedback, we ensure issues aren’t missed, metrics stay accurate, and improvements are aligned with customer needs.
+  This process helps Latchel identify patterns in maintenance coordination issues by analyzing weekly customer feedback. The goal is to surface the most common pain points (and wins) directly mentioned by residents, so that Operations and Product can take data-informed action. By consistently categorizing feedback, we ensure issues aren’t missed, metrics stay accurate, and improvements are aligned with customer needs.
 </Note>
 
-__IMAGE_PLACEHOLDER_0__
+<Check>
+  **📍Before I act, can I map what I’m doing back to our mission?**
+
+  - Am I reducing friction, or adding more?
+  - Am I being clear, or leaving them to guess?
+  - Did I truly solve the problem, or patch it?
+  - Did I answer the real question?
+  - Will this interaction feel unforgettably positive?
+
+  If this problem keeps happening, am I escalating it, or just reacting?
+
+  **_We don’t just support customers, we improve how support is done._**
+</Check>
 
 ### 📋 Step-by-Step Process
 
-<Note>
-This task must be completed _before EOD every Monday._
-</Note>
+<Callout icon="notes" iconType="duotone" color="#b19cf8">
+  This task must be completed _before EOD every Monday._
+</Callout>
 
 #### Part I- Set Up the Week’s Data ([video guide](https://www.loom.com/share/d2e0323d97494abf97451fdfc0d3788f?sid=20459749-54e2-4f6a-9fcb-e82def33d9e3))
 
 1. Open the [**Maintenance Coordination Comment Analysis**](https://docs.google.com/spreadsheets/d/1ILNR07zV6-bizP53SCVBplzI189TxSfQ8tnyI2559mM/edit?gid=1056289072#gid=1056289072) spreadsheet.
-1. Add a **new sheet** and name it using the most recently ended **Week Number and Year** (e.g., `W31-2025`).
-1. Download the data:Copy the SQL query from the **“Query to update data”** tab.Run it in **pgAdmin**.Download the output and paste the data into the new week tab you just created.
-1. Filter to keep only submissions from the week to report (Sunday to Saturday). Delete submissions outside of this range.
-1. Apply additional filters:**Column S ("res_res")** → If any row shows **Resident Responsible**, mark that row **yellow**. If not, remove the filter.**Column R ("type")** → Filter to show only **SaaS**.**Column F ("is_emergency")** → Sort A to Z, delete all **0** (non-emergency) rows, except for those resident responsible (marked in yellow).Remove all filters when done.
-1. Insert **three new columns** next to Column F and label them: `Summary 1`, `Summary 2`, and `Summary 3`.
+2. Add a **new sheet** and name it using the most recently ended **Week Number and Year** (e.g., `W31-2025`).
+3. Download the data:
+   1. Copy the SQL query from the **“Query to update data”** tab.
+   2. Run it in **pgAdmin**.
+   3. Download the output and paste the data into the new week tab you just created.
+4. Filter to keep only submissions from the week to report (Sunday to Saturday). Delete submissions outside of this range.
+5. Apply additional filters:
+   1. **Column S ("res\_res")** → If any row shows **Resident Responsible**, mark that row **yellow**. If not, remove the filter.
+   2. **Column R ("type")** → Filter to show only **SaaS**.
+   3. **Column F ("is\_emergency")** → Sort A to Z, delete all **0** (non-emergency) rows, except for those resident responsible (marked in yellow).
+   4. Remove all filters when done.
+6. Insert **three new columns** next to Column F and label them: `Summary 1`, `Summary 2`, and `Summary 3`.
 
 #### Part II- Categorize the Comments ([video guide](https://www.loom.com/share/8a68b618518644c79d2c0b6d6c4e919a?sid=74db1d10-3680-4afa-939f-dba13ead4e68))
 
-1. Go to **Column C (job_rating)** and **filter ratings 1–4** (low ratings).
-1. Review the **resident comments** in **Column E (rating_comments)**.
-1. Use the suggested categories in the **“Poor Comments Summary”** tab to fill in your summary columns (1 or 3 if applicable).
-1. Copy and paste all summaries into the **“Poor Comments Summary”** tab (bottom of the list). Tag them with **week, month, and year**.
-1. Go back to the week’s sheet and **remove filters**.
-1. Repeat steps **7–11**, but this time filter only for **Job Rating = 5** and categorize in the **“Positive Comments Summary”** tab instead.
+1. Go to **Column C (job\_rating)** and **filter ratings 1–4** (low ratings).
+2. Review the **resident comments** in **Column E (rating\_comments)**.
+3. Use the suggested categories in the **“Poor Comments Summary”** tab to fill in your summary columns (1 or 3 if applicable).
+4. Copy and paste all summaries into the **“Poor Comments Summary”** tab (bottom of the list). Tag them with **week, month, and year**.
+5. Go back to the week’s sheet and **remove filters**.
+6. Repeat steps **7–11**, but this time filter only for **Job Rating = 5** and categorize in the **“Positive Comments Summary”** tab instead.
 
 #### Part III- Update Ops Metrics
 
-1. Open the **“**[**Ops Team Level Metrics Data”**](https://docs.google.com/spreadsheets/d/1ILNR07zV6-bizP53SCVBplzI189TxSfQ8tnyI2559mM/edit?gid=0#gid=0) tab.
-1. Update the **Pivot Table data range** to pull from the current week's sheet (e.g., change the source to `'W31-2025'!A:V`).
+1. Open the **“[Ops Team Level Metrics Data”](https://docs.google.com/spreadsheets/d/1ILNR07zV6-bizP53SCVBplzI189TxSfQ8tnyI2559mM/edit?gid=0#gid=0)** tab.
+2. Update the **Pivot Table data range** to pull from the current week's sheet (e.g., change the source to `'W31-2025'!A:V`).
 
 ### 🎯 When to Break This SOP
 
-<Note>
-This SOP covers the standard weekly feedback cycle, but should be escalated or adjusted in these scenarios:
-</Note>
+<Callout icon="notes" iconType="duotone" color="#b19cf8">
+  This SOP covers the standard weekly feedback cycle, but should be escalated or adjusted in these scenarios:
+</Callout>
 
 - You notice a sudden **spike in severe or safety-related complaints** that suggest an urgent systemic issue.
 - The query returns **incomplete or incorrect data** (e.g., missing columns or blank fields) and you are unable to fix it through usual methods.
@@ -54,4 +73,4 @@ If any of the above occur, pause the process and notify your team lead or QA man
 
 ### 💡 If You Think This SOP Could Be Improved...
 
-Noticed something clunky or confusing in this process? Or had a situation that wasn’t covered here? Or tried something new that didn’t work?<br/> 👉 Share your suggestion in the [SOP Feedback Form](https://slack.com/shortcuts/Ft07C0TDU4N9/9439ee41aae76a4a602b6c186ce4a6cd) or tell your manager— **we want your input!**
+Noticed something clunky or confusing in this process? Or had a situation that wasn’t covered here? Or tried something new that didn’t work?<br /> 👉 Share your suggestion in the [SOP Feedback Form](https://slack.com/shortcuts/Ft07C0TDU4N9/9439ee41aae76a4a602b6c186ce4a6cd) or tell your manager— **we want your input!**
