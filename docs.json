@@ -619,11 +619,9 @@
                       "latchel-admin/Service-Operations/Quality-Program/Pre-Implementation-checklist-for-new-QA-Audits",
                       "latchel-admin/Service-Operations/Quality-Program/Quality-feedback-templates",
                       "latchel-admin/Service-Operations/Quality-Program/Weekly-Setup-for-Quality-Associate",
-                      "latchel-admin/Service-Operations/Quality-Program/Work-Order-Audit-Weekly-Reporting",
                       "latchel-admin/Service-Operations/Quality-Program/Troubleshooting-ratings",
                       "latchel-admin/Service-Operations/Quality-Program/Weekly-Compliance-Reporting-Procedures",
                       "latchel-admin/Service-Operations/Quality-Program/Customer-Experience-weekly-report",
-                      "latchel-admin/Service-Operations/Quality-Program/Monthly-Quality-Metrics-Reporting",
                       {
                         "group": "How to: Update and Report CSAT Feedback",
                         "pages": [
@@ -631,18 +629,24 @@
                           "latchel-admin/Service-Operations/Quality-Program/SOP-Reviewing-and-Categorizing-Product-and-Work-Order-Feedback-via-Associate-CSAT"
                         ]
                       },
+                      "latchel-admin/Service-Operations/Quality-Program/Work-Order-Audit-Weekly-Reporting",
                       "latchel-admin/Service-Operations/Quality-Program/Maintenance-Coordination-Comment-Analysis-SOP",
-                      "latchel-admin/Service-Operations/Quality-Program/Auditing-AI-Automated-Scripts",
-                      "latchel-admin/Service-Operations/Quality-Program/Calibration-Guidelines-Emergency-WO-Audit-#1-Troubleshooting-Call-Immediate-Next-Steps",
-                      "latchel-admin/Service-Operations/Quality-Program/Harphonia-Auditing-Process",
-                      "latchel-admin/Service-Operations/Quality-Program/How-to-Audit-Failed-Escalation-(PM-Feedback)",
-                      "latchel-admin/Service-Operations/Quality-Program/How-to-Audit-Failed-Escalations-(Agent-Feedback)",
+                      "latchel-admin/Service-Operations/Quality-Program/Monthly-Quality-Metrics-Reporting",
                       "latchel-admin/Service-Operations/Quality-Program/Month-Over-Month-Analysis-SOP",
-                      "latchel-admin/Service-Operations/Quality-Program/SOP-How-to-Conduct-Customer-Experience-Reviews-SMS-Webchat-New-Audit-form-Calibration-guidelines",
-                      "latchel-admin/Service-Operations/Quality-Program/SOP-How-to-Conduct-Harmonia-Work-Order-Audits",
-                      "latchel-admin/Service-Operations/Quality-Program/SOP-How-to-Conduct-Work-Order-Audits-Troubleshooting-Call-PM-outbound-communication",
                       "latchel-admin/Service-Operations/Quality-Program/SOP-How-to-Update-the-QA-Incentives-Program",
-                      "latchel-admin/Service-Operations/Quality-Program/Top-Opportunities-slides-for-All-hands-meeting"
+                      "latchel-admin/Service-Operations/Quality-Program/Top-Opportunities-slides-for-All-hands-meeting",
+                      {
+                        "group": "Auditing AI/Automated Scripts",
+                        "pages": [
+                          "latchel-admin/Service-Operations/Quality-Program/How-to-Audit-Failed-Escalation-(PM-Feedback)",
+                          "latchel-admin/Service-Operations/Quality-Program/How-to-Audit-Failed-Escalations-(Agent-Feedback)"
+                        ]
+                      },
+                      "latchel-admin/Service-Operations/Quality-Program/SOP-How-to-Conduct-Harmonia-Work-Order-Audits",
+                      "latchel-admin/Service-Operations/Quality-Program/SOP-How-to-Conduct-Customer-Experience-Reviews-SMS-Webchat-New-Audit-form-Calibration-guidelines",
+                      "latchel-admin/Service-Operations/Quality-Program/Harphonia-Auditing-Process",
+                      "latchel-admin/Service-Operations/Quality-Program/SOP-How-to-Conduct-Work-Order-Audits-Troubleshooting-Call-PM-outbound-communication",
+                      "latchel-admin/Service-Operations/Quality-Program/Calibration-Guidelines-Emergency-WO-Audit-#1-Troubleshooting-Call-Immediate-Next-Steps"
                     ]
                   }
                 ]
