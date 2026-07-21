@@ -5,39 +5,37 @@ title: "How to: Audit Failed Escalation (PM Feedback)"
 ## Purpose
 
 <Note>
-Our escalation process is critical to resolving work orders and maintaining customer trust. When on-call technicians, preferred service providers, or escalation contacts are unresponsive, jobs stall, and property managers may feel forced to escalate issues back to us — a direct driver of customer churn.
+  Our escalation process is critical to resolving work orders and maintaining customer trust. When on-call technicians, preferred service providers, or escalation contacts are unresponsive, jobs stall, and property managers may feel forced to escalate issues back to us — a direct driver of customer churn.
 
-By introducing automated triggers, we can proactively identify unresponsive contacts and highlight patterns before our customers raise the issue. This shifts us from a reactive to a proactive posture. If a property management company’s contact list is failing, we want to be the ones telling them and not the other way around.
+  By introducing automated triggers, we can proactively identify unresponsive contacts and highlight patterns before our customers raise the issue. This shifts us from a reactive to a proactive posture. If a property management company’s contact list is failing, we want to be the ones telling them and not the other way around.
 
-To address this, we’ve built an automated script to detect:
+  To address this, we’ve built an automated script to detect:
 
-1. **On-Call Failures** → when the primary technician on-call does not acknowledge alerts.
-1. **Service Provider Failures** → when preferred service providers never acknowledge our calls.
-1. **Escalation Contact Failures** → when no emergency escalation contacts respond after multiple attempts.
+  1. **On-Call Failures** → when the primary technician on-call does not acknowledge alerts.
+  2. **Service Provider Failures** → when preferred service providers never acknowledge our calls.
+  3. **Escalation Contact Failures** → when no emergency escalation contacts respond after multiple attempts.
 
-Each of these scenarios must persist for **7 consecutive days** before being considered a true escalation failure.
+  Each of these scenarios must persist for **7 consecutive days** before being considered a true escalation failure.
 </Note>
 
-#### ** What We’re Trying to Solve **
+#### What We’re Trying to Solve
 
 - **Reduce manual oversight**: Escalation failures are currently identified manually and inconsistently. Automation ensures no failures are overlooked.
 - **Validate automation accuracy**: Before we start sending automated escalation emails to property managers, we must confirm the script correctly identifies true failures and doesn’t generate false positives.
 - **Improve trust and response rates**: By auditing failures and providing clear reporting, we can give property managers confidence in our escalation process while holding service providers and technicians accountable.
 
 <Note>
-This SOP ensures the accuracy of automated escalation triggers before sending automated PM notifications. Auditing helps validate whether unresponsive cases (on-call technicians, service providers, or escalation contacts) are true failures or false positives missed by the automation.
+  This SOP ensures the accuracy of automated escalation triggers before sending automated PM notifications. Auditing helps validate whether unresponsive cases (on-call technicians, service providers, or escalation contacts) are true failures or false positives missed by the automation.
 </Note>
 
-## Content
-
-### **Workflow Overview**
+## **Workflow Overview**
 
 1. Automation generates a [**weekly report**](https://docs.google.com/spreadsheets/d/1vIC_9RIbwzwXJXFlxVOMqnfX6vn5THI1VLxEEN1HXqs/edit?gid=348786191#gid=348786191) of companies with **100% failure rate** on all work orders in the past 7 days.
-1. Only companies that meet the threshold of **more than 3 failed escalations in the past 7 days** are to be audited. **This threshold applies to all three escalation types** — On-Call Failures, Service Provider Failures, and Escalation Contact Failures — to ensure focus on high-frequency or systemic issues.
-1. Auditors validate each trigger against job details and activity logs.
-1. Confirm whether the failure is **Valid** or **Voided**.
-1. Complete the **Failed Escalation Report workflow** in ps-escalation for confirmed failures.
-1. Mark outcomes in the master sheet for transparency and continuous improvement.
+2. Only companies that meet the threshold of **more than 3 failed escalations in the past 7 days** are to be audited. **This threshold applies to all three escalation types** — On-Call Failures, Service Provider Failures, and Escalation Contact Failures — to ensure focus on high-frequency or systemic issues.
+3. Auditors validate each trigger against job details and activity logs.
+4. Confirm whether the failure is **Valid** or **Voided**.
+5. Complete the **Failed Escalation Report workflow** in ps-escalation for confirmed failures.
+6. Mark outcomes in the master sheet for transparency and continuous improvement.
 
 ### Step-by-Step Guide
 
@@ -45,7 +43,7 @@ This SOP ensures the accuracy of automated escalation triggers before sending au
 
 Automation produces [**three reports**](https://docs.google.com/spreadsheets/d/1vIC_9RIbwzwXJXFlxVOMqnfX6vn5THI1VLxEEN1HXqs/edit?gid=348786191#gid=348786191) (separate tabs/sheets). Each must be audited before PS escalations are finalized.
 
-#### **1. Escalation Failures (tab: **`escalation_failures`**)**
+#### **1. Escalation Failures (tab: `escalation_failures`)**
 
 - **Column E** → Job URL (open to review activity & call recordings).
 - **Column M** → Escalation contact list.
@@ -56,12 +54,12 @@ Automation produces [**three reports**](https://docs.google.com/spreadsheets/d/1
 **Validation steps:**
 
 1. Open Job URL.
-1. Confirm attempts were made to reach each escalation contact listed in Column M.
-1. Check call history/recordings to verify if any contact was reached.
-1. If no successful contact in the reporting period → mark **Valid**.
-1. If any contact was reached (or automation misflagged) → mark **Voided**.
+2. Confirm attempts were made to reach each escalation contact listed in Column M.
+3. Check call history/recordings to verify if any contact was reached.
+4. If no successful contact in the reporting period → mark **Valid**.
+5. If any contact was reached (or automation misflagged) → mark **Voided**.
 
-#### **2. On-Call Failures (tab: **`oncall_failures`**)**
+#### **2. On-Call Failures (tab: `oncall_failures`)**
 
 - **Column E** → Job URL.
 - **Column S** → Technician name.
@@ -70,11 +68,11 @@ Automation produces [**three reports**](https://docs.google.com/spreadsheets/d/1
 **Validation steps:**
 
 1. Open Job URL.
-1. Review alert history to confirm whether the on-call technician acknowledged.
-1. If no acknowledgements in the reporting period → mark **Valid**.
-1. If acknowledgements occurred (automation missed it) → mark **Voided**.
+2. Review alert history to confirm whether the on-call technician acknowledged.
+3. If no acknowledgements in the reporting period → mark **Valid**.
+4. If acknowledgements occurred (automation missed it) → mark **Voided**.
 
-#### **3. Service Provider Failures (tab: **`sp_failures`**)**
+#### **3. Service Provider Failures (tab: `sp_failures`)**
 
 - **Column E** → Job URL.
 - **Column N** → Reporting period.
@@ -84,9 +82,9 @@ Automation produces [**three reports**](https://docs.google.com/spreadsheets/d/1
 **Validation steps:**
 
 1. Open Job URL.
-1. Check call logs to see if preferred vendors were contacted and whether they responded.
-1. If no responses in the reporting period → mark **Valid**.
-1. If vendor answered or returned call (automation missed it) → mark **Voided**.
+2. Check call logs to see if preferred vendors were contacted and whether they responded.
+3. If no responses in the reporting period → mark **Valid**.
+4. If vendor answered or returned call (automation missed it) → mark **Voided**.
 
 ### **Failed Escalation Report Workflow (in ps-escalation)**
 
