@@ -1,0 +1,74 @@
+---
+title: "How to: Audit Failed Escalations (Agent Feedback)"
+---
+
+## Purpose
+
+<Note>
+**Purpose of this document**
+
+This SOP defines the process for auditing automated reports of potential escalation contact failures, validating whether errors occurred, and submitting feedback to Service Operations.
+
+Correct execution of escalation contact procedures is **critical** to customer trust and retention. Calling the wrong number or calling out of order increases the risk of churn.
+</Note>
+
+<Note>
+**Who should read this document?**
+
+This SOP applies to the **Quality Team** responsible for reviewing the **Jobs with Cleaned Escalations** report and ensuring escalation contacts are handled correctly.
+</Note>
+
+## Content
+
+### **Definitions**
+
+- **Escalation Contacts**: The priority order list of numbers provided by our customers to be called during an emergency escalation.
+- **Cleaned Escalations Report**: Automated report identifying potential failures in escalation contact attempts.
+- **Failure**: An instance where an agent may have called the wrong contact OR called contacts in the wrong order.
+- **Cleared**: Determination that no failure occurred, and the flagged instance is valid under exception rules.
+
+### **Responsibilities**
+
+- **Quality Team**:Review flagged instances in the Cleaned Escalations report (Filter Column P Call Analysis > “Wrong Contact” and “Wrong Order”) Investigate calls linked via the **Job URL** (Column F).Complete the audit fields (Columns Y–AD).When a true failure is confirmed, the **Escalation Alert Bot** will create an alert in the **svc-ops-feedback** channel.
+
+### Step-by-Step Guide
+
+<Note>
+**What happened prior to this step?**
+
+Before this report is generated, we run a script in Latchel that automatically flags potential issues with emergency escalation calls. Specifically, it identifies:
+
+- **Wrong contacts** – instances where an agent called someone not on the customer’s official escalation list (e.g., calling Joe when the list only includes Mary → Will → Matias).
+- **Wrong Order (out-of-sequence calls)** – instances where the escalation list order was not followed correctly (e.g., skipping one or more listed contacts, calling Matias first when Will was the first contact listed).
+</Note>
+
+**Failed Escalation Report**: [https://docs.google.com/spreadsheets/d/1MKMPFrAuZfq50Wjt0vsTNrqZSUdF9GPST2p8g5eDH6I/edit?gid=1733125510#gid=1733125510](https://docs.google.com/spreadsheets/d/1MKMPFrAuZfq50Wjt0vsTNrqZSUdF9GPST2p8g5eDH6I/edit?gid=1733125510#gid=1733125510)
+
+#### **1. Locate Flagged Instances**
+
+- Open the **Jobs with Cleaned Escalations** tab.
+- Review initial system flags:
+- Open  **Column N: Wrong Number Initiated By** → Shows which number was flagged and which agent dialed it.**Column P: Call Analysis** → Identifies if automation flagged “wrong contact” OR “wrong order.” Be sure to filter this column to make it easier to audit.
+
+#### **2. Investigate the Case**
+
+1. Click the **Job URL** in **Column F** to review the call activity.Open
+1. Refer back to the report for:**Column N: Wrong Number Initiated By** → Identify which number and which agent is in question.**Column P: Call Analysis** → Confirm whether the flag is for “Wrong Contact” or “Wrong Order.”
+1. **Check the Escalation Contact List**In Column K, locate the **customer’s escalation contacts** in the order they are listed.Compare this list against the call log sequence to see if the agent:Dialed a number not listed.Skipped one or more contacts in the required order.Review whether **"Who Ya Gonna Call"** was used when following the escalation contact list. You can find this reference on the work order. If the agent followed the contact order suggested by AI and the sequence was incorrect, please submit a PS ticket.<br/><br/>Open
+1. **Analyze Call Log Activity**Review the detailed call activity:**Who was called** and **in what order.**Whether the call was answered, went to voicemail, or failed.Any notes logged by the agent (e.g., “PM requested direct call,” “Number disconnected,” “Blocked from calling,” etc.).
+1. **Determine Validity of the Exception**Ask: _Was there a valid reason for calling this number or breaking the escalation order?_Common valid reasons include:**PM Request** – Property Manager instructed Ops to call a specific contact outside the standard list.**Blocked Number** – Contact requested not to be called or system restrictions prevented dialing.**Original Submitter Callback** – Returning a call to the caller/resident who reported the issue.**SP Preference** – Service provider supplied an alternate callback number not listed in Latchel.**Pre-Dispatch Instructions (PD)** – Call order adjusted based on pre-dispatch guidance.**Sourcing Externally** – Call made to an external/unlisted service provider during the sourcing process.
+1. Verify whether the system flag is correct (i.e., was the wrong number called OR was the call order incorrect?).
+
+#### **3. Complete the Audit Fields**
+
+Fill out **Columns Y–AD** for each flagged instance:
+
+1. **Column Z: Quality Check**Select one of the following:**Cleared** – No failure, system flag invalid.**Wrong Contact** – Confirmed wrong number was dialed.**Wrong Order** – Confirmed escalation contacts were called out of order.
+1. **Column AA: Cleared Reason Code** _(if marked Cleared)_**Unlisted Resident/Submitter** – Call made to original submitter’s number, not the number listed in Latchel.**PD Instructions** – Call made in accordance with pre-dispatch instructions.**Unlisted SP Phone #** – Call made to service provider’s preferred number not in system.**Sourcing Externally** – Call made to an external/unlisted service provider during sourcing.**Correct Contact Sequence (After Hours)** - Contact order adjusted due to after-hours availability.**Valid Call Sequence** - The escalation sequence was followed correctly. Including cases where the resident was unresponsive to troubleshooting and/or the issue qualified as Property Damaging or Extreme Habitability.**Valid Call Sequence – EEC listed but unregistered** - EEC followed correctly; number is listed but not registered in the system.**PM Request- **Cases where an out-of-sequence or non-standard escalation is executed per direct Property Manager’s request. _(Note: Additional codes may be added as more exceptions are identified.)_
+1. **Column AD: Feedback Sent****Not Applicable** – If the instance was cleared.**Ops- feedback** – If a valid failure occurred **and** feedback was submitted to **Svc Ops** via the **svc-ops-feedback** Slack channel through the **Escalation Alert Bot**.**PS- Alert**- If the cleared reason code was **PM Request**, the **Escalation Alert Bot** creates an alert for **PS** to verify the settings with the PM.
+1. **Column AE: Feedback URL**The link to your feedback submission will be automatically added (only required if feedback is sent).
+1. **Column AC: Audit Notes**Enter free-form notes to clarify the audit results. These will be included in the escalation summary sent by the bot.Example notes:“Called original submitter back for troubleshooting.”“Vendor provides this secondary number as a callback; not listed in Latchel.”“Returned SP voicemail.”“PM instructed Ops to call a specific SP outside Latchel.”“PM advised calling 7737916613; unclear why 8067843228 was dialed.”“Possible mis-log to wrong work order.”
+
+### **4. Automatic Feedback**
+
+- For valid failures:The **Escalation Alert Bot** will review the audit findings in columns **Y–AD** and automatically send feedback to the **svc-ops-feedback** channel.<br/><br/>Open  Or create an alert for **PS Support** in **ps-escalation**, depending on the audit results.

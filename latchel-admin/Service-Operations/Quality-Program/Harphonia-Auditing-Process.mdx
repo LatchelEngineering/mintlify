@@ -1,0 +1,149 @@
+---
+title: "Harphonia Auditing Process"
+---
+
+### Purpose
+
+This SOP outlines the end-to-end process for auditing Harphonia-handled calls, ensuring quality assurance, accurate work order creation, and continuous improvement of the resident experience.
+
+### Scope
+
+This process applies to all auditors responsible for reviewing Harphonia escalations and completed calls.
+
+### Tools & Systems
+
+- **Slack:** [#harphonia-audits](https://latchel.slack.com/archives/C0A3QSYM02E) (audit triggers)
+- **Slack:** [#harphonia-prod-feedback](https://latchel.slack.com/archives/C09SKP5SPRA) (critical bug alerts from audits)
+- **Slack:** [#cc-tasks](https://latchel.slack.com/archives/C0A4BGPN1D2) (callback/work order escalations)
+- **Retell Dashboard**: System used to view call history and session details
+- **Latchel Console**: Resident and Property Records
+- **Harphonia QA Review Typeform**: [https://latchel.typeform.com/to/e6YjdiED](https://latchel.typeform.com/to/e6YjdiED)
+
+### Key Notes & Best Practices
+
+- Complete audits as soon as you're available to avoid resident intake delays.
+- Be specific and objective in feedback to support continuous improvement.
+- Flag critical blockers to Jennifer Lye for resolution.
+
+### Audit Workflow (Simplified Process)
+
+**NEW: Simplified Audit Triggers**
+
+Harphonia-audits channel now receives **only calls that need auditing** (random sample of calls > 2 mins in duration where AI did not successfully resolve the issue). You no longer need to consult the spreadsheet to determine if a call should be audited—if it appears in the channel, audit it.
+
+**NEW: PD/EH Targeted Audit Triggers**
+
+In addition to the random sample, two new targeted triggers now flag potential **Property Damage (PD) / Extreme Habitability (EH)** situations for audit. These are high-risk scenarios where human review is critical. See the updated Audit Criteria and PD/EH Audit Process sections below.
+
+### Pre-Audit Process
+
+1. **Audit Notification**Auditors receive notifications in [#harphonia-audits](https://latchel.slack.com/archives/C0A3QSYM02E) when a call requires audit. Each notification includes:A link to the call in the Retell DashboardA link to the Work Order (if one was created)Call Summary
+1. **Audit Ownership**Audits are performed on a first-come, first-served basis. React with 👀 emoji and begin the audit.
+1. **Identify the Audit Type**Identify the audit type from the Slack notification and perform the next steps based on the notification audit type.🔵 **Call Audit** — notification says "Harphonia Call Completed"Open 🟠 **Work Order Audit** — notification says "Harphonia Web Chat - Property Damage Flagged"Open
+
+### Audit Criteria
+
+Audits appear in [#harphonia-audits](https://latchel.slack.com/archives/C0A3QSYM02E) only for these scenarios:
+
+- Caller disconnected without successfully resolving the issue, creating a work order, or transferring to an agent
+- **NEW:** Random sample filtering applied (calls > 2 mins duration) to reduce audit volume from ~115 to ~56 calls/week
+- **NEW: PD/EH Call Trigger** — Calls tagged with the "Property damage detected" label (indicating potential Property Damage or Extreme Habitability). These are flagged based on the following post-call analysis criteria:Structural damage: Leaks, fires, structural cracks — anything where damage will keep getting worse if no one shows upSituations that put people at physical risk: gas leaks, exposed wiring, sparking outlets, unsecured doors**🔥 Fire Hazard — Major Electrical System (Power Shutoff Distinction)**_This is not a new automated trigger — it's guidance for auditors reviewing PD/EH cases involving major electrical systems._Any major electrical system (HVAC, furnace, electric water heater) with signs of electrical malfunction where the system is reported as "off" but power has NOT been confirmed disconnected at the breaker.**Flag as a missed detection if:** the case was de-escalated solely because the resident said the system was "off," no probing questions were asked about breaker status, or malfunction signs were present but the case was still de-escalated.**Correct handling looks like:** agent/AI asked how the system was turned off, asked about malfunction signs, asked resident to confirm the breaker is off, and followed PM's intake settings to classify severity. If PD/EH criteria were met but PM's settings classified as non-emergency, agent escalated to PM's Escalation Contacts per the standard PD/EH process.Situations that make the home unlivable: no heat in winter, no running water, no power, sewage backup
+- **NEW: Web Form PD/EH Trigger** — Web form submissions where a non-EMG work order is created but the intake conversation implies potential PD/EH. Auditors must open the WO and confirm the correct severity was selected based on the PM's Harphonia rules.Open
+- **NEW: Work Order Review Trigger** — Work orders where AI selected an outcome based on the PM's settings. Auditors must open the work order, review the intake conversation, and confirm AI selected the correct outcome. If AI selected the wrong outcome, take the appropriate action (escalate the WO to an EMG or create an On-Call Alert).
+
+### Audit Process
+
+1. **Access the Call**Start by reviewing the transcript and call summary in Retell. Listen to the audio only if the transcript is unclear or missing key information.**Note:** For Spanish intake sessions, a **Translate** button is now available on the intake conversation (in both the Intake Session and Work Order views). Click it to translate the conversation to English. Click **Show Original** to return to the Spanish version.**Quick check:** Confirm the transcript shows an exchange (resident said something). If the transcript is empty/silence and no conversation was established, react with ❌ in Slack and do not audit.Click the call link in Slack to open the Retell Dashboard.Select the **Session ID** associated with the call.Review the **transcript** and call summary.Optionally listen to the audio at 1.5x speed or higher if needed.
+
+- **Prepare the QA Form - Note:** The Harphonia QA Review Typeform now asks auditors to select whether the audit is a **Work Order Audit** or **Call Audit**. After either path is selected, the form will ask whether there are any critical bugs so auditors can report critical bugs regardless of the audit type or branch.Open the Harphonia QA Review Typeform in a separate tab: [https://latchel.typeform.com/to/e6YjdiED](https://latchel.typeform.com/to/e6YjdiED)
+
+1. **Complete Basic Information (Before Reviewing the Transcript)****Call Session ID:** Locate the Session ID in the Retell Dashboard and enter it into the form.**Resident ID:** In Retell: Click Session ID → Data → Extracted Dynamic Variables → User ID. Search for the resident in Latchel Console using the User ID. Paste the resident profile URL into the form. (Leave blank if no Resident ID is available.)If the call needs a callback due to missing resident info, share the phone number with the CC team by adding it to the corresponding callback request in [#cc-tasks](https://latchel.slack.com/archives/C0A4BGPN1D2).
+1. **Call Review & Evaluation - Audit Form Questions**Review the transcript and call summary for the full call; listen to the audio only if needed. Complete the following audit form questions:**NEW: Did AI select the correct outcome based on PM settings?** If no, take the appropriate action (escalate the WO to an EMG or create an On-Call Alert) and provide critical bug feedback in the Critical Bugs field. The Critical Bugs field remains available even when the answer is yes, so use it for any critical bug or major system failure identified during the audit.**If this was a resident following up on an existing request, confirm that Harphonia provided the correct information and/or took the correct action. If not, report in the critical bug field.****Did you identify any critical bugs or major system failures that require an immediate fix?**Flag as **CRITICAL** if Harphonia: mishandles emergencies, blocks work orders, resolves too early, blocks humans from speaking to an agent, or ignores critical context.**Note:** If Harphonia advises the resident to follow a process that the team believes is not documented in the SOP, this is also considered a **critical bug** and must be submitted in the Critical Bugs field.**Aside from critical bugs, what aspects could be improved to enhance the experience?**Provide actionable feedback or alternative handling approaches.
+1. **Confirm Harphonia Followed Through on Commitments**After listening to the call and completing the QA questions, verify whether Harphonia actually took the actions it committed to:**Identify commitments from the call** (canceling WO/alert, creating/updating WO, notifying on-call tech, sending callback, etc.)**Check in the Latchel Console** to confirm whether those actions occurred.**If Harphonia missed an action,** follow the relevant Ops SOP to complete the missed step yourself and add a note explaining what was corrected.**If it's no longer appropriate to take the action,** do not force it.**For PD/EH flagged audits:** In addition to checking commitments, verify the correct severity was applied. If Harphonia missed creating a WO or assigned incorrect severity, take correct action immediately (create WO, escalate to EMG, etc.). See PD/EH Audit Process section for details.
+1. **Submit the Audit**Review all responses for accuracy and submit the Harphonia QA Review Typeform.
+
+### PD/EH Audit Process
+
+For audits triggered by the PD/EH flags (either call label or web form trigger), follow the standard Audit Process above AND apply these additional steps:
+
+#### PD/EH Call Audits (Property Damage Detected Label)
+
+1. Follow the standard Audit Process (Steps 1–6 above).
+1. **Check for PM Settings vs. PD/EH Conflict** — If Harmonia's severity classification is correct per the PM's intake settings but the call involves a PD/EH situation (e.g., PM settings classify a water leak as non-emergency, but the issue involves active property damage), **escalate to the PM** to make them aware of the conflict and confirm the appropriate severity. Do not accept the PM's non-emergency classification as the final word when active property damage is occurring.
+1. **Intervene with correct action** — Do not only provide feedback via the audit form. If Harphonia failed to take the correct action, you must step in:**Create a Work Order** if AI failed to create one**Escalate a WO to EMG** if AI selected the wrong severity**Take any other necessary action** that Harphonia missed (e.g., notify on-call tech, send callback)
+1. Complete the audit form as usual to provide feedback so we can improve how AI handles PD/EH scenarios.
+
+#### Web Form PD/EH Audits (Severity Confirmation)
+
+1. Open the Work Order linked in the audit notification.
+1. Review the intake conversation to understand the reported issue.
+1. Confirm the correct severity was selected based on the PM's Harphonia rules.If the severity is incorrect, **update the WO to the correct severity** **If the PM's intake settings conflict with PD/EH criteria (e.g., PM settings classify a water leak as non-emergency, but the issue involves active property damage), escalate to the PM to make them aware of the conflict and confirm the appropriate severity.**If a call to the escalation contacts is required, create a task to the Troubleshooter team.
+1. Complete the audit form noting any severity corrections made.
+
+#### PD/EH Detection Criteria
+
+The following criteria are used to classify a situation as potential Property Damage or Extreme Habitability:
+
+1. **Structural damage** — Leaks, fires, structural cracks, anything where damage will keep getting worse if no one shows up
+1. **Physical risk** — Gas leaks, exposed wiring, sparking outlets, unsecured doors — situations that put people at physical risk
+1. **Unlivable conditions** — No heat in winter, no running water, no power, sewage backup — situations that make the home unlivable
+
+⚠️ **Important:** For PD/EH audits, your role goes beyond feedback. You are the safety net — if AI got it wrong, take immediate corrective action.
+
+⚠️ **PM Settings vs. PD/EH Conflict:** A PM's intake settings may classify certain issues as non-emergency. However, if the reported issue meets PD/EH criteria above, the PM's settings do not eliminate the property damage risk. In these cases, **escalate to the PM** to inform them of the conflict between their settings and the PD/EH situation. Do not simply accept the PM's settings as the final word when active property damage is occurring.
+
+### Work Order Review Audit Process
+
+For audits triggered by the Work Order Review flag, follow these steps:
+
+1. Open the Work Order linked in the audit notification.
+1. Review the intake conversation to understand the reported issue.
+1. Confirm AI selected the correct outcome based on the PM's settings.
+1. If AI selected the wrong outcome:**Escalate the WO to an EMG** or **create an On-Call Alert**, depending on what should have happened.Report the issue as a critical bug in the audit form (this will trigger an alert in [#harphonia-prod-feedback](https://latchel.slack.com/archives/C09SKP5SPRA)). The Critical Bugs field should still remain available even if AI selected the correct outcome, in case another critical bug or major system failure is identified.
+1. Complete the audit form, including:**Work Order URL** (paste the WO link)**Did AI select the correct outcome based on PM settings?** (Yes/No)**Critical Bugs** (if applicable — triggers a post in [#harphonia-prod-feedback](https://latchel.slack.com/archives/C09SKP5SPRA)). **Note:** If Harphonia advises the resident to follow a process that the team believes is not documented in the SOP, this is also considered a **critical bug** and must be submitted in the Critical Bugs field.**Improvement Opportunities** (if applicable — tracked in the spreadsheet only, does not trigger an alert)
+
+### Post-Audit Process
+
+After submitting the audit form, return to the original escalation thread in [#harphonia-audits](https://latchel.slack.com/archives/C0A3QSYM02E) and react with a checkmark (✅) emoji to indicate completion.
+
+### Audit Alert Behavior
+
+- **Critical Bug alerts** are posted to [#harphonia-prod-feedback](https://latchel.slack.com/archives/C09SKP5SPRA). The Critical Bugs field must always be available for both audit form branches and all audit types, regardless of how the auditor answers “Did AI select the correct outcome based on PM settings?” Auditors should use this field for any critical bug or major system failure that requires immediate attention.
+
+- **Improvement Opportunities** are tracked in the audit form and spreadsheet only — they do not trigger alerts.
+- **Alert format:** The WO Link is now displayed in the alert instead of Call Session ID and Resident ID (unless no WO link is available, in which case Session ID and Resident ID will still appear).
+
+### Audit Form - Removed Questions
+
+The following questions have been removed from the audit form as of this update:
+
+- **Do we need to create a work order?**
+- **Do we need to call back the resident to gather more info?**
+- **Why was the work order not created?** (including "If you selected Other..." follow-up)
+
+These questions are no longer needed because:
+
+- Calls where AI successfully resolved issues without WOs are no longer audited
+- The Harphonia call automation now handles follow-ups and escalations automatically (SMS to residents when caller hangs up before request submission, alerts to #cc-tasks when phone is not textable)
+
+### Q&A
+
+**Q: What if I can't find a Resident ID?**<br/>A: Leave it blank and share the phone number with the CC team in [#cc-tasks](https://latchel.slack.com/archives/C0A4BGPN1D2).
+
+**Q: How do I know if I should audit a call now?**<br/>A: If it appears in [#harphonia-audits](https://latchel.slack.com/archives/C0A3QSYM02E), it needs to be audited. No need to check the spreadsheet anymore.
+
+**Q: What happened to the audit spreadsheet?**<br/>A: The spreadsheet's filtering step has been deprecated. Calls are now pre-filtered before appearing in the channel, making the audit process simpler and faster.
+
+**Q: What should I do if a call needs a callback or work order?**<br/>A: Those scenarios are now handled by the Harphonia automation system. Your role is to audit the call quality and provide feedback on critical bugs and improvement opportunities.
+
+**Q: What do I do when I see a "Property damage detected" audit?**<br/>A: Follow the standard audit process, but also take correct action if Harphonia got it wrong — create a WO if one is missing, escalate to EMG if severity is incorrect. See the PD/EH Audit Process section for the full workflow.
+
+**Q: How do I handle a web form PD/EH audit?**<br/>A: Open the WO, review the intake conversation, and confirm the correct severity was selected based on the PM's Harphonia rules. If the severity is wrong, escalate it. Complete the audit form noting any corrections.
+
+**Q: What qualifies as Property Damage or Extreme Habitability?**<br/>A: Three categories: (1) Structural damage — leaks, fires, cracks where damage worsens without intervention; (2) Physical risk — gas leaks, exposed wiring, unsecured doors; (3) Unlivable conditions — no heat in winter, no water, no power, sewage backup.
+
+**Q: What is a Work Order Review audit?**<br/>A: These are audits where you verify that AI selected the correct outcome based on the PM's settings. Open the WO, review the intake conversation, and confirm the outcome. If it's wrong, take corrective action (escalate to EMG or create an On-Call Alert) and report it as a critical bug.
+
+**Q: What triggers an alert in #harphonia-prod-feedback?**<br/>A: Critical bugs trigger alerts in [#harphonia-prod-feedback](https://latchel.slack.com/archives/C09SKP5SPRA). The Critical Bugs field should always be available for both audit form branches and all audit types, so auditors can report any critical bug or major system failure immediately. Improvement opportunities are tracked in the spreadsheet only and do not trigger alerts.
+
+**Q: What if the PM's intake settings say non-emergency, but the issue looks like property damage?**<br/>A: When a PM's intake settings conflict with PD/EH criteria, escalate to the PM. The PM needs to be made aware that their settings conflict with an active PD/EH situation so they can confirm the appropriate action. Do not simply accept the PM's non-emergency classification when PD/EH criteria are met.

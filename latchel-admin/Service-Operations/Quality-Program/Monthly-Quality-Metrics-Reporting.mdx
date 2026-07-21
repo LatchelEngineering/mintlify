@@ -1,0 +1,83 @@
+---
+title: "Monthly Quality Metrics Reporting"
+---
+
+(WO Audits, SaaS Compliance, Troubleshooting Ratings)
+
+### 🧠 What This Process Is Trying to Solve
+
+<Note>
+We want to ensure that performance data is consistently reviewed and compared month over month to identify trends, improvements, or declines. Without this process, we risk overlooking performance gaps or misrepresenting progress. These reports create accountability and support data-driven coaching and decisions across QA and Ops.
+</Note>
+
+<Note>
+**📍Before I act, can I map what I’m doing back to our mission?**
+
+- Am I reducing friction by keeping performance data visible and digestible?
+- Am I being clear in showing where we improved or didn’t?
+- Am I solving root causes or just reacting to symptoms?
+- Am I helping Latchel improve how support is done?
+</Note>
+
+### 📋 Step-by-Step Process
+
+<Note>
+##### Applies to:
+
+- **WO Audits** → _WO 1&2 – Responses_
+- **Troubleshooting Ratings** → _Troubleshooting Ratings Sheet_
+</Note>
+
+#### Step 1 - Open the Correct Sheet
+
+- Access the Response sheet for the report you’re updating ([WO 1&2- Responses](https://docs.google.com/spreadsheets/d/1u7MLxMlhEoCmDqXW-MKBivhakBo8wU8ZBYiXH2CvnU0/edit?gid=1474055358#gid=1474055358), [Troubleshooting ratings](https://docs.google.com/spreadsheets/d/1hMT5oOMmZjl0ennUWmW1AJ9lrzU811qX0R1z9MQ2C7g/edit?gid=271313042#gid=271313042)).
+
+#### Step 2- Duplicate Last Month's Tab
+
+- Copy the most recent performance tab (e.g., “June 2025 performance”).
+- Rename the new tab as the month you're reporting (e.g., “July 2025 performance”).
+
+#### Step 3 - Verify Import Data (Hidden Columns A–D)
+
+- Unhide and review columns A–D to confirm agent names, roles, and supervisors are correctly imported from Zoltar.
+- Once verified, hide them again.
+
+#### Step 4 - Update Agent’s performance Pivot Table (Columns F–J)
+
+- Adjust filters for the **current reporting month and year**.
+- Unhide rows if needed; re-hide any blanks.
+- Note **new hires, attrition, or role changes** in the **Notes** column (I).
+- Update the **Grand Total** and **Last Month's Result** rows.
+- Verify the **Difference** formula works for both Average Score (J) and Count of Scores (H).
+- Repeat for the **“Performance Compared to Goal”** row.
+
+#### Step 5 - Review Supervisor Pivot Table (L–M)
+
+- Ensure the data range matches the agent list in Columns F–J.
+
+Example: `'July 2025 performance'!F1:J14`
+
+#### Step 6 - Check Notes Pivot Table
+
+- Use the same method as above to ensure full data range.
+
+#### Step 7 - Final Table – Monthly Comparison (Columns O–R)
+
+- Update month labels in **P1** and **Q1** (e.g., July 2025 / June 2025).
+- **Column P:** Update formula to reflect current scores (e.g., `=MIN(G2:G14)`).
+- **Column Q:** Pull previous month’s data from the corresponding tab.
+- **Column R:** Verify formulas and apply color-coding:🔴 Red = Decreased🟡 Yellow = No change🟢 Green = Improved
+
+### 🎯 When to Break This SOP
+
+This SOP covers 80–90% of use cases. Break it and escalate when:
+
+- Zoltar import formulas are broken or returning incomplete/inaccurate data
+- You spot agent data discrepancies not reflected in Zoltar (e.g., incorrect supervisor, missing new hires)
+- A metric’s source data was impacted that month (e.g., incomplete audits or rating delays)
+- A new metric is being tracked and doesn’t follow this structure
+- A process update changes how performance should be measured
+
+### 💡 If You Think This SOP Could Be Improved...
+
+If something’s unclear, missing, or could be more efficient, share it! Use the [SOP Feedback Form](https://slack.com/shortcuts/Ft07C0TDU4N9/9439ee41aae76a4a602b6c186ce4a6cd) or talk to your manager. We want your ideas to help improve how support is done.
