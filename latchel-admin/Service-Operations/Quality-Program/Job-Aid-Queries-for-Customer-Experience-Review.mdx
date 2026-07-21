@@ -5,21 +5,95 @@ title: "Job-Aid: Queries for Customer Experience Review"
 ## Purpose
 
 <Note>
-**Purpose of this document**
+  **Purpose of this document**
 
-This is a repository of queries being used to pull data for the customer experience review process. The queries are saved here in case we need to pull data manually
+  This is a repository of queries being used to pull data for the customer experience review process. The queries are saved here in case we need to pull data manually
 </Note>
 
-## Content
-
-### Step-by-Step Guide
+## Step-by-Step Guide
 
 <Note>
-**What happened prior to this step?**
+  **What happened prior to this step?**
 </Note>
 
 #### Call Recording Sample
 
+```text
+--random sample of calls this week
+WITH a as (SELECT u.user_id as agent_id, u.name, cl.recording_url, cl.duration, cl.created_at at time zone 'UTC' at time zone 'America/Los_Angeles' call_placed_latchel_time, CONCAT('', cl.call_log_id) as call_log_url from public.user_group ug
+	JOIN public.user_group_user ugu
+		ON ug.user_group_id = ugu.user_group_id
+		AND ug.company_id is null
+	JOIN public.call_log cl
+		ON ugu.user_id = cl.initiated_by_user_id
+		AND cl.status = 'completed'
+		AND cl.duration > 60
+		AND date_trunc('week',cl.created_at) = date_trunc('week',now()) 
+	JOIN public.user u
+		ON ugu.user_id = u.user_id)
+SELECT * 
+FROM (
+SELECT *, row_number() OVER (PARTITION BY a.agent_id ORDER BY random()) as rn
+FROM a ) sub
+WHERE rn = 1;
+```
+
 #### Webchat Sample
 
+```text
+--webchats
+WITH a as (SELECT distinct ugu.user_id as agent_id, m.message_id 
+from public.user_group ug
+	JOIN public.user_group_user ugu
+		ON ug.user_group_id = ugu.user_group_id
+		AND ug.company_id is null
+	JOIN public.conversation c
+		ON ugu.user_id = c.user_id
+		AND date_trunc('week',c.created_at) = date_trunc('week',now()) 
+		AND c.type = 'web'
+	JOIN public.message m
+		ON c.conversation_id = m.conversation_id),
+b as (SELECT *, now() at time zone 'America/Los_Angeles' as generated_pacific_time 
+FROM (
+SELECT *, row_number() OVER (PARTITION BY a.agent_id ORDER BY random()) as rn
+FROM a ) sub
+WHERE rn = 1)SELECT b.agent_id, u.name, m.content, m.created_at at time zone 'UTC' at time zone 'America/Los_Angeles' as message_pacific_time, pm.name as user_name, CONCAT('', pm.user_id) as user_profile, b.generated_pacific_time FROM b
+JOIN public.user u
+	ON b.agent_id = u.user_id
+JOIN public.message m
+	ON b.message_id = m.message_id 
+JOIN public.conversation c
+	ON m.conversation_id = c.conversation_id
+JOIN public.user pm
+	ON c.conversable_id = pm.user_id
+```
+
 #### Conversations from the last 7 days
+
+```text
+WITH Internal_Conversations AS (
+SELECT c.conversation_id
+FROM PUBLIC.conversation c 
+JOIN PUBLIC.user u ON c.user_id=u.user_id
+WHERE u.user_type='admin' 
+)
+
+SELECT m.message_id,
+m.conversation_id,
+m.created_at at time zone 'UTC' at time zone 'America/Los_Angeles' as created_at_PST,
+cm.user_id,
+u.name,
+u.user_type,
+c.type,
+m.content
+FROM PUBLIC.message m
+JOIN PUBLIC.conversation_member cm ON m.conversation_member_id=cm.conversation_member_id
+LEFT JOIN PUBLIC.user u ON cm.user_id=u.user_id
+JOIN PUBLIC.conversation c ON cm.conversation_id=c.conversation_id
+JOIN Internal_Conversations IC ON c.conversation_id=IC.conversation_id
+WHERE m.created_at>now()-interval'7days' --modify this to whatever interval you need
+AND c.type<>'email'
+AND c.automated<>1
+GROUP BY 1,2,3,4,5,6,7,8
+ORDER BY m.conversation_id ASC, m.created_at ASC
+```
