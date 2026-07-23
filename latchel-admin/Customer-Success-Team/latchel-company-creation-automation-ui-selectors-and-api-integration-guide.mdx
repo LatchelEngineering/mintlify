@@ -1,5 +1,6 @@
 ---
 title: "Latchel Company Creation Automation: UI Selectors & API Integration Guide"
+groups: ["latchel"]
 ---
 
 <Note>
@@ -13,10 +14,8 @@ title: "Latchel Company Creation Automation: UI Selectors & API Integration Guid
 Navigates to the login page and submits credentials.
 
 - **URL**: `https://app.latchel.com/login`
-- **Email input**
-  `(By.ID, "login-email") `
-- **Password input**
-  `(By.ID, "login-password") `
+- **Email input** `(By.ID, "login-email") `
+- **Password input** `(By.ID, "login-password") `
 - **Submit** by sending `Keys.RETURN` on the password field
 - **Success check**: waits for URL to contain `"work-orders"`
 
@@ -27,20 +26,13 @@ Navigates to the login page and submits credentials.
 Loads the “New Property Manager” form and fills in company \+ user details.
 
 - **Navigate**: `https://app.latchel.com/admin/property-manager/new`
-- **Form container**
-  `(By.TAG_NAME, "form")`
-- **Company Name**
-  `(By.CSS_SELECTOR, "input[placeholder='Property Management Company Name *']") `
-- **Contact Name**
-  `(By.CSS_SELECTOR, "input[placeholder='Name *']") `
-- **Contact Phone**
-  `(By.CSS_SELECTOR, "input[placeholder='Phone *']") `
-- **Contact Email**
-  `(By.CSS_SELECTOR, "input[placeholder='Email']") `
-- **Save/Create button**
-  `(By.CSS_SELECTOR, "button.hl-btn.hl-busy-button") `
-- **Email‐exists error**
-  `(By.CSS_SELECTOR, ".hl-error-messages li") `
+- **Form container** `(By.TAG_NAME, "form")`
+- **Company Name** `(By.CSS_SELECTOR, "input[placeholder='Property Management Company Name *']") `
+- **Contact Name** `(By.CSS_SELECTOR, "input[placeholder='Name *']") `
+- **Contact Phone** `(By.CSS_SELECTOR, "input[placeholder='Phone *']") `
+- **Contact Email** `(By.CSS_SELECTOR, "input[placeholder='Email']") `
+- **Save/Create button** `(By.CSS_SELECTOR, "button.hl-btn.hl-busy-button") `
+- **Email‐exists error** `(By.CSS_SELECTOR, ".hl-error-messages li") `
 - **Success URL check**: URL contains `"pm-company"`
 
 ---
@@ -49,25 +41,25 @@ Loads the “New Property Manager” form and fills in company \+ user details.
 
 Clicks through the subscription modal to pick a package.
 
-- **“\+ New Subscription”** 
+- **“\+ New Subscription”**
 
 ```text
 (By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/hl-subscriptions/div/div[1]/div[2]/a")
 ```
 
-- **Product‐package radio button** 
+- **Product‐package radio button**
 
 ```text
 (By.XPATH, "/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[2]/input")
 ```
 
-- **“Next” button** 
+- **“Next” button**
 
 ```text
 (By.XPATH, "/html/body/div[6]/div/div/div[2]/div[2]/div/div[3]/button")
 ```
 
-- **“Subscribe” button** 
+- **“Subscribe” button**
 
 ```text
 (By.XPATH, "/html/body/div[6]/div/div/div[2]/div[3]/button")
@@ -82,13 +74,13 @@ Clicks through the subscription modal to pick a package.
 Opens each company page, expands the phone section, and grabs the value.
 
 - **Navigate**: `https://app.latchel.com/admin/pm-company/{id}`
-- **Expand Phone section** 
+- **Expand Phone section**
 
 ```text
 (By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]")
 ```
 
-- **Phone input value** 
+- **Phone input value**
 
 ```text
 (By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[2]/div[2]/div[1]/div/input") 
@@ -101,24 +93,18 @@ Opens each company page, expands the phone section, and grabs the value.
 Expands the “Address” accordion and writes street/city/state/zip.
 
 - **Navigate**: `https://app.latchel.com/admin/pm-company/{id}`
-- **Form container**
-  `(By.TAG_NAME, "form") `
-- **Expand “Address” section**
-  `(By.XPATH, "//label[contains(text(), 'Address')]") `
-- **Toggle arrow** (relative to the label) 
+- **Form container** `(By.TAG_NAME, "form") `
+- **Expand “Address” section** `(By.XPATH, "//label[contains(text(), 'Address')]") `
+- **Toggle arrow** (relative to the label)
 
 ```text
 (By.XPATH, "./ancestor::div[contains(@class, 'hl-accordion')]/div[contains(@class, 'hl-accordion-head')]/div[contains(@class, 'hl-accordion-head__toggle')]")
 ```
 
-- **State dropdown label**
-  `(By.XPATH, "//div[contains(@class, 'hl-dropdown__label')]") `
-- **State options**
-  `(By.XPATH, f"//a[starts-with(normalize-space(text()), '{state} -')]") `
-- **Other address fields**
-  `(By.XPATH, f"//input[@ng-model='{field_name}']") `
-- **Save button**
-  `(By.XPATH, "//button[contains(text(), 'Save') and not(@disabled)]") `
+- **State dropdown label** `(By.XPATH, "//div[contains(@class, 'hl-dropdown__label')]") `
+- **State options** `(By.XPATH, f"//a[starts-with(normalize-space(text()), '{state} -')]") `
+- **Other address fields** `(By.XPATH, f"//input[@ng-model='{field_name}']") `
+- **Save button** `(By.XPATH, "//button[contains(text(), 'Save') and not(@disabled)]") `
 
 ---
 
@@ -127,10 +113,8 @@ Expands the “Address” accordion and writes street/city/state/zip.
 Very similar to addresses, but in “Portal Settings.”
 
 - **Navigate**: `https://app.latchel.com/admin/pm-company/{id}`
-- **Expand “Portal Settings”**
-  `(By.XPATH, "//div[contains(text(), 'Portal Settings')]") `
-- **Site URL field**
-  `(By.XPATH, "//input[@ng-model='company.site_url']") `
+- **Expand “Portal Settings”** `(By.XPATH, "//div[contains(text(), 'Portal Settings')]") `
+- **Site URL field** `(By.XPATH, "//input[@ng-model='company.site_url']") `
 - **Save buttons** (inside that accordion)
   - search via XPATH within the section
   - fallback CSS selector
@@ -143,23 +127,21 @@ Very similar to addresses, but in “Portal Settings.”
 On `/severity-responsibility`, clicks the ellipsis menu and picks a default set.
 
 - **Navigate**: `https://app.latchel.com/admin/pm-company/{id}/severity-responsibility`
-- **First ellipsis dot**
-  `(By.XPATH, "(//div[contains(@class, 'ellipsis__dot')])[1]") `
-- **“Apply Settings Set” option** 
+- **First ellipsis dot** `(By.XPATH, "(//div[contains(@class, 'ellipsis__dot')])[1]") `
+- **“Apply Settings Set” option**
 
 ```text
 (By.XPATH, "//div[contains(@class, 'ellipsis__action') and text()='Apply Settings Set']") 
 ```
 
-- **Dropdown label**
-  `(By.XPATH, "//div[contains(@class, 'hl-dropdown__label')]") `
-- **Select “Default | Needs Pre-Approval / Keeps Emergency”** 
+- **Dropdown label** `(By.XPATH, "//div[contains(@class, 'hl-dropdown__label')]") `
+- **Select “Default | Needs Pre-Approval / Keeps Emergency”**
 
 ```text
 (By.XPATH, "//a[contains(text(), 'Default | Needs Pre-Approval / Keeps Emergency')]") 
 ```
 
-- **“Apply Settings” button** 
+- **“Apply Settings” button**
 
 ```text
 (By.XPATH, "//button[contains(@class, 'hl-btn') and contains(@class, 'hl-busy-button') and not(@disabled)]")
@@ -172,32 +154,30 @@ On `/severity-responsibility`, clicks the ellipsis menu and picks a default set.
 On the integrations tab, clicks “Activate” then fills slug and date.
 
 - **Navigate**: `https://app.latchel.com/admin/pm-company/{id}/integrations`
-- **Chrome plugin card → Activate** 
+- **Chrome plugin card → Activate**
 
 ```text
 (By.XPATH,   "//hl-external-integration-card"   "[.//h4[contains(text(), 'Plugin')] and .//p[contains(text(), 'Chrome')]]"   "//button[.//span[text()='Activate']]" ) 
 ```
 
-- **AppFolio slug field**
-  `(By.ID, "app-slug-field") `
-- **Start‐sync date field**
-  `(By.ID, "appfolio-start-sync-input") `
-- **Save button** (XPath then CSS fallback) 
+- **AppFolio slug field** `(By.ID, "app-slug-field") `
+- **Start‐sync date field** `(By.ID, "appfolio-start-sync-input") `
+- **Save button** (XPath then CSS fallback)
 
 ```text
 (By.XPATH, "/html/body/react-component[2]/div/div/div[2]/div/div[3]/button") (By.CSS_SELECTOR, "body > react-component:nth-child(5) > div > div > div.react-modal__body > div > div.text-right > button")
 ```
 
-- **Expand “Maint. Communication Settings”** 
+- **Expand “Maint. Communication Settings”**
   ```text
   (By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[1]/div[2]")
   ```
   ` `
-- **Email input inside that** 
+- **Email input inside that**
   ```text
   (By.XPATH,   "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[2]/div[6]/div[1]/div[2]/div[3]/div[2]/div/input" ) 
   ```
-- **Save** 
+- **Save**
   ```text
   (By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div/div[1]/div[3]/div[2]/div[6]/div[2]/button[2]") 
   ```
@@ -209,38 +189,36 @@ On the integrations tab, clicks “Activate” then fills slug and date.
 Creates and configures “packages” matching your subscription list.
 
 - **Navigate**: `https://app.latchel.com/admin/pm-company/{id}/product-packages`
-- **“New Package”** 
+- **“New Package”**
 
 ```text
 (By.XPATH, "//*[@id='angular-app-main-content']/div/div[2]/div/div[1]/div/button") 
 ```
 
-- **Package name input**
-  `(By.ID, "react-modal-prompt-value") `
-- **Click the newly created package**
-  `(By.XPATH, f"//a[contains(text(), '{subscription_raw}')]") `
-- **“Add Products”** 
+- **Package name input** `(By.ID, "react-modal-prompt-value") `
+- **Click the newly created package** `(By.XPATH, f"//a[contains(text(), '{subscription_raw}')]") `
+- **“Add Products”**
   ```text
   (By.XPATH, "//*[@id='angular-app-main-content']/div[1]/div/div[3]/div[1]/button")
   ```
   ` `
-- **Base‐product dropdown** 
+- **Base‐product dropdown**
   ```text
   (By.XPATH, "//*[@id='angular-app-main-content']/div[1]/div/form/div[1]/la-dropdown/div/div[1]") 
   ```
-- **Select base product** 
+- **Select base product**
   ```text
   (By.XPATH, f"//div[@class='list__element ng-scope']//strong[contains(text(), '{base_product}')]") 
   ```
-- **Date picker** 
+- **Date picker**
   ```text
   (By.XPATH, "//*[@id='angular-app-main-content']/div[1]/div/form/div[2]/hl-product-details-form/div/div/div[1]") (By.XPATH, "//td[contains(@class, 'current')]") 
   ```
-- **Add-on toggles** (per add-on) 
+- **Add-on toggles** (per add-on)
   ```text
   //label[contains(text(), 'Include Autopilot')]/preceding-sibling::div[contains(@ng-model, 'includeSAAS')] //label[contains(text(), '{addon}')]/preceding-sibling::div[contains(@class, 'hl-toggle')] 
   ```
-- **Save button** (XPath \+ CSS fallback) 
+- **Save button** (XPath \+ CSS fallback)
   ```text
   (By.XPATH, "//*[@id='angular-app-main-content']/div[1]/div/form//button[contains(., 'Save')]") (By.CSS_SELECTOR, "#angular-app-main-content > div.container.container--white.|.m-y-2.ng-scope > div > form button[type='submit']") 
   ```

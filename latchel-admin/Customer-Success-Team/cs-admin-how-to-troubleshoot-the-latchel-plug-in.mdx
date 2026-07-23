@@ -1,5 +1,6 @@
 ---
 title: "(CS/Admin) How To: Troubleshoot the Latchel Plug-in"
+groups: ["latchel"]
 ---
 
 # **Objective**
@@ -15,7 +16,7 @@ title: "(CS/Admin) How To: Troubleshoot the Latchel Plug-in"
 
   ---
 
-  **If you cannot locate a go-live audit, run through each step under [<u>Step 3. Property Management Software Verification</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/894895927/Job-Aid+How+to+Execute+the+Go+Live+Check-list#Job-Aid:HowtoExecutethe%22GoLive%22Check-list-step3Step3.PropertyManagementSoftwareVerification "https://latchel.atlassian.net/wiki/spaces/CS/pages/894895927/Job-Aid+How+to+Execute+the+Go+Live+Check-list#Job-Aid:HowtoExecutethe%22GoLive%22Check-list-step3Step3.PropertyManagementSoftwareVerification"). **
+  \*\*If you cannot locate a go-live audit, run through each step under [<u>Step 3. Property Management Software Verification</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/894895927/Job-Aid+How+to+Execute+the+Go+Live+Check-list#Job-Aid:HowtoExecutethe%22GoLive%22Check-list-step3Step3.PropertyManagementSoftwareVerification "https://latchel.atlassian.net/wiki/spaces/CS/pages/894895927/Job-Aid+How+to+Execute+the+Go+Live+Check-list#Job-Aid:HowtoExecutethe%22GoLive%22Check-list-step3Step3.PropertyManagementSoftwareVerification"). \*\*
 
   ---
 
@@ -34,16 +35,15 @@ title: "(CS/Admin) How To: Troubleshoot the Latchel Plug-in"
 - Run a manual work order export using Appfolio's reporting tools to ensure our "Latchel Team" user has been assigned to a work order inside the Appfolio system.
   - If you do not find a work order on the report, proceed with steps 4 - 6 here: [<u>How to: Install the Latchel Data Sync Plug-in (Appfolio</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/813729953 "https://latchel.atlassian.net/wiki/spaces/CS/pages/813729953"))
 - Run query P2 from this page: [<u>Job-Aid: SQL Queries Templates</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/848855280/Job-Aid%3A+SQL+Queries+Templates "https://latchel.atlassian.net/wiki/spaces/CS/pages/848855280/Job-Aid%3A+SQL+Queries+Templates") to get all properties with no reference ids for a specific company. 
-
 - Use this SOP to learn how to run a query. [<u>How to: Handle Property and Resident Information Update</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/796296121/How+to%3A+Handle+Property+and+Resident+Information+Update "https://latchel.atlassian.net/wiki/spaces/CS/pages/796296121/How+to%3A+Handle+Property+and+Resident+Information+Update")
-- To identify properties <u>without</u> a Reference ID in our database, review the data out after executing the query and locate the ref\_property\_id and red\_unit\_id column. You will see "null' which means there is no Reference ID in our system and the property was created in <u>Latchel</u>. 
+- To identify properties <u>without</u> a Reference ID in our database, review the data out after executing the query and locate the ref\_property\_id and red\_unit\_id column. You will see "null' which means there is no Reference ID in our system and the property was created in <u>Latchel</u>.
 
 <Frame>
   ![CSM 53](/images/CSM-53.png)
 </Frame>
 
 - If the query identified properties without a Reference ID, check the Property Manager's database in Latchel to see if it is a duplicate property. See [<u>Step 2 - Search for the duplicate property</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/795116246/How+to+Merge+duplicate+properties#Howto:Mergeduplicateproperties-step2Step2-Searchfortheduplicateproperty "https://latchel.atlassian.net/wiki/spaces/CS/pages/795116246/How+to+Merge+duplicate+properties#Howto:Mergeduplicateproperties-step2Step2-Searchfortheduplicateproperty") to search an individual property in the system. 
-- If a duplicate exists, merge the properties and keep the record with a Reference ID. Click **merge**. 
+- If a duplicate exists, merge the properties and keep the record with a Reference ID. Click **merge**.
   <Frame>
     ![CSM 54](/images/CSM-54.png)
   </Frame>
@@ -61,12 +61,12 @@ title: "(CS/Admin) How To: Troubleshoot the Latchel Plug-in"
    - First, consider the fact that there is a delay period for imports to process fully. You can check the Latchel Imports (look for the company name) to see if this import is still processing. <u>Note:</u> The import has to go through the entire property list **and then** the work orders synchronize. 
      - See [<u>Step 5 - Check the status of your import/upload</u>](https://latchel.atlassian.net/wiki/spaces/CS/pages/795934730/How+to+Add+Properties+in+the+Latchel+Console+to+a+New+Account#Howto:AddPropertiesintheLatchelConsoletoaNewAccount-step5Step5-Checkstatusofyourimport/upload "https://latchel.atlassian.net/wiki/spaces/CS/pages/795934730/How+to+Add+Properties+in+the+Latchel+Console+to+a+New+Account#Howto:AddPropertiesintheLatchelConsoletoaNewAccount-step5Step5-Checkstatusofyourimport/upload")
        - If you do not see the sync, that is a red flag. This should be escalated to tech by slacking #tech\_escalations.
-4. **What to do if only certain property groups in Appfolio should sync into Latchel?** 
+4. **What to do if only certain property groups in Appfolio should sync into Latchel?**
    <Frame>
      ![CSM 55](/images/CSM-55.png)
    </Frame>
 
-## **When reporting to the tech team, please include the answers to the following questions: **
+## \*\*When reporting to the tech team, please include the answers to the following questions: \*\*
 
 1. Are any other customers experiencing this issue?
 2. Ask the customer to download and send the debug report
