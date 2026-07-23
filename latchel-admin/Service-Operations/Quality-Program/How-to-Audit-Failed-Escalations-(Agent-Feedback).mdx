@@ -28,7 +28,7 @@ title: "How to: Audit Failed Escalations (Agent Feedback)"
 ## **Responsibilities**
 
 - **Quality Team**:
-  - Review flagged instances in the Cleaned Escalations report (Filter Column P Call Analysis \> “Wrong Contact” and “Wrong Order”) 
+  - Review flagged instances in the Cleaned Escalations report (Filter Column P Call Analysis \> “Wrong Contact” and “Wrong Order”)
   - Investigate calls linked via the **Job URL** (Column F).
   - Complete the audit fields (Columns Y–AD).
   - When a true failure is confirmed, the **Escalation Alert Bot** will create an alert in the **svc-ops-feedback** channel.
@@ -49,7 +49,7 @@ title: "How to: Audit Failed Escalations (Agent Feedback)"
 #### **1. Locate Flagged Instances**
 
 - Open the **Jobs with Cleaned Escalations** tab.
-- Review initial system flags: 
+- Review initial system flags:
   <Frame>
     ![QP 8](/images/QP-8.png)
   </Frame>
@@ -57,28 +57,26 @@ title: "How to: Audit Failed Escalations (Agent Feedback)"
 
 #### **2. Investigate the Case**
 
-1. Click the **Job URL** in **Column F** to review the call activity. 
+1. Click the **Job URL** in **Column F** to review the call activity.
    <Frame>
      ![QP 9](/images/QP-9.png)
    </Frame>
 2. Refer back to the report for:
    1. **Column N: Wrong Number Initiated By** → Identify which number and which agent is in question.
    2. **Column P: Call Analysis** → Confirm whether the flag is for “Wrong Contact” or “Wrong Order.”
-3. **Check the Escalation Contact List**
+3. **Note on “Wrong Numbers Called” field:** This field is only populated when the issue is Wrong Contact. If the field is blank but the sample is classified as “Wrong Order” in the Call Analysis column, the sample should still be audited — this is expected, since Wrong Order means the correct contacts were called, but possibly in the wrong sequence. A blank field does not mean the sample should be skipped.
+4. **Check the Escalation Contact List**
    1. In Column K, locate the **customer’s escalation contacts** in the order they are listed.
    2. Compare this list against the call log sequence to see if the agent:
       1. Dialed a number not listed.
       2. Skipped one or more contacts in the required order.
-   3. Review whether **"Who Ya Gonna Call"** was used when following the escalation contact list. You can find this reference on the work order. If the agent followed the contact order suggested by AI and the sequence was incorrect, please submit a PS ticket. 
-      <Frame>
-        ![QP 10](/images/QP-10.png)
-      </Frame>
-4. **Analyze Call Log Activity**
+
+1. **Analyze Call Log Activity**
    1. Review the detailed call activity:
       1. **Who was called** and \*\*in what order.\*\*
       2. Whether the call was answered, went to voicemail, or failed.
       3. Any notes logged by the agent (e.g., “PM requested direct call,” “Number disconnected,” “Blocked from calling,” etc.).
-5. **Determine Validity of the Exception**
+2. **Determine Validity of the Exception**
    1. Ask: Was there a valid reason for calling this number or breaking the escalation order?
       1. Common valid reasons include:
          1. **PM Request** – Property Manager instructed Ops to call a specific contact outside the standard list.
@@ -87,11 +85,11 @@ title: "How to: Audit Failed Escalations (Agent Feedback)"
          4. **SP Preference** – Service provider supplied an alternate callback number not listed in Latchel.
          5. **Pre-Dispatch Instructions (PD)** – Call order adjusted based on pre-dispatch guidance.
          6. **Sourcing Externally** – Call made to an external/unlisted service provider during the sourcing process.
-6. Verify whether the system flag is correct (i.e., was the wrong number called OR was the call order incorrect?).
+3. Verify whether the system flag is correct (i.e., was the wrong number called OR was the call order incorrect?).
 
 #### **3. Complete the Audit Fields**
 
-Fill out **Columns Y–AD** for each flagged instance: 
+Fill out **Columns Y–AD** for each flagged instance:
 
 <Frame>
   ![QP 11](/images/QP-11.png)
@@ -107,10 +105,14 @@ Fill out **Columns Y–AD** for each flagged instance:
    - **PD Instructions** – Call made in accordance with pre-dispatch instructions.
    - **Unlisted SP Phone #** – Call made to service provider’s preferred number not in system.
    - **Sourcing Externally** – Call made to an external/unlisted service provider during sourcing.
-   - **Correct Contact Sequence (After Hours)** - Contact order adjusted due to after-hours availability.
-   - **Valid Call Sequence** - The escalation sequence was followed correctly. Including cases where the resident was unresponsive to troubleshooting and/or the issue qualified as Property Damaging or Extreme Habitability.
-   - **Valid Call Sequence – EEC listed but unregistered** - EEC followed correctly; number is listed but not registered in the system.
-   - **PM Request** **-** Cases where an out-of-sequence or non-standard escalation is executed per direct Property Manager’s request. 
+   - **Unlisted PM number** -  Call made to a PM number not listed in Latchel.
+   - **Unlisted Owner** - Call made to an owner number not listed in Latchel.
+   - **Valid EEC & Rotation**- The call sequence aligns with the Contact rotation. If an EEC is listed, this is sufficient to validate the contact, even if the EEC is not registered in the contact rotation.
+   - **Correct contact sequence (After hours)**  **-**Contact order adjusted due to after-hours availability.
+   - **VM Call back request**- Call made to return a voicemail callback request.
+   - **EEC list was updated after this interaction** - The EEC list was modified after the call was placed.
+   - **AI Incorrect order**- The agent followed the AI-suggested (Who Ya Gonna Call) sequence, which was itself incorrect.
+   - **PM Request**- Cases where an out-of-sequence or non-standard escalation is executed per direct Property Manager’s request
    - _(Note: Additional codes may be added as more exceptions are identified.)_
 3. **Column AD: Feedback Sent**
    - **Not Applicable** – If the instance was cleared.
@@ -131,11 +133,11 @@ Fill out **Columns Y–AD** for each flagged instance:
 ### **4. Automatic Feedback**
 
 - For valid failures:
-  - The **Escalation Alert Bot** will review the audit findings in columns **Y–AD** and automatically send feedback to the **svc-ops-feedback** channel. 
+  - The **Escalation Alert Bot** will review the audit findings in columns **Y–AD** and automatically send feedback to the **svc-ops-feedback** channel.
     <Frame>
       ![QP 12](/images/QP-12.png)
     </Frame>
-  - Or create an alert for **PS Support** in **ps-escalation**, depending on the audit results. 
+  - Or create an alert for **PS Support** in **ps-escalation**, depending on the audit results.
     <Frame>
       ![QP 13](/images/QP-13.png)
     </Frame>
