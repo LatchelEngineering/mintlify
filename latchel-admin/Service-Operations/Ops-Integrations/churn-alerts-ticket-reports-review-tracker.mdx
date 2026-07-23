@@ -1,9 +1,10 @@
 ---
 title: "Churn Alerts / Ticket Reports Review Tracker"
+sidebarTitle: "Overview"
 ---
 
 <Note>
-The purpose of this article is to serve as a comprehensive guide for navigating the tracker, including instructions on how to locate specific information and detailed explanations of the contents and purpose of each column.
+  The purpose of this article is to serve as a comprehensive guide for navigating the tracker, including instructions on how to locate specific information and detailed explanations of the contents and purpose of each column.
 </Note>
 
 ## **Overview**
@@ -11,11 +12,11 @@ The purpose of this article is to serve as a comprehensive guide for navigating 
 To access the tracker, please go to this [<u>document </u>](https://docs.google.com/spreadsheets/d/1c-M6I0QcuDeeFHq2rzssZ9kurRsQiRJ2T-mtJ_YZJOA/edit?gid=238917029#gid=238917029)
 
 <Tip>
-You will find 3 tabs for each month, one disclosing all cases of Churn Alerts, another one with Ticket reports related to either Integration issues or Emergency WOs Issues, and the third one would be an analysis tab highlighting key insights and notable trends from both datasets.
+  You will find 3 tabs for each month, one disclosing all cases of Churn Alerts, another one with Ticket reports related to either Integration issues or Emergency WOs Issues, and the third one would be an analysis tab highlighting key insights and notable trends from both datasets.
 </Tip>
 
 <Frame>
-  <img src="/images/Intg-95.png" alt="Screenshot 2025-06-18 173532.png" />
+  ![Screenshot 2025-06-18 173532.png](/images/Intg-95.png)
 </Frame>
 
 ### **What do you find in a Churn Alerts Tab?**
@@ -23,7 +24,7 @@ You will find 3 tabs for each month, one disclosing all cases of Churn Alerts, a
 The primary source for adding a case to this record is the Slack report in the [#service-changes](https://latchel.slack.com/archives/CKA2W1KJA) channel. From this report, we will extract and input the company name, the date of the report, and the corresponding link. Subsequently, we will reference HubSpot to verify the current status of the account and to identify the primary and, if applicable, secondary reasons for churn, as well as the MRR at churn request, and total CMRR.
 
 <Frame>
-  <img src="/images/Intg-96.png" alt="image-20251107-002028.png" />
+  ![image-20251107-002028.png](/images/Intg-96.png)
 </Frame>
 
 | **Column** | **Detailed description** |
@@ -44,7 +45,7 @@ The primary source for adding a case to this record is the Slack report in the [
 **At the end of each month**, a CSV file will be downloaded from **Assembly** containing all cases reported during that period. We will filter the topics to keep the ones related to **Integrations** and **Emergency WOs issues**. Through a review of the associated messages, we will assess whether the report originated from the customer or a member of Latchel’s team. Additionally, we will identify the underlying reason for the report to categorize the specific issue, and the property management company to which it pertains.
 
 <Frame>
-  <img src="/images/Intg-97.png" alt="image-20251107-002100.png" />
+  ![image-20251107-002100.png](/images/Intg-97.png)
 </Frame>
 
 | **Column** | **Detailed description** |
@@ -53,28 +54,28 @@ The primary source for adding a case to this record is the Slack report in the [
 | B | Here is shown the source type of report, if this is a PM/Owners complaint, or a report from a Latchel Ops Associate |
 | C | Here you can see the date when the report was made. (When the ticket was created) |
 | D | If the report is in reference to an Integrations issue, you will find the specific reason here. The reasons are grouped by color. The color coding is as follows:**Specific data not syncing correctly**WOs not syncing correctlyTenants not syncing correctly Properties not syncing correctlyOwners info not Syncing correctly**Technical sync issues**Outdated SyncDelayed SyncOutdated plugin version**Unknown issues**Integration Bug Issue**Special requests from customers**Integration Requests |
-| E | If the report is in reference to an Emergency WO issue, you will see the specific reason here. The reasons are grouped by color. The color coding is as follows:**Pre-dispatch instructions issues**Pre-dispatch Instructions ConflictUnclear Dispatch InstructionsOutdated Pre-dispatch Instructions**Escalation contacts **Escalation Contact Issue**Access instructions **Outdated Access Instructions**Severity settings **Severity Settings issue**PMs’ Communications Complaints **Unnecessary Emg Comms with PM**PMs’ Disagreements on how Latchel handles Emergency WOs **Emg WO Coordination Disagreement |
+| E | If the report is in reference to an Emergency WO issue, you will see the specific reason here. The reasons are grouped by color. The color coding is as follows:**Pre-dispatch instructions issues**Pre-dispatch Instructions ConflictUnclear Dispatch InstructionsOutdated Pre-dispatch Instructions\*\*Escalation contacts **Escalation Contact Issue**Access instructions **Outdated Access Instructions**Severity settings **Severity Settings issue**PMs’ Communications Complaints **Unnecessary Emg Comms with PM**PMs’ Disagreements on how Latchel handles Emergency WOs \*\*Emg WO Coordination Disagreement |
 | F | In here you find the link to the Assembly report |
 | G | If additional details need to be noted, you will see them in this column |
 
 ### **Analysis Tab:**
 
-This section provides **a consolidated summary of the key data points from the preceding tabs**—[**Churn Alerts**](https://help.latchel.com/churn-alerts-ticket-reports-review-tracker#What-do-you-find-in-a-Churn-Alerts-Tab%3F)** and **[**Ticket Reports**](https://help.latchel.com/churn-alerts-ticket-reports-review-tracker#What-do-you-find-in-a-Tickets-Tab%3F)**.** It presents total figures, significant monthly trends, and details of Ticket Reports linked to churn requests submitted within the three months preceding each churn alert.
+This section provides **a consolidated summary of the key data points from the preceding tabs**—[**Churn Alerts**](https://help.latchel.com/churn-alerts-ticket-reports-review-tracker#What-do-you-find-in-a-Churn-Alerts-Tab%3F)\*\* and [**Ticket Reports**](https://help.latchel.com/churn-alerts-ticket-reports-review-tracker#What-do-you-find-in-a-Tickets-Tab%3F).\*\* It presents total figures, significant monthly trends, and details of Ticket Reports linked to churn requests submitted within the three months preceding each churn alert.
 
 <Frame>
-  <img src="/images/Intg-98.png" alt="image-20251107-001233.png" />
+  ![image-20251107-001233.png](/images/Intg-98.png)
 </Frame>
 
 ### **Ticket Analysis by PM:**
 
-This tab includes a breakdown of tickets submitted by PM. Click the **+** icon next to a PM’s name to expand and see their submitted tickets. From column F onward you’ll see the total number of ticket issues submitted by each PM per month.
+This tab includes a breakdown of tickets submitted by PM. Click the **\+** icon next to a PM’s name to expand and see their submitted tickets. From column F onward you’ll see the total number of ticket issues submitted by each PM per month.
 
 <Frame>
-  <img src="/images/Intg-99.png" alt="image-20251107-001628.png" />
+  ![image-20251107-001628.png](/images/Intg-99.png)
 </Frame>
 
 <Note>
-**This tab don’t add new data to our regular monthly analysis** — It’s just a quick, consolidated view of the monthly data for your reference.
+  **This tab don’t add new data to our regular monthly analysis** — It’s just a quick, consolidated view of the monthly data for your reference.
 </Note>
 
 ### **Churn Analysis by PM:**
@@ -85,9 +86,9 @@ This tab contains two tables:
 2. An analysis table of the top churn reasons per month.
 
 <Frame>
-  <img src="/images/Intg-100.png" alt="image-20251107-001749.png" />
+  ![image-20251107-001749.png](/images/Intg-100.png)
 </Frame>
 
 <Note>
-**This tab don’t add new data to our regular monthly analysis** — It’s just a quick, consolidated view of the monthly data for your reference.
+  **This tab don’t add new data to our regular monthly analysis** — It’s just a quick, consolidated view of the monthly data for your reference.
 </Note>

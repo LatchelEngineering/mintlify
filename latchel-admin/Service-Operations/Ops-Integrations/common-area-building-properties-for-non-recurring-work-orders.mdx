@@ -1,11 +1,12 @@
 ---
 title: "Common Area/Building Properties for Non-Recurring Work Orders"
+sidebarTitle: "Overview"
 ---
 
 <Note>
-The purpose of this SOP is to outline the process for creating and managing "Common Area Properties" (e.g., whole buildings). **<u>These properties are needed for Property Managers who wish to submit Non-recurring work orders for an entire facility rather than a specific unit.</u>**
+  The purpose of this SOP is to outline the process for creating and managing "Common Area Properties" (e.g., whole buildings). **<u>These properties are needed for Property Managers who wish to submit Non-recurring work orders for an entire facility rather than a specific unit.</u>**
 
-This system combines manual data validation by the Ops Integration Team with automated property creation via n8n.
+  This system combines manual data validation by the Ops Integration Team with automated property creation via n8n.
 </Note>
 
 ## Overview
@@ -17,16 +18,16 @@ This system combines manual data validation by the Ops Integration Team with aut
 This tab captures the intake data submitted by CSMs via the Common Area/Building Properties for Non-Recurring Work Orders form in the [#common-area-building-requests](https://latchel.slack.com/archives/C0AQKDE8ESE) Slack channel. It serves as the queue where the Ops Integration Team validates data before the automation creates the property in Latchel.
 
 <Tip>
-New submissions trigger a notification in the Slack channel [#common-area-building-requests](https://latchel.slack.com/archives/C0AQKDE8ESE)
+  New submissions trigger a notification in the Slack channel [#common-area-building-requests](https://latchel.slack.com/archives/C0AQKDE8ESE)
 </Tip>
 
 <Frame>
-  <img src="/images/Intg-154.png" alt="image-20260403-145108.png" />
+  ![image-20260403-145108.png](/images/Intg-154.png)
 </Frame>
 
 | **Column** | **Description** |
 | --- | --- |
-| **A: ref_property_id** | **Action Item:** The Ops Integration Team must manually input this ID. It is obtained by running a query in **pgAdmin**. This ID is critical for ensuring the property successfully syncs back to the PMS. |
+| **A: ref\_property\_id** | **Action Item:** The Ops Integration Team must manually input this ID. It is obtained by running a query in **pgAdmin**. This ID is critical for ensuring the property successfully syncs back to the PMS. |
 | **B: PM Company ID** | **Action Item:** The unique ID of the PM Company in Latchel. The Ops Integration Team must manually extract this from the PM Company's profile URL in Latchel. |
 | **C: Status** | Status of the automation process.**Created:** The automation (n8n) successfully created the property via API.**Duplicated:** The property already exists in Latchel; the request is ignored. |
 | **D: Property URL** | Automatically populated. Once the property is created in Latchel, the system captures and logs the new Latchel Property ID here. |
@@ -38,5 +39,5 @@ New submissions trigger a notification in the Slack channel [#common-area-buildi
 | **R: Portfolio Name** | Optional. If the PM wants this added to an existing portfolio, the name is listed here. |
 
 <Note>
-**Note:** Columns J through R should be copied and pasted from the spreadsheet request received by the CSM. The Ops Integration Team is responsible for filling in **Column A** and **Column B** to enable the automation to proceed. For more information on this process, see the following job aid: [How: To Process Common Area/Building Property Requests for Non-Recurring Work Orders](https://help.latchel.com/how-to-process-common-area-building-property-requests-for-non-recurring-work-orders)
+  **Note:** Columns J through R should be copied and pasted from the spreadsheet request received by the CSM. The Ops Integration Team is responsible for filling in **Column A** and **Column B** to enable the automation to proceed. For more information on this process, see the following job aid: [How: To Process Common Area/Building Property Requests for Non-Recurring Work Orders](https://help.latchel.com/how-to-process-common-area-building-property-requests-for-non-recurring-work-orders)
 </Note>
