@@ -1,5 +1,6 @@
 ---
 title: "CPT (Property Maintenance Page)"
+groups: ["latchel"]
 ---
 
 | **Pipeline owner** | @Jose Leon S (Unlicensed) |
@@ -18,8 +19,7 @@ title: "CPT (Property Maintenance Page)"
 
 ### **Code Details**
 
-1. `code.gs`
-   Google App Script code responsible for interacting with Google Cloud's BigQuery to manage and retrieve data. Key functions include:
+1. `code.gs` Google App Script code responsible for interacting with Google Cloud's BigQuery to manage and retrieve data. Key functions include:
    1. `doGet()` - Entry point of a web app.
    2. `getPropertyManagers()`, `getPropertyIds(managerId)`, `getUnits(managerId, address)` - These functions send SQL-like queries to BigQuery, fetching distinct values from the 'data-analytics-warehouse' project, 'cpt\_team' dataset, 'weekly\_reports' table.
    3. `getFormData(unitId)` - Fetches and processes unit information from the 'unit\_information\_history' table.
@@ -28,8 +28,7 @@ title: "CPT (Property Maintenance Page)"
 2. `PropertyForm.html`
    1. This is an HTML script constructing a web form for property maintenance. This form interacts with the Google App Script functions defined in `code.gs`:
       1. Form Elements - Include drop-down menus for property manager, property, unit, plus ledger-able, has GL code, has lease, addendum, paid status, missed opportunities, others, has future GL code, future date GL code, month detect, has future lease, future lease date, need to be checked, note, updated at.
-      2. Javascript Functions - Manage form dynamics, data population, and call relevant GAS functions.
-      JavaScript functions include:
+      2. Javascript Functions - Manage form dynamics, data population, and call relevant GAS functions. JavaScript functions include:
    2. `loadManagers()` - Populates Property Managers.
    3. `populateManagerSelect(managers) and loadProperties()` - Fetches and populates Property Information.
    4. `loadUnits()` - Fetches and populates Unit Information.
@@ -343,7 +342,6 @@ parameterValue: { value: data.updated_at }
    throw error; // 
  }
 }
-
 ```
 
 ## PropertyForm.html
@@ -653,7 +651,5 @@ function submitForm() {
 </script>
 </body>
 </html>
-
-
 
 ```

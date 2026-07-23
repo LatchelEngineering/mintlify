@@ -1,13 +1,14 @@
 ---
 title: "Latchel Unsubscribed Logic (Multiplatform)"
+groups: ["latchel"]
 ---
 
 <Note>
-The following documentation is a set of rules applied in Salesforce, Rift, and Hubspot to standardize and unify the unsubscribe requests on different levels (emails, calls, and texts).
+  The following documentation is a set of rules applied in Salesforce, Rift, and Hubspot to standardize and unify the unsubscribe requests on different levels (emails, calls, and texts).
 </Note>
 
 <Check>
-All the explained logic is achieved using the flow [FL - SA - CO - Email Unsubscribe Logic](https://latchel1.lightning.force.com/builder_platform_interaction/flowBuilder.app?flowId=301US0000097ytVYAQ) and the validation rule [VR_SA_CO_Do_Not_Resubscribe](https://latchel1.lightning.force.com/lightning/setup/ObjectManager/Contact/ValidationRules/03dUS0000003XttYAE/view).
+  All the explained logic is achieved using the flow [FL - SA - CO - Email Unsubscribe Logic](https://latchel1.lightning.force.com/builder_platform_interaction/flowBuilder.app?flowId=301US0000097ytVYAQ) and the validation rule [VR\_SA\_CO\_Do\_Not\_Resubscribe](https://latchel1.lightning.force.com/lightning/setup/ObjectManager/Contact/ValidationRules/03dUS0000003XttYAE/view).
 </Check>
 
 ## Hubspot
@@ -34,7 +35,7 @@ Rift stages:
 Whenever an SDR receives a request to unsubscribe a Contact from emails, calls, or SMSs, they can manually check any of the Salesforce Contact fields (yellow box on the diagram). However, if the checkbox is already checked they won't be able to uncheck them (contact the Salesforce Admin for cases like this).
 
 <Frame caption="Multiplatform mapping">
-  <img src="/images/DA-32.png" alt="Multiplatform mapping" />
+  ![Multiplatform mapping](/images/DA-32.png)
 </Frame>
 
 ## Salesforce Contact fields

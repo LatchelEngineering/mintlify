@@ -1,19 +1,20 @@
 ---
 title: "Hubspot Active Customer Contacts List"
+groups: ["latchel"]
 ---
 
 <Note>
-Since Monday 12/18/2023, we have an automated Active Customer Contacts List in Hubspot named "LI - CS - CO - Active Customer Contacts (Automated)". It has all contacts from all current active customers and it will be updated once every day. From there, anyone can create additional filters and then being able to send bulk emails from Hubspot.
+  Since Monday 12/18/2023, we have an automated Active Customer Contacts List in Hubspot named "LI - CS - CO - Active Customer Contacts (Automated)". It has all contacts from all current active customers and it will be updated once every day. From there, anyone can create additional filters and then being able to send bulk emails from Hubspot.
 </Note>
 
 <Check>
-The list can be accessed through this link:
+  The list can be accessed through this link:
 
-[LI - CS - CO - Active Customer Contacts (Automated)](https://app.hubspot.com/contacts/23701847/lists/388/filters)
+  [LI - CS - CO - Active Customer Contacts (Automated)](https://app.hubspot.com/contacts/23701847/lists/388/filters)
 </Check>
 
 <Frame>
-  <img src="/images/DA-22.png" alt="LI - CS - CO - Active Customer Contacts (Automated) list" />
+  ![LI - CS - CO - Active Customer Contacts (Automated) list](/images/DA-22.png)
 </Frame>
 
 ## How does this work in the background:
@@ -21,7 +22,7 @@ The list can be accessed through this link:
 This list pulls the information from Salesforce using the built-in sync Hubspot plugin. In other words, this list relies on a set of fields that are only updated in Salesforce. These fields are updated once a day and the information can also be seen in the Contact record in Salesforce under the 'Customer Information' section.
 
 <Frame>
-  <img src="/images/DA-23.png" alt="Customer Information section in Salesforce" />
+  ![Customer Information section in Salesforce](/images/DA-23.png)
 </Frame>
 
 ## What fields can I use for additional filtering:
@@ -29,25 +30,25 @@ This list pulls the information from Salesforce using the built-in sync Hubspot 
 ### Mandatory filters:
 
 <Warning>
-- Email is known
-- Active Customer is any of Yes
+  - Email is known
+  - Active Customer is any of Yes
 </Warning>
 
 ### Optional fields for additional filtering:
 
 <Tip>
-- Console Unit Count: Number of active units (properties) that a customer is currently managing.
-- Contract Service Start Date: The commencement date of services as specified in the contract.
-- Base Product: Console Subscription most recent Base Product.
-- Addon: The most recent Addon unless the company has SaaS and Home Assistant contracted at the same time, in this case, Home Assistant is picked.
-- Integration Software: Current active Integration Software.
-- WOs Completed (last 30 days): Number of Work Orders completed in the last 30 days.
-- WOs Completed w/o PM intervention (last 30 days): Number of Work Orders completed without Property Manager intervention in the last 30 days.
-- Calls Handled by Latchel (last 30 days): Number of Work Orders completed without Property Manager intervention in the last 30 days.
-- 5-Star Resident Reviews (last 30 days): Number of 5-Star Resident Reviews in the last 30 days.
-- Service Time Tags: Category tags based on the service duration. Three possible tags based on the Contract Service Start Date: First 30 Days, First 90 Days, First 180 Days. A company can have more than one of these tags e.g. If a company has 20 days since the contract service start date, then it's in its first 30, 90, and 180 days at the same time.
-- Latchel User Id: Unique Latchel Id for the user. If the contact does not have a Latchel User Id, it means, the contact is not in the Latchel console.
-- Latchel Status: Latchel console user status (Yes=Active or No=inactive). Valid only for users in the Latchel console (contacts with Latchel User Id). Use 'Latchel User Id' to check if the contact is a user in the Console.
+  - Console Unit Count: Number of active units (properties) that a customer is currently managing.
+  - Contract Service Start Date: The commencement date of services as specified in the contract.
+  - Base Product: Console Subscription most recent Base Product.
+  - Addon: The most recent Addon unless the company has SaaS and Home Assistant contracted at the same time, in this case, Home Assistant is picked.
+  - Integration Software: Current active Integration Software.
+  - WOs Completed (last 30 days): Number of Work Orders completed in the last 30 days.
+  - WOs Completed w/o PM intervention (last 30 days): Number of Work Orders completed without Property Manager intervention in the last 30 days.
+  - Calls Handled by Latchel (last 30 days): Number of Work Orders completed without Property Manager intervention in the last 30 days.
+  - 5-Star Resident Reviews (last 30 days): Number of 5-Star Resident Reviews in the last 30 days.
+  - Service Time Tags: Category tags based on the service duration. Three possible tags based on the Contract Service Start Date: First 30 Days, First 90 Days, First 180 Days. A company can have more than one of these tags e.g. If a company has 20 days since the contract service start date, then it's in its first 30, 90, and 180 days at the same time.
+  - Latchel User Id: Unique Latchel Id for the user. If the contact does not have a Latchel User Id, it means, the contact is not in the Latchel console.
+  - Latchel Status: Latchel console user status (Yes=Active or No=inactive). Valid only for users in the Latchel console (contacts with Latchel User Id). Use 'Latchel User Id' to check if the contact is a user in the Console.
 </Tip>
 
 ## How to send mass emails from Hubspot using the list:

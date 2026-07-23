@@ -1,68 +1,69 @@
 ---
 title: "Website Form Notification Automation"
+groups: ["latchel"]
 ---
 
 <Note>
-The purpose of this tool is primarily to achieve the following objectives:
+  The purpose of this tool is primarily to achieve the following objectives:
 
-1. **Notify and Highlight New MQLs:**
-   - Instantly alert the team about new Marketing Qualified Leads (MQLs) and any other forms submitted on the website.
-   - Ensure visibility of new form submissions to the relevant team members.
-2. **Efficient Lead Distribution:**
-   - Facilitate the seamless and proper distribution of leads to Sales Development Representatives (SDRs).
-   - Assign leads to the appropriate SDR based on predefined criteria, ensuring a streamlined process.
-3. **Redirect Misplaced Form Content:**
-   - Identify and redirect incorrectly submitted form content to alternative communication channels.
-   - Minimize errors by rerouting misplaced information, maintaining the integrity of the data.
-4. **Duplicate Prevention in Salesforce:**
-   - Implement measures to prevent the creation of duplicate records in Salesforce.
-   - Enhance data accuracy by avoiding unnecessary duplication, resulting in a cleaner and more reliable database.
+  1. **Notify and Highlight New MQLs:**
+     - Instantly alert the team about new Marketing Qualified Leads (MQLs) and any other forms submitted on the website.
+     - Ensure visibility of new form submissions to the relevant team members.
+  2. **Efficient Lead Distribution:**
+     - Facilitate the seamless and proper distribution of leads to Sales Development Representatives (SDRs).
+     - Assign leads to the appropriate SDR based on predefined criteria, ensuring a streamlined process.
+  3. **Redirect Misplaced Form Content:**
+     - Identify and redirect incorrectly submitted form content to alternative communication channels.
+     - Minimize errors by rerouting misplaced information, maintaining the integrity of the data.
+  4. **Duplicate Prevention in Salesforce:**
+     - Implement measures to prevent the creation of duplicate records in Salesforce.
+     - Enhance data accuracy by avoiding unnecessary duplication, resulting in a cleaner and more reliable database.
 </Note>
 
 ## High-Level Process Flowchart:
 
 <Check>
-This flowchart illustrates the comprehensive process of the Website Form Notification Automation, a recurring task executed every 30 minutes. At specific intervals, such as 11:10, 11:40, 12:10, 12:40, etc the main automation script is triggered. This high-level overview captures the sequential steps involved in notifying the team of new Marketing Qualified Leads (MQLs), distributing leads to Sales Development Representatives (SDRs), redirecting misplaced form content, and preventing duplicate entries in Salesforce.
+  This flowchart illustrates the comprehensive process of the Website Form Notification Automation, a recurring task executed every 30 minutes. At specific intervals, such as 11:10, 11:40, 12:10, 12:40, etc the main automation script is triggered. This high-level overview captures the sequential steps involved in notifying the team of new Marketing Qualified Leads (MQLs), distributing leads to Sales Development Representatives (SDRs), redirecting misplaced form content, and preventing duplicate entries in Salesforce.
 
-All the submissions that belong to current active customers (Property Managers) are converted into Cases, the ones that are matched with active vendors and tenants are notified in [#sf-duplicate-check](https://app.slack.com/client/T2M052QDC/C062Z2ZQJ23), and finally all the remaining ones (successful submissions) are notified in [#mql-notifications](https://app.slack.com/client/T2M052QDC/C061AU2RS11).
+  All the submissions that belong to current active customers (Property Managers) are converted into Cases, the ones that are matched with active vendors and tenants are notified in [#sf-duplicate-check](https://app.slack.com/client/T2M052QDC/C062Z2ZQJ23), and finally all the remaining ones (successful submissions) are notified in [#mql-notifications](https://app.slack.com/client/T2M052QDC/C061AU2RS11).
 
-Why do we notify in [#sf-duplicate-check](https://app.slack.com/client/T2M052QDC/C062Z2ZQJ23)? Because, by the time the automation runs, the Account and Contact are already created in Salesforce, what we do is delete those records in Salesforce automatically, and this channel is the only record left that a vendor or tenant filled out a form. One of these submissions may be legit, so it's important they are also checked.
+  Why do we notify in [#sf-duplicate-check](https://app.slack.com/client/T2M052QDC/C062Z2ZQJ23)? Because, by the time the automation runs, the Account and Contact are already created in Salesforce, what we do is delete those records in Salesforce automatically, and this channel is the only record left that a vendor or tenant filled out a form. One of these submissions may be legit, so it's important they are also checked.
 </Check>
 
 <Frame>
-  <img src="/images/DA-17.png" alt="Main website form notifications flowchart" />
+  ![Main website form notifications flowchart](/images/DA-17.png)
 </Frame>
 
-## Salesforce Lead Check + Round Robin Assignment Flowchart
+## Salesforce Lead Check \+ Round Robin Assignment Flowchart
 
 <Check>
-This detailed flowchart zooms in on a specific aspect of the main process – the Salesforce Lead Check + Round Robin Assignment. Triggered as part of the broader automation, this detailed workflow checks on lead information within Salesforce. It outlines the steps involved in querying Salesforce for lead details and implementing a Round Robin assignment mechanism for lead distribution among SDRs.
+  This detailed flowchart zooms in on a specific aspect of the main process – the Salesforce Lead Check \+ Round Robin Assignment. Triggered as part of the broader automation, this detailed workflow checks on lead information within Salesforce. It outlines the steps involved in querying Salesforce for lead details and implementing a Round Robin assignment mechanism for lead distribution among SDRs.
 </Check>
 
 <Frame>
-  <img src="/images/DA-18.png" alt="Salesforce Check + Round Robin Logic" />
+  ![Salesforce Check \+ Round Robin Logic](/images/DA-18.png)
 </Frame>
 
 ## SDR Round Robin Process Explanation
 
 <Check>
-The SDR Round Robin Process operates based on the Rating value, leveraging a mechanism to ensure a fair and balanced distribution of leads among Sales Development Representatives (SDRs). In this process, we have established four distinct groups, each corresponding to a specific tier based on the lead's Rating and an additional fifth group designated for submissions where the contact is not located in Salesforce (Hubspot >Salesforce sync issue).
+  The SDR Round Robin Process operates based on the Rating value, leveraging a mechanism to ensure a fair and balanced distribution of leads among Sales Development Representatives (SDRs). In this process, we have established four distinct groups, each corresponding to a specific tier based on the lead's Rating and an additional fifth group designated for submissions where the contact is not located in Salesforce (Hubspot \>Salesforce sync issue).
 
-For a detailed overview of lead distribution results, please refer to the following spreadsheet: [2023-10-11 Website Forms Last IDs - Google Sheets](https://docs.google.com/spreadsheets/d/198969sg8Xses_X-GN8B1n2PJR0_PC2SaxZD5DI2-aQc/edit#gid=1035354374)
+  For a detailed overview of lead distribution results, please refer to the following spreadsheet: [2023-10-11 Website Forms Last IDs - Google Sheets](https://docs.google.com/spreadsheets/d/198969sg8Xses_X-GN8B1n2PJR0_PC2SaxZD5DI2-aQc/edit#gid=1035354374)
 </Check>
 
 <Frame>
-  <img src="/images/DA-19.png" alt="SDR Round Robin process detail" />
+  ![SDR Round Robin process detail](/images/DA-19.png)
 </Frame>
 
 ## Successful Form Submissions Logging Spreadsheet
 
 <Check>
-Starting December 13th, 2023, we've implemented a system to log every successful form submission. Successful submissions are those not linked to an active customer, vendor, or tenant.
+  Starting December 13th, 2023, we've implemented a system to log every successful form submission. Successful submissions are those not linked to an active customer, vendor, or tenant.
 
-The log captures essential details, including Submission ID, Submission Timestamp, Form Name, Unit Count Range, Salesforce Account ID, and Salesforce Account URL. To review the recorded information, please refer to the following spreadsheet: [2023-12-13 Successful Form Submissions Record - Google Sheets](https://docs.google.com/spreadsheets/d/1p8Z-jbFkIMN-u73bbqnLGjLlYJ2WBbBqrEW3Mu55uC4/edit#gid=0)
+  The log captures essential details, including Submission ID, Submission Timestamp, Form Name, Unit Count Range, Salesforce Account ID, and Salesforce Account URL. To review the recorded information, please refer to the following spreadsheet: [2023-12-13 Successful Form Submissions Record - Google Sheets](https://docs.google.com/spreadsheets/d/1p8Z-jbFkIMN-u73bbqnLGjLlYJ2WBbBqrEW3Mu55uC4/edit#gid=0)
 </Check>
 
 <Frame>
-  <img src="/images/DA-20.png" alt="Successful form submissions logging spreadsheet" />
+  ![Successful form submissions logging spreadsheet](/images/DA-20.png)
 </Frame>

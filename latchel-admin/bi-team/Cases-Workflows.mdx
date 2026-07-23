@@ -1,14 +1,15 @@
 ---
 title: "Cases - Workflows"
+groups: ["latchel"]
 ---
 
 <Note>
-**Purpose of this document**: The purpose of this article is to explain the Workflows that are generating an impact on the Cases object on Salesforce.
+  **Purpose of this document**: The purpose of this article is to explain the Workflows that are generating an impact on the Cases object on Salesforce.
 </Note>
 
 | RULE NAME | DESCRIPTION | OBJECT |
 | --- | --- | --- |
-| Priority to High | Change the Case Priority to ‘High’ based on the CRMM ( Greater than $4999). The Case field ‘Total CMRR’ reflects the number setted on the Customer field named ‘Total CMRR’. | Case |
+| Priority to High | Change the Case Priority to ‘High’ based on the CRMM ( Greater than \$4999). The Case field ‘Total CMRR’ reflects the number setted on the Customer field named ‘Total CMRR’. | Case |
 | WR - Email Message Update | Any update on the Email Message object will trigger an update on the field "Last Modified Date". | Email Message |
 | WR - New Email Drafted | Workflow Rule that changes the Case status to "Open" WHEN a new Email Message is being drafted AND has the "Pending" Status. | Email Message |
 | WR - New Email Received | Workflow Rule that updates the Case status from "Closed" OR "Pending" to Open WHEN a new Email Message is received. | Email Message |
