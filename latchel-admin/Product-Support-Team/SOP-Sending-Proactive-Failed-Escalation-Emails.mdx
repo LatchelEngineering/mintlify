@@ -1,5 +1,6 @@
 ---
-title: "SOP: Sending Proactive Failed Escalation Emails   "
+title: "SOP: Sending Proactive Failed Escalation Emails"
+groups: ["latchel"]
 ---
 
 ## **Context**
@@ -81,12 +82,11 @@ Use the failure type to choose the right proactive email template:
 
 ### **1. Escalation Contacts Unreachable**
 
-**Subject:** Action Needed: Escalation Contacts Unreachable for {{PM\_Company\_Name}}
+**Subject:** Action Needed: Escalation Contacts Unreachable for ((PM\_Company\_Name))
 
-**To:** ALL PM Users\
-**CC:** {{CSM\_Name}}
+**To:** ALL PM Users<br />**CC:** ((CSM\_Name))
 
-Hello {{PM\_FirstName}},
+Hello ((PM\_FirstName)),
 
 I hope this message finds you well. We are writing to inform you of a potential issue with your **emergency escalation contacts**. During recent attempts, we were unable to reach any of the contacts listed in your escalation contacts list. This could lead to delays in addressing emergency work orders that may be causing property damage.
 
@@ -103,27 +103,23 @@ To ensure seamless communication and timely service, we recommend reviewing and 
 5. Update your Escalation Contacts List and Failed Escalation Email List
 6. For multiple emails, separate with commas: `test@gmail.com, test1@gmail.com`
 
-**Recent Work Order Example:**\
-{{Job\_URL}}, {{Property\_Address}}
+**Recent Work Order Example:**<br />((Job\_URL)), ((Property\_Address))
 
-**Unresponsive Escalation Contacts:**\
-{{Escalation\_Contacts}}
+**Unresponsive Escalation Contacts:**<br />((Escalation\_Contacts))
 
 Please reply to this email if you require assistance with this update or if you have any questions.
 
-Thank you for your attention to this matter,\
-**Latchel Product Support Team**
+Thank you for your attention to this matter,<br />**Latchel Product Support Team**
 
 ---
 
 ## **2. Primary Technician Unresponsive (On-Call)**
 
-**Subject:** Action Needed: Primary Technician On-Call Unresponsive for {{PM\_Company\_Name}}
+**Subject:** Action Needed: Primary Technician On-Call Unresponsive for ((PM\_Company\_Name))
 
-**To:** ALL PM Users\
-**CC:** {{CSM\_Name}}
+**To:** ALL PM Users<br />**CC:** ((CSM\_Name))
 
-Hello {{PM\_FirstName}},
+Hello ((PM\_FirstName)),
 
 We are reaching out to notify you of a situation concerning your **primary technician on-call**. It appears that alerts are not being acknowledged, which could impact the timely resolution of emergency issues.
 
@@ -137,55 +133,47 @@ To prevent any service disruptions, we suggest verifying the availability and co
 4. Verify/Update a backup contact in case the primary technicians can’t be reached
 5. Click **Create** to finalize the setup
 
-**Recent Work Order Example:**\
-{{Job\_URL}}, {{Property\_Address}}
+**Recent Work Order Example:**<br />((Job\_URL)), ((Property\_Address))
 
-**Unresponsive Technician:**\
-{{Technician\_Name}}, {{Technician\_Number}}
+**Unresponsive Technician:**<br />((Technician\_Name)), ((Technician\_Number))
 
 Please reply to this email if you require assistance with this update or if you have any questions.
 
-Thank you for your attention to this matter,\
-**Latchel Product Support Team**
+Thank you for your attention to this matter,<br />**Latchel Product Support Team**
 
 ---
 
 ## **3. Pre-Dispatch Contacts Unresponsive**
 
-**Subject:** Action Needed: Pre-Dispatch Contacts Unresponsive for {{PM\_Company\_Name}}
+**Subject:** Action Needed: Pre-Dispatch Contacts Unresponsive for ((PM\_Company\_Name))
 
-**To:** ALL PM Users\
-**CC:** {{CSM\_Name}}
+**To:** ALL PM Users<br />**CC:** ((CSM\_Name))
 
-Hello {{PM\_FirstName}},
+Hello ((PM\_FirstName)),
 
 We wanted to bring to your attention an issue regarding your **pre-dispatch contacts**. It seems that our calls are not being acknowledged, which may delay the dispatch process.
 
 To maintain efficient service, we advise reviewing your pre-dispatch contact list to ensure all information is accurate and up-to-date. Our team is ready to assist you with this review and make any necessary updates.
 
-**Recent Work Order Example:**\
-{{Job\_URL}}, {{Property\_Address}}
+**Recent Work Order Example:**<br />((Job\_URL)), ((Property\_Address))
 
-**Unresponsive Pre-Dispatch Contacts:**\
-{{PreDispatch\_Contacts}}
+**Unresponsive Pre-Dispatch Contacts:**<br />((PreDispatch\_Contacts))
 
 [<u>More Info on Pre-Dispatch Contacts Here</u>](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Send-Latchel-Pre-Dispatch-Instructions#setting-up-pre-dispatch-instructions-with-latchel "https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Send-Latchel-Pre-Dispatch-Instructions#setting-up-pre-dispatch-instructions-with-latchel")
 
 Please reply back to this email if these contacts have changed.
 
-Thank you for your attention to this matter,\
-**Latchel Product Support Team**
+Thank you for your attention to this matter,<br />**Latchel Product Support Team**
 
 ---
 
 ## **4. Preferred Service Provider Unresponsive**
 
-**Subject:** Action Needed: Preferred Service Providers Unresponsive for {{PM\_Company\_Name}}
+**Subject:** Action Needed: Preferred Service Providers Unresponsive for ((PM\_Company\_Name))
 
-**To:** ALL PM Users\
-**CC:** {{CSM\_Name}}
+**To:** ALL PM Users<br />**CC:** ((CSM\_Name))
 
-Hello {{PM\_FirstName}},
+Hello ((PM\_FirstName)),
 
 We are writing to inform you of an issue with your **preferred service providers**. Our attempts to contact them have gone unanswered, which could affect service delivery.
 
@@ -197,13 +185,10 @@ To avoid any potential service interruptions, we recommend verifying the contact
 2. Edit contact details by tapping in the phone number or email address box
 3. Add new information and click **Save**
 
-**Recent Work Order Example:**\
-{{Job\_URL}}, {{Property\_Address}}
+**Recent Work Order Example:**<br />((Job\_URL)), ((Property\_Address))
 
-**Unresponsive Service Providers:**\
-{{Service\_Provider\_Contacts}}
+**Unresponsive Service Providers:**<br />((Service\_Provider\_Contacts))
 
 Please reply to this email if you require assistance with this update or if you have any questions.
 
-Thank you for your understanding and cooperation,\
-**Latchel Product Support Team**
+Thank you for your understanding and cooperation,<br />**Latchel Product Support Team**
