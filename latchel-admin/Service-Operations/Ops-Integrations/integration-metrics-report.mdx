@@ -1,9 +1,10 @@
 ---
 title: "Integration Metrics Report"
+groups: ["latchel"]
 ---
 
 <Note>
-The purpose of this SOP is to provide a clear and detailed overview of the Integration Metrics Report tab. This document outlines how the report tracks and summarizes integration issues, monitors team performance, and provides actionable insights for stakeholders on a weekly basis.
+  The purpose of this SOP is to provide a clear and detailed overview of the Integration Metrics Report tab. This document outlines how the report tracks and summarizes integration issues, monitors team performance, and provides actionable insights for stakeholders on a weekly basis.
 </Note>
 
 ## **Overview**
@@ -21,7 +22,7 @@ This tab provides a comprehensive view of ongoing integration issues and the per
 This section displays a live list of all Property Managers currently experiencing an integration issue.
 
 <Frame>
-  <img src="/images/Intg-30.png" alt="image-20251113-200121.png" />
+  ![image-20251113-200121.png](/images/Intg-30.png)
 </Frame>
 
 | **Column** | **Description** |
@@ -33,7 +34,7 @@ This section displays a live list of all Property Managers currently experiencin
 | **E: Last Import Date** | The last date a successful data sync occurred. |
 
 <Note>
-**NOTE:** Currently, the Integration Metrics Report tracks only **"Integration hasn’t run"** issues.
+  **NOTE:** Currently, the Integration Metrics Report tracks only **"Integration hasn’t run"** issues.
 </Note>
 
 ---
@@ -43,7 +44,7 @@ This section displays a live list of all Property Managers currently experiencin
 This section tracks the daily performance and workload of the **Ops Integration Team (OIT)** regarding 4-day and 7-day integration triggers.
 
 <Frame>
-  <img src="/images/Intg-31.png" alt="image-20251113-200448.png" />
+  ![image-20251113-200448.png](/images/Intg-31.png)
 </Frame>
 
 | **Column** | **Description** |
@@ -61,18 +62,18 @@ This section tracks the daily performance and workload of the **Ops Integration 
 
 #### **3. PST (Daily results)**
 
-This section tracks the daily performance and workload of the **PS Team (PST)**, focusing on issues that have been inactive for more than seven days (+7 days).
+This section tracks the daily performance and workload of the **PS Team (PST)**, focusing on issues that have been inactive for more than seven days (\+7 days).
 
 <Frame>
-  <img src="/images/Intg-32.png" alt="image-20251113-200649.png" />
+  ![image-20251113-200649.png](/images/Intg-32.png)
 </Frame>
 
 | **Column** | **Description** |
 | --- | --- |
-| **N: Total +7 Day Triggers** | The total number of issues that have reached the "+7 day" inactive status. |
-| **O: # +7 Day Active Triggers** | The current number of "+7 day" issues that are still unresolved. |
-| **P: # of +7 day triggers resolved (before 72 hours)** | The number of "+7 day" issues that were resolved within 72 hours of being flagged. |
-| **Q: # of +7 day triggers not resolved (after 72 hours)** | The number of "+7 day" issues that have remained unresolved for more than 72 hours. |
+| **N: Total \+7 Day Triggers** | The total number of issues that have reached the "\+7 day" inactive status. |
+| **O: # \+7 Day Active Triggers** | The current number of "\+7 day" issues that are still unresolved. |
+| **P: # of \+7 day triggers resolved (before 72 hours)** | The number of "\+7 day" issues that were resolved within 72 hours of being flagged. |
+| **Q: # of \+7 day triggers not resolved (after 72 hours)** | The number of "\+7 day" issues that have remained unresolved for more than 72 hours. |
 
 ---
 
@@ -81,7 +82,7 @@ This section tracks the daily performance and workload of the **PS Team (PST)**,
 This section provides a simple, weekly summary of the total output of each team. **<u>This data is updated every Sunday.</u>**
 
 <Frame>
-  <img src="/images/Intg-33.png" alt="image-20251113-200806.png" />
+  ![image-20251113-200806.png](/images/Intg-33.png)
 </Frame>
 
 | **Column** | **Description** |
@@ -96,46 +97,43 @@ This section provides a simple, weekly summary of the total output of each team.
 This section offers a historical view of team performance, allowing for trend analysis and performance tracking over time.
 
 <Frame>
-  <img src="/images/Intg-34.png" alt="image-20251113-200917.png" />
+  ![image-20251113-200917.png](/images/Intg-34.png)
 </Frame>
 
 | **Column** | **Description** |
 | --- | --- |
-| **X-AE (etc.): Issues resolved as of [Date]** | A running log, organized by week, showing the total number of issues resolved by each team. Each date column is subdivided to show the count for **PST** and **OIT** respectively. |
+| **X-AE (etc.): Issues resolved as of \[Date\]** | A running log, organized by week, showing the total number of issues resolved by each team. Each date column is subdivided to show the count for **PST** and **OIT** respectively. |
 
 <Tip>
-These metrics are informational and are intended to keep stakeholders updated on each team’s productivity and issue resolution.
+  These metrics are informational and are intended to keep stakeholders updated on each team’s productivity and issue resolution.
 </Tip>
 
 <Accordion title="Recurring Integration Alerts Automation Overview">
-<Note>
-The **Recurring Integration Alerts** is an automated monitoring tool designed to identify property management companies experiencing recurring sync issues. It ensures that frequent integration failures are escalated to the appropriate team members for high-priority resolution.
-</Note>
+  <Note>
+    The **Recurring Integration Alerts** is an automated monitoring tool designed to identify property management companies experiencing recurring sync issues. It ensures that frequent integration failures are escalated to the appropriate team members for high-priority resolution.
+  </Note>
 
-#### **How the Process Works:**
+  #### **How the Process Works:**
 
-1. **Data Archiving & Record Keeping:**
-Each time the process runs, the system captures the latest performance data from the "Integration Metrics" dashboard and saves it into a permanent tracking base. It is designed to recognize and skip duplicate entries, ensuring the historical record remains clean and accurate.
-2. **Threshold Monitoring (The "3-Strike" Rule):**
-The system analyzes the activity for the current month. If a specific company is flagged for integration issues **three or more times** within the same month, they are automatically categorized as a "Systemic Case." This helps the team distinguish between isolated glitches and chronic problems that require a strategic sync.
-3. **Automated Slack Alerts:**
-Once a systemic issue is confirmed, the system sends a real-time notification to the [#ps-escalation](https://latchel.slack.com/archives/C08475CCBGR) Slack channel. This alert includes:
+  1. **Data Archiving & Record Keeping:** Each time the process runs, the system captures the latest performance data from the "Integration Metrics" dashboard and saves it into a permanent tracking base. It is designed to recognize and skip duplicate entries, ensuring the historical record remains clean and accurate.
+  2. **Threshold Monitoring (The "3-Strike" Rule):** The system analyzes the activity for the current month. If a specific company is flagged for integration issues **three or more times** within the same month, they are automatically categorized as a "Systemic Case." This helps the team distinguish between isolated glitches and chronic problems that require a strategic sync.
+  3. **Automated Slack Alerts:** Once a systemic issue is confirmed, the system sends a real-time notification to the [#ps-escalation](https://latchel.slack.com/archives/C08475CCBGR) Slack channel. This alert includes:
+
   - The name of the affected company.
   - The assigned CSM.
   - Clear instructions and links to the next steps for resolution.
-4. **Centralized Logging & Prevention of Duplicate Alerts:**
-To maintain a professional communication flow, the script logs every alert it sends. It checks this log before sending any new messages to ensure that a company is only alerted **once per month**, preventing the team from receiving redundant notifications for the same issue.
-5. **Accountability & Follow-up:**
-All alerts are recorded in a "[**Recurring Integration Alerts** **Log**](https://docs.google.com/spreadsheets/d/1lqN_yI3vZUehb9BZylCvXK0KU-PFfpJCkDvw1_sgWug/edit?gid=1950306127#gid=1950306127)," which serves as the primary tracking sheet for the team to document outcomes, record alert URLs, and confirm when the systemic issue has been resolved.
 
-The **PS Support team** is responsible for the manual follow-up of each entry to ensure the loop is closed.
+  4. **Centralized Logging & Prevention of Duplicate Alerts:** To maintain a professional communication flow, the script logs every alert it sends. It checks this log before sending any new messages to ensure that a company is only alerted **once per month**, preventing the team from receiving redundant notifications for the same issue.
+  5. **Accountability & Follow-up:** All alerts are recorded in a "[**Recurring Integration Alerts** **Log**](https://docs.google.com/spreadsheets/d/1lqN_yI3vZUehb9BZylCvXK0KU-PFfpJCkDvw1_sgWug/edit?gid=1950306127#gid=1950306127)," which serves as the primary tracking sheet for the team to document outcomes, record alert URLs, and confirm when the systemic issue has been resolved.
 
-**For PS Support:**
+  The **PS Support team** is responsible for the manual follow-up of each entry to ensure the loop is closed.
 
-- **Update the ASM URL (Column F):** Manually paste the link to the corresponding URL case record.
-- **Select the Outcome (Column G):** Choose the final status of the intervention from the predefined dropdown menu. The available options are:
-  - **PS Resolved (Latchel Sync Running):** Issues were fixed directly by Product Support.
-  - **PM Unresponsive (Escalated to CSM):** The Property Manager did not respond to Support, requiring escalation.
-  - **CSM Successful (Latchel Sync Running):** The CSM successfully coordinated with the client to restore the sync.
-  - **CSM Unsuccessful (PM Unresponsive):** Despite escalation, the Property Manager remains unresponsive.
+  **For PS Support:**
+
+  - **Update the ASM URL (Column F):** Manually paste the link to the corresponding URL case record.
+  - **Select the Outcome (Column G):** Choose the final status of the intervention from the predefined dropdown menu. The available options are:
+    - **PS Resolved (Latchel Sync Running):** Issues were fixed directly by Product Support.
+    - **PM Unresponsive (Escalated to CSM):** The Property Manager did not respond to Support, requiring escalation.
+    - **CSM Successful (Latchel Sync Running):** The CSM successfully coordinated with the client to restore the sync.
+    - **CSM Unsuccessful (PM Unresponsive):** Despite escalation, the Property Manager remains unresponsive.
 </Accordion>

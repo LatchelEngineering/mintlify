@@ -1,5 +1,6 @@
 ---
 title: "How to: Audit Failed Escalations (Agent Feedback)"
+groups: ["latchel"]
 ---
 
 ## Purpose
@@ -70,13 +71,12 @@ title: "How to: Audit Failed Escalations (Agent Feedback)"
    2. Compare this list against the call log sequence to see if the agent:
       1. Dialed a number not listed.
       2. Skipped one or more contacts in the required order.
-
-1. **Analyze Call Log Activity**
+5. **Analyze Call Log Activity**
    1. Review the detailed call activity:
       1. **Who was called** and \*\*in what order.\*\*
       2. Whether the call was answered, went to voicemail, or failed.
       3. Any notes logged by the agent (e.g., “PM requested direct call,” “Number disconnected,” “Blocked from calling,” etc.).
-2. **Determine Validity of the Exception**
+6. **Determine Validity of the Exception**
    1. Ask: Was there a valid reason for calling this number or breaking the escalation order?
       1. Common valid reasons include:
          1. **PM Request** – Property Manager instructed Ops to call a specific contact outside the standard list.
@@ -85,7 +85,7 @@ title: "How to: Audit Failed Escalations (Agent Feedback)"
          4. **SP Preference** – Service provider supplied an alternate callback number not listed in Latchel.
          5. **Pre-Dispatch Instructions (PD)** – Call order adjusted based on pre-dispatch guidance.
          6. **Sourcing Externally** – Call made to an external/unlisted service provider during the sourcing process.
-3. Verify whether the system flag is correct (i.e., was the wrong number called OR was the call order incorrect?).
+7. Verify whether the system flag is correct (i.e., was the wrong number called OR was the call order incorrect?).
 
 #### **3. Complete the Audit Fields**
 
@@ -108,7 +108,7 @@ Fill out **Columns Y–AD** for each flagged instance:
    - **Unlisted PM number** -  Call made to a PM number not listed in Latchel.
    - **Unlisted Owner** - Call made to an owner number not listed in Latchel.
    - **Valid EEC & Rotation**- The call sequence aligns with the Contact rotation. If an EEC is listed, this is sufficient to validate the contact, even if the EEC is not registered in the contact rotation.
-   - **Correct contact sequence (After hours)**  **-**Contact order adjusted due to after-hours availability.
+   - **Correct contact sequence (After hours)**  \*\*-\*\*Contact order adjusted due to after-hours availability.
    - **VM Call back request**- Call made to return a voicemail callback request.
    - **EEC list was updated after this interaction** - The EEC list was modified after the call was placed.
    - **AI Incorrect order**- The agent followed the AI-suggested (Who Ya Gonna Call) sequence, which was itself incorrect.

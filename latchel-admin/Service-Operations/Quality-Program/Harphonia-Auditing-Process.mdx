@@ -1,5 +1,6 @@
 ---
 title: "Harphonia Auditing Process"
+groups: ["latchel"]
 ---
 
 ### Purpose
@@ -45,11 +46,11 @@ In addition to the random sample, two new targeted triggers now flag potential *
    1. Audits are performed on a first-come, first-served basis. React with 👀 emoji and begin the audit.
 3. **Identify the Audit Type**
 4. Identify the audit type from the Slack notification and perform the next steps based on the notification audit type.
-5. 🔵 **Call Audit** — notification says "Harphonia Call Completed" 
+5. 🔵 **Call Audit** — notification says "Harphonia Call Completed"
    <Frame>
      ![QP 14](/images/QP-14.png)
    </Frame>
-6. 🟠 **Work Order Audit** — notification says "Harphonia Web Chat - Property Damage Flagged" 
+6. 🟠 **Work Order Audit** — notification says "Harphonia Web Chat - Property Damage Flagged"
    <Frame>
      ![QP 15](/images/QP-15.png)
    </Frame>
@@ -69,7 +70,7 @@ Audits appear in [#harphonia-audits](https://latchel.slack.com/archives/C0A3QSYM
       - **Flag as a missed detection if:** the case was de-escalated solely because the resident said the system was "off," no probing questions were asked about breaker status, or malfunction signs were present but the case was still de-escalated.
       - **Correct handling looks like:** agent/AI asked how the system was turned off, asked about malfunction signs, asked resident to confirm the breaker is off, and followed PM's intake settings to classify severity. If PD/EH criteria were met but PM's settings classified as non-emergency, agent escalated to PM's Escalation Contacts per the standard PD/EH process.
   - Situations that make the home unlivable: no heat in winter, no running water, no power, sewage backup
-- **NEW: Web Form PD/EH Trigger** — Web form submissions where a non-EMG work order is created but the intake conversation implies potential PD/EH. Auditors must open the WO and confirm the correct severity was selected based on the PM's Harphonia rules. 
+- **NEW: Web Form PD/EH Trigger** — Web form submissions where a non-EMG work order is created but the intake conversation implies potential PD/EH. Auditors must open the WO and confirm the correct severity was selected based on the PM's Harphonia rules.
   <Frame>
     ![QP 16](/images/QP-16.png)
   </Frame>
@@ -93,7 +94,7 @@ Audits appear in [#harphonia-audits](https://latchel.slack.com/archives/C0A3QSYM
    - If the call needs a callback due to missing resident info, share the phone number with the CC team by adding it to the corresponding callback request in [#cc-tasks](https://latchel.slack.com/archives/C0A4BGPN1D2).
 2. **Call Review & Evaluation - Audit Form Questions**<br />Review the transcript and call summary for the full call; listen to the audio only if needed. Complete the following audit form questions:
    - **NEW: Did AI select the correct outcome based on PM settings?** If no, take the appropriate action (escalate the WO to an EMG or create an On-Call Alert) and provide critical bug feedback in the Critical Bugs field. The Critical Bugs field remains available even when the answer is yes, so use it for any critical bug or major system failure identified during the audit.
-   - If this was a resident following up on an existing request, confirm that Harphonia provided the correct information and/or took the correct action. If not, report in the critical bug field. 
+   - If this was a resident following up on an existing request, confirm that Harphonia provided the correct information and/or took the correct action. If not, report in the critical bug field.
    - Did you identify any critical bugs or major system failures that require an immediate fix?
      - Flag as **CRITICAL** if Harphonia: mishandles emergencies, blocks work orders, resolves too early, blocks humans from speaking to an agent, or ignores critical context.<br /><br />**Note:** If Harphonia advises the resident to follow a process that the team believes is not documented in the SOP, this is also considered a **critical bug** and must be submitted in the Critical Bugs field.
    - Aside from critical bugs, what aspects could be improved to enhance the experience?
