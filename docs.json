@@ -652,40 +652,90 @@
                   {
                     "group": "Ops Integrations",
                     "pages": [
-                      "latchel-admin/Service-Operations/Ops-Integrations/churn-alerts-ticket-reports-review-tracker",
-                      "latchel-admin/Service-Operations/Ops-Integrations/common-area-building-properties-for-non-recurring-work-orders",
-                      "latchel-admin/Service-Operations/Ops-Integrations/emergency-contact-and-pre-dispatch-reminder-dashboard",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-the-automated-seasonal-reminders-process-works-for-pre-dispatch-and-emergency-contact-list-settings",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-the-integration-health-monitoring-process-works-for-internally-flagged-pms",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-the-integration-health-monitoring-process-works",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-the-latchel-intake-monitoring-process-works",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-the-recurring-work-order-request-process-works-beta",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-access-the-teamviewer-remote-server",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-assist-a-property-manager-with-resending-an-account-activation-link-in-appfolio",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-conduct-the-monthly-review-for-the-churn-alerts-and-tickets-reports",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-enable-automatic-cloud-sync-for-a-clients-account",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-escalate-a-property-manager-at-10-days-below-target",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-grant-report-permissions-to-latchel-in-appfolio",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-log-in-to-the-ops-integration-productivity-tracker",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-proceed-if-we-receive-a-pm-removal-issue-request",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-proceed-when-the-latchel-sync-request-is-received",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-proceed-when-the-property-sync-exemption-request-is-received",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-process-common-area-building-property-requests-for-non-recurring-work-orders",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-request-assistance-from-the-customer-success-manager",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-resolve-appfolio-work-order-export-failures",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-submit-a-new-project-request",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-submit-a-new-task-category-request",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-submit-a-time-correction-request",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-troubleshoot-a-sync-on-the-latchel-cloud-device",
-                      "latchel-admin/Service-Operations/Ops-Integrations/how-to-update-ledger-report-access",
-                      "latchel-admin/Service-Operations/Ops-Integrations/integration-health-metrics-dashboard",
-                      "latchel-admin/Service-Operations/Ops-Integrations/integration-metrics-for-internally-flagged-pms",
-                      "latchel-admin/Service-Operations/Ops-Integrations/integration-metrics-report",
-                      "latchel-admin/Service-Operations/Ops-Integrations/latchel-intake-monitoring-dashboard",
-                      "latchel-admin/Service-Operations/Ops-Integrations/operations-integration-department-project-tracker",
-                      "latchel-admin/Service-Operations/Ops-Integrations/ops-integration-productivity-tracker",
                       "latchel-admin/Service-Operations/Ops-Integrations/ops-integrations-home",
-                      "latchel-admin/Service-Operations/Ops-Integrations/recurring-work-orders-system"
+                      {
+                        "group": "Ops Integration Productivity Tracker",
+                        "pages": [
+                          "latchel-admin/Service-Operations/Ops-Integrations/ops-integration-productivity-tracker",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-log-in-to-the-ops-integration-productivity-tracker",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-submit-a-time-correction-request",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-submit-a-new-task-category-request"
+                        ]
+                      },
+                      {
+                        "group": "Operations Integration Department - Project tracker",
+                        "pages": [
+                          "latchel-admin/Service-Operations/Ops-Integrations/operations-integration-department-project-tracker",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-submit-a-new-project-request"
+                        ]
+                      },
+                      {
+                        "group": "Integration Health Metrics Dashboard",
+                        "pages": [
+                          "latchel-admin/Service-Operations/Ops-Integrations/integration-health-metrics-dashboard",
+                          {
+                            "group": "How: the Integration Health monitoring process works",
+                            "pages": [
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-the-integration-health-monitoring-process-works-for-internally-flagged-pms",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-request-assistance-from-the-customer-success-manager",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-proceed-if-we-receive-a-pm-removal-issue-request",
+                              "latchel-admin/Service-Operations/Ops-Integrations/integration-metrics-report",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-update-ledger-report-access"
+                            ]
+                          },
+                          {
+                            "group": "How: the Integration Health monitoring process works for Internally Flagged PMs",
+                            "pages": [
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-the-integration-health-monitoring-process-works",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-proceed-when-the-latchel-sync-request-is-received",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-access-the-teamviewer-remote-server",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-enable-automatic-cloud-sync-for-a-clients-account",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-proceed-when-the-property-sync-exemption-request-is-received",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-troubleshoot-a-sync-on-the-latchel-cloud-device",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-grant-report-permissions-to-latchel-in-appfolio",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-assist-a-property-manager-with-resending-an-account-activation-link-in-appfolio",
+                              "latchel-admin/Service-Operations/Ops-Integrations/integration-metrics-for-internally-flagged-pms",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-resolve-appfolio-work-order-export-failures"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Emergency Contact and Pre-Dispatch Reminder Dashboard",
+                        "pages": [
+                          "latchel-admin/Service-Operations/Ops-Integrations/emergency-contact-and-pre-dispatch-reminder-dashboard",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-the-automated-seasonal-reminders-process-works-for-pre-dispatch-and-emergency-contact-list-settings"
+                        ]
+                      },
+                      {
+                        "group": "Common Area/Building Properties for Non-Recurring Work Orders",
+                        "pages": [
+                          "latchel-admin/Service-Operations/Ops-Integrations/common-area-building-properties-for-non-recurring-work-orders",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-process-common-area-building-property-requests-for-non-recurring-work-orders"
+                        ]
+                      },
+                      {
+                        "group": "Churn Alerts / Ticket Reports Review Tracker",
+                        "pages": [
+                          "latchel-admin/Service-Operations/Ops-Integrations/churn-alerts-ticket-reports-review-tracker",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-conduct-the-monthly-review-for-the-churn-alerts-and-tickets-reports"
+                        ]
+                      },
+                      {
+                        "group": "Latchel Intake Monitoring Dashboard",
+                        "pages": [
+                          "latchel-admin/Service-Operations/Ops-Integrations/latchel-intake-monitoring-dashboard",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-escalate-a-property-manager-at-10-days-below-target",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-the-latchel-intake-monitoring-process-works"
+                        ]
+                      },
+                      {
+                        "group": "Recurring Work Orders System",
+                        "pages": [
+                          "latchel-admin/Service-Operations/Ops-Integrations/recurring-work-orders-system",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-the-recurring-work-order-request-process-works-beta"
+                        ]
+                      }
                     ]
                   }
                 ]
