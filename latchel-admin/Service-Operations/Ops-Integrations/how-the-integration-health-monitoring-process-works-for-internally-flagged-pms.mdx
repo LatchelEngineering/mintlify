@@ -1,0 +1,133 @@
+---
+title: "How: the Integration Health monitoring process works for Internally Flagged PMs"
+---
+
+<Note>
+The purpose of this SOP is to detail the end-to-end automated process that detects, classifies, alerts, and resolves PM integration issues. This guide explains the automated script and Slack notifications that operate on the data in the **Integration Issue PMs (Internally Flagged)** tab.
+</Note>
+
+<Tip>
+A Script monitors the **PM Metrics tab, displays the issues detected in the**[**<u> </u>**](https://docs.google.com/spreadsheets/d/1lqN_yI3vZUehb9BZylCvXK0KU-PFfpJCkDvw1_sgWug/edit?gid=2021689109#gid=2021689109)[**Integration Issue PMs (Internally Flagged)**](https://docs.google.com/spreadsheets/d/1lqN_yI3vZUehb9BZylCvXK0KU-PFfpJCkDvw1_sgWug/edit?gid=1902680244#gid=1902680244)** tab,** and sends real-time alerts to the appropriate stakeholders team in Slack when a new issue is detected. **Currently, only PMs using AppFolio software are flagged when an issue is detected.**
+</Tip>
+
+## Step by step
+
+### **Step 1: Issue Detection**
+
+a. Whenever a problem is identified in the **PM Metrics** tab, a matching row is created in **Integration Issue PMs**.
+
+b. Columns **A – G** are automatically filled with the data pulled from **PM Metrics**.
+
+<Frame>
+  <img src="/images/Intg-37.png" alt="ChatGPT Image 11 jun 2026, 01_22_52 p.m..png" />
+</Frame>
+
+c. Once the issue is detected, **columns H–M** are updated automatically.
+
+<Frame>
+  <img src="/images/Intg-38.png" alt="image-20251118-230329.png" />
+</Frame>
+
+### Step 2: The issues currently flagged are:
+
+| **Issue Type** |  | **Slack Notification** | **Slack channel** | **Workflow Owner** | **Next Step if Unresolved** |
+| --- | --- | --- | --- | --- | --- |
+| Integration hasn't run in 2 days | Based on Last sync column | [@ops_integration_team](https://latchel.slack.com/admin/user_groups) is alerted to restore sync to prevent data drift. | [integration-sync-issues-internal](https://latchel.slack.com/archives/C096E7A625U) | [@ops_integration_team](https://latchel.slack.com/admin/user_groups) | Escalates to “4 days” state |
+| Integration hasn't run in 4 days |  | [@ops_integration_team](https://latchel.slack.com/admin/user_groups) is alerted to restore sync immediately to avoid service outage | [integration-sync-issues-internal](https://latchel.slack.com/archives/C096E7A625U) | [@ops_integration_team](https://latchel.slack.com/admin/user_groups) | Escalates to High sev tech |
+| Integration hasn’t run in 4+ days |  | The CSM is alerted while an email is simultaneously sent to the PM to restore the report’s permissions. | [integration-sync-issues-internal](https://latchel.slack.com/archives/C096E7A625U) | CSM | If the issue persists over the next three days, the [@ops_integration_team](https://latchel.slack.com/admin/user_groups) will contact the CSM for assistance. |
+| Data Sync Error — Property, Tenant, Work Order, Owner (coming soon) |  | [@ops_integration_team](https://latchel.slack.com/admin/user_groups) is alerted to investigate sync error issues. | [integration-sync-issues-internal](https://latchel.slack.com/archives/C096E7A625U) | [@ops_integration_team](https://latchel.slack.com/admin/user_groups) | Escalates to High sev tech |
+
+<Note>
+**The Data Sync Error — Property, Tenant, Work Order** alerts will flag errors detected during the AppFolio→Latchel sync process. Each alert will include instructions to identify the specific issue and will recur **every 12 hours**. **<u>The Latchel Integration Team</u>**<u> is the primary owner of troubleshooting; technical issues will be escalated to engineering.</u>
+</Note>
+
+<Tip>
+Additionally, there’s a Slack summary alert triggered in the slack channel [integration-sync-issues-internal](https://latchel.slack.com/archives/C096E7A625U) if 2 or more issues are unresolved.
+</Tip>
+
+<u>Depending on the issue type, a Slack workflow will be triggered. </u>Below are the templates that will be sent to the relevant stakeholders.
+
+<Accordion title="Workflow Types & Messaging Logic:">
+1. **<u>Integration Not Running</u> ( Slack workflow)**
+
+_**a) 2 days:**_
+
+- **PM Company: **Name of the PM company
+- **Software:** Type of PMS
+- **Issue:** Integration hasn’t run in 2 days.
+- **Risk Status:** 🔳  Low — Monitor, requires attention!
+- **Recommended Action**: Restore sync now to prevent data drift.
+- **Assigned to:** [@ops_integration_team](https://latchel.slack.com/admin/user_groups)
+
+_**b) 4 Days:**_
+
+- **PM Company: **Name of the PM company
+- **Software:** Type of PMS
+- **Issue:** Integration hasn't run in 4 days
+- **Risk Status:** 🔶 Medium — Should be addressed ASAP.
+- **Recommended Action:** Restore sync immediately to avoid service outage.
+- **Assigned to: **[@ops_integration_team](https://latchel.slack.com/admin/user_groups)
+
+_**c) 4+ Days: **_
+
+Hi [CSM Name],
+
+We noticed that the PM may have revoked access to some reports required for the sync to run successfully. As a result, no data has been received since [Date]. We’ve sent the PM a [<u>step-by-step guide</u>](https://drive.google.com/file/d/1q9syzKV3wLZx6QnMzjJ_qAN1CQ2sQKCm/view?usp=sharing). If the issue persists over the next 3 days, we’ll reach out to request your assistance.
+
+- **PM Company: **Name of the PM company
+- **Software:** Type of PMS
+- **Issue:** Integration hasn't run in 4 days
+- **Risk Status:** **🔴** High
+- **Reminder successfully sent to:** [Primary member email]
+- **Recommended Action:** PM has been contacted. Monitor for resolution and assist if the issue persists.
+- **Assigned to: **@CSMSlackID
+
+**Email sent to the PM:**
+
+**Subject:** Integration Alert: Integration hasn't run in +4 days - [PM Company Name]
+
+**Message:**
+
+Hi [PM Company],
+
+We’ve noticed that your integration hasn’t run in the last 4+ days. While this may be temporary, we recommend confirming that report permissions are enabled, so the sync can run successfully. Latchel requires access to the following reports:
+
+- **Maintenance Reports:  **_Work Order_
+- **Property and Unit Reports: **_Unit Directory, Property Directory, Property Group Directory_
+- **Tenant Reports: **_Tenant Directory_
+- _**Owner Reports: **Owner Statement, Owner Statement (Enhanced)_
+
+Please follow the [<u>step-by-step guide</u>](https://drive.google.com/file/d/1q9syzKV3wLZx6QnMzjJ_qAN1CQ2sQKCm/view?usp=sharing) to resume the import.
+
+We’re here to make things easier for you. If you have any questions or need a hand, feel free to schedule a chat with your dedicated Customer Success Manager: [<u>[Calendly Link]</u>](http://link).
+
+Best regards,
+
+The Latchel Team
+
+**d) Data Sync Error: Property/Tenant/Work Order/ Owner (coming soon)**
+
+We detected a critical data synchronization error in the [reports]. This needs immediate attention to prevent service interruption.
+
+- **PM Company:** Name of the PM company
+**Software:** Type of PMS
+**Issue:** [Sync Type] Data Sync Error
+**Risk Status:** **🔴**High
+- **Deep Dive Details:** [number of issues found] out of [total imports] rows have errors.
+To investigate, download the relevant CSV file from:
+[<u>https://app.latchel.com/admin/pm-company/pmcompanyid/integrations</u>](https://app.latchel.com/admin/pm-company/27203/integrations)and run the following query in pgAdmin to identify the specific row issues:
+- 
+- **Recommended action:** Investigate the issue using the 'Deep Dive Details' column and confirm data integrity.
+- **Assigned to:** [@ops_integration_team](https://latchel.slack.com/admin/user_groups)
+
+2. **Summary: 2 Property Managers with Sync Issues ( Slack workflow)**
+The following PMs require attention:
+
+- **PM Company Name:** Issue
+- **PM Company Name: **Issue
+- **Assigned to: **[@ops_integration_team](https://latchel.slack.com/admin/user_groups)
+</Accordion>
+
+<Warning>
+<u>Since the Integrations dashboard is updated twice a day</u>,** it's very important to ensure the sync runs before** the dashboard query executes, so it can detect data for the current day. Otherwise, the dashboard will show the last date as the previous day, since t**he query runs at 7 AM/7 PM Central Time.**
+</Warning>

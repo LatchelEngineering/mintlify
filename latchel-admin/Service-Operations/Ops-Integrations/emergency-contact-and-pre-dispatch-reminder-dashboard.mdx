@@ -1,0 +1,84 @@
+---
+title: "Emergency Contact and Pre-Dispatch Reminder Dashboard"
+---
+
+<Note>
+**The purpose of this SOP is to detail the structure and functionality of the Emergency Contact and Pre-Dispatch Reminder Dashboard.** This dashboard serves as the single source of truth for monitoring PM emergency settings. It acts as the primary database that feeds the automated Seasonal Reminder script, ensuring all outreach is accurate, targeted, and well-documented.
+</Note>
+
+## **Overview**
+
+### **Tab 1 - **[**Emergency & Pre-Dispatch Contact Monitoring**](https://docs.google.com/spreadsheets/d/1PeXsNDJk6TvL-vEsgvE2ltOmmzVJsTKb31wSrhKFi5k/edit?gid=0#gid=0)
+
+This is the main dashboard where all active PM accounts are monitored. The columns are organized into logical sections to help the team quickly assess an account's profile, contact details, and emergency configurations.
+
+<Frame>
+  <img src="/images/Intg-152.png" alt="image-20260325-195113.png" />
+</Frame>
+
+#### **1. Account Profile & Ownership (Columns A–E, P–Q)**
+
+These columns provide the foundational details of the PM account.
+
+| **Columns A - D:** | Displays the PM Company Name, internal Company ID, Software logged in HubSpot (e.g., AppFolio, Rent Manager), and their Service Start Date. |
+| --- | --- |
+| **Column E (CSM):** | Identifies the dedicated Customer Success Manager. |
+| **Columns P - Q (Subscription & Product Packages):** | Details the PM's current Latchel tier (e.g., 24/7 Emergency, Home Assistant). |
+
+#### **2. Active Contact Information (Columns F–G, K–L)**
+
+These columns pull the active users associated with the PM account. **The email addresses listed here are the exact targets used by the automated reminder script.**
+
+| **Columns F & G:** | Active Primary Member Name and Email. |
+| --- | --- |
+| **Columns K & L:** | Other Active Company Members and their respective Email addresses. |
+
+#### **3. Emergency Configurations & Operational Status (Columns R, S, V, W)**
+
+This section tracks what the PM currently has set up in Latchel for emergency scenarios.
+
+| **Column R(Pre-Dispatch & Emergency Escalation Contact Settings Required):** | This is a critical `Yes/No` flag. If marked as "No", the automated script will skip the PM and log "N/A - Settings Not Required." |
+| --- | --- |
+| **Column S (Emergency Escalation Contact List Details):** | Displays the actual phone numbers and escalation tree currently on file. |
+| **Column W (Pre-Dispatch Instruction Details):** | Displays the specific troubleshooting or dispatch instructions the PM requires before sending a vendor. |
+| **Column V (Total Emergency Escalation Failures):** | Tracks the number of times dispatch failed to reach the PM's emergency contacts. |
+
+#### **4. Automated Outreach Tracking (Columns Z–AD)**
+
+This section is automatically updated by the backend script whenever a seasonal reminder campaign runs.
+
+| **Column Z (Seasonal Reminder Sent):** | Displays the current status of the outreach (e.g., _Sent - Winter 2026_, _Exempt - Excluded from Outreach_, or _N/A - Settings Not Required_). |
+| --- | --- |
+| **Column AA & AB (Last Reminder Date & Email TimeStamp):** | Logs the exact date and time the automated email was successfully delivered. |
+| **Column AC (Email Subject):** | Logs the exact subject line of the email sent. |
+| **Column AD (Next Reminder Date):** | The system automatically calculates the exact date the next seasonal outreach is due (exactly 3 months from the last send). |
+
+---
+
+### **Tab 2 - PM Exclusions**
+
+This tab acts as the system's "**Do Not Contact**" list. It is used to prevent the automated script from emailing specific PMs (_e.g., CSMs Requests, accounts in churn, or PMs who have requested not to receive these notifications_).
+
+<Frame>
+  <img src="/images/Intg-153.png" alt="image-20260325-200414.png" />
+</Frame>
+
+| **Column A (PM Company):** | The exact name of the PM Company. |
+| --- | --- |
+| **Column B (Exclude from Outreach?):** | A dropdown menu. If set to **"Yes"**, the script will instantly bypass this PM and log `Exempt - Excluded from Outreach` on the main dashboard. |
+
+---
+
+<Warning>
+### **Important Note: Quarter 2 (Q2) Enhancements**
+
+You may notice several columns in the backend that are currently highlighted in **Yellow** and hidden from the default view.
+
+These columns are **Q2 Enhancements** designed to track historical data, monitor recent updates made by PMs, and generate an automated _Account Health Status_ (e.g., "At Risk", "Action Needed" issues).
+
+Currently, these columns are hidden to keep the daily workflow streamlined. An SOP update will be provided when these features are officially rolled out in Q2.
+</Warning>
+
+<Note>
+For more information on the current reminders sent, see the job aid [How: The Automated Seasonal Reminders Process Works for Pre-Dispatch and Emergency Contact list Settings](https://help.latchel.com/how-the-automated-seasonal-reminders-process-works-for-pre-dispatch-and-emergency-contact-list-settings)
+</Note>

@@ -1,0 +1,80 @@
+---
+title: "How: To Process Common Area/Building Property Requests for Non-Recurring Work Orders"
+---
+
+<Note>
+The purpose of this SOP is to outline the exact steps the Operations Integrations Team must take to process requests for new Common Area/Building properties intended for non-recurring work orders.
+
+This process starts when a CSM or Product Support team member submits a request through [#common-area-building-requests](https://latchel.slack.com/archives/C0AQKDE8ESE) slack channel. The Ops Integrations Team then reviews the request, gathers the necessary information, and completes a few manual steps before an automated workflow creates the properties in Latchel.
+</Note>
+
+## Step by step
+
+### Step 1: Receiving the Request & Data Entry
+
+<Tip>
+The process begins when a CSM or PS agent submits a request via the Slack workflow titled: [_Common area-building properties for non-recurring work orders_](https://slack.com/shortcuts/Ft0AQH1FE45C/aba39a1cb48eaf861a2323128918f23b)_._
+</Tip>
+
+1. **Locate the Request:** Monitor the designated Slack channel for the incoming workflow submission. The request will contain details like the PM Company, CSM Name, Priority, Deadline, and an attached spreadsheet file.
+2. **Open the Attachment:** Download or open the attached spreadsheet provided by the requester.
+3. **Transfer the Data:** Copy the property details from the requester's spreadsheet and paste them into **Columns J through R** of the master [_Common Area Property Requests_](https://docs.google.com/spreadsheets/d/1YGogRgpSHnNiqoNlncjUeTRvrck5sG6jqZWqegWZlWA/edit?gid=917818050#gid=917818050) spreadsheet.
+
+<Danger>
+**CRITICAL NOTE FOR OPS:** You must pay strict attention to the formatting of each column. Ensure the data matches the exact format required by the master sheet (e.g., standardizing states, zip codes, etc.). Incorrect formatting will cause the automation to fail. **<u>We recommend searching for the address in Latchel to ensure it is written correctly.</u>**
+</Danger>
+
+### Step 2: Gathering System IDs
+
+Once the property details are pasted into Columns J-R, you must manually gather the unique IDs for Columns A and B.
+
+#### **A) Retrieve the **`ref_property_id`** (Column A)**
+
+1. Open your database management tool (pgAdmin).
+2. Run the following SQL query, inserting the specific Address and Zip code you just pasted into the spreadsheet:
+
+<Frame>
+  <img src="/images/Intg-155.png" alt="image-20260403-161138.png" />
+</Frame>
+
+3. Execute the query, you will see all addresses that share the same street name.
+4. **Scroll to the right** through the results table until you find the `ref_property_id` column.
+5. Copy that ID and paste it into **Column A** of the spreadsheet.
+
+#### **B) Retrieve the **`PM Company ID`** (Column B)**
+
+1. Log in to the Latchel Admin Dashboard.
+2. Search for the requested PM Company.
+3. Once on their profile page, look at the URL in your web browser:
+`https://app.latchel.com/admin/pm-company/[ID]`
+4. Copy the numerical **[ID]** at the end of the URL.
+5. Paste this ID into **Column B** of the spreadsheet.
+
+### Step 3: Automation Execution
+
+Once Columns A through R are properly filled, your manual data entry is complete.
+
+The n8n automation engine will automatically detect the new data and process the properties. You will see the following happen in real-time:
+
+- **Column C (Status):** Will automatically update to **"Created"**.
+- **Column D (Property URL):** Will automatically populate with the Latchel link for the newly created property.
+
+### Step 4: Closing the Loop
+
+Once you verify that **all** requested properties have been successfully processed (Status shows "Created" for all rows), you must close the ticket.
+
+1. Go back to the original Slack request message.
+2. Click the green button at the bottom of the message that says: **"Ops: Mark complete when done"**.
+3. Clicking this button will automatically tag the requesting CSM/PS Agent in the Slack thread, notifying them that their request has been successfully processed.
+
+---
+
+## Quick Reference Guide
+
+| **Action Phase** | **Tool Used** | **Action Required** |
+| --- | --- | --- |
+| **Data Transfer** | Slack ➔ Sheets | Copy attached data to Columns J-R. _Verify formatting!_ |
+| **Get Property ID** | pgAdmin | Run SQL query, scroll right, copy `ref_property_id` to Col A. |
+| **Get PM ID** | Latchel Admin | Copy ID from URL, paste to Col B. |
+| **Verification** | Google Sheets | Wait for Columns C & D to auto-populate. |
+| **Completion** | Slack | Click **"Ops: Mark complete when done"** button. |

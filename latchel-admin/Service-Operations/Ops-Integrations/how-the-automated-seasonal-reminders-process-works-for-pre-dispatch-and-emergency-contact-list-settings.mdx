@@ -1,0 +1,79 @@
+---
+title: "How: The Automated Seasonal Reminders Process Works for Pre-Dispatch and Emergency Contact list Settings"
+---
+
+<Note>
+**The purpose of this SOP is to detail the end-to-end automated process that manages, categorizes, and sends seasonal email reminders to Property Management companies (PMs).** This guide explains how the automated script operates on the data in the _Emergency & Pre-Dispatch Contact Monitoring_ tab to proactively ensure that PMs maintain up-to-date emergency escalation contacts.
+</Note>
+
+<Note>
+A script monitors the main dashboard, cross-references an exclusions list, and automatically dispatches customized emails depending on the time of the year. It also automatically logs timestamps and calculates the next expected outreach dates.
+</Note>
+
+## **Step by Step**
+
+### **Step 1: Timing & Season Detection**
+
+Because these reminders are "seasonal," the script does not send emails every day. When the script runs, it first evaluates the current month to determine if an outreach campaign is required.
+
+- **February:** Triggers the **Spring** campaign.
+- **May:** Triggers the **Summer** campaign.
+- **August:** Triggers the **Fall** campaign.
+- **November:** Triggers the **Winter** campaign.
+
+### **Step 2: Account Filtering & Classification**
+
+Once a valid season is detected, the script evaluates each PM row by row. It checks the **PM Exclusions** tab and Column R (_Pre-Dispatch & Emergency Escalation Contact Settings Required_) to determine if the PM should receive an email.
+
+Depending on the evaluation, **Column Z (Seasonal Reminder Sent)** is automatically updated with one of the following statuses:
+
+| **Evaluation Criteria** | **Outreach Action** | **Status Logged in Column Z** | **Next Steps** |
+| --- | --- | --- | --- |
+| PM is listed on the **PM Exclusions** tab. | **None.** The PM is bypassed. | `Exempt - Excluded from Outreach` | Skipped until removed from the exclusions list. |
+| Column R is marked as **"No"** (Settings not required). | **None.** The PM is bypassed. | `N/A - Settings Not Required` | Skipped. No outreach necessary. |
+| PM is not exempt, settings are required, and the email hasn't been sent yet for the current season. | **Email Sent.** The PM receives the seasonal reminder. | `Sent - [Current Season]` _(e.g., Sent - Spring 2026)_ | Automatically updates logging columns (AA  - AD).Last Reminder Sent DateEmail TimeStampEmail SubjectNext Reminder Date |
+
+### **Step 3: Workflow Types & Messaging Logic**
+
+If a PM qualifies for the seasonal reminder, an email is dispatched to the Primary Email and Other Active Members' Emails listed on the row (Columns G and L).
+
+**Email Template:**
+
+**Subject: **_<u>Action Required: Verify your Emergency Contact List settings for [Upcoming Season]</u>_
+
+**Body:**
+
+_Hi [Company Name],_
+
+_As we approach [Season], which brings a higher volume of service requests, we want to ensure our team is fully prepared to support you in the event of an emergency, without delays. For that, we ask that you take 2 minutes today to confirm your Emergency Contacts and Pre-Dispatch Instructions are up to date. Making sure this information is up-to-date guarantees that our team can reach the right decision-makers immediately when it matters most._
+
+_**To verify or update your settings, please follow these steps:**_
+
+1. _Log in to your _[_<u>Latchel Account</u>_](https://app.latchel.com/admin/account)_._
+2. _Click on your profile picture in the top right corner._
+3. _Navigate to Account Settings > Details > Maint. Communication Settings._
+4. _Scroll down to the Emergency Escalation Contacts List and update it accordingly. (Note: If you need to update your Pre-Dispatch Instructions, please contact your CSM via the Latchel Support Chat)._
+5. _Click Save._
+
+_If you need any help, our team is here to support you._
+
+_Thank you for helping us ensure fast and effective service when it matters most._
+
+_Best regards,_
+_The Latchel Team_
+
+### **Step 4: Tracking & Dashboard Updates**
+
+Immediately after an email is successfully sent, the script updates the tracking columns to maintain an accurate historical log:
+
+- **Column Z (Seasonal Reminder Sent):** Updated to reflect the successful send (e.g., _Sent - Spring 2026_).
+- **Column AA (Last Reminder Date):** Logs the current date.
+- **Column AB (Email TimeStamp):** Logs the exact date and time the email was dispatched.
+- **Column AC (Email Subject):** Logs the exact subject line used for the email.
+- **Column AD (Next Reminder Date):** The script automatically calculates and schedules the next outreach exactly **3 months** from the current month.
+
+---
+
+<Note>
+For more information, see the job aid [Emergency Contact and Pre-Dispatch Reminder Dashboard](https://help.latchel.com/emergency-contact-and-pre-dispatch-reminder-dashboard)
+</Note>

@@ -1,0 +1,97 @@
+---
+title: "Integration Metrics (For Internally Flagged PMs)"
+---
+
+<Note>
+The purpose of this SOP is to provide a clear and detailed overview of the **Integration Metrics (For Internally Flagged PMs)** tab. This document outlines how the report tracks integration issues specifically for internally monitored Property Managers, monitors resolution performance across teams (LIT and CSMs), and ensures visibility into issue frequency to improve the customer experience.
+</Note>
+
+## Overview
+
+The **Integration Metrics (For Internally Flagged PMs)** tab is a dynamic dashboard populated by a script. This tab tracks weekly integration issues (Monday–Sunday) specifically for PMs whose sync is managed by Latchel.
+
+The report serves as a high-level summary, transforming raw data into measurable metrics regarding response times and issue escalation. It is divided into several key sections: a live list of flagged PMs, performance trackers for the Latchel Integration Team (LIT), performance trackers for the CSM Team, and a weekly historical breakdown.
+
+### Dashboard Structure: Integration Metrics (For Internally Flagged PMs) tab
+
+This tab provides a comprehensive view of ongoing integration issues for flagged accounts and the performance of the teams responsible for resolving them.
+
+#### 1. Weekly list of Internally Flagged PMs
+
+This section displays a live list of all internally monitored Property Managers currently experiencing an integration issue.
+
+<Frame>
+  <img src="/images/Intg-88.png" alt="image-20251119-182249.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **A: PM Company** | Identifies the Property Management company. |
+| **B: PM Company ID** | Identifies the unique company ID used by the PM, enabling correct mapping and data synchronization with Latchel. |
+| **C: Software** | Identifies the Property Management software being used. |
+| **D: Workflow owner** | The team or individual responsible for resolving the issue. |
+| **E: Issue type** | Describes the category of the flagged issue. |
+| **F: Last Import Date** | The date of the last successful data sync. |
+
+#### 2. LIT (Weekly Results)
+
+This section tracks the weekly performance and workload of the **Latchel Integration Team (LIT)** regarding 2-day and 4-day integration triggers.
+
+<Frame>
+  <img src="/images/Intg-89.png" alt="image-20251119-182403.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **G: Total 2 Day Triggers** | Total number of "Integration hasn't run in 2 days" alerts flagged during the week. |
+| **H: # 2 Day Active Triggers** | The number of 2-day alerts that are currently active during the week. |
+| **I: # of 2 days triggers resolved (before reaching 4 days)** | Total number of 2-day alerts that were resolved during the week (before escalating to a 4-day alert). |
+| **J: # of 2 day triggers not resolved (Reached 4 days)** | Total number of 2-day alerts that were NOT resolved during the week (before escalating to a 4-day alert). |
+| **K: Total 4 Day Triggers** | Total number of "Integration hasn't run in 4 days" alerts flagged during the week. |
+| **L: # 4 Day Active Triggers** | The number of 4-day alerts that are currently active during the week. |
+| **M: # of 4 days triggers resolved (within 24 hours)** | Total number of 4-day alerts that were resolved within 24 hours of being flagged. |
+| **N: # of 4 day triggers not resolved (within 24 hours)** | Total number of 4-day alerts that were not resolved within 24 hours. |
+
+### 3. CSMs (Weekly Results)
+
+This section tracks the weekly performance and workload of the **CSM Team**, focusing on issues that have been inactive for more than four days (+4 days).
+
+<Frame>
+  <img src="/images/Intg-90.png" alt="image-20251119-182523.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **O: Total 4+ Day Triggers** | Total number of alerts for integrations that have not synced in 4+ days. |
+| **P: # 4+ Day Active Triggers** | The number of 4+ day alerts that remain unresolved during the week. |
+| **Q: # of 4+ day triggers resolved (before 72 hours)** | Total number of 4+ day alerts that were resolved within 72 hours. |
+| **R: # of 4+ day triggers not resolved (after 72 hours)** | Total number of 4+ day alerts that were not resolved within 72 hours. |
+
+### 4. Total Number of Issues Resolved by Team Per Week
+
+This section provides a simple, weekly summary of the total output of each team. This data is updated every Sunday.
+
+<Frame>
+  <img src="/images/Intg-91.png" alt="image-20251119-182642.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **S: Latchel Integration Team** | Total issues resolved by the Latchel Integration Team (LIT) during the week (Integration hasn’t run in 2/4 days). |
+| **T: CSMs** | Total issues resolved by the CSM Team during the week (Integration hasn’t run in +4 days). |
+
+### 5. Weekly Breakdown of Issues Resolved per Team
+
+This section offers a historical view of team performance, allowing for trend analysis and performance tracking over time.
+
+<Frame>
+  <img src="/images/Intg-92.png" alt="image-20251119-182811.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **U - Forward: Weekly Breakdown** | Breakdown of the team's weekly totals for issues resolved (LIT and CSMs). Updated every Sunday. |
+
+<Tip>
+These metrics are informational and are intended to keep stakeholders updated on each team’s productivity and issue resolution regarding internally flagged accounts.
+</Tip>

@@ -1,0 +1,169 @@
+---
+title: "Recurring Work Orders System"
+---
+
+<Note>
+The purpose of this SOP is to provide a clear overview of the recurring work order system and to ensure that every recurring maintenance request—whether for a single unit or a whole building (Common Area)—is properly logged, validated, and activated.
+</Note>
+
+## Overview
+
+<Tip>
+This system utilizes a single streamlined [Recurring Work Orders Beta form](https://recurring-work-orders.web.app/) that allows Property Managers to:
+
+1. Submit recurring work orders for existing properties.
+2. Request the creation of new Common Area Properties (e.g., whole buildings) if they do not exist yet.
+3. Submit the recurring schedule associated with that Recurring work order.
+</Tip>
+
+### Dashboard structure
+
+### 1. [**Common Area Property Requests**](https://docs.google.com/spreadsheets/d/1S1uIdgEyqSYh9Jqy6E_N-NoT2WA3WG3sZubhkWJiE4U/edit?gid=248650263#gid=248650263)** tab:**
+
+<Warning>
+**Important:** If a PM selects that a Common Area property is _not_ yet created in the form, the specific address details for that building are captured here. The Ops Team must process this tab **before** activating the recurring work order.
+</Warning>
+
+<Frame>
+  <img src="/images/Intg-124.png" alt="image-20260123-192734.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **A: ref_property_id** | **Action Item:** Ops Team must manually input this ID using a pgAdmin query. |
+| **B: PM Company Name** | Name of the requester's company. |
+| **C: Address** | Street address of the building. |
+| **D: Property Type** | E.g., Building, Common Area. |
+| **E-G: Location Details** | City, State, Zip/Post Code. |
+| **H: Reference Unit URL** | Link to a unit inside the building (helps identify the property address). |
+| **I: Portfolio Name** | Optional. If the PM wants this added to an existing portfolio. |
+| **J: Submitted At** | Timestamp. |
+| **K: Submission ID** | Unique ID linking this request to the Recurring Work Order tab. |
+| **L: Status** | Automation status (Created / Duplicated). This is updated as a confirmation once the property is created in Latchel. If it detects that the property was already created, it will mark it as duplicated. |
+| **M: Property ID** | Property ID Generated in Latchel. |
+| **N: Property URL** | Property URL Generated in Latchel. |
+
+### 2. [Recurring Work Order Request](https://docs.google.com/spreadsheets/d/1S1uIdgEyqSYh9Jqy6E_N-NoT2WA3WG3sZubhkWJiE4U/edit?gid=1730274070#gid=1730274070) (Intake) tab:
+
+This tab contains the source data submitted by Property Managers via the [WebApp form](https://recurring-work-orders.web.app/). It acts as the "Control Center" where the Ops Team activates new requests.
+
+<Frame>
+  <img src="/images/Intg-125.png" alt="image-20260123-190255.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **A: Instruction_Id** | Unique identifier generated for the specific recurring instruction (e.g., `663889_WPC_Weekly`). |
+| **B: Please type your email** | Contact email of the Property Manager submitting the request. |
+| **C: PM Company Name** | Name of the property management company. |
+| **D: Work Order Title** | The title of the maintenance task (e.g., "Weekly Pool Cleaning"). |
+| **E: Is this for a common area property?** | Boolean (Yes/No). Determines if the work order applies to a specific unit or a whole building (common area). |
+| **F: Is the common area property already created?** | Boolean (Yes/No). If "No" is selected, the system captures building details in the _Common Area Property Requests_ tab. |
+| **G: Property URL** | Direct link to the property profile in Latchel (Required if the property already exists). |
+| **H: Does this require coordination with the resident?** | Boolean (True/False). Indicates if the vendor needs to coordinate scheduling with the tenant. |
+| **I: Resident_URL_Optional** | If resident coordination is required, the PM adds the resident URL here. |
+| **J: Service Provider Instructions** | Specific instructions for the vendor regarding the task. |
+| **K: Service_Provider_Optional** | If the PM has a specific service provider, the contractor URL is added here. |
+| **L: enter_permission** | Toggled on by default to allow service provider access (vacant/common areas). |
+| **M: access_instructions_Optional** | Any access instructions (gate codes, key locations) added by the PM. |
+| **N: Trade / Skill** | The trade category selected (e.g., Pool & Spa). |
+| **O: category_id** | Internal Latchel category ID corresponding to the selected Trade/Skill. |
+| **P: Issue** | The specific issue selected from the dynamic dropdown. |
+| **Q: issue_id** | **Internal ID referencing the specific Issue selected.** |
+| **R: Frequency** | The recurrence schedule (Weekly, Bi-Weekly, Monthly, Quarterly, Semi-Annually, Annually). |
+| **S: Start Date** | The date the first work order is scheduled to begin. |
+| **T: End_Date_Optional** | The date the recurrence should stop. If blank, it runs indefinitely. |
+| **U: Submitted At** | Timestamp of when the form was submitted. |
+| **V: PM Company ID** | **Action Item:** The unique ID of the PM Company in Latchel. The Ops Team must input this manually. |
+| **W: Project ID** | **Action Item:** The Ops Team must input the Latchel Project ID here after manually creating the project. |
+| **X: Status** | **Action Item:** The Ops Team must change the status of the automation. Options: **Active** (automation running), **Paused, **or** Cancelled **(These are selected only if the PM requests it.) |
+| **Y: Last Run Date** | Automatically populated: The date the last work order was successfully created. |
+| **Z: Next Run Date** | Automatically calculated: The date for the next automated work order creation. |
+| **AA: Satisfaction Survey Sent?** | Tracks if the NPS email has been sent to the PM. This is sent only once, 24 hours after the recurring work order is created. |
+| **AB: Submission ID** | Unique identifier used to link requests with Recurring requests across tabs. |
+
+<Tip>
+**Note:** As part of the activation process, the Ops Team must review the request, create the initial project in Latchel impersonating the PM, and then manually update columns **V (PM Company ID)**, **W (Project ID)**, and set **X (Status)** to "Active".
+</Tip>
+
+### 3. Auto Work Order History tab:
+
+This sheet is dynamically populated by the n8n automation engine. It acts as a log for every single work order generated by the system.
+
+<Frame>
+  <img src="/images/Intg-126.png" alt="image-20260107-233522.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **A: Submission ID**Submission ID | Unique identifier used to link requests with Recurring requests across tabs. |
+| **B: Date** | The date the work order was created. |
+| **C: order_number** | The official Latchel Work Order Number (e.g., `1551480-649456`). |
+| **D: name** | Title of the work order. |
+| **E: description** | General instructions passed to the work order. |
+| **F: vendor_description** | Specific instructions visible to the vendor. |
+| **G: vendor_rating** | Currently not required to create the work order; however, this could be an important field for future updates. |
+| **H: access_instructions** | Gate codes or key locations provided during intake. |
+| **I: max_cost** | The authorized budget limit (if applicable). |
+| **J: enter_permission** enter_permissionenter_permission | Set by default as 1 if the property is vacant. |
+| **K: is_vacant** | Indicates if the property is marked as vacant (bypassing resident coordination). |
+| **L: is_mandatory** | 1 or 0 representing if the Job is mandatory (i.e., the Tenant cannot cancel the Job) |
+| **M: tenant_id** | ID referencing Tenant the Job is for |
+| **N: pm_id** | The ID of the Property Manager associated with the order. |
+| **O: ref_job_id** | Reference ID for the recurring job series. |
+| **P: manually_assign_vendor** | 1 or 0 representing if the job will use automation to assign a vendor (0), or if the job will have a vendor manually assigned. Defaults to 0 (automation) for normal jobs. |
+| **Q: severity** | String representing Job severityDefault: "normal" |
+| **R: issue_id** | ID referencing Issue for Job |
+| **S: vendor_id** | The ID of the assigned vendor (if a preferred vendor was specified). |
+| **T: property_id** | The internal Latchel ID for the property. |
+| **U: problem_id** | ID referencing the Problem the Job is for |
+| **V: location_id** | ID referencing the Location the Job is for |
+
+### 3. Manage Recurring Work Orders tab:
+
+This tab captures requests from PMs who need to edit, pause, or cancel an existing recurring schedule. Requests are received through a [Manage Recurring Work Orders Typeform](https://latchel.typeform.com/to/XfYEOMDe) only if the PM submits one. This serves as a queue for manual processing.
+
+<Frame>
+  <img src="/images/Intg-127.png" alt="image-20260107-235248.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **A: PM Company Name** | Name of the Property Management company requesting the change. |
+| **B: Email** | Contact email of the requester. |
+| **C: Property Address** | The address of the property requiring the change. |
+| **D: Work Order Title** | The title of the recurring order to be modified. |
+| **E: Action Required** | The type of change requested:  • Edit • Pause Schedule • Cancel Schedule |
+| **F: Details** | Specific details regarding the change (e.g., "Change frequency to monthly"). |
+| **G: Submitted At** | Timestamp indicating when the Typeform was received. |
+| **H: Token** | Automatically filled by Typeform |
+
+<Tip>
+**Note:** The Ops Team is responsible for monitoring this tab and manually applying the adjustments to the original **Recurring Work Order Request **tab or the Latchel platform as needed.
+</Tip>
+
+### 4. Recurring Work Order Satisfaction Survey tab:
+
+This sheet collects feedback from users regarding their experience with the **Recurring Work Order Beta **tool. An email is sent automatically 24 hours after the work order is originally created in the Recurring Work Order Request tab.
+
+<Frame>
+  <img src="/images/Intg-128.png" alt="image-20260108-000144.png" />
+</Frame>
+
+| **Column** | **Description** |
+| --- | --- |
+| **A: First name** | Name of the user providing feedback. |
+| **B: Last name** | Last name of the user. |
+| **C: Phone number** | Contact number. |
+| **D: Email** | Email address of the user. |
+| **E: Company** | The PM Company associated with the user. |
+| **F: Was the process easy?** | Boolean (TRUE/FALSE) feedback on usability. |
+| **G: Was there any Recurring work you wanted to submit but were unable to?** | Optional field for the PM to fill out in case there is any additional feedback they would like to add. |
+| **H: Rating** | Overall experience rating (1-5 scale). |
+| **I: Feedback** | Open-ended comments or suggestions for improvement. |
+| **J: Submitted At** | Timestamp of the survey submission. |
+| **K: Token** | Automatically filled by Typeform |
+
+<Note>
+To learn more on how the Recurring work orders workflow works, see the job aid: [How: the Recurring Work Order Request process works (Beta)](https://help.latchel.com/how-the-recurring-work-order-request-process-works-beta)
+</Note>

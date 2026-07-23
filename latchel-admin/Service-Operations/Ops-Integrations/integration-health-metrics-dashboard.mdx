@@ -1,0 +1,186 @@
+---
+title: "Integration Health Metrics Dashboard"
+---
+
+<Note>
+The purpose of this SOP is to provide a clear overview of the dashboard and to ensure that every PM integration remains healthy by detecting, tracking, and resolving issues through an automated script that monitors each PM daily.
+</Note>
+
+<Tip>
+Provide a single, automated dashboard that monitors every Property-Manager integration daily, instantly flags issues, and triggers email / Slack alerts—so teams can fix problems early, keep data accurate, and maintain healthy integrations for all partners.
+</Tip>
+
+## Overview
+
+**<u>Dashboard structure</u>**
+
+**1. PM Metrics tab:** 
+This tab contains source data from Latchel Console and Hubspot for all property managers and is used to detect integration issues.
+
+<Frame>
+  <img src="/images/Intg-18.png" alt="image-20250512-214704.png" />
+</Frame>
+
+| **Column:** | **Description: ** |
+| --- | --- |
+| **A: **PM Company | Name of the property management company. |
+| **B:** Primary Member | Name of the primary member. |
+| **C:** Primary Email | Contact information for the primary member. |
+| **D:** Primary Phone | Contact information for the primary member. |
+| **E: **Other Company Members | Additional active contacts at the company. |
+| **F: **Members' Emails | Email addresses of active company members |
+| **G: **Members' Phones | Phone numbers of active company members. |
+| **H:** CSM | Name of the assigned Customer Success Manager |
+| **I:** Is the integration set up? | Yes/ No option. It indicates if the integration is set up. |
+| **J:** Last import date | Last sync date or - if no data. Some property managers do not require an integration to show an import date. |
+| **K**: Import status | Sync status. This will reflect if the sync is:CompleteProcessingCanceled  If the status is not displayed, then it will be marked as:Info not available |
+| **L:** Software Logged in Hubspot | The type of PMS the PM company has. |
+| **M:** Software Integration with Latchel | The type of integration the PM company has (Google sync, API, etc.) |
+| **N**: Plug-in version | Chrome plugin version (only for Appfolio PMs) |
+| **O: **Appfolio outdated version | Plugin version currently installed by the user (older than the latest release). It displays the version number for each property manager with an outdated version. |
+| **P: **Appfolio latest version | Most recent plugin version available. It displays only the latest version in the first row. Any property manager who has that version listed in column N is on the most recent release. |
+| **Q:** Is the integration run by Latchel? | Any Property Managers whose integration is run by Latchel will be marked as '**Yes**'. |
+| **R:** Ledger Report Access | Indicates which financial or ledger reports the PM has granted us access to within their PMS. |
+| **S:** PM Company ID | Identifies the unique company ID used by the PM, enabling correct mapping and data synchronization with Latchel. |
+| **T:** Service Start Date | Displays the date the PM company began its service with Latchel. |
+| **U:** Report Access | Lists the specific reports from the client's system that we currently have access to. |
+| **V:** Reports Missing | Identifies which PMS reports the PM has not granted access to yet. This helps track gaps in report availability that may impact data syncing or operational workflows. |
+| **W: **Properties Last Import Date | Shows the timestamp of the last successful property data synchronization. |
+| **X:** Properties Received | Total number of properties from Appfolio imported into Latchel |
+| **Y: **Properties Processed | Total number of properties successfully imported from Appfolio into Latchel. |
+| **Z:**  Property Errors | Displays the total number of properties with import issues. An error is counted when a property in the "Received" list was marked "Processed" but an issue was detected. |
+| **AA:** Property Error Deep Dive | Provides a direct method to investigate import errors. Stakeholders can download a CSV of the failed rows and use the provided query with a unique import_id to identify the specific issues. |
+| **AB:**  Tenants Last Import Date | Shows the timestamp of the last successful tenant data synchronization. |
+| **AC:** Tenants Received | Total number of tenants from Appfolio imported into Latchel. |
+| **AD:** Tenants Processed | Total number of tenants successfully imported from Appfolio into Latchel. |
+| **AE:**  Tenant Errors | Displays the total number of tenants with import issues. An error is counted when a tenant in the "Received" list was marked "Processed" but an issue was detected. |
+| **AF:** Tenant Error Deep Dive | Provides a direct method to investigate tenant import errors, including a downloadable CSV and a specific query. |
+| **AG: **Owners Last Import Date | Shows the timestamp of the last successful owner data synchronization. |
+| **AH:** Owners Received | Total number of owners from Appfolio imported into Latchel. |
+| **AI:** Owners Processed | Total number of owners successfully imported from Appfolio into Latchel. |
+| **AJ:**  Owner Errors | Displays the total number of Owner with import issues. An error is counted when a owner in the "Received" list was marked "Processed" but an issue was detected. |
+| **AK:** Owner Error Deep Dive | Provides a direct method to investigate owner import errors, including a downloadable CSV and a specific query. |
+| **AL: **Work Orders Last Import Date | Shows the timestamp of the last successful work order synchronization. |
+| **AM:** Work Orders Received | Total number of work orders from Appfolio imported into Latchel. |
+| **AN:** Work Orders Processed | Total number of work orders successfully imported from Appfolio into Latchel. |
+| **AO:** Work Order Errors | Displays the total number of Work Orders with import issues. An error is counted when a work order in the "Received" list was marked "Processed" but an issue was detected. |
+| **AP:** Work Order Error Deep Dive | Provides a direct method to investigate work order import errors, including a downloadable CSV and a specific query. |
+
+<Note>
+**Note: **As part of the onboarding process, CSMs should ensure that the Deal section of every Property manager is updated in HubSpot so that the 'Software Logged in HubSpot' column can be properly populated. The Customer section should not be modified.
+</Note>
+
+**2. Integration Issue PMs tab:**
+This sheet is dynamically populated using a script and sends emails & slack alerts. **<u>It highlights Property Managers with Integration issues. </u>**
+
+<Frame>
+  <img src="/images/Intg-19.png" alt="image-20250513-181639.png" />
+</Frame>
+
+| **Column: ** | **Description:** |
+| --- | --- |
+| **A:** PM Company | Auto-filled from PM Metrics if issues are detected |
+| **B:** Software | Type of PMS. Auto-filled from PM Metrics. |
+| **C:** Workflow owner | CSM/PS Team/ CP Team user is used to tag in Slack. |
+| **D:** Issue type | Auto-filled based on issues detected from PM Metrics: **Integration hasn’t run in 4 days****Integration hasn’t run in 7 days****Integration hasn’t run in +7 days****Last Import date missing****Outdated Appfolio integration version** |
+| **E:** Last Import date | Pulled from PM Metrics, it displays the last date when the sync was made. |
+| **F**: Risk Status | Highlights the issue risk status depending on the issue:**Low****Medium****High ** |
+| **G: **Email sent to the PM | Displays “Yes” once an email is sent to the PM team. If an email isn’t needed, it displays “Not needed.” |
+| **H: **Email Timestamp | Date/time when the step by step email was sent. |
+| **I:** Email subject | Email notification link sent to the PM, populated only for 'Integration hasn’t run’ and ‘Outdated Appfolio integration version’ issues. |
+| **J:** Issue flagged in Slack for stakeholders' review | Shows "Yes" once an issue is sent to Slack. Prevents duplication. |
+| **K:** Timestamp | Date/time when the issue was flagged in Slack. |
+| **L:** Slack Link | Direct link to the Slack message for traceability. |
+
+<Note>
+For more reference, see the SOP guide [How: the Integration Health monitoring process works](https://help.latchel.com/how-the-integration-health-monitoring-process-works)
+</Note>
+
+**3. Integration Metrics tab:**
+This sheet is dynamically populated by a script. This tab tracks weekly integration issues (Monday–Sunday) for PMs flagged for internal monitoring. These metrics provide visibility into issue frequency and our team's resolution performance, helping to ensure a better customer experience.
+
+<Frame>
+  <img src="/images/Intg-20.png" alt="image-20251119-164421.png" />
+</Frame>
+
+| **Column:** | **Description:** |
+| --- | --- |
+| **A: **PM Company | Identifies the Property Management company. |
+| **B:** Software | Identifies the Property Management software being used. |
+| **C: **Workflow owner | The team or individual responsible for resolving the issue. |
+| **D: **Issue type | Describes the category of the flagged issue. |
+| **E:** Last Import Date | The date of the last successful data sync. |
+| **F: **Total 4 Day Triggers | Total number of "Integration hasn't run in 4 days" alerts flagged during the week. |
+| **G: **# 4 Day Active Triggers | The number of 4-day alerts that are currently active during the week. |
+| **H:** # of 4 days triggers resolved (before reaching 7 days) | Total number of 4-day alerts that were resolved during the week (before escalating to a 7-day alert). |
+| **I:** # of 4 day triggers not resolved (Reached 7 days) | Total number of 4-day alerts that were NOT resolved during the week (before escalating to a 7-day alert). |
+| **J:** Total 7 Day Triggers | Total number of "Integration hasn't run in 7 days" alerts flagged during the week. |
+| **K: **# 7 Day Active Triggers | The number of 7-day alerts that are currently active during the week. |
+| **L:** # of 7 days triggers resolved  (within 24 hours) | Total number of 7-day alerts that were resolved within 24 hours of being flagged. |
+| **M:** # of 7 day triggers not resolved (within 24 hours) | Total number of 7-day alerts that were not resolved within 24 hours. |
+| **N:** Total +7 Day Triggers | Total number of alerts for integrations that have not synced in +7 days. |
+| **O:** # +7 Day Active Triggers | The number of +7 day alerts that remain unresolved during the week |
+| **P: **# of +7 day triggers resolved (before 72 hours) | Total number of +7 day alerts that were resolved within 72 hours. |
+| **Q:** # of +7 day triggers not resolved (after 72 hours) | Total number of +7 day alerts that were not resolved within 72 hours. |
+| **R: **Total Number of Issues Resolved by Team Per Week (Updated every Sunday): Product Support Team | Total issues resolved by the PST during the week:Integration hasn’t run in +7 days |
+| **S:** Total Number of Issues Resolved by Team Per Week (Updated every Sunday): Ops Integration Team | Total issues resolved by the OIT during the week:Integration hasn’t run in 4/7 days |
+| **T-Forward: **Weekly Breakdown — Results from PST and OIT | Breakdown of the team's weekly totals for issues resolved. Updated every Sunday. |
+
+**4. Integration Issue PMs (Internally Flagged) tab:**
+
+This sheet is dynamically populated using a script and sends emails and Slack alerts. It highlights Property Managers with integration issues. **<u>This tab flags PMs with issues whose sync is managed by Latchel.</u>**
+
+<Frame>
+  <img src="/images/Intg-21.png" alt="image-20251119-164922.png" />
+</Frame>
+
+| **Column: ** | **Description:** |
+| --- | --- |
+| **A:** PM Company | Auto-filled from PM Metrics if issues are detected |
+| **B: **PM Company ID | Identifies the unique company ID used by the PM, enabling correct mapping and data synchronization with Latchel. |
+| **C:** Software | Type of PMS. Auto-filled from PM Metrics. |
+| **D:** Workflow owner | CSM/PS Team/ CP Team user is used to tag in Slack. |
+| **E:** Issue type | Auto-filled based on issues detected from PM Metrics: **Integration hasn’t run in 2 days****Integration hasn’t run in 4 days****Integration hasn’t run in +4 days****Data Sync Error: Property/Tenant/Work Order/**_Owner (Coming out soon)_ |
+| **F:** Last Import date | Pulled from PM Metrics, it displays the last date when the sync was made. |
+| **G**: Risk Status | Highlights the issue risk status depending on the issue:**Low****Medium****High ** |
+| **H: ** Issue flagged in Slack for stakeholders' review | Shows "Yes" once an issue is sent to Slack. Prevents duplication. |
+| **I:** Timestamp | Date/time when the issue was flagged in Slack. |
+| **J:** Slack Link | Direct link to the Slack message for traceability. |
+| **K: **Email sent to the PM | Displays “Yes” once an email is sent to the PM team. If an email isn’t needed, it displays “Not needed.” |
+| **L: **Email Timestamp | Date/time when the step by step email was sent. |
+| **M:** Email subject | Email notification link sent to the PM, populated only for 'Integration hasn’t run +4 days’. |
+
+<Note>
+For more reference, see the SOP guide [https://latchel.atlassian.net/wiki/spaces/OI/pages/3598155779/How+the+Integration+Health+monitoring+process+works+for+Internally+Flagged+PMs?atlOrigin=eyJpIjoiYTBjYjA2YzY3ZjdmNGJjOGJiNTA1YTBlMDYwOWU3ZTAiLCJwIjoiYyJ9](https://help.latchel.com/how-the-integration-health-monitoring-process-works-for-internally-flagged-pms)
+</Note>
+
+**5. Integration Metrics (For Internally Flagged PMs) tab:**
+This sheet is dynamically populated by a script. This tab tracks weekly integration issues (Monday–Sunday) for PMs flagged for internal monitoring. These metrics provide visibility into issue frequency and our team's resolution performance, helping to ensure a better customer experience.
+
+<Frame>
+  <img src="/images/Intg-22.png" alt="image-20251119-170431.png" />
+</Frame>
+
+| **Column:** | **Description:** |
+| --- | --- |
+| **A:** PM Company | Identifies the Property Management company. |
+| **B:** PM Company ID | Identifies the unique company ID used by the PM, enabling correct mapping and data synchronization with Latchel. |
+| **C:** Software | Identifies the Property Management software being used. |
+| **D: **Workflow owner | The team or individual responsible for resolving the issue. |
+| **E:** Issue type | Describes the category of the flagged issue. |
+| **F:** Last Import Date | The date of the last successful data sync. |
+| **G:** Total 2 Day Triggers | Total number of "Integration hasn't run in 2 days" alerts flagged during the week. |
+| **H:** # 2 Day Active Triggers | The number of 2-day alerts that are currently active during the week. |
+| **I:** # of 2 days triggers resolved (before reaching 4 days) | Total number of 2-day alerts that were resolved during the week (before escalating to a 4-day alert). |
+| **J:** # of 2 day triggers not resolved (Reached 4 days) | Total number of 2-day alerts that were NOT resolved during the week (before escalating to a 4-day alert). |
+| **K:** Total 4 Day Triggers | Total number of "Integration hasn't run in 4 days" alerts flagged during the week. |
+| **L:** # 4 Day Active Triggers | The number of 4-day alerts that are currently active during the week. |
+| **M:** # of 4 days triggers resolved  (within 24 hours) | Total number of 4-day alerts that were resolved within 24 hours of being flagged. |
+| **N:** # of 4 day triggers not resolved (within 24 hours) | Total number of 4-day alerts that were not resolved within 24 hours. |
+| **O:** Total +4 Day Triggers | Total number of alerts for integrations that have not synced in +4 days. |
+| **P:** # +4 Day Active Triggers | The number of +4 day alerts that remain unresolved during the week |
+| **Q:** # of +4 day triggers resolved (before 72 hours) | Total number of +4 day alerts that were resolved within 72 hours. |
+| **R:** # of +4 day triggers not resolved (after 72 hours) | Total number of +4 day alerts that were not resolved within 72 hours. |
+| **S:** Total Number of Issues Resolved by Team Per Week (Updated every Sunday): Latchel Integration Team | Total issues resolved by the Latchel Integration Team during the week:Integration hasn’t run in 2/4 days |
+| **T:** Total Number of Issues Resolved by Team Per Week (Updated every Sunday): CSMs | Total issues resolved by the CSM Team during the week:Integration hasn’t run in +4 days |
+| **U- Forward: **Weekly Breakdown, results of the LIT and CSMs | Breakdown of the team's weekly totals for issues resolved. Updated every Sunday. |

@@ -1,0 +1,96 @@
+---
+title: "How to: Resolve AppFolio Work Order Export Failures"
+---
+
+<Note>
+This document outlines the end-to-end process for the Integration Team to diagnose and fix sync failures between Latchel and AppFolio. It provides detailed instructions for executing manual two-way syncs on the Latchel cloud device, performing database patches via pgAdmin and Postman, and auditing user permissions to ensure seamless data flow for our customers.
+</Note>
+
+## Step by step
+
+### **Step 1: Initial Investigation & Manual Sync Retry**
+
+<Note>
+This step rules out simple connectivity or session issues and resolves approximately 40% of cases.
+</Note>
+
+1. **Identify Failed Slugs:** Open the **Integration Health Metrics Dashboard** and navigate to the **PM Metrics** tab. Locate the column `AR Failed PMS Work Order Export Slugs` and copy the affected slug.
+2. **Verify the Failure:** Construct the Latchel Admin URL (`https://app.latchel.com/admin/work-order/<slug>`) and confirm the presence of the blue banner: _"This Work Order has not yet been synced with Appfolio."_
+3. **Validate Remote Session:** Log in to the Latchel remote server. Find the Chrome tab for the specific Property Manager and **Refresh** the AppFolio page.
+
+<Note>
+**Note:** If the session has expired, re-authenticate before proceeding.
+</Note>
+
+<Frame>
+  <img src="/images/Intg-93.png" alt="image-20260519-195105.png" />
+</Frame>
+
+4. **Initiate Two-Way Sync:** Open the Latchel Sync Extension and select **"Sync data in both directions (slower)"**.
+
+<Tip>
+**Note:** You must use the "Slower" variant; faster versions will not retry exports that have already failed.
+</Tip>
+
+<Frame>
+  <img src="/images/Intg-94.png" alt="image-20260519-195229.png" />
+</Frame>
+
+5. **Verify Resolution:** Once the sync is complete, refresh the Latchel Admin WO page.
+  - If the banner turns **Green**, mark as `Solved – Manual Sync Retry`.
+  - If the banner remains **Red**, proceed to Step 2.
+
+---
+
+### **Step 2: Database Diagnosis & Foreign Key Patching**
+
+<Note>
+This step identifies structural data gaps where a Latchel property is not correctly linked to AppFolio.
+</Note>
+
+1. **Check Sync Method:** In Latchel Admin, go to **PM Profile → Details → Miscellaneous Settings**. Confirm the "Integration Sync Method" is set to "Assigned Work Orders." If settings are incorrect, escalate to the CSM.
+2. **Query the Database:** Open **pgAdmin** and run a query on the `property` table using the address from the failing WO:codeSQL
+3. **Analyze **`ref_property_id`**:**
+  - **If the column has a value**, the link is active; **proceed to Step 3**.
+  - If the column is **NULL**, the property was never bound to AppFolio, so we will need to update the property.
+4. **Execute Postman Patch:** Open [**Trisha's Workspace**](https://oit-latchel-1681215.postman.co/workspace/Trisha%27s-Workspace~d9914a72-608d-47a1-8ba7-065605dde8ac/) in Postman under the **Common Area Properties** tab.
+  - Replace the **Latchel property ID** in both the request URL and the corresponding lines in the request body. Both spots must match; missing the body line is a common mistake. To obtain it, open the property page in Latchel admin. The numeric ID is in the URL.
+    Example URL: [https://app.latchel.com/admin/property/698346](https://app.latchel.com/admin/property/698346)
+  - Locate: `Add ref_id to properties already created`.
+  - Update the `ref_property_id` in **both** the URL query string and the Request Body.
+
+<Warning>
+Missing either location will result in a silent failure.
+</Warning>
+
+5. **Final Re-Sync:** After sending the Postman patch, return to the remote server and repeat the **Manual Two-Way Sync** (Step 1, Action 4).
+6. The issue should be resolved after this.
+
+---
+
+### **Step 3: Audit AppFolio Permissions & Visibility**
+
+<Note>
+This step determines if the Latchel user lacks the necessary access to read or write data in AppFolio.
+</Note>
+
+1. **Pivot to Reporting:** On the PM’s AppFolio tab on the remote server, navigate to **Reporting → Reports**.
+2. **Run WO Saved Report:** Open the "Work Order Saved Report" and click **Update** to force a fresh data pull.
+3. **Diagnose Visibility:**
+  - **Address found:** Read permissions are functional. The issue is likely a "Write" restriction preventing WO creation.
+  - **Address missing or Report Error:** The Latchel user lacks necessary report permissions.
+4. **Cross-Reference Live View:** Navigate to **Maintenance → Work Order** in AppFolio and search for the address.
+  - If no matching WO exists, the extension is being blocked by permission constraints; **proceed to step 4.**
+
+---
+
+### **Step 4: CSM Escalation Protocol**
+
+<Note>
+This step is used when the issue requires client-side intervention or CSM coordination.
+</Note>
+
+1. **Gather Evidence:** Compile the Latchel WO link(s) and the PM Company name.
+2. **Submit Escalation Package:** Send the investigation findings to the CSM. Explicitly state that Step 1 (Manual Sync) and Step 2 (Database Check) were completed but the failure persists.
+3. **Provide Client-Facing Instructions:** Remind the CSM to share the client facing guide included in the SOP: [_How to Grant Report Permissions to Latchel in AppFolio_](https://help.latchel.com/how-to-grant-report-permissions-to-latchel-in-appfolio) .
+4. **Finalize:** Engineering should only be involved if the CSM confirms that all PM permissions match the requirements and the failure still reproduces.
