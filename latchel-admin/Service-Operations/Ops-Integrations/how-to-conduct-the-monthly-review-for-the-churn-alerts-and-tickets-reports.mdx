@@ -1,13 +1,14 @@
 ---
 title: "How to conduct the Monthly Review for the Churn Alerts & Tickets reports"
+groups: ["latchel"]
 ---
 
 <Note>
-The purpose of this SOP is to provide a step-by-step guide on how to conduct the monthly review for the Churn Alerts and Tickets detected in Assembly for the PS Team’s review.
+  The purpose of this SOP is to provide a step-by-step guide on how to conduct the monthly review for the Churn Alerts and Tickets detected in Assembly for the PS Team’s review.
 </Note>
 
 <Tip>
-This review is performed once a month, during the first week, and covers the results from the previous month.** For example**:_ If it is September 5th, the monthly review will cover the month of August._
+  This review is performed once a month, during the first week, and covers the results from the previous month.\*\* For example\*\*:\_ If it is September 5th, the monthly review will cover the month of August.\_
 </Tip>
 
 ## Step by step
@@ -25,7 +26,6 @@ a. Go to the [**Churn Alerts / Ticket Reports Review**](https://docs.google.com/
 a. Right-click on each duplicated tab and update it with the month you are reviewing. **For example**: _If it is August 5th and you are reporting the information for July, make sure to add “July” to each tab._
 
 <Frame>
-  <img src="/images/Intg-101.png" alt="image-20250825-202750.png" />
 </Frame>
 
 ### Step 3: Perform the Monthly Review
@@ -33,154 +33,151 @@ a. Right-click on each duplicated tab and update it with the month you are revie
 Depending on the tab you are filling in, make sure to follow these steps:
 
 <Accordion title="Churn Alerts">
-<Tip>
-When a new alert appears in the [#service-changes](https://latchel.slack.com/archives/CKA2W1KJA) Slack channel, open the `Churn Alerts` tab in your monthly review sheet.
-</Tip>
+  <Tip>
+    When a new alert appears in the #service-changes Slack channel, open the `Churn Alerts` tab in your monthly review sheet.
+  </Tip>
 
-**a. Copy the following information from the Slack message:**
+  **a. Copy the following information from the Slack message:**
 
-- Property Manager's Name (paste into the `Company Name` column).
-- Date of the alert (paste into the `Date` column).
-- Slack message link (paste into the `Slack Link` column).
+  - Property Manager's Name (paste into the `Company Name` column).
+  - Date of the alert (paste into the `Date` column).
+  - Slack message link (paste into the `Slack Link` column).
 
-**b. Gather Deal Information from HubSpot**
+  **b. Gather Deal Information from HubSpot**
 
-1. Click the `Link to Deal Record` in the Slack notification to open the deal in HubSpot.
-2. Navigate to the `Desire to Churn Tracker` section.
-3. Copy the following data and paste it into the corresponding columns in your sheet:
+  1. Click the `Link to Deal Record` in the Slack notification to open the deal in HubSpot.
+  2. Navigate to the `Desire to Churn Tracker` section.
+  3. Copy the following data and paste it into the corresponding columns in your sheet:
+
   - `Churn Status`
   - `Primary Reason `
   - `Additional Reason `
   - `MRR` (Monthly Recurring Revenue)
 
-**c. Verify and Correct the MRR**
+  **c. Verify and Correct the MRR**
 
-<Warning>
-**Important:** The MRR value in HubSpot is often incorrect. **You must verify it directly in Rillet**. <u>The correct MRR is the value from the month </u>**<u>prior</u>**<u> to the churn alert</u>. (e.g., _for a July alert, you need June’s MRR_).
-</Warning>
+  <Warning>
+    **Important:** The MRR value in HubSpot is often incorrect. **You must verify it directly in Rillet**. <u>The correct MRR is the value from the month prior to the churn alert</u>. (e.g., _for a July alert, you need June’s MRR_).
+  </Warning>
 
-1. To verify, navigate to the Property Manager's profile in [**Rillet**](https://app.rillet.io/login?restore).
-2. Find the accurate MRR for the previous month to the Churn alert.
-3. Update the `MRR at Churn Request` column in your sheet with this correct value.
+  1. To verify, navigate to the Property Manager's profile in **Rillet**.
+  2. Find the accurate MRR for the previous month to the Churn alert.
+  3. Update the `MRR at Churn Request` column in your sheet with this correct value.
 
-**d. Record Total CMR from HubSpot**
+  **d. Record Total CMR from HubSpot**
 
-1. In HubSpot, go to the `Customer Account` profile.
-2. Under the `Overview` section, find the `Total CMR`.
-3. Copy this value and paste it into the `Total CMR` column in your sheet.
+  1. In HubSpot, go to the `Customer Account` profile.
+  2. Under the `Overview` section, find the `Total CMR`.
+  3. Copy this value and paste it into the `Total CMR` column in your sheet.
 
-**e. Link Related Ticket Reports **
+  \*\*e. Link Related Ticket Reports \*\*
 
-1. Identify all support tickets related to this Property Manager from the **three months prior** to the churn alert. (e.g., for a May alert, review tickets from February, March, and April).
-2. Find the links to these ticket reports in **Assembly**.
-3. Copy and paste all relevant Assembly links into the `Ticket Reports Related` column.
+  1. Identify all support tickets related to this Property Manager from the **three months prior** to the churn alert. (e.g., for a May alert, review tickets from February, March, and April).
+  2. Find the links to these ticket reports in **Assembly**.
+  3. Copy and paste all relevant Assembly links into the `Ticket Reports Related` column.
 </Accordion>
 
 <Accordion title="Tickets">
-**a. Go to Assembly and click on the Product Support section.**
-1. Click on `Analytics`, and in the `Interactions section`, customize the required report.
-2. Update the date range to download the previous month’s information. **For example**: _If it is September 5th, the monthly review will cover August 1st–31st._
-3. In `+Add Filter` select `source` > `API`
-4. Then click on `Download CSV`.
+  **a. Go to Assembly and click on the Product Support section.**
 
-<Frame>
-  <img src="/images/Intg-102.png" alt="image-20250825-204909.png" />
-</Frame>
+  1. Click on `Analytics`, and in the `Interactions section`, customize the required report.
+  2. Update the date range to download the previous month’s information. **For example**: _If it is September 5th, the monthly review will cover August 1st–31st._
+  3. In `+Add Filter` select `source` \> `API`
+  4. Then click on `Download CSV`.
 
-<Warning>
-Select the corresponding time zone according to the country you’re located.
-</Warning>
+  <Frame>
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-103.png" alt="image-20250825-205252.png" />
-</Frame>
+  <Warning>
+    Select the corresponding time zone according to the country you’re located.
+  </Warning>
 
-<Tip>
-The `export_tickets` report is needed for this review. The `interactions_data` report is not useful.
-</Tip>
+  <Frame>
+  </Frame>
 
-<Warning>
-**Downloading the Assembly report can take a long time** — this is a common issue because their site has many problems. <u>If that happens, contact Assembly support to request the report and </u>**<u>provide the agent with the specific details needed</u>**.** **
+  <Tip>
+    The `export_tickets` report is needed for this review. The `interactions_data` report is not useful.
+  </Tip>
 
-**<u>If they do not reply within 24 hours</u>**<u>, escalate the issue to Trisha for help downloading the report.</u>
-</Warning>
+  <Warning>
+    **Downloading the Assembly report can take a long time** — this is a common issue because their site has many problems. <u>If that happens, contact Assembly support to request the report and provide the agent with the specific details needed</u>.\*\* \*\*
 
-**b. Open a new Google sheet spreadsheet to filter the report.**
+    **<u>If they do not reply within 24 hours</u>**<u>, escalate the issue to Trisha for help downloading the report.</u>
+  </Warning>
 
-1. Ensure you have selected the filter in the top-right corner of the spreadsheet.
-2. Click on **File > Import > Upload > Browse  > Select the report**.
-3. Choose **Replace data at selected cell** and **click on Import data** to upload it correctly
+  **b. Open a new Google sheet spreadsheet to filter the report.**
 
-**c. Filter the report to extract the information for the review.**
+  1. Ensure you have selected the filter in the top-right corner of the spreadsheet.
+  2. Click on **File \> Import \> Upload \> Browse  \> Select the report**.
+  3. Choose **Replace data at selected cell** and **click on Import data** to upload it correctly
 
-1. **Filter column G** to display only the issues that appear in the Tickets tab (Column D: Integration Reason and Column E: Emergency WOs Reason)
-2. **Copy all the links** from column E of the downloaded report and **paste them into column F Link to Issue Report of the Tickets tab**.
-3. **Copy the dates** that appear in column J of the report and **paste them into column C Date On Assembly of the Tickets tab.**
+  **c. Filter the report to extract the information for the review.**
 
-**d. Classify all the ticket reports.**
+  1. **Filter column G** to display only the issues that appear in the Tickets tab (Column D: Integration Reason and Column E: Emergency WOs Reason)
+  2. **Copy all the links** from column E of the downloaded report and **paste them into column F Link to Issue Report of the Tickets tab**.
+  3. **Copy the dates** that appear in column J of the report and **paste them into column C Date On Assembly of the Tickets tab.**
 
-1. Open every ticket report in **Assembly**.
-2. In the `Tickets` tab, enter the following:
+  **d. Classify all the ticket reports.**
+
+  1. Open every ticket report in **Assembly**.
+  2. In the `Tickets` tab, enter the following:
+
   - `Property Manager`: Find the company name in Assembly (usually at the end of the report, e.g., "J&D Management").
   - `Type of Ticket Report`: Indicate if the ticket was a complaint from the customer (PM Ticket Complaint) or an internal issue Report (Ops Ticket Report).
   - `Reason`: Specify the ticket category (e.g., `Integrations Reason`, `Emergency Work Orders`).
 </Accordion>
 
 <Accordion title="Month Analysis">
-**a. Complete the Analysis**
+  **a. Complete the Analysis**
 
-<Tip>
-The `Analysis` tab automatically calculates trends and totals based on the data in the `Churn Alerts` and `Tickets` tabs.
-</Tip>
+  <Tip>
+    The `Analysis` tab automatically calculates trends and totals based on the data in the `Churn Alerts` and `Tickets` tabs.
+  </Tip>
 
-1. You must manually copy the data from the `Ticket reports within 3 months before Churn Alert` column (located in the `Churn Alerts` tab) and paste it in the column E Ticket Reports related to the Month’s Analysis.
+  1. You must manually copy the data from the `Ticket reports within 3 months before Churn Alert` column (located in the `Churn Alerts` tab) and paste it in the column E Ticket Reports related to the Month’s Analysis.
 
-<Frame>
-  <img src="/images/Intg-104.png" alt="image-20250825-211916.png" />
-</Frame>
+  <Frame>
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-105.png" alt="image-20250825-212054.png" />
-</Frame>
+  <Frame>
+  </Frame>
 
-2. Paste this data into the corresponding section within the `Analysis` tab to complete the report.
+  2. Paste this data into the corresponding section within the `Analysis` tab to complete the report.
 
-**b. Update All Formulas**
+  **b. Update All Formulas**
 
-<Tip>
-All formulas referencing the previous month must be updated.
-</Tip>
+  <Tip>
+    All formulas referencing the previous month must be updated.
+  </Tip>
 
-1. Go through the cells containing formulas in the new `Analysis` tab.
-2. Carefully find every instance of the previous month's name (e.g., "June") within the formulas.
-3. Replace it with the current month's name (e.g., "July").
-4. Ensure **all** formulas are updated to pull data from the correct new tabs.
+  1. Go through the cells containing formulas in the new `Analysis` tab.
+  2. Carefully find every instance of the previous month's name (e.g., "June") within the formulas.
+  3. Replace it with the current month's name (e.g., "July").
+  4. Ensure **all** formulas are updated to pull data from the correct new tabs.
 
-<Frame>
-  <img src="/images/Intg-106.png" alt="image-20250825-212352.png" />
-</Frame>
+  <Frame>
+  </Frame>
 </Accordion>
 
 <Accordion title="Month's Totals">
-**a. Update All Formulas**
+  **a. Update All Formulas**
 
-<Tip>
-All formulas referencing the previous month must be updated.
-</Tip>
+  <Tip>
+    All formulas referencing the previous month must be updated.
+  </Tip>
 
-1. Go through the cells containing formulas in the columns B,C and D of `Month's Totals` tab.
-2. Carefully find every instance of the previous month's name (e.g., "June") within the formulas.
-3. Replace it with the current month's name (e.g., "July").
-4. Ensure **all** formulas are updated to pull data from the correct new tabs.
+  1. Go through the cells containing formulas in the columns B,C and D of `Month's Totals` tab.
+  2. Carefully find every instance of the previous month's name (e.g., "June") within the formulas.
+  3. Replace it with the current month's name (e.g., "July").
+  4. Ensure **all** formulas are updated to pull data from the correct new tabs.
 </Accordion>
 
 <Tip>
-Once you've finished updating all tabs, please let Trisha know so the _Ticket Analysis by PM 2025_ and _Churn Analysis by PM 2025_ can be updated before informing the PS Team. After you receive approval, proceed with the final step.
+  Once you've finished updating all tabs, please let Trisha know so the _Ticket Analysis by PM 2025_ and _Churn Analysis by PM 2025_ can be updated before informing the PS Team. After you receive approval, proceed with the final step.
 </Tip>
 
 ### Step 4: Tag the corresponding Stakeholders to let them know the Monthly Review is ready.
 
-a. In the [integration-notification-feedback](https://latchel.slack.com/archives/C08U0H63Y4B) channel, post the following template:
+a. In the integration-notification-feedback channel, post the following template:
 
-_Hi _[@ps-team](https://latchel.slack.com/admin/user_groups)!
-_Just a quick update to let you know that the [Month] analysis is ready. Please let us know if you have any questions. Thanks!_
+\_Hi \_@ps-team! _Just a quick update to let you know that the \[Month\] analysis is ready. Please let us know if you have any questions. Thanks!_

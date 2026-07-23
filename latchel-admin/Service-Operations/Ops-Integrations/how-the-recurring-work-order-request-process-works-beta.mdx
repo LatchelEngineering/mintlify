@@ -1,11 +1,12 @@
 ---
 title: "How: the Recurring Work Order Request process works (Beta)"
+groups: ["latchel"]
 ---
 
 <Note>
-This SOP details the end-to-end process for the Recurring Work Orders Beta Program. It explains how to handle the consolidated workflow where Property Managers can request both new Common Area properties and recurring maintenance in a single submission.
+  This SOP details the end-to-end process for the Recurring Work Orders Beta Program. It explains how to handle the consolidated workflow where Property Managers can request both new Common Area properties and recurring maintenance in a single submission.
 
-The process involves capturing data via dynamic form, validating requests in a central Google Sheet, and utilizing Slack alerts to coordinate between the PMs, the Ops team, and the Associate Program Manager.
+  The process involves capturing data via dynamic form, validating requests in a central Google Sheet, and utilizing Slack alerts to coordinate between the PMs, the Ops team, and the Associate Program Manager.
 </Note>
 
 ## Step by step
@@ -15,13 +16,13 @@ The process involves capturing data via dynamic form, validating requests in a c
 **a.** The PM fills out the [**Recurring Work Orders Beta Program form**](https://recurring-work-orders.web.app/) to request a new recurring work order.
 
 <Frame>
-  <img src="/images/Intg-129.png" alt="image-20260123-193520.png" />
+  ![image-20260123-193520.png](/images/Intg-129.png)
 </Frame>
 
 **b.** The form uses conditional logic:
 
 - **Existing Property:** If the property exists, they provide the URL and maintenance details.
-- **New Common Area:** If they select "Is this for a common area property? -> **Yes**" AND "Is the common area property already created? -> **No**", the form expands to ask for the building's address details.
+- **New Common Area:** If they select "Is this for a common area property? -\> **Yes**" AND "Is the common area property already created? -\> **No**", the form expands to ask for the building's address details.
 
 **c.** Upon submission:
 
@@ -31,11 +32,11 @@ The process involves capturing data via dynamic form, validating requests in a c
 **d.** Upon submission, the PM sees a confirmation message stating the request has been received and the Ops team will review it.
 
 <Frame>
-  <img src="/images/Intg-130.png" alt="image-20260108-180523.png" />
+  ![image-20260108-180523.png](/images/Intg-130.png)
 </Frame>
 
 <Note>
-_**Note:**_ The form is dynamic. Depending on the PM’s answers (e.g., selecting "No" for resident coordination), certain fields (like Resident URL) may be hidden or optional.
+  **_Note:_** The form is dynamic. Depending on the PM’s answers (e.g., selecting "No" for resident coordination), certain fields (like Resident URL) may be hidden or optional.
 </Note>
 
 ### Step 2: Ops Team Verification
@@ -43,194 +44,189 @@ _**Note:**_ The form is dynamic. Depending on the PM’s answers (e.g., selectin
 **a.** A real-time alert is sent to the [#automatic-recurrent-work-orders](https://latchel.slack.com/archives/C09U7LCP44E) Slack channel. Acknowledge the Slack alert with a checkmark reaction (✅).
 
 <Frame>
-  <img src="/images/Intg-131.png" alt="image-20260209-211836.png" />
+  ![image-20260209-211836.png](/images/Intg-131.png)
 </Frame>
 
-**b.** **Duplicate Check:** _**<u>The Ops team must verify the request is not a duplicate</u>**_.
+**b.** **Duplicate Check:** **_<u>The Ops team must verify the request is not a duplicate</u>_**.
 
 1. PMs only need to capture the information once per task. The automation handles the recurrence.
 2. Use `CTRL + F` in the **Recurring Work Order Request** tab to search by Address and Work Order Title to ensure it doesn't already exist. **<u>If it already exists please inform Trisha.</u>**
 
 <Warning>
-Check the **Start Date (Column S)** to confirm when the PM requested this work order to be created. Regardless of the date, Step 2 should be completed.
+  Check the **Start Date (Column S)** to confirm when the PM requested this work order to be created. Regardless of the date, Step 2 should be completed.
 
-If the work order is for a future date later than when the notification was triggered, **automatic step 3** and **manual step 4 and 5** from the Ops team will not be completed until the work order is created. For this reason, the Ops team must check the **Recurring Work Order Request** tab daily, specifically **Column Y (Last Run Date)**, to know when to continue with steps 3–5.
+  If the work order is for a future date later than when the notification was triggered, **automatic step 3** and **manual step 4 and 5** from the Ops team will not be completed until the work order is created. For this reason, the Ops team must check the **Recurring Work Order Request** tab daily, specifically **Column Y (Last Run Date)**, to know when to continue with steps 3–5.
 </Warning>
 
 3. Refer to the [**Recurring Work Order Request Beta Responses**](https://docs.google.com/spreadsheets/d/1S1uIdgEyqSYh9Jqy6E_N-NoT2WA3WG3sZubhkWJiE4U/edit?gid=1730274070#gid=1730274070) sheet to confirm which steps you should follow based on the situation:
 
 <Accordion title="Recurring Work Order Request for Regular and Common Area Properties Already Created">
-<Tip>
-To determine whether this is for a Common Area Property or a Regular property please refer to the **Submission ID** column in the **Recurring Work Order Request** and **Common Area Property Request** tabs. 
+  <Tip>
+    To determine whether this is for a Common Area Property or a Regular property please refer to the **Submission ID** column in the **Recurring Work Order Request** and **Common Area Property Request** tabs.
 
-<u>If you see both columns share the same </u>**<u>Submission ID</u>**, skip this dropdown and continue following the steps in the dropdown **Recurring Work Order Request for Common Area Properties**.
-</Tip>
+    <u>If you see both columns share the same Submission ID</u>, skip this dropdown and continue following the steps in the dropdown **Recurring Work Order Request for Common Area Properties**.
+  </Tip>
 
-**c.** In the **Recurring Work Order Request** tab manually complete the following columns:
+  **c.** In the **Recurring Work Order Request** tab manually complete the following columns:
 
-- **Column V (PM Company ID):**
-1. Go to the PM Company Profile in Latchel.
-2. Copy the ID from the end of the URL (e.g., `42489`).
+  - **Column V (PM Company ID):**
 
-3. Paste it into **Column V**.
+  1. Go to the PM Company Profile in Latchel.
+  2. Copy the ID from the end of the URL (e.g., `42489`).
+  3. Paste it into **Column V**.
 
-<Frame>
-  <img src="/images/Intg-132.png" alt="image-20260108-182349.png" />
-</Frame>
+  <Frame>
+    ![image-20260108-182349.png](/images/Intg-132.png)
+  </Frame>
 
-- **Column W (Project ID):**
-1. In Latchel, go to the PM Company Profile > Users.
-2. Identify the user who submitted the request (match the email in Column B in the **Recurring Work Order Request** tab).
+  - **Column W (Project ID):**
 
-3. Click the three dots (top right) > **Impersonate User**.
+  1. In Latchel, go to the PM Company Profile \> Users.
+  2. Identify the user who submitted the request (match the email in Column B in the **Recurring Work Order Request** tab).
+  3. Click the three dots (top right) \> **Impersonate User**.
+  4. Navigate to **Maintenance** \> **Projects**.
 
-4. Navigate to **Maintenance** > **Projects**.
+  <Warning>
+    Only create the project if one does not already exist for that address. If it does, just select the project and click **Add Work Order** once it is created. Skip the following steps and go to **Column X (Status)**.
+  </Warning>
 
-<Warning>
-Only create the project if one does not already exist for that address. If it does, just select the project and click **Add Work Order** once it is created. Skip the following steps and go to **Column X (Status)**.
-</Warning>
+  5. Select **Create New**.
 
-5. Select **Create New**.
+  <Frame>
+    ![image-20260108-181535.png](/images/Intg-133.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-133.png" alt="image-20260108-181535.png" />
-</Frame>
+  6. Enter the **Property Address**.
 
-6. Enter the **Property Address**.
+  <Frame>
+    ![image-20260108-181604.png](/images/Intg-134.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-134.png" alt="image-20260108-181604.png" />
-</Frame>
+  7. Under "Would you like to categorize this project?", select **Other**. Click Next.
 
-7. Under "Would you like to categorize this project?", select **Other**. Click Next.
+  <Frame>
+    ![image-20260108-181745.png](/images/Intg-135.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-135.png" alt="image-20260108-181745.png" />
-</Frame>
+  8. Under "Choose a name for the Project", change "Other" to **Recurring work orders**.
+  9. Click **Create Project**.
 
-8. Under "Choose a name for the Project", change "Other" to **Recurring work orders**.
-9. Click **Create Project**.
+  <Frame>
+    ![image-20260108-181846.png](/images/Intg-136.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-136.png" alt="image-20260108-181846.png" />
-</Frame>
+  10. Copy the **Project ID** from the end of the URL (e.g., `2167`) and paste it into **Column T**.
 
-10. Copy the **Project ID** from the end of the URL (e.g., `2167`) and paste it into **Column T**.
+  <Frame>
+    ![image-20260108-181933.png](/images/Intg-137.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-137.png" alt="image-20260108-181933.png" />
-</Frame>
+  <Frame>
+    ![image-20260108-182033.png](/images/Intg-138.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-138.png" alt="image-20260108-182033.png" />
-</Frame>
+  11. Click **End Impersonation**.
 
-11. Click **End Impersonation**.
+  <Frame>
+    ![image-20260108-182207.png](/images/Intg-139.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-139.png" alt="image-20260108-182207.png" />
-</Frame>
+  - **Column X (Status):**
 
-- **Column X (Status):**
-1. Select **"Active"** from the dropdown menu.
+  1. Select **"Active"** from the dropdown menu.
 </Accordion>
 
 <Accordion title="Recurring Work Order Requests for Common Area Properties">
-<Tip>
-To determine whether the property belongs to the recurring work order request, please refer to the **Submission ID** column in the **Recurring Work Order Request** and **Common Area Property Request** tabs.
+  <Tip>
+    To determine whether the property belongs to the recurring work order request, please refer to the **Submission ID** column in the **Recurring Work Order Request** and **Common Area Property Request** tabs.
 
-<u>If both columns share the same </u>**<u>Submission ID</u>**, continue following the steps in this dropdown.
-</Tip>
+    <u>If both columns share the same Submission ID</u>, continue following the steps in this dropdown.
+  </Tip>
 
-**c. **Go to the **Common Area Property Requests** tab to complete the following steps manually.
+  \*\*c. \*\*Go to the **Common Area Property Requests** tab to complete the following steps manually.
 
-<Frame>
-  <img src="/images/Intg-140.png" alt="image-20260123-200604.png" />
-</Frame>
+  <Frame>
+    ![image-20260123-200604.png](/images/Intg-140.png)
+  </Frame>
 
-**d. Column A (ref_property_id):**
+  **d. Column A (ref\_property\_id):**
 
-1. Open pgAdmin.
-2. Run a query using the address/zip from the sheet:
+  1. Open pgAdmin.
+  2. Run a query using the address/zip from the sheet:
 
-<Warning>
-Property managers without an integration won’t have a ref_property_id. If this is the case, **<u>select the cell and enter a space in column A</u>**; this will force the automation to create the property.
-</Warning>
+  <Warning>
+    Property managers without an integration won’t have a ref\_property\_id. If this is the case, **<u>select the cell and enter a space in column A</u>**; this will force the automation to create the property.
+  </Warning>
 
-3. For PMs who have the ref_property_id, paste the ref_property_id into Column A.
+  3. For PMs who have the ref\_property\_id, paste the ref\_property\_id into Column A.
 
-<Frame>
-  <img src="/images/Intg-141.png" alt="image-20260108-201207.png" />
-</Frame>
+  <Frame>
+    ![image-20260108-201207.png](/images/Intg-141.png)
+  </Frame>
 
-**e. Wait for Automation:** The system will process the row.
+  **e. Wait for Automation:** The system will process the row.
 
-1. **Portfolio Check (Col I):** If **Column I** has a portfolio name, go to Latchel and manually add the newly created property to that portfolio. **<u>If not, skip this step and go to step e6</u>**.
-2. If the PM requested the newly created common area property to be added to a portfolio, go to the PM company profile in Latchel → Properties → search for the newly created common area property and select it.
-3. In the property profile, scroll down to the **Portfolio** section, click the three dots on the right, and select **Set portfolio**.
-4. Enter the portfolio address and click **Submit**.
-5. This action will add the property to the requested portfolio.
-6. **Status (Col L):** Changes to "**Created"**. If the automation detects the property is already created, it will mark it as **“Duplicate”**. **<u>If this is the case please inform Trisha.</u>**
-7. **Property ID/URL (Col M, N):** Populates automatically. It usually takes a few minutes for the system to create the property; in the meantime, you can proceed with step f.
+  1. **Portfolio Check (Col I):** If **Column I** has a portfolio name, go to Latchel and manually add the newly created property to that portfolio. **<u>If not, skip this step and go to step e6</u>**.
+  2. If the PM requested the newly created common area property to be added to a portfolio, go to the PM company profile in Latchel → Properties → search for the newly created common area property and select it.
+  3. In the property profile, scroll down to the **Portfolio** section, click the three dots on the right, and select **Set portfolio**.
+  4. Enter the portfolio address and click **Submit**.
+  5. This action will add the property to the requested portfolio.
+  6. **Status (Col L):** Changes to "**Created"**. If the automation detects the property is already created, it will mark it as **“Duplicate”**. **<u>If this is the case please inform Trisha.</u>**
+  7. **Property ID/URL (Col M, N):** Populates automatically. It usually takes a few minutes for the system to create the property; in the meantime, you can proceed with step f.
 
-**f. Manual Data Entry:** Go to the **Recurring Work Order Request** tab and manually complete the following columns:
+  **f. Manual Data Entry:** Go to the **Recurring Work Order Request** tab and manually complete the following columns:
 
-- **Column V (PM Company ID):**
+  - **Column V (PM Company ID):**
 
-1. Go to the PM Company Profile in Latchel.
-2. Copy the ID from the end of the URL (e.g., `42489`).
+  1. Go to the PM Company Profile in Latchel.
+  2. Copy the ID from the end of the URL (e.g., `42489`).
+  3. Paste it into **Column V**.
 
-3. Paste it into **Column V**.
+  <Frame>
+    ![image-20260108-182349.png](/images/Intg-132.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-132.png" alt="image-20260108-182349.png" />
-</Frame>
+  - **Column W (Project ID):**
 
-- **Column W (Project ID):**
+  1. In Latchel, go to the PM Company Profile \> Users.
+  2. Identify the user who submitted the request (match the email in Column B in the **Recurring Work Order Request** tab).
+  3. Click the three dots (top right) \> **Impersonate User**.
+  4. Navigate to **Maintenance** \> **Projects**.
+  5. **Create New Project** (only if one does not already exist for that address).
+  6. Select **Create New**.
+  7. Enter the **Property Address**.
+  8. Under "Would you like to categorize this project?", select **Other**. Click Next.
 
-1. In Latchel, go to the PM Company Profile > Users.
-2. Identify the user who submitted the request (match the email in Column B in the **Recurring Work Order Request** tab).
+  <Frame>
+    ![image-20260108-181745.png](/images/Intg-135.png)
+  </Frame>
 
-3. Click the three dots (top right) > **Impersonate User**.
+  9. Under "Choose a name for the Project", change "Other" to **Recurring work orders**.
+  10. Click **Create Project**.
 
-4. Navigate to **Maintenance** > **Projects**.
-5. **Create New Project** (only if one does not already exist for that address).
-6. Select **Create New**.
+  <Frame>
+    ![image-20260108-181846.png](/images/Intg-136.png)
+  </Frame>
 
-7. Enter the **Property Address**.
+  11. Copy the **Project ID** from the end of the URL (e.g., `2167`) and paste it into **Column T**.
 
-8. Under "Would you like to categorize this project?", select **Other**. Click Next.
+  <Frame>
+    ![image-20260108-181933.png](/images/Intg-137.png)
+  </Frame>
 
-<Frame>
-  <img src="/images/Intg-135.png" alt="image-20260108-181745.png" />
-</Frame>
+  <Frame>
+    ![image-20260108-182033.png](/images/Intg-138.png)
+  </Frame>
 
-9. Under "Choose a name for the Project", change "Other" to **Recurring work orders**.
-10. Click **Create Project**.
+  12. Click **End Impersonation**.
 
-<Frame>
-  <img src="/images/Intg-136.png" alt="image-20260108-181846.png" />
-</Frame>
+  <Frame>
+    ![image-20260108-182207.png](/images/Intg-139.png)
+  </Frame>
 
-11. Copy the **Project ID** from the end of the URL (e.g., `2167`) and paste it into **Column T**.
+  - **Column X (Status):**
 
-<Frame>
-  <img src="/images/Intg-137.png" alt="image-20260108-181933.png" />
-</Frame>
-
-<Frame>
-  <img src="/images/Intg-138.png" alt="image-20260108-182033.png" />
-</Frame>
-
-12. Click **End Impersonation**.
-
-<Frame>
-  <img src="/images/Intg-139.png" alt="image-20260108-182207.png" />
-</Frame>
-
-- **Column X (Status):**
-
-1. Select **"Active"** from the dropdown menu.
+  1. Select **"Active"** from the dropdown menu.
 </Accordion>
 
 ### Step 3: Automated Scheduling (n8n)
@@ -243,44 +239,44 @@ Once the status is set to "Active," the automation (n8n) takes over:
 
 - _Example:_ If Frequency = Weekly and Start Date = 01/08/2026, the Next Run Date will be 01/15/2026.
 
-**c.** **Satisfaction Survey (Column AA):** Updates to "Yes" automatically once the [**survey**](https://latchel.typeform.com/to/F0NjOaBk)** **email is sent (24 hours after WO creation). If the PM user has submitted another recurring work order request, the survey won’t be sent again and this field will be marked as “Already sent.” This is to avoid overwhelming the PM with survey emails.
+**c.** **Satisfaction Survey (Column AA):** Updates to "Yes" automatically once the [**survey**](https://latchel.typeform.com/to/F0NjOaBk)\*\* \*\*email is sent (24 hours after WO creation). If the PM user has submitted another recurring work order request, the survey won’t be sent again and this field will be marked as “Already sent.” This is to avoid overwhelming the PM with survey emails.
 
 <Frame>
-  <img src="/images/Intg-142.png" alt="image-20260108-182823.png" />
+  ![image-20260108-182823.png](/images/Intg-142.png)
 </Frame>
 
-**d. Submission ID (Column AB): **Unique identifier used to link requests with Recurring requests across tabs. This is filled automatically.
+\*\*d. Submission ID (Column AB): \*\*Unique identifier used to link requests with Recurring requests across tabs. This is filled automatically.
 
 ### Step 4: Ops moves the work order forward
 
 **a.** By default, work orders are created with the “Need PM Approval” status.
 
 <Frame>
-  <img src="/images/Intg-143.png" alt="image-20260109-200004.png" />
+  ![image-20260109-200004.png](/images/Intg-143.png)
 </Frame>
 
-**b.** Before you proceed with moving it, go to the details under the **Details tab > Work Order Budget Limits**, check the **normal soft limit.**
+**b.** Before you proceed with moving it, go to the details under the **Details tab \> Work Order Budget Limits**, check the **normal soft limit.**
 
 <Frame>
-  <img src="/images/Intg-144.png" alt="image-20260123-212320.png" />
+  ![image-20260123-212320.png](/images/Intg-144.png)
 </Frame>
 
 **c.** Open the newly created work order, **click on the button Action** located in the top right corner, and **click on Approve or Deny Work**.
 
 <Frame>
-  <img src="/images/Intg-145.png" alt="image-20260109-200152.png" />
+  ![image-20260109-200152.png](/images/Intg-145.png)
 </Frame>
 
 **d.** A new window will be open, **click on Approve**.
 
 <Frame>
-  <img src="/images/Intg-146.png" alt="image-20260109-200326.png" />
+  ![image-20260109-200326.png](/images/Intg-146.png)
 </Frame>
 
 **e.** Input the amount you checked previously under the normal soft limit and type on the reason: Recurring Work Order, and **click Submit**.
 
 <Frame>
-  <img src="/images/Intg-147.png" alt="image-20260123-211933.png" />
+  ![image-20260123-211933.png](/images/Intg-147.png)
 </Frame>
 
 **f.** This will move the work order to the next status in the workflow. From there, you should let the work order follow the flow on its own.
@@ -295,84 +291,82 @@ Once the status is set to "Active," the automation (n8n) takes over:
 ---
 
 <Accordion title="Auto Work Order History Tab">
-<Warning>
-**Important:** Ops team does **not** make edits to this tab.
-</Warning>
+  <Warning>
+    **Important:** Ops team does **not** make edits to this tab.
+  </Warning>
 
-This tab serves as a read-only history log of all work orders created (both the original and all subsequent recurring instances).
+  This tab serves as a read-only history log of all work orders created (both the original and all subsequent recurring instances).
 
-<Frame>
-  <img src="/images/Intg-148.png" alt="image-20260108-183203.png" />
-</Frame>
+  <Frame>
+    ![image-20260108-183203.png](/images/Intg-148.png)
+  </Frame>
 </Accordion>
 
 <Accordion title="Managing Existing Recurring Orders">
-<Warning>
-**Important:** The Ops team does **not** make edits to this tab. **<u>Currently, this process is handled only by Trisha.</u>**
-</Warning>
+  <Warning>
+    **Important:** The Ops team does **not** make edits to this tab. **<u>Currently, this process is handled only by Trisha.</u>**
+  </Warning>
 
-**a.** If a PM needs to modify an order, they fill out the [**Manage Recurring Work Orders form**](https://latchel.typeform.com/to/XfYEOMDe?typeform-source=www.google.com).
-**b.** Responses flow into the **Manage Recurring Work Orders** tab and trigger an alert in [#automatic-recurrent-work-orders](https://latchel.slack.com/archives/C09U7LCP44E)
+  **a.** If a PM needs to modify an order, they fill out the [**Manage Recurring Work Orders form**](https://latchel.typeform.com/to/XfYEOMDe?typeform-source=www.google.com). **b.** Responses flow into the **Manage Recurring Work Orders** tab and trigger an alert in [#automatic-recurrent-work-orders](https://latchel.slack.com/archives/C09U7LCP44E)
 
-<Frame>
-  <img src="/images/Intg-149.png" alt="image-20260108-184033.png" />
-</Frame>
+  <Frame>
+    ![image-20260108-184033.png](/images/Intg-149.png)
+  </Frame>
 
-**Action:**
+  **Action:**
 
-1. Acknowledge the Slack alert with a checkmark reaction (✅).
-2. Review the requested change in the **Manage Recurring Work Orders** tab (Cancel, Pause, or Edit Instructions/Frequency).
-3. Apply the necessary changes to the status in **Column V** or **Column P** of the main **Recurring Work Order Request** tab.
-4. Confirm in the notification thread received in the [#automatic-recurrent-work-orders](https://latchel.slack.com/archives/C09U7LCP44E) that the manual steps were completed successfully with a brief message. You can use one of the following template:
+  1. Acknowledge the Slack alert with a checkmark reaction (✅).
+  2. Review the requested change in the **Manage Recurring Work Orders** tab (Cancel, Pause, or Edit Instructions/Frequency).
+  3. Apply the necessary changes to the status in **Column V** or **Column P** of the main **Recurring Work Order Request** tab.
+  4. Confirm in the notification thread received in the [#automatic-recurrent-work-orders](https://latchel.slack.com/archives/C09U7LCP44E) that the manual steps were completed successfully with a brief message. You can use one of the following template:
+
   - Manual steps completed
 </Accordion>
 
 <Accordion title="Satisfaction Survey Process">
-<Warning>
-**Important:** The Ops team does **not** make edits to this tab. **<u>Currently, this process is handled only by Trisha.</u>**
-</Warning>
+  <Warning>
+    **Important:** The Ops team does **not** make edits to this tab. **<u>Currently, this process is handled only by Trisha.</u>**
+  </Warning>
 
-**a.** A [survey](https://latchel.typeform.com/to/F0NjOaBk?typeform-source=www.google.com) is automatically emailed to the PM 24 hours after a work order is created.
-**b.** Responses flow into the **Recurring Work Order Satisfaction Survey** tab and trigger an alert in [#automatic-recurrent-work-orders](https://latchel.slack.com/archives/C09U7LCP44E).
+  **a.** A [survey](https://latchel.typeform.com/to/F0NjOaBk?typeform-source=www.google.com) is automatically emailed to the PM 24 hours after a work order is created. **b.** Responses flow into the **Recurring Work Order Satisfaction Survey** tab and trigger an alert in [#automatic-recurrent-work-orders](https://latchel.slack.com/archives/C09U7LCP44E).
 
-<Frame>
-  <img src="/images/Intg-150.png" alt="image-20260108-183626.png" />
-</Frame>
+  <Frame>
+    ![image-20260108-183626.png](/images/Intg-150.png)
+  </Frame>
 
-**c.** **Action:**
+  **c.** **Action:**
 
-1. Acknowledge the notification.
-2. Contact the PM via email based on the feedback.
-3. Confirm in the notification thread that the PM has been contacted.
-4. Evaluate suggestions for improvement with management regarding feasibility.
+  1. Acknowledge the notification.
+  2. Contact the PM via email based on the feedback.
+  3. Confirm in the notification thread that the PM has been contacted.
+  4. Evaluate suggestions for improvement with management regarding feasibility.
 </Accordion>
 
 <Accordion title="PM Company Contact Info">
-<Warning>
-**Important:** The Ops team does **not** make edits to this tab. **<u>Currently, this process is handled only by Trisha.</u>**
-</Warning>
+  <Warning>
+    **Important:** The Ops team does **not** make edits to this tab. **<u>Currently, this process is handled only by Trisha.</u>**
+  </Warning>
 
-**a.** An automated script runs weekly to send a reminder email to Property Management companies, inviting them to set up Recurring Work Orders.
+  **a.** An automated script runs weekly to send a reminder email to Property Management companies, inviting them to set up Recurring Work Orders.
 
-**b.** **Email Template:** The following automated email is sent to the Primary and Company Members (Columns E and G):
+  **b.** **Email Template:** The following automated email is sent to the Primary and Company Members (Columns E and G):
 
-> **Subject:** Want Help Setting Up Recurring Work Orders? We’ve Got You!_Hi [PM Company Name],__We hope you're doing well!__We wanted to reach out to make setting up _[_Recurring Work Orders_](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/recurring-work-orders#recurring-work-orders)_ as simple and seamless as possible for you. If you have work orders that are created on a regular basis (for example: common area cleaning, pool maintenance, landscaping, or any other routine maintenance), this feature can help automate that process. To better support your workflow, we’re offering two easy options:__**Option 1: We create them for you**__Simply fill out your **[Link to Unique Template]** with the Recurring Work Orders you’d like to set up. Once submitted, our team will review the information and create them for you.__You can add multiple Recurring Work Orders at once or submit them individually—whatever works best for your team.__*This option is currently part of our beta demo and may evolve in future versions.__**Option 2: Submit through the regular **_[_**form**_](https://recurring-work-orders.web.app/)_If you prefer, you can complete the standard Recurring Work Order request form at any time.__*For either option, you only need to enter the work order details once, and we’ll take care of scheduling it as a recurring request moving forward.__Our goal is to make this process as efficient and straightforward as possible, so please feel free to choose whichever option works best for you. If you’re not interested in setting up Recurring Work Orders at this time, you’re welcome to ignore this email or let us know, and we’ll stop sending these reminders.__We’re always happy to help simplify things and support your team however we can. Please don’t hesitate to reach out with any questions!__Best regards,_
-_The Latchel Team_
+  > **Subject:** Want Help Setting Up Recurring Work Orders? We’ve Got You!_Hi \[PM Company Name\],\_\_We hope you're doing well!**We wanted to reach out to make setting up [Recurring Work Orders](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/recurring-work-orders#recurring-work-orders) as simple and seamless as possible for you. If you have work orders that are created on a regular basis (for example: common area cleaning, pool maintenance, landscaping, or any other routine maintenance), this feature can help automate that process. To better support your workflow, we’re offering two easy options:Option 1: We create them for youSimply fill out your \[Link to Unique Template\] with the Recurring Work Orders you’d like to set up. Once submitted, our team will review the information and create them for you.You can add multiple Recurring Work Orders at once or submit them individually—whatever works best for your team.\*This option is currently part of our beta demo and may evolve in future versions.**\*\*Option 2: Submit through the regular \*\*[**form**](https://recurring-work-orders.web.app/)_\_If you prefer, you can complete the standard Recurring Work Order request form at any time.\_\_\*For either option, you only need to enter the work order details once, and we’ll take care of scheduling it as a recurring request moving forward.\_\_Our goal is to make this process as efficient and straightforward as possible, so please feel free to choose whichever option works best for you. If you’re not interested in setting up Recurring Work Orders at this time, you’re welcome to ignore this email or let us know, and we’ll stop sending these reminders.\_\_We’re always happy to help simplify things and support your team however we can. Please don’t hesitate to reach out with any questions!\__Best regards,_ _The Latchel Team_
 
-**c. **The system evaluates the data in the **PM Company Contact Info** tab. It will automatically skip sending an email to a PM if:
+  \*\*c. \*\*The system evaluates the data in the **PM Company Contact Info** tab. It will automatically skip sending an email to a PM if:
 
-- Their **Next reminder date** (Column J) has not been reached yet.
-- Their **Exemption Request** (Column N) is marked as "Yes".
+  - Their **Next reminder date** (Column J) has not been reached yet.
+  - Their **Exemption Request** (Column N) is marked as "Yes".
 
-**d.** Once the email is successfully sent, the system automatically logs the activity by updating the **Email reminder sent** status (Column H), logging the **Date** (Column I), and calculating the new **Next reminder date** (Column J) for exactly one week later.
+  **d.** Once the email is successfully sent, the system automatically logs the activity by updating the **Email reminder sent** status (Column H), logging the **Date** (Column I), and calculating the new **Next reminder date** (Column J) for exactly one week later.
 
-<Frame>
-  <img src="/images/Intg-151.png" alt="image-20260311-233127.png" />
-</Frame>
+  <Frame>
+    ![image-20260311-233127.png](/images/Intg-151.png)
+  </Frame>
 
-**e. Action:**
+  **e. Action:**
 
-1. Monitor the **Email reminder sent** column (Column H) for any "No - Missing Email" or "Error" statuses. If found, update the PM's contact information in columns E or G.
-2. If a PM replies requesting to stop receiving these reminders, update the **Exemption Request** dropdown (Column N) to "Yes" to prevent future emails.
-3. Track PM engagement by updating the **Did the PM respond to our reminder?** and **Did the PM submit work orders?** dropdown (Columns K and L) whenever a client replies to the email or submits their unique template.
+  1. Monitor the **Email reminder sent** column (Column H) for any "No - Missing Email" or "Error" statuses. If found, update the PM's contact information in columns E or G.
+  2. If a PM replies requesting to stop receiving these reminders, update the **Exemption Request** dropdown (Column N) to "Yes" to prevent future emails.
+  3. Track PM engagement by updating the **Did the PM respond to our reminder?** and **Did the PM submit work orders?** dropdown (Columns K and L) whenever a client replies to the email or submits their unique template.
 </Accordion>
