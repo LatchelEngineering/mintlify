@@ -1,0 +1,150 @@
+---
+title: "September 8, 2026"
+---
+
+The following are the Latchel updates for the week of September 8, 2026.
+
+<Callout icon="megaphone" iconType="duotone" color="#ff9b8a">
+  **Coming September 30: Autopilot AI Launch Webinar**
+
+  **Autopilot AI** is our upgraded Autopilot product for customers who want the strongest AI in maintenance — and it's launching **Tuesday, September 30 at 10:00 am PT / 1:00 pm ET**.
+
+  **What's included:**
+
+  - AI support across every resident and vendor message
+  - Warranty management
+  - Smart Estimates — better numbers, faster
+  - Preventative maintenance suggestions
+  - Outbound voice AI
+
+  **Register to join us for the launch!**
+
+  <Columns cols={2}>
+    <Column>
+      <Card title="Sign up here!" color="#ff9b8a" icon="file-pen" iconType="duotone" horizontal href="https://latchel.com/latchel-autopilot-ai-product-launch/">
+      </Card>
+    </Column>
+    <Column>
+    </Column>
+  </Columns>
+
+  Register, attend, and refer others to join the webinar to earn an additional month of a free upgrade.
+
+  **Did you know?** You can offer residents added services — filters, drain packs, pest control kits, lockout reimbursement — through Resident Benefits, and control exactly how they're presented.[ ](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Resident-Benefits-Guides)
+
+  See what's possible.
+
+  <Card title="Resident Benefits Guides" color="#ff9b8a" icon="file-invoice-dollar" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/Resident-Benefits-Guides-Overview">
+    Discover the perks and benefits available to you as a Latchel resident.
+  </Card>
+</Callout>
+
+### **New Feature**
+
+**Work Order Titles Now Appear on Your Invoices List**
+
+<Accordion title="Shoutout!" defaultOpen iconType="duotone">
+  <Icon icon="party-horn" iconType="sharp-duotone-solid" color="#ff9b8a" size={35} /> Shoutout to **Wizbang** for the suggestion that sparked this one!
+</Accordion>
+
+Your Invoices list has a new **Work Order Title** column — so you can tell invoices apart at a glance instead of opening each one to remember what the job actually was.
+
+<Callout icon="hands-holding-heart" iconType="duotone" color="#b19cf8">
+  **Why This Matters**
+
+  Reconciling a batch of invoices stops being a round trip through every work order. Scan the list, see what each invoice is for, and approve with the context already in front of you.
+</Callout>
+
+**Also fixed in the same release:** the **Address** column was falling back to **(N/A)** on every row, because the list wasn't loading the property behind the invoice. It now shows the real property address.
+
+**New to searching and filtering your invoices?** Here's the guide:
+
+<Card title="Methods of Searching Invoices" color="#ff9b8a" icon="filter-circle-dollar" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/How-to-View-and-Search-for-Invoices">
+  Learn how to find specific invoices using filters and search functions.
+</Card>
+
+### **Resolved Bugs**
+
+1. **Work orders no longer stall after your vendor marks a job complete**
+
+<Warning>
+  **What was happening:**
+
+  When a service provider confirmed a job was finished on an occupied unit and an invoice was already on file, the work order waited on       the resident to confirm as well. If the resident never replied, it sat in that state indefinitely — someone had to spot it and push it through by hand
+</Warning>
+
+<Check>
+  **What's fixed:**
+
+  If the resident hasn't confirmed within 24 hours of your vendor's confirmation, Latchel now completes the work order automatically. Jobs close out on their own instead of waiting on a response that may never come.
+</Check>
+
+2. **Work orders no longer remain in "Finding Service Provider" after you've assigned a vendor**
+
+<Warning>
+  **What was happening:**
+
+  If you assigned a service provider through **Take Action → Set a New Confirmed Work Date** and closed the workflow before picking an appointment time, the work order could remain in **Finding Service Provider** — even though your vendor was already assigned. Worse, nothing appeared in the activity log to explain it, and manually changing the status wouldn't stick.
+</Warning>
+
+<Check>
+  **What's fixed:**
+
+  Assigning a Service Provider now moves the work order forward automatically, whether or not you set an appointment time at the time of assignment. If you don’t, automated scheduling outreach to the vendor starts right away.
+</Check>
+
+3. **Residents only see open requests from current tenants in the portal**
+
+<Warning>
+  **What was happening:**
+
+  When a resident started a new maintenance request, the "Is this a new issue?" screen could show work orders left behind by people who had already moved out.
+</Warning>
+
+<Check>
+  **What's fixed:**
+
+  That screen now lists only requests belonging to people currently living at the property, plus any you opened directly. Cleaner for the resident, and no more visibility into a former occupant's history.
+</Check>
+
+### **Special Announcement**
+
+**On Buildium without an API connection to Latchel? We'd like to hear from you.**
+
+We're beta testing a deeper **Buildium integration**, and we're looking for a handful of property managers to help shape it — particularly if you're on **Buildium Essential or Growth** and don't currently have an API connection to Latchel.
+
+The same goes if you're on another platform that doesn't integrate with us yet. Tell us what you're using and we'll factor it into what we build next.
+
+<Tip>
+  Interested? Email [**success@latchel.com**](mailto:success@latchel.com) and we'll follow up directly.
+</Tip>
+
+**Not sure whether your software already connects?** Latchel integrates directly with **Buildium**, **Propertyware**, **Rent Manager**, **Rentvine** and **Yardi Voyager** — and the **Latchel Data Sync Extension** covers software without a direct connection. Browse them all in:
+
+<Card title="[Comprehensive Integration Guides](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Comprehensive-Integration-Guides)" color="#ff9b8a" icon="arrows-turn-to-dots" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/Comprehensive-Integration-Guides">
+  Explore different integration help guides from this page.
+</Card>
+
+### **Influence Our 2027 Roadmap**
+
+We're locking our **2027 priorities** soon, and this is your chance to directly **influence what we build next**. It takes less than **60 seconds** — and every response is reviewed by our product and leadership teams!
+
+<Columns cols={2}>
+  <Column>
+    <Card title="Submit feedback here!" color="#ff9b8a" icon="message-pen" iconType="duotone" horizontal href="https://forms.gle/AbUoieefga3azLmH7">
+    </Card>
+  </Column>
+  <Column>
+  </Column>
+</Columns>
+
+Your input directly impacts which features get built, improved, or deprioritized — this is where that thought turns into action!<br />
+
+### **Interested in learning more about Latchel's products? Book a meeting with us.**
+
+<Columns cols={2}>
+  <Column>
+    <Card title="Get a Demo" color="#ff9b8a" icon="comments-question-check" iconType="duotone" horizontal href="https://latchel.com/demo-request-releases/">
+    </Card>
+  </Column>
+</Columns>
