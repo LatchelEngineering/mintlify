@@ -16,7 +16,7 @@ groups: ["latchel"]
 </Note>
 
 <Warning>
-  If you encounter one of the following scenarios, please leave a note on this page and transfer the work order _to the Property Manager_. [(Operations) How to: Escalate Between Teams](/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams).
+  If you encounter one of the following scenarios, please leave a note on this page and transfer the work order _to the Property Manager_. [(Operations) How to: Escalate Between Teams](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams#how-to-escalate-between-teams).
 
   This may include:
 
@@ -29,15 +29,15 @@ groups: ["latchel"]
 
   Before you begin working on any task, ensure you view all open tasks for the customer you are following up on (resident, service provider, owner). This step is crucial to avoid duplicating efforts and customers complaints, and to ensure we always get it right the first time.
 
-  For detailed instructions on how to handle the tasks queue and view all open tasks, please refer to the following link: [How to: Work the Tasks Queue](/latchel-admin/Service-Operations/Production-Documentation/How-to-Work-the-Tasks-Queue).
+  For detailed instructions on how to handle the tasks queue and view all open tasks, please refer to the following link: [How to: Work the Tasks Queue](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Work-the-Tasks-Queue#how-to-work-the-tasks-queue).
 
-  For information on the frequency and number of times you should contact customers, please refer to [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules).
+  For information on the frequency and number of times you should contact customers, please refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Work-the-Tasks-Queue).
 </Warning>
 
 <Warning>
   **LVN Service Provider**
 
-  For guidance on managing unresponsive LVN service providers or on acceptable scenarios for reassigning an LVN service provider (such as PM requests or missed appointments), refer to [Handling Work Orders Assigned to LVN Service Providers](/latchel-admin/Service-Operations/Production-Documentation/Handling-Work-Orders-Assigned-to-LVN-Service-Providers).
+  For guidance on managing unresponsive LVN service providers or on acceptable scenarios for reassigning an LVN service provider (such as PM requests or missed appointments), refer to [Handling Work Orders Assigned to LVN Service Providers](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Handling-Work-Orders-Assigned-to-LVN-Service-Providers#unresponsive-lvn-service-providers-active-work-orders).
 </Warning>
 
 <Warning>
@@ -47,7 +47,7 @@ groups: ["latchel"]
 
   📌 _Date | WO# | Missed Appointment/Unreasonable Behavior_
 
-  If they miss **three consecutive WO appointments or unacceptable behaviors**, their profile can be disabled. Associates are expected to check recent work orders to identify any recently completed WOs, which may indicate a successful appointment. Refer to the 3rd step in [How to: Navigate Service Provider Profiles](/latchel-admin/Service-Operations/Production-Documentation/How-to-Navigate-Service-Provider-Profiles) to disable a service provider’s account. Ensure to leave notes as well why they were disabled.
+  If they miss **three consecutive WO appointments or unacceptable behaviors**, their profile can be disabled. Associates are expected to check recent work orders to identify any recently completed WOs, which may indicate a successful appointment. Refer to the 3rd step in [How to: Navigate Service Provider Profiles](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Navigate-Service-Provider-Profiles#how-to-navigate-service-provider-profiles) to disable a service provider’s account. Ensure to leave notes as well why they were disabled.
 </Warning>
 
 ## 📋 Step-by-Step Process
@@ -68,9 +68,8 @@ groups: ["latchel"]
       2. Making a phone call to the Service Provider via our Latchel Console.
          1. Keep in mind that some service providers may have critical notes with special instructions outlining how they prefer to interact with Latchel.
       3. Depending on the scenario, executing one of the following:
-         1. Escalating the Work Order to Leadership or the Property Manager
-         2. Deferring the task
-         3. Transferring the Work Order to Operations Support Specialists or sourcing
+         1. Escalating the Work Order to the Property Manager
+         2. Sourcing/Reassignment
          4. Moving the Work Order status forward by scheduling an appointment.
 2. Open the Work Order
    1. Proceed to Step 2 below
@@ -81,20 +80,23 @@ groups: ["latchel"]
    1. If there is no additional Resident availability, return the work order to "Rescheduling with Resident" status. You can do this through the following steps:
       1. From the Action button, select "Reschedule This Job".
       2. The system will then ask the resident to update their availability.
-   2. If there is more Resident availability, proceed to check the notes of the Work Order to see how many attempts have already been made to contact the assigned Service Provider.
-      1. **📝 NOTE:** Operations Associates will only attempt to contact the Service Providers **<u>2 separate times</u>**.
+   2. If there is more Resident availability, proceed to check the notes to see **if a contact attempt** has already been made to the assigned Service Provider.
+      1. **📝 NOTE:** For Emergency Work Orders, contact attempts are determined by severity:
+         - **Property Damage (PD) / Extreme Habitability (EH):** Follow the **Triple Dial Procedure** (3 attempts). These must remain as Emergencies.
+         - **Non-PD/EH Emergencies:** Capped at **1 attempt**. If unsuccessful or if a callback is requested, apply the **Same-Day Decision Guide** (Intervene, De-escalate, or Forward) immediately. Do not defer to the next day.
 2. Review the Work Order notes to see if another Latchel Associate has already tried to contact this Service Provider to schedule the appointment.
-   1. If Latchel has contacted this Service Provider 0x or 1x before, please proceed to [Step 3](#).
-      1. ⚠️ **Before removing the SP from the job, first confirm whether the SP is locked in or has already visited the property.** If either is true, **do not remove** — proceed to Step 4, section 2.a (escalate to PM). If neither is true, proceed to Step 4, section 2.b (reassign).
-   2. If Latchel has contacted this Service Provider 2x before, please proceed to [Step 4](#).
-      1. If we've already called the Service Provider 2x, we will be removing this Service Provider from the job and allow auto-assign to continue to offer it to the remaining preferred Service Providers.
-      2. **📝 NOTE** Please don’t send any other follow-up or message to the vendor that is being removed from the job or to the new vendor.
+   1. If Latchel has contacted this Service Provider **0x** (for Non-PD/EH) or **0x-2x** (for PD/EH), please proceed to <u>Step 3</u>.
+      1. ⚠️ **Before removing the SP or de-escalating, first confirm whether the SP is locked in or has already visited the property.** If either is true, **do not remove** — proceed to Step 4, section 2.a (Apply Same-Day Decision Guide). If neither is true, proceed to Step 4, section 2.b (Reassign/Intervene).
+   2. If Latchel has contacted this Service Provider **1x** (for Non-PD/EH) or **3x** (for PD/EH), please proceed to <u>Step 4</u>.
+      1. **For Non-PD/EH:** Do not defer to the next day. Apply the **Same-Day Decision Guide** (Intervene, De-escalate to Urgent, or Forward to PM) immediately.
+      2. **For PD/EH:** Do not de-escalate. You must follow the **Emergency Escalation Contact** protocol (Triple Dial + calling PM emergency lines).
+      3. **📝 NOTE:** If removing a Service Provider from a Non-PD/EH job after 1 attempt, ensure you leave the mandatory de-escalation or intervention note for team visibility.
 
 ### **Step 3: Calling the Service Provider and Resident**
 
-Call the Service Provider one time (1x) a day using the Latchel Console ( [↔ How to: Make Outbound Calls Within the Latchel Console](/latchel-admin/Service-Operations/Production-Documentation/How-to-Make-Outbound-Calls-Within-the-Latchel-Console)) and follow the script below (replacing the fields in purple with specific information).
+Call the Service Provider **one time (1x)** for Non-PD/EH emergencies (or **3x** for PD/EH) using the Latchel Console ( [↔ How to: Make Outbound Calls Within the Latchel Console](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Make-Outbound-Calls-Within-the-Latchel-Console#tech-101-how-to-make-outbound-calls-within-the-latchel-console)) and follow the script below (replacing the fields in purple with specific information).
 
-- **📝 NOTE** Always attempt to contact the service provider first via phone call. SMS and email should only be used if we are unable to reach them by phone. Exceptions include cases where they don't have a valid phone number, it's outside of 9:00 am-5:00 pm, or if there are special communication instructions in the critical notes.
+- **📝 NOTE** Always attempt to contact the service provider first via phone call. **For Non-PD/EH emergencies, if the phone call is unsuccessful, do not wait. Send an SMS/Email immediately and then apply the Same-Day Decision Guide.** Exceptions include cases where they don't have a valid phone number, it's outside of 9:00 am-5:00 pm, or if there are special communication instructions in the critical notes.
 
 <Tip>
   **Service Provider Call Script**
@@ -117,7 +119,7 @@ From the call, you will encounter 1 of the 6 outcomes below.
 <Tip>
   **Service Provider Confirmed Schedule Script**
 
-  I have assigned the work order to you. In the event the scheduled appointment is missed, we will only attempt to contact you <u>twice</u> before reassigning.
+  I have assigned the work order to you. In the event the scheduled appointment is missed, we will only attempt to contact you <u>once</u> before reassigning.
 </Tip>
 
 2. Select the agreed upon window and then select continue
@@ -142,43 +144,33 @@ From the call, you will encounter 1 of the 6 outcomes below.
       2. Choose "Set a New Confirmed Work Date".
       3. Follow system prompts until you successfully schedule the new Work Date and Time Window.
    2. If the Resident is **<u>not available</u>** during the newly updated Service Provider's availability, then:
-      1. Reassign to another Service Provider (proceed to [Step 4](#))
+      1. Reassign to another Service Provider (proceed to Step 4)
       2. Ask the Resident, if they have any new available time slots. Update this new time slot information in the Latchel Console.
    3. Proceed to writing an Effective Note in [Step 5](#).
 
 #### **<u>OUTCOME 3:</u>** If the Service Provider answers, but says they cannot talk now and will call back.
 
-1. Send an SMS with the template below. If the Service Provider does not have a textable number, then send an email with the template below.
-
-<Tip>
-  **Service Provider Scheduling Reminder SMS Template**
-
-  This is a reminder from Latchel to schedule the job at (insert Property Address) within the next 24 hours. This can be done via our online portal or by calling (_please refer to [Informational: Latchel Communication (Phone Numbers)](/latchel-admin/Service-Operations/Production-Documentation/Informational-Latchel-Communication-Phone-Numbers) for the appropriate phone number_). Otherwise, the job will be reassigned without notice. Thank you!
-</Tip>
-
-2. Defer the task for the next business day at 9:00 AM local time for the contact. Business day is defined as weekdays and does not include holidays. For example, if it's Friday, please defer the task for Monday.
+1. **Action based on severity:**
+   1. **Non-PD/EH Emergencies:** Do not defer to the next business day. Inform the SP that we need a commitment now to ensure resident safety. If they cannot talk, send the SMS/Email and **apply the Same-Day Decision Guide (Intervene, De-escalate, or Forward) immediately.**
+   2. **PD/EH:** Do not defer to the next business day. Continue to follow the **Triple Dial Procedure** and call the PM's emergency escalation contacts until a vendor is secured.
 
 #### **<u>OUTCOME 4</u>**<u>:</u> If the Service Provider does not answer the phone call, then:
 
-1. Leave a voicemail using the template below (replacing the 4 fields in pink with specific information) and also send an SMS. If the Service Provider does not have a textable number then send him/her an email instead.
-   1. **Preferred**:  _Hello! This is **(insert Associate Name)**, I'm calling on behalf of **(insert PM Company Name)**. We have a job assigned to you at (insert Property address) and we need to confirm an appointment within the next 24 hrs. Otherwise, the job will be reassigned to another provider without notice. Please confirm via our online portal or call us back at (please refer to [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) for the appropriate phone numbers) at your earliest convenience. Thanks!_
-   2. **LCN/LVN:**   _Hello! This is **(insert Associate Name)**, I'm a maintenance coordinator calling on behalf of **(insert PM Company Name)**. We have a job assigned to you at (insert Property address) and we need to confirm an appointment within the next 24 hrs. Otherwise, the job will be reassigned to another provider without notice. Please confirm via our online portal or call us back at (please refer to [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) for the appropriate phone numbers) at your earliest convenience. Thanks!_
-2. Send an SMS or email to the service provider using the following template:
+1. **Leave a voicemail and send an SMS/Email immediately.**
+   - Choose the script that matches the action you are about to take in **Step 4**:
 
-<Tip>
-  **Service Provider Scheduling Reminder SMS Template**
+#### **Option A: If Reassigning (Latchel-Assigned/Not Locked In)**
 
-  This is a reminder from Latchel to schedule the job at (insert Property\* Address\*) within the next 24 hours. This can be done via our online portal or by calling (_please refer to [Informational: Latchel Communication (Phone Numbers)](/latchel-admin/Service-Operations/Production-Documentation/Informational-Latchel-Communication-Phone-Numbers) for the appropriate phone number_). Otherwise, the job will be reassigned without notice. Thank you!
-</Tip>
+> **SMS/Email Template:**<br />_"This is a reminder from Latchel regarding the emergency job at **(insert Property Address)**. Because we were unable to reach you to confirm a same-day appointment, **we are now reassigning this job to another provider** to ensure the resident is taken care of immediately. If you are still available, please call us back at **(insert phone number)** right away, but please note the job may no longer be assigned to you. Thank you."_
 
-3. Then, contact the Resident via Webchat/SMS using the following template:
-   1. **Say something like**: _Hello! This is **(insert Associate Name)** **from the dedicated maintenance line** on behalf of the **(insert PM Company name)**. We are contacting you to see if you have been contacted by the **(insert Service Provider Name)**. We are attempting to confirm that an appointment has been scheduled._
-   2. If the resident confirms that an appointment has been set, update the appointment time in the Latchel console.
-   3. If the resident does not confirm an appointment, proceed to the deferral steps below:
-      1. Locate the task on the Work Order
-         1. Defer the task for the next business day at 9:00 AM local time for the contact. Business day is defined as weekdays and does not include holidays. For example, if it's Friday, please defer the task for Monday.
-            1. **_Why?_** We are waiting for the Service Provider to confirm an appointment time via SMS or phone call. When this process happens, this will cancel out the deferred task and the task will not return to the queue.
-         2. Proceed to Step 4: Steps For If The Service Provider Has Been Contacted 2x Already.
+#### **Option B: If Escalating to PM (PM-Assigned / Locked-In / Visited)**
+
+> **SMS/Email Template:**<br />_"This is a reminder from Latchel regarding the emergency job at **(insert Property Address)**. Because we were unable to reach you to confirm a same-day appointment, **we are now escalating this request to the Property Manager for further instructions**. Please call us back at **(insert phone number)** immediately if you are still able to attend today so we can update the Property Manager. Thank you."_
+
+2. **Action based on severity (Do not defer to the next day):**
+
+- **Non-PD/EH Emergencies:** Do not defer. Proceed to **Step 4** to either **Reassign** or **De-escalate** internally.
+- **Property Damage (PD) / Extreme Habitability (EH):** Do not de-escalate. Follow the **Emergency Escalation Contact** protocol (Triple Dial + PM emergency lines).
 
 #### **OUTCOME 5**: If the Service Provider says the job has already been completed, then:
 
@@ -198,72 +190,38 @@ From the call, you will encounter 1 of the 6 outcomes below.
 5. Locate the task on the Work Order and close the task
 6. Proceed to writing an Effective Note in [Step 5.](#)
 
-#### **<u>OUTCOME 6</u>: If the Service Provider answers but can't confirm an appointment after a second attempt, then:**
+### **Step 4: Execute the Same-Day Decision**
 
-1. **Locked-in Service Provider or SP has already visited the property** → Do not reassign. Inform the SP that we'll communicate the status to the Property Manager. Proceed to Step 4, section 2.a.
-2. **SP is not locked in and has NOT visited the property** → Inform the SP that we'll reassign the WO. Proceed to Step 4, section 2.b.
+If the Service Provider is unresponsive or cannot confirm an appointment after the required attempts (**1x for Non-PD/EH** or **3x for PD/EH**), apply the **[Basic Service Ops Guidelines / Same-Day Decision Guide]** to determine the final action:
 
-### **Step 4: Steps For If The Service Provider Has Been Contacted 2x Already**
-
-1. Review Work Order notes for other Service Providers who have already been contacted.
-   1. Note: This step is required to prevent Ops Associates from calling the same Service Providers again, especially if a Service Provider has already denied the job.
-      1. Take the time to review the history of Notes from both Ops Associates and the System. Remember that Service Providers have the option to communicate with Latchel through their own Service Provider Interface.
-      2. [How to: Navigate the Service Provider Interface](/latchel-admin/Service-Operations/Production-Documentation/How-to-Navigate-the-Service-Provider-Interface)
-2. Identify the type of Service Provider currently assigned to the Work Order:
-   1. **Locked-In Service Provider OR Service Provider Has Already Visited the Property:**
-      1. **Locked-In Service Provider:** A Locked-In Preferred Service Provider is one that the Property Manager has deemed as mandatory for the Work Order.
-      2. **Service Provider Has Already Visited the Property:** The Service Provider has already been to the property and there is proof the visit was completed (e.g., visit notes, photos, resident confirmation). This SP is not necessarily locked in or mandatory — however, because work has already begun, they should not be reassigned.
-      3. **In either case**, do not remove the SP from the job. Create a task to assign the Work Order to the Property Manager for next steps.
-         1. First, the Ops Associate should make sure to close the existing task that was initially assigned to him/her (Ops Associate).
-         2. Then, click on the "New Task" tab in the Work Order (see red arrow and box in the screenshot directly below).
-         3. Fill out the Create task form with the following [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) information:
-            1. **Subject: Action Required: PM Instructions or Information Needed**
-            2. **Who is this task about?:** Select the Service Provider
-            3. **Select Date and Time:** Leave this blank. The reason for this is to send the task to the PM right away rather than for a set time.
-            4. **Assign to User Group:** PM
-            5. **Assign to a User:** Leave this blank. The reason for this is because leaving it blank will send the task to all PMs that are listed within the user group chosen.
-            6. **Task Priority Level:** Choose priority based on the WO severity. Follow the current guidelines (see below):
-               1. Emergency Severity = Highest Priority
-               2. Urgent Severity = High Priority
-               3. Normal Severity = Medium Priority
-            7. **Cancel Action:** Should always be "Cancel only on Completed or Canceled States".
-            8. **Task Description:** Copy/Paste the following template and only edit or verify the 4 fields in pink.
-               <Tip>
-                 **Latchel Blurb**
-                 Hello (insert _PM Name_),
-                 We have created this task for you following two unsuccessful attempts to contact (insert _Service Provider Name_) to schedule (_or whatever **specific** piece of information we need from the Service Provider_). We called, left a voicemail and sent an SMS (_or swap for email if the Service Provider's phone number is not textable_) for each attempt, but unfortunately they are still unresponsive or have been unable to confirm an appointment and are preventing the Work Order from moving forward. Could you kindly let us know how you want to proceed? Thank you!
-               </Tip>
-      4. Then press "Save Task".
-         1. **‼️IMPORTANT:** Please note that creating this task **DOES NOT** change the status of the Work Order.
-   2. **All Other Service Provider Types (SP is NOT locked in AND has NOT visited the property):<u>:</u>** If you are dealing with a preferred vendor that is **NOT** locked-in or any other type of vendor, please follow the steps below:
-      1. If there are ✅ more Preferred Service Providers on the list, remove the current service provider through the "Action" button:
-         1. If the vendor automation hasn't exhausted the preferred vendors list yet, our system will continue to offer the job to the remaining vendors on the list. You can tell that the vendor automation hasn't been exhausted if you see the note saying that the vendor contact queue is active
-            <Frame>
-              ![image-20240625-150850.png](/images/SVC-497.png)
-            </Frame>
-            <Frame>
-              ![image-20240625-151051.png](/images/SVC-498.png)
-            </Frame>
-         2. If the list has been exhausted by vendor automation, the Ops Associate should then call each preferred vendor that hasn't been called yet or hasn't rejected the job to offer the job and get it scheduled. **<u>Please make sure to log all call attempts in the Work Order notes.</u>** <br /><br />You can tell if the list has been exhausted by auto-assign if you see the note saying that the vendor contact queue has been exhausted You can also tell if the list has been exhausted by vendor automation if you see a task created with the description: "all preferred vendors have been contacted, but none of them have accepted the job". See red arrow in the screenshot below.
-            <Frame>
-              ![SVC-499.png](/images/SVC-499.png)
-            </Frame>
-      2. If there are ❌ no more new Preferred Service Providers to contact, review the summary icons in the Property Manager section of the existing Work Order interface and check to see if the PM is "opted-in" or "opted-out" of the Latchel Contractors Network (LCN).
-         1. If the Property Manager is **"Opted-In"** to LCN:
-            1. Start contacting LCN Service Providers.
-            2. If ALL LCN Service Providers have been exhausted, please create a new task for "Source a Vendor" and assign it to the "Source Service Provider" user group.
-         2. If the Property Manager is **"Opted-Out"** of LCN:
-            1. Create a task to ask for instructions from the Property Manager and assign it to the PM user group.
-            2. If the PM responds requesting to enable LCN/LVN, proceed with guidelines outlined in [Product Support Team vs Ops Agents](/latchel-admin/Service-Operations/Production-Documentation/Product-Support-Team-vs-Ops-Agents).
+1. **Attempt Reassignment**
+   1. Rule: This step only applies to Latchel-Assigned (Auto-Assign/LCN) vendors who have NOT visited the property.
+   2. Action: Remove the current SP and manually call the next preferred or LCN vendor to get a same-day commitment.
+2. Escalate (For Locked-in, PM-Assigned, or Visited)
+   1.  Rule: If the SP is Locked-in, PM-Assigned, or has Already Visited the property, you are not allowed to remove them. You must move to escalation instead.
+   2. Action for Non-PD/EH Emergencies:
+      1. Forward to PM: Use the "Forward to PM" feature in the console.
+      2. Escalation Safeguard: If the "Forward to PM" option is not available, you must escalate the task to Ops Support Specialists to move the Work Order forward.
+      3. Manual Email: If the console doesn't show an auto-email was sent, send a manual email to the PM to ensure they are notified.
+      4. De-escalate: Change the priority to Urgent (keep the Emergency tag) and move the WO to "Waiting for PM" status.
+   3. Action for PD/EH (Property Damage/Extreme Habitability):
+      1. Call PM: Initiate the Emergency Escalation Contact (EEC) protocol.
+      2. Unresponsive PM: If the PM is unresponsive, follow the Job Aid: PM Outbound Communication for hold status instructions. Do not de-escalate PD/EH.
 
 ### **Step 5: Write Effective Notes**
 
-1. Write a Note in the existing Work Order, including the Assembly Ticket # (if available).
-   1. The note should include the following information:
-      1. Summarize the conversation.
-      2. Where you left the message (i.e. voicemail, SMS, email, webchat).
-      3. Any actions you took to change and assign a new Preferred Service Provider.
-      4. If you have escalated, transferred, or deferred the task, summarize what led you to execute one of these actions.
+1. **Write a Note in the existing Work Order**, including the Assembly Ticket # (if available).
+2. **The note must be detailed and actionable, including:**
+
+   - **Summary of Contact:** Who you spoke with or where you left the message (Voicemail, SMS, Email, Webchat).
+   - **Assignment Source Verification:** Explicitly state if the SP was **Latchel-Assigned** or **PM-Assigned/Locked-in**.
+   - **Action Taken:**
+     - If reassigned: Name of the new Service Provider and the commitment time secured.
+     - If de-escalated: State that the priority was changed to **Urgent** and why (e.g., "No other vendors available" or "Locked-in vendor unresponsive").
+   - **Escalation Details:**
+     - If **Forward to PM** was used, note if the manual email was sent.
+     - If escalated to **Ops Support Specialists**, include the reason (e.g., "Forward to PM option unavailable").
+     - For PD/EH: Note the outcome of the **EEC calls** and any instructions from the **PM Outbound Communication** job aid.
 
 ### Handling a multi-day work order
 

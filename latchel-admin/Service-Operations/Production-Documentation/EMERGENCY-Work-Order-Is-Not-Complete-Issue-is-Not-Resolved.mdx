@@ -10,13 +10,13 @@ We want to prevent emergency work orders from remaining unresolved or partially 
 </Note>
 
 <Danger>
-This process does not apply to On-call customers. For any inquiries from On-call customers, always refer to https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Follow-Up-Guidelines-for-On-Call-Customers-app-latchel-com  for further instructions.
+This process does not apply to On-call customers. For any inquiries from On-call customers, always refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Follow-Up-Guidelines-for-On-Call-Customers-app-latchel-com) for further instructions.
 </Danger>
 
 <Warning>
 **LVN Service Provider**
 
-For guidance on managing unresponsive LVN service providers or on acceptable scenarios for reassigning an LVN service provider (such as PM requests or missed appointments), refer to https://latchel.atlassian.net/wiki/spaces/OPS/pages/3203203103.
+For guidance on managing unresponsive LVN service providers or on acceptable scenarios for reassigning an LVN service provider (such as PM requests or missed appointments), refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Handling-Work-Orders-Assigned-to-LVN-Service-Providers#handling-work-orders-assigned-to-lvn-service-providers).
 </Warning>
 
 # Content
@@ -32,90 +32,86 @@ If the job is still an Emergency, immediately contact the provider to attempt to
 </Warning>
 
 1. Contact the resident and verify that the issue is not resolved
-2. Determine if the issue is still an emergency
-  1. If it is still an Emergency per PM Intake settings, attempt to re-dispatch the original vendor.
-    1. Refer to https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider 
-  2. Call the resident and/or service provider to confirm the issue and either re-dispatch or coordinate a return visit within the acceptable emergency appointment timeframes (see https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders). 
-  3. If both parties have been unresponsive to our contacts,
-    1. Refer to https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules for the required number of follow-up attempts before escalating to the Property Manager if the contact remains unresponsive.
-    2. Escalate the work order to the Property Manager.
+   1. Determine if the issue is still an emergency
+   2. If it is still an Emergency per PM Intake settings, attempt to re-dispatch the original vendor. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider).
+   3. Call the resident and/or service provider to confirm the issue and either re-dispatch or coordinate a return visit within the acceptable emergency appointment timeframes (see [How to Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders)).
+   4. **Stale Emergency Rule:** If the emergency repair is incomplete, unresolved, a no-show, or only temporarily fixed, make one attempt to reach the resident and one attempt to reach the service provider to verify the current status and determine whether the emergency condition still exists.
+      1. If the issue is still an emergency, take the next emergency action immediately: re-dispatch the original provider, coordinate a return visit within emergency timeframes, reassign/source another provider when allowed, or follow the PM outbound communication process when the situation is property-damaging or an extreme habitability condition.
+      2. If the issue is no longer an emergency per PM Intake settings, de-escalate the work order and follow the subscription-specific steps below.
+      3. If the current emergency status cannot be verified because both the resident and service provider are unresponsive, do not leave the work order in Troubleshooting, Scheduling, Pending, or another active status with only a task. Move the work order to the correct PM-owned status/action based on the case, such as Forward to PM or Waiting for PM when forwarding is no longer available.
+      4. If the repair is blocked because the service provider needs PM approval, instructions, parts/material approval, estimate approval, or approval for a return visit, do not leave the work order in an active status with only a task. Move the work order to the correct PM-owned status/action based on the case.
+   5. If both parties have been unresponsive to our contacts,
       1. If the issue is a property-damaging situation or an extreme habitability condition,
-        1. Refer to** **https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs 
-          1. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
-          2. If the PM responds, follow their instructions and proceed accordingly.  
-          3. If the PM is unresponsive, 
-            1. Move the work order to “**Waiting for PM**” following approved scenario 8, refer to  https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165 
-        2.  If the situation is not a property-damaging situation or an extreme habitability condition,  leave the WO in an **appropriate state** and create a task for the PM with a task Title as **“Action Required: PM Instructions or Information Needed.”**
-3. If it is no longer an Emergency per PM Intake settings, de-escalate the work order and determine the subscription type of the PM
-  1. If it is Autopilot, create a task to PM
-    1. Refer to https://latchel.atlassian.net/wiki/spaces/OPS/pages/2999812097
-  2. For Rentredi/NOMAD,
-    1. Refer to https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts 
-  3. If it is a 24/7 Emergency or After Hours, forward the work order to the PM.
-    1. You may escalate to Operations Support Specialists to move the work order to Waiting for PM if forwarding option is no longer available.
-4. Proceed to write an Effective Note.
-  1. [↔ How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OM/pages/763363368).
+         1. See [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
+         2. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
+         3. If the PM responds, follow their instructions and proceed accordingly.  
+         4. If the PM is unresponsive, 
+            1. Move the work order to “**Waiting for PM**” following approved scenario 8, refer to  [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold)
+      2. If the situation is not property-damaging or an extreme habitability condition, move the work order to the correct PM-owned status/action based on the case, such as Forward to PM or Waiting for PM when forwarding is no longer available. Do not leave the WO in an active state with only a PM task.
+2. If it is no longer an Emergency per PM Intake settings, de-escalate the work order and determine the subscription type of the PM
+   1. If it is Autopilot, create a task to PM
+      1. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs#how-to-handle-autopilot-wos)
+   2. For Rentredi/NOMAD,
+      1. Refer to [How to: Handle DIY Owner Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts)
+   3. If it is a 24/7 Emergency or After Hours, forward the work order to the PM.
+   4. You may escalate to Operations Support Specialists to move the work order to Waiting for PM if forwarding option is no longer available.
+  1. Proceed to write an Effective Note.
+     1. [↔ How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OM/pages/763363368).
 
 ### **Possible Scenarios and Required Actions for Unresolved Issues**
 
-**Scenario 1: The resident said the service provider is a no-show and missed the appointment.  **
+Scenario 1: The resident said the service provider is a no-show and missed the appointment. 
 
 1. Contact the resident to confirm the report.
-  1. Inform the resident that we’ll attempt to contact the SP provider assigned to confirm any issues or the reason for the missed service visit.  
-  2. Verify and update the resident’s availability in the system, if needed.
-2. Contact the SP to follow up on the missed appointment:
-  1. If the SP is responsive, confirm a new appointment time.
-  2. If the SP is unresponsive
-    1. If the Service Provider Is PM-Assigned / Locked In
-      1. If the issue is property-damaging or extreme habitability, refer to https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations and call the emergency escalation contacts.
-        1. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
-        2. Refer to  https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs 
-      2. If the issue is not property-damaging or extreme habitability, complete the task and create a task for the Property Manager with a task Title as “**Action Required: PM Instructions or Information Needed.” **Refer to the https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates 
-    2. Not Locked in 
-      1. If the issue is property-damaging or extreme habitability, reassign the WO to another SP.
-        1. Refer to[ (](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider)https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider 
-      2. If the issue is not property-damaging or extreme habitability:
-        1. Defer the task to the next day for another follow up.
-        2. If still unsuccessful after the second follow-up, reassign the WO to another SP.
-        3. Refer tohttps://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider 
+   1. Inform the resident that we’ll attempt to contact the SP provider assigned to confirm any issues or the reason for the missed service visit.
+   2. Verify and update the resident’s availability in the system, if needed.
+  1. Contact the SP to follow up on the missed appointment.  
+     1. If the SP is responsive, confirm a new appointment time within the acceptable emergency appointment timeframes.
+     2. If the SP is unresponsive, determine whether the SP is PM-assigned/locked in or not locked in.
+        1. If the Service Provider is PM-assigned / locked in:
+           1. If the issue is property-damaging or extreme habitability, refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations#how-to-identify-property-damage-and-extreme-habitability-situations) and follow the PM outbound communication process for emergency WOs. Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos)
+              1. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
+           2. If the issue is not property-damaging or extreme habitability, move the work order to the correct PM-owned status/action based on the case, such as Forward to PM or Waiting for PM when forwarding is no longer available. Do not leave the WO in an active state with only a PM task.
+        2. If the Service Provider is not locked in:
+           1. If the issue is property-damaging or extreme habitability, reassign the WO to another SP.
+              1. Refer to [this guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Assign-LCN-Service-Provider-New-Experience#how-to-assign-a-latchel-contracted-network-service-provider).
+           2. If the issue is not property-damaging or extreme habitability, do not defer the task to the next day just to wait for the original SP. Move the work order to the correct PM-owned status/action based on the case, or reassign/source another provider when allowed by the PM’s settings.
 
-**Scenario 2:  The resident confirmed the visit, but he/she has been advised that a part/material is needed to complete the job. **
+Scenario 2:  The resident confirmed the visit, but he/she has been advised that a part/material is needed to complete the job. 
 
 1. Contact the service provider to follow up on the estimated timeline for the required parts.
-  1. Confirm whether the cost of the parts is within the approved budget.
-  2. If the service provider responds and can provide the parts availability date:
-    1. Schedule the follow-up call and place the WO in **Waiting for Materials**. Refer to https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165 
-  3. If the Service Provider advises that they must first check with a **warehouse or supplier once it opens**. 
-    1. Do **not** defer the task at the start of operating hours.
-    2. Allow sufficient time for the Service Provider to obtain required materials and pricing details.
-    3. Schedule the follow-up for **12:00 PM** (or a reasonable mid-day time) to confirm whether materials, costs, and the estimate are available.
-  4. If the SP was unresponsive to follow-up attempts: 
-    1. Check with the resident if the situation remains a property-damaging situation or an extreme habitability condition.
-    2. If the issue remains a property-damaging situation or an extreme habitability condition.
-      1. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
-      2. Refer to[** **](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs 
-        1. If the PM responds, follow their instructions and proceed accordingly.  
-        2. If the PM is unresponsive, 
-          1. Move the work order to “**Waiting for PM**” following approved scenario 8, refer to https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165 
-    3. If the situation is not a property-damaging situation or an extreme habitability condition,  leave the WO in an appropriate state and create a task for the PM with a task Title as **“Action Required: PM Instructions or Information Needed.”**
+   1. Confirm whether the cost of the parts is within the approved budget.
+   2. If the service provider responds and can provide the parts availability date:
+      1. Schedule the follow-up call and place the WO in **Waiting for Materials**. Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold) 
+   3. If the Service Provider advises that they must first check with a **warehouse or supplier once it opens**. 
+      1. Do **not** defer the task at the start of operating hours.
+      2. Allow sufficient time for the Service Provider to obtain required materials and pricing details.
+      3. Schedule the follow-up for **12:00 PM** (or a reasonable mid-day time) to confirm whether materials, costs, and the estimate are available.
+   4. If the SP was unresponsive to follow-up attempts: 
+      1. Check with the resident if the situation remains a property-damaging situation or an extreme habitability condition.
+      2. If the issue remains a property-damaging situation or an extreme habitability condition, follow the PM outbound communication process for emergency WOs.
+         1. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
+         2. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos).
+         3. If the PM responds, follow their instructions and proceed accordingly.
+         4. If the PM is unresponsive, move the work order to “**Waiting for PM**” following approved scenario 8, refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold).
+      3. If the situation is not property-damaging or an extreme habitability condition, move the work order to the correct PM-owned status/action based on the case, such as Forward to PM or Waiting for PM when forwarding is no longer available. Do not leave the WO in an active state with only a PM task.
 
 **Scenario 3:  The service provider completed only a temporary fix and needs to submit an estimate.**
 
 1. Contact the service provider to follow up on the estimate.
-  1. If the service provider responds and can provide a date when the estimate will be ready:
-    1. Schedule the follow-up call and place the WO in **Pending **status. Refer to https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165 
-  2. If the SP was unresponsive to follow-up attempts: 
-    1. Check with the resident if the situation remains a property-damaging situation or an extreme habitability condition.
-    2. If the issue is a property-damaging situation or an extreme habitability condition after a temporary fix was made.
-      1. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
-      2. Refer to[** **](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs 
-        1. If the PM responds, follow their instructions and proceed accordingly.  
-        2. If the PM is unresponsive, 
-          1. Move the work order to “**Waiting for PM**” following approved scenario 6, refer to[How to: Put a Job on Hold](https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165)https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165 
-    3. If the situation is not a property-damaging situation or an extreme habitability condition,  leave the WO in an appropriate state and create a task for the PM with a task Title as “A**ction Required: PM Instructions or Information Needed.”**
+   1. If the service provider responds and can provide a date when the estimate will be ready:
+      1. Schedule the follow-up call and place the WO in **Pending** status. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold).
+   2. If the SP was unresponsive to follow-up attempts: 
+      1. Check with the resident if the situation remains a property-damaging situation or an extreme habitability condition.
+      2. If the issue is a property-damaging situation or an extreme habitability condition after a temporary fix was made, follow the PM outbound communication process for emergency WOs.
+         1. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
+         2. Refer to [https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248](https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248).
+         3. If the PM responds, follow their instructions and proceed accordingly.
+         4. If the PM is unresponsive, move the work order to “**Waiting for PM**” following approved scenario 6, refer to [https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165](https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165).
+      3. If the situation is not property-damaging or an extreme habitability condition, move the work order to the correct PM-owned status/action based on the case, such as Forward to PM or Waiting for PM when forwarding is no longer available. Do not leave the WO in an active state with only a PM task.
 
 <Note>
-**NOTE: ** If the service provider clearly states—or the resident has been informed—that only a temporary fix was completed and the issue has reoccurred while awaiting an estimate, this is **not** a recall. Proceed by following up with the service provider using the same work order under the unresolved cases process.
+NOTE: If the service provider clearly states—or the resident has been informed—that only a temporary fix was completed and the issue has reoccurred while awaiting an estimate, this is **not** a recall. Proceed by following up with the service provider using the same work order under the unresolved cases process.
 </Note>
 
 **Scenario 4:  The Service Provider Removed Themselves From the Job (No Explanation)**
@@ -127,24 +123,23 @@ This scenario applies when a service provider removes themselves from a work ord
 1. Review the work order notes and activity log to check whether the SP documented a reason for removing themselves.
 2. Verify whether the SP has already been to the property or performed any assessment or repair work.
 3. Contact the service provider to confirm : 
-  1. The reason for removing themselves from the job. 
-  2. The current repair status, if any work was started or completed
-    1. If the SP confirms the job requires a different service or skill, and they haven’t been to the property yet, refer to https://latchel.atlassian.net/wiki/spaces/OPS/pages/edit-v2/786859062? 
-    2. If the SP  says there is still work that needs to be done to resolve the issue, and this requires a different skill, refer to **Scenario 5** of this SOP.  
-    3. If the SP confirms the repair is no longer required, follow https://latchel.atlassian.net/wiki/spaces/OPS/pages/768999990 
-  3. If the SP is unresponsive
-    1. If the Service Provider Is PM-Assigned / Locked In
-      1. If the issue is property-damaging or extreme habitability:
-        1. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
-        2. Refer to https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations  and call the emergency escalation contacts. Refer to  https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs
-      2. If the issue is not property-damaging or extreme habitability, complete the task and create a task for the Property Manager with a task Title as “**Action Required: PM Instructions or Information Needed.” **Refer to the https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates
-    2. Not Locked in
-      1. If the issue is property-damaging or extreme habitability, reassign the WO to another SP.
-        1. Refer to[ (](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider)https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider
-      2. If the issue is not property-damaging or extreme habitability:
-        1. Defer the task to the next day for another follow up.
-        2. If still unsuccessful after the second follow-up, reassign the WO to another SP.
-        3. Refer tohttps://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider
+   1. The reason for removing themselves from the job. 
+   2. The current repair status, if any work was started or completed
+      1. If the SP confirms the job requires a different service or skill, and they haven’t been to the property yet, refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Reassign-a-Service-Provider#how-to-reassign-a-service-provider) 
+      2. If the SP  says there is still work that needs to be done to resolve the issue, and this requires a different skill, refer to **Scenario 5** of this SOP.  
+      3. If the SP confirms the repair is no longer required, follow [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#how-to-handle-a-work-order-cancellation).
+   3. If the SP is unresponsive
+      1. If the Service Provider Is PM-Assigned / Locked In
+         1. If the issue is property-damaging or extreme habitability:
+            1. The "**Who Ya Gonna Call**" tool now provides an AI suggestion for the correct contact and call order based on time of day and scenario. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below.
+            2. Refer to [How to Identify Property Damage and Extreme Habitability Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations#how-to-identify-property-damage-and-extreme-habitability-situations)  and call the emergency escalation contacts. Refer to  [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos)
+         2. If the issue is not property-damaging or extreme habitability, use the **Forward to PM** tool immediately so the work order status reflects that PM instructions or information are needed. Document the reason clearly before forwarding.
+      2. Not Locked in
+         1. If the issue is property-damaging or extreme habitability, reassign the WO to another SP. Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider)
+         2. If the issue is not property-damaging or extreme habitability:
+            1. Do not defer the task to the next day or create a follow-up task while the emergency remains unresolved.
+            2. Use the **Forward to PM** tool immediately and document that the SP is not locked in / follow-up was unsuccessful.
+            3. Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider)
 4. Document all findings, confirmations, and actions taken in the work order before proceeding.
 
 **Scenario 5:  If the service provider says there is still work that needs to be done to resolve the issue, and this requires a different skill.** 
@@ -152,21 +147,21 @@ This scenario applies when a service provider removes themselves from a work ord
 This process applies regardless of the original work order’s status, as long as the newly reported issue requires a different trade or skill.
 
 1. Create a second work order 
-  1. ([TECH 101) How to: Create a New Work Order from "Incognito Mode" (All Submissions)](https://latchel.atlassian.net/wiki/spaces/OPS/pages/781647909)
-  2. **Outcome 1: **The service provider can handle the newly reported issue
-    1. You may assign the same service provider, **as long as** the newly created work order **does not transition to a ‘Needs Approval’ status**.
-      1. If the work order **does** move to ‘Needs Approval’, **do not make changes**—instead:
-        - Leave a clear note in the **work order summary and create a task to the PM** informing them that the reporting service provider has confirmed they can handle the additional issue.
-    2. Once the service provider is assigned, proceed with the next applicable step depending on the PM’s subscription.
-  3. **Outcome 2: **The service provider cannot or did not confirm they can handle the newly reported issue
-    1. A new service provider will need to be sourced.
-    2. Refer to the following guides:
-      1. [(🏡⛑EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider)
-      2. [(⛑EMERGENCY) How to: Source a new service provider](https://latchel.atlassian.net/wiki/spaces/OPS/pages/768999595)
-  4. Call the resident again to inform them of the new provider and the scheduled appointment.
-  5. Ensure the **original work order is referenced** in the new one for context.
-  6. Write clear and effective notes in **both** work orders.
-    1.  See: [↔ How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OM/pages/763363368).
+   1. ([TECH 101) How to: Create a New Work Order from "Incognito Mode" (All Submissions)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Create-a-New-Work-Order-from-Incognito-Mode-All-Submissions#how-to-create-a-new-work-order-from-incognito-mode-all-submissions)
+   2. **Outcome 1:** The service provider can handle the newly reported issue
+      1. You may assign the same service provider, **as long as** the newly created work order **does not transition to a ‘Needs Approval’ status**.
+         1. If the work order **does** move to ‘Needs Approval’, **do not make changes**—instead:
+            - Leave a clear note in the **work order summary and create a task to the PM** informing them that the reporting service provider has confirmed they can handle the additional issue.
+      2. Once the service provider is assigned, proceed with the next applicable step depending on the PM’s subscription.
+   3. **Outcome 2:** The service provider cannot or did not confirm they can handle the newly reported issue
+      1. A new service provider will need to be sourced.
+      2. Refer to the following guides:
+         1. [(🏡⛑EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider)
+         2. [(⛑EMERGENCY) How to: Source a new service provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Source-a-New-Service-Provider-Outside-Network#how-to-source-a-new-service-provider-outside-network)
+   4. Call the resident again to inform them of the new provider and the scheduled appointment.
+   5. Ensure the **original work order is referenced** in the new one for context.
+   6. Write clear and effective notes in **both** work orders.
+      1.  See: [↔ How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OM/pages/763363368).
 
 ## **🎯 When to Break This SOP**
 

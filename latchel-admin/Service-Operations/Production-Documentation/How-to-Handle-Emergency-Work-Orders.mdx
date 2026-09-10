@@ -479,6 +479,14 @@ Sometimes residents report an emergency work order but are unreachable. This cou
   For guidelines on handling customer responses when a resident reaches out after unsuccessful troubleshooting call attempts, please refer to the below guidelines in the FAQ.
 </Note>
 
+## **⚠️ Emergency Follow-Up Standard**
+
+For all follow-up tasks on active emergencies (e.g., unresponsive vendors or stalled scheduling), do not defer to the next day.
+
+- **The Rule:** Make **one (1) attempt**, then immediately execute a **Same-Day Decision** (Intervene, De-escalate to Urgent, or Forward to PM).
+- **The Goal:** A decision must be made **immediately** following the failed attempt to ensure the **24-Hour Appointment Standard** (Service Provider arrival within 24 hours) remains achievable.
+- **Reference:** For the full decision framework and PD/EH exceptions, see the **[Basic Service Ops Guidelines]**.<br />
+
 ## **📋**Handling Work Orders with Home Warranty Information
 
 <Note>
@@ -607,10 +615,12 @@ If a Property Manager reaches out and asks Latchel to contact a Home Warranty co
   1. If the issue is property damaging or extreme habitability, call escalation contacts. Refer to [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
      1. If successful, follow the instructions from the Property Manager
      2. If unsuccessful, follow the "**PM Input needed before dispatch**" path 
-  2. If the issue is NOT property damaging or extreme habitability,
-     1. Defer the troubleshooting task to the requested time, but only once. Educate the resident to provide the best possible callback time to ensure successful contact.
-     2. After the follow-up call, proceed with the appropriate next steps based on the outcome.
-     3. If unable to reach the resident, follow the process outlined here: [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders#how-to-handle-emergency-work-orders).
+  2. **If the issue is NOT Property Damaging or Extreme Habitability:**
+     - **Do not simply defer and wait.** While you can set a one-time callback task for the resident's requested time, you must **immediately** execute a Same-Day Decision to ensure the work order does not stall.
+     - **Action:** Use the **"Forward to PM"** tool (or escalate to **Ops Support Specialists**) to notify the PM that the resident is currently unavailable to troubleshoot.
+     - **De-escalate:** Change the priority to **Urgent** (keep the Emergency tag) to stop the emergency clock while waiting for the resident's callback.
+  3. **If the issue IS Property Damaging or Extreme Habitability (PD/EH):**
+     - **Do not defer.** You must follow the **Emergency Escalation Contact (EEC)** protocol immediately. If the resident cannot troubleshoot, the PM must be notified right away to determine if emergency access is required.
 </Accordion>
 
 <Accordion title="What If I Come Across a Work Order That Was Created for Documentation Only?">
@@ -629,30 +639,15 @@ If a Property Manager reaches out and asks Latchel to contact a Home Warranty co
 </Accordion>
 
 <Accordion title="What to Do if the Property Manager Updates Severity or Completes the Troubleshooting steps but Leaves the Work Order in Troubleshooting or Maintains it as an Emergency Despite Potential De-escalation?">
-  1. There are instances where a Property Manager completes the troubleshooting task or reduces the severity of a work order without documenting the troubleshooting steps. In such cases, the Emergency team does NOT need to call the resident for troubleshooting. We can reasonably assume the Property Manager has already communicated with the resident and determined the severity of the issue. To ensure the work order is properly updated.
-  2. In some cases, the Property Manager may keep the work order at Emergency severity and proceed with vendor assignment while troubleshooting is ongoing. If, based on your discussion with the resident, the issue seems appropriate for de-escalation, you must first verify the Property Manager’s intake settings for the property before adjusting the severity. Refer to [**How to: Properly Diagnose Emergency Situations** ](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Properly-Diagnose-Emergency-Situations)for guidance.
-     1. Perform the Troubleshooting steps. **If no troubleshooting call was completed, retain the severity level set by the Property Manager. If the resident has already been contacted and the work order can be deescalated, select the severity based on the Property Manager’s intake settings.**
-     2. <img
-          src="/images/download-(39).png"
-          alt="Download (39)"
-          title="Download (39)"
-          style={{ width:"72%" }}
-        />
-     3. **Emergency**
-        1. **Work order needs immediate dispatch** - Select this option if there is a need for an immediate dispatch for a service provider.
-        2. Proceed with the succeeding prompts then proceed with Steps d and e.
-        3. Applicable for Premium or Autopilot subscriptions.
-     4. **Work order does not need immediate dispatch** - Select this option if it meets the criteria for _“[Work order does not need immediate dispatch](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders)”_ (refer to Option 2, Step 1.d.ii).
-        1. Proceed to Steps d and e.
-        2. Automation will update the work order state and progress accordingly.
-     5. **PM Input Needed Before Dispatch** - Select this option if there are indications that the Property Manager is handling the issue internally.
-        1. This will forward the work order to the Property Manager for review before dispatch.
-     6. **Non-emergency**
-        1. Proceed to Steps d and e.
-        2. The work order will automatically progress to the appropriate next state.
-  3. Fill in the required fields with the provided information. 
-  4. For the **“What troubleshooting was done or attempted?”** section, enter the following note:
-  5. Leave this note: “_The Property Manager has completed the troubleshooting. No call was made to the resident as it is no longer required._”
+  1. **Intervene Immediately:** If the PM has provided the missing information or completed the troubleshooting steps, **do not wait** for them to move the work order. Immediately move the status to the next stage (e.g., **"Waiting for Service Provider"**) and begin dispatch.
+  2. **Follow the PM's Lead (with a 1-Attempt Limit):** If the PM explicitly maintains the Emergency status for a Non-PD/EH issue, respect their decision but do not let it stall.
+     - Make **one (1) attempt** to secure a Service Provider immediately.
+     - **If unsuccessful:** Do not defer to the next day. Execute the **Same-Day Decision** (Forward to PM or De-escalate to Urgent).
+  3. **De-escalate with Documentation:** If the issue is clearly Non-PD/EH and the PM has not provided a valid reason to keep it as an Emergency, you may de-escalate to **Urgent** to protect metrics, provided you:
+     - Keep **"(EMERGENCY)"** in the title.
+     - Leave a mandatory note explaining the de-escalation.
+     - **Forward to PM** to notify them of the change.
+  4. **PD/EH Exception:** If the issue involves active Property Damage or Extreme Habitability, it **must** remain an Emergency. If the PM's instructions are blocking progress, initiate the **EEC protocol** immediately.
 
   <Warning>
     **📝** **NOTE**: If the resident provides new information that was not part of the original issue assessed by the property manager and this impacts the severity of the work order, please refer to [How to: Properly Diagnose Emergency Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Properly-Diagnose-Emergency-Situations).
@@ -667,12 +662,14 @@ If a Property Manager reaches out and asks Latchel to contact a Home Warranty co
 
   **How to proceed:**
 
-  - Leave the work order in the _Troubleshooting_ state.
-  - Complete the initial Troubleshooting task that reflects your first call attempt and the contact with the EEC.
-  - Create a new task for the follow-up call, including clear instructions to contact the resident again at the time frame provided by the EEC / Property Manager.
-  - Notify Operations Support Specialists in the #ops_info_center channel to give them a heads-up about the work order and the delayed follow-up.
-
-  This ensures the work order stays active in the correct status while documenting both the initial and follow-up steps.
+  - **Forward to PM:** Use the **"Forward to PM"** tool immediately. This transfers the primary ownership of the coordination to the Property Manager and ensures the emergency clock is managed correctly on our end.
+  - **Set a One-Time Callback Task:** As a courtesy to the PM's request, create a **one-time task** for Latchel to call the resident back at the requested time.
+  - **Outcome Handling:**
+    - **If the resident is reached:** If the issue is confirmed as an Emergency, Latchel will resume active coordination and move the job forward.
+    - **If the resident is NOT reached:** Do not create any further tasks for Latchel. The work order will remain in the PM's court (Forwarded to PM) for them to coordinate further.
+  - **Metric Protection (Non-PD/EH):** For issues that are not Property Damage or Extreme Habitability, change the priority to **Urgent** (keep the Emergency tag) when you forward it. This stops the emergency clock while we wait for the callback.
+  - **What to say to the PM:**
+    _"I have forwarded this task to your dashboard so your team can track the resident's availability. As requested, I've also set a one-time reminder for our team to try them again at [Time]. If we still can't reach them, the task will remain with your team to coordinate next steps."_
 </Accordion>
 
 <Accordion title="How should we handle a work order submitted under an old unit when the resident has already transferred to a new unit?">

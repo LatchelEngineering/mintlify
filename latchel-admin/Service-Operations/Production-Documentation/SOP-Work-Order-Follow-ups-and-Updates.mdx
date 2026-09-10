@@ -42,7 +42,7 @@ Prior to taking any action on a follow-up or update task, complete the following
   For Autopilot WOs, refer to [How to: Handle Autopilot WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs#how-to-handle-autopilot-wos).
 </Warning>
 
-Agents assigned to incoming communications (SMS/Webchat, Inbound Calls, and Emails) will receive communications from customers following up on their work order, update, or requesting information. It is the Operations Associates' responsibility to: understand the request, which Work Order the communication is pertaining to, and update the WO or create the follow-up task.
+Agents assigned to incoming communications (SMS/Webchat, Inbound Calls, and Emails) will receive communications from customers following up on their work order, update, or requesting information. It is the Operations Associate's responsibility to: understand the request, which Work Order the communication is pertaining to, and update the WO or create the follow-up task.
 
 <Note>
   **Important:** Before taking action on any task, verify that the communication or update **belongs to the work order you are working on.** If the message or note references a different issue or a different WO:
@@ -65,7 +65,7 @@ Refer to the following list for situations that will require a task to be create
 - When the resident is reaching back to say they are available for TS.
 - When a WO needs to be scheduled or when SPs/residents want to reschedule
 - When an SP advised they would like to be removed from the job due to some instances like; no longer working with PM, does not want to work with 3rd parties, and etc.
-- When the SP reports they are waiting for materials
+
 - When a PM requests an emergency escalation **_AND_** follow-up from TS or reassessment is needed.
 - When residents/PMs/SPs/owners reached out providing a new information that will result in an emergency work order reassessment - including PD/EH situations
 - When a resident submits a photo or video of an issue and no troubleshooter is currently assigned to the work order. (If a troubleshooter is already working on the order, **simply tag them to notify** instead of creating a new task.)
@@ -144,67 +144,83 @@ Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.la
   Always review all open tasks before proceeding. If a call has already been made for a specific task, you may skip that work order during your follow-up.
 </Warning>
 
-<Accordion title="If the PM requested to assign and dispatch a specific SP but the service provider was unresponsive or unable to schedule within the expected timeframe.">
-  1. If the issue is property damaging or extreme habitability (refer to [How to: Identify Property Damage and Extreme Habitability Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations)):
-     1. Call the escalation contacts. Refer to [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
-  2. If the issue is not property damaging or extreme habitability:
-     1. Defer the task to the next day for another follow-up.
-        1. If still unsuccessful after the second follow-up, complete the task and create a new task for the Property Manager
-        2. Refer to the below [task template](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates).
+<Accordion title="PM assigned a specific SP, and that SP is unresponsive or can't schedule in time.">
+  **Ordinary Unresponsiveness**
+
+  - **If PD/EH:** call the escalation contacts. Severity and status stay unchanged (Emergency, Scheduling Service Provider) — this is still being actively worked as an emergency.
+  - **If not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, leave the internal de-escalation note. No PM task needed. The WO stays in **Scheduling Service Provider** status.
+
+  **PM insists it's an emergency but restricts us to one specific SP, and that SP is unresponsive (a genuine conflict, not ordinary unresponsiveness):**
+
+  - "Emergency" and "you must use only this one, possibly unreachable provider" aren't compatible. If we must use that person and they don't answer, it isn't functioning as an emergency.
+  - De-escalate to Urgent, keep "(EMERGENCY)" in the title so the SP still treats it with urgency, leave the internal note. No PM task.
+  - Escalate to **Product Support**, or have CS raise the contradiction with the PM directly — this is a policy conflict to resolve, not a one-off WO decision. If the PM pushes back on the de-escalation, use the PM script.
+
+  **PM has an explicit critical note not to contact the SP or the PM once a provider is assigned (a clear instruction, not a conflict):**
+
+  - Do **not** call the SP or the PM — that defeats the purpose of the instruction.
+  - De-escalate to Urgent, keep "(EMERGENCY)" in the title, leave the internal note, and move it out of the active queue.
+  - Escalate to **Product Support** as outlined above.
 </Accordion>
 
-<Accordion title="If the Service Provider completed an initial visit, the issue remains unresolved and must confirm materials with a warehouse/supplier before providing an estimate (no confirmed estimate date or limited responsiveness):">
-  1. If the issue is property damaging or extreme habitability (refer to [How to: Identify Property Damage and Extreme Habitability Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations)):
-     1. Call the escalation contacts. Refer to [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
-  2. If the issue is not property damaging or extreme habitability:
-     1. Make up to 2 total contact attempts on consecutive days (no more than 24hrs apart) to ask the SP for the estimate.
-        1. Create a task for estimate follow up.
-        2. If the Service Provider advises that they must first check with a **warehouse or supplier once it opens** before providing an estimate:
-           1. Do **not** defer the task at the start of operating hours.
-           2. Allow sufficient time for the Service Provider to obtain required materials and pricing details.
-           3. Schedule the estimate follow-up for **12:00 PM** (or a reasonable mid-day time) to confirm whether materials, costs, and the estimate are available.
-        3. If the Service Provider can’t provide the estimate but can provide a date when the estimate will be sent:
-           1. Schedule the estimate follow-up for that date and place the WO in Pending in the meantime.
-           2. No additional follow ups are required until that date.
-        4. If after a second attempt, the Service Provider is unresponsive, can’t provide the estimate or can’t provide a date when the estimate would be sent, complete the task and create a new task for the Property Manager
-           1. Refer to the below [task template](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates).
+<Accordion title="SP visited, issue not fixed, and they're building an estimate.">
+  **Step 1 — Contact the SP first** (or ask directly if you're already on the phone):
+
+  - Is the emergency part of this already resolved or made safe?
+  - Can you get us the estimate today, or only on a later date?
+
+  **Step 2 — If the SP confirms the emergency part is resolved:**
+
+  Check PD/EH separately — resolving the immediate trigger doesn't automatically clear this.
+
+  - **Still actively property-damaging or a habitability concern:** do **not** de-escalate. The WO stays Emergency and escalation contacts get called as part of standard emergency handling. A true PD/EH situation is treated as an emergency regardless of what the SP confirmed.
+  - **Not currently property-damaging:** proceed with de-escalation. Reclassify to Urgent, keep "(EMERGENCY)" in the title, complete the current task if applicable, and leave the internal note. If there's any uncertainty about severity, verify directly with the resident rather than relying on the SP's word or WO notes alone.
+
+  Once reclassified to Urgent, route by PM subscription (see the routing table in Section 5). Whether the estimate lands today or later doesn't matter here — the emergency is resolved, so it proceeds through the applicable path either way.
+
+  **Step 3 — If the SP says the emergency part is NOT resolved:**
+
+  - **SP can give us the estimate today:** don't de-escalate yet. Tell them to submit it and follow up same-day.
+
+  - **SP can only give a later date, or is unresponsive after the one same-day contact attempt:**
+    - **PD/EH:** Call escalation contacts.
+    - **Not PD/EH:** reclassify to Urgent, keep "(EMERGENCY)" in the title, complete the current task if applicable, leave the internal note. Do not create a PM task unless separate PM input or approval is actually needed.
 </Accordion>
 
-<Accordion title="The resident has reported that the issue is unresolved but they have been unresponsive to our contacts to confirm what needs to be fixed. The SP has been unresponsive too.">
-  1. We should attempt to follow up once with the resident (all residents available in the property).
-     1. Attempt to get in contact as follows:
-        1. Phone call.
-        2. Send SMS and/or email.
-  2. If the Resident is unresponsive, attempt to contact the SP.
-     1. If both parties are unresponsive:
-        1. If the issue is property damaging or extreme habitability, refer to [How to: Identify Property Damage and Extreme Habitability Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations), call the emergency escalation contacts.
-        2. If the issue is not property damaging or extreme habitability:
-           1. Defer the task to the next day for another follow up.
-        3. If still unsuccessful after the second follow-up, complete the task and create a new task for the Property Manager
-           1. Refer to the below [task template](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates).
+<Accordion title="SP visited, issue not fixed, waiting for materials — no date given, or unresponsive.">
+  **If property-damaging or extreme habitability:** call the escalation contacts. See [Job Aid: PM Outbound Communication for Emergency WOs](https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248).
+
+  **If not PD/EH:**
+
+  - Contact the SP for a firm ETA on materials and confirm they can install promptly once materials arrive.
+  - **SP provides an ETA and confirms prompt installation:** schedule the installation date as the appointment. No additional follow-ups until that date unless the SP or resident provides a new update.
+  - **SP has no installation date/time, can't confirm a firm appointment, or is unresponsive after the one same-day attempt:** de-escalate to Urgent, complete the current task if applicable, keep "(EMERGENCY)" in the title, and leave the internal note explaining that no firm installation date/time was confirmed.
+  - Do **not** schedule an additional callback just to ask again for the materials or installation date.
+</Accordion>
+
+<Accordion title="Resident says the issue is unresolved, but both resident and SP are unresponsive.">
+  - Attempt to follow up **once** with the resident, using all residents available on the property: phone call, then SMS and/or email.
+  - If the resident is unresponsive, attempt to contact the SP **once** the same day.
+  - **If both are unresponsive:**
+    - **PD/EH:** contact the emergency escalation contacts.
+    - **Not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, complete the current task if applicable, leave the internal note. Do not defer to the next day, and do not create a PM task unless separate PM input or approval is actually needed.
 </Accordion>
 
 <Accordion title="The resident has reported that the appointment was missed.">
-  1. Contact the resident to confirm the report.
-     1. Inform the resident that we’ll attempt to contact the SP provider assigned, but if the SP is unresponsive, we’ll reassign to someone else.
-  2. Contact the SP to follow up on the missed appointment:
-     1. If the SP is responsive, confirm a new appointment time.
-     2. If the SP is unresponsive
-        1. Locked in and PM-assigned service providers
-           1. If the issue is property damaging or extreme habitability, refer to [How to: Identify Property Damage and Extreme Habitability Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations), call the emergency escalation contacts.
-           2. If the issue is not property damaging or extreme habitability, complete the task and create a new task for the Property Manager
-              1. Refer to the below [task template](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates).
-        2. Not Locked in
-           1. If the issue is property damaging or extreme habitability, reassign the WO to another SP.
-              1. Refer to [How to: Identify Property Damage and Extreme Habitability Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider).
-           2. If the issue is not property damaging or extreme habitability:
-              1. Defer the task to the next day for another follow up.
-              2. If still unsuccessful after the second follow-up, reassign the WO to another SP.
-              3. Refer to [(EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider).
+    - Contact the resident to confirm the report.
+    - Tell the resident we'll attempt to contact the assigned SP, and that if the SP is unresponsive and the WO is still an active emergency, we'll reassign when appropriate.
+    - Contact the SP **once** the same day about the missed appointment.
+    - **SP responsive:** confirm a new appointment time.
+    - **SP unresponsive — locked-in and PM-assigned SPs:**
+      - **PD/EH:** contact the emergency escalation contacts.
+      - **Not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, complete the current task if applicable, leave the internal note. Do not create a PM task unless separate PM input or approval is actually needed.
+    - **SP unresponsive — not locked in:**
+      - **PD/EH:** reassign the WO to another SP. See (EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider.
+      - **Not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, complete the current task if applicable, leave the internal note. Do not defer to the next day, and do not create a PM task unless separate PM input or approval is actually needed.
 </Accordion>
 
 <Accordion title="WO has been moved to Needs Owner Approval for estimate approval request, then we received a follow-up request from the SP or the resident. When can we follow up with the PM?">
-    You may inform the resident or service provider that the estimate is in the process of being reviewed by the Property Manager, and that we’ve sent a follow-up request regarding the status of the approval.
+   You may inform the resident or service provider that the estimate is in the process of being reviewed by the Property Manager, and that we’ve sent a follow-up request regarding the status of the approval.
 
   Then, create a task for the Property Manager using the template below:
 
@@ -218,7 +234,7 @@ Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.la
   8. Description: _The (service provider or resident) is following up on the estimate approval. The work order is currently in_ **Needs Approval** status after the service provider submitted the estimate. <br />_Please let us know if the estimate has been approved or declined, or if you need any assistance. else. Thank you!_
 </Accordion>
 
-<Accordion title="The WO is in Scheduling with Service Provider / Scheduling with Resident status after the PM assigned a service provider and;">
+<Accordion title="The WO is in Scheduling with Service Provider / Scheduling with Resident status after the PM assigned a service provider and">
   1. **_There is a critical note that there is no need to contact the SP AND we can forward the WO to the PM. Do we still need to call the service provider and the escalation contacts?_**
 
   <Frame>
@@ -258,7 +274,7 @@ Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.la
   3. Complete the automated task and create a new one with the information left by the resident, assigning it to the PM User Group.
   4. Submit a bug report using this link: [https://app.latchel.com/admin/bug-reports](https://app.latchel.com/admin/bug-reports) (also pinned at the top of the `#bug-report` channel).
   5. All other On-call customer related tasks manually assigned to the Latchel Ops team:
-     1. Read the task description. If the task was created for Ops to follow up (except for reasons outlined here [Follow Up Guidelines for On-Call Customers (app.latchel.com)](https://latchel.atlassian.net/wiki/spaces/OPS/pages/edit-v2/3132325894#PM-Communication)), proceed to complete the task.
+     1. Read the task description. If the task was created for Ops to follow up (except for reasons outlined here [Follow Up Guidelines for On-Call Customers (app.latchel.com)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Follow-Up-Guidelines-for-On-Call-Customers-app-latchel-com#new-on-call-alerts)), proceed to complete the task.
      2. If an update to the PM is needed, create a new task and assign it to the PM User Group.
      3. Submit a ticket to the _svc-ops-feedback_ channel
   9. For PG-admin query related concerns such as request to update the query, please post this on _#data-reporting-help-requests._
@@ -284,19 +300,6 @@ Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.la
 
   _“Just to confirm—we’d typically escalate this to the PM due to the nature of the issue, but as you're also the escalation contact, your response here will serve as the PM’s direction. I’ll make sure that’s captured.”_
 </Accordion>
-
-### 📋Task Template for Property Manager
-
-This task template should be used when we are awaiting the Property Manager’s instructions in order to proceed with the work order.
-
-1. Subject: **Action Required: PM Instructions or Information Needed**.
-2. Who is this task about? _Select the PM_
-3. Select a Date and Time: _Leave as is_
-4. Assign to a User Group: _PM user group_
-5. Assign to a User: _Leave as is_
-6. Priority: Leave as is
-7. _Complete task on any job state change_
-8. Description: _We’ve created this task for the Property Manager to \[insert specific information or instructions needed\]. The current status of the work order is \[insert status\]. Kindly provide the requested information or guidance at your earliest convenience to help ensure a smooth continuation of the process. If you have any questions or need further clarification, please don’t hesitate to reach out. Thank you!_
 
 ## Ensuring Proper Follow-Through on Customer Requests
 
@@ -345,7 +348,7 @@ There are certain specific cases in which Operations Associates will still need 
   **A:** When a resident follows up during Business Hours about a work order previously handled After-Hours, first verify that the property manager’s account has an After-Hours subscription. Then follow the applicable ownership handoff process and create or assign the Property Manager task as directed in the [Informational: Latchel Customers & Customer Subscriptions](https://help.latchel.com/latchel-admin/Service-Operations/Latchel-Library/Informational-Latchel-Customers-Customer-Subscriptions#informational-latchel-customers-and-customer-subscriptions) guidance.
 </Expandable>
 
-<Accordion title="What should I do if a resident reaches out and advises that the owner had sent their own vendor and had already resolved the issue?">
+<Accordion title="Q: What should I do if a resident reaches out and advises that the owner had sent their own vendor and had already resolved the issue?">
   1. Update the work order’s status to “Completed.” With notes as to why the work order was moved to Completed status.
   2. Reach out to the currently assigned service provider to have them disregard the job. Check with them if they will be billing for the job.
      1. 🗨️ **Say something like**: ”_Hi (Service Provider), we would like to inform you that you can disregard any work for this job since this will now be canceled as the owner has submitted their own service provider to resolve the issue. If your team is billing for the cancellation or any dispatch fees, please send your invoice to [team@latchel.com](mailto:team@latchel.com)._
@@ -359,7 +362,7 @@ There are certain specific cases in which Operations Associates will still need 
      7. What action or information is for the Property Manager? _Hi, the resident had informed our team that the property owner had sent his/her own service provider to resolve the issue. We have now canceled the work order and informed the assigned service provider to disregard the job. (Add additional notes in case we have information on whether the service provider is billing or not.)_
 </Accordion>
 
-<Accordion title="How should I handle customer inquiries about an open work order for a Property Management (PM) company that is already disabled in Latchel?">
+<Accordion title="Q: How should I handle customer inquiries about an open work order for a Property Management (PM) company that is already disabled in Latchel?">
   If the PM company’s subscription has ended and they are disabled in Latchel, we should not continue working on any open work orders for that company.
 
   **Politely inform the customer** that Latchel is no longer able to assist with their request and that they should reach out directly to their property management company for further help.

@@ -113,9 +113,21 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
           - Send SMS to the resident or service provider about the outcome of your contact with the Property Manager
       - **Non-Property Damaging/Non-Extreme Habitability Issues**
         - Make **1** call attempt on a single follow-up to reach customers (residents and service providers). While these cases require timely communication, they do not pose an immediate threat to property or safety.
-          - If the resident/service provider is reached and requests to be contacted again the same day, defer the task to the advised time.
-          - If unsuccessful after the first attempt, send an SMS (if enabled) then defer the task to the next day for another follow-up.
-            - If still unsuccessful after the second follow-up, complete the task and escalate to the Property Manager by creating a new task and assigning it to them.
+          - **If unsuccessful after the first attempt:** Send an SMS (if enabled). **Do not defer the task to the next day.**
+          - **Same-Day Action Required:** You must apply the **3-way decision framework** (Intervene, De-escalate to Urgent, or Forward to PM) immediately to ensure the emergency queue remains active.
+            - _Note: If you de-escalate to Urgent, you must keep "(EMERGENCY)" in the title and leave the mandatory internal note._
+
+      **⚠️ Emergency Follow-Up Rule: 1 Attempt, Then Act**<br />For Emergency Work Orders, follow-up attempts are capped at **one (1) attempt**. If unsuccessful, do not defer to the next day. You must choose one of the following three outcomes **the same day**:
+
+      1. **Intervene**: Take direct action to move the job forward (e.g., schedule the appointment yourself or reassign the vendor).
+      2. **De-escalate to Urgent**: If the active emergency path has stalled (and there is no Property Damage/Extreme Habitability), move the job to Urgent.
+         - _Requirement:_ Keep "(EMERGENCY)" in the title and leave the mandatory note: _"De-escalated from Emergency to Urgent — [Reason]. Flagging for team visibility — reach out before re-escalating."_
+      3. **Forward to PM**: Hand coordination back to the Property Manager if they have taken ownership or if their specific constraints are blocking progress.
+
+      **🛑 CRITICAL: Property Damage (PD) & Extreme Habitability (EH) Exception**<br />The Same-Day Decision Guide (and de-escalation to Urgent) **DOES NOT APPLY** if the work order involves active Property Damage or Extreme Habitability.
+
+      - **Action:** These must remain as **Emergencies**.
+      - **Next Step:** If stuck, you must immediately call the **Emergency Escalation Contacts** for the property to resolve the blocker. Do not de-escalate.
     </Accordion>
 
     <Accordion title="Non-Emergencies">
@@ -244,7 +256,7 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
       If there is a matching profile in the system, the user is considered **registered**. Be sure to select the correct profile before proceeding.
     </Warning>
 
-    <Accordion title="Residents">
+    <Accordion title="**Residents**">
       - We may assist any resident/customer for general inquiry (ex: submitting maintenance requests) **as long as they can verify a property that exists in our system**.
         - For NTV requests, follow [How to: Handle 'Need to Verify' Emails](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Need-to-Verify-Emails).
       - It is **not required** for the resident to be listed in the system, and they do **not need to reference a specific work order** to receive assistance.

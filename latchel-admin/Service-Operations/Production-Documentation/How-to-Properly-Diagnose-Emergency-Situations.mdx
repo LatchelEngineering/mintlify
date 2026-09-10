@@ -35,7 +35,7 @@ As an Ops Troubleshooter, you are the first line of defense in minimizing any [p
 Your mission as an Ops Troubleshooter is to:
 
 1. Resolve the issue(s) during your troubleshooting call by actively listening to the resident, [asking probing questions](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Troubleshooter-Question-Bank) and suggesting troubleshooting techniques.
-2. De-escalate the issue(s) to non-emergency if it is neither [property damaging, extreme habitability](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations), nor considered an emergency based on the Property Manager’s intake settings.
+2. De-escalate the issue(s) to non-emergency if it is not PD/EH and not an emergency per PM settings. **Additionally, you may de-escalate to Urgent if the active emergency path has stalled** (refer to the _Basic Service Ops Guidelines_ follow-up call procedure for '1 attempt, then act' rules).
 3. Take swift action to dispatch if the issue(s) is property damaging, extreme habitability or considered an emergency based on the Property Manager’s intake settings.
 
 <Warning>
@@ -160,6 +160,7 @@ Your mission as an Ops Troubleshooter is to:
    3. Once you’ve checked the intake settings and determined that the issue can be de-escalated to non-emergency, **_you should also ask yourself if this issue could potentially cause property damage, or is an extreme habitability issue_**. [Refer to this job aid for definitions of both](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations).
       1. If the Property Manager settings indicate that it is not an emergency, but you assess it to be an issue that will continuously damage the property, and get worse with time, or an extreme habitability issue, then you will call the Escalation Contacts (in the specified order) to ask for permission to dispatch. If the Escalation Contacts do not answer the phone, we should send an email to the failed escalation email list and then follow the PMs intake settings. If you can't access Assembly to send an email, check the [How to: Escalate Between Teams](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams) for guidance.
       2. If you’ve verified that the PM considers the issue to be Urgent or Normal, and you determined that it is not property-damaging or extreme habitability, you may de-escalate. **Please include in the Troubleshooting Guided Workflow the reason for de-escalation.** Ex: _"The 3-day forecast shows temperatures will remain above the Emergency Thresholds"_ or _"PM's intake settings state that [issue] is to be handled as Urgent"_
+         1. **If de-escalating because the handling path has stalled:** You MUST keep **(EMERGENCY)** in the title and use the mandatory note: _'De-escalated from Emergency to Urgent — [Reason for stall]. Flagging for team visibility — reach out before re-escalating._
    4. Repeat this process for **_all_** issues the resident mentions during your troubleshooting call. If the PM considers any of the issues to be an emergency, treat them as such.
 
 <Warning>
@@ -198,9 +199,11 @@ Use these steps to confirm the issue’s severity, clarify any missing details, 
 </Warning>
 
 1. **Evaluating Additional Information**
-   1. Whether the resident provides additional, valuable information that was not mentioned in the original work order summary, \*\*OR \*\*the original WO summary indicates the issue can be de-escalated/escalated
+   1. Whether the resident provides additional, valuable information that was not mentioned in the original work order summary, **OR** the original WO summary indicates the issue can be de-escalated/escalated
       1. **Identify key triggers** in the resident's response to determine whether the issue should remain classified as an emergency or can be de-escalated. See [Ops Troubleshooters Quick Reference Guide: Emergency and Non-Emergency Triggers](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Quick-Reference-Guide-Emergency-and-Non-Emergency-Triggers#quick-reference-guide-emergency-and-non-emergency-triggers)
-      2. **Evaluate the severity of the issue:**
+      2. **Operational Triggers (Stalled Path):** You may also de-escalate to Urgent if the resident’s response indicates the emergency path has stalled (e.g., they are unavailable for a same-day visit or request a callback for another day). Refer to the **Basic Service Ops Guidelines** for the "1 attempt, then act" rule.
+      3. **Evaluate the severity of the issue:**
+
          1. If the assessment confirms there are no changes to the issue’s severity, NO additional action is needed.
          2. **If the issue is an emergency (PD/EH) and:**
             1. **The Property Manager is actively managing it:**
@@ -233,7 +236,7 @@ Use these steps to confirm the issue’s severity, clarify any missing details, 
                               1. Call the emergency escalation contacts. Refer to [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
                               2. If EEC is unresponsive, create a task for the PM.
                            2. **Not property damaging or extreme habitability situation**:
-                              1. Create a task for the PM.
+                              1. **Do not simply create a task for the PM.** Refer to the _Basic Service Ops Guidelines_ follow-up procedure: Apply the **Same-Day Decision Guide** (Intervene, De-escalate to Urgent, or Forward to PM) immediately.
                         2. **Not PM-assigned / Not Locked-in:**
                            1. Reassign the Service Provider as needed. Refer to [How to: Reassign a Service Provider](https://latchel.atlassian.net/wiki/spaces/OPS/pages/786859062).
                   2. **If There Is No Assigned Service Provider**.
@@ -243,16 +246,16 @@ Use these steps to confirm the issue’s severity, clarify any missing details, 
                            1. Call the emergency escalation contacts. Refer to [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
                               1. If EEC is unresponsive, move the WO to Waiting for PM.
                         2. **Not property damaging or extreme habitability situation**:
-                           1. Move the WO to Waiting for PM
+                           1. **Do not simply move to Waiting for PM.** Refer to the _Basic Service Ops Guidelines_ follow-up procedure: Apply the **Same-Day Decision Guide** (Intervene, De-escalate to Urgent, or Forward to PM) immediately.
          4. **If the issue can be de-escalated from emergency severity.**
-            1. De-escalate the work order severity based on troubleshooting and confirmed conditions.
+            1. De-escalate based on troubleshooting, confirmed conditions, **or if the handling path has stalled** (refer to _Basic Service Ops Guidelines_). **Note:** If de-escalating due to a stalled path, you MUST keep **(EMERGENCY)** in the title and use the mandatory note template.
             2. For 24/7 Emergency and After Hours subscribed PM
                1. Leave the work order status unchanged, in accordance with the subscription coverage.
             3. Review the intake settings to determine whether Property Manager approval is required for this type of concern.
             4. 📝 **NOTE**: This process also applies to work orders with clear **critical notes** or pre-dispatch instructions explicitly indicating that the work order must be placed in “Waiting for Approval” after de-escalation
                1. If Property Manager approval **is required** and the work order is in **“Waiting for PM”** status, place the work order on hold.
                2. Update the work order status to\*\* “Needs Approval”\*\* to formally notify the Property Manager that the request has been de-escalated. Refer to [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold)
-            5. If the intake settings\*\* \*\*do \*\*not \*\*require Property Manager approval for this type of concern, confirm that Latchel is authorized to handle the request (Premium customers).
+            5. If the intake settings **do not** require Property Manager approval for this type of concern, confirm that Latchel is authorized to handle the request (Premium customers).
                1. Check the work order status and confirm it is currently in **“Waiting for PM”**.
                2. Proceed with rescheduling the work order by using the **Action** button.
                3. Create a task for associates to follow up with the service provider.

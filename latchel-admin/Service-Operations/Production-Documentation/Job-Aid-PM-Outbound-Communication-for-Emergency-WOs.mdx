@@ -11,8 +11,58 @@ groups:
 </Note>
 
 <Warning>
-  ### **🔑**Key Reminders
+  **Overriding Rule: Severe Damage & 911 Situations**
+</Warning>
 
+<Accordion title="Steps in handling Severe Damage Escalation/911 Situations">
+  To ensure immediate escalation and communication in cases of severe structural damage reported by residents or identified through work order descriptions, follow the below guidelines.
+
+  <Warning>
+    **Attention:**
+
+    This is not only applicable to emergency work orders. It must be followed anytime severe structural damage is identified, regardless of the work order type or timing. Escalation must occur even if the damage is not the primary reason for the resident’s report. Protecting the asset and minimizing risks are the top priorities.
+  </Warning>
+
+  **Identification of Severe Damage:**
+
+  1. Assess for severe structural damage at any point in the workflow, whether during troubleshooting, dispatch, or review of work orders.
+
+  <Frame>
+    ![image-20250113-234829.png](/images/SVC-863.png)
+  </Frame>
+
+  3. Severe damage poses significant risks to the property, residents, or surrounding environment. Examples include but are not limited to:
+     1. **Major water leaks** (Rapidly spreading leaks that threaten structural integrity or habitability. Water intrusion affecting multiple units or critical infrastructure, such as electrical systems.)
+     2. **Fires** (Any fire damage compromising the structural safety of a building.)
+     3. **Uninhabitable units**:
+        1. Situations rendering a unit unsafe for occupancy, such as:
+           1. **Powerlines causing unsafe conditions:** Electrical hazards like live wires near or within the property that risk injury or fire
+           2. **Ground-level breaches compromising security:** _Structural damage (e.g., a collapsed wall or broken door) creating direct outside access, exposing the property to safety or theft risks._
+           3. **Vehicles colliding with properties:** _Impact causing damage to walls, foundation, or utilities, leaving the unit unsecure or unsafe._
+     4. **Escalation to Property Manager:**
+        1. Call the Property Manager escalation contact immediately.
+           1. **If you were able to reach an Escalation Contact**, you will take action based on what the Escalation Contact asked you to do.
+           2. If the PM is unavailable, leave a detailed voicemail explaining the situation.
+              1. Voicemail script for **_all but the last person on the Escalation Contacts list_**: _Hi, (Escalation Contact name)! This is (your name) calling from Latchel regarding WO number (provide number) at (property address, including the unit #). I’m reaching out to notify you about a situation involving severe damage at this property. Specifically, (provide a brief description of the issue, e.g., a major water leak, fire damage, or structural breach). We’ve attempted to reach you and your escalation contacts but have not received a response yet. The work order has now been placed into “Waiting for PM” status for your input. Please don’t hesitate to send us a Webchat or text us back at (206)-900-9466 if we can assist you with this or any other work orders. Have a nice (day/evening)!_
+              2. **Escalate to Operations Support Specialists** in Slack to let them know we need more information from the PM to move forward. Operations Support Specialists will put the WO on hold using the _Waiting for PM_ option, and create a task for the PM. Operations Support Specialists will fill out the form with the following:
+              3. Select a reason (destination status) for putting this job on hold: Waiting for PM
+                 1. **Describe why you moved the job to this status:** Provide a brief description of what you need from the PM. Ex: _There is severe structural damage reported (e.g., a major water leak), and we need confirmation from you to proceed with the necessary actions on this work order._
+                 2. **Who is this task about?** PM
+                 3. Set a date and time for the follow-up task: (leave blank)
+                 4. Task priority: Highest
+                 5. _User group_: Choose the user group with “PM” in the title
+                 6. Assign to a User: (leave blank)
+                 7. When should this cancel? Cancel on any state change
+                 8. What action or information is required from the Property Manager?: Provide a brief description of what you need from the PM. Ex: _We need your approval or guidance to address the severe damage reported in WO number (provide number). Please confirm the next steps or let us know how to proceed._
+  4. **Document the Escalation:**
+     1. Ensure to link the call to the applicable work order. Refer to [How to: Link Calls to a WO](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Link-Calls-to-a-WO#how-to-link-calls-to-a-wo).
+        1. Include relevant details such as:
+        2. Date and time of the call
+        3. Summary of the reported damage
+        4. Actions taken
+</Accordion>
+
+<Accordion title="**🔑**Key Reminders">
   - Latchel Troubleshooters will **only** call a PM Company via Escalation Contacts in the scenarios outlined in this Job Aid. If the scenario does not fit one of the listed prompts, contact Operations Support Specialists for guidance.
   - Make **one attempt per emergency escalation contact** in sequential order whenever one of the scenarios below occurs. Refer to the WYGC section below for when to use the tool versus calling manually.
   - **General Rule:** If you already called about the same reason and there are no new updates or changes, do **not** call again.
@@ -20,33 +70,31 @@ groups:
   - **Always provide complete property details** when calling, leaving voicemails, sending SMS, or sending Webchats. Include the **full property address with unit number**, **WO number**, issue summary, what you have done, why the issue is PD/EH, and what you need from the PM.
   - **No After-Hours Contact:** If EEC or critical notes explicitly state there are no after-hours contacts for a PD/EH issue, do not attempt EEC calls. Move the WO to the appropriate hold status, submit a [PS ticket](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support) for configuration review, and document why calls were not attempted.
   - **SMS-Sourced Work Orders:** SMS-sourced WOs follow the same EEC escalation rules as any other intake channel. Do not treat an SMS-sourced PD/EH WO differently when determining whether to call EECs.
-</Warning>
+</Accordion>
 
-<Note>
-  ### 🔧 Understanding the Who Ya Gonna Call (WYGC) Tool
+<Accordion title="🔧 Understanding the Who Ya Gonna Call (WYGC) Tool">
+  <Note>
+    The **Who Ya Gonna Call (WYGC)** tool pulls the data from the **Emergency Escalation Contacts (EEC) list** configured in the system. When a step says to call escalation contacts, WYGC should detect who to call and the order to call them in based on that EEC list.
 
-  The **Who Ya Gonna Call (WYGC)** tool pulls the data from the **Emergency Escalation Contacts (EEC) list** configured in the system. When a step says to call escalation contacts, WYGC should detect who to call and the order to call them in based on that EEC list.
+    **Use WYGC when:**
 
-  **Use WYGC when:**
+    - The scenario or guided workflow tells you to call escalation contacts.
+    - Critical notes, pre-dispatch notes, or other instructions say to call **Emergency Escalation Contacts**, **EEC**, or the **full EEC list**.
 
-  - The scenario or guided workflow tells you to call escalation contacts.
-  - Critical notes, pre-dispatch notes, or other instructions say to call **Emergency Escalation Contacts**, **EEC**, or the **full EEC list**.
+    **Call manually instead of using WYGC when:**
 
-  **Call manually instead of using WYGC when:**
+    - Notes say to call the **specific** people.
+    - Notes provide a contact order or sequence that may be different from the configured EEC list.
 
-  - Notes say to call the **specific** people.
-  - Notes provide a contact order or sequence that may be different from the configured EEC list.
+    For workflows where there is a guided flow to determine whether an issue is **PD/EH** — for example, when completing TS prompts — **WYGC automatically populates** with the configured EEC list once the flow reaches the escalation contact step. In this job aid, that applies to **Scenarios 1–3**. For **Scenarios 4–6**, WYGC does **not** auto-populate; manually access WYGC from the **Action Menu** if the scenario is tied to a work order. If there is no work order tied to the scenario, access WYGC from the **PM Company** or **Property** page.
+  </Note>
+</Accordion>
 
-  For workflows where there is a guided flow to determine whether an issue is **PD/EH** — for example, when completing TS prompts — **WYGC automatically populates** with the configured EEC list once the flow reaches the escalation contact step. In this job aid, that applies to **Scenarios 1–3**. For **Scenarios 4–6**, WYGC does **not** auto-populate; manually access WYGC from the **Action Menu** if the scenario is tied to a work order. If there is no work order tied to the scenario, access WYGC from the **PM Company** or **Property** page.
-</Note>
-
-<Note>
-  ### 📞 General PM Outbound Script
-
+<Accordion title="📞 General PM Outbound Script">
   Use this as the default call template when a scenario does not provide a more specific script, and customize the bracketed details based on the work order and reason for the call.
 
   **General script:** _Hi, (Escalation Contact name)! This is (your name) calling from Latchel regarding WO number (provide number) at (property address, including unit #) for a (brief WO description) issue. (State what you've done and the reason for the call), and the issue is considered a Property Damage/Extreme Habitability situation. How would you like us to proceed?_
-</Note>
+</Accordion>
 
 <Danger>
   This process **does not** apply to **On-call customers**. For any concerns regarding On-call customers, always refer to the following link for further instructions: [Follow Up Guidelines for On-Call Customers (app.latchel.com)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Follow-Up-Guidelines-for-On-Call-Customers-app-latchel-com)
@@ -58,9 +106,9 @@ groups:
   The contents of this page have been included in the Budget Communication and Approval Process and **PM Outbound Communication for Emergency WOs** Coassemble courses.
 </Note>
 
-## 📋 Step-by-Step Process
+# **How to Use This Job Aid**
 
-## Step 1. Follow the steps below based on the type of work order (WO) you are handling.
+Find the scenario below that matches your situation, then follow its instructions.
 
 ### **🛠️**During Troubleshooting & Dispatch
 
@@ -581,60 +629,14 @@ groups:
   _Hi (PM name), this is (your name) from Latchel returning your voicemail regarding WO #(number) at (property address, including unit # (if applicable)). (Provide an update on your inquiry.) Please reply via Webchat or text (206)-900-9466 if we can assist with this or any other work orders._
 </Accordion>
 
-### **🚨**Severe Damage Escalation/911 Situations
+# **Part 2: If Escalation Contacts Don't Respond**
 
-<Accordion title="Steps in handling Severe Damage Escalation/911 Situations">
-  To ensure immediate escalation and communication in cases of severe structural damage reported by residents or identified through work order descriptions, follow the below guidelines.
-
-  <Warning>
-    **Attention:**
-
-    This is not only applicable to emergency work orders. It must be followed anytime severe structural damage is identified, regardless of the work order type or timing. Escalation must occur even if the damage is not the primary reason for the resident’s report. Protecting the asset and minimizing risks are the top priorities.
-  </Warning>
-
-  **Identification of Severe Damage:**
-
-  1. Assess for severe structural damage at any point in the workflow, whether during troubleshooting, dispatch, or review of work orders.
-
-  <Frame>
-    ![image-20250113-234829.png](/images/SVC-863.png)
-  </Frame>
-
-  3. Severe damage poses significant risks to the property, residents, or surrounding environment. Examples include but are not limited to:
-     1. **Major water leaks** (Rapidly spreading leaks that threaten structural integrity or habitability. Water intrusion affecting multiple units or critical infrastructure, such as electrical systems.)
-     2. **Fires** (Any fire damage compromising the structural safety of a building.)
-     3. **Uninhabitable units**:
-        1. Situations rendering a unit unsafe for occupancy, such as:
-           1. **Powerlines causing unsafe conditions:** Electrical hazards like live wires near or within the property that risk injury or fire
-           2. **Ground-level breaches compromising security:** _Structural damage (e.g., a collapsed wall or broken door) creating direct outside access, exposing the property to safety or theft risks._
-           3. **Vehicles colliding with properties:** _Impact causing damage to walls, foundation, or utilities, leaving the unit unsecure or unsafe._
-     4. **Escalation to Property Manager:**
-        1. Call the Property Manager escalation contact immediately.
-           1. **If you were able to reach an Escalation Contact**, you will take action based on what the Escalation Contact asked you to do.
-           2. If the PM is unavailable, leave a detailed voicemail explaining the situation.
-              1. Voicemail script for **_all but the last person on the Escalation Contacts list_**: _Hi, (Escalation Contact name)! This is (your name) calling from Latchel regarding WO number (provide number) at (property address, including the unit #). I’m reaching out to notify you about a situation involving severe damage at this property. Specifically, (provide a brief description of the issue, e.g., a major water leak, fire damage, or structural breach). We’ve attempted to reach you and your escalation contacts but have not received a response yet. The work order has now been placed into “Waiting for PM” status for your input. Please don’t hesitate to send us a Webchat or text us back at (206)-900-9466 if we can assist you with this or any other work orders. Have a nice (day/evening)!_
-              2. **Escalate to Operations Support Specialists** in Slack to let them know we need more information from the PM to move forward. Operations Support Specialists will put the WO on hold using the _Waiting for PM_ option, and create a task for the PM. Operations Support Specialists will fill out the form with the following:
-              3. Select a reason (destination status) for putting this job on hold: Waiting for PM
-                 1. **Describe why you moved the job to this status:** Provide a brief description of what you need from the PM. Ex: _There is severe structural damage reported (e.g., a major water leak), and we need confirmation from you to proceed with the necessary actions on this work order._
-                 2. **Who is this task about?** PM
-                 3. Set a date and time for the follow-up task: (leave blank)
-                 4. Task priority: Highest
-                 5. _User group_: Choose the user group with “PM” in the title
-                 6. Assign to a User: (leave blank)
-                 7. When should this cancel? Cancel on any state change
-                 8. What action or information is required from the Property Manager?: Provide a brief description of what you need from the PM. Ex: _We need your approval or guidance to address the severe damage reported in WO number (provide number). Please confirm the next steps or let us know how to proceed._
-  4. **Document the Escalation:**
-     1. Ensure to link the call to the applicable work order. Refer to [How to: Link Calls to a WO](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Link-Calls-to-a-WO#how-to-link-calls-to-a-wo).
-        1. Include relevant details such as:
-        2. Date and time of the call
-        3. Summary of the reported damage
-        4. Actions taken
-</Accordion>
-
-## Step 2. **SMS Notification Following Unsuccessful Contact Attempts with Escalation Contacts**
+<Info>
+  Use this section any time you've made a required EEC/escalation call — regardless of which job-aid told you to make it — and haven't received a response.
+</Info>
 
 <Warning>
-  **Important:** For the scenarios listed in this Job Aid (e.g., resident unresponsive to PDEH, unclear situations that require PM input, all Preferred SPs unresponsive, severe damage/911, etc.), **Latchel cannot move the work order forward without PM instruction.**
+  Important: Anytime an EEC or escalation contact call is required — whether by a scenario in this Job Aid or by another SOP's instructions — and the contact is unresponsive, Latchel cannot move the work order forward without PM instruction.
 
   - This applies to **both** initial contact and **any follow‑up contact** about the same scenario.
   - A follow‑up SMS in these scenarios is **only** to remind/notify the PM; it does **not** give you permission to proceed without their response.
@@ -648,14 +650,16 @@ For **all other types of concerns when contacting escalation contacts** (any sit
   To determine whether the PM is actively managing a work order, follow the guidelines in [Service Ops: Guidelines in Determining Active PM Management on a Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Guidelines-in-Determining-Active-PM-Management-on-a-Work-Order#service-ops-guidelines-in-determining-active-pm-management-on-a-work-order).
 </Warning>
 
-#### **If PM is Actively Managing the Work Order:**
+##### If PM is Actively Managing the Work Order:
 
-1. Send an SMS to all escalation contacts who have SMS enabled. Only skip this step if there are no available SMS options for any of the contacts.
-   1. Confirm you are following up and will not proceed further unless the PM provides different instructions.
-2. **Say something like:**
-   1. _Hi (Escalation Contact name), this is (your name) from Latchel. We're reaching out regarding WO #(number) at (property address, including unit #) for a (brief WO description) issue. We attempted to reach all escalation contacts on file by phone but were unable to connect. (Briefly state what's been done so far — e.g., "We've dispatched a service provider" / "The resident has been unresponsive to troubleshooting calls" / "None of your Preferred Service Providers were available, so we dispatched from our network"), and the issue is considered a (property damaging/extreme habitability) situation. Since you're actively managing this work order, we wanted to keep you informed. Please contact us via Webchat or text us at (206)-900-9466 at your earliest convenience._
-3. Move the work order to Waiting for PM if it has not been updated yet.
-4. Document the SMS and any updates in the work order notes.
+Per the Emergency Rule in the Active PM Management Guidelines, the 48-hour window does not apply to emergencies. If there is any evidence of PM activity from today or yesterday showing they are taking control, you must act immediately — do not wait to confirm via SMS before transferring ownership. Since every scenario in this job-aid is PD/EH by definition, the work order stays Emergency; do not reclassify.
+
+1. Use the "Forward to PM" tool immediately to move the work order to Waiting for PM. This stops the SLA clock and transfers ownership.
+
+2. Send an SMS to all escalation contacts who have SMS enabled, confirming the work order has been transferred to the PM.
+   1. _Say something like: "Hi [Escalation Contact name], this is [your name] from Latchel. We're reaching out regarding WO #[number] at [property address, including unit #] for a [brief WO description] issue. We attempted to reach all escalation contacts on file by phone but were unable to connect. Since you're actively managing this work order, we've forwarded it to you for handling, and the work order is now in "Waiting for PM" status. Please contact us via Webchat or text us at (206)-900-9466 if we can assist further."_
+3. If you don't have Forward to PM tool access, escalate to Support immediately to have the status moved manually.
+4. Document the SMS and the ownership transfer in the work order notes.
 
 **If PM is NOT Actively Managing the Work Order:**
 
