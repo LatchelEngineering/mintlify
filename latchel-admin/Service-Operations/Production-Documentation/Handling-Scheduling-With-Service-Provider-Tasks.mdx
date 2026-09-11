@@ -198,7 +198,7 @@ If the Service Provider is unresponsive or cannot confirm an appointment after t
    1. Rule: This step only applies to Latchel-Assigned (Auto-Assign/LCN) vendors who have NOT visited the property.
    2. Action: Remove the current SP and manually call the next preferred or LCN vendor to get a same-day commitment.
 2. Escalate (For Locked-in, PM-Assigned, or Visited)
-   1.  Rule: If the SP is Locked-in, PM-Assigned, or has Already Visited the property, you are not allowed to remove them. You must move to escalation instead.
+   1.   Rule: If the SP is Locked-in, PM-Assigned, or has Already Visited the property, you are not allowed to remove them. You must move to escalation instead.
    2. Action for Non-PD/EH Emergencies:
       1. Forward to PM: Use the "Forward to PM" feature in the console.
       2. Escalation Safeguard: If the "Forward to PM" option is not available, you must escalate the task to Ops Support Specialists to move the Work Order forward.
@@ -236,6 +236,22 @@ If the Service Provider is unresponsive or cannot confirm an appointment after t
    <Frame>
      ![image-20250409-231444.png](/images/SVC-501.png)
    </Frame>
+
+## FAQs
+
+<Accordion title="How should we handle service providers with critical notes that say SMS and/or email only?">
+  Because this is a rare edge case, follow the service provider’s critical note instead of the standard phone-call path.
+
+  **Step 1**: Send the SMS and/or email (depending on what the critical note suggests) immediately and document the attempt in the work order notes.
+
+  **Step 2**: Take action based on the below:
+
+  - **Property Damage (PD) / Extreme Habitability (EH) emergencies:** Do not de-escalate and do not move the work order out of emergency handling. If the service provider does not respond through their required SMS/email contact method, call the PM or emergency escalation contact and follow the unresponsive PM path if they do not respond.
+  - For emergency **non-property damage / non-extreme habitability** follow-ups, do not leave the work order sitting in an active follow-up status while waiting for a slower SMS or email response. After the message is sent, apply the same-day decision process based on how the service provider was assigned:
+    - **PM-assigned, PM-requested, locked-in, or critical-note preferred SP:** Do not remove the service provider. For emergency non-PD/EH follow-ups, de-escalate to Urgent when appropriate and move/forward the work order to Waiting for PM so the status reflects that we are waiting on the PM or their preferred vendor.
+    - **Latchel-sourced SP who has not visited the property or missed the initial appointment:** Reassign to another service provider and continue moving the work order forward.
+    - **Latchel-sourced SP who has already visited the property:** Do not remove/reassign automatically. Forward to PM for direction to avoid unnecessary delays, duplicate diagnostics, or billing issues.
+</Accordion>
 
 ## **🎯 When to Break This SOP**
 
