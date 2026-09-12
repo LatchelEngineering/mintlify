@@ -1,6 +1,7 @@
 ---
 title: "How to: Reassign a Service Provider"
-groups: ["latchel"]
+groups:
+  - "latchel"
 ---
 
 ## 🧠 What This Process Is Trying to Solve
@@ -15,20 +16,24 @@ groups: ["latchel"]
   There is a provider already assigned to a work order, but for some reason they are no longer available or selected to complete the work order.
 </Note>
 
-<Note>
+<Warning>
   **DO NOT REASSIGN THE VENDOR ONCE THEY HAVE GONE OUT TO THE PROPERTY:** Service Providers should never be removed from a work order once they've already been out to the property, regardless of whether the job is completed or not. A new work order must be created if we need to reassign.
 
   - PMs may cancel an appointment only if it is at least one hour before the scheduled time. If they insist on canceling or removing the service provider within that hour, they should be made aware of a potential trip charge.
   - If the PM requests reassignment after the service provider has already visited the property, inform the PM and proceed by creating a new work order to handle the reassignment.
-</Note>
+</Warning>
 
-<Note>
+<Warning>
+  📝 **NOTE:** If the SP's critical note specifies SMS/email-only contact, the standard reassignment path below may not apply directly — refer to the "SMS and/or email only" FAQ in [**SOP: Work Order Follow-ups and Updates**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates#q-how-should-we-handle-service-providers-with-critical-notes-that-say-sms-and-or-email-only) to confirm whether to reassign or forward to PM based on visit status and assignment source.
+</Warning>
+
+<Warning>
   **LVN Service Provider**
 
   For guidance on managing unresponsive LVN service providers or on acceptable scenarios for reassigning an LVN service provider (such as PM requests or missed appointments), refer to [Handling Work Orders Assigned to LVN Service Providers](/latchel-admin/Service-Operations/Production-Documentation/handling-work-orders-assigned-to-lvn-service-providers).
-</Note>
+</Warning>
 
-<Note>
+<Danger>
   For LCN service providers exhibiting observable behaviors—such as missed appointments or unreasonable excuses—that result in scheduling delays, ensure to update their critical note to reflect the missed appointment or scenario encountered. Follow the format below, as it will be used in the future to determine whether we can continue offering jobs to the service provider.
 
   #### **Critical Note Format:**
@@ -36,7 +41,7 @@ groups: ["latchel"]
   📌 _Date | WO# | Missed Appointment/Unreasonable Behavior_
 
   If they miss **three consecutive WO appointments or unacceptable behaviors**, their profile can be disabled. Associates are expected to check recent work orders to identify any recently completed WOs, which may indicate a successful appointment. Refer to the 3rd step in [How to: Navigate Service Provider Profiles](/latchel-admin/Service-Operations/Production-Documentation/how-to-navigate-service-provider-profiles) to disable a service provider’s account. Ensure to leave notes as well why they were disabled.
-</Note>
+</Danger>
 
 ## 📋 Step-by-Step Process
 
@@ -97,7 +102,7 @@ From the existing Work Order interface, navigate to the Service Provider section
             <Frame>
               ![image-20241104-181955.png](/images/SVC-301.png)
             </Frame>
-         3. Click "Action" \> "Find Service Provider" to trigger outreach to available providers.
+         3. Click "Action" > "Find Service Provider" to trigger outreach to available providers.
             <Frame>
               ![image-20241104-182447.png](/images/SVC-302.png)
             </Frame>
@@ -113,7 +118,7 @@ After assigning the new Service Provider, send the resident a brief status updat
 
 **If the work order has been reassigned more than once:**
 
-_💬  "Hi \[Resident Name\]! I wanted to give you a quick update on your \[issue type\] request (WO #\[WO number\]). We understand this has taken longer than expected, and we sincerely apologize for the delay. We've assigned a new service provider who will be reaching out to schedule an appointment. We're committed to getting this resolved for you as quickly as possible. Please don't hesitate to reach out if you need anything. Thank you for your patience!"_
+_💬  "Hi [Resident Name]! I wanted to give you a quick update on your [issue type] request (WO #[WO number]). We understand this has taken longer than expected, and we sincerely apologize for the delay. We've assigned a new service provider who will be reaching out to schedule an appointment. We're committed to getting this resolved for you as quickly as possible. Please don't hesitate to reach out if you need anything. Thank you for your patience!"_
 
 ### **Step 4 - Write Effective Notes**
 

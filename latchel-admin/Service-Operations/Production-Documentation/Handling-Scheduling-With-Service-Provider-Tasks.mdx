@@ -85,6 +85,7 @@ groups: ["latchel"]
          - **Property Damage (PD) / Extreme Habitability (EH):** Follow the **Triple Dial Procedure** (3 attempts). These must remain as Emergencies.
          - **Non-PD/EH Emergencies:** Capped at **1 attempt**. If unsuccessful or if a callback is requested, apply the **Same-Day Decision Guide** (Intervene, De-escalate, or Forward) immediately. Do not defer to the next day.
 2. Review the Work Order notes to see if another Latchel Associate has already tried to contact this Service Provider to schedule the appointment.
+   1. 📝 **NOTE:** If the assigned vendor's critical notes specify SMS/email-only contact, do not apply the standard 1x/3x call-based attempt count above — refer to the "SMS and/or email only" FAQ in [**SOP: Work Order Follow-ups and Updates**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates#q-how-should-we-handle-service-providers-with-critical-notes-that-say-sms-and-or-email-only).
    1. If Latchel has contacted this Service Provider **0x** (for Non-PD/EH) or **0x-2x** (for PD/EH), please proceed to <u>Step 3</u>.
       1. ⚠️ **Before removing the SP or de-escalating, first confirm whether the SP is locked in or has already visited the property.** If either is true, **do not remove** — proceed to Step 4, section 2.a (Apply Same-Day Decision Guide). If neither is true, proceed to Step 4, section 2.b (Reassign/Intervene).
    2. If Latchel has contacted this Service Provider **1x** (for Non-PD/EH) or **3x** (for PD/EH), please proceed to <u>Step 4</u>.
@@ -194,11 +195,15 @@ From the call, you will encounter 1 of the 6 outcomes below.
 
 If the Service Provider is unresponsive or cannot confirm an appointment after the required attempts (**1x for Non-PD/EH** or **3x for PD/EH**), apply the **[Basic Service Ops Guidelines / Same-Day Decision Guide]** to determine the final action:
 
+<Warning>
+  📝 **NOTE:** If the assigned vendor's critical notes specify SMS/email-only contact, do not apply the standard 1x/3x call-based attempt count above — refer to the "SMS and/or email only" FAQ in [**SOP: Work Order Follow-ups and Updates**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates#q-how-should-we-handle-service-providers-with-critical-notes-that-say-sms-and-or-email-only).
+</Warning>
+
 1. **Attempt Reassignment**
    1. Rule: This step only applies to Latchel-Assigned (Auto-Assign/LCN) vendors who have NOT visited the property.
    2. Action: Remove the current SP and manually call the next preferred or LCN vendor to get a same-day commitment.
 2. Escalate (For Locked-in, PM-Assigned, or Visited)
-   1.   Rule: If the SP is Locked-in, PM-Assigned, or has Already Visited the property, you are not allowed to remove them. You must move to escalation instead.
+   1.    Rule: If the SP is Locked-in, PM-Assigned, or has Already Visited the property, you are not allowed to remove them. You must move to escalation instead.
    2. Action for Non-PD/EH Emergencies:
       1. Forward to PM: Use the "Forward to PM" feature in the console.
       2. Escalation Safeguard: If the "Forward to PM" option is not available, you must escalate the task to Ops Support Specialists to move the Work Order forward.
@@ -236,22 +241,6 @@ If the Service Provider is unresponsive or cannot confirm an appointment after t
    <Frame>
      ![image-20250409-231444.png](/images/SVC-501.png)
    </Frame>
-
-## FAQs
-
-<Accordion title="How should we handle service providers with critical notes that say SMS and/or email only?">
-  Because this is a rare edge case, follow the service provider’s critical note instead of the standard phone-call path.
-
-  **Step 1**: Send the SMS and/or email (depending on what the critical note suggests) immediately and document the attempt in the work order notes.
-
-  **Step 2**: Take action based on the below:
-
-  - **Property Damage (PD) / Extreme Habitability (EH) emergencies:** Do not de-escalate and do not move the work order out of emergency handling. If the service provider does not respond through their required SMS/email contact method, call the PM or emergency escalation contact and follow the unresponsive PM path if they do not respond.
-  - For emergency **non-property damage / non-extreme habitability** follow-ups, do not leave the work order sitting in an active follow-up status while waiting for a slower SMS or email response. After the message is sent, apply the same-day decision process based on how the service provider was assigned:
-    - **PM-assigned, PM-requested, locked-in, or critical-note preferred SP:** Do not remove the service provider. For emergency non-PD/EH follow-ups, de-escalate to Urgent when appropriate and move/forward the work order to Waiting for PM so the status reflects that we are waiting on the PM or their preferred vendor.
-    - **Latchel-sourced SP who has not visited the property or missed the initial appointment:** Reassign to another service provider and continue moving the work order forward.
-    - **Latchel-sourced SP who has already visited the property:** Do not remove/reassign automatically. Forward to PM for direction to avoid unnecessary delays, duplicate diagnostics, or billing issues.
-</Accordion>
 
 ## **🎯 When to Break This SOP**
 
