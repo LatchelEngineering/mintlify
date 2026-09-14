@@ -2144,6 +2144,27 @@
                 },
                 "groups": [
                   {
+                    "group": "Accounts Receivable Pages",
+                    "pages": [
+                      {
+                        "group": "How to Receive and Reconcile Payments",
+                        "pages": []
+                      },
+                      {
+                        "group": "How to Handle Monthly Subscription Invoice Adjustments",
+                        "pages": []
+                      },
+                      {
+                        "group": "How To: Identify and Handle Past Due Subscription Invoices",
+                        "pages": []
+                      },
+                      {
+                        "group": "How To Create Monthly Subscription Invoices",
+                        "pages": []
+                      }
+                    ]
+                  },
+                  {
                     "group": "Account Receivable Pages",
                     "pages": [
                       "latchel-admin/accounts-receivable/Accounts-Receivable-Tasks",
