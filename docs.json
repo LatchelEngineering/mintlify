@@ -462,6 +462,7 @@
                 "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wrGAA/resident-help-guides",
+                  "s/topic/0TO5e000000h9wrGAA/resident-help-guides",
                   "s/topic/0TO5e000000h9wrGAA/Resident-Dashboard-Overview",
                   {
                     "group": "Maintenance Request Guides",
@@ -572,6 +573,7 @@
                 "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wsGAA/latchel-newsletter",
+                  "s/topic/0TO5e000000h9wsGAA/latchel-newsletter",
                   {
                     "group": "2026 Newsletters",
                     "public": true,
@@ -590,8 +592,8 @@
                       "s/topic/0TO5e000000h9wsGAA/april-20-2026",
                       "s/topic/0TO5e000000h9wsGAA/april-6-2026",
                       "s/topic/0TO5e000000h9wsGAA/march-23-2026",
-                      "s/topic/0TO5e000000h9wsGAA/march-16-2029-1",
-                      "s/topic/0TO5e000000h9wsGAA/march-9-2026-1",
+                      "s/topic/0TO5e000000h9wsGAA/march-16-2026",
+                      "s/topic/0TO5e000000h9wsGAA/march-9-2026",
                       "s/topic/0TO5e000000h9wsGAA/february-23-2026",
                       "s/topic/0TO5e000000h9wsGAA/february-9-2026",
                       "product-updates/whats-new/2026-newsletters/january-26-2026",
