@@ -815,7 +815,12 @@
                               }
                             ]
                           },
-                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-run-the-cx-audits"
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-run-the-cx-audits",
+                          "latchel-admin/Service-Operations/Ops-Integrations/latchel-intake-monitoring-dashboard",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-the-latchel-intake-monitoring-process-works",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-to-escalate-a-property-manager-at-10-days-below-target",
+                          "latchel-admin/Service-Operations/Ops-Integrations/emergency-contact-and-pre-dispatch-reminder-dashboard",
+                          "latchel-admin/Service-Operations/Ops-Integrations/how-the-automated-seasonal-reminders-process-works-for-pre-dispatch-and-emergency-contact-list-settings"
                         ]
                       },
                       {
@@ -866,7 +871,9 @@
                           "latchel-admin/Service-Operations/Announcements/Operations-Weekly-Newsletter-07-24-2026",
                           "latchel-admin/Service-Operations/Announcements-Newsletter-Aug28",
                           "latchel-admin/Service-Operations/Announcements/Operations-Weekly-Newsletter-Process-Update-Edition-09-04-2026",
-                          "latchel-admin/Service-Operations/Announcements/Operations-Weekly-Newsletter-Process-Update-Edition-09-11-2026"
+                          "latchel-admin/Service-Operations/Announcements/Operations-Weekly-Newsletter-Process-Update-Edition-09-11-2026",
+                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-07-31-2026",
+                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-08-07-2026"
                         ]
                       },
                       {
@@ -1032,6 +1039,7 @@
                           {
                             "group": "Operations Support Specialists",
                             "pages": [
+                              "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist",
                               "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-Business-Continuity-Plan",
                               "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-Job-Aid-Work-Queues-Labor-Management",
                               "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-How-to-Handle-Need-To-Verify-Tickets-and-Voicemails",
@@ -1118,7 +1126,12 @@
                               "latchel-admin/Service-Operations/Production-Documentation/How-to-Perform-Cross-trainings-and-Refreshers",
                               "latchel-admin/Service-Operations/Production-Documentation/How-to-Submit-Training-Content-Tickets"
                             ]
-                          }
+                          },
+                          "latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-Job-Aid-Call-SMS-and-Email-Frequently-Asked-Questions",
+                          "latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls",
+                          "latchel-admin/Service-Operations/Production-Documentation/How-to-Set-up-Equipment-for-Shifts",
+                          "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Job-Aid",
+                          "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Associate-Job-Aid-Associates"
                         ]
                       },
                       "latchel-admin/Service-Operations/SOP-Reporting-Suspected-Account-Compromise",
