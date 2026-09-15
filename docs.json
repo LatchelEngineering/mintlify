@@ -881,7 +881,6 @@
                           "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-08-07-2026",
                           "latchel-admin/Service-Operations/Production-Documentation/How-to-Set-up-Equipment-for-Shifts",
                           "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist",
-                          "latchel-admin/Service-Operations/Production-Documentation/Latchel-Performance-Recognition-Reward-Programs",
                           "latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls",
                           "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Job-Aid"
                         ]
@@ -1322,9 +1321,7 @@
                           }
                         ]
                       },
-                      "latchel-admin/Product-Support-Team/Latchel-Partner-API-Fluency-Guide-for-Support-Teams",
-                      "latchel-admin/Product-Support-Team/SOP-Pre-Dispatch-Instructions-&-Critical-Notes",
-                      "latchel-admin/Product-Support-Team/Product-Support-(PS)-New-Hire-Setup"
+                      "latchel-admin/Product-Support-Team/Latchel-Partner-API-Fluency-Guide-for-Support-Teams"
                     ]
                   }
                 ]
@@ -1933,6 +1930,22 @@
                 ]
               },
               {
+                "dropdown": "Marketing Team",
+                "icon": "bullhorn",
+                "color": {
+                  "light": "#ff9b8a",
+                  "dark": "#ff9b8a"
+                },
+                "groups": [
+                  {
+                    "group": "Marketing Team Pages",
+                    "pages": [
+                      "latchel-admin/Marketing-Team/Cold-Email-Process-Doc"
+                    ]
+                  }
+                ]
+              },
+              {
                 "dropdown": "Customer Profitability Team",
                 "icon": "hand-holding-circle-dollar",
                 "color": {
@@ -2315,11 +2328,7 @@
                           }
                         ]
                       },
-                      "latchel-admin/Latchel-People-Ops/onboarding-flow-communications",
-                      "latchel-admin/Latchel-People-Ops/performance-and-salary-review-policy-2",
-                      "latchel-admin/Latchel-People-Ops/manager-resource-center-2",
-                      "latchel-admin/Latchel-People-Ops/policy-employee-compensation-increase-process-2",
-                      "latchel-admin/Latchel-People-Ops/international-health-care-benefits-policy-2"
+                      "latchel-admin/Latchel-People-Ops/onboarding-flow-communications"
                     ]
                   }
                 ],
@@ -2446,9 +2455,7 @@
                           "latchel-admin/Service-Operations/Latchel-Library/HOME-ASSISTANTCSAdmin-How-to-Handle-Appointment-Cancellation-Charge-Backs-to-Property-Managers",
                           "latchel-admin/Service-Operations/Latchel-Library/HOME-ASSISTANT-CSAdmin-How-to-Answer-Property-Manager-Questions-About-the-Program"
                         ]
-                      },
-                      "latchel-admin/Service-Operations/Latchel-Library/Latchel-Knowledge-101",
-                      "latchel-admin/Service-Operations/Latchel-Library/Work-Order-SOPs"
+                      }
                     ]
                   }
                 ],
