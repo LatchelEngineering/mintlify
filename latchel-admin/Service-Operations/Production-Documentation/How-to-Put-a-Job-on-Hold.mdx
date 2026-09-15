@@ -69,8 +69,12 @@ Only use this if:
             </Warning>
             1. Go to Step B - "Waiting for Owner Approval".
    3. For the associates following up on the task:
+      1. **📝NOTE:** Make sure to review the Work Order history and search for any emails the service provider may have set regarding the Work Order.
       1. Complete the task to follow up with the vendor.
-      2. **For Emergencies:** Use the **"Forward to PM"** tool immediately. This stops the Latchel emergency clock and transfers ownership to the PM's dashboard.<br />**For Non-Emergencies:** Without changing the status of the Work Order, create a new task for the Property Manager to inform them that the vendor has not been responsive and request instructions.
+      2. For **Emergencies**: Use the "**Forward to PM**" button in the [Latchel Service Ops Assistant](https://latchel.atlassian.net/wiki/spaces/OPS/pages/4227629058/Operations+Associate+Job-Aid+Latchel+Service+Ops+Assistant+Plug-in) plugin immediately. This stops the Latchel emergency clock and transfers ownership to the PM's dashboard. See Operations Associate Job-Aid: Latchel Service Ops Assistant Plug-in for where to find it.
+      4. For **Non-Emergencies**:
+
+         1. Without changing the status of the Work Order, create a new task for the Property Manager to inform them that the vendor has not been responsive and request instructions.
       3. Set the vendor as a contact.
       4. Assign the task to the Property Manager group.
       5. Summarize the status of the Work Order in the task description.
@@ -135,11 +139,14 @@ Only used when a Service Provider has ordered parts or materials to complete a j
 4. **Follow-up & ETA Logic:**
    - **🛑 Emergency Rule:** Do not wait for shipping updates or "check back tomorrow" ETAs. You must secure a concrete resolution path **today**:
      - **If the SP provides a firm ETA/Date:** Schedule the appointment for that date immediately. Keep the job as an Emergency.
-     - **If no firm date is available:** Perform the **Mitigation Test** (confirm if the immediate threat like a leak or fire hazard is stopped).
-       - **If Mitigated:** De-escalate to **Urgent** following the PM’s Intake settings. **CRITICAL:** You must keep **"Emergency"** in the Work Order title (e.g., _"Emergency: Leaking Pipe - Waiting for Parts"_) to preserve the original severity context.
-       - **If NOT Mitigated:** Immediately use the **"Forward to PM"** tool so the PM can authorize a temporary fix or vendor swap today.
-     - **Note:** Do not schedule a follow-up task for tomorrow just to "check for updates."
-   - **Non-Emergencies:** If you're in communication with the Service Provider, ask about the ETA. Set the follow-up task based on the Service Provider's estimation. If not in communication, set the follow-up task for the next business day, due at 9 am.
+     - **If no firm date is available**, first determine whether this is a Property Damage/Extreme Habitability (PD/EH) situation:
+       - **If PD/EH:** Do not de-escalate. Follow the Emergency Escalation Contact protocol per [[Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos)] — call escalation contacts immediately rather than waiting on the PM.
+       - **If NOT PD/EH:** Perform the **Mitigation Test** (confirm if the immediate threat, such as a leak or fire hazard, etc, is stopped).
+         - If **Mitigated**: De-escalate to **Urgent**.
+           - **CRITICAL:** You must keep **"Emergency"** in the Work Order title (e.g., _"Emergency: Leaking Pipe - Waiting for Parts"_) to preserve the original severity context. Next steps depend on subscription type — see [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) → "General Rule: Recognizing and Handling a Stale Emergency" for the Premium/Autopilot/24-7 breakdown.
+         - If NOT Mitigated: Immediately use the **"Forward to PM"** tool so the PM can authorize a temporary fix or vendor swap today.
+       - **Note:** Do not schedule a follow-up task for tomorrow just to "check for updates."
+       - **Non-Emergencies:** If you're in communication with the Service Provider, ask about the ETA. Set the follow-up task based on the Service Provider's estimation. If not in communication, set the follow-up task for the next business day, due at 9 am.
 
 ## **Waiting for PM**
 
@@ -178,13 +185,27 @@ Work orders should remain in their current status unless there is missing or unc
   1. **🛑 Emergency Rule:** Do **NOT** create a manual task with the "Action Required" title. Instead, use the **"Forward to PM"** tool.
   2. **Non-Emergencies:** Create/Assign the task directed to the PM with a task Title as **“Action Required: PM Instructions or Information Needed”**.
 
+<Warning>
+  📝 **NOTE — Re-escalating a De-escalated Work Order:** If a resident later reports the same unresolved issue on a work order that was de-escalated per any of the steps above, that alone is enough to re-escalate the work order back to Emergency. See Informational: Basic Service Ops Guidelines and Rules → "[General Rule: Recognizing and Handling a Stale Emergency](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency)" for the full re-escalation guidance.
+</Warning>
+
 ## 🎯 When to Break This SOP
 
-You should only break the SOP for How to: Put a Job on Hold in rare, exceptional cases where strictly following the SOP would cause harm, violate compliance, or prevent urgent escalation (such as life safety, legal, or severe customer impact situations). In these cases:
+<Info>
+  You should only break the SOP for **How to: Put a Job on Hold** in rare, exceptional cases where strictly following the SOP would cause harm, violate compliance, or prevent urgent escalation (such as life safety, legal, or severe customer impact situations). In these cases:
+</Info>
 
-- **Unmitigated Emergency:** If the emergency is not mitigated and you cannot secure a firm date, do not follow standard "Hold" procedures. You must **Forward to PM** immediately.
-- **Property Damage/Extreme Habitability:** If the situation involves active property damage, skip standard task creation and follow the Job Aid: PM Outbound Communication for Emergency WOs.
+- Document clearly why the SOP was not followed.
+- Notify the Operations Support Specialist team immediately.
+- Resume following the SOP as soon as the exception is resolved.
+
+**Examples of when it may be appropriate to break the SOP (not limited to):**
+
+- **Unmitigated Emergency:** If the emergency is not mitigated and you cannot secure a firm date, do not follow standard "Hold" procedures. You must Forward to PM immediately.
+- **Property Damage/Extreme Habitability:** If the situation involves active property damage, skip standard task creation and follow the [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos). Only if all escalation contacts are unresponsive should you move the work order to "Waiting for PM" — and this should be clearly documented.
 - **PM Specific Instructions:** If the PM has provided specific handling instructions that override these rules (e.g., "Never forward sourcing failures"), follow the PM's guidance.
+- System outages or technical issues prevent you from following the documented process.
+- You receive direct instructions from senior leadership to deviate from the SOP.
 
 ## 💡 If You Think This SOP Could Be Improved...
 
