@@ -11,35 +11,31 @@ We now classify every ticket using three fields — **Category**, **Attributes**
 | Field | Question It Answers | Selection | Required? |
 | --- | --- | --- | --- |
 | **Category** | How did this ticket reach us? | Single-select | Always |
-| **Attributes — Topic** | What was the ticket about? | Single-select | Always |
-| **Attributes — Root Cause** | Why did it happen? | Single-select | If applicable |
-| **Tags** | What did this interaction drive or produce? | Multi-select | Apply as many as apply |
+| **Attributes — Topic** | What was the ticket about? | Multi-select | Always |
+| **Attributes — Root Cause** | Why did it happen? | Multi-select | If applicable |
+| **Tags** | What did this interaction drive or produce? What was the outcome? | Multi-select | Apply as many as apply |
 
 A typical ticket gets tagged in this order:
 
 1. **Category** — pick the one value that describes how the ticket arrived (a PM texted in, an SP called, an automation flagged it, and so on).
 2. **Attributes — Topic** — pick the one Attribute/Value pair that best describes what the ticket was actually about (WO Coordination, Invoicing & Payments, Appfolio, and so on).
-3. **Attributes — Root Cause** — if something went wrong, pick the one value that explains why (SP Performance, Platform Defect, PM Action or Delay, and so on). Skip this if nothing went wrong — a routine question doesn't need a Root Cause.
-4. **Tags** — select every outcome tag that applies (Resolved by PS, Bug Filed, CSM Handoff, and so on). This is independent of Topic: crossing Topic against Tags is what lets us see, for example, which topics generate the most bugs or escalations.
-
-<Info>
-  **Topic** and **Tags** are independent of each other on purpose. Topic is what the ticket was _about_; Tags are what the interaction _drove_. Crossing the two is where our reporting on "which topics cause the most escalations/bugs/churn risk" comes from.
-</Info>
+3. **_Attributes — Root Cause\*_** — if something went wrong, pick the one value that explains why (SP Performance, Platform Defect, PM Action or Delay, and so on). _Skip this if nothing went wrong — a routine question doesn't need a Root Cause._
+4. **Tags** — select every outcome tag that applies (Resolved by PS, Bug Filed, CSM Handoff, and so on). 
 
 ## CATEGORY — How We Receive the Ticket
 
 Category is new: it didn't exist before, and no other field captured how a ticket reached us. Pick exactly one value.
 
-| Value | Counts in Reporting? | Use It When |
-| --- | --- | --- |
-| **PM Inbound** | Yes | A property manager or their staff contacted us. |
-| **Owner Inbound** | Yes | A property owner contacted us directly, including via NOMAD and RentRedi. |
-| **Resident Inbound** | Yes | A resident or tenant contacted us. |
-| **Service Provider Inbound** | Yes | A vendor or SP contacted us. Mostly invoices, estimates, and scheduling. |
-| **Partner / Platform Inbound** | Yes | A platform partner or integration contacted us — Appfolio, Rent Manager, and similar acting on their own (not a service provider). |
-| **Latchel Ops Escalation** | Yes, reported separately | A Latchel associate asked PS to decide something. |
-| **Latchel Outbound** | Yes, flagged separately | We started the conversation: verification requests, scorecards, CSM outreach. Real work, but not a customer-initiated contact. |
-| **Not Actionable** | No, excluded | Spam and survey outbound. No Tag or Attribute is needed — Category alone is enough. |
+| Value | Use It When |
+| --- | --- |
+| **PM Inbound** | A property manager or their staff contacted us. |
+| **Owner Inbound** | A property owner contacted us directly, including via NOMAD and RentRedi. |
+| **Resident Inbound** | A resident or tenant contacted us. |
+| **Service Provider Inbound** | A vendor or SP contacted us. Mostly invoices, estimates, and scheduling. |
+| **Partner / Platform Inbound** | A platform partner or integration contacted us — Appfolio, Rent Manager, and similar acting on their own (not a service provider). |
+| **Latchel Ops Escalation** | A Latchel associate asked PS to decide something. |
+| **Latchel Outbound** | We started the conversation: verification requests, scorecards, CSM outreach. Real work, but not a customer-initiated contact. |
+| **Not Actionable** | Spam and survey outbound. No Tag or Attribute is needed — Category alone is enough. |
 
 ## ATTRIBUTES — What the Ticket Is About
 
