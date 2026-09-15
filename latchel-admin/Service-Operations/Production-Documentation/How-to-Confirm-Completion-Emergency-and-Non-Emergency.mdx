@@ -1,26 +1,27 @@
 ---
 title: "How to: Confirm Completion (Emergency and Non-Emergency)"
-groups: ["latchel"]
+groups:
+  - "latchel"
 ---
 
 ## 🧠 What This Process Is Trying to Solve
 
 <Note>
-This process ensures that work order statuses accurately reflect the current state of the repair. For emergencies, it is critical that a job does not remain in an active status (like "Confirming Completion") if the repair is not actually finished or if we cannot verify its status. This prevents "stale" work orders and ensures that unresolved issues are addressed immediately.
+  This process ensures that work order statuses accurately reflect the current state of the repair. For emergencies, it is critical that a job does not remain in an active status (like "Confirming Completion") if the repair is not actually finished or if we cannot verify its status. This prevents "stale" work orders and ensures that unresolved issues are addressed immediately.
 </Note>
 
 <Note>
-### What are Work Orders with "Confirming Completion" Status?
+  ### What are Work Orders with "Confirming Completion" Status?
 
-Work orders enter the **Confirming Completion** status automatically once the scheduled appointment window has passed. This status serves as a checkpoint to verify if the Service Provider attended the home and performed the requested work.
+  Work orders enter the **Confirming Completion** status automatically once the scheduled appointment window has passed. This status serves as a checkpoint to verify if the Service Provider attended the home and performed the requested work.
 
-**How Verification Happens:**<br />Residents or Service Providers can confirm or deny completion through:
+  **How Verification Happens:**<br />Residents or Service Providers can confirm or deny completion through:
 
-- The automated Latchel Service Provider Interface.
-- Text message (most popular).
-- Email or phone call.
+  - The automated Latchel Service Provider Interface.
+  - Text message (most popular).
+  - Email or phone call.
 
-**Attention:** Before you begin working on any task, **ensure you view all open tasks for the customer** (resident, service provider, owner) to avoid duplicating efforts and to ensure the issue is handled correctly the first time.
+  **Attention:** Before you begin working on any task, **ensure you view all open tasks for the customer** (resident, service provider, owner) to avoid duplicating efforts and to ensure the issue is handled correctly the first time.
 </Note>
 
 # Content
@@ -52,7 +53,10 @@ Work orders enter this status automatically once the scheduled appointment windo
 
 ### Step 3 - **Confirming Completion**
 
-For Emergency work orders, we use a high-velocity verification process. You are allowed **one attempt** to reach the Service Provider and **one attempt** to reach the Resident today to verify the status of the repair.
+For Emergency work orders, contact attempts are determined by severity, consistent with [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency) and [Handling Scheduling With Service Provider Tasks](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Handling-Scheduling-With-Service-Provider-Tasks#handling-scheduling-with-service-provider-tasks):
+
+- **Property Damage (PD) / Extreme Habitability (EH):** Follow the Triple Dial Procedure (3 attempts) to reach both the Service Provider and the Resident. These must remain as Emergencies — do not de-escalate.
+- **Non-PD/EH Emergencies:** You are allowed **one attempt** to reach the Service Provider and **one attempt** to reach the Resident today to verify the status of the repair.
 
 1. **Call the Resident.**
    - **If they confirm COMPLETE:** Click **Action** > **The job is complete** and request the invoice.
@@ -62,33 +66,35 @@ For Emergency work orders, we use a high-velocity verification process. You are 
    - **If they confirm COMPLETE:** Click **Action** > **The job is complete** and request the invoice.
    - **If they confirm UNRESOLVED:** Investigate the reason (e.g., missing parts, scope change). If they cannot finish **today**, move the work order to **Waiting for PM**.
    - **If they are UNRESPONSIVE:** Do not leave the job in "Confirming Completion."
-  1. **The "Unverified Emergency" Action (Both Unresponsive):**
-     - **🛑 Emergency Rule:** If you have attempted to reach both the SP and the Resident and neither has responded to verify the repair:
-     - **Action:** Use the **"Forward to PM"** tool immediately.
-     - **Why:** This ensures the work order does not sit in a "stale" status. By forwarding, you are notifying the Property Manager that the appointment has passed but the resolution could not be verified.
-    1. **The "Blocked Coordination" Exception:**
-       - If you are **blocked** from verifying the job (e.g., a critical note forbids contact or you are waiting on a budget approval):
-       - **Action:** Use the **"Forward to PM"** tool immediately to transfer ownership of the next step to the PM.
+3. **The "Unverified Emergency" Action (Both Unresponsive):**
+   - 🛑 Emergency Rule: If you have attempted the required number of contacts (per the Triple Dial or 1-attempt rule above) to both the SP and the Resident and neither has responded to verify the repair, first check the Work Order notes and activity log for any earlier confirmation or mitigation information you may have missed. Then:
+     - If PD/EH: Do not de-escalate and do not mark the job Complete based on silence. Follow the [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos) and continue calling Emergency Escalation Contacts until mitigation is confirmed.
+     - If NOT PD/EH and notes confirm the repair is mitigated/resolved: De-escalate to Urgent, keeping "Emergency" in the title. Next steps depend on subscription type — see [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency) → "General Rule: Recognizing and Handling a Stale Emergency."
+     - If NOT PD/EH and notes do NOT confirm mitigation (or say nothing either way): Use the "Forward to PM" tool immediately — the work order stays classified Emergency, since we cannot confirm the situation has changed.
+   - Why: This ensures the work order does not sit in a "stale" status, and that the severity assigned to it (Emergency, Urgent, or handed to the PM) accurately reflects what we actually know, rather than defaulting to one action regardless of the situation.
+4. **The "Blocked Coordination" Exception:**
+   - If you are **blocked** from verifying the job (e.g., a critical note forbids contact or you are waiting on a budget approval):
+   - **Action:** Use the **"Forward to PM"** tool immediately to transfer ownership of the next step to the PM.
 
 ### Step 4 - Write Effective Notes.
 
 1. Refer to [↔ How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OM/pages/763363368) for details
 
-## [**❓**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders)**Frequently Asked Questions**
+## **[❓](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders)Frequently Asked Questions**
 
 <Accordion title="How should we handle situations where the service provider who completes the work is different from the one currently assigned to the work order?">
-1. **Update the Assignment Immediately:**
-   - **If the provider is in our system:** Reassign the work order to them.
-   - **If the provider is NOT in our system:** You must use **"Resident Resolved"** as the closure method. This is a system workaround that allows you to close the job properly when no assignable provider exists.
-  1. **Verify and Close (High-Velocity Rule):**
+  1. **Update the Assignment Immediately:**
+     - **If the provider is in our system:** Reassign the work order to them.
+     - **If the provider is NOT in our system:** You must use **"Resident Resolved"** as the closure method. This is a system workaround that allows you to close the job properly when no assignable provider exists.
+  2. **Verify and Close (High-Velocity Rule):**
      - If you have the new provider on the phone, confirm completion and mark the job as **Complete** immediately.
      - If you cannot reach the new provider, follow the **1-Attempt Rule**: Call the resident. If the resident is also unresponsive and there are no indications the job is unresolved, move the work order to **Complete** (Assume Done).
-2. **Document the Switch:**
-   - Add a note stating:
-     - Who actually completed the work.
-     - Why the assignment was changed (or why "Resident Resolved" was used).
-     - How completion was verified.
-  1. **Notify the Property Manager:**
+  3. **Document the Switch:**
+     - Add a note stating:
+       - Who actually completed the work.
+       - Why the assignment was changed (or why "Resident Resolved" was used).
+       - How completion was verified.
+  4. **Notify the Property Manager:**
      - Create a task for the PM to ensure they are aware of the provider switch for billing and warranty purposes.
 </Accordion>
 
@@ -96,12 +102,11 @@ For Emergency work orders, we use a high-velocity verification process. You are 
 
 You may **deviate** from the SOP only in specific, documented scenarios. Here’s when deviation is allowed:
 
-- **Unresponsive Emergency:** If you cannot confirm completion for an Emergency after one attempt to the SP and one attempt to the Resident today, do not wait. You **must** break the standard follow-up cycle and move to **Complete** (Assume Done) or **Forward to PM** and de-escalate immediately (as long as there are no indications of unresolved reported issues.
+- **Unresponsive Emergency (Non-PD/EH):** If you cannot confirm completion for a non-PD/EH Emergency after the required one attempt to the SP and one attempt to the Resident today, do not wait. Follow Step 3, item 3 ("The Unverified Emergency Action") to determine whether to de-escalate or Forward to PM. Do not default to marking the job Complete based on silence — "Complete (Assume Done)" is reserved for the specific new-provider verification scenario in the FAQ below, not for this general case. For PD/EH, this bullet does not apply — see the PD/EH bullet above.
 - **Property Damage/Extreme Habitability:** If the issue involves active property damage or extreme habitability (PD/EH), do **not** move to "Complete" based on silence. You must follow the [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#-general-pm-outbound-script) and continue calling escalation contacts until mitigation is confirmed.
 - **PM Ownership:** If the PM has explicitly taken ownership of the job (e.g., assigned their own SP or requested to handle completion), skip standard follow-ups and use the **"Forward to PM"** tool immediately.
 - **Safety Risks:** If at any point you identify a 911 situation or a severe safety risk, stop this SOP and follow the [How to: Handle 911-Severity Type Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders#step-1-when-the-resident-should-call-911).
 
 ## **💡 If You Think This SOP Could Be Improved...**
 
-Noticed something clunky or confusing in this process? Or had a situation that wasn’t covered here? Or tried something new that didn’t work?  
- 👉 Share your suggestion in the[ ](https://slack.com/shortcuts/Ft07C0TDU4N9/9439ee41aae76a4a602b6c186ce4a6cd)[SOP Feedback Form](https://slack.com/shortcuts/Ft07C0TDU4N9/9439ee41aae76a4a602b6c186ce4a6cd) or tell your manager— **we want your input!**
+Noticed something clunky or confusing in this process? Or had a situation that wasn’t covered here? Or tried something new that didn’t work?<br />👉 Share your suggestion in the[ SOP Feedback Form](https://slack.com/shortcuts/Ft07C0TDU4N9/9439ee41aae76a4a602b6c186ce4a6cd) or tell your manager— **we want your input!**

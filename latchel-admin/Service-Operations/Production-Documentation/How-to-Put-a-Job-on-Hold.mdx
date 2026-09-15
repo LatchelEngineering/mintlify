@@ -59,7 +59,11 @@ Fill up the form, starting with the reason for putting the job on hold.
 Only use this if:
 
 1. You're waiting on a Service Provider to send us an estimate. To make sure the property manager understands the estimate, please make sure the provider is providing an itemized estimate.
-   1. **🛑 Emergency Rule:** For Emergency work orders, the "two attempts" and "separate days" rules **do not apply.** You only get **one (1) attempt** to reach the Service Provider for this estimate. If they do not provide the estimate or a firm commitment to send it immediately, you must **Forward to PM** today. Do not set a task for tomorrow.
+   1. **🛑 Emergency Rule:** For Emergency work orders, the "two attempts" and "separate days" rules **do not apply.** You only get **one (1) attempt** to reach the Service Provider for this estimate. If they do not provide the estimate or a firm commitment to send it immediately, first confirm whether this Service Provider has already been to the property or performed any diagnostic/repair work:
+      - **If they have NOT visited:** source a new Service Provider — refer to [(EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider).
+      - **If they HAVE visited:** do not reassign, since a new provider would lose that diagnostic work. Instead, perform the **Mitigation Test** (confirm if the immediate threat is stopped) using the same logic as the [Waiting for Materials](#) section:
+        - **If Mitigated:** De-escalate to Urgent, keeping "Emergency" in the title. Next steps depend on subscription type — see [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency).
+        - **If NOT Mitigated:** Use the **"Forward to PM"** tool immediately and document what the current Service Provider found, so the PM has full context.
    2. For non-emergency work orders, "Describe why you moved the job to this status", explain why you need that estimate. For example, the service provider went to the property and learned the root cause of the problem will cost more than the initial estimate, so we are requesting an itemized estimate to seek approval from the Property Manager.
       1. Select the service provider name in the "Who is this task about?" and assign the task to the Service Provider Follow up group.
       2. Set follow-up task for the next business day, due at 9 am (unless the Service Provider provided a specific date).
@@ -86,8 +90,13 @@ Only use this if:
       - Assign the task to the Operations Associate group.
       - Summarize the status of the Work Order and provide clear and concise instructions for the next associate who will be taking over.
    4. For the team following up on the task: We should be contacting both the resident and the Service Provider until we obtain more information on what is needed to move the Work Order forward.
-      1. **🛑 Emergency Rule:** For Emergency work orders, do not continue contacting parties until "more information is obtained." You only get **one (1) attempt** to reach both the resident and the Service Provider. If you cannot get the information needed to move the work order forward on that first attempt, you must immediately use the **"Forward to PM"** tool today. Do not defer this to another shift or set a task for tomorrow.
-      2. Non-emergencies: If after two attempts (made on separate days) to follow up, both the Service Provider AND resident have been unresponsive, escalate to the Property Manager:
+      1. **🛑 Emergency Rule:** For Emergency work orders, do not continue contacting parties until "more information is obtained." You only get **one (1) attempt** to reach both the resident and the Service Provider. If both are unresponsive on that first attempt, **review the work order notes and activity log first** — an earlier contact, prior SP visit summary, or resident update may already confirm whether the immediate threat is mitigated, even though no one is answering right now. Then: 
+         - **If the notes confirm the threat is mitigated:** De-escalate to Urgent, keeping "Emergency" in the title. Next steps depend on subscription type — see [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency).
+         - **If the notes confirm the threat is NOT mitigated, or say nothing either way:** check whether this Service Provider is locked-in/PM-assigned or has already performed significant work on the job.
+           - **If NOT locked-in and minimal/no work has been done:** reassign to a new Service Provider — refer to [(EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider).
+           - **If locked-in, PM-assigned, or significant work has already been done:** do not reassign. Use the **"Forward to PM"** tool immediately, since the work order stays classified Emergency without confirmed mitigation.
+          Do not defer this to another shift or set a task for tomorrow.
+      2. **Non-emergencies**: If after two attempts (made on separate days) to follow up, both the Service Provider AND resident have been unresponsive, escalate to the Property Manager:
          <Note>
            📝NOTE: We should only escalate to the Property Manager after both the vendor and resident have been unresponsive to two attempts of following up each.
          </Note>
@@ -192,7 +201,7 @@ Work orders should remain in their current status unless there is missing or unc
 ## 🎯 When to Break This SOP
 
 <Info>
-  You should only break the SOP for **How to: Put a Job on Hold** in rare, exceptional cases where strictly following the SOP would cause harm, violate compliance, or prevent urgent escalation (such as life safety, legal, or severe customer impact situations). In these cases:
+  You should only break the SOP for How to: Put a Job on Hold in rare, exceptional cases where strictly following the SOP would cause harm, violate compliance, or prevent urgent escalation. In these cases:
 </Info>
 
 - Document clearly why the SOP was not followed.
