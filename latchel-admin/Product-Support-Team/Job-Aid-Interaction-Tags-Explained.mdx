@@ -1,85 +1,241 @@
 ---
 title: "Job Aid: Interaction Tags Explained "
-groups: ["latchel"]
+groups:
+  - "latchel"
 ---
 
-Tags related to CPT Churn Analysis are highlighted in **blue**. New Tags are highlighted in **yellow**.
+We now classify every ticket using three fields — **Category**, **Attributes**, and **Tags** — instead of a single tag list. Each field answers a different question about the interaction, and together they give a complete picture: how it reached us, what it was about, and what it drove.
 
-| **Tag** | **Description** |
+## How the Three Fields Work Together
+
+| Field | Question It Answers | Selection | Required? |
+| --- | --- | --- | --- |
+| **Category** | How did this ticket reach us? | Single-select | Always |
+| **Attributes — Topic** | What was the ticket about? | Single-select | Always |
+| **Attributes — Root Cause** | Why did it happen? | Single-select | If applicable |
+| **Tags** | What did this interaction drive or produce? | Multi-select | Apply as many as apply |
+
+A typical ticket gets tagged in this order:
+
+1. **Category** — pick the one value that describes how the ticket arrived (a PM texted in, an SP called, an automation flagged it, and so on).
+2. **Attributes — Topic** — pick the one Attribute/Value pair that best describes what the ticket was actually about (WO Coordination, Invoicing & Payments, Appfolio, and so on).
+3. **Attributes — Root Cause** — if something went wrong, pick the one value that explains why (SP Performance, Platform Defect, PM Action or Delay, and so on). Skip this if nothing went wrong — a routine question doesn't need a Root Cause.
+4. **Tags** — select every outcome tag that applies (Resolved by PS, Bug Filed, CSM Handoff, and so on). This is independent of Topic: crossing Topic against Tags is what lets us see, for example, which topics generate the most bugs or escalations.
+
+<Info>
+  **Topic** and **Tags** are independent of each other on purpose. Topic is what the ticket was _about_; Tags are what the interaction _drove_. Crossing the two is where our reporting on "which topics cause the most escalations/bugs/churn risk" comes from.
+</Info>
+
+## CATEGORY — How We Receive the Ticket
+
+Category is new: it didn't exist before, and no other field captured how a ticket reached us. Pick exactly one value.
+
+| Value | Counts in Reporting? | Use It When |
+| --- | --- | --- |
+| **PM Inbound** | Yes | A property manager or their staff contacted us. |
+| **Owner Inbound** | Yes | A property owner contacted us directly, including via NOMAD and RentRedi. |
+| **Resident Inbound** | Yes | A resident or tenant contacted us. |
+| **Service Provider Inbound** | Yes | A vendor or SP contacted us. Mostly invoices, estimates, and scheduling. |
+| **Partner / Platform Inbound** | Yes | A platform partner or integration contacted us — Appfolio, Rent Manager, and similar acting on their own (not a service provider). |
+| **Latchel Ops Escalation** | Yes, reported separately | A Latchel associate asked PS to decide something. |
+| **Latchel Outbound** | Yes, flagged separately | We started the conversation: verification requests, scorecards, CSM outreach. Real work, but not a customer-initiated contact. |
+| **Not Actionable** | No, excluded | Spam and survey outbound. No Tag or Attribute is needed — Category alone is enough. |
+
+## ATTRIBUTES — What the Ticket Is About
+
+Attributes are new. There are two levels: **Topic** (always required) and **Root Cause** (only if something went wrong).
+
+### Level 1: Topic — What the Ticket Was About
+
+Every ticket gets exactly one Attribute/Value pair from the groups below.
+
+<AccordionGroup>
+  <Accordion title="WO Coordination">
+    | Value | Definition |
+    | --- | --- |
+    | **WO Status or State Change Request** | A request to move a work order into a different state (Waiting for PM, On Hold, Scheduling, Cancelled) or to correct the state automation applied. |
+    | **Scheduling & Appointment Coordination** | Chasing, confirming, or rescheduling an SP appointment, including no-shows and access windows. |
+    | **Recall & Rework** | A completed job did not resolve the issue and is being re-opened, re-dispatched, or attached to the original WO. |
+    | **Unresponsive Party Blocking Progress** | The job is stalled because a resident, SP, PM, or owner is not responding. |
+    | **Double Dispatch** | Two service providers were sent for the same work order, usually surfacing as a duplicate trip charge. |
+    | **Access & Entry Information** | Lockbox codes, key handling, gate access, or entry instructions needed to progress a job. |
+    | **WO Outcome Explanation** | The requester wants to understand what happened on a work order or why, with no fault alleged. |
+    | **Project & Multi-WO Handling** | Grouping, splitting, or linking work orders, including building-wide issues. |
+  </Accordion>
+
+  <Accordion title="WO Triage & Severity">
+    | Value | Definition |
+    | --- | --- |
+    | **Severity Adjustment or Dispute** | Somebody asks PS to decide or re-decide a job's severity (Emergency, Urgent, Normal, Needs Approval), or a PM/owner disagrees with the severity already given and the charges that followed. |
+    | **Emergency Handling Escalation** | A live emergency or habitability situation needs immediate PS intervention or PM contact. |
+    | **Intake Miscategorization** | The job was created with the wrong skill, trade, or problem-location code. |
+  </Accordion>
+
+  <Accordion title="Invoicing & Payments">
+    | Value | Definition |
+    | --- | --- |
+    | **Invoice With No Matching Work Order** | An invoice arrives that cannot be matched to a Latchel WO, usually a PM direct-contract job. |
+    | **Payment Status & Overdue Chasing** | An SP is chasing payment, or a PM is confirming whether an invoice was already paid. |
+    | **Card, Fee & Payment Method** | Convenience fees, card-to-property mapping, declined cards, or choosing between card and direct deposit. |
+    | **Invoice or Estimate Submission Failure** | An SP cannot upload an invoice or estimate through the portal and sends it by email instead. |
+    | **Invoice Dispute** | The requester disputes the amount, the line items, the authority for a charge, or whether a charge exceeded budget or should have required approval — the after-the-fact read on one invoice. |
+  </Accordion>
+
+  <Accordion title="Subscription & Billing">
+    | Value | Definition |
+    | --- | --- |
+    | **Unit Count & Billable Inventory** | Disputes or corrections to the active unit count that drives the subscription invoice. |
+    | **Subscription Invoice Query** | Questions or corrections on the monthly subscription invoice itself. |
+    | **Plan Change (Upgrade)** | A request to move subscription tier up. |
+    | **Plan Change (Downgrade)** | A request to move subscription tier down. |
+    | **Partner Programme Billing** | Billing for bundled partner programmes such as Piñata rent roll or GL ledgering feeds. |
+    | **Adoption & Pricing Question** | Subscription pricing, add-on pricing, or adoption of platform features and products. |
+  </Accordion>
+
+  <Accordion title="SP Management">
+    | Value | Definition |
+    | --- | --- |
+    | **SP Profile Data Correction** | Correcting an individual SP's email, phone, primary contact, 2FA, or duplicate profile. |
+    | **SP Coverage & Territory** | Adding, removing, or verifying the zip codes, regions, or skills an SP serves. |
+    | **SP Prioritization & Dispatch Order** | Setting or explaining the order in which preferred and network SPs are offered a job. |
+    | **Add / Blacklist SP** | Onboarding a new preferred SP, or permanently excluding one after a bad experience. |
+    | **SP Conduct or Quality Complaint** | A complaint about an SP's workmanship, professionalism, or refusal to follow process. |
+    | **SP Availability Note** | Recording planned SP absence or unavailability against the vendor profile. |
+  </Accordion>
+
+  <Accordion title="Integration Platforms (Appfolio, Propertyware, Buildium, Rent Manager, Rent Vine, Yardi)">
+    Pick the platform itself as the Attribute (for example, **Appfolio** or **Rent Manager**), then one of the values below as the Value.
+
+    | Value | Definition |
+    | --- | --- |
+    | **Property Not Syncing** | A property exists in the PMS but is missing, disabled, or mismatched in Latchel. |
+    | **Resident Not Syncing** | Resident or tenant records are missing, duplicated, or attached to the wrong unit. |
+    | **WOs Not Syncing** | Work orders fail to create, update, or push back to the PMS. |
+    | **Sync Latency or Delay** | The sync ran but is delayed, or has not run for long enough that data is stale. |
+    | **Record Merge Damage** | Merging duplicate properties or residents destroyed or orphaned linked work orders. |
+    | **Integration Setup** | Standing up a new integration, or migrating between PMS platforms. |
+    | **Data Migration** | Data migration for a Latchel ↔ PMS integration to cleanly sync two systems. |
+    | **Sync Behavior Question** | Explanation of how the integration functions, what it encompasses, what to expect, etc. |
+    | **Feature Request** | Feature request for improvement or ask related to integration behavior. |
+
+    <Info>
+      **Appfolio only** also has three additional values: **Plugin Version - Outdated** (an outdated or misconfigured plugin, connector, or expired session on the customer side), **Latchel Managed Sync** (Latchel runs the sync on the PM's behalf via the Remote Server/TeamViewer), and **PM Managed Sync** (the PM manages and runs the sync on their own via their own browser/machine).
+    </Info>
+  </Accordion>
+
+  <Accordion title="Account Configuration">
+    | Value | Definition |
+    | --- | --- |
+    | **Property / Resident Enable-Disable** | Activating or deactivating individual properties or residents, fewer than ten records. |
+    | **Intake & Severity Settings** | Configuring how inbound requests are categorized and who owns each severity level — including Harmonia's AI intake behavior: misclassification, wrong triage questions asked, improvement opportunities. |
+    | **Budget Limits & Approval Thresholds** | Setting spend limits and the approval rules attached to them. |
+    | **Owner Settings & Assignment** | Owner preferences, assigning owners to properties, owner contact records. |
+    | **Users & User Teams** | Creating or amending users, groups, and the permissions attached to them. |
+    | **Escalation Contacts & Rotations** | Emergency escalation contact lists and per-portfolio contact rotations. |
+    | **Pre-Dispatch & Critical Notes** | Requesting, reviewing, or correcting pre-dispatch instructions and critical notes. |
+    | **Bulk Data Team Request** | A bulk property or resident file sent for Data Team audit and update. |
+    | **Individual Profile Data Correction** | Correcting a single resident, property, or owner record outside a bulk file. |
+    | **Warranty Configuration** | Home warranty fields and how warranty jobs should be handled. |
+    | **Action Set & Custom Workflow** | Applying an existing action set, or requesting bespoke workflow, scripting, or diagnostics. |
+  </Accordion>
+
+  <Accordion title="Notification & Comms Settings">
+    | Value | Definition |
+    | --- | --- |
+    | **Notification Volume or Preference** | A request to reduce, suppress, or retune notifications to owners, residents, or PMs. |
+    | **Notification Content or Wording** | The message text, subject line, or tone of an automated notification is wrong or confusing. |
+    | **Notification Misrouted/Missing** | A notification reached the wrong user group, contact, or channel, or the user is not receiving notifications at all. |
+  </Accordion>
+
+  <Accordion title="Resident Benefits">
+    | Value | Definition |
+    | --- | --- |
+    | **Benefit Enrolment & Hub Access** | Enrolling a resident in the benefit package, or helping them reach the Resident Benefits Hub. |
+    | **Proprietary Benefit Claim** | A claim against a Latchel-funded benefit: damage, lockout, overnight stay, missed appointment. |
+    | **Security Deposit Disposition Review** | The multi-step proprietary review of a security deposit disposition, with its own SOP. |
+    | **Marketplace & Partner Benefit** | Questions about third-party marketplace benefits: Amenify, FilterTime, Obie, Piñata, RentCheck. |
+    | **Moving Concierge** | Move-in services delivered with Utility Valet. |
+  </Accordion>
+
+  <Accordion title="Reporting & BI Requests">
+    | Value | Definition |
+    | --- | --- |
+    | **Report Export Request** | A filtered export of work orders, invoices, or tasks for analysis outside Latchel. |
+    | **Analytics Dashboard Query** | Questions about, or disputes with, figures shown in the analytics dashboard. |
+  </Accordion>
+
+  <Accordion title="Latchel Internal">
+    | Value | Definition |
+    | --- | --- |
+    | **Process Guidance Request** | An associate asks PS which SOP applies, or what to do in a case the SOP does not cover. |
+    | **Dispatch Exception Approval** | An associate asks permission to deviate from standard dispatch, such as using a non-preferred vendor. |
+    | **Training Content Update** | Internal training material or published guide announcements needing revision. |
+  </Accordion>
+
+  <Accordion title="Voice, Intake & AI Automation">
+    | Value | Definition |
+    | --- | --- |
+    | **Virtual Receptionist / Outbound Voice Enablement** | Activating, trialling, or configuring AI voice, vendor autopilot, click-to-call, or call forwarding, including consent handling. |
+    | **AI Action Correction** | An AI or automation took an incorrect action on a record and it needs reversing. |
+    | **Harphonia** | Our AI Agent phone line — takes and processes calls. Covers calls routed to the wrong line, transfers, callback requests, and call-list hygiene. |
+    | **Lucia** | Our AI webchat agent took an incorrect action or has an improvement opportunity, etc. |
+  </Accordion>
+
+  <Accordion title="Success Scope">
+    | Value | Definition |
+    | --- | --- |
+    | **Cancellation Request** | A PM or owner asks to cancel Latchel service, in whole or for a property. |
+    | **Plan Coverage & Product Fit** | Explaining what the customer's plan does and does not cover, or the customer's expectations of the product not matching reality. |
+    | **CSM Call Request** | The customer explicitly asks for a live conversation with their CSM. |
+    | **Onboarding & Go-Live** | New account configuration, kickoff, go-live, and training coordination. |
+    | **Sales Lead or Referral** | An inbound sales opportunity or referral. |
+    | **Business or Org Change** | The customer's business model, entity structure, or PMS is changing. |
+  </Accordion>
+</AccordionGroup>
+
+### Level 2: Root Cause — Why It Happened
+
+Add a Root Cause only when something went wrong and PS needed to explain why. Skip it for routine, no-fault interactions.
+
+| Root Cause | Definition |
 | --- | --- |
-| **Integration Set Up** | Refers to the tasks involved in either initiating or modifying the integration framework within a client's Latchel account. This involves configuring account slugs for synchronization purposes or establishing integrations for clients that are already on board. |
-| **Ops Escalation** | Used for the original Ops Escalation ticket that is sent to PS. |
-| **Poor Experience (LVN SP)** | Complaints of poor experience with LVN SP providers causing PM frustration and/or disabling LVN all together. |
-| **WOs Not Syncing Correctly (Integration)** | Refers to synchronization errors or inconsistencies specifically affecting Work Orders. |
-| **Tenants Not Syncing Correctly (Integration)** | Refers to synchronization errors or inconsistencies specifically affecting the tenant's information. |
-| **Properties Not Syncing Correctly (Integration)** | Refers to synchronization errors or inconsistencies specifically affecting property data. |
-| **Owners Not Syncing Correctly (Integration)** | Concerns synchronization errors or inconsistencies specifically affecting the owner's information. |
-| **Outdated Sync** | Refers to instances where the customer synchronization process has not been executed for an extended period, resulting in outdated data. |
-| **Delayed Sync** | When customers report that the synchronization process is taking longer than expected to complete. |
-| **Outdated Plugin Version (Appfolio)** | Relates to issues resulting from the use of an outdated plugin version on the customer's end. |
-| **Bug - Integration Issue** | Concerns about synchronization issues arising from an unidentified or undetermined root cause. |
-| **Feature Request - Integrations** | Applies to cases where the customer proposes or requests enhancements to the data synchronization process. |
-| **Pre-Dispatch Instructions Conflict** | Relates to pre-dispatch instructions that are internally inconsistent or conflict with customer-provided directives. |
-| **Unclear Pre-Dispatch Instructions** | Pertains to issues involving ambiguous or unclear pre-dispatch instructions that require clarification from the customer. |
-| **Outdated Pre-Dispatch Instructions** | Concerns issues arising from outdated information in the pre-dispatch instructions, leading to complications in managing Emergency WOs. |
-| **Outdated Access Instructions (Emg WO)** | Applies to complications in processing Emergency WOs due to insufficiently detailed or outdated access instructions to the property. |
-| **Unnecessary Emg Comms with PM** | Refers to customer complaints regarding perceived excessive communication from Latchel during an Emergency Work Order. |
-| **Emg WO Coordination Disagreement** | Pertains to customer reports involving disagreements or dissatisfaction with the handling of an Emergency Work Order. |
-| **Intake Settings** | Concerns the guidance and the sharing of best practices related to adjusting work order intake settings. This includes categorizing situations as Normal, Urgent, Needs Pre Approval, or Emergency, and determining the responsible party for each severity level. |
-| **Login Issues** | Problems that users face when attempting to log into the Latchel system, including password reset issues, login credentials, and access denials. |
-| **SP Prioritization** | Queries related to the establishment and adjustment of priority levels for Service Providers (SPs) according to specific predefined criteria. |
-| **Add SP** | Procedures and assistance required for Property Managers (PMs) to add a new preferred Service Provider (SP) to their Latchel account. |
-| **Blacklist/Remove SP** | Engagements wherein a Property Manager (PM) requests to permanently exclude a Service Provider (SP) from being used due to a negative experience. |
-| **Escalation Contacts** | Requests for or queries about the contact information utilized for escalating critical or unresolved issues within the Latchel system. |
-| **Data Team Request** | The process whereby an updated report on properties or residents is sent by a PM for auditing and subsequent updates by the Data team in bulk quantities. |
-| **Owner Settings** | Inquiries or issues regarding settings specific to property owners, such as updating owner preferences, adding or assigning an owner to a property, and configuring owner notification settings. |
-| **Users/User groups** | Matters concerning the permissions, creation, or management of user groups, including settings for automated notifications tied to these groups. |
-| **Pre-Dispatch Instruction/Critical Note Request** | Issues involving the examination, request, or rectification of instructions or critical notes that are predefined before service dispatch |
-| **Enable/Disable Properties and/or Residents** | Cases related to the activation or deactivation of individual properties or residents within the system, covering requests affecting fewer than 10 records. |
-| **Budget Limits** | Queries about the parameters and restrictions on spending limits for specific jobs. |
-| **Applied Action Set** | The application of an existing, predefined action set to a Latchel account for operational execution. Requests go to #pd\_cn\_actionset. |
-| **Warranty Notes** | Requests for updates or detailed explanations concerning warranty fields related to specific properties for property managers. |
-| **Feature Request (Non-Integration)** | Technical requests that propose significant changes or improvements to system functionality, with the potential to greatly enhance a PM's daily operations. Reports or requests relating to minor technical improvements or impacts on system performance. |
-| **Custom Scripting** | Requests for the development and implementation of unique or non-standard communication settings or functions |
-| **Custom Workflow/Action Set Request** | Needs for unique or specific operational workflows that deviate from established procedures or workflows. New requests that are submitted to the #data-reporting-help-requests. |
-| **Custom Diagnostic/Troubleshooting** | Requests for distinctive or specialized troubleshooting processes that differ from standard procedures. |
-| **Cancellation Request** | Requests submitted by Property Managers for the cancellation of their Latchel subscription, usually requiring escalation to the Customer Success Manager (CSM) |
-| **Budget Approval** | Issues arising from work orders where there was a breach of budget limits or where the established approval process was not adhered to |
-| **IVR/Twilio/Wait Time** | Concerns or inquiries focused on call greeting setups or analyzing the duration of wait times during customer calls |
-| **Poor Experience (Customer Service)** | Feedback pertaining to suboptimal interactions or extended wait times experienced during webchat, SMS, or calls with property managers, service providers, or residents, affecting work order outcomes. |
-| **Poor Experience (Troubleshooting)** | Feedback related to negative experiences incurred during troubleshooting calls with residents |
-| **Poor Experience (Call Frequency)** | Complaints related to an excessive number of calls made by Latchel to a party, causing dissatisfaction. |
-| **Poor Experience (Escalation Contacts)** | Incidents where a Property Manager did not receive anticipated escalation calls, or received unwarranted escalation calls, linked to expectations vs. actual calls |
-| **WO General Question** | General inquiries for clarification regarding the process or outcome of a work order, not necessarily indicating an issue. |
-| **Resident Responsible Job (SP Sourcing)** | Cases where a resident reports dissatisfaction with service provider availability or Latchel's inability to source a service provider for a resident-billed job. |
-| **Resident Responsible Job (Billing Responsibility)** | Issues where residents are accountable for bill payments, often involving clarification of these responsibilities. |
-| **Account Configuration** | Discrepancies between expected and actual work order outcomes attributed to the way an account is configured. |
-| **Unresponsive SP** | Situations where tasks took longer than desired due to a Service Provider failing to respond appropriately. |
-| **Unresponsive Resident** | Instances where tasks were delayed because residents did not respond in a timely manner. |
-| **Delayed PM Approval/Action** | Cases where job or process completion was deferred due to delays from the Property Manager in approving or acting upon a work order |
-| **Delayed Owner Approval** | Instances where task completion was delayed because an Owner took longer than acceptable to approve a work order. |
-| **Poor Experience (SP Sourcing)** | Complaints related to delays and/or unavailability to find and assign an SP to a WO. |
-| **Subscription Invoice** | Inquiries or issues concerning monthly subscription invoices, including corrections related to billing system or unit count changes |
-| **Job Invoice** | Concerns or disputes related to invoices associated with work orders, including Property Manager inquiries or disagreements. |
-| **Subscription Upgrade** | Inquiries or procedures related to increasing subscription tier level for additional or enhanced services |
-| **Subscription Downgrade** | Requests regarding reducing subscription tier level for cost-saving or service preference reasons |
-| **Bug - High Impact (Non-Integration)** | Reports on urgent and serious problems with system functionality that critically affect operations, requiring immediate resolution. These go to #tech-high-sev-escalations. |
-| **Bug - Low Impact (Non-Integration)** | Reports on minor or non-urgent technical bugs that have limited effect on system functionality but are still addressed for user satisfaction. These go to #bug-report. |
-| **Business Shift/Org Changes** | Matters related to adjustments needed due to changes in a customer’s business model, organizational structure, or strategic direction. |
-| **Product Fit/Expectations** | Assessments of how well the Latchel product meets customer needs and requirements, or aligns with their expectations |
-| **PMS Software Change** | Issues or requests that emerge from the application of software updates, modifications, or migrations |
-| **DD Conclusion** | Outcomes and insights from thorough DD investigations followed by feedback intended to prevent similar issues |
-| **Not Actionable** | Identifications of cases that do not require actions due to being resolved, irrelevant, or invalid. |
-| **Report Export** | Requests for extracting data for the purpose of business analysis or generating actionable insights via the Analytics Dashboard or requested with #data-reporting-help-request. |
-| **SP Request or Inquiry** | Any questions or requests provided directly by Service Providers, including contact form submissions at the HCP level |
-| **Sales Lead** | Information regarding potential sales opportunities or referrals that could lead to new business development. |
-| **CSM Call Request** | Interaction where a customer has explicitly asked for a conversation or meeting, typically to discuss matters live over the phone |
-| **Accessing Benefits** | Issues faced by residents trying to utilize the benefits entitled to them, often requiring support for access facilitation |
-| **Benefits Rollout** | Cases concerning questions or clarifications regarding the deployment or availability of benefit programs |
-| **Latchel Proprietary Benefits** | Customer inquiries about specific Latchel benefits such as Accidental Damages Reimbursement, Lockout Reimbursement, Overnight Stay Reimbursement, Missed Appointment Fee Reimbursement, Free Drain Packs, Move-In Promise, and Security Deposit Review |
-| **Moving Concierge** | Cases that relate to the facilitation of move-in services offered to residents, in cooperation with Utility Valet. |
-| **Marketplace Benefits** | Inquiries about or opportunities to enhance Latchel Marketplace Benefits, including services like Obie (liability insurance), FilterTime (air filters), Cover Pest (pest control), Sure (renter’s insurance), Piñata (rent rewards), and RentCheck (inspections). |
+| **SP Performance** | The service provider did not perform: missed appointments, went over budget without approval, poor workmanship, took payment directly, unresponsive to follow-ups. |
+| **Latchel Associate Action** | A Latchel associate didn't follow an SOP, job aid, critical note, or pre-dispatch instruction, or handled the contact poorly. |
+| **Automation or Workflow Behaviour** | Harmonia, Autopilot, an action set, or an AI step behaved as configured but produced the wrong outcome. |
+| **Platform Defect** | A genuine software defect. Requires a linked bug report — pair with the **Bug Filed** tag. |
+| **Integration or Third-Party Platform** | Data failed to move between the PMS and Latchel, or an external platform caused the failure. |
+| **Account Configuration** | The account's own settings produced the outcome: severity settings, budget limits, intake rules, coverage, action sets. |
+| **PM Action or Delay** | The property manager acted late, acted incorrectly, or gave unclear or conditional instructions. |
+| **Owner Action or Delay** | The owner acted late, acted incorrectly, or disputed a valid charge. |
+| **Resident Action or Delay** | The resident was unresponsive, cancelled, submitted incorrectly, or the complaint was not valid. |
+| **Knowledge Gap** | The handling failed because the PM lacked platform knowledge, took the wrong action in the dashboard, produced the wrong outcome, etc. |
+| **Undetermined – DD Requested** | The failure is real but the cause can't be established in triage. A Deep Dive has been opened — pair with the **DD Requested** tag. |
+
+## TAGS — What the Interaction Drove
+
+Tags describe the outcome — what the interaction produced, not what it was about. They're multi-select and independent of Attributes: apply every tag below that fits, even if that means several tags on one ticket.
+
+| # | Tag | Apply It When |
+| --- | --- | --- |
+| 1 | **Resolved by PS – Confirmation Received** | PS answered or fixed it with no handoff and no follow-on ticket, with PM info or confirmation. |
+| 2 | **Resolved by PS – Bias for Action** | PS answered or fixed it with no handoff and no follow-on ticket, without PM confirmation — used judgment and expertise to decide. |
+| 3 | **Open Issue – Unresponsive PM** | PS couldn't resolve without PM input. Bias for action was too risky, but not critical enough for a CSM escalation. |
+| 4 | **Config Change Made** | A setting was changed on the account as a result of this interaction. |
+| 5 | **Help Guide Gap** | No Help Guide existed, or the existing one was wrong. |
+| 6 | **SOP Gap** | An internal SOP or job aid was missing or outdated. |
+| 7 | **Bug Filed** | A bug report was raised. Requires a linked ticket reference. |
+| 8 | **Feature Request Filed** | A feature request was logged. |
+| 9 | **Data/Eng Request Filed** | Routed to the Data team, BI team, or Engineering for action. |
+| 10 | **Churn Risk** | The contact contained a cancellation signal, a legal threat, or explicit dissatisfaction with the relationship. |
+| 11 | **Repeat Contact** | The same party has contacted about the same underlying issue before. |
+| 12 | **CSM Handoff** | Passed to the Customer Success Manager. |
+| 13 | **DD Requested** | A Deep Dive was opened off the back of this interaction. |
+| 14 | **Praise** | The contact contained positive feedback about Latchel or an associate. |
+| 15 | **Routed to PM (Out of Scope)** | Correctly declined and redirected to the property manager. |
+| 16 | **Agent Coaching Flagged** | Raised for associate coaching. Separates quality signal from customer outcome. |
+| 17 | **Reimbursement or Credit Issued** | A proprietary benefit, credit, or fee waiver was granted. |
+| 18 | **Automated Alert Duplicate** | One of several near-identical machine alerts in a burst. Lets us count incidents, not alerts. |
 
 <Warning>
-  Can’t find what you’re looking for? Reach out to your direct manager for help.
+  Can't find what you're looking for? Reach out to your direct manager for help.
 </Warning>
