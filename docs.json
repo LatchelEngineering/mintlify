@@ -1940,7 +1940,10 @@
                   {
                     "group": "Marketing Team Pages",
                     "pages": [
-                      "latchel-admin/Marketing-Team/Cold-Email-Process-Doc"
+                      "latchel-admin/Marketing-Team/Cold-Email-Process-Doc",
+                      "latchel-admin/Marketing-Team/Assets-Logo-Files",
+                      "latchel-admin/Marketing-Team/Assets-Social-Profile-Pics",
+                      "latchel-admin/Marketing-Team/Latchel-Domain-Ownerships"
                     ]
                   }
                 ]
