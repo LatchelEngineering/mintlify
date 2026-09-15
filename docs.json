@@ -741,7 +741,12 @@
                               "latchel-admin/Service-Operations/Ops-Integrations/ops-integration-productivity-tracker",
                               "latchel-admin/Service-Operations/Ops-Integrations/how-to-log-in-to-the-ops-integration-productivity-tracker",
                               "latchel-admin/Service-Operations/Ops-Integrations/how-to-submit-a-time-correction-request",
-                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-submit-a-new-task-category-request"
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-submit-a-new-task-category-request",
+                              "latchel-admin/Service-Operations/Ops-Integrations/latchel-intake-monitoring-dashboard",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-the-latchel-intake-monitoring-process-works",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-to-escalate-a-property-manager-at-10-days-below-target",
+                              "latchel-admin/Service-Operations/Ops-Integrations/how-the-automated-seasonal-reminders-process-works-for-pre-dispatch-and-emergency-contact-list-settings",
+                              "latchel-admin/Service-Operations/Ops-Integrations/emergency-contact-and-pre-dispatch-reminder-dashboard"
                             ]
                           },
                           {
@@ -873,7 +878,12 @@
                           "latchel-admin/Service-Operations/Announcements/Operations-Weekly-Newsletter-Process-Update-Edition-09-04-2026",
                           "latchel-admin/Service-Operations/Announcements/Operations-Weekly-Newsletter-Process-Update-Edition-09-11-2026",
                           "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-07-31-2026",
-                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-08-07-2026"
+                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-08-07-2026",
+                          "latchel-admin/Service-Operations/Production-Documentation/How-to-Set-up-Equipment-for-Shifts",
+                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist",
+                          "latchel-admin/Service-Operations/Production-Documentation/Latchel-Performance-Recognition-Reward-Programs",
+                          "latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls",
+                          "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Job-Aid"
                         ]
                       },
                       {
@@ -1131,7 +1141,9 @@
                           "latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls",
                           "latchel-admin/Service-Operations/Production-Documentation/How-to-Set-up-Equipment-for-Shifts",
                           "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Job-Aid",
-                          "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Associate-Job-Aid-Associates"
+                          "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Associate-Job-Aid-Associates",
+                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-07-31-2026",
+                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-08-07-2026"
                         ]
                       },
                       "latchel-admin/Service-Operations/SOP-Reporting-Suspected-Account-Compromise",
@@ -1280,12 +1292,39 @@
                           {
                             "group": "SOP: Benefits & Partnerships - How to Handle Customer Inquiries",
                             "pages": [
-                              "latchel-admin/Product-Support-Team/SOP-Benefits-Partnerships-How-to-Handle-Customer-Inquiries"
+                              "latchel-admin/Product-Support-Team/SOP-Benefits-Partnerships-How-to-Handle-Customer-Inquiries",
+                              {
+                                "group": "Benefits & Partnerships Reference (from Industry Relations)",
+                                "pages": [
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/VP-Industry-Relations-Overview",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Change-Management-Partnership-Process-marketplace-core",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Change-Management-Partnership-Perk-Template-marketing-partner",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Process-New-Marketing-Benefit-Launch",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Process-Deprecating-a-Benefit-from-Latchels-Resident-Benefit-Hub",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Template-General-Info-for-New-Benefit-Partnership",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Current-Optional-Benefits-Customers-their-SOPs",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/How-To-Respond-to-Amenify-inquiries",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/SOP-Drain-Pack-Request-Fulfillment",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/FAQ-Drain-Maintenance-Packs",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/FAQ-Move-in-Guarantee",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/FAQ-Security-Deposit-Review",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Benefit-Rejection-Templates",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Template-Damage-Reimbursement-Request-Rejected",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Template-Overnight-Stay-Reimbursement-Request-Rejection",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Template-Move-In-Guarantee-Rejection-Email",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Template-Drain-Maintenance-Pack-Rejection-Email",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Template-Lockout-Reimbursement-Rejection",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Template-Missed-Appointment-Fee-Reimbursement",
+                                  "latchel-admin/Product-Support-Team/Benefits-Partnerships/Template-Security-Deposit-Review-Rejection-Email"
+                                ]
+                              }
                             ]
                           }
                         ]
                       },
-                      "latchel-admin/Product-Support-Team/Latchel-Partner-API-Fluency-Guide-for-Support-Teams"
+                      "latchel-admin/Product-Support-Team/Latchel-Partner-API-Fluency-Guide-for-Support-Teams",
+                      "latchel-admin/Product-Support-Team/SOP-Pre-Dispatch-Instructions-&-Critical-Notes",
+                      "latchel-admin/Product-Support-Team/Product-Support-(PS)-New-Hire-Setup"
                     ]
                   }
                 ]
@@ -2276,7 +2315,11 @@
                           }
                         ]
                       },
-                      "latchel-admin/Latchel-People-Ops/onboarding-flow-communications"
+                      "latchel-admin/Latchel-People-Ops/onboarding-flow-communications",
+                      "latchel-admin/Latchel-People-Ops/performance-and-salary-review-policy-2",
+                      "latchel-admin/Latchel-People-Ops/manager-resource-center-2",
+                      "latchel-admin/Latchel-People-Ops/policy-employee-compensation-increase-process-2",
+                      "latchel-admin/Latchel-People-Ops/international-health-care-benefits-policy-2"
                     ]
                   }
                 ],
@@ -2403,7 +2446,9 @@
                           "latchel-admin/Service-Operations/Latchel-Library/HOME-ASSISTANTCSAdmin-How-to-Handle-Appointment-Cancellation-Charge-Backs-to-Property-Managers",
                           "latchel-admin/Service-Operations/Latchel-Library/HOME-ASSISTANT-CSAdmin-How-to-Answer-Property-Manager-Questions-About-the-Program"
                         ]
-                      }
+                      },
+                      "latchel-admin/Service-Operations/Latchel-Library/Latchel-Knowledge-101",
+                      "latchel-admin/Service-Operations/Latchel-Library/Work-Order-SOPs"
                     ]
                   }
                 ],
