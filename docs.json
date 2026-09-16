@@ -1142,7 +1142,9 @@
                           "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Job-Aid",
                           "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Associate-Job-Aid-Associates",
                           "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-07-31-2026",
-                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-08-07-2026"
+                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-08-07-2026",
+                          "latchel-admin/Service-Operations/Production-Documentation/Fullstory-Navigation",
+                          "latchel-admin/Service-Operations/Production-Documentation/Policy-Latchel-Time-and-Attendance-Policies-Operations-Production-Team"
                         ]
                       },
                       "latchel-admin/Service-Operations/SOP-Reporting-Suspected-Account-Compromise",
@@ -1371,7 +1373,16 @@
                         "group": "Executive Business Reviews",
                         "pages": [
                           "latchel-admin/Customer-Success-Team/executive-business-reviews",
-                          "latchel-admin/Customer-Success-Team/assisted-ledgering-monthly-scorecard-meeting"
+                          "latchel-admin/Customer-Success-Team/assisted-ledgering-monthly-scorecard-meeting",
+                          {
+                            "group": "SQL Queries / PGAdmin Job Aids",
+                            "pages": [
+                              "latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/How-to-Request-New-SQL-Queries",
+                              "latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/How-to-Install-Pg-Admin4-and-Set-up-the-Server",
+                              "latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/How-to-Execute-SQL-Queries-in-Pg-Admin",
+                              "latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/Job-Aid-SQL-Queries"
+                            ]
+                          }
                         ]
                       },
                       {
