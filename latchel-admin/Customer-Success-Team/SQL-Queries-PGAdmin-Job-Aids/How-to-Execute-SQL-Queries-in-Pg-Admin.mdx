@@ -1,0 +1,58 @@
+---
+title: "How to: Execute SQL Queries in Pg_Admin"
+groups: ["latchel"]
+---
+
+# Objective
+
+<Note>
+The purpose of this document is to guide you through running queries in Pg\_Admin to extract information from our database.
+</Note>
+
+  
+
+# Content
+
+Step 1. Open Pg\_Admin4 from your downloads.
+
+### Step 2. Click the server drop-down menu on the left-hand side of your page.
+
+1.  Click **latchelstage** from the menu on the left-hand side. 
+    1.  ![pgAdmin 4.png](/images/CSM-1016.png)
+
+### Step 3. Open the SQL Editor.
+
+1.  Click **SQL** from the upper panel.
+    1.  ![pgAdmin 4 (1).png](/images/CSM-1015.png)
+2.  Click the **Query Tool** icon on the left side of the upper panel.
+    
+    1.  This will open a new tap on the upper panel to SQL Editor. The SQL editor panel is a workspace where you can manually provide a query or copy a query from another source. We store all Customer Success queries here: [Job-Aid: SQL Queries Templates](/latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/Job-Aid-SQL-Queries). 
+        
+    2.  ![pgAdmin-4.png](/images/CSM-1004.png)
+3.  By default, you should be on "Data Output". Copy the query you wish to run and paste it in the SQL Query Editor. 
+    1.  ![pgAdmin 4 (3).png](/images/CSM-1013.png)
+
+### Step 4 - How to Customize the Query 
+
+1.  When you are reviewing the SQL queries here: [Job-Aid: SQL Queries](/latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/Job-Aid-SQL-Queries), you will see queries that have a red number. This indicates that the query can be customized for a single company account. 
+    1.  ![Edit - Job-Aid  SQL Queries Templates - Customer Success - Confluence.png](/images/CSM-1009.png)
+2.  You can replace the red text (ID) with the Company ID or Portfolio ID depending on the report. If the red text (ID) follows the text, "**pm\_company\_id =**" you will need to locate the Company ID. If the red text (ID) follows the text, "**portfolio\_id =**" you will need to locate the Portfolio ID. 
+    1.  To locate the **Company ID**, first access the Property Manager profile page. See .
+        1.  When you are on the company profile page, look at the browser URL. You will see an ID at the end of the URL. This is the Company ID you will copy and paste into the query to replace the red text.
+            1.  ![Screen Shot 2020-03-11 at 3 37 17 PM (1).png](/images/CSM-1008.png)
+    2.  To locate the **Portfolio ID,** first, see . On the Property Manager's account, click the **Portfolios** tab. 
+        1.  ![Latchel (69).png](/images/CSM-1007.png)
+        2.  Click on the name of the Portfolio.
+            1.  ![Latchel (70).png](/images/CSM-1006.png)
+        3.  When you are on the portfolio page, look at the browser URL. You will see an ID at the end of the URL. This is the Portfolio ID you will copy and paste into the query to replace the red text.
+            1.  ![Screen Shot 2020-03-11 at 3 56 03 PM.png](/images/CSM-1005.png)
+
+### Step 5 - Execute the Query
+
+1.  After pasting/entering a query, select the Execute/Refresh icon from the toolbar. The complete contents of the SQL editor panel will be sent to the database server for execution.
+    1.  ![pgAdmin-4 (1).png](/images/CSM-1003.png)
+2.  Once executed, the first 1000 rows of data will appear under Data Output.
+    1.  ![pgAdmin 4 (5).png](/images/CSM-1011.png)
+3.  Use the Download as CSV icon to download the content of the Data Output tab as a comma-delimited file.
+    
+    1.  ![pgAdmin 4 (6).png](/images/CSM-1010.png)
