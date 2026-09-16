@@ -34,8 +34,7 @@ groups: ["latchel"]
 
 #### WO Escalation and Deep Dives
 
-4. For ALL Owner/WO Escalations - Serv Ops agents will escalate to Product Support.
-5. Refer to [How to: Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support) for details.
+4. For ALL Owner/WO Escalations - Serv Ops agents will escalate to Product Support. Refer to [How to: Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support) for details.
 
 | **Owner Situations to ESCALATE to PS:** |
 | --- |
@@ -54,16 +53,24 @@ groups: ["latchel"]
 In instances that an owner contacts us stating that they have updated their payment method but the work order still hasn't progressed to the "_Finding Service Provider_" status:
 
 1. The associate should verify the last four digits of the owner's card number to ensure the correct payment method is on file.
-2. Under the property profile, go to the **Payments** tab.
+   1. Under the property profile, go to the **Payments** tab.
 
 <Frame>
-  ![Payments Tab.jpg](/images/SVC-884.jpg)
+  <img
+    src="/images/SVC-884.jpg"
+    alt="Payments Tab.jpg"
+    style={{ width:"77%" }}
+  />
 </Frame>
 
 2. Check the **last 4 digits** of the card to make sure we have the right payment method.
 
 <Frame>
-  ![Last 4 digits.jpg](/images/SVC-885.jpg)
+  <img
+    src="/images/SVC-885.jpg"
+    alt="Last 4 digits.jpg"
+    style={{ width:"72%" }}
+  />
 </Frame>
 
 2. If the last four digits provided match our records but the issue persists, the associate should escalate the matter to support to determine if the work order can be manually moved to the "Finding Service Provider" status.
@@ -132,44 +139,46 @@ Below actions are applicable for Emergency (Non-Property Damaging and Non-Extrem
       5. Complete the task
    2. **Outcome 2**. Successful resident/service provider however further clarification is required from the owner or the resident/service provider is unresponsive and you are unable to move forward with the work order.
       1. Call the owner back to provide an update
-      2. If successful owner contact, proceed to provide with the update and complete the task if there are no further instructions from the owner
-      3. Unsuccessful owner contact
-         1. Send SMS and Email indicating that the action was successful, the action taken and the clarification we need
-         2. _Hello [Owner’s name]! We are reaching out about [work order number] at [property address]. We have contacted the [resident/service provider] to [state what is further required from them]. At this time, we would like to [state what you require from the owner]. Please let us know how you would like us to proceed. Feel free to text us at 206-717-8374. Thank you and have a great day._
-         3. Defer the task **_to call the owner_** on the next follow-up date
-            1. Call the owner on the next follow-up date
-            2. If still unresponsive on the next follow-up date:
-            3. Send the owner an SMS and Email
-               1. _Hello [Owner’s name]! We are reaching out about [work order number] at [property address]. We have contacted the [resident/service provider] to [state what is further required from them]. At this time, we would like to [state what you require from the owner]. Please let us know how you would like us to proceed. The work order will remain in a Pending status while we await further instructions. Let us know if you have any questions. Feel free to text us at 206-717-8374. Thank you and have a great day._
-            4. Complete the task
-            5. Move the WO in Pending status with a task to PM
-               1. Subject: **Action Required: PM Instructions or Information Needed**.
+         1. If successful owner contact, proceed to provide with the update and complete the task if there are no further instructions from the owner
+         2. Unsuccessful owner contact
+            1. Send SMS and Email indicating that the action was successful, the action taken and the clarification we need
+               1. _Hello [Owner’s name]! We are reaching out about [work order number] at [property address]. We have contacted the [resident/service provider] to [state what is further required from them]. At this time, we would like to [state what you require from the owner]. Please let us know how you would like us to proceed. Feel free to text us at 206-717-8374. Thank you and have a great day._
+               2. Defer the task **_to call the owner_** on the next follow-up date
+      2. Call the owner on the next follow-up date
+         1. If still unresponsive on the next follow-up date:
+            1. Send the owner an SMS and Email
+            2. _Hello [Owner’s name]! We are reaching out about [work order number] at [property address]. We have contacted the [resident/service provider] to [state what is further required from them]. At this time, we would like to [state what you require from the owner]. Please let us know how you would like us to proceed. The work order will remain in a Pending status while we await further instructions. Let us know if you have any questions. Feel free to text us at 206-717-8374. Thank you and have a great day._
+            3. Complete the task
+         2. Move the WO in Pending status with a task to PM
+            1. Subject: **Action Required: PM Instructions or Information Needed**.
+            2. Who is this task about? _Select the PM_
+            3. Select a Date and Time: _Leave as is_
+            4. Assign to a User Group: _PM user group_
+            5. Assign to a User: _Leave as is_
+            6. Priority: Leave as is
+            7. _Complete task only on Completed or Cancelled job States_
+            8. Description: _We’ve created this task for the Property Manager to [insert specific information or instructions needed]. The current status of the work order is [insert status]. Kindly provide the requested information or guidance at your earliest convenience to help ensure a smooth continuation of the process. If you have any questions or need further clarification, please don’t hesitate to reach out. Thank you!_
+   3. **Outcome 3**. Unsuccessful resident/service provider contact
+      1. Call the owner back to provide an update
+         1. If successful owner contact, proceed to provide with the update and complete the task if there are no further instructions from the owner
+         2. Unsuccessful owner contact
+            1. Send SMS and Email indicating that the action was unsuccessful, the action taken and the clarification we need
+               1. _Hello [Owner’s name]! We are reaching out about [work order number] at [property address]. We have attempted to contact the [resident/service provider] to [state what is needed from them], but we have not received a response. We will continue our efforts and keep you updated. Please let us know if you have any additional instructions. You can also reach us via text at 206-717-8374. Thank you and have a great day._
+            2. Defer the task to call the resident/service provider on the next follow-up date
+      2. Call the resident/service provider on the next follow-up date
+         1. If still unresponsive on the next follow-up date:
+            1. Send the owner an SMS and Email
+               1. _Hello [Owner’s name]! We are reaching out about [work order number] at [property address]. We have attempted to contact the [resident/service provider] to [state what is needed from them], but we have not received a response. The work order will remain in a Pending status while we await further instructions. Please let us know if you have any additional instructions. You can also reach us via text at 206-717-8374. Thank you and have a great day._
+               2. Complete the task
+            2. Move the WO in Pending status with a task to PM
+               1. Subject: **Action Required: PM Instructions or Information Needed**\*.\*
                2. Who is this task about? _Select the PM_
                3. Select a Date and Time: _Leave as is_
                4. Assign to a User Group: _PM user group_
                5. Assign to a User: _Leave as is_
-               6. Priority: Leave as is
+               6. Priority:\* Leave as is\*
                7. _Complete task only on Completed or Cancelled job States_
                8. Description: _We’ve created this task for the Property Manager to [insert specific information or instructions needed]. The current status of the work order is [insert status]. Kindly provide the requested information or guidance at your earliest convenience to help ensure a smooth continuation of the process. If you have any questions or need further clarification, please don’t hesitate to reach out. Thank you!_
-   3. **Outcome 3**. Unsuccessful resident/service provider contact
-      1. Call the owner back to provide an update
-      2. If successful owner contact, proceed to provide with the update and complete the task if there are no further instructions from the owner
-      3. Unsuccessful owner contact
-         1. Send SMS and Email indicating that the action was unsuccessful, the action taken and the clarification we need
-      4. Defer the task to call the resident/service provider on the next follow-up date
-      5. Call the resident/service provider on the next follow-up date
-      6. If still unresponsive on the next follow-up date:
-      7. Send the owner an SMS and Email
-      8. Complete the task
-      9. Move the WO in Pending status with a task to PM
-      10. Subject: **Action Required: PM Instructions or Information Needed**\*.\*
-      11. Who is this task about? _Select the PM_
-      12. Select a Date and Time: _Leave as is_
-      13. Assign to a User Group: _PM user group_
-      14. Assign to a User: _Leave as is_
-      15. Priority:\* Leave as is\*
-      16. _Complete task only on Completed or Cancelled job States_
-      17. Description: _We’ve created this task for the Property Manager to [insert specific information or instructions needed]. The current status of the work order is [insert status]. Kindly provide the requested information or guidance at your earliest convenience to help ensure a smooth continuation of the process. If you have any questions or need further clarification, please don’t hesitate to reach out. Thank you!_
 
 ### **Scenario 3. Owner Follow-Up (tasks, approvals, etc)**
 
@@ -188,30 +197,27 @@ Below actions are applicable for Emergency (Non-Property Damaging and Non-Extrem
 </Warning>
 
 1. Call the owner back to provide an update or follow-up about pending requests on the work order
-2. If successful owner contact, provide the update and request direction to move the work order forward.
-3. **NOTE**: For scenarios where an Owner (Rentredi/NOMAD) requests approval for any amount before work is performed, or an Owner specifies “Do not approve over \$X without checking with me first” but the system Hard Budget Limit (HBL) is higher, refer to the FAQ section in the [**⛑EMERGENCY SOP: How to Handle Changes to the Approved Budget**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Changes-to-the-Approved-Budget)\*\* and \*\*[**(Non-Emergency) How to: Handle Over Approved Budget (aka Estimate)**.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Non-Emergency-How-to-Handle-Over-Approved-Budget-aka-Estimate)
-4. **Owner Provides Approval or Additional Instructions**
-5. Proceed in accordance with the owner’s direction.
-6. Properly resolve and document the call with the property owner.
-7. Contact the service provider to inform them that the budget has been approved and coordinate the scheduling of the service visit.
-8. **Owner Denies the New Budget**
-9. The Property Owner denies the new budget on-site, and the Property Owner will take over the responsibility of the Work Order
-10. **Say something like**: _Thank you for letting us know that you've denied the job, we'll contact the Service Provider and let them know. The work order will now be cancelled. If you need further assistance, please do not hesitate to reach out._
-11. Call the Service Provider first to let them know that the budget for the job has been denied.
-12. **Say something like**: _Hi, my name is (agent name) **\[Preferred: on behalf of (PM Company); LCN/LVN: a maintenance coordinator on behalf of (PM Company)\]**. We contacted the owner directly, and they let us know that they have denied the new budget approval. We will be closing the work order now, and you can invoice for the work you've done._
-13. Proceed to cancel the work order. Leave complete notes.
-14. See: [↔ How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OM/pages/763363368)
-15. Set proper expectations to the service provider about invoice submission. Refer to [https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431181](https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431181)
-16. Unsuccessful owner contact
-17. Send SMS and Email indicating the requested information needed to move the work order forward.
-
-- _Hello \[Owner’s name\]! We are reaching out about the \[work order number\] at \[property address\] to follow-up about \[state the reason for follow-up\]. Feel free to text us at 206-717-8374. Thank you and have a great day._
-
-2. Defer the task **_to call the owner_** on the next follow-up date
-3. Call the owner on the next follow-up date
-4. If contact is still unsuccessful
-5. Send SMS and Email same with the first follow-up date.
-6. Move the WO to the correct state with a task to PM. Refer to [https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165](https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165)
+   1. If successful owner contact, provide the update and request direction to move the work order forward.
+      1. **NOTE**: For scenarios where an Owner (Rentredi/NOMAD) requests approval for any amount before work is performed, or an Owner specifies “Do not approve over \$X without checking with me first” but the system Hard Budget Limit (HBL) is higher, refer to the FAQ section in the [**⛑EMERGENCY SOP: How to Handle Changes to the Approved Budget**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Changes-to-the-Approved-Budget)\*\* and \*\*[**(Non-Emergency) How to: Handle Over Approved Budget (aka Estimate)**.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Non-Emergency-How-to-Handle-Over-Approved-Budget-aka-Estimate)
+      2. **Owner Provides Approval or Additional Instructions**
+         1. Proceed in accordance with the owner’s direction.
+         2. Properly resolve and document the call with the property owner.
+         3. Contact the service provider to inform them that the budget has been approved and coordinate the scheduling of the service visit.
+      3. **Owner Denies the New Budget**
+         1. The Property Owner denies the new budget on-site, and the Property Owner will take over the responsibility of the Work Order
+            1. **Say something like**: _Thank you for letting us know that you've denied the job, we'll contact the Service Provider and let them know. The work order will now be cancelled. If you need further assistance, please do not hesitate to reach out._
+               1. Call the Service Provider first to let them know that the budget for the job has been denied.
+                  1. **Say something like**: _Hi, my name is (agent name) **[Preferred: on behalf of (PM Company); LCN/LVN: a maintenance coordinator on behalf of (PM Company)]**. We contacted the owner directly, and they let us know that they have denied the new budget approval. We will be closing the work order now, and you can invoice for the work you've done._
+               2. Proceed to cancel the work order. Leave complete notes. See: [↔ How to: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes)
+               3. Set proper expectations to the service provider about invoice submission. Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Upload-an-Invoice-for-a-Work-Order#how-to-upload-an-invoice-for-a-work-order`)
+            2. Unsuccessful owner contact
+               1. Send SMS and Email indicating the requested information needed to move the work order forward.
+                  1. _Hello [Owner’s name]! We are reaching out about the [work order number] at [property address] to follow-up about [state the reason for follow-up]. Feel free to text us at 206-717-8374. Thank you and have a great day._
+               2. Defer the task **_to call the owner_** on the next follow-up date
+         2. Call the owner on the next follow-up date
+            1. If contact is still unsuccessful
+               1. Send SMS and Email same with the first follow-up date.
+               2. Move the WO to the correct state with a task to PM. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold).
 
 #### **🔔NOMAD Owners - Approval Process Reminder**
 
@@ -225,13 +231,13 @@ Here’s how to proceed:
 
 1. **If there is a note indicating that the owner has already approved the estimate via the NOMAD portal _and_ the approved budget has been updated**, you may proceed with scheduling.
 2. **If there is a note showing the owner’s approval, but the approved budget has _not_ been updated:**
-3. Check the **Files** section or **Notes** on the work order to review the submitted estimates.
-4. **If the approved amount is certain** (for example, there is only one estimate that clearly aligns with the approval), update the approved budget accordingly and proceed with scheduling.
-5. **If the approved amount is unclear** (for example, if there are multiple estimates submitted or if there was a previous approval that may cause confusion), reach out to the owner for clarification before proceeding.
+   1. Check the **Files** section or **Notes** on the work order to review the submitted estimates.
+      1. **If the approved amount is certain** (for example, there is only one estimate that clearly aligns with the approval), update the approved budget accordingly and proceed with scheduling.
+      2. **If the approved amount is unclear** (for example, if there are multiple estimates submitted or if there was a previous approval that may cause confusion), reach out to the owner for clarification before proceeding.
 
 ### **Scenario 4. Service Provider Follow-Up**
 
-- _Note: Scheduling/Missed appointment Follow Ups_ - Associates must follow process outlined in [Handling Scheduling With Service Provider' Tasks](https://latchel.atlassian.net/wiki/spaces/OPS/pages/776601885) for non-emergencies. When updating the owner of the call outcomes, follow steps outlined in Scenario 3 of this document. Other than this, for all other follow ups (e.g. specific owner’s requests to follow up with SP, etc) follow the steps outlined in [https://latchel.atlassian.net/wiki/spaces/OPS/pages/edit-v2/3032088578#Scenario-2.-Owner-Request-to-Follow-up-with-the-Resident-or-the-Service-Provider](https://latchel.atlassian.net/wiki/spaces/OPS/pages/edit-v2/3032088578#Scenario-2.-Owner-Request-to-Follow-up-with-the-Resident-or-the-Service-Provider).
+- _Note: Scheduling/Missed appointment Follow Ups_ - Associates must follow process outlined in [Handling Scheduling With Service Provider' Tasks](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Handling-Scheduling-With-Service-Provider-Tasks#handling-scheduling-with-service-provider-tasks) for non-emergencies. When updating the owner of the call outcomes, follow steps outlined in Scenario 3 of this document. Other than this, for all other follow ups (e.g. specific owner’s requests to follow up with SP, etc) follow the steps outlined in [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts#how-to-handle-diy-owner-contacts)
 
 ## 🔑Enabling Residents/Properties
 
@@ -241,81 +247,81 @@ Here’s how to proceed:
 
 ### **RentRedi**
 
-For \*\*RentRedi \*\*properties, it is **okay to enable the resident/property and proceed** with work order creation.
+For RentRedi properties, it is **okay to enable the resident/property and proceed** with work order creation.
 
 ### **NOMAD**
 
-For \*\*NOMAD \*\*properties, follow the steps below when an owner contacts Latchel with an issue at their property.
+For NOMAD properties, follow the steps below when an owner contacts Latchel with an issue at their property.
 
-When the property owner contacts Latchel or when an associate reaches out to an owner regarding an issue at their property, Latchel confirms whether the resident/property is **_disabled_**\*\*.\*\*
+When the property owner contacts Latchel or when an associate reaches out to an owner regarding an issue at their property, Latchel confirms whether the resident/property is **_disabled_**.
 
 <Warning>
   Reactivation must not proceed unless validation with the **NOMAD** team has been completed.
 </Warning>
 
 <Note>
-  If the property is\*\* disabled due to vacancy,\*\* maintenance requests will be managed outside of Latchel. The owner will be directed to coordinate with NOMAD for further assistance.
+  If the property is disabled due to vacancy, maintenance requests will be managed outside of Latchel. The owner will be directed to coordinate with NOMAD for further assistance.
 </Note>
 
-1. \*\*Determine the Property Status (Vacant/ Occupied) \*\*
-2. If the property is \*\*vacant \*\*and the **resident reached out, proceed to Step 2.**
-3. If the property is \*\*vacant \*\*and the \*\*owner \*\*reached out, proceed to **Step 3.**
-4. If there is a \*\*listed \*\*resident on the property, follow the process outlined **below**.
-5. **If the issue is deemed a property-damaging or extreme habitability concern:**
-6. Escalate to Support Specialists via the `#ops_assistance_hub` channel.
-7. Clearly specify the owner/resident’s concern. (disabled property)
-8. Indicate the reason the issue was categorized as property-damaging or extreme habitability.
-9. Support Specialists will escalate the concern through the `latchel-nomad` (NOMAD channel) to facilitate prompt coordination and prevent delays.
-10. Operations Support must first validate with NOMAD to confirm whether the property should be enabled or reactivated.
-11. If NOMAD confirms via channel, SMS, webchat, or phone call that the property should be enabled. Support Specialists may proceed with reactivation.
-12. Once NOMAD provides confirmation:
-13. If approved, **Support may proceed with enabling/reactivating the resident or property.**
-14. The Ops Associate will then create the work order and proceed with handling it accordingly.
-15. If NOMAD confirms that the property should **remain disabled**:
-16. Do not proceed with reactivation or work order creation.
-17. Inform the owner
-18. _Hello \[Owner’s name\]! After coordinating with the appropriate team, we’ve confirmed that the account remains inactive at this time. We kindly recommend reaching out to NOMAD directly to verify your account status and discuss next steps._ _If you have any additional questions, please feel free to text us at 206-717-8374._ _Thank you, and we hope you have a great day._
-19. If there is an existing work order, place the work order on “waiting for PM,  following [https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165](https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165)
-20. **If the issue is NOT property-damaging or an extreme habitability concern**
-21. Ops submits a **Product Support (PS) ticket** to relay the caller’s concern (disabled property) and validate with NOMAD whether:
-22. The account/property is in good standing, and 
-23. Latchel may proceed with reactivation.
-24. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
-25. The Product Support team then takes action by:
-26. Submit a support request to NOMAD via email, outlining the owner/resident’s report.
-27. NOMAD then:
-28. Takes action after communication with the Product Support team:
-29. Connect with the property owner to confirm the issue and inform them about their account status with NOMAD.
-30. Based on the conversation with the owner, NOMAD takes one of the following actions:
-31. Confirm approval to reactivate the property and proceed with work order creation.
-32. Alternatively, confirm whether the property should remain disabled.
-33. **If the issue is non-emergency:**
-34. OPS Escalate to Product Support team. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
-35. Product Support team will take it from here and perform the steps in Step ii.2.a.
-36. NOMAD takes action depending on their conversation with the owner.
-37. Resident reached out, not listed\*\* (property is vacant). \*\*
-38. Call the owner to relay the tenant’s concern, the property status, and the issue reported.
-39. If the Owner is Unresponsive
-40. Send an SMS or email using the following script:
-41. _Hello \[Owner’s name\]! We are reaching out regarding a potential resident who contacted us about a disabled property at (Address), reporting (Issue). Since the property is currently vacant, maintenance requests must be handled independently outside of Latchel. We apologize for any inconvenience and appreciate your understanding. For further details, please reach out to NOMAD directly.”_
-42. If the Owner Responds
-43. Confirm the tenant’s move-in date for documentation and escalation purposes
-44. Redirect the owner to NOMAD with the suggested script:
-45. _“Hello (Owner), thank you for confirming. Since the property is currently vacant, maintenance requests must be handled independently outside of Latchel. We apologize for any inconvenience and appreciate your understanding. For further details, please reach out to NOMAD directly.”_
-46. Submit a **PS Ticket**
-47. Submit a Product Support ticket. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
-48. The PS team will email NOMAD at `support@nomadlease.com,` so a NOMAD team member will follow up if the owner has not already reached out.
-49. The owner reached out, and the property is **vacant.**
-50.  Verify that the property is **vacant/not currently tenanted.**
-51. Point the owner back to NOMAD with the suggested script:
-52. _“Hello (Owner), thank you for confirming. Since the property is currently vacant, maintenance requests must be handled independently outside of Latchel. We apologize for any inconvenience and appreciate your understanding. For further details, please reach out to NOMAD directly.”_
-53. Submit a **PS Ticket**
-54. Submit a Product Support ticket. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
-55. The **PS team will email NOMAD** at `support@nomadlease.com,` so a NOMAD team member will follow up if the owner has not already reached out.
+1. Determine the Property Status (Vacant/ Occupied)
+   1. If the property is **vacant** and the **resident reached out, proceed to Step 2.**
+   2. If the property is **vacant** and the owner reached out, proceed to **Step 3.**
+   3. If there is a listed resident on the property, follow the process outlined **below**.
+      1. **If the issue is deemed a property-damaging or extreme habitability concern:**
+         1. Escalate to Support Specialists via the `#ops_assistance_hub` channel.
+            1. Clearly specify the owner/resident’s concern. (disabled property)
+            2. Indicate the reason the issue was categorized as property-damaging or extreme habitability.
+         2. Support Specialists will escalate the concern through the `latchel-nomad` (NOMAD channel) to facilitate prompt coordination and prevent delays.
+            1. Operations Support must first validate with NOMAD to confirm whether the property should be enabled or reactivated.
+            2. If NOMAD confirms via channel, SMS, webchat, or phone call that the property should be enabled. Support Specialists may proceed with reactivation.
+         3. Once NOMAD provides confirmation:
+            1. If approved, **Support may proceed with enabling/reactivating the resident or property.**
+               1. The Ops Associate will then create the work order and proceed with handling it accordingly.
+         4. If NOMAD confirms that the property should **remain disabled**:
+            1. Do not proceed with reactivation or work order creation.
+            2. Inform the owner
+               1. _Hello [Owner’s name]! After coordinating with the appropriate team, we’ve confirmed that the account remains inactive at this time. We kindly recommend reaching out to NOMAD directly to verify your account status and discuss next steps._ _If you have any additional questions, please feel free to text us at 206-717-8374._ _Thank you, and we hope you have a great day._
+            3. If there is an existing work order, place the work order on “waiting for PM,  following [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold)
+      2. **If the issue is NOT property-damaging or an extreme habitability concern**
+         1. Ops submits a **Product Support (PS) ticket** to relay the caller’s concern (disabled property) and validate with NOMAD whether:
+            1. The account/property is in good standing, and 
+            2. Latchel may proceed with reactivation.
+            3. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
+         2. The Product Support team then takes action by:
+            1. Submit a support request to NOMAD via email, outlining the owner/resident’s report.
+         3. NOMAD then:
+            1. Takes action after communication with the Product Support team:
+            2. Connect with the property owner to confirm the issue and inform them about their account status with NOMAD.
+               1. Based on the conversation with the owner, NOMAD takes one of the following actions:
+               2. Confirm approval to reactivate the property and proceed with work order creation.
+               3. Alternatively, confirm whether the property should remain disabled.
+      3. **If the issue is non-emergency:**
+         1. OPS Escalate to Product Support team. Refer to [How to: Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
+         2. Product Support team will take it from here and perform the steps in Step ii.2.a.
+         3. NOMAD takes action depending on their conversation with the owner.
+2. Resident reached out, not listed (property is vacant). 
+   1. Call the owner to relay the tenant’s concern, the property status, and the issue reported.
+      1. If the Owner is Unresponsive
+         1. Send an SMS or email using the following script:
+            1. _Hello [Owner’s name]! We are reaching out regarding a potential resident who contacted us about a disabled property at (Address), reporting (Issue). Since the property is currently vacant, maintenance requests must be handled independently outside of Latchel. We apologize for any inconvenience and appreciate your understanding. For further details, please reach out to NOMAD directly.”_
+         2. If the Owner Responds
+            1. Confirm the tenant’s move-in date for documentation and escalation purposes
+            2. Redirect the owner to NOMAD with the suggested script:
+               1. _“Hello (Owner), thank you for confirming. Since the property is currently vacant, maintenance requests must be handled independently outside of Latchel. We apologize for any inconvenience and appreciate your understanding. For further details, please reach out to NOMAD directly.”_
+   2. Submit a **PS Ticket**
+      1. Submit a Product Support ticket. Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
+      2. The PS team will email NOMAD at `support@nomadlease.com,` so a NOMAD team member will follow up if the owner has not already reached out.
+3. The owner reached out, and the property is **vacant.**
+   1.  Verify that the property is **vacant/not currently tenanted.**
+   2. Point the owner back to NOMAD with the suggested script:
+      1. _“Hello (Owner), thank you for confirming. Since the property is currently vacant, maintenance requests must be handled independently outside of Latchel. We apologize for any inconvenience and appreciate your understanding. For further details, please reach out to NOMAD directly.”_
+   3. Submit a **PS Ticket**
+      1. Submit a Product Support ticket. Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
+   4. The **PS team will email NOMAD** at `support@nomadlease.com,` so a NOMAD team member will follow up if the owner has not already reached out.
 
 ## 📝Handling Work Orders When a Property Becomes Disabled Mid-Process
 
-There may be instances where the Ops team is actively managing a work order, and the associated property becomes disabled partway through. This raises questions about how to proceed with the task and ensure proper handling. The guidance below aims to clarify the appropriate next steps in such cases. See:  [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts)
+There may be instances where the Ops team is actively managing a work order, and the associated property becomes disabled partway through. This raises questions about how to proceed with the task and ensure proper handling. The guidance below aims to clarify the appropriate next steps in such cases. See:  [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts)
 
 <Note>
   Some properties managed by NOMAD may **no longer be active with them or may be in poor standing,** which makes verification necessary.
@@ -323,29 +329,28 @@ There may be instances where the Ops team is actively managing a work order, and
   A property may also become **disabled when no resident is listed in the system**. In such cases, associates must first **verify the property status and determine whether the property is vacant or occupied** before proceeding with any further actions.
 </Note>
 
-1. Determine the \*\*property status:  \*\*
-2. Vacant Property – \*\*Owner \*\*Reached Out
-3. Point the owner back to NOMAD.
-4. Create a PS ticket.
-5. \*\*Resident \*\*Reached out for Vacant Property
-6. Call the owner to relay the potential tenant’s concern and verify the property status.
-7. Route the owner back to NOMAD.
-8. Create a PS ticket.
-9. If the property became disabled with \*\*listed residents: \*\*
-10. **If the issue _is_ property-damaging or an extreme habitability concern:**
-11. Escalate immediately through the Ops Assistance Hub
-12. Support Specialists will validate with NOMAD before reactivation.
-13. Once NOMAD confirms, Support may proceed with enabling/reactivating the resident or property.
-14. Ops can continue with the work order handling.
-15. **If the issue is NOT property-damaging or an extreme habitability concern**
-16. Ops submits a **Product Support (PS) ticket** to relay the caller’s concern (disabled property) and the PS team to validate with NOMAD.
-17. Escalate the work order to the Operations Support Specialists to move it to **Waiting for PM**.
-18. Be sure to leave **clear and accurate notes** explaining why the status was changed.
-19. Refer to this guide:[How to Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OPS/pages/1058211367)
+1. Determine the property status: 
+   1. Vacant Property – Owner Reached Out
+      1. Point the owner back to NOMAD.
+      2. Create a PS ticket.
+   2. Resident Reached out for Vacant Property
+      1. Call the owner to relay the potential tenant’s concern and verify the property status.
+      2. Route the owner back to NOMAD.
+      3. Create a PS ticket.
+   3. If the property became disabled with \*\*listed residents: \*\*
+      1. **If the issue _is_ property-damaging or an extreme habitability concern:**
+         1. Escalate immediately through the Ops Assistance Hub
+         2. Support Specialists will validate with NOMAD before reactivation.
+         3. Once NOMAD confirms, Support may proceed with enabling/reactivating the resident or property.
+         4. Ops can continue with the work order handling.
+      2. **If the issue is NOT property-damaging or an extreme habitability concern**
+         1. Ops submits a **Product Support (PS) ticket** to relay the caller’s concern (disabled property) and the PS team to validate with NOMAD.
+         2. Escalate the work order to the Operations Support Specialists to move it to **Waiting for PM**.
+         3. Be sure to leave **clear and accurate notes** explaining why the status was changed. Refer to this guide: [How to Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes).
 
 ## Owner Requests to Add Preferred Service Providers
 
-If an owner wants to add a preferred service provider, refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-To-Add-a-New-Service-Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-To-Add-a-New-Service-Provider).
+If an owner wants to add a preferred service provider, refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-To-Add-a-New-Service-Provider).
 
 ## What if the owner who reached out is not registered in the system?
 
@@ -354,36 +359,36 @@ If an owner wants to add a preferred service provider, refer to [https://help.la
 If someone reaches out claiming to be the property owner but is not listed in the system, follow these steps:
 
 1. Collect the following information from the owner:
-2. **Full Name**
-3. **Email Address**
-4. **Phone Number**
-5. **Complete Property Address (include all if there are multiple)**
-6. **Format**: Main Address \> Unit Address \> City \> State \> Zipcode.
-7. **Active Properties**
-8. If the issue involves **property damage or extreme habitability concerns**, contact the escalation contacts immediately.
-9. Refer to the following guide: [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
-10. If the escalation contacts confirm the person is the property owner, take action on the request and proceed to proceed to the below **Step → Escalation to Operations Support Specialists**.
-11. If the issue is\*\* not property-damaging, not extreme habitability-related, or not an emergency,\*\* proceed to the below **Step → Escalation to Operations Support Specialists**.
-12. **Disabled Properties**
-13. If the issue involves **property damage or extreme habitability concerns**, call the escalation contacts immediately.
-14. Refer to the following guide: [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
-15. If the escalation contacts confirm the person is the property owner, take action on the request and proceed to the below **Step → Escalation to Operations Support Specialists**.
-16. If the escalation contacts are unresponsive, no need to take any action as long as you have left a message about the inquiry (voicemail, SMS/Webchat OR Email).
-17. If the issue is\*\* not property-damaging, not extreme habitability-related, or not an emergency,\*\*
-18. Notify Nomad’s support team directly at [**support@nomadlease.com**](mailto:support@nomadlease.com) using the template “**_(Operations) Inquiry from Unregistered Owner – Disabled Property_**”
-19. Refer to this SOP on [How to Use an email templated response/escalation](https://latchel.atlassian.net/wiki/spaces/OPS/pages/3421536275).
-20. Leave notes on the ticket as well as in the property and owner profiles, summarizing the owner’s inquiry and any actions taken in response.
-21. If NOMAD responds and provides green light:
-22. Ops should proceed to escalate to Operations Support Specialists to **enable the property**.
-23. Then proceed to the below **Step → Escalation to Operations Support Specialists** of the process.
-24. If no response is received from Nomad, **no further action is needed**.
+   1. **Full Name**
+   2. **Email Address**
+   3. **Phone Number**
+   4. **Complete Property Address (include all if there are multiple)**
+      1. **Format**: Main Address > Unit Address > City > State > Zipcode.
+2. **Active Properties**
+   1. If the issue involves **property damage or extreme habitability concerns**, contact the escalation contacts immediately.
+      1. Refer to the following guide: [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
+      2. If the escalation contacts confirm the person is the property owner, take action on the request and proceed to proceed to the below **Step → Escalation to Operations Support Specialists**.
+   2. If the issue is not property-damaging, not extreme habitability-related, or not an emergency, proceed to the below **Step → Escalation to Operations Support Specialists**.
+3. **Disabled Properties**
+   1. If the issue involves **property damage or extreme habitability concerns**, call the escalation contacts immediately.
+      1. Refer to the following guide: [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
+      2. If the escalation contacts confirm the person is the property owner, take action on the request and proceed to the below **Step → Escalation to Operations Support Specialists**.
+      3. If the escalation contacts are unresponsive, no need to take any action as long as you have left a message about the inquiry (voicemail, SMS/Webchat OR Email).
+   2. If the issue is not property-damaging, not extreme habitability-related, or not an emergency,
+      1. Notify Nomad’s support team directly at [**support@nomadlease.com**](mailto:support@nomadlease.com) using the template “**_(Operations) Inquiry from Unregistered Owner – Disabled Property_**”
+         1. Refer to this SOP on [How to Use an email templated response/escalation](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Respond-to-Assembly-Tickets-and-Forward-Requests#how-to-respond-to-assembly-tickets-and-forward-requests).
+         2. Leave notes on the ticket as well as in the property and owner profiles, summarizing the owner’s inquiry and any actions taken in response.
+      2. If NOMAD responds and provides green light:
+         1. Ops should proceed to escalate to Operations Support Specialists to **enable the property**.
+         2. Then proceed to the below **Step → Escalation to Operations Support Specialists** of the process.
+      3. If no response is received from Nomad, **no further action is needed**.
 
 👥**Escalation to Operations Support Specialists**
 
-1. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams)
+1. Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams)
 2. Operations Support Specialists will:
-3. Instruct the associate to move the work order to a _Pending_ status and create a task for the Support Team to monitor for updates.
-4. Submit the information to Data Support using the **“Nomad Owner Request”** workflow in the **#ops\_info\_center** channel
+   1. Instruct the associate to move the work order to a _Pending_ status and create a task for the Support Team to monitor for updates.
+   2. Submit the information to Data Support using the **“Nomad Owner Request”** workflow in the **#ops_info_center** channel
 
 <Frame>
   ![image-20250415-194719.png](/images/SVC-886.png)
@@ -395,8 +400,8 @@ If someone reaches out claiming to be the property owner but is not listed in th
   ![image-20250415-194808.png](/images/SVC-887.png)
 </Frame>
 
-3. Monitor \*\*\*#ops\_info\_center \*\*\*slack channel for responses from the Data Support team
-4. \*\*Note: \*\*If you are an email associate and you see an email like below, notify the support team by posting it on the \*\*\*#ops\_info\_center \*\*\*channel
+3. Monitor #ops_info_center slack channel for responses from the Data Support team
+   1. Note: If you are an email associate and you see an email like below, notify the support team by posting it on the #ops_info_center channel
 5. Once a response is received from Data Support, Operations Support Specialists will take the appropriate actions to advance the work order.
 
 **Rentredi**
@@ -410,7 +415,7 @@ _"Thanks for reaching out. We're only able to assist the registered property own
 ### What if the owner who reached out in the system but is disabled?
 
 - Escalate to Product Support team.
-  - Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
+  - Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
 
 ## Product Support Responsibility
 
