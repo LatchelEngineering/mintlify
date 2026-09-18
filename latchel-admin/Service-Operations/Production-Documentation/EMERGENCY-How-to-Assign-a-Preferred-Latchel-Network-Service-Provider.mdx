@@ -1,6 +1,7 @@
 ---
 title: "(EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider"
-groups: ["latchel"]
+groups:
+  - "latchel"
 ---
 
 ## 🧠 What This Process Is Trying to Solve
@@ -69,21 +70,16 @@ groups: ["latchel"]
    6. Do not move on to the next Service Provider or escalate as unreachable until all numbers have been fully exhausted.
    7. This applies to all Service Provider types, including Preferred, LCN, and Sourced SPs, across all steps of this SOP.
 3. If the Service Provider ✅ picks up and gives verbal confirmation of the job, follow the instructions on the screen. Say,
-   1. <Check>
-        Hi my name is **_(agent name here)_**
-        I am calling (if LCN/LVN: a **Maintenance Coordinator**] on behalf of (resident's property management company) <br />We have a resident in **_(resident's city)_** that has a (job category/trade category)
-        We have attempted to get resident to do **_(describe troubleshooting steps)_** to attempt to de-escalate situation. They have not solved the problem.
-        Please have a technician contact us at (phone number)  if someone can go out for the job. _The Work Order number is_ (work order number here).
-        **Note:** When handling an emergency service call, find the appropriate callback number within this document: [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules)
-      </Check>
+   1. _"Thanks for taking this emergency work order. Just to confirm, you'll be heading out on [DAY] at [TIME], correct?_
+      _I also want to let you know upfront — emergency rates apply as long as the appointment is completed within 24 hours. If for any reason the appointment gets rescheduled or moved outside that 24-hour window, standard rates will apply instead. However, if you believe you can complete the work sooner and still within the 24-hour window, please make sure you record the change in Latchel. Once the work is completed, please reach out to advise us that the work is completed and have a timestamped photo of the completed work ready as proof. Our team will then manually apply the emergency rate from there._
+      _I have assigned the work order to you. In the event the scheduled appointment is missed, only one attempt to contact you will be made before reassigning to a different service provider._
+      _Thank you!"_
 4. If the Service Provider❌ does not pick up on the third call, leave a message. In the voicemail you can say,
-   1. <Check>
-        Hi my name is **_(agent name here)_**
-        _I am calling_ [if LCN/LVN: a **Maintenance Coordinator**] on behalf of **_(resident's property management company) _**<br />We have a resident in **_(resident's city)_** that has a **_(job category/trade category) _**
-        We have attempted to get resident to do **_(describe troubleshooting steps)_** to attempt to de-escalate situation. They have not solved the problem.
-        Please have a technician contact us at (phone number)  if someone can go out for the job. _The Work Order number is** (work order number here).**_
-        **Note:** When handling an emergency service call, find the appropriate callback number within this document: [Informational: Basic Service Ops Guidelines and Rules | Customer Calling to Latchel Phone Numbers](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Set-expectations-with-Service-Providers-when-dispatching)
-      </Check>
+   1. Hi my name is **_(agent name here)_**
+      _I am calling_ [if LCN/LVN: a **Maintenance Coordinator**] on behalf of **_(resident's property management company) _**<br />We have a resident in **_(resident's city)_** that has a **_(job category/trade category) _**
+      We have attempted to get resident to do **_(describe troubleshooting steps)_** to attempt to de-escalate situation. They have not solved the problem.
+      Please have a technician contact us at (phone number)  if someone can go out for the job. _The Work Order number is** (work order number here).**_
+      **Note:** When handling an emergency service call, find the appropriate callback number within this [SOP](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#customer-calling-to-latchel-phone-numbers).
 5. 📞Call the 2nd, 3rd, etc. Service Provider listed 3 times each until one confirms, or you run out of contacts.
    1. If the Service Provider does not pick up on the third call, leave a message.
 6. **Additional Rule: Standardized Outreach Attempts to Preferred Service Providers:**
@@ -108,7 +104,7 @@ groups: ["latchel"]
   - When confirming the appointment, note whether the Service Provider can go **same‑day / within 24 hours** or only **later than 24 hours out**.
   - Emergency pricing and higher emergency soft budgets are intended for **same‑day or within 24 hours** appointments.
   - If the Service Provider **accepts the job but can only schedule more than 24 hours out** (for example, dispatch deferred to a later date), the visit should be treated as a **standard (non‑emergency)** appointment for pricing and soft budget, even if the work order remains emergency severity.
-  - When this occurs, follow the guidelines outlined in [**How to: Set expectations with Service Providers when dispatching**](https://latchel.atlassian.net/wiki/spaces/OPS/pages/2600337430)  to communicate clearly to the Service Provider that **non‑emergency rates and budgets apply** for that appointment time.
+  - When this occurs, follow the guidelines outlined in [**How to: Set expectations with Service Providers when dispatching**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Set-expectations-with-Service-Providers-when-dispatching#how-to-set-expectations-with-service-providers-when-dispatching)  to communicate clearly to the Service Provider that **non‑emergency rates and budgets apply** for that appointment time.
 
   If the SP insists on getting the job without an appointment, inform the SP that they can contact us back once they can confirm an appointment, but they won’t be assigned to the job until then.
 
@@ -189,19 +185,17 @@ groups: ["latchel"]
       1. After determining that the Emergency WO requires immediate dispatch, the Troubleshooter will be asked if they would like to use the auto-assign feature. **_You should check the pre-dispatch instructions before making this decision_**. The pre-dispatch instructions will be displayed at the bottom of the box. If the pre-dispatch instructions ask you to contact (or not to contact) certain SPs, you should select "No" because you'll need to manage this yourself.<br />**📝** **NOTE**: Do not trigger auto-assign queue for emergency work orders if:
          1. Pre-dispatch notes have specific instructions that require handling emergencies differently, and
          2. Contacting all eligible SPs automatically is in non-compliance with the pre-dispatch instructions.
-         3. ![Download (65)](/images/download-\(65\).png "Download (65)")
+            1. ![4e6f1d6e Ba2d 42c0 B2bb B927de404657](/images/4e6f1d6e-ba2d-42c0-b2bb-b927de404657.png "4e6f1d6e Ba2d 42c0 B2bb B927de404657")
       2. **If you select Yes:**
          1. If the auto-assign queue is selected, you will be prompted to collect the resident's availability through the console within the troubleshooting flow. The resident’s schedule can be collected in 4-hour intervals for 2 calendar days (the current day and the next day).
-            1. <Frame>
-                 ![SVC 764a](/images/SVC-764a.png "SVC 764a")
-               </Frame>
-         2. Once the troubleshooting form is submitted, the WO moves to Finding Service Provider state. The auto-assign queue will begin contacting eligible PM Preferred Service Providers and offer the work order. Please note that Preferred SPs will be contacted 1 minute apart (default) but if a PM requests to change this buffer between contacts, please submit a PS ticket with this request.
             1. <img
-                 src="/images/download-(66).png"
-                 alt="Download (66)"
-                 title="Download (66)"
-                 style={{ width:"79%" }}
+                 src="/images/bc26ceb6-fda5-4158-ad6f-4f3007af6a89.png"
+                 alt="Bc26ceb6 Fda5 4158 Ad6f 4f3007af6a89"
+                 title="Bc26ceb6 Fda5 4158 Ad6f 4f3007af6a89"
+                 style={{ width:"72%" }}
                />
+         2. Once the troubleshooting form is submitted, the WO moves to Finding Service Provider state. The auto-assign queue will begin contacting eligible PM Preferred Service Providers and offer the work order. Please note that Preferred SPs will be contacted 1 minute apart (default) but if a PM requests to change this buffer between contacts, please submit a PS ticket with this request.
+            1. ![61f8ec13 3388 46ac 8e3e 9a650b3d20fd](/images/61f8ec13-3388-46ac-8e3e-9a650b3d20fd.png "61f8ec13 3388 46ac 8e3e 9a650b3d20fd")
          3. While Auto Assign is running, proceed to dispatch.
             1. Refer to Step 2 - **Manual Dispatching of Service Providers**.
             2. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/FAQ-Service-Provider-Auto-Assign-for-Emergency-Work-Orders#faq-service-provider-auto-assign-for-emergency-work-orders) for information on how to handle situations where a service provider accepts via auto-assign while you are offering a job to another service provider.
@@ -214,39 +208,33 @@ groups: ["latchel"]
          1. The associate is unable to finish the full task and needs to endorse the remainder to another team member.
 2. **Manual Dispatching of Service Providers.**
    1. **🔔Reminder:** You do not need to contact service providers and may skip them if they are marked as **“outside of territory”** in the system.
-      1. <img
-           src="/images/download-(67).png"
-           alt="Download (67)"
-           title="Download (67)"
-           style={{ width:"61%" }}
-         />
+      1. ![F3839f29 B5f6 49e2 997d 4a63bdcd3012](/images/f3839f29-b5f6-49e2-997d-4a63bdcd3012.png "F3839f29 B5f6 49e2 997d 4a63bdcd3012")
    2. In the "Finding Vendor" window, you will see the skills that were selected for this work order. 
    3. Each work order relies on the skill type to determine the appropriate Service Providers. Skills are defined as the work that needs to be done to resolve an issue. 
    4. Work orders created by the call center team may come with the skills pre-selected. If it does not this will be required to be able to provide the list of Service Providers available. You may also change this skill if appropriate, but please make a note on the work order why you have made this decision.
-   5. <img
-        src="/images/download-(68).png"
-        alt="Download (68)"
-        title="Download (68)"
-        style={{ width:"75%" }}
-      />
+      1. <img
+           src="/images/bdb80774-dd01-4126-a306-896be4255ebc.png"
+           alt="Bdb80774 Dd01 4126 A306 896be4255ebc"
+           title="Bdb80774 Dd01 4126 A306 896be4255ebc"
+           style={{ width:"61%" }}
+         />
 3. If there is a Preferred Service Provider that qualifies for the job type, review notes in the work order to see if this provider has already been assigned to this job previously
    1. **‼️IMPORTANT**: If the Service Provider is already assigned for this property with another work order, a label that states: "This service provider has an active job at this property" will appear the Service Provider name.
-      1. ![3b6e805a 264a 4f4f Ab1d C9a0accb9e74](/images/3b6e805a-264a-4f4f-ab1d-c9a0accb9e74.png "3b6e805a 264a 4f4f Ab1d C9a0accb9e74")
-         1. Select that Service Provider for the additional Work Order; the goal is to make the customers' experience for maintenance repairs more effective!
+      1. ![F0a29a12 0e26 4153 9630 546d88e582ff (1)](/images/f0a29a12-0e26-4153-9630-546d88e582ff-\(1\).png "F0a29a12 0e26 4153 9630 546d88e582ff (1)")
    2. Once the SP has been assigned to the WO you will be presented with a new screen to confirm the selection:
       1. <img
-           src="/images/download-(69).png"
-           alt="Download (69)"
-           title="Download (69)"
-           style={{ width:"79%" }}
+           src="/images/b1bf2f24-2226-4af6-b97d-2ae02fb8bf5e.png"
+           alt="B1bf2f24 2226 4af6 B97d 2ae02fb8bf5e"
+           title="B1bf2f24 2226 4af6 B97d 2ae02fb8bf5e"
+           style={{ width:"66%" }}
          />
-      2. Note: You will be able to change the User assigned to the WO from that Service Provider company and the system will always default to the primary user. There’s no need to change this.
+         1. Note: You will be able to change the User assigned to the WO from that Service Provider company and the system will always default to the primary user. There’s no need to change this.
    3. **If the agent ❌cannot schedule the appointment with a Preferred Service Provider _after completing all steps outlined in the Standardized Outreach Attempts to Preferred Service Providers_, and there are no service providers left to call, review whether the Property Manager is opted in or opted out of the Latchel Service Providers Network.**
       1. <img
-           src="/images/download-(70).png"
-           alt="Download (70)"
-           title="Download (70)"
-           style={{ width:"67%" }}
+           src="/images/49d23e89-e237-4547-83f4-fd371122f073.png"
+           alt="49d23e89 E237 4547 83f4 Fd371122f073"
+           title="49d23e89 E237 4547 83f4 Fd371122f073"
+           style={{ width:"71%" }}
          />
    4. **"Opt-in" to the Latchel Service Provider Network**
       1. If the PM has opted into the Latchel Service Provider Network, we will start assigning Latchel Service Provider Network Service Providers 
@@ -255,25 +243,25 @@ groups: ["latchel"]
       1. If the PM hasn’t opted into the Latchel Service Provider Network, we will Forward the Work Order to the Property Manager.
       2. Click **"Escalate to Property Manager"**
          1. <img
-              src="/images/download-(71).png"
-              alt="Download (71)"
-              title="Download (71)"
-              style={{ width:"88%" }}
+              src="/images/43cb7175-818a-40d9-a4a9-67a2adef4b94.png"
+              alt="43cb7175 818a 40d9 A4a9 67a2adef4b94"
+              title="43cb7175 818a 40d9 A4a9 67a2adef4b94"
+              style={{ width:"81%" }}
             />
-      3. The tool will guide you to select if the issue is property damaging or extreme habitability. Refer to [↔ Job Aid: Defining Property Damage and Extreme Habitability](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations) for details.
-         1. <img
-              src="/images/download-(72).png"
-              alt="Download (72)"
-              title="Download (72)"
-              style={{ width:"72%" }}
-            />
-         2. If the issue is property damaging or extreme habitability, you will be guided to contact the property manager's escalation contacts.
-            1. The "**Who Ya Gonna Call**" tool **auto-populates** at this step since it's part of the guided TS/dispatch flow. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts) for more details.
-            2. If there is no contact information or you were not able to reach out to the contact person, click on "Could not reach escalation contacts". If you are able to talk to the escalation contact, click on "Successful Contact" 
-         3. Is the issue is not property or extreme habitability, you will be guided to fill out a form to notify the property manager of the situation.
-            1. The Work Order status will be updated by the system.
-            2. The next screen will prompt you to add notes following this SOP: [How to: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes); Forward the work order to the Property Manager or escalation contact.
-            3. If the PM responds requesting to enable LCN/LVN, proceed with guidelines outlined in [this SOP.](https://help.latchel.com/latchel-admin/Product-Support-Team/product-support-team-vs-ops-agent#product-support-team-vs-ops-agents)
+         2. The tool will guide you to select if the issue is property damaging or extreme habitability. Refer to [Job Aid: Defining Property Damage and Extreme Habitability](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations) for details.
+            1. <img
+                 src="/images/7a74137b-7bac-4b31-baf5-62e5baf6ecbe.png"
+                 alt="7a74137b 7bac 4b31 Baf5 62e5baf6ecbe"
+                 title="7a74137b 7bac 4b31 Baf5 62e5baf6ecbe"
+                 style={{ width:"78%" }}
+               />
+            2. If the issue is property damaging or extreme habitability, you will be guided to contact the property manager's escalation contacts.
+               1. The "**Who Ya Gonna Call**" tool **auto-populates** at this step since it's part of the guided TS/dispatch flow. Associates should review the AI recommendation first, while also verifying the information against the original escalation instructions displayed below. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts) for more details.
+               2. If there is no contact information or you were not able to reach out to the contact person, click on "Could not reach escalation contacts". If you are able to talk to the escalation contact, click on "Successful Contact" 
+               3. Is the issue is not property or extreme habitability, you will be guided to fill out a form to notify the property manager of the situation.
+                  1. The Work Order status will be updated by the system.
+                  2. The next screen will prompt you to add notes following this SOP: [How to: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes); Forward the work order to the Property Manager or escalation contact.
+                  3. If the PM responds requesting to enable LCN/LVN, proceed with guidelines outlined in [this SOP.](https://help.latchel.com/latchel-admin/Product-Support-Team/product-support-team-vs-ops-agent#product-support-team-vs-ops-agents)
 
 ###  **Step 3: Assign a Latchel Network Service Provider**
 
@@ -287,34 +275,38 @@ groups: ["latchel"]
 
 1. When the Property Manager is "Opt-in" to the Latchel Network, the option to use a Service Provider becomes available.
    1. <img
-        src="/images/download-(73).png"
-        alt="Download (73)"
-        title="Download (73)"
-        style={{ width:"54%" }}
+        src="/images/16f94877-1656-4296-adf6-5c5eade3a15c.png"
+        alt="16f94877 1656 4296 Adf6 5c5eade3a15c"
+        title="16f94877 1656 4296 Adf6 5c5eade3a15c"
+        style={{ width:"56%" }}
       />
-   2. Click **"Search for Latchel Service Provider"** to proceed to Latchel Service Providers list.
-      1. <img
-           src="/images/download-(74).png"
-           alt="Download (74)"
-           title="Download (74)"
-           style={{ width:"85%" }}
-         />
-   3. You will be directed to see a list of Latchel Service Providers located close to the property and have the skill needed to resolve this maintenance request.
-      1. <img
-           src="/images/download-(75).png"
-           alt="Download (75)"
-           title="Download (75)"
-           style={{ width:"73%" }}
-         />
+      1. Click **"Search for Latchel Service Provider"** to proceed to Latchel Service Providers list.
+         1. <img
+              src="/images/71b9829f-c9eb-49e0-a111-f1c1f8b69122.png"
+              alt="71b9829f C9eb 49e0 A111 F1c1f8b69122"
+              title="71b9829f C9eb 49e0 A111 F1c1f8b69122"
+              style={{ width:"66%" }}
+            />
+      2. You will be directed to see a list of Latchel Service Providers located close to the property and have the skill needed to resolve this maintenance request.
+         1. <img
+              src="/images/df0e842b-a31a-448b-bac2-69672f27bbd8.png"
+              alt="Df0e842b A31a 448b Bac2 69672f27bbd8"
+              title="Df0e842b A31a 448b Bac2 69672f27bbd8"
+              style={{ width:"59%" }}
+            />
 2. Before contacting the Service Providers listed:
-
    1. Note the property ZIP code.
    2. Note the trade required for the job (e.g. Plumbing, Electrical, etc.)
    3. Navigate to this page: [https://sites.google.com/latchel.com/lcn-lookup/home](https://sites.google.com/latchel.com/lcn-lookup/home)
       1. As of December 7th, this is a new tool where new Partner Service Providers can be searched for. These Service Providers take priority over “regular” Latchel Service Providers since Latchel is partnering directly with them.
       2. On this page, enter the ZIP code and click search.
-      3. ![Download (76)](/images/download-\(76\).png "Download (76)")
-      4. If there are Partner Service Providers in the area, they will appear on the page.
+         1. <img
+              src="/images/f6a31579-a370-427d-9d3f-2d22f4fd7fd2.png"
+              alt="F6a31579 A370 427d 9d3f 2d22f4fd7fd2"
+              title="F6a31579 A370 427d 9d3f 2d22f4fd7fd2"
+              style={{ width:"65%" }}
+            />
+      3. If there are Partner Service Providers in the area, they will appear on the page.
          1. Check if any of the Service Providers match the trade required for the Work Order.
             1. **‼️IMPORTANT**: As of Feb 7th, 2024, there’s only one Partner SP that supports emergency WOs, BlueChip. No other Partner Service Provider can be used for emergencies for now.
          2. If there’s a matching Service Provider, take note of the Company name.
@@ -322,20 +314,19 @@ groups: ["latchel"]
             2. Proceed to call the Service Provider to confirm an appointment.
          3. If there wasn’t a matching, continue contacting the rest of the Latchel Service Providers who show up in the Latchel system until you can get an appointment confirmed.
             1. <img
-                 src="/images/download-(77).png"
-                 alt="Download (77)"
-                 title="Download (77)"
-                 style={{ width:"58%" }}
+                 src="/images/bd2ff284-10df-4ffd-b7d4-976c96bfa7b3.png"
+                 alt="Bd2ff284 10df 4ffd B7d4 976c96bfa7b3"
+                 title="Bd2ff284 10df 4ffd B7d4 976c96bfa7b3"
+                 style={{ width:"55%" }}
                />
 3. If you cannot Assign any Latchel Network Service Provider but the PM is Opted-in to the Latchel Network, proceed to Source an external Service Provider ([Step 4](#))
-
    1. Click "Cannot Find Nearby Service Provider"
-   2. <img
-        src="/images/download-(78).png"
-        alt="Download (78)"
-        title="Download (78)"
-        style={{ width:"64%" }}
-      />
+      1. <img
+           src="/images/e013b1a8-6636-40be-a072-c3cdcd6bc4b3.png"
+           alt="E013b1a8 6636 40be A072 C3cdcd6bc4b3"
+           title="E013b1a8 6636 40be A072 C3cdcd6bc4b3"
+           style={{ width:"46%" }}
+         />
 
 <Warning>
   ### Emergency Services
@@ -355,7 +346,7 @@ groups: ["latchel"]
      1. Ask the Service Provider to take before and after pictures of the job (if applicable)
         1. Ask the Service Provider to upload through the Service Provider Interface.
         2. Alternatively, they can send the pictures to [team@latchel.com](mailto:team@latchel.com)
-  14. If the Service Provider does not pick up on the third call, leave a message. 
+  5. If the Service Provider does not pick up on the third call, leave a message. 
 
   **_Why?_** Although some Latchel Service Providers have worked with Latchel before, agents must verify that there's a way to pay the Service Provider. We pay the Service Provider through an invoice or by using a company credit card.  Contact your supervisor for more guidance and coaching on this topic.
 </Warning>
