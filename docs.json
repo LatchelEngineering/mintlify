@@ -878,11 +878,7 @@
                           "latchel-admin/Service-Operations/Announcements/Operations-Weekly-Newsletter-Process-Update-Edition-09-04-2026",
                           "latchel-admin/Service-Operations/Announcements/Operations-Weekly-Newsletter-Process-Update-Edition-09-11-2026",
                           "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-07-31-2026",
-                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-08-07-2026",
-                          "latchel-admin/Service-Operations/Production-Documentation/How-to-Set-up-Equipment-for-Shifts",
-                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist",
-                          "latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls",
-                          "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Job-Aid"
+                          "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-08-07-2026"
                         ]
                       },
                       {
@@ -983,7 +979,8 @@
                               "latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Handling-Multiple-Work-Orders-Generated-by-Harmonia-Intake",
                               "latchel-admin/Service-Operations/Production-Documentation/Service-Ops-How-to-Use-Contact-Rotations-EEC-Pre-Dispatch",
                               "latchel-admin/Service-Operations/Production-Documentation/Service-Ops-How-to-Split-Work-Orders",
-                              "latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Job-Aid-AI-Voice-for-Vendors"
+                              "latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Job-Aid-AI-Voice-for-Vendors",
+                              "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Job-Aid"
                             ]
                           },
                           {
@@ -1020,7 +1017,8 @@
                               "latchel-admin/Service-Operations/Production-Documentation/How-to-Perform-Lucia-Interaction-Audits",
                               "latchel-admin/Service-Operations/Production-Documentation/How-to-Respond-to-Inquiries-about-Merging-Work-Orders",
                               "latchel-admin/Service-Operations/Production-Documentation/Handling-Owner-WO-Submission-Requests",
-                              "latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Resident-Maintenance-Requests-via-Text-Intake"
+                              "latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Resident-Maintenance-Requests-via-Text-Intake",
+                              "latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls"
                             ]
                           },
                           {
@@ -1048,7 +1046,7 @@
                           {
                             "group": "Operations Support Specialists",
                             "pages": [
-                              "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist",
+                              "latchel-admin/Service-Operations/Announcements/Operations-Support-Specialist",
                               "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-Business-Continuity-Plan",
                               "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-Job-Aid-Work-Queues-Labor-Management",
                               "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-How-to-Handle-Need-To-Verify-Tickets-and-Voicemails",
@@ -1073,7 +1071,8 @@
                               "latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-Check-In-Policy",
                               "latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams",
                               "latchel-admin/Service-Operations/Production-Documentation/Service-Operations-Support-Specialist-Guidelines-for-Handling-Associate-Queries",
-                              "latchel-admin/Service-Operations/Production-Documentation/Ops-Support-Handling-Resident-left-comments-on-job-Tasks"
+                              "latchel-admin/Service-Operations/Production-Documentation/Ops-Support-Handling-Resident-left-comments-on-job-Tasks",
+                              "latchel-admin/Service-Operations/Announcements/Operations-Support-Specialist"
                             ]
                           },
                           {
@@ -1138,7 +1137,7 @@
                           },
                           "latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-Job-Aid-Call-SMS-and-Email-Frequently-Asked-Questions",
                           "latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls",
-                          "latchel-admin/Service-Operations/Production-Documentation/How-to-Set-up-Equipment-for-Shifts",
+                          "latchel-admin/Latchel-People-Ops/How-to-Set-up-Equipment-for-Shifts",
                           "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Job-Aid",
                           "latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Associate-Job-Aid-Associates",
                           "latchel-admin/Service-Operations/Production-Documentation/Operations-Weekly-Newsletter-Process-Update-Edition-07-31-2026",
@@ -2344,7 +2343,8 @@
                       },
                       "latchel-admin/Latchel-People-Ops/onboarding-flow-communications"
                     ]
-                  }
+                  },
+                  "latchel-admin/Latchel-People-Ops/How-to-Set-up-Equipment-for-Shifts"
                 ],
                 "icon": "people-roof",
                 "color": {
