@@ -21,20 +21,23 @@ groups: ["latchel"]
 ### 1. Task Notification
 
 - Monitor for new tasks labeled as “Intake Processing Failed”
-- Review the work order details (including what the AI actually processed – see the “intake” page for this information) and the customer’s intake rules
-  - **Emergencies**- Proceed directly to **Step 2**.
-  - **Urgent / Normal** – Verify that the **Problem** and **Location** fields are updated.
-    - **If Yes:** Proceed to **Step 3**.
-    - **If No:** Call the resident first and troubleshoot.
-      - After the call, update the **Problem** and **Location** fields.
+- **Review Complete Intake & Lucia Transcripts:**
+  - **Complete Intake Transcript** — Open the full intake conversation in the Latchel Console or Service Ops Assistant plug-in. Do not rely solely on work order details or AI summary cards. Reviewing the complete transcript ensures you see all resident statements, specific symptom descriptions, and prior troubleshooting attempts that may have been missed during the intake processing failure.
+  - **Lucia Transcript (if applicable)** — If the work order was handled or transferred by Lucia, read the full Lucia conversation to understand what questions were asked and what responses the resident provided before the system failed to process the intake.
+  - **Emergencies** - Proceed directly to **Step 2**.
+  - **Urgent / Normal** – Review the full intake details and confirm the **Work Order Title**, **Description**, and **Skill/Category** accurately match the resident’s reported issue.
+
+    - **If the details align and the next step is clear:** Proceed to **Step 3**. A troubleshooting call may be skipped when the title, description, and skill/category clearly match the reported issue.
+    - **If details are missing, unclear, or inconsistent:** Call the resident first and troubleshoot.
+      - After the call, update the **Work Order Title**, **Description**, and/or **Skill/Category** as needed.
       - Then proceed to **Step 3**.
-  - On-call Work Orders - cancel the work order and recreate the work order following the same flow the resident went through.
+  - **On-call Work Orders -** cancel the work order and recreate the work order following the same flow the resident went through.
 
 ### 2. Resident Troubleshooting Call
 
 - Call the resident as soon as possible.
 - Use the troubleshooting script or checklist provided for emergency situations.
-  - Refer to [How to: Handle Emergency Work Orders](https://latchel.atlassian.net/wiki/spaces/OPS/pages/759332893/How+to+Handle+Emergency+Work+Orders)
+  - Refer to [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders#how-to-handle-emergency-work-orders)
 
 ### 3. Determine Next Steps
 
@@ -42,15 +45,18 @@ Based on the outcome of the call, take one of the following actions:
 
 - **Dispatch a Service Provider:** If the issue is confirmed as an emergency or requires urgent attention.
 - **Forward to Property Manager:** If the situation requires PM approval or input.
-  - Refer to approved scenarios when a work order can be moved to Waiting for PM. [How to: Put a Job on Hold](https://latchel.atlassian.net/wiki/spaces/OPS/pages/766378165/How+to+Put+a+Job+on+Hold)
+  - Refer to approved scenarios when a work order can be moved to Waiting for PM. [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold)
+  - **\$1 placeholder for approval holds:** If moving a non-emergency work order out of **Intake Processing** into **Needs PM Approval** / **Needs Owner Approval** requires an amount but there is no estimate to approve, enter **\$1** as the required nominal placeholder.
+
+    - Use a clear approval note so the PM/owner understands this is not an estimate. Example: _“Approval requested to dispatch a service provider for [issue]. \$1 entered as a nominal placeholder for initial scope/dispatch authorization.”_
 - **De-escalate to Non-Emergency:** If the issue does not meet emergency criteria after troubleshooting.
 - **Other Actions:** Follow standard procedures for any other outcomes (e.g., resident unavailable, issue resolved, etc.).
-  - **Unresponsive residents -**move the work order to Pending with a task to the Property Manager
+  - Unresponsive residents - move the work order to Pending with a task to the Property Manager
 
 ### 4. Documentation
 
 - Document all actions taken in the work order notes.
-  - Refer to [How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OPS/pages/1058211367/How+to+Write+Effective+Notes)
+  - Refer to [How to: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes)
 
 ---
 
