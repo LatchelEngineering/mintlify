@@ -22,189 +22,243 @@ groups:
 
 ## 📋 Step-by-Step Process
 
-### Handling a Property Manager cancellation
+### Handling Cancellation Requests
 
-1. Upon receipt of the cancellation, the agent acknowledges the cancellation.
-   1. **_Say something like_**: “Thank you, we have received your request to cancel work order ### (subject) at (address)..."
-   2. For both Non-Emergency and Emergency work orders:
-      1. Continue to process the cancellation requested by the Property Manager.
-         1. Review the cancellation message. Which of the following types of messages did they write?
-         1. **<u>Generic cancellation.</u>** For example, "I want to cancel this Work Order".
-            1. If there is an indication that this cancellation might have any "concerning factors", ask the Property Manager for more information about why they are cancelling.
-            2. If the Work Order maintenance request "makes sense" then proceed with [Cancelling the Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#cancelling-the-work-order).
-         2. **<u>Cancellation that indicates damage to Property Manager relationship with Latchel.</u>**
-            1. Notify the Customer Success team.
-            2. Refer to [How to: Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support#how-to-escalate-to-product-support)
-      2. **<u>Mass Cancellation of Work Orders.</u>** For example, the Property Manager has unexpectedly cancelled multiple Work Orders at one time.
-         1. Notify Customer Success team. See [How to: Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support#how-to-escalate-to-product-support)
-2. Service Provider notification - Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#service-provider-notification).
+<AccordionGroup>
+  <Accordion title="Handling a Property Manager cancellation">
+    1. Upon receipt of the cancellation, the agent acknowledges the cancellation.
+       1. **_Say something like_**: “Thank you, we have received your request to cancel work order ### (subject) at (address)..."
+       2. For both Non-Emergency and Emergency work orders:
+          1. Continue to process the cancellation requested by the Property Manager.
+             1. Review the cancellation message. Which of the following types of messages did they write?
+             1. **<u>Generic cancellation.</u>** For example, "I want to cancel this Work Order".
+                1. If there is an indication that this cancellation might have any "concerning factors", ask the Property Manager for more information about why they are cancelling.
+                2. If the Work Order maintenance request "makes sense" then proceed with [Cancelling the Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#cancelling-the-work-order).
+             2. **<u>Cancellation that indicates damage to Property Manager relationship with Latchel.</u>**
+                1. Notify the Customer Success team.
+                2. Refer to [How to: Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support#how-to-escalate-to-product-support)
+          2. **<u>Mass Cancellation of Work Orders.</u>** For example, the Property Manager has unexpectedly cancelled multiple Work Orders at one time.
+             1. Notify Customer Success team. See [How to: Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support#how-to-escalate-to-product-support)
+    2. Service Provider notification - Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#service-provider-notification).
+  </Accordion>
 
-### Handling a Resident cancellation
+  <Accordion title="Handling a Resident cancellation">
+    1. Acknowledge the cancellation request:
+       1. **If received via Portal / System Task**: Do NOT call, SMS, or send an acknowledgment script when the cancellation request is clear. The resident already initiated the cancellation through their portal, and system automation will notify them once the work order status is updated.
+          1. **📝 NOTE**: If the Portal / System Task request is vague or missing key details, first review the work order notes/task comments for context and **follow the clarification guidance in Step 2** before proceeding. Once clarified, proceed directly to processing the cancellation.
+       2. **If received via Inbound Call or Live SMS chat**: Acknowledge the cancellation request directly with the resident.
+          1. **Say/Text something like**_:_ _"Thank you, we have received your request to cancel work order ### (subject) at (address). I'll go ahead and assist you with processing this cancellation."_
+    2. Double-check that "cancellation" of the Work Order is what the resident is trying for. Often residents will say "cancel" when they mean "reschedule". 
+       1. Agents also need to make notes in the work order as to why the resident canceled because the property manager expects to see this information.
+       2. If the job is a Non-Emergency 
+          1. Continue to process the Cancellation. 
+             1. Review the cancellation message. Which of the below types of messages did they write?
+                1. **<u>Generic cancellation.</u>** For example, "I want to cancel this Work Order". 
+                   1. If there is an indication that this cancellation might have any "concerning factors" (e.g., unresolved safety/habitability concerns, repeated issues, resident frustration, or fear of charges), ask the resident for more information about why they are cancelling.
+                   - If the reason for cancellation is clear and straightforward (for example, the resident confirms they fixed it themselves, submitted the request by accident, or no longer needs service), proceed with [Cancelling the Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#cancelling-the-work-order).
+       3. If the WO is an emergency:
+          1. Post the cancellation in the `ops_assistance_hub` Slack channel for the Operations Support Specialists team to review. 
+       4. Service Provider notification - Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#service-provider-notification).
 
-1. Acknowledge the cancellation request:
-   1. **If received via Portal / System Task**: Do NOT call, SMS, or send an acknowledgment script when the cancellation request is clear. The resident already initiated the cancellation through their portal, and system automation will notify them once the work order status is updated.
-      1. **📝 NOTE**: If the Portal / System Task request is vague or missing key details, first review the work order notes/task comments for context and **follow the clarification guidance in Step 2** before proceeding. Once clarified, proceed directly to processing the cancellation.
-   2. **If received via Inbound Call or Live SMS chat**: Acknowledge the cancellation request directly with the resident.
-      1. **Say/Text something like**_:_ _"Thank you, we have received your request to cancel work order ### (subject) at (address). I'll go ahead and assist you with processing this cancellation."_
-2. Double-check that "cancellation" of the Work Order is what the resident is trying for. Often residents will say "cancel" when they mean "reschedule". 
-   1. Agents also need to make notes in the work order as to why the resident canceled because the property manager expects to see this information.
-   2. If the job is a Non-Emergency 
-      1. Continue to process the Cancellation. 
-         1. Review the cancellation message. Which of the below types of messages did they write?
-            1. **<u>Generic cancellation.</u>** For example, "I want to cancel this Work Order". 
-               1. If there is an indication that this cancellation might have any "concerning factors" (e.g., unresolved safety/habitability concerns, repeated issues, resident frustration, or fear of charges), ask the resident for more information about why they are cancelling.
-               - If the reason for cancellation is clear and straightforward (for example, the resident confirms they fixed it themselves, submitted the request by accident, or no longer needs service), proceed with [Cancelling the Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#cancelling-the-work-order).
-   3. If the WO is an emergency:
-      1. Post the cancellation in the `ops_assistance_hub` Slack channel for the Operations Support Specialists team to review. 
-   4. Service Provider notification - Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#service-provider-notification).
-3. A resident may request to cancel a WO to hire their own service provider. When you received this request, follow the below steps:
-   1. **📝 NOTE:** If the resident has not requested cancellation but has _indicated they plan_ to hire their own vendor and bill the PM due to frustration with updates or timing, see **item #5** below.
-   2. _Check whether the service provider has already gone out to the property:_
-      1. **If the SP has not gone out to the property yet:** Follow the standard cancellation workflow based on the resident’s reason for cancelling. Do not move the work order to **Pending** solely for PM approval unless another escalation reason applies.
-      2. **If the SP has already gone out and the WO is Non-Emergency:** Do not cancel the work order yet. Move the work order to **Pending** to prevent the WO from continuing to move forward while waiting for PM direction, then create and assign a task to the Property Manager.
-         1. **Say/Text something like**_: “Hello [resident's name]! Thank you for reaching out. Since a service provider has already gone out to the property, we cannot cancel the work order without approval from your Property Manager. We have paused the work order and sent this to your Property Manager for review. We’ll update you once we receive their instructions.”_
-         2. Create a task for the PM and assign it to the PM user group. In the task notes, include:
-            1. _“The resident is requesting to cancel the work order because they plan to hire their own vendor. A service provider has already gone out to the property, so we moved the work order to Pending to prevent it from moving forward while awaiting your confirmation. Please advise whether we should cancel the work order or proceed with the current service provider.”_
-      3. **If the SP has already gone out and the WO is an Emergency:** Do not cancel the work order yet. Forward the request to the PM through the plug-in tool or escalate to Operations Support Specialists to move the work order to **Waiting for PM**, following the applicable emergency workflow. Document that the resident is requesting cancellation to hire their own vendor and that an SP has already gone out to the property.
-   3. _If the service provider has not been out yet or no SP has been assigned:_
-      1. _Blurb: “Hello [**resident's name**]! Thank you for reaching out. You can cancel this work order directly through your resident dashboard. Please include a note indicating you plan to hire your own vendor. Here's a guide that walks you through the process: [<u>https://help.latchel.com/s/topic/0TO5e000000h9wrGAA/Cancelling-A-Work-Order-Resident</u>](https://help.latchel.com/s/topic/0TO5e000000h9wrGAA/Cancelling-A-Work-Order-Resident). If you have any questions or need further assistance, please don't hesitate to contact us. Thank you!”_
-      2. If the resident refuses to cancel on their end or asks you to do it for them, you may proceed with assisting them.
-         - Refer to the guidelines in [Cancelling the Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#cancelling-the-work-order).
-4. A resident may request to cancel the service if the job is no longer needed and they have resolved the issue themselves.
-   1. Update the work order status to **“Cancelled.”** Include detailed notes explaining why the work order was moved to Cancelled status, including confirmation from the resident.
-   2. Notify the assigned service provider only if there is one on the work order and manual outreach is still needed after checking the notification log:
-      1. **If there is no assigned service provider:** No service provider notification is needed. Ensure internal notes explain that the resident self-resolved the issue and no SP was assigned. Do not create a PM task unless an automated PM notification failed to send or PM action is required.
-      2. **If there is an assigned service provider:** After updating the work order status to **“Cancelled,”** confirm whether an automated cancellation notification was sent to the service provider. Automated cancellation notifications may be sent by SMS and/or email, depending on what contact methods are available and enabled.
-         1. **If the notification log shows a cancellation notification was sent through SMS or email:** Do NOT call, SMS, or email the service provider manually. Leave as is and document that the service provider was notified by automation.
-         2. **If SMS and email are both disabled/unavailable AND no cancellation notification shows as sent:** Manually notify the service provider using the preferred communication method. Call the service provider to let them know the job was canceled and they no longer need to go out. Also confirm whether they intend to bill for any cancellation or dispatch fees.
-            1. **Say/Email something like**_: “Hi (Service Provider). We would like to inform you that this job has been canceled, as the resident confirmed the issue has been resolved. Please disregard any work related to this order. If your team will be billing for cancellation or dispatch fees, kindly send the invoice to **[<u>team@latchel.com</u>](mailto:team@latchel.com)**.”_
-5. A resident states they plan to hire their own service provider and bill the PM if they don't receive an update by a specific time.
-   1. The resident may give a specific timeframe (e.g., "if I don't hear back by 5 PM") or may state they want to hire someone right away. In either case, this is different from a cancellation request — the resident has not asked to cancel the WO. They are expressing frustration with the pace of updates or service.
-      1. **Acknowledge the resident's frustration and provide an immediate update on the WO status.**
-         1. Review the WO for the latest activity (SP scheduling status, pending estimates, etc.) before responding.
-            1. 💬 **Say something like:** _"Hi [resident's name]! Thank you for reaching out, and I completely understand your frustration. Let me look into the current status of your work order right away."_
-         2. After reviewing, provide a specific update (e.g., SP is scheduled for X date, we're waiting on an estimate, etc.). Avoid vague responses like "someone will be in touch."
-            1. **Do NOT agree to or validate the resident hiring their own vendor and billing the PM.**
-            2. We cannot authorize a resident to hire their own vendor and send the bill to the PM. That decision is up to the PM.
-               1. 💬 **Say something like:** _"I understand your concern, and I want to make sure this gets resolved as quickly as possible. Unfortunately, we're unable to authorize hiring an outside vendor and billing your Property Manager on your behalf — that would need to come directly from them. However, let me make sure we're doing everything we can on our end to move this forward."_
-            3. **If the resident still wishes to proceed with hiring their own vendor**, inform them that the PM may not reimburse them, and that they would need to cancel their current work order request first before making their own arrangements.
-               1. 💬 **Say something like:** _"If you'd still like to go ahead and hire your own vendor, please be aware that your Property Manager may not reimburse you for those costs since it was not authorized through them. If you'd like to proceed, you would need to cancel your current work order request first. You can do that through your resident dashboard, or I can note your cancellation request here. Would you like to move forward with cancelling?"_
-               2. If the resident confirms they want to cancel, follow the standard cancellation process outlined in **item #3** above (resident wants to cancel to hire their own SP).
-         3. **Take action to move the WO forward.**
-            1. **If the Service Provider is Latchel-dispatched and unresponsive:** Follow standard follow-up procedures in [SOP: Work Order Follow-ups and Updates](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates#sop-work-order-follow-ups-and-updates).
-            2. **If the Service Provider is Locked In / PM-assigned and unresponsive:** Follow this [guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Guidelines-in-Determining-Active-PM-Management-on-a-Work-Order#service-ops-guidelines-in-determining-active-pm-management-on-a-work-order).
-            3. **For Non-PD/EH issues:** Click **Forward to PM** in the plugin tool, or escalate to Operations Support Specialists to move the work order to **Waiting for PM**.
-         4. **Check for existing PM tasks before creating a new one.**
-            1. If an active PM task already exists regarding the resident's intent/frustration, **do not create a duplicate PM task**. Add an internal note/update to the existing work order history.
-            2. If no PM task has been created yet, create an awareness task for the Property Manager with the following details:
-               - **Subject:** `Urgent: Resident Dissatisfaction — Intent to Hire Own Vendor`
-               - **Who is this task about?** `PM`
-               - **Task priority:** `High`
-               - **User group:** Choose the user group with `PM` in the title
-               - **Assign to a User:** _[Leave blank]_
-               - **When should this cancel?** `Cancel on any state change`
-               - **Description:** _"Hi, the resident has expressed frustration with the timeline of their work order and has indicated they plan to hire their own vendor and send you the bill. [If the resident gave a specific timeframe, include it here, e.g., 'They stated they would do so if they don't receive an update by 5 PM today.'] We have provided the resident with a status update and informed them that hiring their own vendor and billing the PM requires your direct authorization. Please advise how you'd like to proceed. Current WO status: [insert status]. Thank you."_
+    <AccordionGroup>
+      <Accordion title="A resident may request to cancel a WO to hire their own service provider. When you received this request, follow the below steps:">
+        1. **📝 NOTE:** If the resident has not requested cancellation but has _indicated they plan_ to hire their own vendor and bill the PM due to frustration with updates or timing, see **item #5** below.
+        2. _Check whether the service provider has already gone out to the property:_
+           1. **If the SP has not gone out to the property yet:** Follow the standard cancellation workflow based on the resident’s reason for cancelling. Do not move the work order to **Pending** solely for PM approval unless another escalation reason applies.
+           2. **If the SP has already gone out and the WO is Non-Emergency:** Do not cancel the work order yet. Move the work order to **Pending** to prevent the WO from continuing to move forward while waiting for PM direction, then create and assign a task to the Property Manager.
+              1. **Say/Text something like**_: “Hello [resident's name]! Thank you for reaching out. Since a service provider has already gone out to the property, we cannot cancel the work order without approval from your Property Manager. We have paused the work order and sent this to your Property Manager for review. We’ll update you once we receive their instructions.”_
+              2. Create a task for the PM and assign it to the PM user group. In the task notes, include:
+                 1. _“The resident is requesting to cancel the work order because they plan to hire their own vendor. A service provider has already gone out to the property, so we moved the work order to Pending to prevent it from moving forward while awaiting your confirmation. Please advise whether we should cancel the work order or proceed with the current service provider.”_
+           3. **If the SP has already gone out and the WO is an Emergency:** Do not cancel the work order yet. Forward the request to the PM through the plug-in tool or escalate to Operations Support Specialists to move the work order to **Waiting for PM**, following the applicable emergency workflow. Document that the resident is requesting cancellation to hire their own vendor and that an SP has already gone out to the property.
+        3. _If the service provider has not been out yet or no SP has been assigned:_
+           1. _Blurb: “Hello [**resident's name**]! Thank you for reaching out. You can cancel this work order directly through your resident dashboard. Please include a note indicating you plan to hire your own vendor. Here's a guide that walks you through the process: [<u>https://help.latchel.com/s/topic/0TO5e000000h9wrGAA/Cancelling-A-Work-Order-Resident</u>](https://help.latchel.com/s/topic/0TO5e000000h9wrGAA/Cancelling-A-Work-Order-Resident). If you have any questions or need further assistance, please don't hesitate to contact us. Thank you!”_
+           2. If the resident refuses to cancel on their end or asks you to do it for them, you may proceed with assisting them.
+              - Refer to the guidelines in [Cancelling the Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#cancelling-the-work-order).
+      </Accordion>
 
-### Handling a Service Provider cancellation
+      <Accordion title="A resident may request to cancel the service if the job is no longer needed and they have resolved the issue themselves.">
+        1. Update the work order status to **“Cancelled.”** Include detailed notes explaining why the work order was moved to Cancelled status, including confirmation from the resident.
+        2. Notify the assigned service provider only if there is one on the work order and manual outreach is still needed after checking the notification log:
+           1. **If there is no assigned service provider:** No service provider notification is needed. Ensure internal notes explain that the resident self-resolved the issue and no SP was assigned. Do not create a PM task unless an automated PM notification failed to send or PM action is required.
+           2. **If there is an assigned service provider:** After updating the work order status to **“Cancelled,”** confirm whether an automated cancellation notification was sent to the service provider. Automated cancellation notifications may be sent by SMS and/or email, depending on what contact methods are available and enabled.
+              1. **If the notification log shows a cancellation notification was sent through SMS or email:** Do NOT call, SMS, or email the service provider manually. Leave as is and document that the service provider was notified by automation.
+              2. **If SMS and email are both disabled/unavailable AND no cancellation notification shows as sent:** Manually notify the service provider using the preferred communication method. Call the service provider to let them know the job was canceled and they no longer need to go out. Also confirm whether they intend to bill for any cancellation or dispatch fees.
+                 1. **Say/Email something like**_: “Hi (Service Provider). We would like to inform you that this job has been canceled, as the resident confirmed the issue has been resolved. Please disregard any work related to this order. If your team will be billing for cancellation or dispatch fees, kindly send the invoice to **[<u>team@latchel.com</u>](mailto:team@latchel.com)**.”_
+      </Accordion>
 
-1. Upon receipt of the Service Provider cancellation request, acknowledge the request based on how it was received:
-   1. **If the Service Provider contacted us directly by phone, SMS, or email:** Acknowledge the request and confirm the work order details.
-      1. **Say something like**_:_ _“Thank you, we have received your request to cancel work order ### (subject) at (address). We’ll review the request and follow the appropriate next steps.”_
-   2. **If the Service Provider submitted the cancellation through the portal and it created a task:** Work from the task, review the work order notes/details, and follow the appropriate cancellation path below. Do not send a duplicate acknowledgement unless the Service Provider also contacted us directly or a response is needed.
-2. Clarify the Intent behind the cancellation request:
-   1. Sometimes, Service Providers say “cancel the job” but actually mean: 
-      1. They want to be removed from the WO (but the job still needs to be done).
-      2. There is no longer an issue, and therefore, no further work is required.
-         1. **Say something like**_:_ _“We just wanted to clarify whether no work is needed for this work order or if you would like this reassigned to another vendor.”_
-   2. **Scenario 1**. If the service provider informs that work is no longer required because the resident canceled it directly with them, or after discussing with the resident they confirmed that the work is no longer needed
-      1. Proceed to call the resident to confirm this information.
-         1. If the resident confirms that service is no longer required, proceed to cancel the work order. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#handling-a-resident-cancellation).
-         2. If the resident indicates that the issue is not resolved and service is still needed, proceed to schedule the work with the service provider.
-         3. If the resident is unresponsive, take the next step based on whether the work order is Non-ER or ER:
-            1. **For Non-Emergency work orders:** Move the work order to **Pending** and create a task for the Property Manager using the task details below.
-               1. Subject: **Action Required: PM Instructions or Information Needed**_._
-               2. Who is this task about? _Select the PM_
-               3. Select a Date and Time: _Leave as is_
-               4. Assign to a User Group: _PM user group_
-               5. Assign to a User: _Leave as is_
-               6. Priority: _Leave as is_
-               7. _Complete task only on Completed or Cancelled job States_
-               8. Description: _We’ve created this task for the Property Manager to [insert specific information or instructions needed]. The current status of the work order is [insert status]. Kindly provide the requested information or guidance at your earliest convenience to help ensure a smooth continuation of the process. If you have any questions or need further clarification, please don’t hesitate to reach out. Thank you!_
-            2. **For Emergency work orders:** Refer to [Informational: Basic Service Ops Guidelines and Rules | ⚠️ General Rule: Recognizing and Handling a Stale Emergency](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency). Since the resident is unresponsive and the Service Provider reported that service may no longer be needed, treat this as a possible stale emergency: validate whether the issue still qualifies as an active emergency and follow the stale emergency state/update process.
-   3. **Scenario 2.**  If the Service Provider indicates they have directly discussed the work order with the Property Manager, or says they will not invoice Latchel because they were paid directly by the resident/owner or Property Manager, first determine whether any work is still pending and whether PM direction is already documented.
-      1. **If the SP confirms the work is complete and no further action is needed:** document the SP's update, then follow the appropriate cancellation/completion process based on the current work order status and available documentation.
-      2. **If there is pending work, unclear PM direction, or an ongoing discussion with the PM that is not documented:**
-         1. **For Non-Emergency work orders:** Move the work order to **Pending** and create a task for the Property Manager using the task details below.
-            1. Subject: **Action Required: PM Instructions or Information Needed**_._
-            2. Who is this task about? _Select the PM_
-            3. Select a Date and Time: _Leave as is_
-            4. Assign to a User Group: _PM user group_
-            5. Assign to a User: _Leave as is_
-            6. Priority: _Leave as is_
-            7. _Complete task only on Completed or Cancelled job States_
-            8. Description: _We’ve created this task because the Service Provider advised that they have been discussing the work order directly with you and/or that they will not invoice Latchel because payment was handled outside of Latchel. There is still pending work, unclear direction, or missing documentation on the work order. Current WO status: [insert status]. Please confirm whether Latchel should cancel the work order, leave it active, or take another action. Thank you!_
-         2. **For Emergency** **work orders:** Refer to [Informational: Basic Service Ops Guidelines and Rules | ⚠️ General Rule: Recognizing and Handling a Stale Emergency](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency). Since the SP's update may indicate the emergency is stale or no longer active, validate whether the issue still qualifies as an active emergency and follow the stale emergency state/update process.
-   4. **Scenario 3.** If the Service Provider (on site) advised that they are with the PM and the PM instructs to cancel the work order
-      1. Proceed to cancel the work order. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#handling-a-property-manager-cancellation).
-   5. **Scenario 4.** If the Service Provider requests to be removed from a Work Order:
-      1. Confirm whether the Service Provider is PM-assigned / locked in or Latchel-dispatched, and whether the work order is Non-Emergency or Emergency.
-      2. **If the Service Provider is PM-assigned / locked in:** Follow [Service Ops: Guidelines in Determining Active PM Management on a Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Guidelines-in-Determining-Active-PM-Management-on-a-Work-Order#service-ops-guidelines-in-determining-active-pm-management-on-a-work-order).
-         1. **For Non-Emergency and Non-PD/EH Emergency issues:** Click **Forward to PM** in the plugin tool, or escalate to Operations Support Specialists to move the work order to **Waiting for PM**. Document that the locked-in / PM-assigned Service Provider requested removal or is unable to proceed.
-         2. **For PD/EH (Property Damaging / Extreme Habitability) issues:** Create a task and assign it to **TS** so they can perform calls to escalation contacts if necessary. Include the work order link, the Service Provider’s removal request, the reason provided, and any urgency/safety details available.
-      3. **If the Service Provider is Latchel-dispatched / not PM-assigned:** Remove the Service Provider from the work order and follow the appropriate reassignment path.
-         1. **For Non-Emergency work orders:** Proceed with removing the Service Provider and reassigning as needed. For Autopilot WOs, allow automation to handle the next steps. Refer to [How to: Handle Autopilot WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs#how-to-handle-autopilot-wos).
-         2. **For Emergency work orders:** Proceed with the process of reassigning a Service Provider immediately. Refer to [How to: Reassign a Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Reassign-a-Service-Provider#how-to-reassign-a-service-provider).
-         3. **WOs for Rentredi/NOMAD:** Follow the appropriate critical notes before proceeding to reassign a Service Provider. Refer to [How to: Handle DIY Owner Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts#how-to-handle-diy-owner-contacts).
+      <Accordion title="A resident states they plan to hire their own service provider and bill the PM if they don't receive an update by a specific time.">
+        1. The resident may give a specific timeframe (e.g., "if I don't hear back by 5 PM") or may state they want to hire someone right away. In either case, this is different from a cancellation request — the resident has not asked to cancel the WO. They are expressing frustration with the pace of updates or service.
+           1. **Acknowledge the resident's frustration and provide an immediate update on the WO status.**
+              1. Review the WO for the latest activity (SP scheduling status, pending estimates, etc.) before responding.
+                 1. 💬 **Say something like:** _"Hi [resident's name]! Thank you for reaching out, and I completely understand your frustration. Let me look into the current status of your work order right away."_
+              2. After reviewing, provide a specific update (e.g., SP is scheduled for X date, we're waiting on an estimate, etc.). Avoid vague responses like "someone will be in touch."
+                 1. **Do NOT agree to or validate the resident hiring their own vendor and billing the PM.**
+                 2. We cannot authorize a resident to hire their own vendor and send the bill to the PM. That decision is up to the PM.
+                    1. 💬 **Say something like:** _"I understand your concern, and I want to make sure this gets resolved as quickly as possible. Unfortunately, we're unable to authorize hiring an outside vendor and billing your Property Manager on your behalf — that would need to come directly from them. However, let me make sure we're doing everything we can on our end to move this forward."_
+                 3. **If the resident still wishes to proceed with hiring their own vendor**, inform them that the PM may not reimburse them, and that they would need to cancel their current work order request first before making their own arrangements.
+                    1. 💬 **Say something like:** _"If you'd still like to go ahead and hire your own vendor, please be aware that your Property Manager may not reimburse you for those costs since it was not authorized through them. If you'd like to proceed, you would need to cancel your current work order request first. You can do that through your resident dashboard, or I can note your cancellation request here. Would you like to move forward with cancelling?"_
+                    2. If the resident confirms they want to cancel, follow the standard cancellation process outlined in **item #3** above (resident wants to cancel to hire their own SP).
+              3. **Take action to move the WO forward.**
+                 1. **If the Service Provider is Latchel-dispatched and unresponsive:** Follow standard follow-up procedures in [SOP: Work Order Follow-ups and Updates](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates#sop-work-order-follow-ups-and-updates).
+                 2. **If the Service Provider is Locked In / PM-assigned and unresponsive:** Follow this [guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Guidelines-in-Determining-Active-PM-Management-on-a-Work-Order#service-ops-guidelines-in-determining-active-pm-management-on-a-work-order).
+                 3. **For Non-PD/EH issues:** Click **Forward to PM** in the plugin tool, or escalate to Operations Support Specialists to move the work order to **Waiting for PM**.
+              4. **Check for existing PM tasks before creating a new one.**
+                 1. If an active PM task already exists regarding the resident's intent/frustration, **do not create a duplicate PM task**. Add an internal note/update to the existing work order history.
+                 2. If no PM task has been created yet, create an awareness task for the Property Manager with the following details:
+                    - **Subject:** `Urgent: Resident Dissatisfaction — Intent to Hire Own Vendor`
+                    - **Who is this task about?** `PM`
+                    - **Task priority:** `High`
+                    - **User group:** Choose the user group with `PM` in the title
+                    - **Assign to a User:** _[Leave blank]_
+                    - **When should this cancel?** `Cancel on any state change`
+                    - **Description:** _"Hi, the resident has expressed frustration with the timeline of their work order and has indicated they plan to hire their own vendor and send you the bill. [If the resident gave a specific timeframe, include it here, e.g., 'They stated they would do so if they don't receive an update by 5 PM today.'] We have provided the resident with a status update and informed them that hiring their own vendor and billing the PM requires your direct authorization. Please advise how you'd like to proceed. Current WO status: [insert status]. Thank you."_
+      </Accordion>
+    </AccordionGroup>
+  </Accordion>
 
-<Note>
-  **Reminder:** Always follow the reassignment process when a service provider has already visited the property, keeping in mind the specific guidelines for these cases.
-</Note>
+  <Accordion title="Handling a Service Provider cancellation">
+    1. Upon receipt of the Service Provider cancellation request, acknowledge the request based on how it was received:
+       1. **If the Service Provider contacted us directly by phone, SMS, or email:** Acknowledge the request and confirm the work order details.
+          1. **Say something like**_:_ _“Thank you, we have received your request to cancel work order ### (subject) at (address). We’ll review the request and follow the appropriate next steps.”_
+       2. **If the Service Provider submitted the cancellation through the portal and it created a task:** Work from the task, review the work order notes/details, and follow the appropriate cancellation path below. Do not send a duplicate acknowledgement unless the Service Provider also contacted us directly or a response is needed.
+    2. Clarify the Intent behind the cancellation request:
+       1. Sometimes, Service Providers say “cancel the job” but actually mean: 
+          1. They want to be removed from the WO (but the job still needs to be done).
+          2. There is no longer an issue, and therefore, no further work is required.
+             1. **Say something like**_:_ _“We just wanted to clarify whether no work is needed for this work order or if you would like this reassigned to another vendor.”_
+
+    <AccordionGroup>
+      <Accordion title="If the service provider informs that work is no longer required because the resident canceled it directly with them, or after discussing with the resident they confirmed that the work is no longer needed">
+        1. Proceed to call the resident to confirm this information.
+           1. If the resident confirms that service is no longer required, proceed to cancel the work order. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#handling-a-resident-cancellation).
+           2. If the resident indicates that the issue is not resolved and service is still needed, proceed to schedule the work with the service provider.
+           3. If the resident is unresponsive, take the next step based on whether the work order is Non-ER or ER:
+              1. **For Non-Emergency work orders:** Move the work order to **Pending** and create a task for the Property Manager using the task details below.
+                 1. Subject: **Action Required: PM Instructions or Information Needed**_._
+                 2. Who is this task about? _Select the PM_
+                 3. Select a Date and Time: _Leave as is_
+                 4. Assign to a User Group: _PM user group_
+                 5. Assign to a User: _Leave as is_
+                 6. Priority: _Leave as is_
+                 7. _Complete task only on Completed or Cancelled job States_
+                 8. Description: _We’ve created this task for the Property Manager to [insert specific information or instructions needed]. The current status of the work order is [insert status]. Kindly provide the requested information or guidance at your earliest convenience to help ensure a smooth continuation of the process. If you have any questions or need further clarification, please don’t hesitate to reach out. Thank you!_
+              2. **For Emergency work orders:** Refer to [Informational: Basic Service Ops Guidelines and Rules | ⚠️ General Rule: Recognizing and Handling a Stale Emergency](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency). Since the resident is unresponsive and the Service Provider reported that service may no longer be needed, treat this as a possible stale emergency: validate whether the issue still qualifies as an active emergency and follow the stale emergency state/update process.
+      </Accordion>
+
+      <Accordion title="If the Service Provider indicates they have directly discussed the work order with the Property Manager, or says they will not invoice Latchel because they were paid directly by the resident/owner or Property Manager, first determine whether any work is still pending and whether PM direction is already documented.">
+        1. **If the SP confirms the work is complete and no further action is needed:** document the SP's update, then follow the appropriate cancellation/completion process based on the current work order status and available documentation.
+        2. **If there is pending work, unclear PM direction, or an ongoing discussion with the PM that is not documented:**
+           1. **For Non-Emergency work orders:** Move the work order to **Pending** and create a task for the Property Manager using the task details below.
+              1. Subject: **Action Required: PM Instructions or Information Needed**_._
+              2. Who is this task about? _Select the PM_
+              3. Select a Date and Time: _Leave as is_
+              4. Assign to a User Group: _PM user group_
+              5. Assign to a User: _Leave as is_
+              6. Priority: _Leave as is_
+              7. _Complete task only on Completed or Cancelled job States_
+              8. Description: _We’ve created this task because the Service Provider advised that they have been discussing the work order directly with you and/or that they will not invoice Latchel because payment was handled outside of Latchel. There is still pending work, unclear direction, or missing documentation on the work order. Current WO status: [insert status]. Please confirm whether Latchel should cancel the work order, leave it active, or take another action. Thank you!_
+           2. **For Emergency** **work orders:** Refer to [Informational: Basic Service Ops Guidelines and Rules | ⚠️ General Rule: Recognizing and Handling a Stale Emergency](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency). Since the SP's update may indicate the emergency is stale or no longer active, validate whether the issue still qualifies as an active emergency and follow the stale emergency state/update process.
+      </Accordion>
+
+      <Accordion title="If the Service Provider (on site) advised that they are with the PM and the PM instructs to cancel the work order">
+        Proceed to cancel the work order. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#handling-a-property-manager-cancellation).
+      </Accordion>
+
+      <Accordion title=" If the Service Provider requests to be removed from a Work Order:">
+        1. Confirm whether the Service Provider is PM-assigned / locked in or Latchel-dispatched, and whether the work order is Non-Emergency or Emergency.
+        2. **If the Service Provider is PM-assigned / locked in:** Follow [Service Ops: Guidelines in Determining Active PM Management on a Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Guidelines-in-Determining-Active-PM-Management-on-a-Work-Order#service-ops-guidelines-in-determining-active-pm-management-on-a-work-order).
+           1. **For Non-Emergency and Non-PD/EH Emergency issues:** Click **Forward to PM** in the plugin tool, or escalate to Operations Support Specialists to move the work order to **Waiting for PM**. Document that the locked-in / PM-assigned Service Provider requested removal or is unable to proceed.
+           2. **For PD/EH (Property Damaging / Extreme Habitability) issues:** Create a task and assign it to **TS** so they can perform calls to escalation contacts if necessary. Include the work order link, the Service Provider’s removal request, the reason provided, and any urgency/safety details available.
+        3. **If the Service Provider is Latchel-dispatched / not PM-assigned:** Remove the Service Provider from the work order and follow the appropriate reassignment path.
+           1. **For Non-Emergency work orders:** Proceed with removing the Service Provider and reassigning as needed. For Autopilot WOs, allow automation to handle the next steps. Refer to [How to: Handle Autopilot WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs#how-to-handle-autopilot-wos).
+           2. **For Emergency work orders:** Proceed with the process of reassigning a Service Provider immediately. Refer to [How to: Reassign a Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Reassign-a-Service-Provider#how-to-reassign-a-service-provider).
+           3. **WOs for Rentredi/NOMAD:** Follow the appropriate critical notes before proceeding to reassign a Service Provider. Refer to [How to: Handle DIY Owner Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts#how-to-handle-diy-owner-contacts).
+      </Accordion>
+    </AccordionGroup>
+  </Accordion>
+</AccordionGroup>
 
 ### **Cancelling the Work Order**
 
-1. Cancel the Work Order
-2. Click the “Action” button
+<Expandable title="Steps">
+  1. Cancel the Work Order
+  2. Click the “Action” button
 
-<Frame>
-  <img
-    src="/images/SVC-426.png"
-    alt=""
-    style={{ width:"48%" }}
-  />
-</Frame>
+  <Frame>
+    <img
+      src="/images/SVC-426.png"
+      alt=""
+      style={{ width:"48%" }}
+    />
+  </Frame>
 
-2. Select “Cancel This Work Order”
-3. Write a simple note about WHY the job is being cancelled. (For example, "as per PM request", etc.)
+  2. Select “Cancel This Work Order”
+  3. Write a simple note about WHY the job is being cancelled. (For example, "as per PM request", etc.)
 
-<Frame>
-  <img
-    src="/images/SVC-427.png"
-    alt=""
-    style={{ width:"55%" }}
-  />
-</Frame>
+  <Frame>
+    <img
+      src="/images/SVC-427.png"
+      alt=""
+      style={{ width:"55%" }}
+    />
+  </Frame>
 
-2. [Write an Effective Note ](https://help.latchel.com/how-to-write-effective-notes)about your actions.
+  2. [Write an Effective Note ](https://help.latchel.com/how-to-write-effective-notes)about your actions.
+</Expandable>
 
 ### **Resident and Service Provider Notification**
 
-When a work order is canceled, automated notifications are typically sent to inform the resident and any assigned service provider about the cancellation. However, these notifications may not work if notification settings are disabled or contact methods are unavailable. To ensure cancellations are handled effectively and all relevant parties are properly notified, follow the guidelines below.
+<Accordion title="When a work order is canceled, automated notifications are typically sent to inform the resident and any assigned service provider about the cancellation. However, these notifications may not work if notification settings are disabled or contact methods are unavailable. To ensure cancellations are handled effectively and all relevant parties are properly notified, follow the guidelines below.">
+  <Note>
+    Automated notifications are triggered and sent immediately when a work order is moved to the "Cancelled" status. Operations associates must confirm that these notifications are sent to the relevant parties before leaving the work order, especially after taking actions like changing the work order to a different status.
 
-<Note>
-  Automated notifications are triggered and sent immediately when a work order is moved to the "Cancelled" status. Operations associates must confirm that these notifications are sent to the relevant parties before leaving the work order, especially after taking actions like changing the work order to a different status.
+    If you notice that the notifications are not being sent, please submit a bug report promptly. For detailed instructions on how to submit a bug report, refer to the guide: [How to Use the Serv Ops Intake Workflows](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows#how-to-use-the-serv-ops-intake-workflows).
+  </Note>
 
-  If you notice that the notifications are not being sent, please submit a bug report promptly. For detailed instructions on how to submit a bug report, refer to the guide: [How to Use the Serv Ops Intake Workflows](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows#how-to-use-the-serv-ops-intake-workflows).
-</Note>
+  1. **Confirm whether an automated cancellation notification was sent.** Automated cancellation notifications are sent to the resident and/or assigned Service Provider through SMS and email when available. If either SMS or email is enabled and the notification log shows a cancellation notification was sent, no manual outreach is needed.
+  2. **If a notification was sent:** Leave the work order as is and document that the resident and/or Service Provider were notified by automation.
+  3. **If SMS and email are both disabled and there is no cancellation notification showing as sent:** The associate must manually notify the affected party. For residents, contact the resident using the appropriate available method and advise that the work order has been canceled. For assigned Service Providers, call the Service Provider to let them know the job was canceled and they no longer need to go out.
+     1. **Resident notification script:** _Hi [resident's name], this is [Your Name] calling from Latchel, the maintenance intake team for [PM Company Name] regarding work order #[number] for [issue] at [property address]. This work order has been cancelled. If you have any questions or if this issue still requires attention, please reach out to us or submit a new request through your resident dashboard. Thank you!_
+     2. **Service Provider preferred call script:** _Hello, this is [Your Name] calling on behalf of [PM Company]. I’m calling to inform you that the job at [property address] for [date and time] has been cancelled. Please be advised that you no longer need to go out for this appointment. Thank you._
+     3. **Service Provider LVN/LCN call script:** _Hello, this is [Your Name], a maintenance coordinator on behalf of [PM Company]. I’m calling to inform you that the job at [property address] for [date and time] has been cancelled. Please be advised that you no longer need to go out for this appointment. Thank you._
+     4. If the service provider has a preferred communication method specified in the critical notes, use that method to notify them of the cancellation. Refer to [How to: Compose a New Email (Assembly)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Compose-a-New-Email-Assembly#how-to-compose-a-new-email-assembly).
+  4. **If either SMS or email is disabled but the notification log shows a cancellation notification was still sent through an available channel:** No manual outreach is needed. This is acceptable because the party was notified by automation.
+  5. **If you notice that expected notifications are not being sent:** Submit a bug report promptly. Refer to this [guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows#how-to-use-the-serv-ops-intake-workflows).
+</Accordion>
 
-1. **Confirm whether an automated cancellation notification was sent.** Automated cancellation notifications are sent to the resident and/or assigned Service Provider through SMS and email when available. If either SMS or email is enabled and the notification log shows a cancellation notification was sent, no manual outreach is needed.
-2. **If a notification was sent:** Leave the work order as is and document that the resident and/or Service Provider were notified by automation.
-3. **If SMS and email are both disabled and there is no cancellation notification showing as sent:** The associate must manually notify the affected party. For residents, contact the resident using the appropriate available method and advise that the work order has been canceled. For assigned Service Providers, call the Service Provider to let them know the job was canceled and they no longer need to go out.
-   1. **Resident notification script:** _Hi [resident's name], this is [Your Name] calling from Latchel, the maintenance intake team for [PM Company Name] regarding work order #[number] for [issue] at [property address]. This work order has been cancelled. If you have any questions or if this issue still requires attention, please reach out to us or submit a new request through your resident dashboard. Thank you!_
-   2. **Service Provider preferred call script:** _Hello, this is [Your Name] calling on behalf of [PM Company]. I’m calling to inform you that the job at [property address] for [date and time] has been cancelled. Please be advised that you no longer need to go out for this appointment. Thank you._
-   3. **Service Provider LVN/LCN call script:** _Hello, this is [Your Name], a maintenance coordinator on behalf of [PM Company]. I’m calling to inform you that the job at [property address] for [date and time] has been cancelled. Please be advised that you no longer need to go out for this appointment. Thank you._
-   4. If the service provider has a preferred communication method specified in the critical notes, use that method to notify them of the cancellation. Refer to [How to: Compose a New Email (Assembly)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Compose-a-New-Email-Assembly#how-to-compose-a-new-email-assembly).
-4. **If either SMS or email is disabled but the notification log shows a cancellation notification was still sent through an available channel:** No manual outreach is needed. This is acceptable because the party was notified by automation.
-5. **If you notice that expected notifications are not being sent:** Submit a bug report promptly. Refer to this [guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows#how-to-use-the-serv-ops-intake-workflows).
+### Cancellation of Test WOs
+
+<Accordion title="Test work orders are not real maintenance requests and typically need to be canceled after review.">
+  <Note>
+    **How to identify test work orders:**
+
+    - The work order description or title includes the word “test,” “sample,” “demo,” or similar language.
+    - The work order was created by a team member or system user known to run tests (e.g., Operations, Product, or QA staff).
+    - The property address or resident information is obviously fake, incomplete, or uses placeholder text (like “123 Test St” or “John Doe”).
+    - There is no real maintenance issue described, or the issue is clearly not actionable (e.g., “Testing system,” “Please ignore,” or “Sample WO”).
+    - The work order was created during a known testing window, training session, or after a system update.
+    - The work order has not been assigned to a real service provider or has no follow-up activity typical of real requests.
+  </Note>
+
+  Occasionally, you may encounter a work order that appears to be a test (not a real maintenance request). To ensure these are handled consistently and do not disrupt reporting or workflows, follow these steps:
+
+  1. If you believe a work order is a test, escalate the case in the `ops_info_center` Slack channel.
+     1. Include the work order link and a brief note explaining why you believe it is a test.
+  2. Operations Support Specialists will post about the test work order in the #aks-answer Slack channel.
+     1. They may tag the person who created the test work order for confirmation.
+  3. In the same post, Operations Support Specialists can ask the creator if the test work order can be canceled.
+     1. If the creator confirms, proceed to cancel the work order. (Canceling the work order will also complete all associated tasks.)
+        1. If this does not happen, manually cancel all open tasks.
+     2. If there is no response for a while:
+        1. Check whether the person you tagged is still online in Slack.
+           1. **If they are online:** Expect a response from them by the end of the day. Wait until then before proceeding with cancellation. (Support can handle the cancellation if the associate who posted the test work order is already out.)
+           2. **If they are offline:** Proceed with instructing the associate to cancel the work order, following step 3.
+           3. Comment in the thread that you have cancelled the work order already since no response is received.
+  4. Clearly note in the work order and in Slack that the cancellation was due to the work order being a test.
+     1. This ensures transparency and prevents confusion in future audits or reporting.
+
+  **Note:** Do not cancel suspected test work orders on your own authority. Always escalate for review and confirmation before taking action.
+</Accordion>
 
 ## **❓Frequently Asked Questions:**
 
@@ -228,40 +282,6 @@ When a work order is canceled, automated notifications are typically sent to inf
      - **If no Service Provider was assigned (_Finding SP_):** No manual SP outreach is needed.
      - **If a Service Provider was assigned:** Verify automated cancellation delivery in the notification log, referencing this [guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#service-provider-notification).
 </Accordion>
-
-### Cancellation of Test WOs
-
-Test work orders are not real maintenance requests and typically need to be canceled after review.
-
-<Note>
-  **How to identify test work orders:**
-
-  - The work order description or title includes the word “test,” “sample,” “demo,” or similar language.
-  - The work order was created by a team member or system user known to run tests (e.g., Operations, Product, or QA staff).
-  - The property address or resident information is obviously fake, incomplete, or uses placeholder text (like “123 Test St” or “John Doe”).
-  - There is no real maintenance issue described, or the issue is clearly not actionable (e.g., “Testing system,” “Please ignore,” or “Sample WO”).
-  - The work order was created during a known testing window, training session, or after a system update.
-  - The work order has not been assigned to a real service provider or has no follow-up activity typical of real requests.
-</Note>
-
-Occasionally, you may encounter a work order that appears to be a test (not a real maintenance request). To ensure these are handled consistently and do not disrupt reporting or workflows, follow these steps:
-
-1. If you believe a work order is a test, escalate the case in the `ops_info_center` Slack channel.
-   1. Include the work order link and a brief note explaining why you believe it is a test.
-2. Operations Support Specialists will post about the test work order in the #aks-answer Slack channel.
-   1. They may tag the person who created the test work order for confirmation.
-3. In the same post, Operations Support Specialists can ask the creator if the test work order can be canceled.
-   1. If the creator confirms, proceed to cancel the work order. (Canceling the work order will also complete all associated tasks.)
-      1. If this does not happen, manually cancel all open tasks.
-   2. If there is no response for a while:
-      1. Check whether the person you tagged is still online in Slack.
-         1. **If they are online:** Expect a response from them by the end of the day. Wait until then before proceeding with cancellation. (Support can handle the cancellation if the associate who posted the test work order is already out.)
-         2. **If they are offline:** Proceed with instructing the associate to cancel the work order, following step 3.
-         3. Comment in the thread that you have cancelled the work order already since no response is received.
-4. Clearly note in the work order and in Slack that the cancellation was due to the work order being a test.
-   1. This ensures transparency and prevents confusion in future audits or reporting.
-
-**Note:** Do not cancel suspected test work orders on your own authority. Always escalate for review and confirmation before taking action.
 
 ## 🎯 When to Break This SOP
 
