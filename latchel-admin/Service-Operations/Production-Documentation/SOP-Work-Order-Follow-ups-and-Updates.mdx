@@ -10,37 +10,39 @@ groups: ["latchel"]
 </Note>
 
 <Warning>
-  **📝** **NOTE:** Any follow-up that requires a call should be handled by associates outside the Call Center. Call Center associates cannot log out to make outbound calls, so they should create a task for another Ops associate to take action (Operations Associate Group).
+  <Accordion title="‼️ATTENTION: For agents handling tasks for both emergencies and non-emergencies.">
+    <Warning>
+      Before you begin working on any task, ensure you view all open tasks for the customer you are following up on (resident, service provider, owner). This step is crucial to avoid duplicating efforts and customers complaints, and to ensure we always get it right the first time.
+
+      For detailed instructions on how to handle the tasks queue and view all open tasks, please refer to the following link: [How to: Work the Tasks Queue](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Work-the-Tasks-Queue#how-to-work-the-tasks-queue)
+
+      For information on the frequency and number of times you should contact customers, please refer to **[Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules).**
+    </Warning>
+
+    <Warning>
+      **📝** **NOTE:** Any follow-up that requires a call should be handled by associates outside the Call Center. Call Center associates cannot log out to make outbound calls, so they should create a task for another Ops associate to take action (Operations Associate Group).
+    </Warning>
+
+    <Note>
+      Prior to taking any action on a follow-up or update task, complete the following:
+
+      - **Read the complete intake transcript.** Do not rely on the work order title or description alone. The intake conversation may include resident-reported details, special instructions, or context that directly affects how the follow-up should be handled.
+      - **Review the Lucia transcript (if applicable).** If Lucia handled the original intake, review the full Lucia conversation to understand what was communicated to the resident and what commitments or next steps were implied. This ensures your follow-up is consistent with what the resident was already told.
+    </Note>
+
+    <Warning>
+      ✅ Task Coverage Reminder (Required)
+
+      When handling follow-ups or updates, ensure the Work Order always has a task that reflects the next needed action.
+
+      **Do not leave a Work Order without an open task unless the Work Order is Completed or Cancelled.**<br />Leaving a WO without a task can result in delays and orphaned Work Orders.
+
+      For Autopilot WOs, refer to [How to: Handle Autopilot WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs#how-to-handle-autopilot-wos).
+    </Warning>
+  </Accordion>
 </Warning>
-
-<Warning>
-  ‼️ATTENTION: For agents handling tasks for both emergencies and non-emergencies.
-
-  Before you begin working on any task, ensure you view all open tasks for the customer you are following up on (resident, service provider, owner). This step is crucial to avoid duplicating efforts and customers complaints, and to ensure we always get it right the first time.
-
-  For detailed instructions on how to handle the tasks queue and view all open tasks, please refer to the following link: [How to: Work the Tasks Queue](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Work-the-Tasks-Queue#how-to-work-the-tasks-queue)
-
-  For information on the frequency and number of times you should contact customers, please refer to **[Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules).**
-</Warning>
-
-## **Before You Begin: Review the Work Order Context**
-
-Prior to taking any action on a follow-up or update task, complete the following:
-
-- **Read the complete intake transcript.** Do not rely on the work order title or description alone. The intake conversation may include resident-reported details, special instructions, or context that directly affects how the follow-up should be handled.
-- **Review the Lucia transcript (if applicable).** If Lucia handled the original intake, review the full Lucia conversation to understand what was communicated to the resident and what commitments or next steps were implied. This ensures your follow-up is consistent with what the resident was already told.
 
 ## 🗂️Process overview
-
-<Warning>
-  ### ✅ Task Coverage Reminder (Required)
-
-  When handling follow-ups or updates, ensure the Work Order always has a task that reflects the next needed action.
-
-  **Do not leave a Work Order without an open task unless the Work Order is Completed or Cancelled.**<br />Leaving a WO without a task can result in delays and orphaned Work Orders.
-
-  For Autopilot WOs, refer to [How to: Handle Autopilot WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs#how-to-handle-autopilot-wos).
-</Warning>
 
 Agents assigned to incoming communications (SMS/Webchat, Inbound Calls, and Emails) will receive communications from customers following up on their work order, update, or requesting information. It is the Operations Associate's responsibility to: understand the request, which Work Order the communication is pertaining to, and update the WO or create the follow-up task.
 
@@ -52,29 +54,26 @@ Agents assigned to incoming communications (SMS/Webchat, Inbound Calls, and Emai
   - Document in your notes (for both work orders) that the task was generated on an incorrect work order, your actions and outcomes.
 </Note>
 
-Refer to the following list for situations that will require a task to be created:
+<Accordion title="Refer to the following list for situations that will require a task to be created:">
+  - When residents/PMs/SPs request a callback.
+  - When we need to confirm with the resident about the completion of a job
+  - Recreating a follow-up task
+  - When the resident reports the SP did go but the issue was not resolved
+  - Residents report missed appointments
+  - When no access instructions are provided and we need to follow up on it.
+  - When an owner (Not Rent Redi) reaches out with a request/instruction for a work order.
+  - SP asking for payments, Payment issues/not going through, the SP asking for payments in advance, or Payment inquiries.
+  - When the resident is reaching back to say they are available for TS.
+  - When a WO needs to be scheduled or when SPs/residents want to reschedule
+  - When an SP advised they would like to be removed from the job due to some instances like; no longer working with PM, does not want to work with 3rd parties, and etc.
+  - When a PM requests an emergency escalation **_AND_** follow-up from TS or reassessment is needed.
+  - When residents/PMs/SPs/owners reached out providing a new information that will result in an emergency work order reassessment - including PD/EH situations
+  - When a resident submits a photo or video of an issue and no troubleshooter is currently assigned to the work order. (If a troubleshooter is already working on the order, **simply tag them to notify** instead of creating a new task.)
 
-- When residents/PMs/SPs request a callback.
-- When we need to confirm with the resident about the completion of a job
-- Recreating a follow-up task
-- When the resident reports the SP did go but the issue was not resolved
-- Residents report missed appointments
-- When no access instructions are provided and we need to follow up on it.
-- When an owner (Not Rent Redi) reaches out with a request/instruction for a work order.
-- SP asking for payments, Payment issues/not going through, the SP asking for payments in advance, or Payment inquiries.
-- When the resident is reaching back to say they are available for TS.
-- When a WO needs to be scheduled or when SPs/residents want to reschedule
-- When an SP advised they would like to be removed from the job due to some instances like; no longer working with PM, does not want to work with 3rd parties, and etc.
-
-- When a PM requests an emergency escalation **_AND_** follow-up from TS or reassessment is needed.
-- When residents/PMs/SPs/owners reached out providing a new information that will result in an emergency work order reassessment - including PD/EH situations
-- When a resident submits a photo or video of an issue and no troubleshooter is currently assigned to the work order. (If a troubleshooter is already working on the order, **simply tag them to notify** instead of creating a new task.)
-
-<Note>
-  Any received communications that are not maintenance-related should be assigned directly to the appropriate property manager. Refer to [How to: Intake Non-Resident Requests (Non-maintenance Requests)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Intake-Non-Resident-Requests-Non-maintenance-Requests#non-resident-caller)
-</Note>
-
----
+  <Note>
+    Any received communications that are not maintenance-related should be assigned directly to the appropriate property manager. Refer to [How to: Intake Non-Resident Requests (Non-maintenance Requests)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Intake-Non-Resident-Requests-Non-maintenance-Requests#non-resident-caller)
+  </Note>
+</Accordion>
 
 ### Inbound Calls, SMS/Webchat, and Email
 
@@ -92,25 +91,30 @@ Refer to the following list for situations that will require a task to be create
 
 ### Work Order Task Assignment Guidelines
 
-- **Troubleshooter (TS) Group** - Tasks must be assigned to the TS group when:
-  - **All Emergency Work Orders** –  This includes all follow-up activities related to an **emergency** work order, covering the full lifecycle of the incident while it remains classified as an emergency. This may include, but is not limited to, **outbound and inbound communications** with residents, service providers, and property managers; **status checks** and **progress updates;** **coordination** of repairs or mitigation efforts; documentation of actions taken and outcomes; and **troubleshooting** or **reassessment** of the emergency condition.
-  - **Emergency Work Orders requiring troubleshooting or reassessment include:**
-    - Active emergency conditions
-    - Worsening issues
-    - Ambiguous situations where intake settings are unclear
-    - Issues involving escalation triggers as defined in the [Quick Reference Guide: Emergency and Non-Emergency Triggers](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Quick-Reference-Guide-Emergency-and-Non-Emergency-Triggers#quick-reference-guide-emergency-and-non-emergency-triggers)
-      - **Action:** Create a task and assign it to TS for reassessment.
-      - **Communication:** Inform the tenant that since there are changes in the situation, they will receive a call from the troubleshooting team.
-        - **Say something like:** ”Hi [Resident Name]! Thank you for the update regarding your reported issue. Our troubleshooting team has been notified of the new information and will reassess the situation. Someone from our team will reach out to you shortly to discuss the next steps. We appreciate your patience as we work to resolve this as quickly as possible.
-  - **Operations Associate Group** - Tasks can be handled directly by Ops Associates when:
+<AccordionGroup>
+  <Accordion title="**Troubleshooter (TS) Group** - Tasks must be assigned to the TS group when:">
+    - **All Emergency Work Orders** –  This includes all follow-up activities related to an **emergency** work order, covering the full lifecycle of the incident while it remains classified as an emergency. This may include, but is not limited to, **outbound and inbound communications** with residents, service providers, and property managers; **status checks** and **progress updates;** **coordination** of repairs or mitigation efforts; documentation of actions taken and outcomes; and **troubleshooting** or **reassessment** of the emergency condition.
+    - **Emergency Work Orders requiring troubleshooting or reassessment include:**
+      - Active emergency conditions
+      - Worsening issues
+      - Ambiguous situations where intake settings are unclear
+      - Issues involving escalation triggers as defined in the [Quick Reference Guide: Emergency and Non-Emergency Triggers](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Quick-Reference-Guide-Emergency-and-Non-Emergency-Triggers#quick-reference-guide-emergency-and-non-emergency-triggers)
+        - **Action:** Create a task and assign it to TS for reassessment.
+        - **Communication:** Inform the tenant that since there are changes in the situation, they will receive a call from the troubleshooting team.
+          - **Say something like:** ”Hi [Resident Name]! Thank you for the update regarding your reported issue. Our troubleshooting team has been notified of the new information and will reassess the situation. Someone from our team will reach out to you shortly to discuss the next steps. We appreciate your patience as we work to resolve this as quickly as possible.
+  </Accordion>
+
+  <Accordion title="**Operations Associate Group** - Tasks can be handled directly by Ops Associates when:">
     - The work order is **non-emergency,** or the PM intake settings confirm that the issue no longer qualifies as an emergency.
       - Refer to [Quick Reference Guide: Emergency and Non-Emergency Triggers](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Quick-Reference-Guide-Emergency-and-Non-Emergency-Triggers#quick-reference-guide-emergency-and-non-emergency-triggers)
       - Refer to the guidelines outlined [About Property Manager's Intake Settings](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/About-Property-Managers-Intake-Settings#about-property-managers-intake-settings) to determine the appropriate severity of the work order.
       - Associates may **de-escalate the WO** and proceed with the next steps if the criteria are clearly met.
 
-**📝** **NOTE**: If the follow-up is about a non-emergency Autopilot WO, please follow the guidelines on [How to: Handle Autopilot WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs#how-to-handle-autopilot-wos)
+    **📝** **NOTE**: If the follow-up is about a non-emergency Autopilot WO, please follow the guidelines on [How to: Handle Autopilot WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs#how-to-handle-autopilot-wos)
 
-Follow the steps in [**Job Aid: What is a task?**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-What-is-a-task#job-aid-what-is-a-task) to successfully relay the message to the team.
+    Follow the steps in [**Job Aid: What is a task?**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-What-is-a-task#job-aid-what-is-a-task) to successfully relay the message to the team.
+  </Accordion>
+</AccordionGroup>
 
 <Warning>
   Ensure to perform a thorough investigation of the WO prior to initiating a new task. Verify whether a task related to the same issue or assigned to the same group already exists.
@@ -118,23 +122,27 @@ Follow the steps in [**Job Aid: What is a task?**](https://help.latchel.com/latc
   Frequently, there is no necessity to initiate an additional task, and instead, you can simply update the description of the existing task. If you notice another team member is already actively working on the WO, you can notify them via Slack, in addition to creating or updating the task on the WO. If any assistance is needed, feel free to check out with Operations Support Specialists: **[How to: Escalate Between Teams](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams).**
 </Warning>
 
----
-
 ## **Instances when OWNERS reach out with instructions.**
 
 <Warning>
   **Check if the owner is listed as an owner on the property profile:**
 </Warning>
 
-**If the owner is listed:**<br />Proceed to follow the owner’s instructions as long as it’s within our process whether the work order is an emergency or non-emergency i.e.: to assign a service provider, set an appointment, cancelation, completion, etc., and then create a task for PM to relay the details of why a specific action was taken by our team.
+<AccordionGroup>
+  <Accordion title="**If the owner is listed:**">
+    Proceed to follow the owner’s instructions as long as it’s within our process whether the work order is an emergency or non-emergency i.e.: to assign a service provider, set an appointment, cancelation, completion, etc., and then create a task for PM to relay the details of why a specific action was taken by our team.
+  </Accordion>
 
-**If the owner is NOT listed/disabled:**<br />You can say:<br />”Thank you for reaching out. As of the moment, we don’t have your information registered on your Property management company’s profile. We’ll get your details verified with _appropriate team_ immediately and take action on your request afterward. Thank you for your patience.”<br />And then create a PM task on the work order or contact the PM’s escalations contacts if needed.
+  <Accordion title="**If the owner is NOT listed/disabled:**">
+    You can say:<br />”Thank you for reaching out. As of the moment, we don’t have your information registered on your Property management company’s profile. We’ll get your details verified with _appropriate team_ immediately and take action on your request afterward. Thank you for your patience.”<br />And then create a PM task on the work order or contact the PM’s escalations contacts if needed.
+  </Accordion>
 
-For Rentredi and NOMAD owners, please refer to [How to: Handle DIY Owner Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts).
+  <Accordion title="Rentredi and NOMAD owners">
+    Please refer to [How to: Handle DIY Owner Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts).
+  </Accordion>
+</AccordionGroup>
 
 Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) for further guidelines.
-
----
 
 ## Follow Up Procedures
 
@@ -307,20 +315,25 @@ Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.la
   Following through means completing all necessary actions and commitments made during a customer interaction, ensuring tasks are carried out as promised, escalating issues to the appropriate teams when necessary, and confirming that customer inquiries are fully resolved. It is essential for maintaining customer satisfaction and trust, as it demonstrates accountability and responsiveness in service delivery.
 </Note>
 
-Step-by-Step Guide to Ensure Proper Follow-Through
-
-1. **Completion of Request:**
-   1. Follow up according to the expectations set during the call: Ensure that all commitments made during the interaction are addressed.
-   2. Complete the TS guided workflow: Follow the process outlined in the [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders) to manage the request efficiently.
-   3. Create a follow-up task assigned to the right user: Utilize the above guidelines provided in this document
-   4. Make the follow-up call or SMS: Reach out to the resident, service provider, or Property Manager as necessary to confirm resolution and address any remaining concerns.
-2. **Tech Issues Verification:**
-   1. If dealing with tech issues, post in Slack (in the #ops-requests channel) using the WO link or the caller account
-3. **WO Notes Review:**
-   1. Add Work Order notes to refer an escalation to CS including Assembly ticket
-   2. Link any related calls or conversations to the WO
-4. **Resolution Check:**
-   1. If the issue was resolved during the call and no further action is needed, document the interaction properly and close the inquiry.
+<Accordion title="Step-by-Step Guide to Ensure Proper Follow-Through">
+  1. **Completion of Request:**
+     1. Follow up according to the expectations set during the call: Ensure that all commitments made during the interaction are addressed.
+     2. Complete the TS guided workflow: Follow the process outlined in the [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders) to manage the request efficiently.
+     3. Create a follow-up task assigned to the right user: Utilize the above guidelines provided in this document
+     4. **Follow-Up Outreach (Only for Explicit Commitments):**
+        - **Do NOT manually call or SMS for routine status updates:** If the update is already handled by automated system notifications, such as appointment confirmations, rescheduling, or status changes, let the system notify the customer automatically.
+        - **Only perform manual outreach if a specific commitment was made:** Reach out via call or SMS only if an associate previously promised a direct manual follow-up or callback to the resident, service provider, or Property Manager.
+        - **Best practice for setting expectations on calls:**
+          - **Do NOT say:** _“I will personally send you a text / call you with an update.”_ This creates an unnecessary manual callback expectation.
+          - **DO say:** _“You will receive an automated text update on your phone as soon as the appointment is confirmed / the next u_
+  2. **Tech Issues Verification:**
+     1. If dealing with tech issues, post in Slack (in the #ops-requests channel) using the WO link or the caller account
+  3. **WO Notes Review:**
+     1. Add Work Order notes to refer an escalation to CS including Assembly ticket
+     2. Link any related calls or conversations to the WO
+  4. **Resolution Check:**
+     1. If the issue was resolved during the call and no further action is needed, document the interaction properly and close the inquiry.
+</Accordion>
 
 ## **Instances in which Associates Cannot Create a Follow-Up Task**
 
