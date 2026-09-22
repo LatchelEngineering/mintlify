@@ -20,137 +20,133 @@ groups:
   For 911-severity situations, always notify the Property Manager:
 
   - If the issue indicates an **active or ongoing emergency**, **call** the Property Manager regardless of whether it is part of the current work order or related to a different work order.
-    - Manually trigger the **Who Ya Gonna Call** feature from the Action Menu of the work order to identify the correct escalation contacts and their contact order. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts) for more details.
-  - For **contained or mitigated situations** **handled by the 911 team,** a phone call is **not required**; timely notification via **SMS** is sufficient to inform the Property Manager of the actions taken and the recommended next steps. See [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders**1.c.1](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders**1.c.1).**
+    - Manually trigger the **Who Ya Gonna Call** feature from the Action Menu of the work order to identify the correct escalation contacts and their contact order. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts) for more details.
+  - For **contained or mitigated situations** **handled by the 911 team,** a phone call is **not required**; timely notification via **SMS** is sufficient to inform the Property Manager of the actions taken and the recommended next steps. See step 1.c.1.
 
   Timely notification in all active cases remains **critical to ensure safety and proper escalation**.
 </Warning>
 
 ## 📋 Step-by-Step Process
 
-### **Step 1 - When the Resident Should Call 911 **
+### Step 1 - When the Resident Should Call 911 
 
 1. When a call is received from a resident for one of the following requests:
+   1. 🔥Fire 
+   2. 🆘Carbon Monoxide Leak 
+   3. ⛽Gas Leak - (if the gas company has already visited and confirmed the property is safe, no need to call 911)
+   4. 👮‍♂️Crime Related Issue  
+      - Burglary related 
+      - Blood 
+   5. Hazmat - Hazmat refers to hazardous _chemical or airborne substances_ such as gas leaks, carbon monoxide, CO2, or toxic chemical spills. **Mold and biological growth are NOT classified as hazmat** under this SOP and should be handled through standard mold remediation channels.
+   6. ⚡Electrical pole falling/leaning on building or home 
+   7. Tree falling onto building
+   8. Major flooding
+   9. 🚨 **Any other situation not listed above where an associate, using their own judgment, advises the resident to call 911.**
+   ⚠️ **This SOP's PM-notification requirements below apply any time a resident is advised to call 911 — whether or not the situation matches one of the categories above.** Follow the [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos) for how to phrase and document the PM call/notification.
 
-- 🔥Fire 
-- 🆘Carbon Monoxide Leak 
-- ⛽Gas Leak -\* (if the gas company has already visited and confirmed the property is safe, no need to call 911)\*
-- 👮‍♂️Crime Related Issue  
-  - Burglary related 
-  - Blood 
-- Hazmat - Hazmat refers to hazardous _chemical or airborne substances_ such as gas leaks, carbon monoxide, CO2, or toxic chemical spills. **Mold and biological growth are NOT classified as hazmat** under this SOP and should be handled through standard mold remediation channels.
-- ⚡Electrical pole falling/leaning on building or home 
-- Tree falling onto building
-- Major flooding
+### Step 2 - What Action Agent takes on the Work Order 
 
-### **Step 2 - What Action Agent takes on the Work Order **
+1. If this is a "Previous Caller", see: [(⛑EMERGENCY) How to: Find an Existing Work Order vs. When to Create a new Work Order (Previous Caller)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Finding-an-Existing-Work-Order-vs.-When-to-Create-a-new-Work-Order#job-aid-finding-an-existing-work-order-vs-when-to-create-a-new-work-order)
+2. Agents should immediately inform the resident to call 911 regardless of whether the issue seems to be mitigated on their end to ensure no further issues arise. See: [(TECH 101) How to: Make Outbound Calls Within the Latchel Console](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Make-Outbound-Calls-Within-the-Latchel-Console#tech-101-how-to-make-outbound-calls-within-the-latchel-console)
+   1. Tell the resident to call us back after the 911 visit to provide further information.
+      1. 📝 NOTE: Latchel will service these situations AFTER emergency services has completed their job.
+   2. If the resident says they have already contacted 911 and already have findings, follow [this same path](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders#step-1-when-the-resident-should-call-911). Go to 1.c.1 (Confirming if issue is Emergency or Non-emergency)
+   3. If the resident says they have already contacted 911 and they are still waiting for the scheduled visit, proceed to the step below to notify the Property Manager
+      1. **📝** **NOTE**: Always refer to the corresponding blurbs depending on the resident’s response
+3. Take action on the existing work order from Troubleshooting status, reporting that there was a call to 911. Latchel considers this to be of "Catastrophic Damage", and the subsequent steps will Escalate to the Property Manager Immediately.
+   1. Follow the workflow steps in **"PM Input needed before dispatch" in** [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders#option-2-“no”-troubleshooting-did-not-resolve-the-issue).
+      1. **Suggested Voicemail Blurb** **_where the resident has not contacted 911_** 💬: _Hi, my name is (agent name), I am calling from Latchel. We are contacting you because we received a call from (resident name) located at (property) and they informed us (issue). We have asked them to contact 911 immediately but wanted to make you aware of this situation. The Work Order number is (###). Please don’t hesitate to send us a Webchat or text us back at [provide the PM’s Latchel Communication Phone Number] to let us know how you would like us to proceed with this work order. Have a nice day!_
+      2. **Suggested Voicemail Blurb** **\*for when the resident has contacted 911 and is still waiting for their visit** \* 💬: _Hi, my name is (agent name), I am calling from Latchel. We are contacting you because we received a call from (resident name) located at (property) and they informed us (issue) and are currently waiting for 911’s visit. The Work Order number is (###). Please don’t hesitate to send us a Webchat or text us back at [provide the PM’s Latchel Communication Phone Number] to let us know how you would like us to proceed with this work order. Have a nice day!_
+   2. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#customer-calling-to-latchel-phone-numbers) for guidance on how to locate the Latchel Communication Phone Number for the specific resident.
 
-1. If this is a "Previous Caller" :
-2. See: [(⛑EMERGENCY) How to: Find an Existing Work Order vs. When to Create a new Work Order (Previous Caller)](https://latchel.atlassian.net/wiki/spaces/OPS/pages/787382436)
-3. Agents should immediately inform the resident to call 911 regardless of whether the issue seems to be mitigated on their end to ensure no further issues arise.
-4. See: [(TECH 101) How to: Make Outbound Calls Within the Latchel Console](https://latchel.atlassian.net/wiki/spaces/OPS/pages/757235750)
-5. Tell the resident to call us back after the 911 visit to provide further information.
-6. **📝 NOTE: **Latchel will service these situations AFTER emergency services has completed their job.
-7. If the resident says they have already contacted 911 and already have findings
-8. Follow the same path for [https://latchel.atlassian.net/wiki/spaces/OPS/pages/edit-v2/813728366#When-Resident-Calls-Back](https://latchel.atlassian.net/wiki/spaces/OPS/pages/edit-v2/813728366#When-Resident-Calls-Back)  Go to 1.c.1 (Confirming if issue is Emergency or Non-emergency)
-9. If the resident says they have already contacted 911 and they are still waiting for the scheduled visit
-10. Proceed to the step below to notify the Property Manager
-11. **📝** **NOTE**: Always refer to the corresponding blurbs depending on the resident’s response
-12. Take action on the existing work order from Troubleshooting status, reporting that there was a call to 911. Latchel considers this to be of "Catastrophic Damage", and the subsequent steps will Escalate to the Property Manager Immediately.
-13. Follow the workflow steps in **"PM Input needed before dispatch" in** [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders).
-14. **Suggested Voicemail Blurb** **_where the resident has not contacted 911_** 💬: _Hi, my name is (agent name), I am calling from Latchel. We are contacting you because we received a call from (resident name) located at (property) and they informed us (issue). We have asked them to contact 911 immediately but wanted to make you aware of this situation. The Work Order number is (###). Please don’t hesitate to send us a Webchat or text us back at [provide the PM’s Latchel Communication Phone Number] to let us know how you would like us to proceed with this work order. Have a nice day!_
-15. **Suggested Voicemail Blurb** **\*for when the resident has contacted 911 and is still waiting for their visit** \* 💬: _Hi, my name is (agent name), I am calling from Latchel. We are contacting you because we received a call from (resident name) located at (property) and they informed us (issue) and are currently waiting for 911’s visit. The Work Order number is (###). Please don’t hesitate to send us a Webchat or text us back at [provide the PM’s Latchel Communication Phone Number] to let us know how you would like us to proceed with this work order. Have a nice day!_
-16. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules)  for guidance on how to locate the Latchel Communication Phone Number for the specific resident.
-17. **If you are ✅able to contact a property manager successfully, relay the information about your contact with the resident and information you have about the 911 severity type work order.**
-18. Click on "Successful Contact"
-19. Complete all sections
-20. \*Why did you escalate this? \*
-21. **Example**: "Escalated because we informed the resident to contact 911 as they were experiencing (issue)"
-22. _What was the risk of property damage?_
-23. **Example**: "Potential property damage was (what part of property was damaged or is being damaged)"
-24. \*Who did you successfully contact? \*
-25. **Example**: "Contacted (name of property manager)"
-26. \*What are the recommended next steps? \*
-27. **Examples**:
-28. "Recommended next steps would be to send out a service provider to diagnose and repair"
-29. "Possible resident relocation if uninhabitable"
-30. Write Effective Notes 
-31. See: [↔ How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OM/pages/763363368)
-32. Proceed to **Step 4. Closing the task**
-33. If you are ❌unable to contact the person on the contact list after the third attempt
-34. Leave a voicemail (see above for the Voicemail Blurb)
-35. Click on "Could not Reach Escalation Contacts"
-36. Complete all sections
-37. \*Why did you escalate this? \*
-38. **Example**: "Escalated because we informed resident to call 911 as they were experiencing (issue)"
-39. _What is the risk of property damage?_
-40. **Example**: "Potential property damage was (what part of property was damaged or is being damaged)"
-41. _What are the recommended next steps?_
-42. **Examples**:  
-43. "Recommended next steps would be to send out a service provider to diagnose and repair"
-44. "Possible resident relocation if inhabitable"
-45. Make Effective Notes 
-46. See: [↔ How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OM/pages/763363368)<br /> 
-47. Proceed to **Step 4. Closing the task**
+<Accordion title="If you are ✅able to contact a property manager successfully, relay the information about your contact with the resident and information you have about the 911 severity type work order.">
+  1. Click on "Successful Contact"
+  2. Complete all sections
+     1. Why did you escalate this?
+        1. **Example**: "Escalated because we informed the resident to contact 911 as they were experiencing (issue)"
+     2. _What was the risk of property damage?_
+        1. **Example**: "Potential property damage was (what part of property was damaged or is being damaged)"
+     3. Who did you successfully contact?
+        1. **Example**: "Contacted (name of property manager)"
+     4. What are the recommended next steps?
+        1. **Examples**:
+           1. "Recommended next steps would be to send out a service provider to diagnose and repair"
+              1. "Possible resident relocation if uninhabitable"
+  3. [Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes).
+  4. Proceed to **Step 4. Closing the task**
 
-### **When do I need to call the Property Manager**
+  If you are ❌unable to contact the person on the contact list after the third attempt
 
-It is critical to identify any indicators of a 911 situation when dealing with customers. In the following scenarios, contacting the Property Manager is essential. Refer to [https://latchel.atlassian.net/wiki/spaces/OPS/pages/edit-v2/2537652248#Severe-Damage-Escalation](https://latchel.atlassian.net/wiki/spaces/OPS/pages/edit-v2/2537652248#Severe-Damage-Escalation) for additional details:
+  1. Leave a voicemail (see above for the Voicemail Blurb)
+  2. Click on "Could not Reach Escalation Contacts"
+  3. Complete all sections
+     1. Why did you escalate this? 
+        1. **Example**: "Escalated because we informed resident to call 911 as they were experiencing (issue)"
+     2. _What is the risk of property damage?_
+        1. **Example**: "Potential property damage was (what part of property was damaged or is being damaged)"
+     3. _What are the recommended next steps?_
+        1. **Examples**:  
+           1. "Recommended next steps would be to send out a service provider to diagnose and repair"
+              1. "Possible resident relocation if inhabitable"
+  4. [Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes). 
+  5. Proceed to **Step 4. Closing the task**
+</Accordion>
+
+<br />**When do I need to call the Property Manager**
+
+It is critical to identify any indicators of a 911 situation when dealing with customers. In the following scenarios, contacting the Property Manager is essential. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos) for additional details:
 
 - **Ongoing 911 Situations:**<br />Any issues listed under **_Step 1_** of this document that are identified as active 911 situations.
 - **Severe Damage Escalation:**<br />Situations where severe damage to the property has been identified or escalated.
 - **Recent 911 Situations:**<br />Any mention of a recent 911 situation, whether it impacts the property associated with the work order you’re handling or any other property managed by the Property Manager.
 - **Unclear or Potentially Emergency Scenarios:**<br />If there’s any uncertainty about whether an issue could qualify as a 911 situation or poses a significant risk, err on the side of caution and notify the Property Manager.
 
-### **When Resident Calls Back **
+### When Resident Calls Back 
 
 1. When Resident calls back to report 911 findings 
-2. Call Resident to confirm the information reported by 911
-3. **‼️IMPORTANT:** There’s no need to call the resident again if they have already provided all the details during the initial call back. Only do so if the resident hasn't provided the details.
-4. See: [(TECH 101) How to: Make Outbound Calls Within the Latchel Console](https://latchel.atlassian.net/wiki/spaces/OPS/pages/757235750)
-5. **IF** agent was able to get in contact with management prior to resident reporting 911 findings
-6. Follow instructions given by management during that call 
-7. **IF** property manager instructed to call them back after 2nd contact with resident
-8. Manually trigger the **Who Ya Gonna Call** feature from the Action Menu of the work order to identify the correct escalation contacts and their contact order. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts) for more details.
-9. Call property manager after confirming findings.
-10. See:  [(TECH 101) How to: Make Outbound Calls Within the Latchel Console](https://latchel.atlassian.net/wiki/spaces/OPS/pages/757235750)
-11. **IF** property manager confirms they will be taking action leave in "Forwarded Status" for 24/7 and After Hours 
-12. **IF** "Premium or Autopilot" subscription, escalate to Operations Support Specialists to place the WO in Waiting for PM
-13. Refer to: [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams)
-14. **IF** property manager instructed to continue with dispatching after the 911 team addresses the situation.
-15. Proceed accordingly. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider)
-16. **IF** agent was not able to get in contact with management prior to resident contacting 911
-17. Confirm the issue is considered an Emergency 
-18. **IF** issue is an emergency 
-19. See: [(⛑OVERVIEW) How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders)
-20. Click on "Take Action" 
-21. Click on "Set a New Confirmed Work Date"
-
-<Frame>
-  ![](/images/SVC-800.png)
-</Frame>
-
-2. Select "Skill Category and Skill" 
-
-<Frame>
-  ![](/images/SVC-801.png)
-</Frame>
-
-1. See: [(🏡⛑EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider)
-2. Notify the property manager of the actions taken. **Sent an SMS to the Property Manager.**  **If SMS is disabled, email the Property Manager instead.**
-3. 💬 **Say something like** : “_Hi, my name is (agent name), and I’m reaching out from Latchel regarding (property address, work order ###). (Resident name) at (property) informed us that (issue). I wanted to let you know that the tenant was able to contact 911, and the findings were (911 findings). The issue has been mitigated.  Since this remains an emergency, we will proceed with dispatching the work order. Please don’t hesitate to Webchat with us or text us at (206)-900-9466 if there’s anything else you’d like us to share.”_
-4. ✉️Email: **_Subject:_**\* Emergency Work Order Update – [Property Address], WO #[Work Order Number]\* _Hi [Property Manager Name],_ _My name is [Associate Name], and I’m reaching out from Latchel regarding [Property Address], work order #[Work Order Number]. [Resident Name] at this property informed us that [brief description of the issue]._ _I wanted to let you know that the tenant was able to contact 911, and the findings were as follows: [911 findings]. The issue has been mitigated. However, since this remains an emergency, we will proceed with dispatching the work order._ _Please don’t hesitate to webchat with us or text us at (206) 900-9466 if there’s anything else you’d like us to share._
-5. If the issue is an emergency and has **de-escalated**:
-6. **Premium:** De-escalate the work order and update the work order status. If a task is required, create a task for Ops Associate to take action.
-7. **Autopilot:** De-escalate the work order and update the work order status. Refer to[ this guide](https://latchel.atlassian.net/wiki/spaces/OPS/pages/2999812097).
-8. **24/7 emergency** or **Afterhours subscription** issues: Ensure the work order is **forwarded to the PM** or moved to **Waiting for PM**.
-9. Make Effective Notes
-10. Leave work order in the current status.
+   1. Call Resident to confirm the information reported by 911
+      1. **‼️IMPORTANT:** There’s no need to call the resident again if they have already provided all the details during the initial call back. Only do so if the resident hasn't provided the details. See: [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Make-Outbound-Calls-Within-the-Latchel-Console#tech-101-how-to-make-outbound-calls-within-the-latchel-console).
+   2. **IF** agent was able to get in contact with management prior to resident reporting 911 findings
+      1. Follow instructions given by management during that call 
+      2. **IF** property manager instructed to call them back after 2nd contact with resident
+         1. Manually trigger the **Who Ya Gonna Call** feature from the Action Menu of the work order to identify the correct escalation contacts and their contact order. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts#job-aid-critical-pre-dispatch-warranty-special-notes-and-emergency-escalation-contacts) for more details.
+         2. Call property manager after confirming findings. See: [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Make-Outbound-Calls-Within-the-Latchel-Console#tech-101-how-to-make-outbound-calls-within-the-latchel-console).
+      3. **IF** property manager confirms they will be taking action leave in "Forwarded Status" for 24/7 and After Hours 
+      4. **IF** "Premium or Autopilot" subscription, escalate to Operations Support Specialists to place the WO in Waiting for PM. Refer to: [How to: Escalate Between Teams](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams#how-to-escalate-between-teams)
+      5. **IF** property manager instructed to continue with dispatching after the 911 team addresses the situation. Proceed accordingly. Refer to [(EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider).
+   3. **IF** agent was not able to get in contact with management prior to resident contacting 911
+      1. Confirm the issue is considered an Emergency 
+      2. **IF** issue is an emergency, See: [(⛑OVERVIEW) How to: Handle Emergency Work Orders](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders)
+      3. Click on "Take Action" 
+      4. Click on "Set a New Confirmed Work Date"
+         1. <img
+              src="/images/e8d5598c-72bc-4d2f-9a50-e1ed93c0fcf1.png"
+              alt="E8d5598c 72bc 4d2f 9a50 E1ed93c0fcf1"
+              title="E8d5598c 72bc 4d2f 9a50 E1ed93c0fcf1"
+              style={{ width:"48%" }}
+            />
+      5. Select "Skill Category and Skill" 
+         1. <img
+              src="/images/a03d09eb-1815-4fba-b6dd-7bb0568c1bab.png"
+              alt="A03d09eb 1815 4fba B6dd 7bb0568c1bab"
+              title="A03d09eb 1815 4fba B6dd 7bb0568c1bab"
+              style={{ width:"80%" }}
+            />
+         2. See: [(🏡⛑EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider)
+      6. Notify the property manager of the actions taken. **Sent an SMS to the Property Manager.**  **If SMS is disabled, email the Property Manager instead.**
+         1. 💬 **Say something like** : “_Hi, my name is (agent name), and I’m reaching out from Latchel regarding (property address, work order ###). (Resident name) at (property) informed us that (issue). I wanted to let you know that the tenant was able to contact 911, and the findings were (911 findings). The issue has been mitigated.  Since this remains an emergency, we will proceed with dispatching the work order. Please don’t hesitate to Webchat with us or text us at (206)-900-9466 if there’s anything else you’d like us to share.”_
+         2. ✉️Email: **_Subject:_**\* Emergency Work Order Update – [Property Address], WO #[Work Order Number]\* _Hi [Property Manager Name],_ _My name is [Associate Name], and I’m reaching out from Latchel regarding [Property Address], work order #[Work Order Number]. [Resident Name] at this property informed us that [brief description of the issue]._ _I wanted to let you know that the tenant was able to contact 911, and the findings were as follows: [911 findings]. The issue has been mitigated. However, since this remains an emergency, we will proceed with dispatching the work order._ _Please don’t hesitate to webchat with us or text us at (206) 900-9466 if there’s anything else you’d like us to share._
+2. If the issue is an emergency and has **de-escalated**:
+   1. **Premium:** De-escalate the work order and update the work order status. If a task is required, create a task for Ops Associate to take action.
+   2. **Autopilot:** De-escalate the work order and update the work order status. Refer to[this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs#how-to-handle-autopilot-wos).
+   3. **24/7 emergency** or **Afterhours subscription** issues: Ensure the work order is **forwarded to the PM** or moved to **Waiting for PM**.
+3. Make Effective Notes
+   1. Leave work order in the current status.
 
 ### Closing the task
 
 1. Close the troubleshooting task by clicking “Complete Task”.
-2. Go back to the task queue: [https://latchel.atlassian.net/wiki/spaces/OM/pages/edit-v2/2559639553?draftShareId=cc0cf20a-3233-40b0-bd38-d7ff36c90b35](https://latchel.atlassian.net/wiki/spaces/OM/pages/edit-v2/2559639553?draftShareId=cc0cf20a-3233-40b0-bd38-d7ff36c90b35)
+   1. Go back to the task queue: [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Work-the-Tasks-Queue#how-to-work-the-tasks-queue).
 
 ## **[❓](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders)Frequently Asked Questions**
 
@@ -183,7 +179,7 @@ It is critical to identify any indicators of a 911 situation when dealing with c
   3. **If the issue is a 911 emergency:** Route the customer to call 911 immediately.
   4. **Customer Script:** 🗨️ **For PD/EH issues (not 911), say something like:** _"I understand you're dealing with an urgent situation. Since your property management company is currently inactive in our system, we're unable to create a work order at this time. I'd recommend reaching out to your Property Manager directly for assistance. In the meantime, we will send a notification to your Property Manager to make them aware of the situation."_ 🗨️ **For 911 emergencies, say something like:** _"Your safety is our top priority. Please call 911 immediately for emergency assistance. Since your property management company is currently inactive in our system, we're unable to create a work order, but we will send a notification to your Property Manager to make them aware of the emergency."_
   5. **Send a courtesy email to the PM** using the **Failed Escalation Contacts** email under the Emergency escalation contacts tab.
-  6. Refer to [https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts)
+     1. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts#job-aid-critical-pre-dispatch-warranty-special-notes-and-emergency-escalation-contacts).
   7. **Document the interaction** (call notes, email sent) so there's a record of what was reported and what action was taken.
 
   **Email Template**
