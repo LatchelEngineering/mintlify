@@ -143,7 +143,7 @@ groups: ["latchel"]
     <u>If both columns share the same Submission ID</u>, continue following the steps in this dropdown.
   </Tip>
 
-  **c. **Go to the **Common Area Property Requests** tab to complete the following steps manually.
+  **c.** Go to the **Common Area Property Requests** tab to complete the following steps manually.
 
   <Frame>
     ![image-20260123-200604.png](/images/Intg-140.png)
@@ -239,13 +239,13 @@ Once the status is set to "Active," the automation (n8n) takes over:
 
 - _Example:_ If Frequency = Weekly and Start Date = 01/08/2026, the Next Run Date will be 01/15/2026.
 
-**c.** **Satisfaction Survey (Column AA):** Updates to "Yes" automatically once the [**survey**](https://latchel.typeform.com/to/F0NjOaBk)** **email is sent (24 hours after WO creation). If the PM user has submitted another recurring work order request, the survey won’t be sent again and this field will be marked as “Already sent.” This is to avoid overwhelming the PM with survey emails.
+**c.** **Satisfaction Survey (Column AA):** Updates to "Yes" automatically once the [**survey**](https://latchel.typeform.com/to/F0NjOaBk) email is sent (24 hours after WO creation). If the PM user has submitted another recurring work order request, the survey won’t be sent again and this field will be marked as “Already sent.” This is to avoid overwhelming the PM with survey emails.
 
 <Frame>
   ![image-20260108-182823.png](/images/Intg-142.png)
 </Frame>
 
-**d. Submission ID (Column AB): **Unique identifier used to link requests with Recurring requests across tabs. This is filled automatically.
+**d. Submission ID (Column AB):** Unique identifier used to link requests with Recurring requests across tabs. This is filled automatically.
 
 ### Step 4: Ops moves the work order forward
 
@@ -351,9 +351,9 @@ Once the status is set to "Active," the automation (n8n) takes over:
 
   **b.** **Email Template:** The following automated email is sent to the Primary and Company Members (Columns E and G):
 
-  > **Subject:** Want Help Setting Up Recurring Work Orders? We’ve Got You!_Hi \[PM Company Name\],_We hope you're doing well!**We wanted to reach out to make setting up [Recurring Work Orders](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/recurring-work-orders#recurring-work-orders) as simple and seamless as possible for you. If you have work orders that are created on a regular basis (for example: common area cleaning, pool maintenance, landscaping, or any other routine maintenance), this feature can help automate that process. To better support your workflow, we’re offering two easy options:Option 1: We create them for youSimply fill out your \[Link to Unique Template\] with the Recurring Work Orders you’d like to set up. Once submitted, our team will review the information and create them for you.You can add multiple Recurring Work Orders at once or submit them individually—whatever works best for your team.\*This option is currently part of our beta demo and may evolve in future versions.****Option 2: Submit through the regular **[**form**](https://recurring-work-orders.web.app/)_\_If you prefer, you can complete the standard Recurring Work Order request form at any time._\*For either option, you only need to enter the work order details once, and we’ll take care of scheduling it as a recurring request moving forward._Our goal is to make this process as efficient and straightforward as possible, so please feel free to choose whichever option works best for you. If you’re not interested in setting up Recurring Work Orders at this time, you’re welcome to ignore this email or let us know, and we’ll stop sending these reminders._We’re always happy to help simplify things and support your team however we can. Please don’t hesitate to reach out with any questions!\__Best regards,_ _The Latchel Team_
+  > **Subject:** Want Help Setting Up Recurring Work Orders? We’ve Got You!_Hi \[PM Company Name\],_We hope you're doing well!**We wanted to reach out to make setting up [Recurring Work Orders](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/recurring-work-orders#recurring-work-orders) as simple and seamless as possible for you. If you have work orders that are created on a regular basis (for example: common area cleaning, pool maintenance, landscaping, or any other routine maintenance), this feature can help automate that process. To better support your workflow, we’re offering two easy options:Option 1: We create them for youSimply fill out your \[Link to Unique Template\] with the Recurring Work Orders you’d like to set up. Once submitted, our team will review the information and create them for you.You can add multiple Recurring Work Orders at once or submit them individually—whatever works best for your team.\*This option is currently part of our beta demo and may evolve in future versions.****Option 2: Submit through the regular** [**form**](https://recurring-work-orders.web.app/)_\_If you prefer, you can complete the standard Recurring Work Order request form at any time._\*For either option, you only need to enter the work order details once, and we’ll take care of scheduling it as a recurring request moving forward._Our goal is to make this process as efficient and straightforward as possible, so please feel free to choose whichever option works best for you. If you’re not interested in setting up Recurring Work Orders at this time, you’re welcome to ignore this email or let us know, and we’ll stop sending these reminders._We’re always happy to help simplify things and support your team however we can. Please don’t hesitate to reach out with any questions!\__Best regards,_ _The Latchel Team_
 
-  **c. **The system evaluates the data in the **PM Company Contact Info** tab. It will automatically skip sending an email to a PM if:
+  **c.** The system evaluates the data in the **PM Company Contact Info** tab. It will automatically skip sending an email to a PM if:
 
   - Their **Next reminder date** (Column J) has not been reached yet.
   - Their **Exemption Request** (Column N) is marked as "Yes".
