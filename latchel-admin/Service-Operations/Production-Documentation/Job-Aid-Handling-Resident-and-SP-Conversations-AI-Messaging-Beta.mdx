@@ -26,7 +26,7 @@ groups:
 
 <Accordion title="Key terms">
   - **Conversation** — A browser chat thread that residents and SPs open from a link in our SMS/email notifications. There is one thread per user per work order, and it is tagged to the WO automatically.
-  - **Latchel AI** — The AI assistant (formerly Lucia). It answers first and transfers to a person when asked, or when it can't handle the query.
+  - **Latchel AI** — The AI assistant (formerly Lucia). It answers first and transfers to a person when asked, or when it can't handle the query. Who it's transferred to depends on the WO's **managed_by**: **Managed by Latchel** → our **Team** queue; **Managed by PM** → the PM team on the WO is notified.
   - **Team** — New, unhandled Conversations for everyone. **My messages** — Conversations you've replied in or started.
   - **Mark as Handled** — Claims a thread and clears the unread indicator for everyone.
   - **Aging tag** — Red highlight in Team showing that no one is working on a thread.
@@ -37,36 +37,36 @@ groups:
 ### Handling Inbound Messages
 
 1. Go to **Conversations → Team**. New messages stay unhandled until someone claims them.
-   - <img
-       src="/images/7a5ad93e-6046-4816-8327-971a5b8d424e.png"
-       alt="Conversations Team section"
-       title="Conversations Team section"
-       style={{ width:"20%" }}
-     />
+   1. <img
+        src="/images/7a5ad93e-6046-4816-8327-971a5b8d424e-1.png"
+        alt="7a5ad93e 6046 4816 8327 971a5b8d424e 1"
+        title="7a5ad93e 6046 4816 8327 971a5b8d424e 1"
+        style={{ width:"20%" }}
+      />
 2. **Claim it**
-   1. 🛑 **NOTE**: If you see _"[name] is typing…"_, move on to another message since someone is already about to handle it.
-      - <img
-          src="/images/a199730a-bff6-425c-89a3-ce56eb481078.png"
-          alt="Typing indicator"
-          title="Typing indicator"
-          style={{ width:"61%" }}
-        />
+   1. Click **Mark as Handled** **before** replying. Replying also marks it handled, but claiming first prevents double replies.
+      1. <img
+           src="/images/90aba3ea-9969-4bb9-b586-856b46f2f5d8-1.png"
+           alt="90aba3ea 9969 4bb9 B586 856b46f2f5d8 1"
+           title="90aba3ea 9969 4bb9 B586 856b46f2f5d8 1"
+           style={{ width:"76%" }}
+         />
+   2. 🛑 **NOTE**: **Before you click**, check for _"[name] is typing…"_. If you see it, move on to another message since someone is already about to handle it.
+
+      1. <img
+           src="/images/a199730a-bff6-425c-89a3-ce56eb481078-1.png"
+           alt="A199730a Bff6 425c 89a3 Ce56eb481078 1"
+           title="A199730a Bff6 425c 89a3 Ce56eb481078 1"
+           style={{ width:"76%" }}
+         />
    2. 🛑 **NOTE**: If the message needs no reply (e.g., it just says "Thank you"), clicking Mark as Handled is all you need to do.
-   3. Click **Mark as Handled** **before** replying. Replying also marks it handled, but claiming first prevents double replies.
-      - <img
-          src="/images/90aba3ea-9969-4bb9-b586-856b46f2f5d8.png"
-          alt="Mark as Handled button"
-          title="Mark as Handled button"
-          style={{ width:"54%" }}
-        />
 3. Scroll the full thread (AI, associate and customer messages) and confirm the tagged WO. Only ask for what's genuinely missing.
 4. Assist the customer using the [How to: Handle SMS/Webchat Contacts (New Support Framework)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework), then reply in the thread with the appropriate next step or resolution.
-   1. 🛑 **NOTE:** Before replying, make sure **Handled by** is set to **Staff**. If it shows **AI**, switch it to **Staff** so the customer's next replies come to the team instead of Latchel AI.
 5. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
-6. **No end step:** There is no End Conversation or close option. If the customer writes again about the same work order, the thread reopens as unhandled in **Team**.
+6. **No end step**: There is no End Conversation or close option. If the customer writes again about the same work order, the thread reopens as unhandled, and anyone who previously replied in it gets a notification _(an unread message bubble)_. If none of them respond within 10 minutes, it's marked red in Team for anyone to pick up.
 
 <Warning>
-  **⏱️ 10-minute aging tag:** If a resident or SP message goes 10 minutes without a staff reply, the thread returns to **Team** highlighted in red. Any team member can pick it up.
+  **⏱️ 10-minute aging tag:** If a resident or SP message goes 10 minutes without a staff reply, the thread is highlighted in red in Team. Any team member can pick it up.
 </Warning>
 
 ### Sending Outbound Messages
@@ -76,9 +76,7 @@ groups:
 <AccordionGroup>
   <Accordion title="Option A: From the WO Conversations tab">
     1. Open the **work order** and go to the **Conversations** tab. Select the **Resident** or **Service provider** tab. Click **Open Conversation**.
-       - ![WO Conversations tab and recipient tabs](/images/a7270537-457a-49b2-9f21-c9f5f178d0b6.png "WO Conversations tab and recipient tabs")
     2. Set **Handled by** to **Staff**.
-       - ![Handled by set to Staff](/images/6c0429d5-e627-4a3b-a1cc-81226f9affb5.png "Handled by set to Staff")
     3. Type your message in the thread and send it.
   </Accordion>
   <Accordion title="Option B: From the user's profile or WO tab">
@@ -90,13 +88,12 @@ groups:
          style={{ width:"66%" }}
        />
     2. Enter your message. When asked who will handle the reply, choose **Staff**.
-       - 🛑 **NOTE:** Always choose **Staff**, not Latchel AI, for messages you send.
-         <img
-           src="/images/8b8eb6b2-32ac-4b18-830e-56d314442b9b.png"
-           alt="Reply handler set to Staff"
-           title="Reply handler set to Staff"
-           style={{ width:"57%" }}
-         />
+       <img
+         src="/images/8b8eb6b2-32ac-4b18-830e-56d314442b9b.png"
+         alt="Reply handler set to Staff"
+         title="Reply handler set to Staff"
+         style={{ width:"57%" }}
+       />
 
     3. Send the message.
   </Accordion>
@@ -105,6 +102,12 @@ groups:
 #### 2. Taking Action
 
 1. The customer gets an SMS with a link to the Conversation.
+   1. <img
+        src="/images/image-(2)-1.png"
+        alt="Image (2) 1"
+        title="Image (2) 1"
+        style={{ width:"37%" }}
+      />
 2. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
 3. When the customer replies, the thread appears in your **My messages** and as unhandled in **Team**. Follow **Handling Inbound Messages** from Step 2 (Claim it).
 
@@ -128,7 +131,7 @@ groups:
     Only messages from **residents and SPs** for customers in the beta. Owner/PM SMS and PM webchat work the same as today during the beta.
   </Accordion>
   <Accordion title="Which messages does Latchel AI handle, and which come to us?">
-    Latchel AI handles all resident and SP messages unless they ask for a person or it's something the AI can't handle. When that happens, the conversation is transferred based on who manages the work order:
+    Latchel AI handles all resident and SP messages unless they ask for a person or it's something the AI can't handle (e.g., leasing or other out-of-scope questions). When that happens, the conversation is transferred based on who manages the work order:
 
     - **Managed by Latchel** → Latchel team's messages (our **Team** queue)
     - **Managed by the PM** → PM team's messages
@@ -148,7 +151,10 @@ groups:
     Product is still confirming how this is handled. Escalate to Operations Support Specialists so they can raise it in **#ai-messaging-beta**.
   </Accordion>
   <Accordion title="Do I still send the CSAT link or the Lucia acknowledgment message?">
-    This is still being confirmed. Escalate to Operations Support Specialists so they can raise it in **#ai-messaging-beta**.
+    - **CSAT link:** Yes. Keep sending the CSAT link as you do today. **Heads up:** we plan to deprecate this process in the near future, and this job aid will be updated when that happens.
+    - **Acknowledgment message:** Not needed. When Latchel AI transfers a Conversation, it already tells the resident or SP they're being passed to a person. Review the thread and reply with your answer.
+
+    ![Image (1) 1](/images/image-\(1\)-1.png "Image (1) 1")
   </Accordion>
   <Accordion title="What happens automatically, without any action from me?">
     1. **Customer texts back instead of clicking the link:** An autoresponder tells them to click the conversation link to chat with Latchel.
