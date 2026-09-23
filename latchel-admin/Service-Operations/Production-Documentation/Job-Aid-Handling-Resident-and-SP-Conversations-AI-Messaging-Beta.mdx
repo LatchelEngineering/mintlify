@@ -22,7 +22,7 @@ groups:
   **⚠️ Beta queue warning:** During beta testing, the **SMS** and **Conversations** icons may both show unhandled or pending messages at the same time. When both queues have messages waiting, compare the message timestamps and handle the **oldest message first**, regardless of which icon it appears under.
 </Warning>
 
-![8499ca8c 4d9d 42b7 8c0f Dd450f236d90](/images/8499ca8c-4d9d-42b7-8c0f-dd450f236d90.png "8499ca8c 4d9d 42b7 8c0f Dd450f236d90")
+![Conversations overview](/images/8499ca8c-4d9d-42b7-8c0f-dd450f236d90.png "Conversations overview")
 
 <Accordion title="Key terms">
   - **Conversation** — A browser chat thread that residents and SPs open from a link in our SMS/email notifications. There is one thread per user per work order, and it is tagged to the WO automatically.
@@ -39,30 +39,30 @@ groups:
 1. Go to **Conversations → Team**. New messages stay unhandled until someone claims them.
    - <img
        src="/images/7a5ad93e-6046-4816-8327-971a5b8d424e.png"
-       alt="7a5ad93e 6046 4816 8327 971a5b8d424e"
-       title="7a5ad93e 6046 4816 8327 971a5b8d424e"
+       alt="Conversations Team section"
+       title="Conversations Team section"
        style={{ width:"20%" }}
      />
 2. **Claim it**
    1. 🛑 **NOTE**: If you see _"[name] is typing…"_, move on to another message since someone is already about to handle it.
       - <img
           src="/images/a199730a-bff6-425c-89a3-ce56eb481078.png"
-          alt="A199730a Bff6 425c 89a3 Ce56eb481078"
-          title="A199730a Bff6 425c 89a3 Ce56eb481078"
+          alt="Typing indicator"
+          title="Typing indicator"
           style={{ width:"61%" }}
         />
    2. 🛑 **NOTE**: If the message needs no reply (e.g., it just says "Thank you"), clicking Mark as Handled is all you need to do.
    3. Click **Mark as Handled** **before** replying. Replying also marks it handled, but claiming first prevents double replies.
       - <img
           src="/images/90aba3ea-9969-4bb9-b586-856b46f2f5d8.png"
-          alt="90aba3ea 9969 4bb9 B586 856b46f2f5d8"
-          title="90aba3ea 9969 4bb9 B586 856b46f2f5d8"
+          alt="Mark as Handled button"
+          title="Mark as Handled button"
           style={{ width:"54%" }}
         />
 3. Scroll the full thread (AI, associate and customer messages) and confirm the tagged WO. Only ask for what's genuinely missing.
-4. Assist the customer using the [How to: Handle SMS/Webchat Contacts (New Support Framework)](https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202), then reply in the thread with the appropriate next step or resolution.
+4. Assist the customer using the [How to: Handle SMS/Webchat Contacts (New Support Framework)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework), then reply in the thread with the appropriate next step or resolution.
    1. 🛑 **NOTE:** Before replying, make sure **Handled by** is set to **Staff**. If it shows **AI**, switch it to **Staff** so the customer's next replies come to the team instead of Latchel AI.
-5. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OPS/pages/1058211367).
+5. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
 6. **No end step:** There is no End Conversation or close option. If the customer writes again about the same work order, the thread reopens as unhandled in **Team**.
 
 <Warning>
@@ -76,25 +76,25 @@ groups:
 <AccordionGroup>
   <Accordion title="Option A: From the WO Conversations tab">
     1. Open the **work order** and go to the **Conversations** tab. Select the **Resident** or **Service provider** tab. Click **Open Conversation**.
-       - ![A7270537 457a 49b2 9f21 C9f5f178d0b6](/images/a7270537-457a-49b2-9f21-c9f5f178d0b6.png "A7270537 457a 49b2 9f21 C9f5f178d0b6")
+       - ![WO Conversations tab and recipient tabs](/images/a7270537-457a-49b2-9f21-c9f5f178d0b6.png "WO Conversations tab and recipient tabs")
     2. Set **Handled by** to **Staff**.
-       - ![6c0429d5 E627 4a3b A1cc 81226f9affb5](/images/6c0429d5-e627-4a3b-a1cc-81226f9affb5.png "6c0429d5 E627 4a3b A1cc 81226f9affb5")
+       - ![Handled by set to Staff](/images/6c0429d5-e627-4a3b-a1cc-81226f9affb5.png "Handled by set to Staff")
     3. Type your message in the thread and send it.
   </Accordion>
   <Accordion title="Option B: From the user's profile or WO tab">
     1. Go to the user's profile or tab in the work order. Click the option to message them (**Message Resident/SP**).
        <img
          src="/images/09ee0959-7785-4d60-a186-53db63f6df68.png"
-         alt="09ee0959 7785 4d60 A186 53db63f6df68"
-         title="09ee0959 7785 4d60 A186 53db63f6df68"
+         alt="Message Resident/SP button"
+         title="Message Resident/SP button"
          style={{ width:"66%" }}
        />
     2. Enter your message. When asked who will handle the reply, choose **Staff**.
        - 🛑 **NOTE:** Always choose **Staff**, not Latchel AI, for messages you send.
          <img
            src="/images/8b8eb6b2-32ac-4b18-830e-56d314442b9b.png"
-           alt="8b8eb6b2 32ac 4b18 830e 56d314442b9b"
-           title="8b8eb6b2 32ac 4b18 830e 56d314442b9b"
+           alt="Reply handler set to Staff"
+           title="Reply handler set to Staff"
            style={{ width:"57%" }}
          />
 
@@ -105,7 +105,7 @@ groups:
 #### 2. Taking Action
 
 1. The customer gets an SMS with a link to the Conversation.
-2. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](https://latchel.atlassian.net/wiki/spaces/OPS/pages/1058211367).
+2. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
 3. When the customer replies, the thread appears in your **My messages** and as unhandled in **Team**. Follow **Handling Inbound Messages** from Step 2 (Claim it).
 
 ## 🚫 What Not to Do
@@ -122,7 +122,7 @@ groups:
   <Accordion title="What are Conversations?">
     When a resident or SP replies to one of our SMS notifications, they get a link to a chat thread that opens in their phone's browser. In the thread they can chat with us and take dashboard actions like scheduling, creating invoices and leaving a review. There is one thread per user per work order, and threads are tagged to the work order automatically.
 
-    ![683689ae Df61 4dab 9d09 28cd60b3a705](/images/683689ae-df61-4dab-9d09-28cd60b3a705.png "683689ae Df61 4dab 9d09 28cd60b3a705")
+    ![SP notification with conversation link](/images/683689ae-df61-4dab-9d09-28cd60b3a705.png "SP notification with conversation link")
   </Accordion>
   <Accordion title="Which customers are affected?">
     Only messages from **residents and SPs** for customers in the beta. Owner/PM SMS and PM webchat work the same as today during the beta.
