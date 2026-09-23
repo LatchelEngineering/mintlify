@@ -3,66 +3,63 @@ title: "Job Aid: Assembly Case Automation Explained"
 groups: ["latchel"]
 ---
 
-### Case Template Automation:
+<Note>
+  This job aid explains the automations in **Wavelength (WL)**, formerly called Assembly: the templates it sends for you, and how each ticket status moves in the PS queue. "Case" and "ticket" mean the same thing here.
+</Note>
 
-#### **New Cases:**
+## Template automation
 
-As soon as a Case is created (Assembly receives the email to [success@latchel.com](mailto:success@latchel.com)), the sender will immediately receive this automatic response:
+### New tickets
+
+As soon as a ticket is created (an email reaches [success@latchel.com](mailto:success@latchel.com) or a #ps-escalation form is submitted), the sender automatically receives:
+
+<Tip>
+  _Thank you for reaching out today! Your request has been received by Latchel. Our team will review your inquiry and respond to you within one business day._
+
+  _If you are reaching out in regards to an urgent maintenance work order request, please contact our Operations Team directly via the Latchel WebChat Support or by texting (206) 717-8374._
+
+  _Thank you!_
+
+  _To add additional comments, reply to this email._
+</Tip>
+
+### Unresponsive customers
+
+Before you close a ticket because the customer stopped responding, send one of these templates in WL:
+
+**Explanation – Unresponsive Follow-Up**
 
 <Frame>
-  ![Screenshot 2025-12-17 075623.png](/images/PST-30.png)
+  ![Explanation – Unresponsive Follow-Up template](/images/PST-31.png)
 </Frame>
+
+**Bias for Action – Unresponsive POC Follow-Up**
+
+<Frame>
+  ![Bias for Action – Unresponsive POC Follow-Up template](/images/PST-32.png)
+</Frame>
+
+### Closed tickets
+
+When a ticket moves to **Closed**, WL automatically sends, 24 hours later, the **"How did we do?"** CSAT survey. **Closed – No Workflow** does **not** send it. See [SOP: Closing Cases in Product Support](/latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support).
 
 ---
 
-#### **Closed Cases**:
+## Ticket status automation
 
-- Before moving a case to _Closed or Closed – No Workflows_**, we manually send the follow-up templates below. A link to our CSAT survey will then be sent automatically 24 hours after the case is moved to** _Closed_
+| Status | What it means | What happens automatically |
+| --- | --- | --- |
+| **Breaching** | The ticket is getting close to the 8-business-hour first-response SLA. Handle it first. | Tickets move here automatically at 6 business hours. |
+| **Needs Response** | Your main working queue: new tickets, tickets where the other party just replied, and tickets that moved back for a check-in (from Escalated or the unresponsive workflow). | A new email from the other party moves any ticket here. |
+| **Escalated** | Escalated to a Latchel internal department (for example, Engineering, Accounts Receivable or Data Support). | After **3 days**, moves back to Needs Response with the note _"PS Reminder for this Escalated Ticket! Check Slack URLs, Linked ASM Tickets, etc. and follow-up as needed!"_ |
+| **Open** | A holding cell: PS has responded and no action is needed right now. | Moves to Needs Response when the customer replies, or after **24 hours** with no reply. |
+| **Closed** | Resolved, or the customer stayed unresponsive after the unresponsive follow-up template. | Sends the CSAT survey 24 hours later. A new customer email reopens it into Needs Response. |
+| **Closed – No Workflow** | No customer action needed: spam, duplicates, the original #ps-escalation tickets. | No survey. A new customer email reopens it into Needs Response. |
 
-Explanation - Unresponsive Follow-Up:
+These are the only statuses in the PS teamspace.
 
-<Frame>
-  ![Screenshot 2025-12-17 084326.png](/images/PST-31.png)
-</Frame>
+For who owns what when you escalate, see:
 
-Bias for Action - Unresponsive POC Follow-Up:
-
-<Frame>
-  ![Screenshot 2025-12-17 084233.png](/images/PST-32.png)
-</Frame>
-
----
-
-### Case State Automation:
-
-#### **Grouping Category**
-
-**1. Active**
-
-| **Case State**<br />**Field** | **New** | **Open** | **Waiting**<br />**for Customer** |
-| --- | --- | --- | --- |
-| **Description** | Brand New Cases that <br />have not been viewed or <br />triaged by PS yet. | Cases that <br />have been responded <br />to by PS and have an <br />ongoing conversation <br />happening. | Case that needs a <br />response from the <br />customer. PS sent the <br />last reply and is <br />waiting for a response. |
-| **Goes back to** <br />**Needs Response** <br />**after 24 Hours** <br />**(if no response from** <br />**Customer or** <br />**update from the** <br />**escalated team).** |  |  | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> |
-| **Goes back to Open** <br />**after 48 Hours**<br /> **(if no response** <br />**from Customer).** |  |  |  |
-| **Goes to** <br />**Needs Response** <br />**when a new email** <br />**response is received.** | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> |  |
-| **Goes to Open.** |  | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> |
-
-2. **Pending**
-
-| **Case State**<br />**Field** | **Escalated** | **Moved to CS Team** | **On Hold** | **Scheduled Call** |
-| :-- | :-- | :-- | :-- | --- |
-| **Description** | Cases that have actions <br />in progress and a <br />concern/question has been <br />escalated to another <br />Latchel Department. <br />To be used with<br />PS is waiting on a <br />response/next steps from <br />Latchel Department. | Cases that are <br />escalated to the <br />CSM or PSM based on <br />the concern/issue in question.<br />More details here:<br /><br />[SOP: Escalating Tickets](https://latchel.atlassian.net/wiki/x/VoDpnQ)<br />[to the CSM](https://latchel.atlassian.net/wiki/x/VoDpnQ)<br />[Product Support Team vs ](https://latchel.atlassian.net/wiki/x/VQDamw)<br />[Customer Success Managers](https://latchel.atlassian.net/wiki/x/VQDamw) | Cases that should not <br />automatically go to Open <br />but cannot be closed yet. | Can be used when a <br />meeting has been <br />scheduled (if used, typically <br />by the CSM). <br />PS does **not** use this state. |
-| **Goes back to** <br />**Needs Response** <br />**after 24 Hours** <br />**(if no response from** <br />**Customer or** <br />**update from the** <br />**escalated team).** | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> |  | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> |  |
-| **Goes back to Open** <br />**after 48 Hours**<br /> **(if no response** <br />**from Customer).** |  |  |  |  |
-| **Goes to** <br />**Needs Response** <br />**when a new email** <br />**response is received.** | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> |  |  |  |
-| **Goes to Open.** |  |  |  |  |
-
-3. **Completed**
-
-| **Case State**<br />**Field** | **Closed -** <br />No Workflows | **Closed** | **Merged** |
-| :-- | :-- | :-- | :-- |
-| **Description** | Used when the case <br />has no actions needed. <br />Use this for PS Escalations <br />from Ops or SPAM emails. | Use this when completing the case when the customer is <br />unresponsive. PS has sent the <br />**Explanation - Unresponsive** <br />**Follow-Up** or **Bias for Action -Unresponsive POC Follow-Up** <br />and have not gotten <br />a response, use this close the case. | Never move a case to <br />this state manually. This only <br />shows on the case state <br />when merging cases together. |
-| **Goes back to** <br />**Needs Response** <br />**after 24 Hours** <br />**(if no response from** <br />**Customer or** <br />**update from the** <br />**escalated team).** |  |  |  |
-| **Goes back to Open** <br />**after 48 Hours**<br /> **(if no response** <br />**from Customer).** |  |  |  |
-| **Goes to** <br />**Needs Response** <br />**when a new email** <br />**response is received.** | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> | <Icon icon="check-square" iconType="duotone" color="#7ed5d5" size={25} /> |  |
-| **Goes to Open.** |  |  |  |
+- [SOP: Escalating Tickets to the CSM](/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM)
+- [Product Support Team vs Customer Success Managers](/latchel-admin/Product-Support-Team/Product-Support-Team-vs-Customer-Success-Managers)
+- [SOP: Latchel Department Escalation Process for Product Support Cases](/latchel-admin/Product-Support-Team/SOP-Latchel-Department-Escalation-Process-for-Product-Support-Cases)
