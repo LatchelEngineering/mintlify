@@ -62,6 +62,7 @@ groups:
    2. 🛑 **NOTE**: If the message needs no reply (e.g., it just says "Thank you"), clicking Mark as Handled is all you need to do.
 3. Scroll the full thread (AI, associate and customer messages) and confirm the tagged WO. Only ask for what's genuinely missing.
 4. Assist the customer using the [How to: Handle SMS/Webchat Contacts (New Support Framework)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework), then reply in the thread with the appropriate next step or resolution.
+   1. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"When can I switch Handled by to AI?**
 5. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
 6. **No end step**: There is no End Conversation or close option. If the customer writes again about the same work order, the thread reopens as unhandled, and anyone who previously replied in it gets a notification _(an unread message bubble)_. If none of them respond within 10 minutes, it's marked red in Team for anyone to pick up.
 
@@ -76,7 +77,10 @@ groups:
 <AccordionGroup>
   <Accordion title="Option A: From the WO Conversations tab">
     1. Open the **work order** and go to the **Conversations** tab. Select the **Resident** or **Service provider** tab. Click **Open Conversation**.
+       1. ![C3f5fe3a 62f4 44b1 Ab57 457467cca755](/images/c3f5fe3a-62f4-44b1-ab57-457467cca755.png "C3f5fe3a 62f4 44b1 Ab57 457467cca755")
     2. Set **Handled by** to **Staff**.
+       1. ![E4eac2d5 603d 4f84 A79a 6fe27c5d4795](/images/e4eac2d5-603d-4f84-a79a-6fe27c5d4795.png "E4eac2d5 603d 4f84 A79a 6fe27c5d4795")
+       2. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"When can I switch Handled by to AI?**
     3. Type your message in the thread and send it.
   </Accordion>
   <Accordion title="Option B: From the user's profile or WO tab">
@@ -135,6 +139,22 @@ groups:
 
     - **Managed by Latchel** → Latchel team's messages (our **Team** queue)
     - **Managed by the PM** → PM team's messages
+  </Accordion>
+  <Accordion title="**When can I switch Handled by to AI?**">
+    Conversations from our Team queue are already set to **Staff**. You can switch **Handled by** to **AI** (or choose **Latchel AI** when sending a message) when the customer's next reply is something Latchel AI can handle in the Conversation. For example:
+
+    - **Requesting photos.** You've asked the resident for photos of the issue, including when a PM asked us to collect them.
+    - **Asking an SP to book or reschedule.** You've asked an unresponsive SP to schedule the appointment using the link.
+    - **Sending an update that needs no reply.** For example, the "moved your work order into our review process" message after a resident reports an unresolved issue, or a status update after reaching voicemail.
+
+    **Keep it on Staff** when:
+
+    - you need the customer's answer to decide the next step (e.g., "Can you tell us what happened?"),
+    - the work order is an **emergency**,
+    - it's time-sensitive,
+    - you're coordinating something that involves the PM, like telling bid SPs to hold off.
+
+    If Latchel AI can't handle the reply, it transfers the Conversation back to a person.
   </Accordion>
   <Accordion title="How do I know a message needs a reply, or that someone else is already on it?">
     New messages come in as unhandled in **Team** until someone clicks **Mark as Handled**. Sending a reply also marks it handled. You'll see "[name] is typing…" if a teammate is already working on it. Once you reply, the thread will also appear in **My messages**.
