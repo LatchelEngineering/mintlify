@@ -4,162 +4,149 @@ groups: ["latchel"]
 ---
 
 <Note>
-  **Objective**: This SOP outlines the process for managing new tickets, including prioritization, addressing spam, non-actionable inquiries, and handling tickets escalated by Latchel Ops.
+  **Objective:** This SOP covers how to manage new tickets in **Wavelength (WL)**, formerly called Assembly. It covers prioritizing the queue, classifying tickets, handling spam and non-actionable emails, and working tickets escalated by Latchel Ops.
 
-  **Preparation**: Before starting, it’s recommended to review the [Ticket Automations](https://help.latchel.com/Job-Aid-Assembly-Case-Automation-Explained) documentation to understand how different case statuses affect the Product Support (PS) queue.
+  **Before you start:** review [Job Aid: Assembly Case Automation Explained](/latchel-admin/Product-Support-Team/Job-Aid-Assembly-Case-Automation-Explained) to understand how each ticket status affects the PS queue.
 </Note>
 
 ### **Ticket Overview**
 
-- A ticket represents a unit of work for Product Support associates. A **ticket** is created whenever an email is sent to [**success@latchel.com**](mailto:success@latchel.com) by a customer or an internal team member escalating an inquiry via the Slack channel [**#ps-escalation**](https://join.slack.com/share/enQtMTAzMDcxODM5NzMxMjQtODFjNWVkNGFlZTYxYzQyYzQwNDg5MTc2ZDJhZTU0Y2RkZDA4NTAwODBhNjBmZDgzMTA1ZjQ0MGNmNTIyOGE5NQ). The PS team must manually grab the ticket by assigning it to themselves before beginning work.
-- When a ticket is created, the sender will receive an automatic response confirming the receipt of their message.
-- New tickets are added to the [**Product Support Teamspace**](https://www.dashboard.askassembly.app/teams/0193894a-1308-78ee-8fdd-bd53cd8b90fb/issues) in Assembly and tagged as **"Needs Response."** This queue is your primary working queue.
+- A ticket is one unit of work for a PS associate. A ticket is created when:
+  - someone emails [**success@latchel.com**](mailto:success@latchel.com), or
+  - a Latchel team member submits the escalation form in [**#ps-escalation**](https://join.slack.com/share/enQtMTAzMDcxODM5NzMxMjQtODFjNWVkNGFlZTYxYzQyYzQwNDg5MTc2ZDJhZTU0Y2RkZDA4NTAwODBhNjBmZDgzMTA1ZjQ0MGNmNTIyOGE5NQ) (Ops escalations and Latchel Sync Requests).
+- The sender automatically gets a confirmation that we received their message.
+- New tickets land in the [**Product Support teamspace**](https://www.dashboard.askassembly.app/teams/0193894a-1308-78ee-8fdd-bd53cd8b90fb/issues) with the status **Needs Response**. This is your main working queue.
+- Tickets aren't assigned automatically. Assign a ticket to yourself before you start working it.
 
 ---
 
-### **Prioritizing Assembly Tickets**
+### **Prioritizing the Queue**
 
-Upon starting your shift, PS associates must prioritize tickets in the following order:
+At the start of your shift, work tickets in this order:
 
-##### (1) Breaching (Highest Priority)
+##### (1) Breaching (highest priority)
 
-- Any tickets that have already breached our 8 Business-Hour SLA fall into this bucket and must be handled **immediately**.
+- Our first-response SLA is **8 business hours**. A ticket moves to **Breaching** at **6 business hours**, so you still have time to respond before the SLA is missed. Handle these **immediately**.
 
 <Frame>
-  ![Screenshot 2026-01-15 at 7.28.15 AM.png](/images/PST-33.png)
+  ![Breaching tickets in the queue](/images/PST-33.png)
 </Frame>
 
 ##### (2) Needs Response
 
-This is the **primary working queue** during your shift.
+This is your **main working queue** during your shift.
 
-1. Start with **brand new Needs Response** that have not received a human response. These must be responded to in order to meet the **8 business-hour First Response SLA**.
-
-- These are identifiable by: A **time stamp (not a date) b** often being **unassigned.**
-- Tickets approaching the 8-hour SLA will display: the elapsed time and how close the ticket is to breaching.
+1. **Start with brand-new tickets** that haven't had a human response yet. Answer these first to meet the **8-business-hour first-response SLA**.
+   - You can spot them by a **time stamp (not a date)**, and they're often **unassigned**.
+   - Tickets close to the SLA show the elapsed time and how close they are to breaching.
 
 <Frame>
-  ![Screenshot 2026-01-15 at 7.35.24 AM.png](/images/PST-34.png)
+  ![New Needs Response tickets](/images/PST-34.png)
 </Frame>
 
-2. **Work Oldest to Newest**: Handle these tickets based on the **Date/Time Opened**, starting with the oldest.
-
-- The queue is **automatically sorted** from top → bottom (oldest → newest).
-- Determine whether: A response or follow-up is required, or the ticket can be closed.
+2. **Then work oldest to newest** by date and time opened. The queue is sorted automatically, oldest at the top.
+   - For each ticket, decide whether it needs a response or follow-up, or can be closed.
 
 <Check>
-  **Continuously monitor the queue!** New tickets may appear at any time. Toggle back to newly created tickets as they come in to avoid SLA risk.
+  **Keep an eye on the queue.** New tickets can arrive at any time. Go back to new tickets as they come in so nothing gets close to the SLA.
 </Check>
 
-##### **(3) Escalated**
+##### (3) Escalated
 
-When a ticket remains in **Escalated** status for more than **3 days**, it will:
+- Escalated means PS is waiting on another Latchel department.
+- If a ticket stays in **Escalated** for **3 days**, it moves back to **Needs Response** automatically with this internal note: _"PS Reminder for this Escalated Ticket! Check Slack URLs, Linked ASM Tickets, etc. and follow-up as needed!"_ Check the Slack thread, linked ASM tickets and any other follow-ups.
+- If no check-in or follow-up is needed yet, move it back to **Escalated**.
 
-- Automatically move back to **Needs Response** and include an **Internal Note Reminder** to review: Slack threads, ASM links, any other relevant follow-up resources. **_(If no check-in or follow-up is needed, move the ticket back to Escalated.)_**
+##### (4) Open
 
-##### **(4) Open**
-
-- Prioritize by **Last Reply Date/Time (oldest → newest)**; this queue is **automatically sorted** with newest at the top and oldest at the bottom.
-
-<Frame>
-  ![Screenshot 2026-01-15 at 7.55.01 AM.png](/images/PST-35.png)
-</Frame>
-
-### **Ticket Processing**
-
-When you open a ticket, follow the steps below:
-
-##### Step 1. Assign yourself as the ticket owner, then start the timer.
+- Work these by **last reply date and time, oldest first**. This queue is sorted with the newest at the top, so start at the bottom.
 
 <Frame>
-  ![image-20251217-003550.png](/images/PST-36.png)
+  ![Open tickets sorted by last reply](/images/PST-35.png)
 </Frame>
 
-##### Step 2. Add the appropriate tag for the ticket and update the company name under the customer profile.
+---
 
-- Under Customer Profile, search the name of the company associated with the email.
-- If the ticket is created through an Ops Escalation, Assembly will automatically apply the **“Not Actionable”** label. Ensure the ticket is also tagged as **“Ops Escalation.”** When selecting tags, refer to the [Job Aid: Interaction Tags Explained](https://help.latchel.com/Job-Aid:-Interaction-Tags-Explained) to confirm the appropriate classification.
+### **Working a Ticket**
+
+##### Step 1. Assign yourself as the ticket owner, then start your timer.
 
 <Frame>
-  ![image-20251217-182014.png](/images/PST-37.png)
+  ![Assign yourself and start the timer](/images/PST-36.png)
 </Frame>
+
+##### Step 2. Link the customer and classify the ticket.
+
+- Under **Customer Profile**, search for and select the company that goes with the sender's email.
+- Classify the ticket with **Category**, **Attributes** and **Tags**. See [Job Aid: Interaction Category, Attributes, and Tags](/latchel-admin/Product-Support-Team/Job-Aid-Interaction-Tags-Explained).
+  - **Category** = how the ticket reached us. Pick one.
+  - **Attributes** = what it's about (Topic), and why it happened (Root Cause) if something went wrong.
+  - **Tags** = the outcome. Pick every tag that applies.
+- **Ops escalations** from #ps-escalation get the Category **Latchel Ops Escalation**.
 
 <Frame>
-  ![image-20251217-181916.png](/images/PST-38.png)
+  ![Customer profile](/images/PST-37.png)
 </Frame>
 
-##### **Step 2. Spam Identification**
+##### Step 3. Close spam and non-actionable tickets.
 
-- **Definition**: Spam includes unsolicited messages such as junk mail, advertisements, or emails sent to harass or collect unauthorized responses.
+- **Spam:** unsolicited messages such as junk mail, ads, or emails sent to harass or fish for a response.
+- **Non-actionable:** automated replies (for example, out-of-office), system notifications, survey emails, or invalid escalations where no action is needed.
 
-If the case is identified as spam, follow these steps:
+For both:
 
-- **Action**: Tag the ticket as “Not Actionable” and change the status to “Closed-No Workflow”.
-
-##### **Step 3. Non-Actionable Cases**
-
-- **Definition**: Non-actionable emails include automated responses (e.g., out-of-office replies), system-generated notifications, or invalid escalations where no further action is required.
-
-If the case is **Not Actionable**:
-
-- Tag the ticket as “Not Actionable” and change the status to “Closed-No Workflow”.
+1. Set the Category to **Not Actionable**. No Attributes or Tags are needed.
+2. Change the status to **Closed – No Workflow**. This doesn't send the CSAT survey.
 
 <Frame>
-  ![image-20251217-182427.png](/images/PST-39.png)
+  ![Close as Closed – No Workflow](/images/PST-39.png)
 </Frame>
 
-##### **Step 4. Actionable Inquiries**
+##### Step 4. Work actionable tickets.
 
-If the ticket is actionable:
+- Review the ticket and take the right action to resolve it.
+- **Tickets from customers** come from a [non-@latchel.com](mailto:non-@latchel.com) email and are a normal typed message, without the Ops escalation form. Reply to the customer directly.
+- **Ops escalations** come in through the #ps-escalation form. Follow [SOP: Handling Ops Escalations](/latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations).
 
-- The assigned associate should review and take appropriate action to resolve the issue.
+  - Before you close an Ops escalation, send the **PS \<> Ops Follow-Along Escalation Thread** template with the link to the email thread with the PM, so Ops can follow along.
 
-### **Responding to Customer-Initiated Tickets**
+---
 
-When the ticket is directly from the customer, it will have the following characteristics:
+### **Asking the PSM for Help (#ps-asm-escalate)**
 
-1. **From Email**: The ticket will originate from a [**non-@latchel.com**](mailto:non-@latchel.com) email address.
-2. **Content**: The email will be a standard, typed-out message without the **Ops Escalation Form**.
+At any point in a ticket, you may need help deciding next steps. Use this process.
 
-In these tickets, the associate should respond to the customer, providing assistance as needed.
+##### Step 1. Review the ticket and gather the details.
 
-- For tickets that are **Ops Escalations**, refer to [**SOP: Handling Ops Escalations**](https://help.latchel.com/SOP:-Handling-Ops-Escalations)
+- Vet the request, ask the customer clarifying questions, and collect everything you need for full context.
+- Think about the questions the PSM will ask you when you post in [#ps-asm-escalate](https://latchel.slack.com/archives/C05L70GA77D).
 
-### Escalating to Product Support Ticket Review
+##### Step 2. Reply to the customer first.
 
-When working on tickets, there may come moments when first reviewing or throughout the ticket lifecycle where a PS Associate may need assistance on next steps or has questions on the best path forward.
+- Send the **PS Case Review** template in WL before you escalate. This keeps us inside the first-response SLA and keeps the customer informed.
 
-##### Step 1: Review the ticket and ask clarifying questions.
-
-- PS should thoroughly vet the escalation, ask clarifying questions and gather all details to ensure they have full context.
-- Think about the questions that the PSM may ask you when submitting to [#ps-asm-escalate](https://latchel.slack.com/archives/C05L70GA77D) channel.
-
-##### Step 2: Send [PS Case Review template](https://www.dashboard.askassembly.app/preferences/templates) in Assembly to the client.
-
-- Prior to submitting the ticket for review, always be sure to send a response to the client to ensure we are sending first responses to meet our SLA and keeping clients in the loop!
-
-##### Step 3: **Fill out the ASM Ticket Escalation workflow** in the [#ps-asm-escalate](https://latchel.slack.com/archives/C05L70GA77D) **Slack channel**.
+##### Step 3. Fill out the ASM Ticket Escalate workflow in [#ps-asm-escalate](https://latchel.slack.com/archives/C05L70GA77D).
 
 <Frame>
-  ![image-20251217-204756.png](/images/PST-40.png)
+  ![ASM Ticket Escalate workflow](/images/PST-40.png)
 </Frame>
 
-- ASM URL - Copy and past the Assembly Ticket URL link here.
-- ASM Ticket Label - Copy and paste the appropriate label used for the ASM Ticket.
-- **If ASM Label is for Integrations, which PMS? (optional)** - Complete this field specifying the type of PMS the property management uses when the issue is related to an integration.
-- Company Name - Company name of who PS is communicating with in the case (this can be a PM Company or SP Company).
-- PM Subscription - Check the PM’s ACTIVE subscription and find the correlating Product Package and the Product Attached.
-- Company URL - Copy and paste the company’s URL from the Latchel console.
-- WO Link (if applicable) - Copy & paste the relevant WO URL link (if the case is regarding a WO; if not, PS can put “N/A”)
-- Company Profile URL - Copy & paste the Profile URL Link of the Company that the case is concerning (whether PM or SP).
-- Escalation Summary - What is the customer’s question? What is the issue? Give full context, details, any relevant Slack URLs, etc.
-- What research have you done? What have you found out?
-  - What settings have you checked? What SOPs have your reviewed? What Help Guides are relevant? What do you know?
-  - Copy and paste the Help Guide URLs and SOPs that are most relevant to the situation and appropriate to share with the client. [**Help Center Reference Guide**](https://help.latchel.com/Help-Center-Reference-Guide)
-  - If you **cannot find one** for the situations, PS should request following[ **How to: Report Issues with the Latchel Help Center**](https://help.latchel.com/How-to:-Report-Issues-with-the-Latchel-Help-Center)
-  - If you cannot find an SOP, request one in the [**#svc-ops-requests**](https://latchel.slack.com/archives/C026G58ENE7) Slack Channel using the SOP Update Request workflow.
-- What is your question? What are you stuck on? What do you need help with? - How would YOU respond? What do YOU think the answer is?
+- **ASM URL:** the WL ticket link.
+- **ASM Ticket Label:** the ticket's Attribute (topic).
+- **If it's an integration issue, which PMS? (optional):** the PM's property management system.
+- **Company Name:** the PM company or SP company you're working with.
+- **PM Subscription:** the PM's active subscription, product package and attached products.
+- **Company URL:** the company's link in the Latchel admin.
+- **WO Link (if applicable):** the work order link, or "N/A".
+- **Company Profile URL:** the profile link for the PM or SP the ticket is about.
+- **Escalation Summary:** the customer's question or issue, with full context, details and any Slack links.
+- **What research have you done? What did you find?**
+  - Which settings did you check? Which SOPs did you review? Which help guides apply?
+  - Paste the help guide and SOP links that are most relevant and OK to share with the customer. Start with the [Help Center Reference Guide](/latchel-admin/Service-Operations/Production-Documentation/Help-Center-Reference-Guide).
+  - If there's no help guide for the situation, report it using [How to: Report Issues with the Latchel Help Center](/latchel-admin/Product-Support-Team/How-to-Report-Issues-with-the-Latchel-Help-Center).
+  - If there's no SOP, request one in [**#svc-ops-requests**](https://latchel.slack.com/archives/C026G58ENE7) with the **Ops SOP Requires Update** workflow (teamspace: PS Mgmt).
+- **What's your question?** What are you stuck on? How would **you** respond, and what do **you** think the answer is?
 
-##### Step 4: Copy the Slack URL Link and paste the link in the Ticket Thread.
+##### Step 4. Paste the Slack thread link into the ticket.
 
-- See this: [SOP: Latchel Department Escalation Process for Product Support Cases](https://latchel.atlassian.net/wiki/x/QACjvg)
+- If the ticket needs another Latchel department, follow [SOP: Latchel Department Escalation Process for Product Support Cases](/latchel-admin/Product-Support-Team/SOP-Latchel-Department-Escalation-Process-for-Product-Support-Cases).

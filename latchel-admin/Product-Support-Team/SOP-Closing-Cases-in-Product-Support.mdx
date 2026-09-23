@@ -3,23 +3,40 @@ title: "SOP: Closing Cases in Product Support"
 groups: ["latchel"]
 ---
 
-### **What is required before closing a case?**
+<Note>
+  This SOP covers closing tickets in **Wavelength (WL)**, formerly called Assembly. "Case" and "ticket" mean the same thing here.
+</Note>
 
-- **Contact Information**
-- **Customer Details**
-- **[Interaction Tags](https://help.latchel.com/Job-Aid:-Interaction-Tags-Explained):** Assigning the correct interaction tags is critical for accurate reporting.
+### **Before you close a ticket**
 
-### **How To: Close a Case**
+Make sure the ticket has:
 
-To close a case, update the case status in the Case Details box to either:
+- **Contact information:** the right contact is linked.
+- **Customer details:** the right company is linked under Customer Profile.
+- **Classification:** Category, Attributes and Tags are filled in. Accurate classification drives our reporting. See [Job Aid: Interaction Category, Attributes, and Tags](/latchel-admin/Product-Support-Team/Job-Aid-Interaction-Tags-Explained).
 
-- **Closed**: Use this when all actions have been completed, and the customer has been responsive. The issue, request, or question has been fully resolved. Even when the customer is unresponsive, ensure the **Unresponsive Follow-Up Templates** in Assembly have been sent, and no response was received before closing the case.
-- **Closed- No Workflow**: Select this for Assembly tickets like the Ops Escalations we received from the Ops Team.
+  - Category is always required.
+  - Attributes (Topic) is always required, except when the Category is **Not Actionable**.
+  - Add a Root Cause only if something went wrong.
+  - Add every outcome Tag that applies.
 
-### **What happens after closing a case?**
+### **How to close a ticket**
 
-After the case status is updated, an automated template is sent to the customer **24 hours later**, including a link to the **CSAT survey**.
+Change the ticket status to one of these:
 
-**Important Note**: The automation will only trigger if the case is closed by one of the following users: @Maddie, @Abi San Juan, @Cres Jefferson, @Cza Guinto, or @Jennifer Folch. If a different user closes the case, the automation will not work.
+| Status | When to use it | CSAT survey sent? |
+| --- | --- | --- |
+| **Closed** | All actions are done and the request, issue or question is resolved. Also use this when the customer stopped responding, but only after you've sent the unresponsive follow-up templates in WL and got no reply. | **Yes** |
+| **Closed – No Workflow** | No customer action is needed: spam, duplicates, and the original #ps-escalation tickets from Ops. | **No** |
 
-If additional users need to be added or removed from this automation, please contact @Diego Arizmendi in the `#data-reporting-help-requests` channel.
+<Warning>
+  **Ops escalations:** before you close one, send the **PS \<> Ops Follow-Along Escalation Thread** template with the link to your email thread with the PM.
+</Warning>
+
+### **What happens after you close a ticket**
+
+When a ticket in the **Product Support teamspace** moves to **Closed**, WL automatically emails the customer our **"How did we do?"** CSAT survey **24 hours later**. It has five faces to choose from, and responses go to the PS CSAT (Responses) sheet. This happens no matter who closed the ticket.
+
+**Closed – No Workflow** never sends the survey.
+
+For questions about the CSAT automation, contact **@Maddie**, who owns it.

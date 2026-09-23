@@ -3,60 +3,78 @@ title: "Product Support (PS) New Hire Setup"
 groups: ["latchel"]
 ---
 
-#### Owned and Maintained by PS
+<Note>
+  **Who this is for:** new Product Support associates in their first week. Work through each section with your manager on Day 1. Our ticketing tool is **Wavelength (WL)**, formerly called Assembly. Ticket numbers still start with **ASM-** and links still go to `dashboard.askassembly.app`.
+</Note>
 
-1. **Slack Channels:**
+## 1. Access you need
 
-- #ps-team-chat - Private team slack channel
-  - Morning Standup - Scheduled message sent in the AM to share queues and workload volume.
-  - Pulse Check - Scheduled message sent in the afternoon to check in on queues and see where support may be needed.
-  - ASM Template Request - Workflow to submit a request for a template to be added to salesforce to be used for cases.
-  - DD Conclusion Workshop - Workflow to fill out original DD Conclusion and then share a new updated, PM-facing conclusion. Used to help PS improve communication skills and how we present these conclusions in a digestible manner.
-  - PS SOP Request - When PS cannot find an answer or next steps, they should use this workflow to submit for a new SOP or add an update to an existing SOP.
-  - FYI Heads Up PMs - Scheduled message sent every Friday for PS to fill out any PM Tickets that should be shared with the CSM as a heads up! (This should be different from tickets already escalated to the CSM).
-- #ps-asm-escalate - Used for PS to submit cases they need assistance with, do not know the answer, are not sure the next steps to take, etc.
-  - ASM Ticket Escalate - Workflow for when any ticket that PS has questions on or gets stuck on. Escalation point to the PSM.
-- #ps-dd-sddi - Used for PS and CSM to submit WOs to be deep dived by PS.
-  - DD Request - Workflow for all deep dives needed; complaints regarding delays, missed appointments, confusion on automation, invoice disputes, etc.
-  - SDDI Request - Workflow for dives for negative WO Reviews, CSATs, Google Reviews, etc.
-- #pd-cn-actionset - Used for PS and CSM to submit pre-dispatch instructions, critical notes and action sets for review, approval and execution.
-  - PD and CN Request - Workflow for any pre-dispatch instructions or critical note that a PM, Owner or SP wants added to their account. Submit for review and approval.
-  - Action Set Request - Workflow for any action set that a PM wants added to their account.
-- #csm-escalation - Used for ASM Tickets that PS needs to escalate to the CSM to handle.
-  - PS Escalate to CSM - Workflow for cases that have been deemed scenarios that require escalation to the CSM to handle.
-    - For reference: [Product Support Team vs Customer Success Managers](https://latchel.atlassian.net/wiki/x/VQDamw)
-- #ps-cs-sync - Used a cross functional `PS<>CS comms channel`; not to be in place of the formal official #csm-escalation channel. This is just used to confirm details with the CSM, ask leadership advice for how to handle a situation, give a quick “heads up” to the CSM, etc.
+| Tool | What it's for | How to get access |
+| --- | --- | --- |
+| **Wavelength (WL)** | PS ticket queue (Product Support teamspace) | Manager adds you to the Product Support teamspace |
+| **Slack** | Team chat, escalation workflows | Join the channels in section 2 |
+| **Help Center (Mintlify)** | All SOPs and job aids: [help.latchel.com](https://help.latchel.com/latchel-admin/Product-Support-Team/product-support-overview) | Sign in with your @latchel.com Google account |
+| **Latchel admin** | Work orders, properties, accounts, settings | Admin login on app.latchel.com |
+| **Twilio** | Call and SMS logs for investigations | Manager requests access |
+| **FullStory** | Session replays for investigations | Manager requests access |
+| **PGAdmin** | Database lookups for investigations | Manager requests access |
+| **Loom** | Recording walkthroughs for customers and the team | Sign in with Google |
+| **Sheriff** | Shift schedule and time-off requests (replaced Deputy on Sep 21, 2026) | Sign in with Google |
+| **Shared inbox** | [success@latchel.com](mailto:success@latchel.com) | Manager grants access |
 
-2. **Google Docs:**
+<Warning>
+  **Confluence is no longer used.** It isn't updated or managed. The Help Center (Mintlify) is the only source of truth for PS process. For process questions, use the **Mintlify assistant**, not Rovo, which still indexes the old Confluence library.
+</Warning>
 
-- Individual 1:1 Tracker Docs
+## 2. Slack channels
+
+#### Owned and maintained by PS
+
+| Channel | What it's for | Workflows in the channel |
+| --- | --- | --- |
+| **#ps-team-chat** | Private PS team channel | **Morning Standup** and **Pulse Check** (scheduled check-ins on queues and workload), **PS Daily Check-In**, **DD Conclusion Workshop** (rewrite a DD conclusion into a PM-facing version), **FYI Heads Up PMs** (Friday reminder to flag PM tickets the CSM should know about, separate from tickets already escalated to the CSM) |
+| **#ps-asm-escalate** | Ask the PSM for help when you're stuck or unsure of next steps on a ticket | **ASM Ticket Escalate** |
+| **#ps-escalation** | Where Ops escalates to PS. Each submission creates a ticket in WL. | Ops escalation form, **Latchel Sync Request** (moved here Sep 16, 2026) |
+| **#ps-dd-sddi** | Submit work orders for PS to deep dive | **DD Request** (delays, missed appointments, automation confusion, invoice disputes), **SDDI Request** (negative WO reviews, CSATs, Google Reviews) |
+| **#pd_cn_actionset** | Pre-dispatch instructions, critical notes and action sets for review, approval and execution | **PD and CN Approval** (a PM, owner or SP wants an instruction or note added), **Action Set Request** |
+| **#csm-escalations** | Tickets PS needs to hand to the CSM | **PS Escalate to CSM**. See [Product Support Team vs Customer Success Managers](/latchel-admin/Product-Support-Team/Product-Support-Team-vs-Customer-Success-Managers) |
+| **#ps-cs-sync** | Private PS \<> CS channel for quick checks with a CSM, leadership advice or a heads-up. It doesn't replace #csm-escalations. | None |
+| **#ps-integration-help** | Complex integration questions. Discuss and align here before reaching out to the customer. | None |
+
+#### Other channels PS uses
+
+| Channel | What it's for |
+| --- | --- |
+| **#latchel-nomad** | Coordinating with NOMAD on owner cases |
+| **#latchel-rentredi** | Coordinating with RentRedi on owner cases |
+| **#accounts-receivable** | Subscription invoicing requests to AR |
+| **#data-support-requests** | Account update requests for Data Support |
+| **#data-reporting-help-requests** | Data and reporting requests that need custom queries |
+| **#svc-ops-requests** | SOP and policy requests. To request a new SOP or a change to an existing one, use the **Ops SOP Requires Update** workflow and choose the **PS Mgmt** teamspace. A PS-specific SOP request workflow is coming soon. |
+| **#svc-ops-feedback** | Operational feedback from other departments: praise, or complaints about unprofessional behavior (private) |
+| **#integration-health** | Improving and refining processes for the [Integration Health Dashboard](https://app.latchel.com/admin/integration-health) |
+
+## 3. Google Docs
+
+- Your individual 1:1 tracker doc (your manager shares it)
 - [PS Weekly Team Meeting Agenda](https://docs.google.com/document/d/12N4ecQ1koFeuQ89dJCWBN_MtCgRqrCksWPjzlUKLAnk/edit?usp=sharing)
-- [https://docs.google.com/document/d/1DEWvSUGosJpHG-KsOH2voWsfb2DqK87giUzKU1MurK8/edit?usp=sharing](https://docs.google.com/document/d/1DEWvSUGosJpHG-KsOH2voWsfb2DqK87giUzKU1MurK8/edit?usp=sharing)
+- [PS \<> CS Sync | 2026 Weekly Agendas](https://docs.google.com/document/d/1Fkf4YHwwNZm3N582MFE77T6WspEG_pe4Jmmsg2JoDuY/edit)
 
-3. **Weekly Meeting Invites:**
+## 4. Recurring meetings
 
-- PS Team Meeting
-- Service Ops All Hands
-- Weekly Town Hall
-- `PS<>CS Sync`
-- Individual 1:1s
+| Meeting | When |
+| --- | --- |
+| PS Weekly Team Meeting | Wednesdays, 12:30–1:15 PM CT |
+| PS \<> CS Weekly Sync | Mondays, 11:15–11:45 AM CT |
+| Service Ops All Hands | Per calendar invite |
+| Weekly Town Hall | Per calendar invite |
+| Individual 1:1s | With your manager |
 
-4. **Calendars:**
+## 5. Calendars
 
-- PS OOTO - Once time off is approved in Deputy, PS should add the OOO time to this calendar.
+- **PS OOTO:** once your time off is approved in Sheriff, add it to this calendar.
 
-#### Performance Tracker
+## 6. Performance tracking
 
-- Individual Looker Dashboards with Quality Audit Scores and Feedback.
-
-#### Credentials required
-
-- Assembly
-- Confluence
-- Loom
-- Fullstory
-- Twilio
-
-#### Email Inboxes
-
-- [success@latchel.com](mailto:success@latchel.com)
+- Individual Looker dashboards with your Quality Audit scores and feedback.
+- You join the weekly Quality Audit cycle once you start working live tickets.
