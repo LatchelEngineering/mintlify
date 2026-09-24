@@ -7,7 +7,7 @@ sidebarTitle: "Overview"
 <Note>
   #### **Purpose**
 
-  When escalating issues or seeking answers from other departments, it’s essential to use the **correct Slack channels and workflows**. Doing so ensures visibility, proper tracking, and faster resolution by the appropriate team.
+  When escalating issues or seeking answers from other departments, it's essential to use the **correct Slack channels and workflows**. Doing so ensures visibility, proper tracking, and faster resolution by the appropriate team.
 </Note>
 
 <Note>
@@ -15,28 +15,75 @@ sidebarTitle: "Overview"
 
   - Product Support (PS)
   - Customer Success Managers (CSMs)
-  - Any team member who needs to escalate a case or ask cross-functional questions.
+  - Any team member who needs to escalate a ticket or ask cross-functional questions.
 </Note>
 
-| **Channel** | **Purpose / Details** | **Workflow** |
+<Tip>
+  **Always use the workflow when a channel has one.** Workflows capture the details the other team needs (company, ticket link, WO link, summary), so they don't have to come back and ask. After you submit, copy the Slack link and paste it into the Wavelength ticket as an internal note.
+</Tip>
+
+### Billing & Payments
+
+| **Channel** | **Use it for** | **Workflow** | **Common PS examples** |
+| --- | --- | --- | --- |
+| `#accounts-receivable` | Monthly subscription invoices, PM billing POCs, payment methods, disputes, failed payments, internal errors and unit adjustments. Used to notify Accounting of a PM's current Active Unit count. | **Subscription Invoicing** — Billing disputes, change requests, general questions, past due invoices, failed payments, internal error catch, active unit adjustment alerts. | Credits for unit-count disputes, removing a payment method, microdeposit issues, requesting a copy of a contract or invoice, refunding a credit after cancellation. |
+| `#work-order-payments` | **Work order invoice disputes** and WO payment questions. | **Invoice Dispute** — Escalate a WO invoice dispute or refund to Finance with the DD link, dispute amount and invoice date. **Payment Inquiry** — General WO payment questions. | Refunds after a Deep Dive conclusion, WO invoice disputes. |
+| `#accounts-payable` | Charges and payouts on the **Service Provider/vendor side**. | _No workflow._ Include the company, WO link, ticket link and amount in your post. | A card charged without authorization, a vendor unable to save payment details, 1099 requests. |
+
+### Product & Engineering
+
+| **Channel** | **Use it for** | **Workflow** | **Common PS examples** |
+| --- | --- | --- | --- |
+| `#bug-report` | Low-urgency system issues or app misbehavior impacting customers or internal processes. | **Bug Report** — Submit through the [in-app bug report form](https://app.latchel.com/admin/bug-reports). It posts to the channel automatically. | Integration sync failures, recurring WOs stuck in Diagnosing, warranty-hold WOs auto-releasing, the resident portal showing the wrong WOs. |
+| `#tech-high-sev-escalations` | **Business-critical** technical issues impacting multiple customers or Latchel operations. See [Job Aid: Tech High Sev Framework](/latchel-admin/Product-Support-Team/Job-Aid-Tech-High-Sev-Framework). | **High Severity Tech Escalation** — Alert on-call engineers for immediate response. | Widespread outages or failures affecting many customers at once. |
+| `#feature-requests` | Feature requests or PM pain points that could inform product enhancements. | **Feature Request** — Submit through the in-app form. It posts to the channel automatically. See [How to Handle: Feature Requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests). | Audit trails (on-call rotation, critical notes), assigning a vendor while a WO is Pending, invoice controls. Also used to log PM requests that deviate from the standard Pre-Dispatch process. |
+| `#integration-health` | Integration sync problems and PMS connection issues. | _No workflow._ | Yardi, Rent Manager or Propertyware sync failures, PMS credential issues. |
+| `#product` | General product feedback, questions and news. Use it to confirm product behavior or share PM feedback. | _No workflow._ | Confirming how a feature is supposed to work. |
+| `#harmonia-feedback` | Feedback on how a work order was processed by **Intake Settings (Harmonia)**. | **Intake feedback on the WO** — Don't post directly. Submit from the work order and it populates in this channel (see below). | A PM emails us that a WO was classified or routed incorrectly by their intake settings. |
+
+<Info>
+  **How to submit intake feedback:** If a PM sends intake feedback directly by email, open the work order. In the **Intake Details** section, click the **thumbs up** or **thumbs down** based on the PM's feedback, then copy and paste the PM's **exact** feedback. Once submitted, it populates in `#harmonia-feedback`.
+</Info>
+
+<Warning>
+  **Pre-Dispatch Instructions and Critical Notes are not feature requests.** Submit them through the **PD and CN Request** workflow in `#pd_cn_actionset`. Only log them in `#feature-requests` when the PM's request deviates from our standard process (see [SOP: Pre-Dispatch Instructions & Critical Notes](/latchel-admin/Product-Support-Team/SOP-Pre-Dispatch-Instructions-Critical-Notes)).
+</Warning>
+
+### Operations & Data
+
+| **Channel** | **Use it for** | **Workflow** | **Common PS examples** |
+| --- | --- | --- | --- |
+| `#pd_cn_actionset` | Pre-Dispatch Instructions, Critical Note approvals and Action Set requests. See [How to: Request PD/CN Approval](/latchel-admin/Product-Support-Team/How-to-Request-Pre-Dispatch-Instruction-and-or-Critical-Note-Approval). | **PD and CN Request** — Non-standard PD/CN requests. **Action Set Request** — PM-specific automations. | Auto-assigning or suppressing a vendor for a portfolio, skipping resident notifications, notifying the PM when a vendor rejects a WO, after-hours emergency instructions. |
+| `#ops_assistance_hub` | When we need Ops to take action on a work order, or carry out an update or instruction **in real time**. | _No workflow._ Include the WO link, what you need and how urgent it is. | Contacting a vendor for an estimate, photos or charges; creating an emergency WO; a courtesy call to a PM. |
+| `#svc-ops-requests` | SOP policy requests or update needs for Service Ops. | **Ops SOP Requires Update** — New or updated Ops SOPs. | Requesting an update to an Ops SOP after finding a gap. |
+| `#svc-ops-feedback` | Feedback for Latchel Ops Agents — praise, concerns or improvement opportunities. | **Agent Feedback** | Sharing feedback on how an agent handled a WO. |
+| `#data-support-requests` | Data Support requests. | **Data Support Request** form. | Property and resident sync audits, removing critical notes in bulk, reactivating integrations, unit-count updates. |
+| `#data-reporting-help-requests` | Custom reporting or engineering guidance on automations. | _No workflow._ | When an on-call rotation was changed, owner records for a portfolio. |
+
+### Customer Success, Sales & Partners
+
+| **Channel** | **Use it for** | **Workflow** | **Common PS examples** |
+| --- | --- | --- | --- |
+| `#csm-escalations` | Escalations from PS to the CSM for ownership and communication. See [SOP: Escalating Tickets to the CSM](/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM). | **New Escalation from PS** — Company, CSM, customer profile URL, priority, ticket link, WO link, escalation category and issue summary. | Cancellation or downgrade requests, a PM asking for a call, an email thread that's getting complex (call recommended), a frustrated PM, a PM disputing a denied invoice dispute. |
+| `#ps-cs-sync` | CS ↔ PS communication and FYIs. Used for coordination — _not_ a replacement for CSM escalations. | _No workflow._ | FYIs on accounts the CSM should know about. |
+| `#service-changes` | Tracks account terminations and offboarding and notifies Finance. | **Account Terminated** — Notify Finance. | A PM confirming they're terminating their account. |
+| `#growth-team` | Sales team channel. | **Escalate to Sales** — Share prospect info. | Inbound pricing questions from prospects, integration-interest notices. |
+| `#partnerships-perks` | Questions about current Resident Benefits partnerships. | **Question for PP** — What benefit it's about, ticket link and the question. | Move-In Promise gift cards, Accidental Damage reimbursement proof. |
+| `#ask-answer` | Company-wide channel for cross-departmental questions when no other channel fits. | _No workflow._ | Whether we support a new market, one-off policy questions. |
+
+### Product Support (internal)
+
+| **Channel** | **Use it for** | **Workflow** |
 | --- | --- | --- |
-| `#accounts-receivable` | Discussions related to monthly subscription invoices, PM billing POCs, payment methods, disputes, failed payments, internal errors, and unit adjustments. Used to notify Accounting of a PM’s current Active Unit. | **Subscription Invoicing** — Billing disputes, change requests, general questions, past due invoices, failed payments, internal error catch, active unit adjustment alerts. |
-| `#work-order-payments` | Payment escalations (e.g., urgent SP payouts, payment issues). Anything tied to the **vendor payment process**. | **Payment Inquiry** — General payment questions. **Invoice Dispute** — Escalate to Finance with context. |
-| `#bug-report` | Reporting low-urgency system issues or app misbehavior impacting customers or internal processes. | **Bug Report** — Submit bug details for triage. |
-| `#tech-high-sev-escalations` | Escalating **business-critical** technical issues impacting multiple customers or Latchel operations. Resource: [https://latchel.atlassian.net/wiki/x/HQAM2g](https://latchel.atlassian.net/wiki/x/HQAM2g) | **High Severity Tech Escalation** — Alert on-call engineers for immediate response. |
-| `#product` | General product feedback, questions, and news. Use to confirm product behavior or share PM feedback. | _No workflow._ |
-| `#feature-requests` | Submit and discuss feature requests or PM pain points that could inform product enhancements. | **Feature Request** — For specific asks. **Problem / Pain Point** — When PMs express issues or friction points. |
-| `#pd_cn_actionset` | For Pre-Dispatch Instructions (PD), Critical Note approvals, and action set requests. | **PD & CN Approval** — Non-standard PM requests. **Action Set** — Add PM-specific instructions or triggers. |
-| `#ps-team-chat` | Internal PS comms for SOP gaps, bug coordination, template requests, and DD conclusion reviews. One PS agent manages each bug to keep comms streamlined. | **PS SOP Request** — Missing SOPs. **DD Conclusion Workshop** — Share DD conclusions. **ASM Template Request** — Template use cases. **Bug Reported** — Share bug report link. |
-| `#psm-escalate` | Ask the PSM for help when you're stuck or unsure of next steps on a ticket. Use when you’ve investigated but want input before responding. | **PS Ticket Escalate** — Escalate a ticket to the PSM. |
-| `#csm-escalations` | Escalations from PS to CSM for ownership and comms. Resource: [https://latchel.atlassian.net/wiki/x/VQDamw](https://latchel.atlassian.net/wiki/x/VQDamw) | **PS Escalate to CSM** — When CSM should take over. |
-| `#ps-dd-sddi` | Intake channel for complex or mini investigations. | **DD Request** — For full investigations. **SDDI** — For low-score feedback (WO reviews, CSAT, Google). |
-| `#help-guide-requests` | Request to create, update, or escalate Help Guides. | **New Guide Request** / **Update Existing** / **Help Guide Escalation** |
-| `#ps-cs-sync` | CS ↔ PS comms and FYIs. Used for coordination — _not_ a replacement for CSM escalations. | _No workflow._ |
-| `#data-reporting-help` | For requesting custom reporting or engineering guidance on automations. | _No workflow._ |
-| `#growth-team` | Sales team channel. | **Escalate to Sales** — Share prospect info. |
-| `#partnership-perks` | Questions or inquiries around current RBP partnerships. | **Question for PP** — Submit partnership questions. |
-| `#service-changes` | Tracks account terminations/offboarding and notifies Finance. Resource: [https://latchel.atlassian.net/wiki/x/AQANpw](https://latchel.atlassian.net/wiki/x/AQANpw) | **Account Terminated** — Notify Finance. |
-| `#svc-ops-feedback` | Submit feedback for Latchel Ops Agents — praise, concerns, or improvement opportunities. | **Agent Feedback** — Feedback workflow. |
-| `#svc-ops-requests` | Submit SOP policy requests or update needs. | **SOP Update Request** — New or updated SOPs. |
-| `#ask-answer` | Wide channel for cross-departmental questions or guidance when no other channel fits. | _No workflow._ |
+| `#psm-escalate` | Ask the PSM for help when you're stuck or unsure of next steps on a ticket. Use it after you've investigated but want input before responding. See [SOP: Handling New Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-New-Ticket-in-Product-Support). | **PS Ticket Escalate** — Escalate a ticket to the PSM. |
+| `#ps-dd-sddi` | Intake channel for Deep Dives and mini investigations. | **DD Request** — Standard Dive or Invoice Dispute. **SDDI** — Low-score feedback (WO reviews, CSAT, Google). |
+| `#ps-team-chat` | Internal PS communication for SOP gaps, bug coordination, template requests and DD conclusion reviews. One PS agent manages each bug to keep communication streamlined. | **PS SOP Request** — Missing SOPs. **DD Conclusion Workshop** — Share DD conclusions. **ASM Template Request** — Template use cases. **Bug Reported** — Share a bug report link. |
+| `#help-guide-requests` | Request to create, update or escalate Help Guides. | **New Guide Request** / **Update Existing** / **Help Guide Escalation** |
+
+### Inbound to Product Support
+
+These channels are where other teams escalate **to** PS. Each submission creates a ticket in Wavelength.
+
+| **Channel** | **What comes in** | **How PS handles it** |
+| --- | --- | --- |
+| `#ps-escalation` | **PS Escalation**, **Benefits Response Review** and **Failed Escalation Report** from Ops, and **Latchel Sync Request** from CSMs. | See [SOP: Handling Ops Escalations](/latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations). |
