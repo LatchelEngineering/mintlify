@@ -26,41 +26,81 @@ groups: ["latchel"]
 
 #### Process Overview
 
-It’s important to note that both critical notes and pre-dispatch instructions are only surfaced top Service Ops Associates **prior to dispatching for an emergency** work order.
+- **Critical Notes** are internal-only contextual information about how a customer wants things handled. They should be used rarely and only as a last resort.
+- **Pre-Dispatch Instructions** are surfaced to Service Ops Associates **only prior to dispatching an emergency work order**. They are never used for non-emergency work orders.
 
-#### 1. Critical Notes
+### Critical Notes
 
-1. Essential information or directives that help facilitate Service Operations activities more efficiently. They guide on critical aspects of a property or service provider's working schedule that are necessary to understand their operations or services.
-2. Appropriate Use Cases:
-3. **Property Information:** Include contextual advice about the property, like where things are located for the benefit of service providers.
-4. **Service Provider Working Hours:** On the Service Provider account, specify their available working hours.
-5. **Roto Rooter:** If a PM never wants a Roto Rooter Service Provider assigned to their WOs, this can be placed as a Critical Note on the account.
+Critical Notes are contextual information that helps us understand how a customer's profile wants things handled, or details about a property that we need in order to service it correctly.
 
-#### 2. **Pre-Dispatch Instructions**
+<Warning>
+  **Critical Notes are a last resort and should very rarely be used.**
 
-1. Information that is required to prevent incorrect dispatching for emergencies. These notes show up once in the entire work order lifecycle which is right before dispatching.
-2. Appropriate Use Cases:
-3. Pre-Dispatch Escalations. Include a list of contacts to reach out to before dispatching a service provider.
-4. Note that PM escalations prior to dispatching can be attempted via all contact methods. This does not mean waiting for responses; moving forward is permissible if escalation contacts are unresponsive.
+  - Critical Notes are **completely internal**. Property Managers cannot see them, so they cannot review, update, or remove them.
+  - About 95% of the Critical Notes we see can be handled through an existing configuration. Always check whether the request can be configured before adding a Critical Note.
+  - Do not use Critical Notes for anything that only applies for a short amount of time. Outdated notes (for example, notes from 2024) are no longer valid.
+</Warning>
 
-#### Please review this table for a quick reference to what NOT to include in critical or pre-dispatch notes.
+**Appropriate use cases:**
 
-| **Prohibited Content** | **Description** | **Configurable through the Latchel portal?** |
+- **Property information:** Contextual details about the property that we need to relay to a service provider, such as where something is located.
+- **Resident language:** For example, if a resident only speaks Spanish.
+- **Service Provider working hours:** On the Service Provider account, specify their available working hours.
+- **Excluding a national brand (e.g., "Do not use Roto-Rooter"):** Only use a Critical Note when blacklisting through the portal is not possible. National brands like Roto-Rooter have hundreds of service provider profiles within Latchel, so blacklisting every profile isn't practical. For any other service provider, use the blacklist setting instead.
+
+### Pre-Dispatch Instructions
+
+Pre-Dispatch Instructions are information required to prevent incorrect dispatching for **emergency work orders only**. They show up once in the entire work order lifecycle, right before dispatching.
+
+<Warning>
+  Pre-Dispatch Instructions are **only** for emergency work orders. They are never used for non-emergencies.
+</Warning>
+
+<Tip>
+  **Encourage the standard process first.** Property Managers should be highly encouraged to stick to our standard emergency process, outlined in the [Emergency Outbound Communication Process](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Emergency-Outbound-Communication-Process). Pre-Dispatch Instructions should only be added when the PM needs something that process doesn't cover.
+</Tip>
+
+<Note>
+  **Deviations must be logged.** Any time a Property Manager requests a Pre-Dispatch Instruction that deviates from our standard process, submit it in the **#feature-requests** Slack channel via the Feature Request workflow (see [How to Handle: Feature Requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests)). This gives Product a backlog of deviations from our norm so we can work toward a product solution.
+</Note>
+
+**Appropriate use cases:**
+
+- **Contact prior to dispatching:** A contact to reach out to before dispatching a service provider.
+- **Contact for a specific type of emergency:** A contact to reach out to for a particular emergency type.
+- **Approval for all emergency work orders:** The PM wants to approve every emergency work order before dispatch.
+
+<Note>
+  **Contacts must use a Contact Rotation.** If a Pre-Dispatch Instruction involves contacting people, it should use a [Contact Rotation](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/on-call-rotation-getting-started) URL schedule built for that contact list, rather than listing contacts in the note.
+</Note>
+
+<Note>
+  We already call the PM's escalation contacts for [property-damaging and extreme habitability emergency work orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations). Pre-Dispatch Instructions do not need to repeat this.
+</Note>
+
+<Note>
+  **Unresponsive contacts:** Any instruction to call someone prior to dispatch or for approval must also state what to do if that person is unresponsive: **forward to the PM** or **continue with dispatch**. Pre-dispatch contacts can be attempted via all contact methods; this does not mean waiting indefinitely for a response.
+</Note>
+
+### Quick Reference: What Belongs in Pre-Dispatch Instructions
+
+| **Content** | **Allowed?** | **Guidance** |
 | --- | --- | --- |
-| **Service Provider Preferences** | Avoid including specific preferences for service providers. | Yes |
-| **Blacklisted Service Providers** | Do not list service providers who are not allowed to service the property. | Yes |
-| **Warranty Information** | Do not include warranty-related details in critical or pre-dispatch notes. | Yes |
-| **Custom Troubleshooting/Troubleshooting Tips** | Specific instructions for troubleshooting should not be noted. | Yes \> Product Request |
-| **Severities** | Levels of severity associated with an issue should not be covered in these notes. | Yes |
-| **Post-Dispatch Escalation** | Issues arising after dispatching that require escalation should not be included. | No |
-| **Unresponsive Residents or Service Providers** | Do not mention steps to take for unresponsive residents or service providers in the notes. | No |
-| **Lockout Instructions** | Instructions pertaining to lockouts should not be provided in the notes. | Yes |
-| **Pre-Approval** | Any details regarding pre-approval should not be part of the critical notes. | Yes |
-| **Access Instructions** | Specific instructions for accessing properties are not suitable for these notes. | Yes |
-| **Relay Instructions to Residents** | Instructions that are to be conveyed to residents by the service provider should not be included. | No |
-| **Subscription Workflows** | Notes must not cover workflows that are part of the property's subscription. | Yes |
-| **Skip Troubleshooting due to Unresponsive Residents** | Avoid including advice to skip troubleshooting due to the resident's unresponsiveness. | Yes \> Action Set |
-| **Utility Instructions** | Do not include instructions related to utilities in the notes. | No \> Link Ops Standard Process around utilities |
-| **Budget Limits or Budget-Specific Problems** | Do not include details about budget limits or specific budget-related problems. | Yes |
-| **Bypassing Resident Availability** | Don't note instructions that bypass resident availability. | No |
-| **Work Order State Prohibition** | Do not include instructions that restrict a work order from entering a specific state, such as "never cancel a work order". | Yes \> Action Set |
+| **Blacklisted Service Providers** | No | Use the blacklist configuration instead. For national brands with many profiles (e.g., Roto-Rooter), see the Critical Notes exception above. |
+| **Service Provider Preferences** | Avoid | Only when the PM wants a specific provider auto-assigned to every work order. |
+| **Warranty Information** | No | Warranty details do not belong in Pre-Dispatch Instructions. |
+| **Custom Troubleshooting** | Limited | Allowed only for specific things the PM wants checked. Always compare against our existing [Ops troubleshooting SOPs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Operations-SOP-Library) first. If we already ask it, do not add it again. |
+| **Severities** | No | Configured through [Intake Settings](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/About-Property-Managers-Intake-Settings). |
+| **Post-Dispatch Escalation** | No | Pre-Dispatch Instructions do not surface for the Ops team after dispatch, and there is no way to trigger a post-dispatch reminder. |
+| **Resident Unresponsive to Troubleshooting** | No | Pre-Dispatch Instructions only surface right before dispatch, not at the point in the workflow when a resident is unresponsive to troubleshooting, so Ops wouldn't see it in time. If the PM wants a contact list called when a resident is unresponsive to troubleshooting, add it to the **Emergency Escalation Contacts** field instead. These are two different fields used in two different ways. See [How to Update Your Escalation Contacts](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Update-Your-Escalation-Contacts). |
+| **Lockout Instructions** | Yes | For example: the resident should call their own locksmith, or call the maintenance office for a key. |
+| **Pre-Approval** | Yes | The PM wants to be called for approval prior to dispatch. Include what to do if they are unresponsive. |
+| **Access Instructions** | Limited | Use the default access instructions. Only add property-specific access instructions that differ from the defaults. |
+| **Relay Instructions to Residents (by the Service Provider)** | No | We do not relay instructions to residents through the service provider. |
+| **PM Information to Share with the Resident** | Yes | For example: a number to call for the gas utility, or the city's number for water shutoff. |
+| **Subscription Workflows** | No | Workflows that are part of the property's subscription are configured, not noted. |
+| **Skip Troubleshooting due to Unresponsive Residents** | No | Configured through an Action Set. |
+| **Utility Instructions** | Yes | Must also follow the Ops standard process: [(Emergency) How to: Handle a Utility Issue](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-a-Utility-Issue). |
+| **Budget Limits or Budget-Specific Problems** | No | Never include budget limits or budget-specific instructions. |
+| **Bypassing Resident Availability** | No | Always handled through the Permission to Enter setting. |
+| **Work Order State Prohibition** | No | The only exception: when an instruction says to call someone prior to dispatch or for approval, state whether to forward to the PM or continue with dispatch if they are unresponsive. |
