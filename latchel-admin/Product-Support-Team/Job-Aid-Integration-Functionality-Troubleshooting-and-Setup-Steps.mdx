@@ -211,7 +211,7 @@ Before proceeding, ensure the following:
         4. Report a Problem:
            - If the version is up-to date and the issue still persists, have the PM use the "Report a Problem" feature in their plugin.
         5. Escalate the Issue:
-           - Submit issue to the #tech-high-sev-escalation channel for urgent attention.
+           - Submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
       </Tab>
       <Tab title="Suggested Scripting">
         I'm reaching out to address the issue with properties reactivating unexpectedly after being manually disabled.
@@ -241,7 +241,7 @@ Before proceeding, ensure the following:
         3. Report a Problem:
            - If the version is up-to date but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
         4. Escalate the Issue:
-           - Submit issue to the #tech-high-sev-escalation channel for urgent attention.
+           - Submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
       </Tab>
       <Tab title="Suggested Scripting">
         **If integration exports are dated:**
@@ -301,7 +301,7 @@ Before proceeding, ensure the following:
         2. Report a Problem:
            - If the version is up-to-date but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
         3. Escalate the Issue:
-           - Submit issue to the #tech-high-sev-escalation channel for urgent attention.
+           - Submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
       </Tab>
       <Tab title="Suggested Scripting">
         **If plugin is out of date:**
@@ -344,7 +344,7 @@ Before proceeding, ensure the following:
         5. Report a Problem:
            - If the version is up-to date but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
         6. Escalate the Issue:
-           - Submit issue to the #tech-high-sev-escalation channel for urgent attention.
+           - Submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
       </Tab>
       <Tab title="Suggested Scripting">
         I hope you're doing well! I wanted to provide some clarity on the settings available for work order updates within your integration, so you can ensure everything is working as you need it to.
@@ -408,11 +408,11 @@ Before proceeding, ensure the following:
            - Run a query in pgAdmin to determine the PM's plugin version.
            - Cross-reference it with the latest version available in the Chrome Store.
         4. Run SQL Query to flag duplicate WOs:
-           - Run a query in pgAdmin to determine duplicate WOs. The query should product zero results. If it outputs results, this is a big red flag to escalate to #tech-high-sev-escalation channel for urgent attention.
+           - Run a query in pgAdmin to determine duplicate WOs. The query should product zero results. If it outputs results, this is a big red flag to report through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
         5. Report a Problem:
            - If the version, source, and process are correct but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
         6. Escalate the Issue:
-           - If the issue remains unresolved, submit it to the #tech-high-sev-escalation channel for urgent attention.
+           - If the issue remains unresolved, submit it through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
       </Tab>
       <Tab title="Suggested Scripting">
         Hi \[PM\],
@@ -457,8 +457,7 @@ Before proceeding, ensure the following:
 1. If there is an unexpected outcome with existing functionality
 
 - **If the user is utilizing the Latchel Chrome Plugin (Appfolio)**, instruct the user to follow these steps: [https://help.latchel.com/s/article/How-to-Report-Bugs-and-Issues-with-our-Tools](https://help.latchel.com/s/article/How-to-Report-Bugs-and-Issues-with-our-Tools). The debug report is required for engineering to troubleshoot further.
-- **For all other integrations,** continue to post the escalation in the `#bug-report` channel in slack using the “Bug Report” workflow.
-  - At that point, you may be instructed to post the issue in the `#tech-high-sev-escalations` channel. Approval is required before escalating to this channel.
+- **For all other integrations,** submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports). It posts to the `#bug-report` channel automatically.
 
 2. If there is a request to add NEW functionality to an existing integration
 3. Fill out the workflow “Feature Request” workflow in the `#feature-requests` channel.
@@ -489,7 +488,7 @@ ORDER BY al.created_at DESC
 LIMIT 1
 ```
 
-SQL Query that shows big red flags for duplicate work orders. The query should produce zero results. If it outputs results, escalate to #tech-high-sev
+SQL Query that shows big red flags for duplicate work orders. The query should produce zero results. If it outputs results, report it through the in-app bug report form (#bug-report) for urgent attention.
 
 ```sql lines wrap
 SELECT j.ref_job_id, j.created_at, i.settings->>'last_sync_time' as last_sync_time FROM job j 
