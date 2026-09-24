@@ -1209,8 +1209,7 @@
                           {
                             "group": "Job Aid: Slack Channels & Escalation Workflows",
                             "pages": [
-                              "latchel-admin/Product-Support-Team/Job-Aid-Slack-Channels-Escalation-Workflows",
-                              "latchel-admin/Product-Support-Team/Job-Aid-Tech-High-Sev-Framework"
+                              "latchel-admin/Product-Support-Team/Job-Aid-Slack-Channels-Escalation-Workflows"
                             ]
                           },
                           "latchel-admin/Product-Support-Team/Job-Aid-Assembly-Case-Automation-Explained",
