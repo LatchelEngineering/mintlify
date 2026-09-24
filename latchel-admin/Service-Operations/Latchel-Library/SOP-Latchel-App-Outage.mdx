@@ -36,7 +36,7 @@ Here is the process (text version):
 
 1. Service Operations staff reproduces the bug and then reports bugs in the #bug-report channel →
 2. Service Operations leadership validates if the bug is an outage or degradation of service. The bug is then reported in the #bug-report channel →
-   1. If Customer Success received a communication from a customer-facing an issue, they will also report it in the #tech-high-sev-escalations channel
+   1. If Customer Success received a communication from a customer-facing an issue, they will also report it in the #bug-report channel
 3. Engineering assesses the issue and determines if it is an outage →
 4. Engineering  keeps the internal team and customer-facing page updated on the status of the outage →
 5. Engineering  resolves the issue and communicates the resolution and post-mortem →
@@ -86,7 +86,7 @@ Incident troubleshooting guidance Page: [https://latchel.com/incident-troublesho
 
 |  |  |
 | --- | --- |
-| Having a tech issue | <ol><li>Check Latchel Status Page or #core-team channel to see if there is an issue already identified that tech is working on.</li><li>Attempt the troubleshooting steps outlined in the troubleshooting link provided in the Latchel Status Page before escalating to tech.</li><li>If you got an escalation from the associates, check if you are facing the same issue. Verify that the associate has attempted those troubleshooting steps.</li><li>Report on #tech-high-sev-escalations channel</li></ol> |
+| Having a tech issue | <ol><li>Check Latchel Status Page or #core-team channel to see if there is an issue already identified that tech is working on.</li><li>Attempt the troubleshooting steps outlined in the troubleshooting link provided in the Latchel Status Page before escalating to tech.</li><li>If you got an escalation from the associates, check if you are facing the same issue. Verify that the associate has attempted those troubleshooting steps.</li><li>Report on #bug-report channel</li></ol> |
 | Tech issue has been validated | <ol><li>Monitor #core-team slack channel for potential updates</li><li>Acknowledge the outage message posted on the #core-team channel</li></ol> |
 | During the outage | <ol><li>Monitor #core-team slack channel for potential updates.</li><li>Re-allocate staff to work on things that we are able to do like emails and calls, for example.</li><li>Remind the team on how to handle customers questions and reports about system issues (copy and paste in Slack the instructions on what to do during outage)</li></ol> |
 | End of the outage | <ol><li>Resume normal work</li></ol> |
@@ -95,7 +95,7 @@ Incident troubleshooting guidance Page: [https://latchel.com/incident-troublesho
 
 |  |  |
 | --- | --- |
-| Having a tech issue | <ol><li>Receive tech issue on #tech-high-sev-escalations channel and initiate assessment</li></ol> |
+| Having a tech issue | <ol><li>Receive tech issue on #bug-report channel and initiate assessment</li></ol> |
 | Tech issue has been validated | <ol><li>After doing an initial investigation and determining we have an issue, update the Latchel Status Page. This will trigger a message in the #core-channel.</li><li>If the issue only impacts internal teams, **DO NOT** update the status page as it will confuse customers. Instead, create an internal Slack thread in the #core-team channel by selecting the “Internal Outage” workflow</li></ol> |
 | During the outage | <ol><li>As you progress with the investigation and resolution, update the status of the incident in the status page (use the standard/generic message)</li><li>If there are more information to be provided **internally**, add a note to the incident thread in Slack</li></ol> |
 | End of the outage | <ol><li>Update Latchel Status Page resolving the issue to resolve the incident</li><li>Communicate your findings and required customer actions in the #core-team channel using the “Outage Post-mortem Workflow” <ol><li>If any customer type needs to take immediate action to be able to resume normal operations, and this happens overnight or during a weekend, call (1) Jennifer Folch, (2) Josie</li></ol></li><li>If it is a new issue, provide more details to CS, who will update the guidelines provided in the Latchel Status Page</li></ol> |
@@ -104,7 +104,7 @@ Incident troubleshooting guidance Page: [https://latchel.com/incident-troublesho
 
 |  |  |
 | --- | --- |
-| Having a tech issue | <ol><li>Receive emails from customers reporting tech issues and report on #tech-high-sev-escalations channel</li><li>Watch #tech-high-sev-escalations channel for tech issues reported by ops</li></ol> |
+| Having a tech issue | <ol><li>Receive emails from customers reporting tech issues and report on #bug-report channel</li><li>Watch #bug-report channel for tech issues reported by ops</li></ol> |
 | Tech issue has been validated | <ol><li>Monitor #core-team slack channel for potential updates</li><li>Acknowledge the outage message posted on the #core-team channel</li></ol> |
 | During the outage | <ol><li>Monitor #core-team slack channel for potential updates</li><li>Monitor email for customers communications that could include other issues that we are not aware of. If any new issue is reported, update the thread on the #core-team slack channel and tag the tech team member that is handling the issue</li><li>Refer to Latchel Status Page for troubleshooting steps provided to customers. If a customer has not attempted anything, ask them to try. <ol><li>**Note:** we provide the link to this page in the customer’s onboarding checklist.</li></ol></li></ol> |
 | End of the outage | Send communication to customers, if: Customer needs to take action to restart normal operation Outage lasted 3hrs\+ and we should send an apology email <ol><li>Check if there is any new troubleshooting step that should be added to the list provided in the Latchel Status Page, or if standard actions to resume operations could be added to the table on Appendix 3</li></ol> <ul><li>If the outage happens at night or on a weekend, the communication will be sent on the next business day, unless tech says the communication needs to happen immediately. In this case, tech will call (1) Jennifer Folch</li></ul> |
