@@ -10,6 +10,19 @@ groups:
   - To learn more about the Ops escalation path, refer to [How to: Escalate to Product Support](https://latchel.atlassian.net/wiki/x/JQCJW).
 </Note>
 
+<iframe src="https://www.loom.com/embed/294f03e3ff1f4e2ea348d37a4740460e" title="How to Handle Ops Escalations in Slack" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+
+#### Workflows in #ps-escalation
+
+Every submission in #ps-escalation creates a ticket in the Product Support teamspace. There are several workflows in the channel, and each one is handled differently:
+
+| **Workflow** | **Who uses it** | **How PS handles it** |
+| --- | --- | --- |
+| **PS Escalation** | Ops | The main Ops escalation, and a large share of the PS queue. Follow the steps in this SOP. |
+| **Benefits Response Review** | Ops | Ops needs help answering a resident's benefits question. See [Benefits Response Review](#benefits-response-review) below. |
+| **Failed Escalation Report** | Ops | Follow [SOP: Sending Proactive Failed Escalation Emails](/latchel-admin/Product-Support-Team/SOP-Sending-Proactive-Failed-Escalation-Emails). |
+| **Latchel Sync Request** | CSMs only | Ops agents should not use this workflow. See [SOP: Running AppFolio Sync on Behalf of Customers](/latchel-admin/Product-Support-Team/SOP-Running-AppFolio-Sync-on-Behalf-of-Customers). |
+
 #### How to spot an escalation from Latchel Ops
 
 The ticket comes from the **PS Escalation** workflow in #ps-escalation and includes these details from Ops:
@@ -24,8 +37,19 @@ The ticket comes from the **PS Escalation** workflow in #ps-escalation and inclu
 - **What is their primary email address?**
 - **Work Order on Hold Due to Pending PS Resolution?** - Yes or No.
 
+#### Benefits Response Review
+
+Ops should handle all communication with residents about their benefits. When Ops receives a resident benefits question they don't know how to answer, they submit the **Benefits Response Review** workflow. The goal is for Ops to build their own SOPs and eventually own this category without PS. See [How to Handle Home Assistant and Benefits Inquiries](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Home-Assistant-and-Benefits-Inquiries).
+
+1. Find the answer, then **reply on the original ticket** with the details Ops needs to answer the resident (e.g., _"Ops, here is the answer…"_).
+2. Close the ticket as **Closed – No Workflow** so Ops doesn't receive the CSAT survey.
+
+<Warning>
+  **Reply outwardly, not as an internal note.** An outward reply posts back to the Slack thread and notifies the submitter. An internal note only shows on the ticket and never reaches Slack.
+</Warning>
+
 <Info>
-  **Benefits Response Review:** Ops also uses the **Benefits Response Review** workflow in #ps-escalation. Ops should handle all resident benefit questions from residents. If they're stuck, share the information they need and send it back to them on the original ticket, so they can share it with the resident and build their own SOPs. The goal is for Ops to eventually own this category without PS. See [How to Handle Home Assistant and Benefits Inquiries](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Home-Assistant-and-Benefits-Inquiries).
+  If Ops has a follow-up question, they reply in the Slack thread and the ticket reopens automatically.
 </Info>
 
 ### Step-by-Step Guide
@@ -135,8 +159,8 @@ Once sent, the new email thread is linked to the Ops escalation ticket.
 
 1. Open the linked escalation and copy the link to the **PM-facing thread**.
 2. Go back to the Ops escalation ticket and insert the **PS \<> Ops Follow-Along Escalation Thread** template.
-3. Paste the PM-facing thread link into the template and send it. This gives Ops visibility into where things stand if the customer checks in with them.
-4. Close the Ops escalation ticket as **Closed – No Workflow**.
+3. Paste the PM-facing thread link into the template and send it as an outward reply. It posts back to the Slack thread, so if Ops has questions or the person reaches out again, they can use the link to see the context and where things stand.
+4. Close the Ops escalation ticket as **Closed – No Workflow** so Ops doesn't receive the CSAT survey.
 
 <Info>
   From here, the **PM-facing thread** is the real ticket where you communicate with the PM. For the PM, it's a brand-new email thread.
