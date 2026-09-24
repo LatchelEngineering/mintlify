@@ -1,76 +1,156 @@
 ---
 title: "SOP: Handling Ops Escalations"
-groups: ["latchel"]
+groups:
+  - "latchel"
 ---
 
 <Note>
-  Service Ops associates may require assistance from the Product Support team to resolve complex customer inquries. Ops escalations are emailed to [success@latchel.com](mailto:success@latchel.com) from [team@latchel.com](mailto:team@latchel.com). This job aid will walk you through how to spot an ops escalation and best practices for handling them.
+  Service Ops associates may need help from the Product Support team to resolve complex customer inquiries. Ops submits these through the **PS Escalation** workflow in the [**#ps-escalation**](https://latchel.slack.com/archives/C08475CCBGR) Slack channel, which creates a ticket in the **Product Support teamspace in Wavelength (WL)**. This SOP walks you through how to spot an Ops escalation and how to handle it.
 
-  - To learn more about the ops escalation path, refer to [How to: Escalate to Product Support](https://latchel.atlassian.net/wiki/x/JQCJW)
+  - To learn more about the Ops escalation path, refer to [How to: Escalate to Product Support](https://latchel.atlassian.net/wiki/x/JQCJW).
 </Note>
 
-#### How to spot an escalation from Latchel Ops:
+#### How to spot an escalation from Latchel Ops
 
-- The email will be from [team@latchel.com](mailto:team@latchel.com) and contain the Product Support Escalation form with all relevant details filled out:
+The ticket comes from the **PS Escalation** workflow in #ps-escalation and includes these details from Ops:
 
-<Frame>
-  ![Screenshot 2024-11-07 at 11.22.20 AM.png](/images/PST-41.png)
-</Frame>
+- **Submitter** - the Ops associate who submitted the escalation.
+- **Customer Type** - SP, PM, Owner or Resident.
+- **Did you share a Help Guide?** - which help guide Ops already shared, if any.
+- **Escalation Summary** - what Ops needs help with.
+- **Is this related to a specific work order?** - the work order link, if applicable.
+- **Name of the person that reached out** - with their Latchel profile URL.
+- **Source of the Escalation** - Call, SMS, Email or Webchat.
+- **What is their primary email address?**
+- **Work Order on Hold Due to Pending PS Resolution?** - Yes or No.
 
-#### Step-by-step Guide:
+<Info>
+  **Benefits Response Review:** Ops also uses the **Benefits Response Review** workflow in #ps-escalation. Ops should handle all resident benefit questions from residents. If they're stuck, share the information they need and send it back to them on the original ticket, so they can share it with the resident and build their own SOPs. The goal is for Ops to eventually own this category without PS. See [How to Handle Home Assistant and Benefits Inquiries](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Home-Assistant-and-Benefits-Inquiries).
+</Info>
 
-**Step 1.** Thoroughly review the escalation. This should involve:
+### Step-by-Step Guide
 
-- The Escalation Summary provided by Ops.
+#### Step 1. Thoroughly review the escalation
 
 <Warning>
-  It is **very important** that we do not simply take the Escalation Summary as the source of truth when reaching out to the POC. PS must do additional research to ensure they have the full scope of the escalation and understand the context.
+  **Do not take the Escalation Summary at face value.** Ops may copy and paste the customer's wording, or ask for a specific fix when there's a better solution than what they asked for. Before you reach out to anyone, make sure you understand what the escalation truly is.
 </Warning>
 
-- The WO Shared (if applicable).
-- **Settings** based on the Escalation Summary.
-  - _This can include: the severity settings, prioritized service providers for the property, the subscription, owner settings, portfolios, pre-dispatch instructions, etc._
+Review everything that applies:
 
-**Step 2.** Navigate to the user in question and review the chat transcript of the person who reached out in Latchel ops.
-
-<Frame>
-  ![Screenshot 2024-10-08 at 3.03.10 PM.png](/images/PST-42.png)
-</Frame>
-
-**Step 3.** Navigate back to the case in Assembly. In the Case Thread Feed, choose the **_\+Create_** then **Escalation** **via Email** option. **_Important Note_**: \_This option clears all past email thread correspondence and creates a new thread. \_
+- The **Escalation Summary** from Ops.
+- The **work order activity** (if a work order is shared).
+- The **Intake Settings**.
+- **Pre-Dispatch Instructions, Critical Notes and Emergency Escalation Contacts**.
+- **Action Sets** on the account.
+- Other **settings** related to the escalation, such as prioritized service providers, the subscription, owner settings and portfolios.
+- **Transcripts, calls and conversations** with the person who reached out. Go to that person's Latchel profile and review the chat transcript.
 
 <Frame>
-  ![create new email.png](/images/PST-43.png)
+  <img
+    src="/images/PST-42.png"
+    alt="Chat transcript on the user's Latchel profile"
+    width="520"
+  />
 </Frame>
 
-**Step 4.** Determine the type of user that is inquiring. To do so, access the Latchel profile URL that was in the original ops escalation form. From there, you will see the user type in Latchel at the very top of the profile page.
+#### Step 2. Confirm who the escalation is about
 
-- If it is a Property Manager, continue to step 5.
-- If it is a Service Provider, refer to [Handling SP Cases](https://latchel.atlassian.net/wiki/x/EICmvg).
-- If it is a Resident, refer to [Handling Resident Cases](https://latchel.atlassian.net/wiki/x/FYCkvg).
-- If it is an Owner, refer to [Handling Owner Cases](https://latchel.atlassian.net/wiki/x/GgCivg).
-- If it is a RentRedi Owner, refer to [Handling RentRedi Cases](https://latchel.atlassian.net/wiki/x/GoCivg).
-- If it is a Nomad Owner, refer to [Handling Nomad Cases](https://latchel.atlassian.net/wiki/x/EACpvg).
+Open the Latchel profile URL from the escalation form. The user type appears at the top of the profile page. Don't rely only on the Customer Type Ops selected. Handle the ticket according to the SOP for that user type:
 
-**Step 5.** Insert the Assembly Template called **“Clarify Ops Escalation w/ PM”** by clicking this button at the bottom of the email composition box.
+- **Property Manager:** continue to Step 3. Most Ops escalations are from PMs.
+- **Service Provider:** refer to [Handling SP Cases](https://latchel.atlassian.net/wiki/x/EICmvg).
+- **Resident:** refer to [SOP: Handling Resident Cases](/latchel-admin/Product-Support-Team/SOP-Handling-Resident-Cases).
+- **Owner:** refer to [SOP: Handling Non-RentRedi or Non-Nomad Owner Cases](/latchel-admin/Product-Support-Team/SOP-Handling-Non-RentRedi-or-Non-Nomad-Owner-Cases).
+- **RentRedi Owner:** refer to [SOP: Handling RentRedi Cases](/latchel-admin/Product-Support-Team/SOP-Handling-RentRedi-Cases).
+- **Nomad Owner:** refer to [SOP: Handling Nomad Cases](/latchel-admin/Product-Support-Team/SOP-Handling-Nomad-Cases).
+
+<Tip>
+  Some Service Provider and Resident escalations don't need PS to reach out at all. If Ops just needs an answer, push it back to Ops on the original ticket with the information they need.
+</Tip>
+
+#### Step 3. Classify the Ops escalation ticket
+
+Assign yourself to the ticket and classify it (see [Job Aid: Ticket Category, Attributes, and Tags](/latchel-admin/Product-Support-Team/Job-Aid-Interaction-Tags-Explained)). Set the Category to **Latchel Ops Escalation**.
+
+#### Step 4. Create a new email in Wavelength
+
+In the ticket's thread feed, click **\+ Create**, then choose **Escalation via Email**.
 
 <Frame>
-  ![Screenshot 2025-12-11 142619.png](/images/PST-44.png)
+  <img
+    src="/images/PST-43.png"
+    alt="+ Create, then Escalation via Email"
+    width="520"
+  />
 </Frame>
 
-**Step 6.** Fill out the Clarify Ops Escalation w/ PM Template with relevant details based on what is needed.
+<Note>
+  - This option starts a **brand-new email thread**. It does not include any past correspondence.
+  - A pop-up opens where you draft the email, and it can block your view of the ticket. Open the ticket in a **second window** so you can keep reviewing the Ops escalation details while you write.
+</Note>
+
+#### Step 5. Address the email
+
+- **From:** change the sender to [**success@latchel.com**](mailto:success@latchel.com).
+- **To:** the person who reached out, using the name and primary email address from the escalation form.
+- **CC (when needed):** if urgent action is required, you need the PM's help, or there's an issue with an intake setting or work order, check the PM company account for a group inbox (for example, maintenance@, team@ or a shared team email). CC it for extra visibility.
+- **Subject:** use a subject that makes sense for the escalation, for example _"123 Main St - Intake Settings Question"_.
+
+#### Step 6. Compose and send the email
+
+Insert the Wavelength template **"Clarify Ops Escalation w/ PM"** from the bottom of the email composition box, then fill it out with the relevant details.
 
 <Frame>
-  ![Screenshot 2024-11-06 at 2.19.54 PM.png](/images/PST-45.png)
+  <img
+    src="/images/PST-44.png"
+    alt="Insert template button"
+    width="520"
+  />
 </Frame>
 
-**Step 7.** Based on how the case goes, the next steps will be to follow either:
+<Frame>
+  <img
+    src="/images/PST-45.png"
+    alt="Clarify Ops Escalation w/ PM template"
+    width="520"
+  />
+</Frame>
 
-- Response PM - [SOP: Closing Tickets](/latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support)
+<Warning>
+  **This is a blind outreach.** It's a brand-new email thread, so the PM has no context from us yet. Always recap why we're reaching out.
+</Warning>
+
+- Open with a greeting, such as _"I hope you're doing well."_
+- Recap the reason for the email, for example:
+  - _"We received your question about work order XYZ. Here's why this happened and what we found."_
+  - _"We received your request to update XYZ. Here's what we've done."_
+- **If you need more clarity,** ask **open-ended questions**. Probe for details so we know the best path to take.
+
+Add your signature, then click **Escalate** to send.
+
+#### Step 7. Update Ops and close the Ops escalation ticket
+
+Once sent, the new email thread is linked to the Ops escalation ticket.
+
+1. Open the linked escalation and copy the link to the **PM-facing thread**.
+2. Go back to the Ops escalation ticket and insert the **PS \<> Ops Follow-Along Escalation Thread** template.
+3. Paste the PM-facing thread link into the template and send it. This gives Ops visibility into where things stand if the customer checks in with them.
+4. Close the Ops escalation ticket as **Closed – No Workflow**.
+
+<Info>
+  From here, the **PM-facing thread** is the real ticket where you communicate with the PM. For the PM, it's a brand-new email thread.
+</Info>
+
+#### Step 8. Work the PM thread to close
+
+Based on how the case goes, follow either:
+
+- Responsive PM - [SOP: Closing Tickets](/latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support)
 - Unresponsive PM - [SOP: Managing Unresponsive Property Managers](/latchel-admin/Product-Support-Team/SOP-Managing-Unresponsive-Property-Managers-in-Case-Management)
 
 <Warning>
-  In the Ops Escalation Form, if the question: “Work Order on Hold Due to Pending PS Resolution?” has a **YES**, PS needs to:
+  If the escalation form says **Yes** to "Work Order on Hold Due to Pending PS Resolution?", PS needs to:
 
   - Email [team@latchel.com](mailto:team@latchel.com) that the situation was resolved and how the WO should proceed.
 
