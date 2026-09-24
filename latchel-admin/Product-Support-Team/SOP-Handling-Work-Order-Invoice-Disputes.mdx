@@ -64,12 +64,7 @@ Review the Invoice Submission Date to determine refund eligibility:
 
 #### **Scenario 1: Invalid Dispute (No Refund)**
 
-- **Action**: [Escalate to the CSM](https://help.latchel.com/SOP-Escalating-Tickets-to-the-CSM) for them to communicate the DD conclusion directly with the PM.
-- **Note**: Do not send any templates to the PM. All communication should come from the CSM.
-- **Steps to escalate**:
-  - Use the **CSM Escalation Workflow** to escalate to the CSM.
-  - Assign the case to @maddie as the Case Owner.
-  - Update the case state to **Escalated**.
+- **Action**: PS shares the DD conclusion with the PM using the [ACE framework](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE). Explain clearly why the invoice is valid and should be paid, based on the investigation and the [Latchel Guarantee and Refund Request Policy](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Guarantee-and-Refund-Request-Policy).
 
 #### **Scenario 2: Valid Dispute (Refund Eligible)**
 
@@ -81,10 +76,15 @@ Review the Invoice Submission Date to determine refund eligibility:
   - Processing timeline (5-10 business days)
   - Refund amount (\$)
 
-### **Handling Client Pushback on Findings**
+### **Handling PM Pushback on Findings**
 
-- **Action**: If the PM disputes the findings or compensation, escalate the case to the Product Support Manager (PSM).
-- **Steps**:
-  - Escalate to PSM using the **PS Ticket Escalate** workflow in `#psm-escalate`.
-  - Assign the case to @maddie as Case Owner.
-  - Update the case state to **Escalated**.
+**PS handles the pushback.** If the PM disagrees with a denied dispute, stand firm in the decision. Restate the reasoning clearly and calmly, and point to the policy. Don't offer credits or exceptions outside the policy to end the conversation.
+
+| **Situation** | **What to do** |
+| --- | --- |
+| **The PM pushes back** (even once) | Keep handling the ticket. Also add the PM as an **FYI heads-up** on the weekly **PS \<> CS Sync** agenda so the CSM is aware. |
+| **The PM continuously pushes back and there's extreme frustration**, putting the relationship at risk over this dispute (**churn risk**) | [Escalate to the CSM](/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM) using the **New Escalation from PS** workflow in `#csm-escalations`, with the category **PM Disagrees with Denied Invoice Dispute**. |
+
+<Info>
+  Not sure if it's reached churn risk? Ask the PSM first in `#psm-escalate` using the **PS Ticket Escalate** workflow.
+</Info>
