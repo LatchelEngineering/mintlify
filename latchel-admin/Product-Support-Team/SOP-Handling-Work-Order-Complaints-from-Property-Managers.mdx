@@ -1,66 +1,103 @@
 ---
 title: "SOP: Handling Work Order Complaints from Property Managers"
-groups: ["latchel"]
+groups:
+  - "latchel"
 ---
 
 <Note>
-  This document outlines the steps the Product Support (PS) team should take when addressing a work order complaint received from a property manager.
+  This SOP outlines how Product Support (PS) handles a work order complaint from a Property Manager (PM): investigating what happened, responding with the **ACE framework**, standing firm in our decisions, and knowing when to escalate to the Customer Success Manager (CSM).
 </Note>
 
-### Step-by-step Guide:
+### Step-by-step Guide
 
 #### Step 1: Gather Details
 
-- **Clarify:** Promptly ask clarifying questions to obtain comprehensive details about the complaint.
-- **Request Documentation:** Ask for any supporting files, such as recordings, screenshots, or pictures, to aid in the investigation.
+- **Clarify:** Ask **open-ended** questions to get the full picture of the complaint and what outcome the PM expected.
+- **Request documentation:** Ask for any supporting files, such as recordings, screenshots or photos.
 
-#### Step 2: **Review the Situation**
+<Warning>
+  **Don't take the complaint at face value.** Understand what actually happened before you respond. The PM's description is where the investigation starts, not the conclusion.
+</Warning>
 
-- **Examine Details:** Analyze the specifics of the work order issue, focusing on areas such as delays, miscommunications, automations, and settings.
+#### Step 2: Review the Situation
 
-#### Step 3: Conduct [Investigation](https://help.latchel.com/SOP-Submitting-a-Deep-Dive-Request)
+Review everything that applies to the work order:
 
-##### **Scenario 1: Investigation Exceeds 10 Minutes**
+- **Work order activity:** delays, dispatch attempts, SP communication, approvals and status changes.
+- **Account settings:** Intake Settings, Pre-Dispatch Instructions, Critical Notes, Emergency Escalation Contacts and Contact Rotations, budget limits and prioritized service providers.
+- **Automations:** Action Sets on the account.
+- **Conversations:** chat transcripts, calls and emails with the resident, SP and PM.
+- **Slack:** search for the work order link. There may already be a thread about the situation.
 
-- Submit the complaint and associated details for a[ Deep Dive Request](https://help.latchel.com/SOP-Submitting-a-Deep-Dive-Request).
+#### Step 3: Decide How to Investigate
 
-##### **Scenario 2: Investigation Under 10 Minutes**
+| **If…** | **Then…** |
+| --- | --- |
+| The investigation will take **under 10 minutes** | Investigate it yourself. Document your findings and resolution in the ticket as an internal note. |
+| The investigation will take **over 10 minutes**, or needs input from other teams | Submit a Deep Dive. See [How to Submit a Deep Dive Request](/latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request). |
+| The complaint is about **charges on a WO invoice** | Follow [SOP: Handling Work Order Invoice Disputes](/latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes). Always check eligibility against the [Latchel Guarantee and Refund Request Policy](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Guarantee-and-Refund-Request-Policy) first. |
 
-- Document all discovery details, findings, and resolution. Prepare to share these with the property manager.
+#### Step 4: Respond Using the ACE Framework
 
-#### Step 4: Communicate Resolution
+Whether the findings come from a Deep Dive or your own investigation, write your response using the [**ACE framework**](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE). The investigation is your _input_, not your output. The PM needs to feel heard, understand what went wrong and know what happens next.
 
-<Note>
-  **Method of Sharing Findings:** Whether conclusions arise from a deep dive or a personal investigation, ensure the information and next steps are conveyed clearly to the property manager.
-</Note>
+| **Part** | **What it means** | **Example** |
+| --- | --- | --- |
+| **A — Acknowledge the impact** | 1–2 sentences naming what the PM experienced. Don't open with "we reviewed" or a WO number. | _"I understand the resident waited three days for a vendor on an emergency."_ |
+| **C — Clarify the cause** | One paragraph max, in plain English. Own it where Latchel is at fault. If you need a timeline, use short bullets with timestamps. | _"Your intake settings classify this issue as non-emergency, so it followed the standard scheduling timeline."_ |
+| **E — Execute the resolution** | The concrete action, who owns it and when. Add one sentence on prevention, and point to the setting or tool that gets the PM the outcome they want. End with a statement, not "please let us know how you'd like to proceed." | _"We've updated your intake settings so this issue is treated as an emergency going forward. Here's how to review them: [help guide]."_ |
 
-##### Scenario 1: Resolution from a Deep Dive (DD)
+<Check>
+  **Before you send,** run through the [ACE pre-send checklist](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE#pre-send-checklist).
+</Check>
 
-1. The Deep Dive Conclusion will be posted in the corresponding case feed in Salesforce.
-2. The DD Submitter and Case Owner will be tagged in the case to alert them; the case will be updated to 'Escalated'.
-3. Draft the conclusion in #ps-team-chat using the DD Conclusion Workshop for review. Aim for clear, professional communication.
-4. Once approved by the PS Manager, communicate the conclusion to the property manager and confirm closure.
-5. _Note:_ An escalation to the CSM may be necessary, depending on the situation **[See guidelines here](https://latchel.atlassian.net/wiki/x/VQDamw).**
+**If the findings come from a Deep Dive:**
 
-##### Scenario 2: Resolution from Self Investigation
+1. The DD conclusion is added to the Wavelength ticket as an internal note.
+2. Draft your ACE response and share it in `#ps-team-chat` using the **DD Conclusion Workshop** workflow for review.
+3. Once the PS Manager approves it, send it to the PM and work the ticket to close.
 
-1. **Acknowledge Concerns:** Begin with empathy by recognizing the client's concern and their desired outcome.
-   1. _Example: "I understand that you're seeking to achieve \[desired outcome\], and I'm here to assist in resolving this issue effectively."_
-2. **Root Cause Analysis:**
-   1. If the root cause is **system behavior:**
-      1. Outline the desired outcome, explain the system's behavior, and its impact.
-      2. _Example: "You were expecting \[desired outcome\]. This occurred because \[explanation of system behavior\]."_
-   2. If the root cause is **human error:**
-      1. Detail the desired outcome, identify the human error, and describe corrective actions taken.
-      2. _Example: "You expected \[desired outcome\]. This was due to \[explanation of human error\]. We've implemented \[actions taken\] to prevent recurrence."_
-3. **Provide Solutions and Recommendations.**
-   1. Offer tools or settings adjustments to align more closely with client preferences.
-      1. _Example: "Here are some tools you can use to achieve your desired outcome: \[list tools and instructions\]."_
-   2. If necessary, address confusing [notes ](https://help.latchel.com/SOP:-Pre-Dispatch-Instructions-&-Critical-Notes)on the account and provide guidance for updating settings.
-      1. _Example: "We've identified areas for improvement: \[list items\]. Here are the steps to enhance these settings."_
-4. **Encourage Engagement:**
-   1. Invite further questions or requests for support to help with any additional adjustments.
+#### Step 5: Stand Firm in Our Decisions
 
-#### Step 5: Identify Gaps and Create Feedback
+Our conclusions are based on the investigation and our policies. Be empathetic, but **don't change a decision just because the PM pushes back.**
 
-- Follow the guidelines on identifying gaps and creating feedback:[Job Aid: Deep Dive (DD) Process](https://help.latchel.com/Job-Aid-DD-Board)
+- **Own what's ours.** If Latchel made a mistake, say so clearly and state what we're doing about it.
+- **Don't accept fault that isn't ours.** If the outcome came from the PM's own settings, instructions or a policy they agreed to, explain that plainly and point them to the setting or tool that gets them the outcome they want.
+- **Don't reopen a dispute decision.** Invoice dispute outcomes follow the [Latchel Guarantee and Refund Request Policy](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Guarantee-and-Refund-Request-Policy). Don't offer extra credits, one-off exceptions or a different outcome outside the policy to end a conversation.
+- **Restate the reasoning once, then escalate.** If the PM still disagrees after you've clearly explained the decision, don't keep going back and forth. Escalate to the CSM (see Step 6).
+
+<Warning>
+  **Avoid over-apologizing.** Phrases like "we apologize for any confusion" without a clear resolution read as vague and invite more pushback. Acknowledge the impact, explain the cause and state the outcome.
+</Warning>
+
+#### Step 6: Know When to Escalate to the CSM
+
+PS resolves most complaints directly. Escalate to the CSM when the conversation moves beyond day-to-day support into a relationship-level issue:
+
+| **Escalate to the CSM when…** | **Workflow category** |
+| --- | --- |
+| The PM disagrees with a **denied invoice dispute** | PM Disagrees with Denied Invoice Dispute |
+| The PM is still unhappy after you've explained the decision, or is **growing frustrated** | PM Growing Frustrated |
+| The email thread is going back and forth and a **call would resolve it faster** | Email Thread Growing Complex → Call Recommended |
+| The PM asks for a **call or meeting** with their CSM | PM Requesting Call/Meeting with CSM |
+| The PM mentions **canceling, downgrading** or leaving Latchel | Cancellation Request |
+| The PM needs **training** on how to use Latchel to meet their goals | PM Requesting Training |
+
+Escalate with the **New Escalation from PS** workflow in `#csm-escalations`. Include what happened, what you found, what you've already told the PM and your recommended next step. See [SOP: Escalating Tickets to the CSM](/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM) and [Product Support Team vs Customer Success Managers](/latchel-admin/Product-Support-Team/Product-Support-Team-vs-Customer-Success-Managers).
+
+<Info>
+  Not sure if it's time to escalate? Ask the PSM first in `#psm-escalate` using the **PS Ticket Escalate** workflow.
+</Info>
+
+#### Step 7: Identify Gaps and Create Feedback
+
+If the complaint uncovered a gap, make sure it gets fixed:
+
+| **Gap** | **Where it goes** |
+| --- | --- |
+| Ops didn't follow an SOP, or an SOP is unclear | `#svc-ops-requests` (**Ops SOP Requires Update**) or `#svc-ops-feedback` (**Agent Feedback**) |
+| The system didn't behave as expected | `#bug-report` through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) |
+| The PM wants something the product can't do | `#feature-requests`. See [How to Handle: Feature Requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests). |
+| An intake setting routed the WO incorrectly | Thumbs up/down on the WO's **Intake Details** (posts to `#harmonia-feedback`) |
+
+For Deep Dive gaps and feedback, follow [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process).
