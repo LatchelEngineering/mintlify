@@ -14,13 +14,82 @@ groups:
   🔔 **AI Messaging Beta:** For **beta customers**, resident and SP messages are handled in **Conversations** by **Latchel AI**. Follow [<u>Job Aid: Handling Resident & Service Provider Conversations (AI Messaging Beta)</u>](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#when-can-i-switch-handled-by-to-ai "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114") instead of this SOP. This SOP still applies to all other customers.
 </Warning>
 
+<Warning>
+  **🔔 Before You Respond — Read This First**<br />When a conversation is transferred from Lucia, send an acknowledgment message within 1 minute, then review both the summary and the full transcript before sending your substantive response. The summary may not always capture the full context of what the resident means — reading through the transcript ensures you fully understand their concern, so they do not have to repeat themselves.
+</Warning>
+
 <Note>
   **Lucia (Assistant AI)** **Lucia (Assistant AI)** is a sophisticated AI chat tool designed to assist users with a variety of tasks, providing support in a helpful and friendly manner.
 
   Lucia will handle initial resident inquiries, efficiently addressing routine questions and tasks. In cases where a complex issue arises, the interaction will be escalated to you, ensuring that customers receive the expert support they need.
 </Note>
 
-Effective December 11, Lucia will be officially launched for Residents.
+### **📲 How Lucia Handoffs Work & How to Respond**
+
+<Note>
+  Full video [<u>here</u>](https://www.loom.com/share/8203d28ad1914c7095b27386c905df87 "https://www.loom.com/share/8203d28ad1914c7095b27386c905df87").
+</Note>
+
+When a user explicitly requests to speak with a human, Lucia is programmed to transfer the conversation to a live Operations associate. This escalation pathway is available upon the user's direct request and is not triggered proactively by the system.
+
+#### **How the Transfer Works**
+
+1. When a conversation is transferred to an Operations Associate, Lucia’s prior interaction with the user **_will be summarized_**. The original chat with Lucia will be closed.
+   1. <img
+        src="/images/f29d4b10-b418-494d-b572-ef7815ab8c92.png"
+        alt="F29d4b10 B418 494d B572 Ef7815ab8c92"
+        title="F29d4b10 B418 494d B572 Ef7815ab8c92"
+        style={{ width:"32%" }}
+      />
+2. A new message will appear under **Pending Messages**, similar to how other incoming messages are currently managed and actioned.
+   1. <img
+        src="/images/4925aec2-073f-4f11-92dc-5d25899b37fc.png"
+        alt="4925aec2 073f 4f11 92dc 5d25899b37fc"
+        title="4925aec2 073f 4f11 92dc 5d25899b37fc"
+        style={{ width:"58%" }}
+      />
+   - **Note:** An automated message will appear stating **“Transfer me to a human agent (simulated message)”**. This message serves as a trigger for the Operations associate, indicating that the request originated from Lucia. Along with the transfer, a summary of Lucia's prior conversation with the user will be provided to the associate, ensuring a smooth handoff.
+     1. <img
+          src="/images/98b0b717-fabd-4bad-8c3a-18f654892230.png"
+          alt="98b0b717 Fabd 4bad 8c3a 18f654892230"
+          title="98b0b717 Fabd 4bad 8c3a 18f654892230"
+          style={{ width:"55%" }}
+        />
+     - Summary of the conversation:
+       - <img
+           src="/images/4e51d89e-b292-43f3-b522-c2ffa73a256f-(1).png"
+           alt="4e51d89e B292 43f3 B522 C2ffa73a256f (1)"
+           title="4e51d89e B292 43f3 B522 C2ffa73a256f (1)"
+           style={{ width:"61%" }}
+         />
+     - Here’s what the customer will see when they request to be transferred to a human agent:
+       - ![7737454a 01c7 49dd 8b83 8eb4dd0336d7](/images/7737454a-01c7-49dd-8b83-8eb4dd0336d7.png "7737454a 01c7 49dd 8b83 8eb4dd0336d7")
+
+ 
+
+#### **💬 How to Respond — Two-Step Response Model**
+
+Operations associates can take over and assist the user moving forward by following the two-step response model below.
+
+**Step 1 — Send the Acknowledgment Message Immediately** _(within 1 minute)_
+
+Send an acknowledgment as soon as you accept the conversation so the resident knows they have been connected to a live associate while you review the prior conversation.
+
+> _“Hi [Customer Name]. Thank you for reaching out! You've now been connected with one of our specialists. I'm reviewing your conversation now and will be right with you.”_
+
+**Step 2 — ⚠️ Required: Review the Summary AND Full Transcript Before Your Next Message**
+
+1. Read the Lucia conversation summary provided with the transfer.
+2. **Go through the full transcript** to ensure you fully understand what the resident is asking or reporting — the summary may not always capture the complete context.
+3. Identify what has already been shared, including the issue reported, any troubleshooting or details already discussed, what the resident is expecting, and what information is genuinely missing.
+4. Once you clearly understand the resident’s concern, send your substantive response addressing the issue directly.
+5. Only ask for information that is **genuinely missing** from the transcript — never ask the resident to re-explain something already covered.
+
+**Example substantive response after review:**
+
+> _“Thank you for your patience, [Customer Name]. I can see you reported [issue from transcript]. I’m looking into this now — just to confirm, [only ask for genuinely missing information].”_
+
+ 
 
 ### **Scenario: Resident Attempting to Submit a Work Order via Text**
 
@@ -30,128 +99,60 @@ When a Lucia conversation is handed off and the context shows the resident was t
 2. Check if Lucia already collected the resident's property address and issue description. If yes, use that context to skip ahead in intake.
 3. If Lucia could not match the resident to a property: be transparent and proceed with collecting the info needed to create a WO. Do not ask the resident to start over if Lucia already collected details — use the summary.
 4. Proceed with the standard resident text intake protocol (offer portal link if resident is now matched; offer SMS intake or outbound call if not).
-5. _"Hi [Name], you've been connected with one of our specialists. I can see you were trying to submit a maintenance request — I've got the details from your previous conversation and I'll take it from here. Can you confirm [any missing info]?"_
+   1. _"Hi [Name], you've been connected with one of our specialists. I can see you were trying to submit a maintenance request — I've got the details from your previous conversation and I'll take it from here. Can you confirm [any missing info]?"_
 
-| ⚠️ Feature request is pending for Lucia to perform property search matching when she can't identify a resident by phone number. Until that ships, live associates handle the match and intake. |
-| --- |
+<Warning>
+  Feature request is pending for Lucia to perform property search matching when she can't identify a resident by phone number. Until that ships, live associates handle the match and intake.
+</Warning>
 
 ## **[❓](https://help.latchel.com/how-to-handle-emergency-work-orders)Frequently Asked Questions**
 
-How are users transferred to a human agent?
+<Accordion title="Will AI chats be linked to work order transcripts? ">
+  **No**, AI chats will not be automatically linked to work order transcripts. Therefore, Operations associates are reminded of the following important note:
 
-Full video [here](https://www.loom.com/share/8203d28ad1914c7095b27386c905df87).
-
-When a user explicitly requests to speak with a human, Lucia is programmed to transfer the conversation to a live Operations associate. This escalation pathway is available upon the user's direct request and is not triggered proactively by the system.
-
-1. When a conversation is transferred to an Operations Associate, Lucia’s prior interaction with the user **_will be summarized_**. The original chat with Lucia will be closed.
-
-<Frame>
-  ![image-20241210-203715.png](/images/SVC-342.png)
-</Frame>
-
-2. A new message will appear under "**Pending Messages**," similar to how other incoming messages are currently managed and actioned.
-
-<Frame>
-  ![image-20241210-204334.png](/images/SVC-343.png)
-</Frame>
-
-2. **Note:** **Note:** An automated message will appear stating “**Transfer me to a human agent (simulated message)**”. This message serves as a trigger for the Operations associate, indicating that the request originated from Lucia. Along with the transfer, a summary of Lucia's prior conversation with the user will be provided to the associate, ensuring a smooth handoff.
-
-<Frame>
-  ![image-20241210-204438.png](/images/SVC-344.png)
-</Frame>
-
-<Frame>
-  ![image-20241210-204554.png](/images/SVC-345.png)
-</Frame>
-
-3. Operations associates can take over and assist the user moving forward.
-
-<Note>
-  **Latchel Blurb**
-
-  _“Hi [Customer Name]. Thank you for reaching out! You've now been connected with one of our specialists. I’ll be happy to assist you further and address [the concern Lucia handed off]”_
-</Note>
-
-Here’s what the user will see when they request to be transferred to a human agent:
-
-<Frame>
-  ![image-20241210-204554.png](/images/SVC-345.png)
-</Frame>
-
-3. Operations associates can take over and assist the user moving forward.
-
-<Note>
-  **Latchel Blurb**
-
-  _“Hi [Customer Name]. Thank you for reaching out! You've now been connected with one of our specialists. I’ll be happy to assist you further and address [the concern Lucia handed off]”_
-</Note>
-
-Here’s what the user will see when they request to be transferred to a human agent:
-
-Will AI chats be linked to work order transcripts?Will AI chats be linked to work order transcripts?
-
-**No**, AI chats will not be automatically linked to work order transcripts. Therefore, Operations associates are reminded of the following important note:**No**, AI chats will not be automatically linked to work order transcripts. Therefore, Operations associates are reminded of the following important note:
-
-<Note>
   **Important**
 
   Please remember to manually assign any chats transferred from Lucia to the appropriate work order. This is essential to ensure that the interaction is properly logged in the transcript for accurate record-keeping and follow-up.
-</Note>
+</Accordion>
 
-Will agents have visibility into the AI conversations that are OPEN when they log in?
+<Accordion title="Will agents have visibility into the AI conversations that are OPEN when they log in? ">
+  **Yes**, Operations associates will have visibility into open AI conversations when they log in. AI conversations will automatically close after 30 minutes of inactivity, so there's no need for associates to manually close any chats. Active Lucia AI chats will be visible under **"My Team"**.
 
-<Note>
-  **Important**
+  **Note**: _Lucia is treated as a real user (an Operations Associate) within the application, just like any other Latchel associate having a conversation._
 
-  Please remember to manually assign any chats transferred from Lucia to the appropriate work order. This is essential to ensure that the interaction is properly logged in the transcript for accurate record-keeping and follow-up.
-</Note>
+  1. To view Lucia’s active conversations, click the **"Messages"** icon in the Console, then navigate to **"My Team"**.
+     1. <img
+          src="/images/3054a5d6-7f2f-409e-b42b-6e7a9bbcf791.png"
+          alt="3054a5d6 7f2f 409e B42b 6e7a9bbcf791"
+          title="3054a5d6 7f2f 409e B42b 6e7a9bbcf791"
+          style={{ width:"51%" }}
+        />
+  2. You will see '**Lucia (AI Assistant)**' listed as having an active chat. Click on the message to view the full conversation.
+     1. <img
+          src="/images/cebdff3b-f2ce-4fde-940f-238d73dfd9f5.png"
+          alt="Cebdff3b F2ce 4fde 940f 238d73dfd9f5"
+          title="Cebdff3b F2ce 4fde 940f 238d73dfd9f5"
+          style={{ width:"47%" }}
+        />
+     2. <img
+          src="/images/ff459513-9082-489f-8659-67f8c47472c8.png"
+          alt="Ff459513 9082 489f 8659 67f8c47472c8"
+          title="Ff459513 9082 489f 8659 67f8c47472c8"
+          style={{ width:"42%" }}
+        />
+</Accordion>
 
-Will agents have visibility into the AI conversations that are OPEN when they log in?
-
-**Yes**, Operations associates will have visibility into open AI conversations when they log in. AI conversations will automatically close after 30 minutes of inactivity, so there's no need for associates to manually close any chats. Active Lucia AI chats will be visible under **"My Team"**.**Yes**, Operations associates will have visibility into open AI conversations when they log in. AI conversations will automatically close after 30 minutes of inactivity, so there's no need for associates to manually close any chats. Active Lucia AI chats will be visible under **"My Team"**.
-
-**Note**: _Lucia is treated as a real user (an Operations Associate) within the application, just like any other Latchel associate having a conversation**Note**: Lucia is treated as a real user (an Operations Associate) within the application, just like any other Latchel associate having a conversation._
-
-1. To view Lucia’s active conversations, click the **"Messages"** icon in the Console, then navigate to **"My Team"**.
-
-<Frame>
-  ![image-20241210-202419.png](/images/SVC-346.png)
-</Frame>
-
-2. You will see '**Lucia (AI Assistant)**' listed as having an active chat. Click on the message to view the full conversation.
-
-<Frame>
-  ![image-20241210-202812.png](/images/SVC-347.png)
-</Frame>
-
-1. To view Lucia’s active conversations, click the **"Messages"** icon in the Console, then navigate to **"My Team"**.
-
-<Frame>
-  ![image-20241210-202419.png](/images/SVC-346.png)
-</Frame>
-
-2. You will see '**Lucia (AI Assistant)**' listed as having an active chat. Click on the message to view the full conversation.
-
-<Frame>
-  ![image-20241210-202812.png](/images/SVC-347.png)
-</Frame>
-
-<Frame>
-  ![image-20241210-202929.png](/images/SVC-348.png)
-</Frame>
-
-How do I report issues or suggestions for Lucia?
-
-1. **Scenario 1:** Lucia Sharing the Property Manager’s Name and Contact Information
-2. Following our SOP for [Handling Property Manager’s Private Information](https://help.latchel.com/informational-basic-service-ops-guidelines-and-rules), the Operations team is strictly prohibited from sharing any details related to the Property Manager, including their name, company phone number & email addresses.
-3. Note the specific conversation where the issue occurred. This is critical for accurately capturing the details in the bug report.
-4. Capture a video that shows the incident, highlighting how the private information was shared. This will serve as evidence for investigation.
-5. Post them in the _#bug-report_ channel
-6. If any other issues are identified, please report them in the #bug-report channel for review.
-7. For any feedback, including suggestions or improvement ideas, please submit a feature request through the #\_svc-ops-requests \_channel. Your input is crucial and helps us enhance the system.
-8. Refer to [How to: Use the Serv Ops Intake Workflows](https://help.latchel.com/how-to-use-the-serv-ops-intake-workflows)
-9. If there is an issue with **Lucia’s Full Service**, Operations Support Specialists must report it in the `#bug-report` Slack channel immediately. Please include relevant details such as the nature of the issue, impact, and any steps already taken.
+<Accordion title="How do I report issues or suggestions for Lucia?">
+  1. **Scenario 1:** Lucia Sharing the Property Manager’s Name and Contact Information
+     1. Following our SOP for [<u>Handling Property Manager’s Private Information</u>](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#private-property-manager/owner-handling-private-information "https://latchel.atlassian.net/wiki/spaces/OPS/pages/776701198/Informational+Basic+Service+Ops+Guidelines+and+Rules#Private-Property-Manager-Phone-Numbers-%26-Handling-Private-Information"), the Operations team is strictly prohibited from sharing any details related to the Property Manager, including their name, company phone number & email addresses.
+        1. Note the specific conversation where the issue occurred. This is critical for accurately capturing the details in the bug report.
+        2. Capture a video that shows the incident, highlighting how the private information was shared. This will serve as evidence for investigation.
+        3. Submit a bug report using this link: [<u>https://app.latchel.com/admin/bug-reports</u>](https://app.latchel.com/admin/bug-reports) (also pinned at the top of the `#bug-report` channel).
+  2. If any other issues are identified, please submit a bug report for review.
+  3. For any feedback, including suggestions or improvement ideas, please submit a feature request through the #_svc-ops-requests_ channel. Your input is crucial and helps us enhance the system.
+     1. Refer to [How to: Use the Serv Ops Intake Workflows](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows#how-to-use-the-serv-ops-intake-workflows)
+  4. If there is an issue with **Lucia’s Full Service**, Operations Support Specialists must report it in the `#tech-high-sev-escalations` Slack channel immediately. Please include relevant details such as the nature of the issue, impact, and any steps already taken.
+</Accordion>
 
 ## **🎯 When to Break This SOP**
 
