@@ -64,14 +64,11 @@ groups:
 
   ### 2. Preferred SP Retry Process (Emergency Dispatch Deferral)
 
-  **What changed:**<br />For **non-PD/EH emergencies (24/7 customers)**, some cases now get **one final retry** before we escalate to the PM. This applies when no preferred SP (or other eligible SP) can be secured.
+  **What changed:**<br />For **non-PD/EH emergencies (24/7 customers)**, associates do **one final retry** before we escalate to the PM. This applies when no preferred SP (or other eligible SP) can be secured.
 
   **What you need to do:**
 
-  1. **Case A — After-Hours subscription, WO received Friday or Saturday:**
-     - Create a task due **9AM property time the next morning**.
-     - When the task comes due, retry sourcing a Service Provider as a final attempt.
-  2. **Case B — 24/7 Emergency Only subscription (any day):**
+  1. **24/7 Emergency Only subscription (any day):**
      - **Before 2PM** property time → create a task due in **3 hours**.
      - **At or after 2PM** property time → create a task due **9AM property time the next morning**.
      - When the task comes due, re-call each preferred SP **once** as a final attempt. Skip any SP who declined.
