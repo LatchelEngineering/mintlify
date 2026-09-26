@@ -1,0 +1,138 @@
+---
+title: "Operations Weekly Newsletter — Process Update Edition 09/25/2026"
+groups:
+  - "latchel"
+---
+
+<Note>
+  This newsletter is intended as a resource to collect Ops Goals, All Hands information, SOP updates, and Product releases impacting the team in one place, so you're able to refer to any recent changes that took place.
+</Note>
+
+<Warning>
+  Please fill out this form after reading to confirm acknowledgement of the content: [**Form link**](FORM_LINK)
+</Warning>
+
+<Warning>
+  Please note that the content of this page may become obsolete over time since its validity is subject to any future changes; therefore, always refer to the actual SOPs and Job Aids for official guidance.
+</Warning>
+
+**All Hands Topics:**
+
+[Recording](https://drive.google.com/file/d/1hYyt9DoaS7eko7koOEUac38IAgKxErmt/view?usp=sharing)
+
+- Team anniversaries, promotions, and 100% Club recognized.
+- Quality performance overview:
+  - Top strengths: call recording reminders, active listening, adapting to the customer's pace, and clear grammar.
+  - Opportunities: setting expectations (97%), empathy and sense of urgency, and **follow-through (95%)**.
+- **Follow-through reminder:** Before moving to your next task, take a **5-second pause** and check:
+  - Did I complete the actions I promised?
+  - Did I communicate the outcome?
+  - Are there pending items I need to address?
+  - Did I document my actions in the notes, WO, or conversation?
+- **Sheriff** replaces Deputy for time tracking and goes live **Monday, 9/28** (see Major Updates).
+- **Conversations** is replacing SMS, starting with a beta rollout next week (see Major Updates).
+- Emergency SOP updates: 911 PM escalation and the Preferred SP Retry Process.
+- Ops Assistant Plug-in **v0.6.4** is live.
+- No All Hands next week.
+
+<Warning>
+  ## ⭐ Shoutouts & Recognition
+
+  - 🎉 **5-Year Anniversary:** Congratulations to **Cezcille** on five years with Latchel as an Operations Support Specialist!
+  - 🎓 **Promotion:** Congratulations to **Sarah** on her promotion from Troubleshooter to **Product Support Associate**! She'll help bridge operational gaps between Ops and Product Support.
+  - 🏆 **100% Club**
+    - **Customer Experience Stars:** Roy, Sarah
+    - **Troubleshooting Stars:** Summer, Wilson, Pia
+</Warning>
+
+# Documentation Updates
+
+<Info>
+  ## Major Updates/Training
+
+  ### 1. AI Messaging Beta — Handling Resident & SP Conversations
+
+  **What changed:**<br />For beta customers, resident and service provider texts are moving from SMS to **Conversations**. These are browser-based chat threads that **Latchel AI** (formerly Lucia) answers first. Latchel AI transfers the conversation to a person when the customer asks for one or when it can't handle the request. You'll see a new **Conversations** icon next to the SMS icon.
+
+  **What you need to do:**
+
+  1. Work **both queues** (SMS and Conversations). They have **equal priority**, so always handle the **oldest message first** by timestamp.
+  2. In **Conversations → Team**, click **Mark as Handled** *before* replying. If you see "[name] is typing…", move on to another message.
+  3. Review the full thread and the tagged WO before replying. You don't need to log the conversation manually because it's saved in the WO **Conversations** tab. Leave a WO note only if you updated the work order.
+  4. There's no End Conversation option. If a thread goes **10 minutes** without a staff reply, it turns red in Team so anyone can pick it up.
+  5. You no longer need to send the Lucia acknowledgment message. Keep sending the CSAT link for now.
+  6. As you work the beta, flag any edge cases that the job aid doesn't cover.
+
+  **Beta customers:** [Scarpa Properties](https://app.latchel.com/admin/pm-company/33410)
+
+  **When it takes effect:**<br />**Monday, 9/28/2026.**
+
+  **Resources impacted:**
+
+  - [Job Aid: Handling Resident & Service Provider Conversations (AI Messaging Beta)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)
+
+  ---
+
+  ### 2. Preferred SP Retry Process (Emergency Dispatch Deferral)
+
+  **What changed:**<br />For **non-PD/EH emergencies**, some cases now get **one final retry** before we escalate to the PM. This applies when no preferred SP (or other eligible SP) can be secured.
+
+  **What you need to do:**
+
+  1. **Case A — After-Hours subscription, WO received Friday or Saturday:**
+     - Create a task due **9AM property time the next morning**.
+     - When the task comes due, retry sourcing a Service Provider as a final attempt.
+  2. **Case B — 24/7 Emergency Only subscription (any day):**
+     - **Before 2PM** property time → create a task due in **3 hours**.
+     - **At or after 2PM** property time → create a task due **9AM property time the next morning**.
+     - When the task comes due, re-call each preferred SP **once** as a final attempt. Skip any SP who declined.
+  3. If the retry is unsuccessful, escalate to the PM per the SOP.
+  4. **Exception:** PD/EH emergencies follow the standard escalation path. Do not defer them.
+
+  **When it takes effect:**<br />**Monday, 9/28/2026.**
+
+  **Resources impacted:**
+
+  - Preferred SP Retry Process section of [(EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#preferred-sp-retry-process)
+
+  ---
+
+  ### 3. Sheriff — Replacing Deputy for Time Tracking
+
+  **What changed:**<br />**Sheriff** is our new app for clocking in and out, viewing shifts, and requesting time off. It replaces **Deputy**. You sign in with your **@latchel.com Google account**, so there's no password to remember.
+
+  **What you need to do:**
+
+  1. Complete the **Sheriff Team Handbook** if you haven't yet.
+  2. Bookmark the app: [sheriff-110204726220.us-central1.run.app](https://sheriff-110204726220.us-central1.run.app)
+  3. **Until the 9/28 go-live, use BOTH Sheriff and Deputy.**
+  4. **Clock in and out from a computer.** Clocking in from your phone is blocked. You can still view your shifts and balances on your phone.
+  5. Use the buttons on the **Me** page: **Start shift**, **Start/End meal** (30-min unpaid), **Start/End break** (15-min paid), and **End shift**.
+  6. **If you forget to clock out**, tell your supervisor. Don't try to fix it yourself.
+  7. **Time off:** Go to **Leave → Time off**. Give **5+ days' notice** when you can. Shorter notice is still accepted but is marked unplanned.
+  8. **Can't work today** (sick, power or internet outage, broken device): Go to **Leave → Report unavailable**.
+  9. **Check your leave balances.** Balances were migrated from Deputy. If a number looks wrong, message your supervisor.
+  10. For questions or issues, reach out to your supervisor. If something is broken, message **Matias** with what you clicked, what happened, and a screenshot.
+
+  **When it takes effect:**<br />**Monday, 9/28/2026.**
+
+  **Resources impacted:**
+
+  - [Sheriff Team Handbook](HANDBOOK_LINK)
+</Info>
+
+<Tip>
+  ## Minor Updates
+
+  1. [**How to: Handle 911-Severity Type Work Orders**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders#step-1-when-the-resident-should-call-911)
+     1. Added Step 1.a.9: Any time a resident is advised to call 911, a PM escalation is required. Follow the [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos) for escalation steps.
+  2. [**How to: Handle Spanish SMS/Emails/Calls**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls)
+     1. You can now **live-transfer** inbound Spanish-speaking calls directly to the Spanish call center (Sunshine Call Center) using the **Spanish Queue** quick connect in Amazon Connect.
+     2. The Spanish Call Center Forward number has been corrected to the direct Spanish line.
+  3. [**(Operations Associate) Job-Aid: Latchel Service Ops Assistant Plug-in**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Latchel-Service-Ops-Assistant-Associate-Job-Aid-Associates)
+     1. Updated to plug-in **version 0.6.4**, which includes:
+        - Test intake rules directly from the WO
+        - Weather widget expanded beyond AC-related statuses
+        - "Assign Me and Go" now opens in a new tab
+        - Bug fixes
+</Tip>
