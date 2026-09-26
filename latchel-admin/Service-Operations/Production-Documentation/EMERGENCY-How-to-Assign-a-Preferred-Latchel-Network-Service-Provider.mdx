@@ -80,10 +80,11 @@ groups:
          We have attempted to get resident to do **_(describe troubleshooting steps)_** to attempt to de-escalate situation. They have not solved the problem.
          Please have a technician contact us at (phone number)  if someone can go out for the job. _The Work Order number is** (work order number here).**_
          **Note:** When handling an emergency service call, find the appropriate callback number within this [SOP](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#customer-calling-to-latchel-phone-numbers).
-5. 📞Call the 2nd, 3rd, etc. Service Provider listed 3 times each until one confirms, or you run out of contacts.
+3. 📞Call the 2nd, 3rd, etc. Service Provider listed 3 times each until one confirms, or you run out of contacts.
    1. If the Service Provider does not pick up on the third call, leave a message.
-6. **Additional Rule: Standardized Outreach Attempts to Preferred Service Providers:**
-   1. Ops must complete 2 outreach attempts to the Preferred Service Provider before escalating away from the Preferred SP, defined as:
+4. **Additional Rule: Standardized Outreach Attempts to Preferred Service Providers:**
+   1. **‼️IMPORTANT — Updated [09/28/2026]:** 24/7 Emergency Only subscription PMs now get one additional retry attempt to preferred SPs before escalating to the PM. See "Opt-out" of the Latchel Service Provider Network below.
+   2. Ops must complete 2 outreach attempts to the Preferred Service Provider before escalating away from the Preferred SP, defined as:
       1. **First outreach attempt** to each preferred SP = up to **3 dials** in a row (following the above steps 1-3).
          1. Call the Preferred SPs up to 3 times in a row (following our standard spacing between dials) or until the preferred SP answers
          2. Move through the preferred list (2nd, 3rd, etc. SP) the same way: **3 dials per preferred SP** on this first pass.
@@ -92,7 +93,7 @@ groups:
          2. This second attempt happens **after you have completed the first attempt for all listed preferred SPs**, not immediately after the 3rd dial to a single SP.
       3. If, after completing the second attempt pass (1 dial per preferred SP), **no preferred SP can be secured** (no answer/declines), stop preferred‑SP outreach and proceed per this SOP to:
          1. the next eligible SP type (e.g., LCN) **or**
-         2. escalation to **PM / Waiting for PM**, depending on opt‑in/out status and current workflow step.
+         2. escalation to **PM / Waiting for PM** — opted-in PMs move to LCN sourcing (Step 3), then external sourcing (Step 4) if needed; opted-out PMs proceed straight to the "Opt-out" section below. See the Preferred SP Retry Process (below Step 4) for whether a retry applies before escalating, either way.
 
 ### **Step 1: Troubleshooting Dispatch Instructions**
 
@@ -240,7 +241,7 @@ groups:
       1. If the PM has opted into the Latchel Service Provider Network, we will start assigning Latchel Service Provider Network Service Providers 
       2. Proceed to [Step 3](#) instructions to Assign a Latchel Network Service Provider.
    5. **"Opt-out" of the Latchel Service Provider Network**
-      1. If the PM hasn’t opted into the Latchel Service Provider Network, we will Forward the Work Order to the Property Manager.
+      1. If the PM hasn't opted into the Latchel Service Provider Network, follow the Preferred SP Retry Process below before forwarding to the PM.
       2. Click **"Escalate to Property Manager"**
          1. <img
               src="/images/43cb7175-818a-40d9-a4a9-67a2adef4b94.png"
@@ -360,6 +361,21 @@ groups:
 </Note>
 
 - For detailed instructions, see: [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Source-a-New-Service-Provider-Outside-Network#how-to-source-a-new-service-provider-outside-network)
+- If no external Service Provider can be secured either, and the PM has a 24/7 Emergency Only subscription, follow the Preferred SP Retry Process (Step 2) before escalating to the PM. 
+
+### **Preferred SP Retry Process**
+
+**Case A — After-Hours Subscription, WO received Friday or Saturday:**
+
+- Create a task due 9AM property time the next morning.
+- When it comes due, retry sourcing a Service Provider (per the original process) as a final attempt.
+
+**Case B — 24/7 EmergencyOnly subscription (any day):**
+
+- Check the current property time.
+- **Before 2PM** → create a task due in 3 hours.
+- **At or after 2PM** → create a task due 9AM property time the next morning.
+- When the task comes due, re-call each preferred SP 1 time (excluding declines) as a final attempt.
 
 ## 🎯 When to Break This SOP
 
