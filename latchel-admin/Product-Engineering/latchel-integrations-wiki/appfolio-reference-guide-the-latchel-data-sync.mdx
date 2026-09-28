@@ -15,10 +15,13 @@ This guide helps customer support agents understand and use the Latchel Data Syn
 2. Enter the client's AppFolio database **App Slug**. You can locate this by navigating to the client's AppFolio account URL and copying the database name. In the example below, the **App Slug** is highlighted in red:
    - [https://rinconpm.appfolio.com/users/sign\_in](https://rinconpm.appfolio.com/users/sign_in)
 3. Copy/Paste the **App Slug** into the corresponding field, and set the **Starting Sync Date** as today’s date, then hit **Save**.
-4. Navigate to **Miscellaneous Settings**
+4. Still on the **Integrations** tab, set the integration settings and click **Save**:
+   - **Latchel Managed:** turn on only if Latchel will run the sync for this PM (see [SOP: Running AppFolio Sync on Behalf of Customers](/latchel-admin/Product-Support-Team/SOP-Running-AppFolio-Sync-on-Behalf-of-Customers)).
+   - **Frequent Sync:** leave off unless needed (see [Latchel Managed and Frequent Sync](#latchel-managed-and-frequent-sync)).
+   - **Work Order Update Conditions:** set per the client's preference.
    - Designate which **Integration Sync Method** the client prefers (most clients choose the default Assigned Work Orders). 
      - Reference the [Latchel Data Sync Extension Reference Guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Data-Sync-Extension-Reference-Guide#latchel-data-sync-extension-reference-guide "https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Data-Sync-Extension-Reference-Guide#latchel-data-sync-extension-reference-guide") for additional details on the Sync Methods. 
-   - Disable **Property Modification** and **Resident Modification**.
+5. Go to the **Details** tab → **Miscellaneous Settings** and disable **Property Modification** and **Resident Modification**.
 5. Loom Video for reference.
 
 <iframe src="https://www.loom.com/embed/1bf656bddb1f4d54bd7eceee6fe1f660" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
@@ -163,7 +166,7 @@ When a tenant is first synced from Appfolio to Latchel, the following fields are
 
 **Conditions for Sync**:
 
-- Work order must be assigned to a “Latchel” user. See “[Integration Sync Method](https://latchel.atlassian.net/wiki/spaces/PROD/pages/edit-v2/2608824321#Integration-Sync-Method "https://latchel.atlassian.net/wiki/spaces/PROD/pages/edit-v2/2608824321#Integration-Sync-Method").”
+- Work order must be assigned to a “Latchel” user. See “[Integration Sync Method](#integration-sync-method).”
 
 When a work order is first synced from Appfolio to Latchel, the following fields are mapped:
 
@@ -249,6 +252,13 @@ This is a special setting in Latchel that governs which Appfolio WOs will sync t
   **ProTip**: Users can stop WOs from updating in appfolio by using the “Assigned Work Orders” setting and unassigning the Latchel user in appfolio when they want the WO to stop updating in Appfolio.
 </Tip>
 
+### **Latchel Managed and Frequent Sync**
+
+Two toggles on the PM's profile page → **Integrations** tab, below the Integration Sync Method. Admins can change them; click **Save** after changing either one.
+
+- **Latchel Managed:** Latchel runs the sync instance for this company from our remote server. Tightens the sync health thresholds on [Integration Health](https://app.latchel.com/admin/integration-health), and stale syncs are escalated to Latchel ops instead of the PM.
+- **Frequent Sync:** runs an extra foreground sync every 15 minutes in the AppFolio plugin. Can be used for PMs who run their own sync, but they'll see an extension pop-up every 15 minutes.
+
 ### **Sync Status**
 
 - **Sync Status**: An indication will show at the top of each work order whether it was successfully synced with the customer’s PMS.
@@ -278,5 +288,5 @@ Customers can download the Chrome extension here: [Property Manager Visor - Chro
 <iframe src="https://www.loom.com/embed/4a3179232fb341a08b02a5044dfb7cb4" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 <Note>
-  Note: The [Exclude from Property Sync feature](https://latchel.atlassian.net/wiki/spaces/PROD/pages/2608824321/Appfolio+Reference+Guide+The+Latchel+Data+Sync#Exclude-properties-from-import "https://latchel.atlassian.net/wiki/spaces/PROD/pages/2608824321/Appfolio+Reference+Guide+The+Latchel+Data+Sync#Exclude-properties-from-import") has been moved over to the Latchel Overlay extension.
+  Note: The [Exclude from Property Sync feature](#exclude-properties-from-import) has been moved over to the Latchel Overlay extension.
 </Note>
