@@ -5,12 +5,12 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/4074733569/La
 ---
 
 <Note>
-  **Internal use only — do not distribute externally.** This guide enables the Product Support team to answer customer API questions independently, without engineering escalation. Last updated: May 2026.
+  **Internal use only — do not distribute externally.** This guide enables the Product Support team to answer customer API questions independently, without engineering escalation. Last updated: September 2026 (checked against the live docs at [papi.latchel.com](https://papi.latchel.com/api-docs/papi/)). The customer-facing page is [API Docs](/s/topic/0TO5e000000h9wqGAA/API-Docs).
 </Note>
 
 ## Part 1: How to Use This Guide
 
-This guide has two jobs. First, it teaches you the core concepts behind APIs so you can understand what customers are asking. Second, it gives you a complete reference for Latchel’s Partner API (PAPI) so you can look up the right answer quickly.
+This guide has two jobs. First, it teaches you the core concepts behind APIs so you can understand what customers are asking. Second, it gives you a complete reference for Latchel's Partner API (PAPI) so you can look up the right answer quickly.
 
 By the end, you should be able to:
 
@@ -21,7 +21,7 @@ By the end, you should be able to:
 - Know exactly when something genuinely needs an engineer
 
 <Note>
-  **How to use:** Read Parts 1–2 once to build your foundation. Use Parts 3–4 as an ongoing lookup reference. Keep Part 5 (the question framework) bookmarked — it’s your step-by-step process for any new scenario.
+  **How to use:** Read Parts 2–3 once to build your foundation. Use Part 4 as an ongoing lookup reference. Keep Part 5 (the question framework) and Part 6 (when to escalate) bookmarked. Part 8 has practice scenarios from the PS API training.
 </Note>
 
 ## Part 2: API 101 — Core Concepts
@@ -30,15 +30,15 @@ By the end, you should be able to:
 
 API stands for Application Programming Interface. The easiest way to think about it: **an API is a waiter at a restaurant.**
 
-You (the customer) want food from the kitchen. You don’t walk into the kitchen yourself — you tell the waiter what you want, the waiter goes to the kitchen, and comes back with your order.
+You (the customer) want food from the kitchen. You don't walk into the kitchen yourself — you tell the waiter what you want, the waiter goes to the kitchen, and comes back with your order.
 
-In tech terms: a customer’s internal system (the diner) wants data from Latchel (the kitchen). The customer’s system makes a request to the Latchel API (the waiter), and the API returns the data (delivers the food).
+In tech terms: a customer's internal system (the diner) wants data from Latchel (the kitchen). The customer's system makes a request to the Latchel API (the waiter), and the API returns the data (delivers the food).
 
-Latchel’s Partner API (PAPI) is how customers can access their Latchel data — vendors, properties, work orders, tenants, invoices, and more — from their own tools and systems.
+Latchel's Partner API (PAPI) is how customers can access their Latchel data — vendors, properties, work orders, tenants, invoices, and more — from their own tools and systems.
 
 ### 2.2 What is REST and Why Does it Matter?
 
-Latchel’s PAPI is a REST API. This means requests are made over the web using standard HTTP calls — the same technology your browser uses to load a webpage. There are five types of actions (HTTP methods):
+Latchel's PAPI is a REST API. This means requests are made over the web using standard HTTP calls — the same technology your browser uses to load a webpage. There are five types of actions (HTTP methods):
 
 | Method | What it does |
 | --- | --- |
@@ -49,7 +49,7 @@ Latchel’s PAPI is a REST API. This means requests are made over the web using 
 | **DELETE** | Remove a record permanently. |
 
 <Note>
-  **Support tip:** Most customer questions are about GET requests — they want to read data out of Latchel. If a customer asks how to pull a list of something, it’s always a GET.
+  **Support tip:** Most customer questions are about GET requests — they want to read data out of Latchel. If a customer asks how to pull a list of something, it's always a GET.
 </Note>
 
 ### 2.3 What is an Endpoint?
@@ -75,9 +75,9 @@ Latchel uses **API Key authentication**. Every request must include an API key i
 
 Important things to know:
 
-- Each property manager generates their own API key from their Latchel dashboard (Account Settings → Integrations)
-- Re-generating immediately invalidates the old key — the customer must update any integrations using the old key
-- Latchel does **not** currently support scoped (read-only) API keys — all keys have full access
+- Each property manager generates their own API key from their Latchel dashboard (Account Settings → Integrations). Guide: [How to Generate an API Key](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Generate-an-API-Key).
+- Re-generating immediately invalidates the old key — the customer must update any integrations using the old key.
+- Latchel does **not** currently support scoped (read-only) API keys — all keys have full access.
 - For API-specific technical issues: [tech@latchel.com](mailto:tech@latchel.com)
 
 ### 2.6 Rate Limits
@@ -86,27 +86,47 @@ Important things to know:
 
 | Response Header | What it means |
 | --- | --- |
-| `x-ratelimit-limit` | Total requests allowed in the window (600) |
-| `x-ratelimit-remaining` | Requests still available in the current window |
-| `Retry-After` | How many seconds to wait before retrying |
-| `X-RateLimit-Reset` | The exact timestamp when the window resets |
+| `x-ratelimit-limit` | Total requests allowed |
+| `x-ratelimit-remaining` | Requests still available before hitting the limit |
+| `Retry-After` | When the next retry will succeed (returned with a 429) |
+| `X-RateLimit-Reset` | When the throttling resets as a whole (returned with a 429) |
 
 <Note>
-  **Support tip:** If a customer reports 429 errors, ask how many requests per minute they’re making. Advise them to add delays between batches or spread the sync over time.
+  **Support tip:** If a customer reports 429 errors, ask how many requests per minute they're making. Advise them to add delays between batches, spread the sync over time, and use larger pages (see 2.7) so they need fewer requests.
 </Note>
 
 ### 2.7 Pagination
 
-Most list endpoints return results in pages, not all records at once. If a customer says they’re only seeing partial data, pagination is usually the reason. Details on pagination parameters for each endpoint are in the PAPI docs.
+List endpoints return **one page at a time**, not all records at once. If a customer says they're only seeing partial data, pagination is usually the reason.
 
-### 2.8 Environments: Production vs. Testing
+- `page` — which page to return. Iterate through pages to get everything.
+- `per_page` — page size, **1 to 500, default 10**. A `per_page` outside that range returns **HTTP 422**.
+- Requesting a large page (up to 500) is the fastest way to pull a big portfolio within the rate limit.
+
+<Note>
+  **Support tip:** "I only get 10 records back" almost always means they haven't set `per_page` and aren't paging. Tell them to set `per_page` (up to 500) and loop through `page`.
+</Note>
+
+### 2.8 Delta Sync (Only Changed Records)
+
+`GET /properties`, `GET /tenants`, and `GET /properties/{property_id}/tenants` accept **`updated_at_start_date`** (an RFC 3339 date-time) to return only records changed at or after that time.
+
+- A tenant counts as changed when their own details, their contacts (email/phone), or their link to a property (move-in/out dates, active status) change.
+- Recommended pattern: record the time a sync starts, then pass it as `updated_at_start_date` on the next sync.
+- `GET /jobs` has a filter with the same name.
+
+<Note>
+  **Support tip:** If a customer is re-pulling their entire portfolio on every sync (and hitting rate limits), point them to delta sync.
+</Note>
+
+### 2.9 Environments: Production vs. Testing
 
 | Environment | Base URL | Notes |
 | --- | --- | --- |
 | **Production (live)** | `https://papi.latchel.com/v1/` | Real account data. Use for actual integrations. |
-| **Testing / Sandbox** | `https://latchel-demo.com/v1/` | Demo data only. Requires a separate dev API key. Safe for testing. |
+| **Testing / Sandbox** | `https://latchel-demo.com/v1/` | Demo data only. Requires a separate development API key. Data isn't guaranteed to persist. Safe for testing. |
 
-### 2.9 Field Inheritance
+### 2.10 Field Inheritance
 
 Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfolio → Property**. If a field is set at the Company level, all Portfolios and Properties inherit it automatically unless overridden.
 
@@ -121,10 +141,11 @@ Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfol
 | Resource | URL |
 | --- | --- |
 | Full API docs | [https://papi.latchel.com/api-docs/papi/](https://papi.latchel.com/api-docs/papi/) |
+| Customer-facing overview | [help.latchel.com — API Docs](/s/topic/0TO5e000000h9wqGAA/API-Docs) |
 | Production base URL | `https://papi.latchel.com/v1/` |
 | Sandbox/testing base URL | `https://latchel-demo.com/v1/` |
 | API key generation | [help.latchel.com — How to Generate an API Key](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Generate-an-API-Key) |
-| Webhook docs | [help.latchel.com — search “Webhooks”](https://help.latchel.com/reference/introduction.md) |
+| Webhook docs | [help.latchel.com — API reference / Webhooks](https://help.latchel.com/reference/introduction.md) |
 | Analytics\+ | [https://latchel.com/analytics-plus/](https://latchel.com/analytics-plus/) |
 | API technical issues | [tech@latchel.com](mailto:tech@latchel.com) |
 | Customer Success | [success@latchel.com](mailto:success@latchel.com) |
@@ -133,9 +154,10 @@ Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfol
 
 | Element | What it means |
 | --- | --- |
-| Left sidebar | A list of all endpoint categories. Click any to jump to it. |
+| Left sidebar | The overview topics (Request Limits, Pagination, Delta Sync, Endpoints, Field Inheritance) followed by every endpoint category. Click any to jump to it. The page also has a search box (⌘K). |
 | Colored method badges | Each endpoint shows its HTTP method (GET, POST, etc.) followed by the path. |
-| “\+ Show” toggle | Expand an endpoint to see full details: parameters, request body, and example responses. |
+| "Show N more..." | Some categories (Properties, Portfolios) hide extra endpoints. Click to see the full list. |
+| "+ Show" toggle / endpoint link | Expand or click an endpoint to see full details: parameters, request body, and example responses. Each endpoint has its own link (e.g., `#/properties/properties_merge`) you can share. |
 | Request Parameters table | Lists all query and path parameters, whether required or optional, and descriptions. |
 | Response schemas | Shows what fields the API returns, with descriptions. |
 | Example responses | Sample JSON showing what a real API response looks like. |
@@ -144,16 +166,12 @@ Some fields are marked `[INHERITABLE]`. They cascade down: **Company → Portfol
 
 1. Go to [papi.latchel.com/api-docs/papi/](https://papi.latchel.com/api-docs/papi/)
 2. Identify the data type the customer is asking about (vendors, jobs, properties, tenants, etc.)
-3. Click the matching category in the left sidebar
-4. Scan the endpoint list. Find the one matching the action (GET for reading, POST for creating, etc.)
-5. Click “\+ Show” to expand it
+3. Click the matching category in the left sidebar (or search with ⌘K)
+4. Scan the endpoint list. Find the one matching the action (GET for reading, POST for creating, etc.). Click "Show N more..." if the list is cut off.
+5. Open the endpoint to see details
 6. Read the Parameters section to answer questions about filters, pagination, required fields
 7. Read the Response section to confirm what fields are returned
-8. Share the relevant endpoint URL with the customer
-
-<Tip>
-  **Pro tip:** Use Ctrl\+F on the docs page and search for a keyword (e.g., “status”, “invoice”). The docs are one long scrollable page.
-</Tip>
+8. Share the direct link to that endpoint with the customer
 
 ## Part 4: Full Endpoint Reference
 
@@ -161,15 +179,15 @@ Every endpoint category in the Latchel Partner API, with available endpoints and
 
 ### 4.1 Company
 
-Endpoints about the API user’s company account and users within it.
+Endpoints about the API user's company account and users within it.
 
 | Method | Endpoint | What it does |
 | --- | --- | --- |
-| GET | `/me` | Returns details about the authenticated company. Use this to confirm API key is working. |
+| GET | `/me` | Returns details about the authenticated company. Use this to confirm the API key is working. |
 | GET | `/company/users` | Lists all users within the company account. |
 
 <Note>
-  **Common question:** “How can I confirm my API key is working?” — Have them call GET /me. A successful response confirms authentication.
+  **Common question:** "How can I confirm my API key is working?" — Have them call GET /me. A successful response confirms authentication.
 </Note>
 
 ### 4.2 Jobs (Work Orders)
@@ -178,7 +196,7 @@ Endpoints for creating, reading, and managing work orders (called Jobs in the AP
 
 | Method | Endpoint | What it does |
 | --- | --- | --- |
-| GET | `/jobs` | List all jobs. Supports filters (status, date range, property, etc.) and pagination. |
+| GET | `/jobs` | List all jobs. Supports filters (status, date range incl. `updated_at_start_date`, property, etc.) and pagination. |
 | POST | `/jobs` | Create a new job/work order. |
 | GET | `/jobs/{job_id}` | Get full details of a specific job. |
 | PUT | `/jobs/{job_id}` | Update an existing job (full replacement). |
@@ -187,7 +205,7 @@ Endpoints for creating, reading, and managing work orders (called Jobs in the AP
 | POST | `/jobs/{job_id}/deny` | Deny a job approval request. |
 
 <Note>
-  **Common question:** “Can I pull all our work orders via API?” — Yes, GET /jobs. Use pagination for large accounts and filters to narrow results.
+  **Common question:** "Can I pull all our work orders via API?" — Yes, GET /jobs. Use pagination for large accounts and filters to narrow results.
 </Note>
 
 ### 4.3 Job Files
@@ -210,7 +228,7 @@ Endpoint for accessing the status change history (audit trail) of a work order.
 | GET | `/jobs/{job_id}/history/state` | Returns a log of all status transitions for a specific job. |
 
 <Note>
-  **Common question:** “Can we see the full timeline of a work order?” — Yes, GET /jobs/{job_id}/history/state returns the full state history.
+  **Common question:** "Can we see the full timeline of a work order?" — Yes, GET /jobs/\{job_id\}/history/state returns the full state history.
 </Note>
 
 ### 4.5 Locations
@@ -227,19 +245,19 @@ Endpoint for accessing the status change history (audit trail) of a work order.
 | GET | `/owners` | List all property owners. |
 | POST | `/owners` | Create a new property owner. |
 | GET | `/owners/{user_id}` | Get details of a specific owner. |
-| PUT | `/owners/{user_id}` | Update an owner’s details. |
+| PUT | `/owners/{user_id}` | Update an owner's details. |
 | GET | `/owners/{user_id}/payment-methods` | List payment methods for an owner. |
 
 ### 4.7 Tenants (Residents)
 
 | Method | Endpoint | What it does |
 | --- | --- | --- |
-| GET | `/tenants` | List all tenants/residents across the account. |
+| GET | `/tenants` | List all tenants/residents across the account. Supports delta sync (`updated_at_start_date`). |
 | GET | `/tenants/{user_id}` | Get details of a specific tenant. |
-| PUT | `/tenants/{user_id}` | Update a tenant’s details. |
+| PUT | `/tenants/{user_id}` | Update a tenant's details. |
 
 <Note>
-  **Common question:** “Can we sync our resident list to our CRM?” — Yes, GET /tenants returns all resident records.
+  **Common question:** "Can we sync our resident list to our CRM?" — Yes, GET /tenants returns all resident records. For ongoing syncs, use `updated_at_start_date` to pull only changes.
 </Note>
 
 ### 4.8 Payment Methods
@@ -257,22 +275,30 @@ Endpoint for accessing the status change history (audit trail) of a work order.
 
 | Method | Endpoint | What it does |
 | --- | --- | --- |
-| GET | `/properties/{property_id}/tenants` | List all tenants linked to a specific property. |
-| POST | `/properties/{property_id}/tenants` | Add a tenant to a property. |
-| PUT | `/properties/{property_id}/tenants/{tenant_id}` | Update a tenant–property link. |
+| GET | `/properties/{property_id}/tenants` | List all tenants linked to a specific property. Supports delta sync (`updated_at_start_date`). |
+| POST | `/properties/{property_id}/tenants` | Create a new tenant in a property. |
+| PUT | `/properties/{property_id}/tenants/{tenant_id}` | Update a tenant in a property (e.g., move-in/out dates). |
+| POST | `/properties/{property_id}/tenants/{tenant_id}` | Add an existing tenant to a property. |
 
 ### 4.10 Properties
 
 | Method | Endpoint | What it does |
 | --- | --- | --- |
-| GET | `/properties` | List all properties. Supports filters and pagination. |
+| GET | `/properties` | List all properties. Supports filters, pagination, and delta sync (`updated_at_start_date`). |
 | POST | `/properties` | Create a new property. |
 | GET | `/properties/{property_id}` | Get full details of a specific property. |
-| PUT | `/properties/{property_id}` | Update a property’s details. |
+| PUT | `/properties/{property_id}` | Update a property's details. |
 | POST | `/properties/{property_id}/add-subscription` | Add a Latchel subscription to a property. |
 | POST | `/properties/{property_id}/end-subscription` | End the subscription on a property. |
-| GET | `/properties/{property_id}/vendor-companies` | List vendors assigned to a specific property. |
-| POST | `/properties/{property_id}/vendor-companies` | Assign a vendor to a specific property. |
+| GET | `/properties/{property_id}/vendor-companies` | List the prioritized vendors for a property. |
+| POST | `/properties/{property_id}/vendor-companies` | Create a vendor relationship (assign a vendor) for a property. |
+| PATCH | `/properties/{property_id}/vendor-companies/{vendor_company_id}` | Update a vendor relationship on a property. |
+| DELETE | `/properties/{property_id}/vendor-companies/{vendor_company_id}` | Remove a vendor relationship from a property, per category. |
+| PUT | `/properties/{property_id}/merge` | Merge duplicate properties into the property in the URL. Duplicates are removed after the merge. |
+
+<Warning>
+  **Caution:** Merging via the API **removes the duplicate properties** once their data is merged. Before a customer merges, make sure the records really are duplicates, especially for integration PMs. Records with different ref IDs from the PMS are **not** duplicates. See the merging rules in [Job Aid: Integration Functionality, Troubleshooting, and Setup Steps](/latchel-admin/Product-Support-Team/Job-Aid-Integration-Functionality-Troubleshooting-and-Setup-Steps) (section 4.1).
+</Warning>
 
 ### 4.11 Portfolios
 
@@ -282,4 +308,245 @@ Endpoint for accessing the status change history (audit trail) of a work order.
 | POST | `/portfolios` | Create a new portfolio. |
 | GET | `/portfolios/{portfolio_id}` | Get details of a specific portfolio. |
 | PUT | `/portfolios/{portfolio_id}` | Update a portfolio. |
-| POST | `/portfolios/{portfolio_id}/add-subscription` |  |
+| POST | `/portfolios/{portfolio_id}/add-subscription` | Add a subscription to a portfolio. |
+| POST | `/portfolios/{portfolio_id}/end-subscription` | End the subscription on a portfolio. |
+| POST | `/portfolios/{portfolio_id}/create-payment-method-link` | Add an owner payment method (creates a payment method link). |
+| GET | `/portfolios/{portfolio_id}/vendor-companies` | List the prioritized vendors for a portfolio. |
+| POST | `/portfolios/{portfolio_id}/vendor-companies` | Create a vendor relationship (assign a vendor) for a portfolio. |
+| PATCH | `/portfolios/{portfolio_id}/vendor-companies/{vendor_company_id}` | Update a vendor relationship on a portfolio. |
+| DELETE | `/portfolios/{portfolio_id}/vendor-companies/{vendor_company_id}` | Remove a vendor relationship from a portfolio, per category. |
+
+### 4.12 Vendors / Service Providers
+
+This is the most common category for customer API questions. The Vendor ID is a stable, permanent identifier that never changes even if the vendor's name is updated.
+
+| Method | Endpoint | What it does |
+| --- | --- | --- |
+| GET | `/vendor-companies` | List ALL vendor companies. Returns active + inactive. Includes Vendor ID, name, contact, skills, status, last updated. |
+| POST | `/vendor-companies` | Create a new vendor company. |
+| GET | `/vendor-companies/{company_id}` | Get full details of a specific vendor. |
+| PATCH | `/vendor-companies/{company_id}` | Partially update a vendor company record. |
+| DELETE | `/vendor-companies/{company_id}` | Remove the vendor company's relationship with the customer's account. |
+| GET | `/vendor-companies/prioritized` | List vendors in priority order. |
+| GET | `/vendor-companies/prioritized/{company_id}` | Get a specific vendor's priority details. |
+| GET | `/vendors/{user_id}` | Get an individual vendor user (service provider users only). |
+
+<Note>
+  **Common question:** "Can we pull our full vendor list with IDs?" — Yes, GET /vendor-companies returns active and inactive vendors with their Vendor IDs.
+</Note>
+
+### 4.13 Categories (Trade Categories)
+
+| Method | Endpoint | What it does |
+| --- | --- | --- |
+| GET | `/categories` | List all trade categories (Plumbing, HVAC, Electrical, etc.). |
+| GET | `/categories/{category}` | Get details of a specific category. |
+| GET | `/categories/{category}/issues` | List maintenance issues within a specific category. |
+
+### 4.14 Issues
+
+| Method | Endpoint | What it does |
+| --- | --- | --- |
+| GET | `/issues` | List all issues across all categories. |
+| GET | `/issues/{issue_id}` | Get details of a specific issue. |
+
+### 4.15 Problems
+
+| Method | Endpoint | What it does |
+| --- | --- | --- |
+| GET | `/problems` | List all problems. |
+| GET | `/problems/{problem_id}` | Get details of a specific problem. |
+
+### 4.16 On-Call Instances
+
+After-hours emergency alerts.
+
+| Method | Endpoint | What it does |
+| --- | --- | --- |
+| GET | `/on-call-instances` | List on-call instances (after-hours emergency alerts). |
+| GET | `/on-call-instances/{on_call_instance_id}` | Get details of a specific on-call instance. |
+
+<Note>
+  **Common question:** "Can we pull our after-hours emergency alerts into our system?" — Yes, GET /on-call-instances.
+</Note>
+
+### 4.17 Vendor Service Territories
+
+| Method | Endpoint | What it does |
+| --- | --- | --- |
+| PATCH | `/vendor-companies/{vendor_company_id}/add-service-zipcodes` | Add ZIP codes to a vendor's service territory. |
+| PATCH | `/vendor-companies/{vendor_company_id}/remove-service-zipcodes` | Remove ZIP codes from a vendor's service territory. |
+
+### 4.18 Invoices
+
+| Method | Endpoint | What it does |
+| --- | --- | --- |
+| GET | `/invoices` | List all invoices. Supports filters and pagination. |
+| GET | `/invoices/{invoice_id}` | Get full details of a specific invoice. |
+
+### 4.19 Webhooks (Push Notifications — Separate from PAPI)
+
+In addition to the pull-based PAPI endpoints, Latchel supports **Webhooks**. Webhooks are push notifications — Latchel sends data to the customer's system automatically when something changes.
+
+Supported webhook events:
+
+- Jobs (work order created or updated)
+- Portfolios (created or updated)
+- Tenants/Residents (created or updated)
+
+Webhook documentation is separate from PAPI and is available in the Help Center (search "Webhooks").
+
+## Part 5: The Framework — Answering Any API Question
+
+### Step 1 — Identify the Data Type
+
+| Customer's data type | Look here |
+| --- | --- |
+| Vendors / service providers | Section 4.12 (Vendors) + 4.17 (Service Territories) |
+| Work orders / maintenance requests | Section 4.2 (Jobs) + 4.3 (Job Files) + 4.4 (Jobs History) |
+| Properties / units | Section 4.10 (Properties) |
+| Tenants / residents | Section 4.7 (Tenants) or 4.9 (Property Tenants) |
+| Property owners | Section 4.6 (Owners) |
+| Portfolios | Section 4.11 (Portfolios) |
+| Invoices / billing data | Section 4.18 (Invoices) |
+| After-hours emergency alerts | Section 4.16 (On-Call Instances) |
+| Trade categories or issue types | Sections 4.13–4.15 (Categories, Issues, Problems) |
+| My account / company info | Section 4.1 (Company) |
+| Automatic push notifications | Section 4.19 (Webhooks) |
+
+### Step 2 — Identify the Action
+
+| What the customer wants to do | What to look for |
+| --- | --- |
+| Pull / read a list | GET endpoint on the category's collection (e.g., GET /jobs) |
+| Pull only what changed since last time | GET /properties, /tenants, or /properties/\{property_id\}/tenants with `updated_at_start_date` |
+| Pull / read one specific record | GET endpoint with an ID (e.g., GET /jobs/\{job_id\}) |
+| Create something new | POST endpoint |
+| Update an existing record | PUT (full update) or PATCH (partial update) |
+| Remove a record | DELETE endpoint |
+| Get automatic notifications | Webhooks documentation |
+
+### Step 3 — Open the Docs and Verify
+
+1. Go to [papi.latchel.com/api-docs/papi/](https://papi.latchel.com/api-docs/papi/)
+2. Click the matching category in the left sidebar
+3. Find the endpoint matching the action
+4. Open it to read parameters and response fields
+5. Confirm the endpoint returns what the customer needs
+6. Share the direct link to that endpoint
+
+### Step 4 — Answer the Common Follow-Ups
+
+| Customer question | Answer |
+| --- | --- |
+| How do I authenticate? | API key in the request header. Generate at Account Settings → Integrations in the Latchel dashboard ([guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Generate-an-API-Key)). |
+| Why am I only getting some records? | Pagination. Set `per_page` (1–500, default 10) and iterate through `page`. |
+| I'm getting a 422 on a list call | `per_page` is outside 1–500. |
+| Why am I getting 429 errors? | Rate limit hit. Max 600 requests/10 minutes per key. Add delays, use bigger pages, and use delta sync. |
+| Can I only pull what changed? | Yes, for properties and tenants: `updated_at_start_date`. Jobs have a filter with the same name. |
+| Can I filter to only active/recent records? | Check the parameters for that specific endpoint — most list endpoints support filters. |
+| I need a read-only key | Not available. Latchel does not support scoped API keys. Escalate to CSM if a blocker. |
+| Can I test without affecting live data? | Yes. Use latchel-demo.com/v1 with a separate development API key. |
+
+## Part 6: When to Escalate
+
+### Handle It Yourself
+
+- Any question covered in Parts 4 or 5 of this guide
+- Questions about generating or re-generating an API key
+- Rate limit questions — explain the limit and advise on pacing
+- Pagination and delta sync questions — point to the docs for that endpoint
+- Requests for read-only API keys — explain not available, note to CSM if a blocker
+- Questions about Analytics+ as an alternative to the API
+
+### Escalate to Engineering ([tech@latchel.com](mailto:tech@latchel.com))
+
+- The API is returning incorrect or missing data for the customer's account
+- A customer's API key is not working after re-generation
+- An endpoint described in the docs is not behaving as documented
+- The customer is reporting a consistent API error (4xx or 5xx) not explained by rate limits, pagination, or auth issues
+- A customer wants a new API feature (new endpoint, read-only keys, new filter options)
+- Data discrepancies between what the API returns and what appears in the dashboard
+
+<Tip>
+  For internal bug reports on API behavior, you can also use the [Bug Reports form](https://app.latchel.com/admin/bug-reports). Include the endpoint, the request the customer made (never their API key), the response/status code, and the account.
+</Tip>
+
+### Escalate to CSM ([success@latchel.com](mailto:success@latchel.com))
+
+- A customer wants to discuss API access as part of a broader account conversation
+- A customer says a missing API feature is causing them to consider churning
+- Requests for a demo/sandbox account or separate development API key
+
+## Part 7: Quick Reference Card
+
+### All Endpoint Categories
+
+| Category | Covers |
+| --- | --- |
+| Company | Account info and user list |
+| Jobs | Work orders — create, read, update, approve, cancel |
+| Job Files | Photos and documents attached to work orders |
+| Jobs History | Status change audit trail for a work order |
+| Locations | Geographic location data |
+| Owners | Property owner records and payment methods |
+| Tenants | Resident/tenant records |
+| Payment Methods | Payment method records |
+| Property Tenants | Tenant-to-property assignment |
+| Properties | Property records, vendor assignments, subscriptions, merging duplicates |
+| Portfolios | Portfolio groupings of properties, vendor assignments, owner payment method links |
+| Vendors / Service Providers | Vendor company records, skills, priority |
+| Categories | Trade categories (Plumbing, HVAC, etc.) |
+| Issues | Specific maintenance issue types within a category |
+| Problems | Sub-type classification under Issues |
+| On-Call Instances | After-hours emergency alerts |
+| Vendor Service Territories | ZIP codes a vendor services |
+| Invoices | Completed work invoice records |
+| Webhooks (separate) | Push notifications for Jobs, Portfolios, Tenants |
+
+### Key HTTP Status Codes
+
+| Code | Meaning | What to do |
+| --- | --- | --- |
+| 200 | OK — request succeeded | All good |
+| 204 | Success, no content returned (e.g., after a merge) | All good |
+| 401 | Unauthorized — API key missing or invalid | Check the API key; have customer re-generate if needed |
+| 403 | Forbidden — the request isn't allowed | Confirm the record belongs to the customer's account; escalate if it does |
+| 404 | Not found — the ID in the request does not exist | Verify the ID is correct for this account |
+| 422 | Invalid request (e.g., `per_page` outside 1–500) | Check the parameters against the docs |
+| 429 | Too many requests — rate limit exceeded | Add delays; advise on pacing. Max 600/10 minutes. |
+| 500 | Server error | Escalate to [tech@latchel.com](mailto:tech@latchel.com) |
+
+## Part 8: Practice Scenarios
+
+These come from the PS API training. Try answering before you open each one.
+
+<AccordionGroup>
+  <Accordion title="A customer wants to pull a list of all their work orders via the API.">
+    **GET /jobs** — work orders are called "Jobs." Remind them to use filters (status, date, property) and pagination (`per_page` up to 500, loop through `page`) for large accounts.
+  </Accordion>
+
+  <Accordion title="A customer keeps getting HTTP 429 errors.">
+    They've exceeded 600 requests per key per 10-minute window. Ask how many requests per minute they're making, and advise adding delays between batches or spreading the sync over time. Bigger pages and delta sync (`updated_at_start_date`) cut the number of requests. They can watch the `x-ratelimit-remaining` and `Retry-After` headers.
+  </Accordion>
+
+  <Accordion title="A customer asks whether they can see the full timeline of status changes on a work order.">
+    Yes — **GET /jobs/\{job_id\}/history/state** returns a log of all status transitions (the audit trail) for that job.
+  </Accordion>
+
+  <Accordion title="A customer says they only ever get 10 records back.">
+    That's the default page size. Set `per_page` (1–500) and iterate through `page` until no more results come back. A `per_page` over 500 returns a 422.
+  </Accordion>
+
+  <Accordion title="A customer re-pulls every resident nightly and wants something lighter.">
+    Use delta sync: save the time each sync starts, and on the next run call **GET /tenants** (or **GET /properties/\{property_id\}/tenants**) with `updated_at_start_date` set to that time. Only changed residents come back.
+  </Accordion>
+
+  <Accordion title="A customer asks for a read-only API key for a contractor.">
+    Not available — all Latchel API keys have full access. If it's a blocker, note it to the CSM. Remind them that re-generating a key invalidates the old one immediately.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+_Created from a real customer escalation (South Bay Home Rental vendor API inquiry) and a full crawl of the Latchel PAPI docs; updated September 2026 against the live docs. Review and update whenever the PAPI documentation changes or a new category of question appears in support._

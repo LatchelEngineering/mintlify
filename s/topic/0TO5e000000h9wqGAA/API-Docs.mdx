@@ -3,12 +3,32 @@ title: "API Docs"
 description: "Looking to integrate Latchel with your own systems? Our API documentation provides everything you need to connect, retrieve, and sync data between Latchel and your internal tools."
 ---
 
-**To access the Latchel API documentation, please visit:**
+The **Latchel Partner API** lets you connect your own systems to Latchel so you can read and update your vendors, properties, residents, work orders, invoices, and more.
 
-<Card title="Latchel Partner API" icon="book-atlas" iconType="duotone" color="#ff9b8a" horizontal href="https://app.latchel.com/api-docs/papi/">
-  This page provides detailed information on how to integrate your systems with Latchel's platform.
+<Card title="Latchel Partner API Documentation" color="#ff9b8a" icon="book-atlas" iconType="duotone" horizontal href="https://papi.latchel.com/api-docs/papi/">
+  Full reference for every endpoint, with parameters, request bodies, and example responses.
 </Card>
 
-<Tip>
-  If you have any quesitons or need further assistance, please don't hesitate to reach out to our Customer Success Team via [**success@latchel.com.**](mailto:success@latchel.com)
-</Tip>
+## Getting Started
+
+1. **Generate an API key** from your Latchel dashboard. See [How to Generate an API Key](/s/topic/0TO5e000000h9wqGAA/How-to-Generate-an-API-Key). Include the key in the header of every request.
+2. **Test your key** by calling `GET /me`. A successful response confirms your key is working.
+3. **Build and test** against the sandbox before going live.
+
+| Environment | Base URL |
+| --- | --- |
+| Production (live data) | `https://papi.latchel.com/v1` |
+| Testing / development | `https://latchel-demo.com/v1` (requires a development API key; data isn't guaranteed to persist) |
+
+## Good to Know
+
+- **Keep your API key private.** API keys have full access to your account. Re-generating a key immediately invalidates the old one, so update any integrations that use it.
+- **Rate limits:** 600 requests per API key, per 10 minutes. If you go over, you'll receive a `429` response with a `Retry-After` header telling you when to try again.
+- **Pagination:** list endpoints return one page at a time. Use `page` to move through pages and `per_page` (1 to 500, default 10) to set the page size.
+- **Only pull what changed:** `GET /properties`, `GET /tenants`, and `GET /properties/{property_id}/tenants` accept `updated_at_start_date` to return only records changed since that time. Save the time each sync starts and pass it on the next one.
+- **Webhooks:** want Latchel to notify your system when work orders, portfolios, or residents change instead of polling? See our webhook documentation in the Help Center (search "Webhooks").
+
+## Need Help?
+
+- **Technical questions about the API** (errors, unexpected responses): [tech@latchel.com](mailto:tech@latchel.com)
+- **Account questions or anything else:** our Customer Success Team at [success@latchel.com](mailto:success@latchel.com)
