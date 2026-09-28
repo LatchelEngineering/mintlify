@@ -7,40 +7,129 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/2494890056/Pr
 
 # **Purpose**
 
-This document provides a clear overview of what a _deep dive_ is, how it is diligently investigated, and how each Product Support Specialist is expected to work on it. The Product Support team receives deep-dive requests from all customer types that **Latchel** supports — including property managers, residents, owners, and service providers.
+This page is the overview of how Product Support (PS) handles deep dives: what a deep dive is, the types we run, how requests come in, what's expected at each stage, and where to find the detailed SOPs. PS receives deep-dive requests about every customer type Latchel supports, including property managers (PMs), residents, owners, and service providers (SPs).
 
 ---
 
 ## What is a Deep Dive?
 
-A _deep dive_ is a detailed investigation and analysis conducted by the Product Support team in response to a customer request or internal escalation. This process aims to thoroughly understand and resolve complex issues, challenges, or inquiries raised by various stakeholders.
+A _deep dive_ (DD) is a detailed investigation by the PS team in response to a customer complaint or internal escalation. The goal is to answer the actual question being asked (what happened, where the process broke down, and what supports that conclusion) and to give the customer a clear resolution.
 
 Deep dives are also used to:
 
-- Identify and flag gaps in Latchel’s products and processes.
+- Identify and flag gaps in Latchel's products and processes.
 - Propose improvements and process optimizations.
 - Capture and better understand customer experiences to prevent repeat issues.
 
 ---
 
-## **Deep Dive Ticket Management**
+## **Types of Deep Dives**
 
-The Product Support Team uses Assembly as the primary platform for creating and managing deep-dive requests. These are submitted as _Assembly tickets_ and categorized into two main types:
+All deep dives are tracked as tickets in the **PS Deep Dive Tickets** teamspace in **Wavelength (WL)** (formerly Assembly).
 
-1. **Customer Escalation Deep Dive (DD) Tickets**
-   - These tickets are raised internally by Latchel team members.
-   - Typically initiated when an incident requires investigation to determine root causes, clarify the nature of the failure or complaint, and propose solutions to prevent recurrence.
-   - Requests are submitted through the Slack workflow.
-2. **Feedback Dive (SDDI) Tickets**
-   - These are created to review low ratings and feedback collected from various sources, including Work Order Reviews, CSAT surveys, Google Reviews, and TS Reviews.
-   - These are considered “mini dives” focused on understanding process gaps or points of friction.
-   - Findings are shared internally to inform process improvements, even if no external communication is required.
+| Type | What it covers | How it's submitted |
+| --- | --- | --- |
+| **Standard Deep Dive (DD)** | The "why" questions: why wasn't this treated as an emergency, why was this SP assigned, why wasn't the on-call contact called, etc. Root cause, what failed, and how to prevent it. | **DD Request** workflow in `#ps-dd-sddi` |
+| **Invoice Dispute Deep Dive** | A PM or owner disputing a work order invoice. | **Invoice Dispute DD** workflow in `#ps-dd-sddi` (the only way to submit an invoice dispute dive) |
+| **Feedback Dive (SDDI)** | "Mini dives" on low ratings and negative feedback from Work Order Reviews, CSAT surveys, and Google Reviews. Findings inform process improvements, even when no external reply is needed. | Created automatically. See [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets) |
+
+---
+
+## **How Requests Come In**
+
+1. The requester (PS associate, CSM, Finance, or Ops support) investigates first. A deep dive is submitted **only after ~10–15 minutes** of research when it's clearly going to take longer.
+2. They submit the right workflow in `#ps-dd-sddi`:
+   - **DD Request** (standard dives): shares what they've found so far, what the customer expected, and **the one question the DD should answer**. The specialist handles the settings, logs, and transcript review.
+   - **Invoice Dispute DD**: asks for the dispute amount, when the PM first reported the dispute, when the invoice was submitted, the refund window, whether the invoice is paid, and whether a Payments task was created.
+3. The submission posts in `#ps-dd-sddi` and automatically creates a ticket in the PS Deep Dive Tickets teamspace in WL.
+
+See [How to: Submit a Deep Dive Request](/latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request) for the full form.
+
+---
+
+## **Deep Dive Lifecycle**
+
+| Stage | What happens | Details |
+| --- | --- | --- |
+| **1. Pick up** | Assign yourself, start the WL timer, label the ticket (DD or SDDI), and set the complaint category. | [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process) · [Category Matrix](/latchel-admin/Product-Support-Team/Job-Aid-PS-DD-and-SDDI-Category-Matrix) |
+| **2. Investigate** | Build the timeline from every source: work order history, call logs and recordings, SMS/email delivery, Slack threads, settings, and attachments. SDDIs only need a 3–5 bullet summary. | [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process) |
+| **3. Document gaps** | Create child issue tickets for internal gaps (agent feedback, SOP requests, bugs, feature requests, LVN SP feedback). Use the Reported Issue Found note for external causes. | [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process) |
+| **4. Conclude** | Write the internal conclusion (what happened, why, what's next) and tag the root cause. Draft the customer communication using ACE. | [DD Customer Conclusion Email Framework (ACE)](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE) |
+| **5. Review** | Before anything goes to the customer, post a **DD Conclusion Workshop** entry in `#ps-team-chat` so the PS Manager can review the communication. | See "Conclusion review" below |
+| **6. Close** | Post the conclusion on the WL ticket (or the Slack thread for Slack-only requests), tag the requester, update the status, and stop the timer. | [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process) |
+
+---
+
+## **Service Levels**
+
+| Metric | Target | How it's tracked |
+| --- | --- | --- |
+| **Completion Time** | **3-day SLA** from submission | WL flags tickets as **Breaching** if they sit in Needs Response near the 3-day mark |
+| **Handling Time** | Within **4 hours** of working time per deep dive (most take 1–3 hours) | The WL ticket timer. Start it when you begin and pause it for breaks |
+
+---
+
+## **Conclusion Review and Customer Communication**
+
+The investigation is our internal process; the customer email is the customer's experience. Keep the two separate.
+
+- **Internal conclusion** (on the WL ticket): what happened, why it happened, and what happens next, with links to the evidence.
+- **Customer communication**: follow [ACE](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE). **A**cknowledge the impact, **C**larify the cause in plain English, **E**xecute the resolution with a named owner and timeframe. Don't open with "we reviewed," don't send a timeline dump, and end with a statement, not a question.
+- **Review before sending:** post a **DD Conclusion Workshop** entry in `#ps-team-chat` and wait for the PS Manager's review before the communication goes out.
+
+<Note>
+  **Effort is not communication.** A detailed investigation summary that leaves the customer without a clear answer is a communication failure, no matter how much work went into it.
+</Note>
+
+---
+
+## **Invoice Dispute Deep Dives**
+
+Invoice disputes follow their own SOP: [SOP: Handling Work Order Invoice Disputes](/latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes).
+
+<Warning>
+  **Don't loop back to the SP for "more detail" on a dispute that's already resolvable.** If the invoice was approved, the estimate went to the PM up front, and the line items are there, give the PM the answer that day. Asking the SP for more information on a resolvable case delays the answer and signals to the PM that we weren't sure. Only go back to the SP when something is genuinely missing, and be clear about what you need and why.
+</Warning>
+
+---
+
+## **Using AI in Deep Dives**
+
+AI tools (e.g., Claude) can help summarize long work order logs and draft a timeline, but **they are inputs, not the conclusion**.
+
+- **Verify every key fact** (dates, amounts, who did what) against the original source before it goes in the timeline or conclusion.
+- AI can't listen to call recordings or confirm what a photo shows. Review those yourself.
+- For Latchel process questions, use the **Mintlify assistant** in the Help Center, not Rovo. Rovo still searches the old Confluence SOPs, which are out of date.
+- Your conclusion should include **your own recommendation**. AI output alone isn't a finding.
+
+---
+
+## **Helpful Evidence Sources**
+
+In addition to the tools in the [DD Process job aid](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process):
+
+| Need | Where to look |
+| --- | --- |
+| Did the resident/PM actually receive an email or text? | **SendGrid** (email) and **Twilio** (SMS) delivery logs are proof of delivery for "I never got a notification" complaints. |
+| What was said on an outbound agent call? | Agent-initiated outbound calls aren't transcribed. Find the recording link in **Twilio**, match it using the timestamp and phone number from the agent's notes, and listen to it. |
+| Prior contact with the customer | **Wavelength** interactions for the PM, and related PS or CSM Slack threads. |
 
 ---
 
 ## **Why Deep Dives Matter**
 
 - **Root Cause Identification:** Prevent similar issues from happening again.
-- **Product and Process Improvement:** Surface opportunities to enhance Latchel’s workflows, features, or vendor performance.
+- **Product and Process Improvement:** Surface opportunities to enhance Latchel's workflows, features, or vendor performance.
 - **Customer Experience Insight:** Capture patterns in resident, PM, owner, or SP feedback.
 - **Cross-Team Alignment:** Ensure stakeholders across Product, Ops, and CS are aligned on resolution paths and learnings.
+
+---
+
+## **Related Pages**
+
+- [How to: Submit a Deep Dive Request](/latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request)
+- [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process)
+- [Job Aid: PS DD and SDDI Category Matrix](/latchel-admin/Product-Support-Team/Job-Aid-PS-DD-and-SDDI-Category-Matrix)
+- [DD Customer Conclusion Email Framework (ACE)](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE)
+- [SOP: Handling Work Order Invoice Disputes](/latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes)
+- [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets)
