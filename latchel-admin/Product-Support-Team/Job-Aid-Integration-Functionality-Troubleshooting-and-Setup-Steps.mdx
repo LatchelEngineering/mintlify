@@ -60,7 +60,7 @@ Related Ops Integrations SOPs:
 - Refer to [How to: Install the Chrome Plug-in (AppFolio)](https://help.latchel.com/How-to-Install-the-Chrome-Plug-in-\(Appfolio\))
 - PM Guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension)
 - PMs automatically get the newest version of the Latchel Data Sync extension within a few days of release, but it can vary. For example, if a PM never closes or restarts their browser, updates may be delayed.
-- **If Latchel will run the sync for the PM (PS owns this setup):** the PM creates a Latchel user in AppFolio with access to view units, view residents, and view/edit/create work orders, and sends PS the login. PS logs it in the software login spreadsheet, creates/activates the Latchel integration user, and sets up the PM on the remote server (see section 4.2.1). Also make sure the **Latchel-managed** setting is turned on for the integration (see section 3.3), and let the team know in `#integration-health` so monitoring uses the right thresholds.
+- **If Latchel will run the sync for the PM (PS owns this setup):** the PM creates a Latchel user in AppFolio with access to view units, view residents, and view/edit/create work orders, and sends PS the login. PS logs it in the software login spreadsheet, creates/activates the Latchel integration user, and sets up the PM on the remote server. Full steps: [SOP: Running AppFolio Sync on Behalf of Customers](/latchel-admin/Product-Support-Team/SOP-Running-AppFolio-Sync-on-Behalf-of-Customers). Also make sure the **Latchel-managed** setting is turned on for the integration (see section 3.3), and let the team know in `#integration-health` so monitoring uses the right thresholds.
 
 #### 2.3 Propertyware Setup
 
@@ -402,16 +402,13 @@ Credentials live in the [**software login** spreadsheet](https://docs.google.com
     - **From the PM:** the PM replies to a PS ticket with the AppFolio login for the Latchel user they created (e.g., after the [sync outreach template](#6-pm-outreach-templates)). This is the usual path.
     - **From a CSM during onboarding:** the CSM submits the **Latchel Sync Request** workflow in `#ps-escalation` (PM company name, CSM, AppFolio URL, username, password, priority, deadline). **This workflow is only for CSMs who receive the login during onboarding.** PS associates don't use it; if you get the login yourself, go straight to the steps below.
 
-    **Steps:**
+    **Steps:** follow [SOP: Running AppFolio Sync on Behalf of Customers](/latchel-admin/Product-Support-Team/SOP-Running-AppFolio-Sync-on-Behalf-of-Customers). In short:
 
-    1. **Confirm access first:** the PM has created a Latchel user in AppFolio that can open the five required reports and view/edit/create work orders.
-    2. **Log the credentials** in the [software login spreadsheet](https://docs.google.com/spreadsheets/d/16B1d5acwDRvx6w8BkSuL4_QAOZmcXKYwf5HFpMcwRdU/edit?gid=2017091315#gid=2017091315) (AppFolio tab), and mark the PM as Latchel-run.
-    2. In the remote server, open the Chrome profiles menu (top-right icon) → **Add Chrome profile** → choose to stay signed out. Name it for the PM and give it a unique color.
-    3. Sign in to AppFolio with the credentials from the software login spreadsheet and save the password in the profile. Complete two-factor as above.
-    4. In a new tab, install the [Latchel Data Sync extension](https://chromewebstore.google.com/detail/latchel-data-sync/cefobanegfgmcneibgdbcjbegnnoafob) (**Add to Chrome**), then pin it from the extensions menu.
-    5. **Create or activate the Latchel integration user** in the Latchel console. If one exists but is inactive, activate it. If there isn't one, add a new user named **Latchel Integration**, use the **Latchel console phone number**, and use the same email as the AppFolio login. Confirm the password from the welcome email. Use a **different password** than the AppFolio login, and record both in the software login spreadsheet.
-    6. Log in to the extension with the Latchel integration user, refresh the AppFolio tab so the extension appears, and run the first **Sync data in both directions** sync.
-    7. Make sure the **Latchel-managed** setting is on for the integration so Integration Health uses the right thresholds, and let the team know in `#integration-health`.
+    1. Confirm the Latchel user in AppFolio has the five required reports and view/edit/create work order access.
+    2. Log the credentials in the [software login spreadsheet](https://docs.google.com/spreadsheets/d/16B1d5acwDRvx6w8BkSuL4_QAOZmcXKYwf5HFpMcwRdU/edit?gid=2017091315#gid=2017091315) (confidential).
+    2. Add the PM's Chrome profile on the remote server, sign in to AppFolio, and install the Latchel Data Sync extension.
+    3. Create or activate the **Latchel Integration** user in the Latchel console and log in to the extension.
+    4. Run the first **Sync data in both directions** sync, turn on **Latchel-managed**, and post in `#integration-health`.
   </Accordion>
 
   <Accordion title="PM Wants to Exclude a Property from the Sync">
@@ -791,7 +788,14 @@ Credentials live in the [**software login** spreadsheet](https://docs.google.com
 
 ### **6. PM Outreach Templates**
 
-**AppFolio sync not running (PM runs their own sync):**
+**AppFolio sync not running (PM runs their own sync, Failing on Integration Health):**
+
+Use this for PMs with **Managed by: the PM's browser**. Don't send it to **Latchel-managed** PMs; we run their sync, so DS handles it.
+
+- Replace **[X time]** with the real time since the last sync from **Last data seen** (e.g., "almost a year"), not a placeholder number of days.
+- If the sync has only been down overnight or over a weekend, wait until the next business day.
+- No response → follow up once, then escalate to the CSM with the **PS Escalate to CSM** workflow, including the ticket links.
+- If the PM takes us up on the offer, follow [SOP: Running AppFolio Sync on Behalf of Customers](/latchel-admin/Product-Support-Team/SOP-Running-AppFolio-Sync-on-Behalf-of-Customers).
 
 Hi [PM Name],
 
