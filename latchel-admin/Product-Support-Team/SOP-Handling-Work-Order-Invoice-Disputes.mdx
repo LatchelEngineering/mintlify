@@ -5,87 +5,148 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3176038407/SO
 ---
 
 <Note>
-  **Objective**: Ensure proper handling of invoice disputes related to work orders, from initial review to final resolution, in alignment with Latchel’s Guarantee and Refund Request Policy.
+  **Objective:** handle every work order (WO) invoice dispute consistently, from intake to refund or denial, in line with the [Latchel Guarantee and Refund Request Policy](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Guarantee-and-Refund-Request-Policy).
+
+  **Who owns what:** PS owns intake, the Deep Dive (DD), the decision write-up and all customer communication. **Accounts Payable (Samantha Terreros)** works with the service provider (SP) and processes refunds. **Will Gordon / Amrit Parajuli** decide when Latchel covers a cost. The **CSM** only steps in for churn-risk pushback.
 </Note>
 
----
-
-### **Step-by-Step Process for Handling Invoice Disputes**
-
-1. **Initial Review of** [Latchel Guarantee and Refund Request Policy](https://help.latchel.com/s/article/Latchel-Guarantee-and-Refund-Request-Policy)
-
-- Always review the policy to determine if the request is valid before initiating an investigation.
-
-2. **Responding to a WO Invoice Dispute (via Salesforce Case)**
-
-- **Action**: Reply to the Property Manager (PM) using the[ **Invoice Dispute Form Template**.](https://latchel1.lightning.force.com/lightning/r/EmailTemplate/00XUS00000BofOD2AZ/view?queryScope=userFolders)
-- **Link**: Include the[ **Invoice Dispute Typeform**](https://latchel.typeform.com/to/iBtjvKHP) link in your reply.
-- Once submitted, a notification will be sent to the `#invoice-dispute-form` Slack channel for review.
-
-3. **Special Note for Nomad Owners**
-
-- Follow the standard process by sending [**Nomad Support** ](https://latchel.atlassian.net/wiki/x/AgC6t)the [**Nomad Escalation Form Template**.](https://latchel1.lightning.force.com/lightning/r/EmailTemplate/00XUS00000BdCW12AN/view?queryScope=userFolders)
-- If Nomad Support requests additional details, continue with the steps outlined below.
-
-### **Eligibility Review Based on Invoice Submission Date**
-
-Review the Invoice Submission Date to determine refund eligibility:
-
-| **Was the dispute reported within 72 Hours of the invoice being submitted?** | **Was the dispute reported within 45 Days of the invoice being submitted?** | **Was the dispute reported more than 45 days after the invoice date?** |
-| --- | --- | --- |
-| Full Refund Eligible | Partial Refund Eligible with the refund amount up to 50% or a maximum of \$300 per invoice. | Not Eligible for a Refund. |
-
 <Warning>
-  If the dispute reported is 45\+ days after the invoice was submitted, send [the Ineligible Invoice Dispute SF Template](https://latchel1.lightning.force.com/lightning/r/EmailTemplate/00XUS00000CW5452AD/view) to the client.
+  **Retired:** the Invoice Dispute Typeform, `#invoice-dispute-form`, `#ps-dd-requests`, Salesforce cases and templates, and refunds through `#accounts-payable`. Disputes are worked in **Wavelength (WL)**, DDs go through `#ps-dd-sddi`, and refunds go through `#work-order-payments`.
 </Warning>
 
-### **Next Steps for Eligible Invoice Disputes**
+## How disputes reach PS
 
-1. **Submit Deep Dive (DD) Request**
-   1. **Action**: Fill out the [**Invoice Dispute DD Request workflow**](https://latchel.atlassian.net/wiki/x/r4KTlw) in the `#ps-dd-requests` Slack channel.
-   2. Inform the client using the [**Submit for DD SF Template**](https://latchel1.lightning.force.com/lightning/r/EmailTemplate/00XUS00000Bccif2AB/view?queryScope=userFolders), which explains that the process may take up to seven business days.
-2. **Keep the Client Updated**
-   1. If the case remains active for 3-4 business days, send a status update using the [**Department Escalation - Touch Base SF Template**.](https://latchel1.lightning.force.com/lightning/r/EmailTemplate/00XUS00000CI7yb2AD/view?queryScope=userFolders)
+- **PM or Owner emails** [success@latchel.com](mailto:success@latchel.com) (the policy asks them to include the WO number or URL and the disputed invoice).
+- **Ops escalates** through the **PS Escalation** workflow in `#ps-escalation` (Ops only escalates disputes, not general payment questions).
+- **Accounts Payable** submits a **DD Request** in `#ps-dd-sddi` when a PM disputes an invoice with them.
 
-3. **Investigation and Conclusion**
+All of these land in WL. Follow [SOP: Handling New Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-New-Ticket-in-Product-Support) to assign yourself, start the timer and link the Customer Profile. For Ops escalations, also follow [SOP: Handling Ops Escalations](/latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations).
 
-- Review the refund eligibility thoroughly in alignment with the policy before writing the final conclusion.
-- Based on findings, the dispute will be marked as:
-  - **VALID**: Refund is approved.
-  - **INVALID**: Refund is denied.
-- Share the conclusion by navigating to the **Case Link URL** and posting the **Jira Link URL**, WO Link URL, and Conclusion **in the case thread as an internal comment.** [(Example Here)](https://latchel1.lightning.force.com/lightning/r/Case/500US00000EpaB3YAJ/view) 
-  <Frame>
-    ![PST 121](/images/PST-121.png "PST 121")
-  </Frame>
-- Tag the Case Owner and set the Case to **Escalated**.
+## Step 1: Classify the ticket
 
-4. **Conclusion Review and Client Communication**
+| Field | Value |
+| --- | --- |
+| **Category** | **PM Inbound** · **Owner Inbound** (NOMAD and RentRedi owners) · **Latchel Ops Escalation** (from `#ps-escalation`) |
+| **Topic** | **Invoicing & Payments → Invoice Dispute** |
+| **Root Cause** | Only once the DD shows something went wrong (e.g., SP Performance, Latchel Associate Action, Account Configuration). Use **Undetermined – DD Requested** until then. |
+| **Tags** | **DD Requested** when you open a DD. **Reimbursement or Credit Issued** if a refund or credit is approved. **CSM Handoff** / **Churn Risk** if it escalates. |
 
-- In `#ps-team-chat`, submit a draft of the conclusion for review using the **DD Conclusion Workshop**. This helps ensure clear and professional communication with the PM.
+See [Job Aid: Ticket Category, Attributes, and Tags](/latchel-admin/Product-Support-Team/Job-Aid-Interaction-Tags-Explained).
 
-#### **Scenario 1: Invalid Dispute (No Refund)**
+## Step 2: Check eligibility against the policy
 
-- **Action**: PS shares the DD conclusion with the PM using the [ACE framework](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE). Explain clearly why the invoice is valid and should be paid, based on the investigation and the [Latchel Guarantee and Refund Request Policy](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Guarantee-and-Refund-Request-Policy).
+Always check the policy **before** opening a DD. Record both timestamps on the ticket as an internal note:
 
-#### **Scenario 2: Valid Dispute (Refund Eligible)**
+- The date and time the **PM reported the dispute**
+- The date and time the **invoice was submitted**
 
-- **Action**: Share the DD conclusion with the PM and confirm that the refund process is underway with the Finance team.
-- Submit details of the refund to the `#accounts-payable` Slack channel via the **DD Invoice Dispute Workflow**.
-- In the Slack thread, tag **@Will Gordon** for visibility and **@Samantha Terreros** to execute the refund and communicate with the service provider.
-- Once finalized, Finance will confirm in the thread, and PS should update the PM on:
-  - Refund method
-  - Processing timeline (5-10 business days)
-  - Refund amount (\$)
+| **Reported within 72 hours of the invoice being submitted** | **Reported within 45 days after the invoice date** | **Reported more than 45 days after the invoice date** |
+| --- | --- | --- |
+| Eligible for a **full refund** | Eligible for a **partial refund**: up to **50%** or a maximum of **\$300 per invoice** | **Not eligible.** Reply to the PM explaining the policy window. No DD needed. |
 
-### **Handling PM Pushback on Findings**
+**Refunds are granted when** (per the policy):
 
-**PS handles the pushback.** If the PM disagrees with a denied dispute, stand firm in the decision. Restate the reasoning clearly and calmly, and point to the policy. Don't offer credits or exceptions outside the policy to end the conversation.
+- Latchel cancels a job without notifying the SP
+- Latchel assigns an incorrect trade for a job
+- Latchel fails to follow explicit PM instructions, resulting in monetary loss
+- Pre-approval requirements configured in Latchel are not met
+- Latchel authorizes a budget beyond the set limit without PM approval
+
+**Refunds are not granted for:**
+
+- PM errors using the Latchel software
+- Inaccurate or misleading access instructions from the PM
+- SP fees for work outside standard business hours
+- Effective resolutions within the agreed budget or parameters
+- A voided workmanship guarantee or parts warranty
+- Appointment or service fees for confirmed appointments the resident missed (when no Permission to Enter was given)
+
+<Note>
+  **LVN guarantee and warranty:** LVN providers give a 30-day workmanship guarantee and a 1-year parts warranty. Both are voided if a **different provider** worked on the same issue (even one sourced through Latchel), and don't apply to end-of-life equipment when replacement was denied, or to a deeper root cause that was identified but not addressed. Preferred Service Providers aren't covered. Recalls go to [team@latchel.com](mailto:team@latchel.com).
+</Note>
+
+## Step 3: Review before you dive
+
+- **Check the account's recent tickets** for related disputes and any **prior commitments** (credits or exceptions already promised). Link related tickets.
+- **Check what's already on the WO** before asking the SP for more detail. If the invoice was approved, the estimate went to the PM and the line items are there, you usually have what you need.
+- **If the invoice is still unpaid,** you can ask Accounts Payable to hold the SP payment while the dispute is reviewed (see Step 6).
+
+## Step 4: Submit the DD and acknowledge the PM
+
+1. In `#ps-dd-sddi`, click **DD Request** and fill out the form (see [How to: Submit a Deep Dive Request](/latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request)):
+   | Field | What to enter |
+   | --- | --- |
+   | **PM Company Name** | The PM or owner company |
+   | **Who is the CSM?** | From HubSpot (Company Owner) |
+   | **ASM Link** | The WL ticket for this dispute |
+   | **Type of DD?** | **Invoice Dispute** |
+   | **WO Link** | The disputed work order |
+   | **Describe The Issue** | What the PM is disputing and why |
+   | **If Invoice Dispute, what \$ amount is being disputed?** | The dollar amount (attach the invoice in the thread) |
+   | **What initial information/review can you provide?** | Both timestamps from Step 2, the refund window, whether the guarantee was voided, prior commitments and related tickets from Step 3 |
+   | **What is the question you need PS to help you answer…?** | The specific question the DD should answer (e.g., "Was the \$250 trip charge approved within budget?") |
+2. Paste the Slack link into the WL ticket as an internal note and add the **DD Requested** tag.
+3. Reply to the PM with the **Submit DD** template in WL. Update the WO status line in the template before sending. It tells the PM the review may take **up to seven business days**.
+4. Set the ticket to **Escalated**. If it returns to Needs Response before the DD is done, move it back to Escalated and send the PM a short status update.
+
+The DD itself follows [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process) (3-day SLA). Post the conclusion on the WL ticket as an internal note with the DD ticket link and the WO link.
+
+## Step 5: Workshop the conclusion
+
+Before anything goes to the customer, submit your draft in `#ps-team-chat` using the **DD Conclusion Workshop** workflow. Write it with the [ACE framework](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE) and always reference the Guarantee and Refund Request Policy.
+
+The outcome is one of:
+
+- **Approved:** the dispute is valid and a full or partial refund or credit is owed.
+- **Denied:** the invoice is valid and stands.
+
+## Step 6: If the dispute is approved (refund)
+
+1. Submit the **Invoice Dispute** workflow in `#work-order-payments` with the DD link, the dispute amount, both timestamps, the refund window (72 hours or 45 days) and whether the workmanship guarantee was voided. Put the DD findings in **Describe the issue**.
+2. **If Latchel is covering the cost** (a Latchel error or a one-time exception), tag **@Will Gordon** and **@Amrit Parajuli** for approval before you tell the PM.
+3. **Accounts Payable (Samantha Terreros)** acknowledges the post, works with the SP and processes the refund. She confirms in the thread. AP doesn't contact the PM.
+4. Tell the PM using ACE: the refund amount, the method, and the timeline (refunds can take up to 10 business days to show).
+5. Add the **Reimbursement or Credit Issued** tag and close the ticket as **Closed** once the PM has been told and AP has confirmed.
+
+<Tip>
+  For a follow-up on a refund that's already in progress, reply in the existing `#work-order-payments` thread and tag @Samantha. Don't submit a new workflow.
+</Tip>
+
+## Step 7: If the dispute is denied (invoice stands)
+
+1. Tell the PM using ACE: explain clearly why the invoice is valid and should be paid, based on the DD and the policy.
+2. Don't offer credits or exceptions outside the policy to end the conversation.
+3. Close the ticket as **Closed** once the PM has the decision, unless they push back.
+
+## NOMAD owners
+
+Investigate every NOMAD owner dispute with the steps above first. Then follow [SOP: Handling Nomad Cases](/latchel-admin/Product-Support-Team/SOP-Handling-Nomad-Cases):
+
+| Outcome | Who hears first |
+| --- | --- |
+| **Approved** | Tell the owner directly and CC Nomad ([support@nomadlease.com](mailto:support@nomadlease.com)). No escalation form needed. |
+| **Denied** (invoice valid, payment still owed) | **Nomad first.** Send the full supporting package with the **NOMAD SUPPORT ESCALATION FORM** in WL: invoice, job photos, provider breakdown, budget approval history, DD findings and the policy. State that the invoice is valid and Latchel won't provide compensation. Wait for Nomad to align before contacting the owner. Follow up in `#latchel-nomad` if needed. |
+
+## Handling PM pushback on a denied dispute
+
+**PS handles the pushback.** Stand firm. Restate the reasoning calmly and point to the policy.
 
 | **Situation** | **What to do** |
 | --- | --- |
-| **The PM pushes back** (even once) | Keep handling the ticket. Also add the PM as an **FYI heads-up** on the weekly **PS \<> CS Sync** agenda so the CSM is aware. |
-| **The PM continuously pushes back and there's extreme frustration**, putting the relationship at risk over this dispute (**churn risk**) | [Escalate to the CSM](/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM) using the **New Escalation from PS** workflow in `#csm-escalations`, with the category **PM Disagrees with Denied Invoice Dispute**. |
+| **The PM pushes back** (even once) | Keep handling the ticket. Add the PM as an **FYI heads-up** on the weekly **PS \<> CS Sync** agenda so the CSM is aware. |
+| **The PM keeps pushing back with extreme frustration**, putting the relationship at risk (**churn risk**) | [Escalate to the CSM](/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM) using the workflow in `#csm-escalations`, with the category **PM Disagrees with Denied Invoice Dispute**. Add the **CSM Handoff** and **Churn Risk** tags. |
 
 <Info>
   Not sure if it's reached churn risk? Ask the PSM first in `#psm-escalate` using the **PS Ticket Escalate** workflow.
 </Info>
+
+## Quick reference: where things go
+
+| What | Where |
+| --- | --- |
+| Open a DD on a disputed invoice | `#ps-dd-sddi` → **DD Request** (Type: Invoice Dispute) |
+| Review the conclusion before sending | `#ps-team-chat` → **DD Conclusion Workshop** |
+| Approved refund, or Latchel covering a cost | `#work-order-payments` → **Invoice Dispute** |
+| Follow-up on a refund in progress | Existing `#work-order-payments` thread, tag @Samantha |
+| Churn-risk pushback on a denial | `#csm-escalations` → category **PM Disagrees with Denied Invoice Dispute** |
+| Unsure of next steps | `#psm-escalate` → **PS Ticket Escalate** |
