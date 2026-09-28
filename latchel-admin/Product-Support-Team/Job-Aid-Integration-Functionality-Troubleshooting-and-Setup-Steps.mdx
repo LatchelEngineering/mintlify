@@ -60,7 +60,7 @@ Related Ops Integrations SOPs:
 - Refer to [How to: Install the Chrome Plug-in (AppFolio)](https://help.latchel.com/How-to-Install-the-Chrome-Plug-in-\(Appfolio\))
 - PM Guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension)
 - PMs automatically get the newest version of the Latchel Data Sync extension within a few days of release, but it can vary. For example, if a PM never closes or restarts their browser, updates may be delayed.
-- **If Latchel will run the sync for the PM:** the PM creates a Latchel user in AppFolio with access to view units, view residents, and view/edit/create work orders. Then set up the PM on the remote server (see section 4.2.1), make sure the **Latchel-managed** setting is turned on for the integration (see section 3.3), and let the team know in `#integration-health` so monitoring uses the right thresholds.
+- **If Latchel will run the sync for the PM (PS owns this setup):** the PM creates a Latchel user in AppFolio with access to view units, view residents, and view/edit/create work orders, and sends PS the login. PS logs it in the software login spreadsheet, creates/activates the Latchel integration user, and sets up the PM on the remote server (see section 4.2.1). Also make sure the **Latchel-managed** setting is turned on for the integration (see section 3.3), and let the team know in `#integration-health` so monitoring uses the right thresholds.
 
 #### 2.3 Propertyware Setup
 
@@ -356,12 +356,19 @@ Key reports:
 
 For PMs tagged **Latchel-managed** on Integration Health, Latchel runs the AppFolio sync on the PM's behalf from our remote server, accessed through **TeamViewer**. Each PM has its own Chrome profile there, signed in to AppFolio and the Latchel Data Sync extension.
 
+| Task | Owner |
+| --- | --- |
+| **Setting up a new Latchel-managed PM** (create/activate the Latchel user, log credentials, add the PM to the remote server) | **PS** |
+| Daily monitoring, re-running syncs, and troubleshooting on the remote server | **DS** (escalates to PS in `#ps-escalation` if the PM needs to act, e.g., restore report access) |
+
+Credentials live in the [**software login** spreadsheet](https://docs.google.com/spreadsheets/d/16B1d5acwDRvx6w8BkSuL4_QAOZmcXKYwf5HFpMcwRdU/edit?gid=2017091315#gid=2017091315). **Confidential:** never share it or paste credentials from it outside the sheet.
+
 <Warning>
   **The remote server is only for PMs whose sync Latchel runs.** Don't create profiles for, or run syncs for, any other PM on the remote server. To investigate a PM that runs its own sync, use their software login credentials in your own browser.
 </Warning>
 
 <AccordionGroup>
-  <Accordion title="Daily Check and Re-running a Sync">
+  <Accordion title="Daily Check and Re-running a Sync (DS)">
     Check Latchel-managed PMs **every morning** on Integration Health rather than waiting for an alert. It takes about 2 minutes. Most of the time the syncs are current; the check catches accounts that got logged out.
 
     1. On Integration Health, look at the **Latchel-managed** rows. Any that are Degraded/Failing, or whose **Last data seen** isn't today, need a look.
@@ -374,7 +381,7 @@ For PMs tagged **Latchel-managed** on Integration Health, Latchel runs the AppFo
     6. **Close the session using the X on the far right** of the TeamViewer window. **Never** click the laptop-style icon inside the window. It disconnects the remote server, and engineering has to restore it.
   </Accordion>
 
-  <Accordion title="Sync Still Failing After Logging Back In (Report Access)">
+  <Accordion title="Sync Still Failing After Logging Back In: Report Access (DS)">
     Most failures are an expired login. If the account is signed in and the sync still fails, the PM may have removed access to a report the sync needs.
 
     1. In the PM's AppFolio profile, go to **Reporting → Reports** (the needed reports are saved as favorites).
@@ -385,16 +392,24 @@ For PMs tagged **Latchel-managed** on Integration Health, Latchel runs the AppFo
        - Unit Directory
        - Work Order
     3. Other saved reports (e.g., owner statements, rent roll, general ledger) are used by Finance/CPT and aren't needed for the sync.
-    4. If any required report is missing, **reach out to the PM directly** to restore access (no need to involve the CSM). The PM-facing guide is [How to Grant Report Permissions to Latchel in AppFolio](https://help.latchel.com/how-to-grant-report-permissions-to-latchel-in-appfolio).
+    4. If any required report is missing, the PM needs to restore access (no need to involve the CSM). DS escalates this to PS in `#ps-escalation`, and PS reaches out to the PM. The PM-facing guide is [How to Grant Report Permissions to Latchel in AppFolio](https://help.latchel.com/how-to-grant-report-permissions-to-latchel-in-appfolio).
     5. If access is fine and it still fails, follow [How to: Resolve AppFolio Work Order Export Failures](/latchel-admin/Service-Operations/Ops-Integrations/how-to-resolve-appfolio-work-order-export-failures) and the recommended action on Integration Health.
   </Accordion>
 
-  <Accordion title="Setting Up a New Latchel-Managed PM">
-    1. **Confirm access first:** the PM has created a Latchel user in AppFolio that can open the five required reports and view/edit/create work orders, and the credentials are in the software login spreadsheet.
+  <Accordion title="Setting Up a New Latchel-Managed PM (PS)">
+    **How the request reaches PS:**
+
+    - **From the PM:** the PM replies to a PS ticket with the AppFolio login for the Latchel user they created (e.g., after the [sync outreach template](#6-pm-outreach-templates)). This is the usual path.
+    - **From a CSM during onboarding:** the CSM submits the **Latchel Sync Request** workflow in `#ps-escalation` (PM company name, CSM, AppFolio URL, username, password, priority, deadline). **This workflow is only for CSMs who receive the login during onboarding.** PS associates don't use it; if you get the login yourself, go straight to the steps below.
+
+    **Steps:**
+
+    1. **Confirm access first:** the PM has created a Latchel user in AppFolio that can open the five required reports and view/edit/create work orders.
+    2. **Log the credentials** in the [software login spreadsheet](https://docs.google.com/spreadsheets/d/16B1d5acwDRvx6w8BkSuL4_QAOZmcXKYwf5HFpMcwRdU/edit?gid=2017091315#gid=2017091315) (AppFolio tab), and mark the PM as Latchel-run.
     2. In the remote server, open the Chrome profiles menu (top-right icon) → **Add Chrome profile** → choose to stay signed out. Name it for the PM and give it a unique color.
     3. Sign in to AppFolio with the credentials from the software login spreadsheet and save the password in the profile. Complete two-factor as above.
     4. In a new tab, install the [Latchel Data Sync extension](https://chromewebstore.google.com/detail/latchel-data-sync/cefobanegfgmcneibgdbcjbegnnoafob) (**Add to Chrome**), then pin it from the extensions menu.
-    5. **Create the Latchel integration user** in the Latchel console if the PM doesn't have one: add a new user named **Latchel Integration**, use the **Latchel console phone number**, and use the same email as the AppFolio login. Confirm the password from the welcome email. Use a **different password** than the AppFolio login, and record both in the software login spreadsheet.
+    5. **Create or activate the Latchel integration user** in the Latchel console. If one exists but is inactive, activate it. If there isn't one, add a new user named **Latchel Integration**, use the **Latchel console phone number**, and use the same email as the AppFolio login. Confirm the password from the welcome email. Use a **different password** than the AppFolio login, and record both in the software login spreadsheet.
     6. Log in to the extension with the Latchel integration user, refresh the AppFolio tab so the extension appears, and run the first **Sync data in both directions** sync.
     7. Make sure the **Latchel-managed** setting is on for the integration so Integration Health uses the right thresholds, and let the team know in `#integration-health`.
   </Accordion>
