@@ -1,0 +1,46 @@
+name: Ensure latchel-admin groups field
+
+# Every page under latchel-admin/ needs groups: ["latchel"] in its
+# frontmatter -- that's what makes it visible to a Latchel employee in the
+# help center. This runs after every push to main that touches those pages
+# and auto-commits a fix if any page is missing it, has the older YAML
+# block-list syntax, or has a wrong/typo'd value -- so a page owner never has
+# to remember to add it by hand.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "latchel-admin/**/*.mdx"
+
+permissions:
+  contents: write
+
+jobs:
+  fix-groups:
+    runs-on: ubuntu-latest
+    # Skip commits made by this workflow itself, to avoid an infinite loop.
+    if: github.event.head_commit.author.name != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fix missing/incorrect groups field
+        run: node .github/scripts/fix-groups-field.mjs
+
+      - name: Commit fix, if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add latchel-admin
+          if git diff --cached --quiet; then
+            echo "No changes needed."
+          else
+            git commit -m "chore: auto-add groups: [\"latchel\"] to new/changed pages"
+            git push
+          fi
