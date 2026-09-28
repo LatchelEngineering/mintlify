@@ -669,6 +669,39 @@
                 ]
               },
               {
+                "dropdown": "Team Home",
+                "icon": "home-heart",
+                "color": {
+                  "light": "#ff9b8a",
+                  "dark": "#ff9b8a"
+                },
+                "groups": [
+                  {
+                    "group": "Team Home Pages",
+                    "pages": [
+                      {
+                        "group": "Latchel Org Chart",
+                        "pages": [
+                          "latchel-admin/Team-Home/Latchel-Org-Chart",
+                          "latchel-admin/Team-Home/Service-Provider-Specialist-Job-Description",
+                          "latchel-admin/Team-Home/Sr-Property-Management-Specialist-Job-Description",
+                          "latchel-admin/Team-Home/Customer-Experience-Manager-Job-Description",
+                          "latchel-admin/Team-Home/Process-Specialist-Job-Description",
+                          "latchel-admin/Team-Home/Coordination-Associate-Job-Description",
+                          "latchel-admin/Team-Home/Vendor-Associate-Job-Description",
+                          "latchel-admin/Team-Home/Property-Management-Associate-Job-Description",
+                          "latchel-admin/Team-Home/Ops-Supervisor-Job-Description",
+                          "latchel-admin/Team-Home/Data-Support-Associate-Job-Description",
+                          "latchel-admin/Team-Home/Launch-Manager-Job-Description",
+                          "latchel-admin/Team-Home/Job-Description-Product-Support-Associate",
+                          "latchel-admin/Team-Home/Customer-Success-Manager-Job-Description"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
                 "dropdown": "Service Operations Team",
                 "icon": "headset",
                 "color": {
@@ -2470,39 +2503,6 @@
                   }
                 ],
                 "icon": "books",
-                "color": {
-                  "light": "#ff9b8a",
-                  "dark": "#ff9b8a"
-                }
-              },
-              {
-                "dropdown": "Team Home",
-                "groups": [
-                  {
-                    "group": "Team Home Pages",
-                    "pages": [
-                      {
-                        "group": "Latchel Org Chart",
-                        "pages": [
-                          "latchel-admin/Team-Home/Latchel-Org-Chart",
-                          "latchel-admin/Team-Home/Service-Provider-Specialist-Job-Description",
-                          "latchel-admin/Team-Home/Sr-Property-Management-Specialist-Job-Description",
-                          "latchel-admin/Team-Home/Customer-Experience-Manager-Job-Description",
-                          "latchel-admin/Team-Home/Process-Specialist-Job-Description",
-                          "latchel-admin/Team-Home/Coordination-Associate-Job-Description",
-                          "latchel-admin/Team-Home/Vendor-Associate-Job-Description",
-                          "latchel-admin/Team-Home/Property-Management-Associate-Job-Description",
-                          "latchel-admin/Team-Home/Ops-Supervisor-Job-Description",
-                          "latchel-admin/Team-Home/Data-Support-Associate-Job-Description",
-                          "latchel-admin/Team-Home/Launch-Manager-Job-Description",
-                          "latchel-admin/Team-Home/Job-Description-Product-Support-Associate",
-                          "latchel-admin/Team-Home/Customer-Success-Manager-Job-Description"
-                        ]
-                      }
-                    ]
-                  }
-                ],
-                "icon": "home-heart",
                 "color": {
                   "light": "#ff9b8a",
                   "dark": "#ff9b8a"
