@@ -139,7 +139,10 @@ Click the company name to open the detail panel. Work top to bottom:
 4. **Checks passed**: expand to see everything that's healthy (e.g., "All 199 properties are linked").
 
 <Note>
-  **Latchel-managed vs. Frequent sync are separate settings.** Latchel-managed tells the dashboard we run the sync (and uses tighter thresholds). Frequent sync tells the plugin to sync every 15 minutes. A PM who runs their own sync can have Frequent sync turned on, but they'll see an extension pop-up every 15 minutes.
+  **Latchel-managed vs. Frequent sync are separate settings.** Both are toggles on the PM's account profile → **Integrations** tab (e.g., `app.latchel.com/admin/pm-company/[ID]/integrations`), next to Integration Sync Method and Work Order Update Conditions. Click **Save** after changing them.
+
+  - **Latchel Managed:** Latchel runs the sync instance for this company. Tightens sync health thresholds, and stale syncs are escalated to Latchel ops instead of the PM.
+  - **Frequent Sync:** runs an extra foreground sync every 15 minutes in the AppFolio plugin. A PM who runs their own sync can have it on, but they'll see an extension pop-up every 15 minutes.
 </Note>
 
 #### 3.4 What each check means
@@ -465,7 +468,7 @@ Credentials live in the [**software login** spreadsheet](https://docs.google.com
       <Tab title="Reconciliation Steps">
         1. **Check Integration Health:** look at **Work order sync** (last time work orders came in) and **Extension errors**.
         2. Identify the Integration Sync Method:
-           - Review the PM's Integration Sync Method under the Miscellaneous section in Account Settings.
+           - Review the PM's **Integration Sync Method** on their account profile → **Integrations** tab.
            - How each option affects which work orders sync:
              - **Assigned Work Orders:** Only WOs assigned to a user whose name includes "Latchel" sync from AppFolio to Latchel. All Latchel work orders are created in AppFolio, but only WOs assigned to the Latchel user in AppFolio are updated from AppFolio. Some customers use this so they can make changes in AppFolio without future updates overwriting them.
              - **All Work Orders:** All WOs in the AppFolio account sync to Latchel, and all WOs in Latchel sync to AppFolio.
@@ -620,7 +623,7 @@ Credentials live in the [**software login** spreadsheet](https://docs.google.com
     <Tabs>
       <Tab title="Reconciliation Steps">
         1. Verify the Integration Work Order Update Conditions:
-           - Go to the PM account details page → Miscellaneous Settings → Integration Work Order Update Conditions.
+           - Go to the PM's account profile → **Integrations** tab → **Work Order Update Conditions**.
         2. Confirm the customer's preference. Options:
            - Update on complete and canceled states
            - Update on complete states only
@@ -866,20 +869,7 @@ JOIN pm_company_settings pcs ON pcs.pm_company_id = c.company_id
 WHERE c.company_id = 549 AND j.ref_job_id IS NULL AND j.created_at < DATE(i.settings->>'last_sync_time') AND j.created_at > pcs.integration_sync_date;
 ```
 
-SQL query to list PM companies flagged as Latchel-managed:
-
-```sql lines
-SELECT
-    c.company_id,
-    c.name AS company_name,
-    i.integration_id,
-    i.platform,
-    i.status
-FROM integration i
-JOIN company c
-    ON i.pm_company_id = c.company_id
-WHERE i.settings ->> 'is_latchel_managed' = 'true';
-```
+To see whether a PM is Latchel-managed, check the **Latchel Managed** toggle on the PM's **Integrations** tab (see section 3.3) or the **Latchel-managed** tag on Integration Health. No query needed.
 
 ---
 
