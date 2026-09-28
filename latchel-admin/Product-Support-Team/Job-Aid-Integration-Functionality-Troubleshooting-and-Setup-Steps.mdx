@@ -5,105 +5,440 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3175776273/Jo
 ---
 
 <Note>
-  This job aid outlines the steps for setting up, managing, and troubleshooting the integrations between Appfolio, Yardi, Propertyware, and Rent Manager. It ensures consistency in how these integrations are handled across different teams and projects.
+  This job aid outlines how Product Support sets up, monitors, and troubleshoots integrations with AppFolio, Rent Manager, Propertyware, Yardi, and Buildium.
 
-  Applies to all personnel involved in setting up and managing integrations across the various platforms. It covers:
+  It covers:
 
   - Initial setup of new connections
-  - Monitoring and maintaining integration functionality
-  - Troubleshooting common issues
+  - **Starting every integration ticket from the [Integration Health dashboard](https://app.latchel.com/admin/integration-health)**
+  - Troubleshooting property, resident, and work order sync issues (including ref ID investigations)
+  - Escalating through the right path: PM, Data Support, or Engineering (via the [Bug Reports form](https://app.latchel.com/admin/bug-reports))
 </Note>
+
+<Tip>
+  **What changed (Sep 2026):** The admin [Integration Health](https://app.latchel.com/admin/integration-health) page is now the first stop for any integration ticket. It shows each PM's sync status, what is wrong, and the recommended next step. Pulling plugin versions and last-sync dates by SQL is now a backup, not step one.
+</Tip>
+
+---
 
 ### **1. Prerequisites**
 
-Before proceeding, ensure the following:
+Before proceeding, make sure you've read the documentation for the integration you're working on.
 
-- You’ve read the documentation for all active integrations.
+| Platform | Internal reference | PM-facing guide |
+| --- | --- | --- |
+| All | [Latchel Integrations Wiki](https://help.latchel.com/Latchel-Integrations-Wiki) | [Comprehensive Integration Guides](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Comprehensive-Integration-Guides) |
+| AppFolio | [AppFolio Resources](/latchel-admin/Customer-Success-Team/app-folio-resources) | [Latchel Data Sync Extension Reference Guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Data-Sync-Extension-Reference-Guide) |
+| Rent Manager | [Rent Manager Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/rent-manager-reference-guide) · [Rent Manager Resources](/latchel-admin/Customer-Success-Team/rent-manager-resources) | [Rent Manager Integration Reference Guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Rent-Manager-Integration-Reference-Guide) |
+| Propertyware | [Propertyware Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/propertyware-reference-guide) · [Propertyware Resources](/latchel-admin/Customer-Success-Team/propertyware-resources) | [Propertyware Integration Reference Guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Propertyware-Integration-Reference-Guide) |
+| Yardi | [Yardi Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide) | [Yardi Voyager Standard Interfaces Setup](https://help.latchel.com/s/article/Yardi-Voyager-Standard-Interfaces-Setup) |
+| Buildium | [Buildium Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/buildium-reference-guide) · [Buildium Resources](/latchel-admin/Customer-Success-Team/buildium-resources) | [Buildium Integration Reference Guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Buildium-Integration-Reference-Guide) |
 
-1. [Latchel Integrations Wiki](https://help.latchel.com/Latchel-Integrations-Wiki)
-2. Comprehensive Public Integration Guides: [https://help.latchel.com/s/article/Comprehensive-Integration-Guides](https://help.latchel.com/s/article/Comprehensive-Integration-Guides)
-3. [Rent Manager Reference Guide](https://latchel.atlassian.net/wiki/x/AQAnng)
+Related Ops Integrations SOPs:
 
-- [Rent Manager Resources](https://latchel.atlassian.net/wiki/x/AQAlrQ)
-
-4. [Appfolio Reference Guide (The Latchel Data Sync)](https://latchel.atlassian.net/wiki/x/AYB-mw)
-
-- [AppFolio Resources](https://latchel.atlassian.net/wiki/x/MoAYrQ)
-
-5. [Propertyware Reference Guide](https://latchel.atlassian.net/wiki/x/I4APn)
-
-- [Propertyware Resources](https://latchel.atlassian.net/wiki/x/HQAlrQ)
-
-6. [Yardi Reference Guide](https://latchel.atlassian.net/wiki/x/LgC0oQ)
-7. [Buildium Reference Guide](https://latchel.atlassian.net/wiki/x/AgCsww)
+- [How: the Integration Health monitoring process works](/latchel-admin/Service-Operations/Ops-Integrations/how-the-integration-health-monitoring-process-works) (automated PM emails at 4 and 7 days)
+- [How to: Resolve AppFolio Work Order Export Failures](/latchel-admin/Service-Operations/Ops-Integrations/how-to-resolve-appfolio-work-order-export-failures)
+- [How to troubleshoot a sync on the Latchel cloud device](/latchel-admin/Service-Operations/Ops-Integrations/how-to-troubleshoot-a-sync-on-the-latchel-cloud-device) (for PMs whose sync Latchel runs)
+- [Job Aid: SQL Queries](/latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/Job-Aid-SQL-Queries) (P1 property and R4 resident queries used below)
 
 ---
 
 ### **2. Setup of New Connections**
 
 <Warning>
-  If the customer already has resident and property data in Latchel, do not activate an integration without consulting with the data support team. Escalate the ASM Ticket via Assembly into the Data Support Team space and share “**Data Migration**” as the task type. Do not proceed with the set up steps below. Data Support will manage this transition and keep you updated in the slack thread.
+  If the customer already has resident and property data in Latchel, do not activate an integration without consulting the Data Support team. Escalate the ticket via Wavelength into the Data Support Team space and share "**Data Migration**" as the task type. Do not proceed with the setup steps below. Data Support will manage this transition and keep you updated in the Slack thread.
 </Warning>
 
-#### 2.1 Rent Manager Set Up
+#### 2.1 Rent Manager Setup
 
-- Refer to [Rent Manager Reference Guide](https://help.latchel.com/Rent-Manager-Reference-Guide)
+- Refer to the [Rent Manager Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/rent-manager-reference-guide)
 - Refer to [Rent Manager Integration Steps (Existing Customers)](https://latchel.atlassian.net/wiki/x/DIC8b)
-- PM Guide: [Integrating Rent Manager to Latchel](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Integrating-Rent-Manager-into-Latchel)
+- PM Guide: [Integrating Rent Manager into Latchel](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Integrating-Rent-Manager-into-Latchel)
 
-#### 2.2 Appfolio Set Up
+#### 2.2 AppFolio Setup
 
-- Refer to [How to: Install the Chrome Plug-in (Appfolio)](https://help.latchel.com/How-to-Install-the-Chrome-Plug-in-\(Appfolio\))
-- PM Guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/article/How-to-Install-the-Latchel-Data-Sync-Extension)
-- Note: PMs automatically get the newest version of the Latchel Data extension with a few days of release but it can depend. For example, if a PM never closes/restarts their browser some updates may be delayed.
+- Refer to [How to: Install the Chrome Plug-in (AppFolio)](https://help.latchel.com/How-to-Install-the-Chrome-Plug-in-\(Appfolio\))
+- PM Guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension)
+- PMs automatically get the newest version of the Latchel Data Sync extension within a few days of release, but it can vary. For example, if a PM never closes or restarts their browser, updates may be delayed.
+- **If Latchel will run the sync for the PM (PS owns this setup):** the PM creates a Latchel user in AppFolio with access to view units, view residents, and view/edit/create work orders, and sends PS the login. PS logs it in the software login spreadsheet, creates/activates the Latchel integration user, and sets up the PM on the remote server (see section 4.2.1). Also make sure the **Latchel-managed** setting is turned on for the integration (see section 3.3), and let the team know in `#integration-health` so monitoring uses the right thresholds.
 
-#### 2.3 Propertyware Set Up
+#### 2.3 Propertyware Setup
 
-- Refer to [Propertyware Reference Guide](https://help.latchel.com/Propertyware-Reference-Guide)
+- Refer to the [Propertyware Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/propertyware-reference-guide)
 - PM Guide: [How to Activate the Client Propertyware Integration](https://help.latchel.com/s/article/How-to-Activate-the-Client-Propertyware-Integration)
 
-#### 2.4 Yardi Set Up
+#### 2.4 Yardi Setup
 
-- Refer to [Yardi Reference Guide](https://help.latchel.com/Yardi-Reference-Guide)
+- Refer to the [Yardi Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide)
 - PM Guide: [Yardi Voyager Standard Interfaces Setup](https://help.latchel.com/s/article/Yardi-Voyager-Standard-Interfaces-Setup)
 
-#### 2.4 Buildium Set Up
+#### 2.5 Buildium Setup
 
-- Refer to [Buildium Reference Guide](https://latchel.atlassian.net/wiki/x/AgCsww)
+- Refer to the [Buildium Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/buildium-reference-guide)
+- The Buildium user Latchel syncs with needs **AddEdit access to Work Orders**. Without it, properties and residents still sync but work orders are rejected.
 
 ---
 
-## 3. Troubleshooting Guide
+## 3. Start Here: The Integration Health Dashboard
 
-#### 3.1 Appfolio Troubleshooting
+**Location:** Admin → Integration Health ([app.latchel.com/admin/integration-health](https://app.latchel.com/admin/integration-health))
 
-- Refer to [(CS/Admin) How To: Troubleshoot the Latchel Plug-in](https://latchel.atlassian.net/wiki/spaces/CS/pages/795115811)
+Every integration ticket starts here. Search the PM's company name, open their row, and read the problem and recommended action before you do anything else. Include what you saw here in your ticket notes and any escalation summary.
 
-**Appfolio Troubleshooting Based on Error in Question:**
+<Note>
+  **Data Support (DS) owns monitoring of this dashboard.** DS works the Failing/Silent list, takes the Data Support and Engineering actions, and logs the status of every PM in DS's integration health tracking document. **PS's role:**
+
+  - **Handle PM-action escalations from DS.** When the recommended action needs the PM to do something (e.g., run the sync, update the extension, fix permissions or data in their PMS), DS first checks Wavelength for prior PS outreach. If there's none, DS posts a PS escalation in `#ps-escalation` with the recommended action. PS reaches out to the PM and logs it in the Wavelength ticket.
+  - **Use the dashboard as a lookup tool** when a PM writes in about an integration issue, so your troubleshooting and reply reflect the current sync status.
+  - **Don't take DS actions yourself** (ref ID fixes, remote-server syncs, credential checks). Send them to DS via `#data-support-requests`.
+</Note>
+
+<Info>
+  - The dashboard re-checks every integration **every 15 minutes**. A row changes state when its checks change.
+  - Times are shown in **your** timezone, not UTC.
+  - If the dashboard disagrees with another source (the legacy Integration Health Metrics Google Sheet, or an automated "your integration has not run in 7 days" email), **trust the dashboard**.
+</Info>
+
+#### 3.1 Statuses
+
+Click **What these mean** at the top of the page for the full definitions. In short:
+
+| Status | What it means | What to do |
+| --- | --- | --- |
+| **Failing** | A whole channel is down (e.g., credentials rejected, 50% of work orders failing, a work order stuck 24 hours, 3+ extension errors in a day, or a sync many hours late). | **Act now.** This will not clear on its own. |
+| **Silent** | Nothing has moved in either direction for 48 hours (72 hours for an AppFolio account the PM runs). An integration that has never synced turns Silent 7 days after it was connected. | **Act.** Confirm the account is still in use (e.g., not churned or not yet launched) before troubleshooting. |
+| **Degraded** | Something is wrong, but data is still flowing (e.g., 15% of work orders failing, 10% of properties unmapped, a sync lock held 60 minutes). | **Watch.** Often clears by the next sweep. Chase it if it has been in this state for more than 24 hours. |
+| **Unknown** | Our own checks could not run. | Usually our issue, not the customer's. Nothing to act on yet. |
+| **Paused** | Syncing was switched off on purpose. | Nothing. It changes when someone changes the setting. |
+| **Healthy** | Every check passed. | Nothing. |
+
+#### 3.2 Reading the list
+
+Each row shows **Company**, **Platform**, **Status**, **Problem** (the main failing check, with `+N` for additional problems), **In this state for**, and **Checked**.
+
+Tags you'll see:
+
+- **Latchel-managed**: Latchel runs this PM's sync on our remote server. Sync problems are ours to fix, not the PM's.
+- **Frequent sync**: the plugin is told to sync on the faster cadence.
+- **Escalated** / **Escalated ×2**: this problem has already been escalated to engineering. Don't escalate it again; add your ticket context to the existing thread instead.
+
+<Warning>
+  **"In this state for" only counts from when monitoring started (early Sep 2026).** A PM whose sync hasn't run since April may still show "33 days." Use **Last data seen** in the detail panel to see how long the sync has really been down.
+</Warning>
+
+#### 3.3 Reading a company's detail panel
+
+Click the company name to open the detail panel. Work top to bottom:
+
+1. **Header**: Platform, **Managed by** (`Latchel` or `the PM's browser`), **Frequent sync** (On/Off), **In this state for**, **Last data seen**, and **Checked**. The **Open [Company] →** link goes to the PM's Integrations tab.
+2. **Problems**: each failing or degraded check, with:
+   - What the check measures and **When this is flagged** (its thresholds)
+   - The affected work orders, each linked, with an error **category** (e.g., Permissions) and the raw platform error
+   - A recommended action box: **Recommended PM Actions**, **Recommended Data Support Actions**, or **Recommended Engineering Actions**, often with links to the relevant help article
+3. **Sync schedule**: each sync (Work orders, Properties and residents, Sending to AppFolio), how often it's expected, when it last ran, and when it will be flagged.
+4. **Checks passed**: expand to see everything that's healthy (e.g., "All 199 properties are linked").
+
+<Note>
+  **Latchel-managed vs. Frequent sync are separate settings.** Latchel-managed tells the dashboard we run the sync (and uses tighter thresholds). Frequent sync tells the plugin to sync every 15 minutes. A PM who runs their own sync can have Frequent sync turned on, but they'll see an extension pop-up every 15 minutes.
+</Note>
+
+#### 3.4 What each check means
+
+| Check | What it looks at | Flagged when |
+| --- | --- | --- |
+| Sync enabled | Whether syncing is on for the company | Off = **Paused**; no other checks run |
+| Work order sync (AppFolio) | How long ago work orders last came in | Degraded after 2 hrs, Failing after 8 (1 and 4 if Latchel-managed) |
+| Property and resident sync (AppFolio) | Last full property/resident pull | Degraded after 36 hrs, Failing after 72 (28 and 48 if Latchel-managed) |
+| Sending to AppFolio | Last time we pushed work order changes into AppFolio | Degraded after 4 hrs, Failing after 24 (2 and 8 if Latchel-managed) |
+| Properties / Residents (other platforms) | Scheduled pulls (hourly for most platforms, every 2 hrs for Propertyware) | Shown in the Sync schedule for that company |
+| Outgoing work orders | Share of recent work orders the platform rejected (each counted once, by latest attempt) | Degraded at 15%, Failing at 50% |
+| Stuck work orders | Work orders that failed and haven't gone through since | Failing once the oldest is 24 hrs old |
+| Unaccounted-for work orders | Work orders with no platform ID and no sync attempt ever recorded | Always an engineering path |
+| Extension errors (AppFolio) | Errors the browser extension reported | Degraded at 1–2 in 24 hrs, Failing at 3+ |
+| Sync lock | A sync marked "running" with no heartbeat | Degraded after 60 minutes |
+| Import quality | Whether the last import landed cleanly | Failing if it failed outright, Degraded if 25%+ of rows unreadable |
+| Property links | Latchel properties with no matching platform record (WOs on them can't sync) | Degraded at 10%, Failing at 40% (min. 5 unmapped) |
+| Resident links | Latchel residents with no matching platform record | Degraded at 20%, Failing at 50% (min. 5 unmapped) |
+
+#### 3.5 Follow the recommended action
+
+The action box tells you who owns the next step:
+
+<Tabs>
+  <Tab title="Recommended PM Actions (PS)">
+    Shown when the PM runs their own sync (**Managed by: the PM's browser**) or the fix is on their side (e.g., permissions or data in their PMS). **PS owns these**, usually via an escalation from DS in `#ps-escalation`.
+
+    1. Check Wavelength for prior outreach to this PM about the same issue so we don't contact them twice.
+    2. Reach out to the PM using the recommended action and linked article. For an AppFolio sync that isn't running, use the [template in section 6](#6-pm-outreach-templates).
+    3. Log the outreach (date and what you asked) in the Wavelength ticket, and reply in the `#ps-escalation` thread so DS can update their tracking document.
+    4. If the PM is unresponsive, escalate to their CSM.
+  </Tab>
+  <Tab title="Recommended Data Support Actions (DS)">
+    Shown for Latchel-managed syncs and for fixes on our side (ref IDs, remote-server sync instance, credentials). **DS owns these.** For reference, DS will:
+
+    1. Open each stuck work order and press **Sync Now** (retry) on its integration banner. Anything that goes through was a blip; anything that fails again follows the guidance in the panel. The dashboard only updates on its next check, so a fixed row won't clear right away.
+    2. Read the pattern: a property shared across several failures points to **mapping** (e.g., a missing ref unit ID; see section 4.1); one error shared across all of them points to **config or permissions**.
+    3. For "Check the sync instance we run for this company," check the remote-server session per section 4.2.1 (also see [How to troubleshoot a sync on the Latchel cloud device](/latchel-admin/Service-Operations/Ops-Integrations/how-to-troubleshoot-a-sync-on-the-latchel-cloud-device)).
+    4. For permission errors, check whether Latchel has the PM's credentials in the software login to verify access. If the PM needs to change something, DS escalates to PS.
+
+    If you come across one of these while working a PS ticket, check the `#data-support-requests` history first, then post there with what you found.
+  </Tab>
+  <Tab title="Recommended Engineering Actions">
+    Shown when there's no ops path (e.g., "Unaccounted-for work orders," uncategorized errors), or when the recommended steps didn't fix it.
+
+    1. Confirm the problem isn't already tagged **Escalated to engineering**.
+    2. Use **Escalate to engineering** in the panel (DS usually does this as part of monitoring; coordinate in `#data-support-requests` before escalating from a PS ticket).
+    3. **Don't re-send** work orders marked unaccounted-for until the PMS has been checked. The create may have succeeded there and failed before reporting back, so a re-send can create a duplicate.
+  </Tab>
+</Tabs>
+
+<Info>
+  **Not every Failing row is a real failure.** Check the PM's subscription first. Benefits-only, Basic, or Home Assistant PMs don't use Latchel maintenance, so failing work order checks are expected (a subscription mismatch, not an integration issue). For Silent PMs with no imports, confirm the account is still active with the CSM team in the PS \<> CS Sync channel. Report these, and any unclear dashboard instructions, to Ben in `#integration-health`.
+</Info>
+
+#### 3.6 Known error categories
+
+| What you see | What it means | What to do |
+| --- | --- | --- |
+| **Permissions** (Buildium: "You do not have AddEdit access to Work Orders") | The syncing Buildium user can see data but can't create/edit work orders | PM grants AddEdit access to Work Orders. Then press **Refresh** on the integration or **Sync Now** on a stuck WO. Not an engineering escalation. |
+| AppFolio: Latchel user has no access to the property | The Latchel user in AppFolio can't see specific properties | Ask the PM to give the Latchel user access to those properties. WOs go through on the next sync. |
+| AppFolio: expired user session / AppFolio refused the create | The remote-server session logged out, or the account signed in lacks WO create/edit rights | Latchel-managed: sign the instance back into AppFolio **as the Latchel user** and confirm it can create/edit work orders. PM-run: PM re-signs in. |
+| Yardi: "Yardi needs a priority" / "Could not find Priority" | That PM's Yardi database requires a priority on every WO | Escalate to engineering. It's a per-company config change; the PM doesn't need to do anything. |
+| Propertyware: "Propertyware created work order … do not re-send" | The WO already exists in Propertyware; only the link back to us failed | **Do not re-send** (it will duplicate). Escalate to engineering to link it. |
+| Propertyware: "Location is invalid" / "Unit ID is invalid" | Property setup issue in the PM's Propertyware (unit may be inactive or deleted) | PM fixes the property in Propertyware, then re-send from the failed-sync list. |
+
+<Tip>
+  Have feedback, a bug, or a feature request for the dashboard itself? Post it in the normal `#bug-report` or `#feature-requests` channels. Use `#integration-health` for questions about the process.
+</Tip>
+
+---
+
+## 4. Troubleshooting by Scenario
+
+#### 4.1 Property and Resident Data (All Platforms)
+
+<Warning>
+  **Check for existing and disabled data before creating anything new.** Most "missing" records already exist in Latchel, disabled or under the wrong property. Creating a new one makes a duplicate. If a property from the PM's report is in Latchel but disabled, enable it. Don't create a new one.
+</Warning>
+
+Key reports:
+
+- **Integration report**: PM's company page → **Integrations** tab → download the property or tenant (resident) CSV. This is what the PMS sent us, including the **Ref Property**, **Ref Unit**, and **Ref User** IDs.
+- **P1** (all active properties) and **R4** (resident search) queries in pgAdmin: see [Job Aid: SQL Queries](/latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/Job-Aid-SQL-Queries).
 
 <AccordionGroup>
-  <Accordion title="Delayed Synchronization of Work Orders from Latchel to Appfolio">
-    **Description:** Work orders are experiencing significant delays, taking several hours or even days to synchronize from Latchel to Appfolio.
+  <Accordion title="Property Isn't Syncing / Missing from Latchel">
+    **Description:** The PM reports a property that should be in Latchel but isn't.
 
     <Tabs>
       <Tab title="Reconciliation Steps">
-        1. [Check Plugin Version via SQL Query](#5-troubleshooting-queries).
-           - Run query in pgAdmin to see what version the PM is on. Cross reference with Chrome store version.
-        2. Verify Permissions:
-           - Check if the customer has granted the necessary permissions to Latchel.
-           - Ensure that Latchel is set up as an On-Site Property Manager user in their software system.
-           - Confirm that the Latchel user has the following permissions:
-             - Work Order Report
-             - Tenant Directory Report
-             - Unit Directory Report
-             - Property Directory Report
-        3. Report a Problem:
-           - If the latest version is downloaded and the above settings/permissions are confirmed but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
-        4. Escalate the Issue:
-           - If applicable, submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
+        1. **Check Integration Health.** Confirm the property/resident sync is actually running (Last data seen, Sync schedule). If it isn't, fix the sync first. The property may simply not have come over yet.
+        2. **Run P1** and search for the address to confirm it's not in Latchel under a slightly different address, or disabled.
+        3. **Download the integration property report** and find the property.
+           - **Not in the report:** Latchel doesn't have access to it or it's hidden/inactive in the PMS. Ask the PM to check that the sync user (e.g., the AppFolio user running the sync) has access to that property or property group, and that the property is active.
+           - **In the report:** note its **Ref Property ID** and **Ref Unit ID** (the first two columns in the Rent Manager CSV) and search Latchel for them.
+        4. **Check for incomplete data.** If the property is in the report but not in Latchel, look for missing required fields: an address in the wrong field (e.g., in Address 2), or a missing City/State. Properties missing required address info won't sync. Example: an AppFolio PM's units didn't sync until the **State** field was entered on those units.
+        5. **Next step:** if data is missing/incorrect in the PMS, ask the PM to correct it there and let it sync again rather than adding the property manually. If the data is complete and the ref IDs still aren't in Latchel after the next sync, escalate (see [section 5](#5-escalation-process)).
       </Tab>
       <Tab title="Suggested Scripting">
-        We have identified a couple of steps that may help resolve the current synchronization issues between Latchel and your Appfolio system. Please follow the steps below to ensure everything is set up correctly:
+        Hi [PM],
+
+        Thank you for flagging this! I took a look at [address], and it looks like this property hasn't synced over to Latchel because [the City and State fields are missing / the address is entered in the Address 2 field] in [PMS].
+
+        Could you please update the property details in [PMS]? Once it's corrected, it will sync to Latchel automatically on the next sync. I'll keep an eye out and confirm once it's in.
+
+        Please let me know if you have any questions!
+      </Tab>
+    </Tabs>
+  </Accordion>
+
+  <Accordion title="Resident Missing or Needs to Be Added (Integration PM)">
+    **Description:** The PM asks for a resident to be added, but the resident isn't showing in Latchel (even under disabled residents) and Resident Modification may prevent manual creation.
+
+    <Tabs>
+      <Tab title="Reconciliation Steps">
+        1. **Download the resident report** from the PM's PMS, or ask the PM for it.
+        2. **Run the R4 query** and search for the resident by name.
+           - **Found:** confirm they're on the correct property. If not, move them to the correct property.
+           - **Not found:** continue.
+        3. **Download the integration (tenant) report** from the Integrations tab and search for the resident's name.
+           - **Not listed:** the resident hasn't synced. The PM needs to add/update them in their PMS.
+           - **Listed:** continue.
+        4. **Find the resident's Ref User** in the integration report (also note the Ref Property and Ref Unit).
+        5. **Search Latchel for that Ref User.** If it exists, compare the Ref Property and Ref Unit to the property in Latchel.
+           - If they match, **update the existing resident record** instead of creating a new resident.
+        6. **Open the property** in the Latchel Console.
+        7. **Find the resident** currently linked to that Ref User.
+        8. **Update** the name, email, phone number, and any other contact info to match the integration report. Save, then confirm the record matches the report and is still linked to the correct Ref User.
+
+        <Tip>
+          **Example:** Daniel wasn't found by name with R4, but he was in the integration report. His Ref User already existed in Latchel, attached to the previous resident (Julian) at the same Ref Property/Ref Unit. The fix was to update Julian's record with Daniel's details, not create a new resident.
+        </Tip>
+      </Tab>
+    </Tabs>
+  </Accordion>
+
+  <Accordion title="Duplicate Properties or Residents: Which Record to Keep">
+    **Description:** There are multiple records in Latchel for the same property/resident (e.g., the PM reports a "Rear" unit, but none of the 3 Latchel records say "Rear").
+
+    <Tabs>
+      <Tab title="Reconciliation Steps">
+        1. **Download the property report** from the Integrations tab.
+        2. **Export P1** from pgAdmin.
+        3. **Compare the address on both reports** and find which **ref ID** is active in the integration report. That's the record to keep.
+        4. Enable the record with the correct ref ID and disable the incorrect one. Update the name/address to match the PMS if needed (e.g., add "Rear").
+
+        **Merging rules (Data Support):**
+
+        | Situation | Rule |
+        | --- | --- |
+        | Both duplicates have **different ref IDs** (even if the name/address is an exact match) | **Do not merge.** They're different records in the PMS. |
+        | Only one duplicate has a ref ID | **Merge and keep the one with the ref ID.** |
+        | Neither has a ref ID (non-integration PM) | **Always merge.** |
+
+        **Tie-breakers (optional):**
+
+        - Same status → keep the oldest record.
+        - One disabled, one enabled → keep the enabled record.
+        - Properties → keep the one with active residents; if both have residents, keep the oldest.
+        - Residents → keep the contact details that match the PM's report; update if needed.
+
+        5. If you're unsure which record to keep, or the fix is larger than a few records (e.g., a PM merged properties in their PMS), request help in `#data-support-requests` with the ref IDs you found.
+      </Tab>
+    </Tabs>
+  </Accordion>
+
+  <Accordion title="Property Shows Disabled but Is Active in the PMS">
+    **Description:** A property is disabled in Latchel (e.g., a resident can't use a benefit), but the PM confirms it's active on their side and the sync is up to date.
+
+    <Tabs>
+      <Tab title="Reconciliation Steps">
+        1. **Integrations never re-activate a disabled property.** Status only syncs from active to inactive.
+        2. Check the property's **activity log** to see when and how it was disabled (inactive in the PMS at some point, or disabled manually).
+        3. Confirm the property is in the integration property report as active, and that there isn't another copy of it (e.g., under a different PM account). If there's a duplicate, follow the duplicate steps above.
+        4. **Enable the property in the Latchel UI.**
+      </Tab>
+      <Tab title="Suggested Scripting">
+        Hi [PM],
+
+        Thanks for confirming! The property had been marked inactive in Latchel, and our integration only syncs status changes from active to inactive, so reactivating it in [PMS] doesn't carry over automatically. I've re-enabled it on our side, so you're all set.
+
+        Let us know if you run into anything else!
+      </Tab>
+    </Tabs>
+  </Accordion>
+
+  <Accordion title="Work Order Shows Synced but Isn't in the PMS (Ref ID Mismatch)">
+    **Description:** A work order shows as successfully synced, but the PM can't find it in their PMS by WO number or reference job ID.
+
+    <Tabs>
+      <Tab title="Reconciliation Steps">
+        1. Check Integration Health for failing or stuck work orders on that PM.
+        2. Compare the property's **ref property ID** and **ref unit ID** in Latchel against the PMS (integration report or the PM's property export).
+           - Example: in Propertyware the property had Ref Property `19016125172` and Ref Unit `2008088596`, but in Latchel both the property ID and ref property ID were `2008088596`.
+        3. Check for a disabled or duplicate property that already has the correct ref ID before changing anything.
+        4. If there's a mismatch and no duplicate, request the ref ID correction in `#data-support-requests`.
+        5. If the ref IDs match, the sync is current, and the WO still isn't in the PMS, submit a [bug report](https://app.latchel.com/admin/bug-reports).
+      </Tab>
+    </Tabs>
+  </Accordion>
+</AccordionGroup>
+
+#### 4.2 AppFolio Troubleshooting
+
+- Refer to [(CS/Admin) How To: Troubleshoot the Latchel Plug-in](https://latchel.atlassian.net/wiki/spaces/CS/pages/795115811)
+- **Always check Integration Health first:** Managed by, Last data seen, Extension errors, and the Sync schedule answer most "is the sync running?" questions without SQL.
+- **The AppFolio sync only runs while an AppFolio tab is open** in the browser of whoever runs it (the PM, or our remote server for Latchel-managed PMs).
+- For work orders that aren't exporting to AppFolio, see [How to: Resolve AppFolio Work Order Export Failures](/latchel-admin/Service-Operations/Ops-Integrations/how-to-resolve-appfolio-work-order-export-failures).
+- **Investigating any AppFolio issue:** check the **software login** spreadsheet (AppFolio tab) for the PM's credentials. If we have them, log in to AppFolio yourself in a regular Chrome browser to look at the property, resident, or work order directly, instead of asking the PM for reports or examples. The spreadsheet has credentials for many more PMs than we run the sync for.
+
+#### 4.2.1 Latchel-Managed AppFolio Syncs (Remote Server)
+
+For PMs tagged **Latchel-managed** on Integration Health, Latchel runs the AppFolio sync on the PM's behalf from our remote server, accessed through **TeamViewer**. Each PM has its own Chrome profile there, signed in to AppFolio and the Latchel Data Sync extension.
+
+| Task | Owner |
+| --- | --- |
+| **Setting up a new Latchel-managed PM** (create/activate the Latchel user, log credentials, add the PM to the remote server) | **PS** |
+| Daily monitoring, re-running syncs, and troubleshooting on the remote server | **DS** (escalates to PS in `#ps-escalation` if the PM needs to act, e.g., restore report access) |
+
+Credentials live in the [**software login** spreadsheet](https://docs.google.com/spreadsheets/d/16B1d5acwDRvx6w8BkSuL4_QAOZmcXKYwf5HFpMcwRdU/edit?gid=2017091315#gid=2017091315). **Confidential:** never share it or paste credentials from it outside the sheet.
+
+<Warning>
+  **The remote server is only for PMs whose sync Latchel runs.** Don't create profiles for, or run syncs for, any other PM on the remote server. To investigate a PM that runs its own sync, use their software login credentials in your own browser.
+</Warning>
+
+<AccordionGroup>
+  <Accordion title="Daily Check and Re-running a Sync (DS)">
+    Check Latchel-managed PMs **every morning** on Integration Health rather than waiting for an alert. It takes about 2 minutes. Most of the time the syncs are current; the check catches accounts that got logged out.
+
+    1. On Integration Health, look at the **Latchel-managed** rows. Any that are Degraded/Failing, or whose **Last data seen** isn't today, need a look.
+    2. Connect to the remote server in **TeamViewer**. Check the devices tab to see if someone else is already connected.
+    3. Open the PM's **Chrome profile** (one profile per PM, so credentials are never mixed).
+    4. If the AppFolio session logged out, sign back in with the AppFolio credentials in the **software login** spreadsheet (AppFolio tab, columns B–D).
+       - **Two-factor code:** it appears roughly every 30 days. Click **Send verification code**. The code goes to the **Latchel console messages** (the Latchel console number). It expires in **10 minutes** and Ops closes these messages quickly, so have the console open and grab it right away.
+       - If the verification number isn't the Latchel console number, it's likely the PM's phone. The PM needs to update it or send you the code.
+    5. In the Latchel Data Sync extension, choose **Sync data in both directions (slower)** and start the sync. Confirm the extension shows the sync running correctly.
+    6. **Close the session using the X on the far right** of the TeamViewer window. **Never** click the laptop-style icon inside the window. It disconnects the remote server, and engineering has to restore it.
+  </Accordion>
+
+  <Accordion title="Sync Still Failing After Logging Back In: Report Access (DS)">
+    Most failures are an expired login. If the account is signed in and the sync still fails, the PM may have removed access to a report the sync needs.
+
+    1. In the PM's AppFolio profile, go to **Reporting → Reports** (the needed reports are saved as favorites).
+    2. Confirm the Latchel user can open all **five required reports**:
+       - Property Directory
+       - Property Group Directory
+       - Tenant Directory
+       - Unit Directory
+       - Work Order
+    3. Other saved reports (e.g., owner statements, rent roll, general ledger) are used by Finance/CPT and aren't needed for the sync.
+    4. If any required report is missing, the PM needs to restore access (no need to involve the CSM). DS escalates this to PS in `#ps-escalation`, and PS reaches out to the PM. The PM-facing guide is [How to Grant Report Permissions to Latchel in AppFolio](https://help.latchel.com/how-to-grant-report-permissions-to-latchel-in-appfolio).
+    5. If access is fine and it still fails, follow [How to: Resolve AppFolio Work Order Export Failures](/latchel-admin/Service-Operations/Ops-Integrations/how-to-resolve-appfolio-work-order-export-failures) and the recommended action on Integration Health.
+  </Accordion>
+
+  <Accordion title="Setting Up a New Latchel-Managed PM (PS)">
+    **How the request reaches PS:**
+
+    - **From the PM:** the PM replies to a PS ticket with the AppFolio login for the Latchel user they created (e.g., after the [sync outreach template](#6-pm-outreach-templates)). This is the usual path.
+    - **From a CSM during onboarding:** the CSM submits the **Latchel Sync Request** workflow in `#ps-escalation` (PM company name, CSM, AppFolio URL, username, password, priority, deadline). **This workflow is only for CSMs who receive the login during onboarding.** PS associates don't use it; if you get the login yourself, go straight to the steps below.
+
+    **Steps:**
+
+    1. **Confirm access first:** the PM has created a Latchel user in AppFolio that can open the five required reports and view/edit/create work orders.
+    2. **Log the credentials** in the [software login spreadsheet](https://docs.google.com/spreadsheets/d/16B1d5acwDRvx6w8BkSuL4_QAOZmcXKYwf5HFpMcwRdU/edit?gid=2017091315#gid=2017091315) (AppFolio tab), and mark the PM as Latchel-run.
+    2. In the remote server, open the Chrome profiles menu (top-right icon) → **Add Chrome profile** → choose to stay signed out. Name it for the PM and give it a unique color.
+    3. Sign in to AppFolio with the credentials from the software login spreadsheet and save the password in the profile. Complete two-factor as above.
+    4. In a new tab, install the [Latchel Data Sync extension](https://chromewebstore.google.com/detail/latchel-data-sync/cefobanegfgmcneibgdbcjbegnnoafob) (**Add to Chrome**), then pin it from the extensions menu.
+    5. **Create or activate the Latchel integration user** in the Latchel console. If one exists but is inactive, activate it. If there isn't one, add a new user named **Latchel Integration**, use the **Latchel console phone number**, and use the same email as the AppFolio login. Confirm the password from the welcome email. Use a **different password** than the AppFolio login, and record both in the software login spreadsheet.
+    6. Log in to the extension with the Latchel integration user, refresh the AppFolio tab so the extension appears, and run the first **Sync data in both directions** sync.
+    7. Make sure the **Latchel-managed** setting is on for the integration so Integration Health uses the right thresholds, and let the team know in `#integration-health`.
+  </Accordion>
+
+  <Accordion title="PM Wants to Exclude a Property from the Sync">
+    1. In the PM's AppFolio, go to the property's **asset profile** (search the address, then open it under Properties).
+    2. Turn on the toggle to **exclude the property from the sync**.
+  </Accordion>
+</AccordionGroup>
+
+**AppFolio Troubleshooting Based on Error in Question:**
+
+<AccordionGroup>
+  <Accordion title="Delayed Synchronization of Work Orders from Latchel to AppFolio">
+    **Description:** Work orders take several hours or even days to sync from Latchel to AppFolio.
+
+    <Tabs>
+      <Tab title="Reconciliation Steps">
+        1. **Check Integration Health:** look at **Sending to AppFolio**, **Outgoing work orders**, and **Stuck work orders**, and follow the recommended action.
+        2. Check the plugin version via [SQL query](#7-troubleshooting-queries) if extension errors are showing. Cross-reference with the Chrome Web Store version.
+        3. Verify permissions:
+           - Latchel is set up as an On-Site Property Manager user in AppFolio.
+           - The Latchel user has access to the Work Order, Tenant Directory, Unit Directory, and Property Directory reports.
+           - The Latchel user has access to the properties in question.
+        4. **Report a Problem:** if the plugin is up to date and permissions are confirmed but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
+        5. **Escalate:** submit a [bug report](https://app.latchel.com/admin/bug-reports), or use **Escalate to engineering** on Integration Health if that's the recommended action.
+      </Tab>
+      <Tab title="Suggested Scripting">
+        We have identified a couple of steps that may help resolve the current synchronization issues between Latchel and your AppFolio system. Please follow the steps below to ensure everything is set up correctly:
 
         1. Verify Permissions:
            - Please check that Latchel has been granted the necessary permissions in your software system:
@@ -113,11 +448,11 @@ Before proceeding, ensure the following:
              - Tenant Directory Report
              - Unit Directory Report
              - Property Directory Report
-        2. If Plugin is out of date, include step 2 (remove this step if the most recent version is installed):
+        2. If the plugin is out of date, include step 2 (remove this step if the most recent version is installed):
            - Reinstall the Latest Version:
              - Log out of AppFolio.
              - Remove the current Latchel Data Sync extension and refresh the page.
-             - Reinstall the latest version using this guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension#how-to-install-the-latchel-data-sync-extension).
+             - Reinstall the latest version using this guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension).
              - Log into the Latchel Data Sync extension using your Latchel credentials.
              - Log back into AppFolio and try running the sync again.
 
@@ -126,30 +461,26 @@ Before proceeding, ensure the following:
     </Tabs>
   </Accordion>
 
-  <Accordion title="Discrepancy of Work Orders Syncing from Appfolio to Latchel">
-    **Description:** Work orders are in Appfolio are not syncing into Latchel.
+  <Accordion title="Discrepancy of Work Orders Syncing from AppFolio to Latchel">
+    **Description:** Work orders in AppFolio are not syncing into Latchel.
 
     <Tabs>
       <Tab title="Reconciliation Steps">
-        1. Identify Integration Sync Method:
-           - Review and confirm the Property Manager's Integration Sync Method under the Miscellaneous section in Account Settings.
-           - Here is how each setting option impacts which work orders sync from Appfolio to Latchel:
-             - **Assigned Work Orders:** Only WOs assigned to a user with the name that includes "Latchel" will sync from Appfolio to Latchel. All Latchel work orders will be created in Appfolio but only WOs that are assigned to the Latchel user in Appfolio will be updated from Appfolio. This is used by some customers who want the work order created but subsequently want to make changes without them being overwritten but a future update.
-             - **All Work Orders:** All WOs in the Appfolio account will sync to Latchel, all WOs in Latchel sync to Appfolio
-             - **No Work Orders:** No WOs in the Appfolio account will sync to Latchel, No WOs created in Latchel will sync to Appfolio
-        2. Check Last Sync:
-           - [Run the query outlined in the Standard Operating Procedure](#5-troubleshooting-queries) to determine when the last synchronization occurred.
-           - [Check Plugin Version via SQL Query](#5-troubleshooting-queries).
-           - Run query in pgAdmin to see whar version the PM is on. Cross reference with Chrome store version.
-        3. Report a Problem:
-           - If the version is up-to date, integration sync method setting is configured correctly, and last sync was recent but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
-        4. Escalate the Issue:
-           - If applicable, submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
+        1. **Check Integration Health:** look at **Work order sync** (last time work orders came in) and **Extension errors**.
+        2. Identify the Integration Sync Method:
+           - Review the PM's Integration Sync Method under the Miscellaneous section in Account Settings.
+           - How each option affects which work orders sync:
+             - **Assigned Work Orders:** Only WOs assigned to a user whose name includes "Latchel" sync from AppFolio to Latchel. All Latchel work orders are created in AppFolio, but only WOs assigned to the Latchel user in AppFolio are updated from AppFolio. Some customers use this so they can make changes in AppFolio without future updates overwriting them.
+             - **All Work Orders:** All WOs in the AppFolio account sync to Latchel, and all WOs in Latchel sync to AppFolio.
+             - **No Work Orders:** No WOs sync in either direction.
+        3. If Integration Health isn't conclusive, [run the last-sync and plugin version queries](#7-troubleshooting-queries).
+        4. **Report a Problem:** if the plugin is up to date, the sync method is configured correctly, and the last sync was recent but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
+        5. **Escalate:** submit a [bug report](https://app.latchel.com/admin/bug-reports).
       </Tab>
       <Tab title="Suggested Scripting">
         **Assigned Work Orders Method Sync**
 
-        Hi \[PM\],
+        Hi [PM],
 
         I hope you're doing well! I wanted to clarify how your current AppFolio-Latchel sync settings work to ensure everything is functioning as expected.
 
@@ -163,13 +494,13 @@ Before proceeding, ensure the following:
 
         Could you let me know if this integration is operating as expected on your end, or if you're noticing any discrepancies?
 
-        If Plugin is out of date, include steps to reinstall below (remove this step if the most recent version is installed):
+        If the plugin is out of date, include the steps to reinstall below (remove this step if the most recent version is installed):
 
         Lastly, I noticed you're on an old version of the plugin. Please reinstall the latest version by following these steps:
 
         1. Log out of AppFolio.
         2. Remove the current Latchel Data Sync extension and refresh the page.
-        3. Reinstall the latest version using this guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension#how-to-install-the-latchel-data-sync-extension).
+        3. Reinstall the latest version using this guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension).
         4. Log into the Latchel Data Sync extension using your Latchel credentials.
         5. Log back into AppFolio and try running the sync again.
 
@@ -187,32 +518,27 @@ Before proceeding, ensure the following:
 
     <Tabs>
       <Tab title="Reconciliation Steps">
-        1. Check reports
-           - Access the Integration Report
-           - Navigate to the Customer's Integration Tab in Latchel.
-           - Download the property report.
-           - Locate the property in the report.
-           - If the property is marked as active (identified by a 1 integer), it should be active in Latchel.
-        2. If the Property or Resident is NOT in the Report:
-           - This indicates one of the following scenarios:
-             - Latchel doesn't have access to the record.
-             - The record is hidden in AppFolio (e.g., due to filters or permission settings).
-             - The property or resident is deactivated in AppFolio.
+        1. Check reports:
+           - Navigate to the customer's Integrations tab in Latchel.
+           - Download the property report and locate the property.
+           - If the property is marked as active (identified by a 1), it should be active in Latchel.
+        2. If the property or resident is NOT in the report, one of the following is likely:
+           - Latchel doesn't have access to the record.
+           - The record is hidden in AppFolio (e.g., due to filters or permission settings).
+           - The property or resident is deactivated in AppFolio.
 
         **Important Synchronization Limitation**
 
         - Latchel only syncs status changes from active to inactive.
         - If a previously inactive property is reactivated in AppFolio, this change will NOT be reflected in Latchel.
-        - In these cases, the property must be manually re-added or activated in Latchel if needed.
+        - In these cases, the property must be manually enabled in Latchel if needed (see section 4.1).
 
-        3. Next Steps Based on Findings:
-           - If the property should be active in Latchel but isn't: activate it.
-           - If the property should NOT be active in Latchel but is: disable it.
-           - If the record is missing from the report, instruct the PM to verify visibility and access settings in AppFolio.
-        4. Report a Problem:
-           - If the version is up-to date and the issue still persists, have the PM use the "Report a Problem" feature in their plugin.
-        5. Escalate the Issue:
-           - Submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
+        3. Next steps based on findings:
+           - If the property should be active in Latchel but isn't: enable it.
+           - If the property should NOT be active in Latchel but is: disable it, and check the activity log to see what re-enabled it.
+           - If the record is missing from the report, ask the PM to verify visibility and access settings in AppFolio.
+        4. **Report a Problem:** if the plugin is up to date and the issue still persists, have the PM use the "Report a Problem" feature in their plugin.
+        5. **Escalate:** submit a [bug report](https://app.latchel.com/admin/bug-reports).
       </Tab>
       <Tab title="Suggested Scripting">
         I'm reaching out to address the issue with properties reactivating unexpectedly after being manually disabled.
@@ -220,7 +546,7 @@ Before proceeding, ensure the following:
         We're providing a quick overview of how property status sync works to help you understand the current limitations and behavior of the system. This information is important because it explains why certain changes, like reactivating a property in your property management system, might not reflect in Latchel.
 
         - Latchel can only change properties from active to inactive.
-        - If you reactivate a previously inactive property in Appfolio, this change won't be reflected in Latchel.
+        - If you reactivate a previously inactive property in AppFolio, this change won't be reflected in Latchel.
         - When a property is manually disabled in Latchel, any activation changes made in AppFolio won't update in Latchel.
 
         Thank you for your patience and understanding. I'm here to assist you every step of the way.
@@ -228,124 +554,85 @@ Before proceeding, ensure the following:
     </Tabs>
   </Accordion>
 
-  <Accordion title="Delay and Lack of Confirmation in Synchronization Process">
-    **Description:** The synchronization process is experiencing delays, with users not receiving confirmation upon completion, leading to uncertainty about the sync status.
+  <Accordion title="Sync Not Running / Delayed, or No Confirmation the Sync Completed">
+    **Description:** The sync is delayed or hasn't run, or the PM isn't sure whether their sync completed.
 
     <Tabs>
       <Tab title="Reconciliation Steps">
-        1. Check Recent Export Date:
-           - Navigate to the Property Manager's page in Latchel. Navigate to the Integration section and check the date of the most recent export.
-           - If the date is the current day, the system should be functioning correctly.
-           - If the date is more than a few days old, request that the PM run the sync manually. If the sync does not go through, proceed to the next step.
-        2. Check Plugin Version via SQL Query.
-           - Run query in pgAdmin to see what version the PM is on. Cross reference with Chrome store version.
-        3. Report a Problem:
-           - If the version is up-to date but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
-        4. Escalate the Issue:
-           - Submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
+        1. **Check Integration Health:** open the PM and check **Managed by**, **Last data seen**, and the **Sync schedule**.
+        2. **If Managed by = the PM's browser:** ask whether anyone at the PM has had an AppFolio tab open. The 15-minute work order sync and daily property/resident pull only run while one is. Send the [sync outreach template](#6-pm-outreach-templates) and ask them to reinitiate the sync.
+        3. **If Managed by = Latchel:** the remote-server session is probably logged out. Sign back in and re-run the sync per section 4.2.1.
+        4. If extension errors are showing, check the plugin version via [SQL query](#7-troubleshooting-queries) and have the PM update if it's out of date.
+        5. **Report a Problem:** if the plugin is up to date but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
+        6. **Escalate:** submit a [bug report](https://app.latchel.com/admin/bug-reports).
       </Tab>
       <Tab title="Suggested Scripting">
-        **If integration exports are dated:**
+        **If the sync hasn't run recently:** use the template in [section 6](#6-pm-outreach-templates).
 
-        Hi \[PM\],
+        **If the plugin is out of date:**
 
-        We hope you're doing well. I sincerely apologize for any frustration or inconvenience this issue may have caused. I understand how important it is to have a seamless work order sync, and I appreciate your patience as we work through this together.
-
-        Upon review, it appears the sync has not been in run in a (few days/week). To ensure we have the most up to date information, please nvaigate to Appfolio and click the "Sync All Data" button in the Latchel extension.
-
-        Once you've confirmed completeion, if the issue still persists, please don't hesitate to reach back. I'll be happy to escalate this for further review and support if needed.
-
-        **If plugin is out of date:**
-
-        Hi \[PM\],
+        Hi [PM],
 
         We hope you're doing well. I sincerely apologize for any frustration or inconvenience this issue may have caused. I understand how important it is to have a seamless work order sync, and I appreciate your patience as we work through this together.
 
-        AppFolio Plugin Update & Reinstallation – The most up to date version is X.XX.XX. It appears your version is out of date. To help resolve this, please complete the following:
+        AppFolio Plugin Update & Reinstallation – The most up-to-date version is X.XX.XX. It appears your version is out of date. To help resolve this, please complete the following:
 
         1. Log out of AppFolio.
         2. Remove the current Latchel Data Sync extension and refresh the page.
-        3. Reinstall the latest version using this guide: \[How to Install the Latchel Data Sync Extension\].
+        3. Reinstall the latest version using this guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension).
         4. Log into the Latchel Data Sync extension using your Latchel credentials.
         5. Log back into AppFolio and try running the sync again.
 
-        If you've confirmed both steps above and the issue persists, please don't hesitate to reach back. I'll be happy to escalate this for further review and support if needed.
-
-        **If BOTH:**
-
-        Hi \[PM\],
-
-        We hope you're doing well. I sincerely apologize for any frustration or inconvenience this issue may have caused. I understand how important it is to have a seamless work order sync, and I appreciate your patience as we work through this together.
-
-        AppFolio Plugin Update & Reinstallation – The most up to date version is X.XX.XX. It appears your version is out of date. To help resolve this, please complete the following:
-
-        1. Log out of AppFolio.
-        2. Remove the current Latchel Data Sync extension and refresh the page.
-        3. Reinstall the latest version using this guide: \[How to Install the Latchel Data Sync Extension\].
-        4. Log into the Latchel Data Sync extension using your Latchel credentials.
-        5. Log back into AppFolio.
-
-        Once you have the most up to date version, please nvaigate to Appfolio and click the "Sync All Data" button in the Latchel extension.
-
-        If you've confirmed both steps above and the issue persists, please don't hesitate to reach back. I'll be happy to escalate this for further review and support if needed.
+        If you've confirmed the steps above and the issue persists, please don't hesitate to reach back. I'll be happy to escalate this for further review and support if needed.
       </Tab>
     </Tabs>
   </Accordion>
 
-  <Accordion title="Unassigned Work Orders Syncing from Latchel to Appfolio">
-    **Description:** Work orders created in Latchel are syncing into Appfolio without being assigned, leading to potential delays and mismanagement in task allocation.
+  <Accordion title="Unassigned Work Orders Syncing from Latchel to AppFolio">
+    **Description:** Work orders created in Latchel sync into AppFolio without being assigned, leading to potential delays and mismanagement in task allocation.
 
     <Tabs>
       <Tab title="Reconciliation Steps">
-        1. Check Plugin Version via SQL Query.
-           - Run query in pgAdmin to see whar version the PM is on. Cross reference with Chrome store version.
-        2. Report a Problem:
-           - If the version is up-to-date but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
-        3. Escalate the Issue:
-           - Submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
+        1. Check the plugin version via [SQL query](#7-troubleshooting-queries). Cross-reference with the Chrome Web Store version.
+        2. **Report a Problem:** if the version is up to date but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
+        3. **Escalate:** submit a [bug report](https://app.latchel.com/admin/bug-reports).
       </Tab>
       <Tab title="Suggested Scripting">
-        **If plugin is out of date:**
+        **If the plugin is out of date:**
 
-        Hi \[PM\],
+        Hi [PM],
 
         We hope you're doing well. I sincerely apologize for any frustration or inconvenience this issue may have caused. I understand how important it is to have a seamless work order sync, and I appreciate your patience as we work through this together.
 
-        AppFolio Plugin Update & Reinstallation – The most up to date version is X.XX.XX. It appears your version is out of date. To help resolve this, please complete the following:
+        AppFolio Plugin Update & Reinstallation – The most up-to-date version is X.XX.XX. It appears your version is out of date. To help resolve this, please complete the following:
 
         1. Log out of AppFolio.
         2. Remove the current Latchel Data Sync extension and refresh the page.
-        3. Reinstall the latest version using this guide: \[How to Install the Latchel Data Sync Extension\].
+        3. Reinstall the latest version using this guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension).
         4. Log into the Latchel Data Sync extension using your Latchel credentials.
         5. Log back into AppFolio and try running the sync again.
 
-        If you've confirmed both steps above and the issue persists, please don't hesitate to reach back. I'll be happy to escalate this for further review and support if needed.
+        If you've confirmed the steps above and the issue persists, please don't hesitate to reach back. I'll be happy to escalate this for further review and support if needed.
       </Tab>
     </Tabs>
   </Accordion>
 
-  <Accordion title="Incomplete Status Sync for Work Orders from Latchel to Appfolio">
-    **Description:** Work orders are not updating their status to 'Complete' or 'Canceled' in Appfolio after being updated in Latchel, resulting in discrepancies between the two systems.
+  <Accordion title="Incomplete Status Sync for Work Orders from Latchel to AppFolio">
+    **Description:** Work orders don't update to 'Complete' or 'Canceled' in AppFolio after being updated in Latchel.
 
     <Tabs>
       <Tab title="Reconciliation Steps">
-        1. Verify Integration Work Order Update Conditions:
-           - Go to the Property Manager account details page.
-           - Navigate to Miscellaneous Settings and check the Integration Work Order Update Conditions.
-        2. Check Update Preferences:
-           - Confirm the customer's preferences for work order updates. Options include:
-             - Update on complete and canceled states.
-             - Update on complete states only.
-             - Update on canceled states only.
-             - Never update.
-        3. Adjust Settings if Necessary:
-           - Ensure that the settings align with the desired update frequency and conditions to resolve discrepancies between Latchel and Appfolio.
-        4. Check Plugin Version via SQL Query.
-           - Run query in pgAdmin to see whar version the PM is on. Cross reference with Chrome store version.
-        5. Report a Problem:
-           - If the version is up-to date but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
-        6. Escalate the Issue:
-           - Submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
+        1. Verify the Integration Work Order Update Conditions:
+           - Go to the PM account details page → Miscellaneous Settings → Integration Work Order Update Conditions.
+        2. Confirm the customer's preference. Options:
+           - Update on complete and canceled states
+           - Update on complete states only
+           - Update on canceled states only
+           - Never update
+        3. Adjust the setting if it doesn't match the customer's preference.
+        4. Check Integration Health for **Sending to AppFolio** or stuck work orders.
+        5. **Report a Problem:** if the plugin is up to date but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
+        6. **Escalate:** submit a [bug report](https://app.latchel.com/admin/bug-reports).
       </Tab>
       <Tab title="Suggested Scripting">
         I hope you're doing well! I wanted to provide some clarity on the settings available for work order updates within your integration, so you can ensure everything is working as you need it to.
@@ -365,58 +652,51 @@ Before proceeding, ensure the following:
   </Accordion>
 
   <Accordion title="Data Formatting Differences: Latchel vs. AppFolio">
-    **Description:** Property and/or resident data discrepancies between Latchel and Appfolio.
+    **Description:** Property and/or resident data looks different in Latchel than in AppFolio.
 
     <Tabs>
       <Tab title="Reconciliation Steps">
         1. Check reports:
-           - Navigate to the Customer's Integration Tab in Latchel.
-           - Download the Reconciliation Report, which contains data from the property management system (AppFolio).
-           - Compare the report with how data is displayed in Latchel.
-           - If a property manager (PM) inquires about why data appears a certain way in Latchel, review the report to show how it was formatted in AppFolio—Latchel displays the data exactly as it appears in AppFolio.
-        2. Identify any discrepancies in formatting or presentation.
-           - If discrepancies exist between the report and Latchel's display, document them and escalate as needed.
+           - Navigate to the customer's Integrations tab in Latchel.
+           - Download the reconciliation/integration report, which contains the data AppFolio sent.
+           - Compare it with how the data displays in Latchel. Latchel displays data exactly as it appears in AppFolio.
+        2. If the report and Latchel don't match, the record may have been edited manually in Latchel, or there may be a duplicate (see section 4.1). Document examples and escalate as needed.
       </Tab>
       <Tab title="Suggested Scripting">
-        Hi \[PM\],
+        Hi [PM],
 
         I hope this message finds you well. I wanted to provide some clarity regarding data formatting between Latchel and AppFolio.
 
-        As you on an active integration between Appfolio and Latchel, the data will sync into Latchel exactly matching how it appears in Appfolio.
+        Since you're on an active integration between AppFolio and Latchel, data syncs into Latchel exactly as it appears in AppFolio.
 
-        If anything does not match, it may have been manually manipulated at some point in Latchel.
+        If anything does not match, it may have been manually changed at some point in Latchel.
 
-        If this is the case, do you have examples you can share so we can further investigate?
+        If this is the case, do you have examples you can share so we can investigate further?
 
         We look forward to hearing from you!
       </Tab>
     </Tabs>
   </Accordion>
 
-  <Accordion title="Duplicate Work Orders in Latchel and/or Appfolio">
-    **Description:** The system is generating duplicate work orders in both Latchel and Appfolio, causing confusion and inefficiencies in work order management.
+  <Accordion title="Duplicate Work Orders in Latchel and/or AppFolio">
+    **Description:** Duplicate work orders are being created in Latchel and/or AppFolio.
 
     <Tabs>
       <Tab title="Reconciliation Steps">
-        1. Understand the PM's Process:
-           - Ask the PM how they currently handle work orders.
+        1. Understand the PM's process:
            - Are WOs submitted directly into Latchel, AppFolio, or both?
-           - If using AppFolio, are WOs assigned to the Latchel user (if applicable)?
-        2. Identify the Source of Work Orders:
-           - Ensure that only work orders generated in AppFolio are assigned to Team Latchel.
-           - Avoid assigning Latchel-created work orders to Team Latchel to prevent duplication.
-        3. Check Plugin Version via SQL Query:
-           - Run a query in pgAdmin to determine the PM's plugin version.
-           - Cross-reference it with the latest version available in the Chrome Store.
-        4. Run SQL Query to flag duplicate WOs:
-           - Run a query in pgAdmin to determine duplicate WOs. The query should product zero results. If it outputs results, this is a big red flag to report through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
-        5. Report a Problem:
-           - If the version, source, and process are correct but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
-        6. Escalate the Issue:
-           - If the issue remains unresolved, submit it through the [in-app bug report form](https://app.latchel.com/admin/bug-reports) (#bug-report) for urgent attention.
+           - In AppFolio, are WOs assigned to the Latchel user (if applicable)?
+        2. Identify the source of work orders:
+           - Only work orders generated in AppFolio should be assigned to Team Latchel.
+           - Assigning Latchel-created work orders to Team Latchel causes duplication.
+        3. Check whether anyone re-sent a work order that had already been created in the PMS (see the "do not re-send" guidance in section 3.6).
+        4. Check the plugin version via [SQL query](#7-troubleshooting-queries).
+        5. Run the [duplicate WO query](#7-troubleshooting-queries). It should return zero results. If it returns results, that's a big red flag: submit a [bug report](https://app.latchel.com/admin/bug-reports) for urgent attention.
+        6. **Report a Problem:** if the version, source, and process are correct but the issue persists, have the PM use the "Report a Problem" feature in their plugin.
+        7. **Escalate:** submit a [bug report](https://app.latchel.com/admin/bug-reports).
       </Tab>
       <Tab title="Suggested Scripting">
-        Hi \[PM\],
+        Hi [PM],
 
         I hope you're doing well! To ensure a smooth work order process and prevent any duplication, we'd like to review your current workflow. Please help us by answering the following:
 
@@ -435,39 +715,121 @@ Before proceeding, ensure the following:
   </Accordion>
 </AccordionGroup>
 
-#### 3.2 Rent Manager Troubleshooting
+#### 4.3 Rent Manager Troubleshooting
 
-- PM Guide: [https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Rent-Manager-Integration-Troubleshooting](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Rent-Manager-Integration-Troubleshooting)
+- Start with Integration Health (Stuck work orders, Unaccounted-for work orders).
+- In the Rent Manager property CSV from the Integrations tab, the first two columns are the **Ref Property** and **Ref Unit** IDs. Use them to follow the property steps in section 4.1.
+- PM Guide: [Rent Manager Integration Troubleshooting](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Rent-Manager-Integration-Troubleshooting)
+- PM Guide: [How to Export Reports with Reference IDs](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Export-Reports-with-Reference-IDs)
 
-#### 3.3 Propertyware Troubleshooting
+#### 4.4 Propertyware Troubleshooting
 
+- Start with Integration Health. Propertyware rejections now show up there (previously they were dropped silently).
+- **"Propertyware created work order … do not re-send":** the WO already exists in Propertyware. Don't re-send; escalate to engineering to link it.
+- **"Location is invalid" / "Unit ID is invalid":** the PM fixes the property setup in Propertyware, then re-send from the failed-sync list.
+- **WO synced but not in Propertyware:** compare ref property/unit IDs (see section 4.1).
 - [Propertyware Integration: Troubleshooting Invalid Building ID Errors](https://help.latchel.com/Propertyware-Integration-Troubleshooting-Invalid-Building-ID-Errors)
-- Assist assist a PM with pulling a property CSV from Propertyware to include the ref IDs 
+- Assisting a PM with pulling a property CSV from Propertyware that includes the ref IDs:
   <iframe src="https://www.loom.com/embed/cca6e383bb294301be801e5e11d3528e" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
 <Frame>
   ![PST 108](/images/PST-108.png "PST 108")
 </Frame>
 
-- Multifamily buildings: Sometimes (but not always) fictitious units are created for multifamily buildings. If a customer reports this behavior, escalate to the CSM to propose a billing adjustment.
+- Multifamily buildings: sometimes (but not always) fictitious units are created for multifamily buildings. If a customer reports this, escalate to the CSM to propose a billing adjustment.
+
+#### 4.5 Yardi Troubleshooting
+
+- **"Yardi needs a priority" / "Could not find Priority":** that PM's Yardi database requires a priority on every WO. Escalate to engineering for a per-company priority mapping. The PM doesn't need to do anything.
+- Once engineering fixes a sync issue, check with the PM whether they want the backlog of unsynced WOs pushed (or only those after a cutoff date) before anything is re-sent.
+
+#### 4.6 Buildium Troubleshooting
+
+- **Permissions ("You do not have AddEdit access to Work Orders"):** the PM gives the syncing Buildium user AddEdit access to Work Orders. Then press **Refresh** on the integration, or **Sync Now** on a stuck WO, to confirm it goes through. Ask engineering whether to sync the backlog once one goes through.
 
 ---
 
-### **4. Escalation Process**
+### **5. Escalation Process**
 
-1. If there is an unexpected outcome with existing functionality
+| Situation | Where it goes |
+| --- | --- |
+| Fix is on the PM's side (permissions, missing data in the PMS, sync not being run), including PM-action escalations from DS in `#ps-escalation` | PS reaches out to the PM and logs it in the Wavelength ticket. Unresponsive → escalate to the CSM. |
+| Data fix on our side (ref IDs, duplicates, merges, Latchel-managed sync instance, credentials) | DS via `#data-support-requests` |
+| Integration Health says **Recommended Engineering Actions** | **Escalate to engineering** button in the Integration Health panel (usually DS, as part of monitoring) |
+| Dashboard feedback, unclear instructions, or rows that look misclassified | `#integration-health` (for Ben) |
+| Existing functionality not working as expected (not covered above) | [Bug Reports form](https://app.latchel.com/admin/bug-reports) |
+| Request for NEW functionality | [Bug Reports form](https://app.latchel.com/admin/bug-reports) → "I wish it did X," or the "Feature Request" workflow in `#feature-requests` |
 
-- **If the user is utilizing the Latchel Chrome Plugin (Appfolio)**, instruct the user to follow these steps: [https://help.latchel.com/s/article/How-to-Report-Bugs-and-Issues-with-our-Tools](https://help.latchel.com/s/article/How-to-Report-Bugs-and-Issues-with-our-Tools). The debug report is required for engineering to troubleshoot further.
-- **For all other integrations,** submit the issue through the [in-app bug report form](https://app.latchel.com/admin/bug-reports). It posts to the `#bug-report` channel automatically.
+**AppFolio plugin issues:** have the PM follow [How to Report Bugs and Issues with our Tools](https://help.latchel.com/s/article/How-to-Report-Bugs-and-Issues-with-our-Tools) so engineering gets the debug report.
 
-2. If there is a request to add NEW functionality to an existing integration
-3. Fill out the workflow “Feature Request” workflow in the `#feature-requests` channel.
+#### 5.1 Using the Bug Reports form
+
+**Location:** Admin → Bug Reports ([app.latchel.com/admin/bug-reports](https://app.latchel.com/admin/bug-reports))
+
+<Steps>
+  <Step title="Pick the type">
+    **Something is broken** (it used to work, or it does the wrong thing) or **I wish it did X** (Latchel doesn't do this today).
+  </Step>
+  <Step title="Describe what's happening">
+    Describe the bug, where it happens (page, work order, or flow), and its impact. Include what you already checked (Integration Health status and problem, ref IDs, reports reviewed).
+  </Step>
+  <Step title="Add related links">
+    Pick from recent pages or paste URLs: the work order(s), the PM's Integrations tab, the property/resident. You can add several.
+  </Step>
+  <Step title="Add a FullStory link (optional)">
+    First try to recreate the bug yourself. If you can't reproduce it, find the FullStory session replay where it happened and paste the link.
+  </Step>
+  <Step title="Add a screenshot (optional)">
+    PNG, JPG, GIF, or WebP, up to 10MB.
+  </Step>
+  <Step title="Click Start and answer the follow-ups">
+    The assistant asks a few follow-up questions, then files a clean ticket. Link it in your Wavelength ticket.
+  </Step>
+</Steps>
 
 ---
 
-### **5. Troubleshooting Queries**
+### **6. PM Outreach Templates**
 
-SQL Query to see the last time the Integration (any integration) was run successfully:
+**AppFolio sync not running (PM runs their own sync):**
+
+Hi [PM Name],
+
+We noticed that your AppFolio integration hasn't synced in [X time]. While this may be temporary, we recommend reinitiating the sync to make sure your data continues flowing correctly.
+
+**To restart the sync:**
+
+1. Make sure you or someone on your team has downloaded and activated the [Latchel Data Sync extension](https://chromewebstore.google.com/detail/latchel-data-sync/cefobanegfgmcneibgdbcjbegnnoafob).
+2. Log in to your **AppFolio dashboard**.
+3. Locate the floating **Latchel logo** on the right-hand side of the screen.
+4. Hover over the logo to open the pop-up panel.
+5. Select **"Click Here"** to reinitiate the sync.
+
+For additional details, you can reference our [troubleshooting article here](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Download-and-Activate-the-Latchel-Data-Sync).
+
+**Or, let Latchel handle your syncs for you!**
+
+If you'd rather not manage this process manually or run into this issue again, **our team can run the sync on your behalf going forward**.
+
+To get this set up, we'll just need a Latchel user created in AppFolio with access to:
+
+- View units
+- View residents
+- View, edit, and create work orders
+
+[Here is a step-by-step guide](https://docs.google.com/document/d/1z8aflT7uonxNBByl3UWhU21U-10fXkadK53mNoDu-Pc/edit?tab=t.0) to help you create the user account. Once that's set up, **just reply to this email and let us know**. We'll take it from there and manage the sync from our side moving forward.
+
+If you have any questions along the way, we're happy to help!
+
+Best, Latchel Support
+
+---
+
+### **7. Troubleshooting Queries**
+
+Use these when Integration Health doesn't answer the question. For property (P1) and resident (R4) lookups, see [Job Aid: SQL Queries](/latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/Job-Aid-SQL-Queries).
+
+SQL query to see the last time the integration (any integration) ran successfully:
 
 ```sql lines
 select i.company_id, c.name, i.type, i.status, i.total_rows, i.created_at, i.source
@@ -479,7 +841,7 @@ ORDER by i.created_at desc
 LIMIT 10
 ```
 
-SQL Query to see what version of the Latchel plugin the PM is running (Appfolio clients):
+SQL query to see which version of the Latchel plugin the PM is running (AppFolio clients):
 
 ```sql lines
 SELECT al.created_at, al.plugin_version 
@@ -489,7 +851,7 @@ ORDER BY al.created_at DESC
 LIMIT 1
 ```
 
-SQL Query that shows big red flags for duplicate work orders. The query should produce zero results. If it outputs results, report it through the in-app bug report form (#bug-report) for urgent attention.
+SQL query that flags duplicate work orders. It should return zero results. If it returns results, report it through the [Bug Reports form](https://app.latchel.com/admin/bug-reports) for urgent attention. Replace `549` with the PM's company ID.
 
 ```sql lines wrap
 SELECT j.ref_job_id, j.created_at, i.settings->>'last_sync_time' as last_sync_time FROM job j 
@@ -500,6 +862,25 @@ JOIN pm_company_settings pcs ON pcs.pm_company_id = c.company_id
 WHERE c.company_id = 549 AND j.ref_job_id IS NULL AND j.created_at < DATE(i.settings->>'last_sync_time') AND j.created_at > pcs.integration_sync_date;
 ```
 
-### **6. Appendix**
+SQL query to list PM companies flagged as Latchel-managed:
 
-- Additional resource: [https://latchel.atlassian.net/wiki/spaces/SR/pages/3072655391/Job\+Aid\+Suggested\+Templates\+Best\+Practices#Integration-Related-Concerns](https://latchel.atlassian.net/wiki/spaces/SR/pages/3072655391/Job+Aid+Suggested+Templates+Best+Practices#Integration-Related-ConcernsCan't)([https://help.latchel.com/Job-Aid-Suggested-Templates-Best-Practices](https://help.latchel.com/Job-Aid-Suggested-Templates-Best-Practices))
+```sql lines
+SELECT
+    c.company_id,
+    c.name AS company_name,
+    i.integration_id,
+    i.platform,
+    i.status
+FROM integration i
+JOIN company c
+    ON i.pm_company_id = c.company_id
+WHERE i.settings ->> 'is_latchel_managed' = 'true';
+```
+
+---
+
+### **8. Appendix**
+
+- [Job Aid: Suggested Templates & Best Practices](https://help.latchel.com/Job-Aid-Suggested-Templates-Best-Practices) (Integration-Related Concerns)
+- [Job Aid: Slack Channels & Escalation Workflows](/latchel-admin/Product-Support-Team/Job-Aid-Slack-Channels-Escalation-Workflows)
+- Slack: `#integration-health` for questions about the dashboard and process.
