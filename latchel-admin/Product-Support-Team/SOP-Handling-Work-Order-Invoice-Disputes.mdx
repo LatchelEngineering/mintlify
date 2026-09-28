@@ -14,6 +14,10 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3176038407/SO
   **Retired:** the Invoice Dispute Typeform, `#invoice-dispute-form`, `#ps-dd-requests`, Salesforce cases and templates, and refunds through `#accounts-payable`. Disputes are worked in **Wavelength (WL)**, DDs go through `#ps-dd-sddi`, and refunds go through `#work-order-payments`.
 </Warning>
 
+<Tip>
+  **Always share the refund policy with the PM.** Every outcome email includes a link to the [Latchel Guarantee and Refund Request Policy](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Guarantee-and-Refund-Request-Policy) for reference, whether the dispute is approved, denied or outside the policy window.
+</Tip>
+
 ## How disputes reach PS
 
 - **PM or Owner emails** [success@latchel.com](mailto:success@latchel.com) (the policy asks them to include the WO number or URL and the disputed invoice).
@@ -61,7 +65,7 @@ Always check the policy **before** opening a DD. Record both timestamps on the t
 
 | **Reported within 72 hours of the invoice being submitted** | **Reported within 45 days after the invoice date** | **Reported more than 45 days after the invoice date** |
 | --- | --- | --- |
-| Eligible for a **full refund** | Eligible for a **partial refund**: up to **50%** or a maximum of **\$300 per invoice** | **Not eligible.** Reply to the PM explaining the policy window. No DD needed. |
+| Eligible for a **full refund** | Eligible for a **partial refund**: up to **50%** or a maximum of **\$300 per invoice** | **Not eligible.** Reply to the PM explaining the policy window and link the policy. No DD needed. |
 
 **Refunds are granted when** (per the policy):
 
@@ -132,7 +136,7 @@ The outcome is one of:
 1. Submit the **Invoice Dispute** workflow in `#work-order-payments` with the DD link, the WL ticket link, the dispute amount, both timestamps, the refund window (72 hours or 45 days) and whether the workmanship guarantee was voided. Put the DD findings in **Describe the issue**.
 2. **If Latchel is covering the cost** (a Latchel error or a one-time exception), tag **@Will Gordon** and **@Amrit Parajuli** for approval before you tell the PM.
 3. **Accounts Payable (Samantha Terreros)** acknowledges the post, works with the SP and processes the refund. She confirms in the thread. AP doesn't contact the PM.
-4. Tell the PM using ACE: the refund amount, the method, and the timeline (refunds can take up to 10 business days to show).
+4. Tell the PM using ACE: the refund amount, the method, and the timeline (refunds can take up to 10 business days to show). Include a link to the refund policy for reference.
 5. Add the **Reimbursement or Credit Issued** tag and close the ticket as **Closed** once the PM has been told and AP has confirmed.
 
 <Tip>
@@ -141,7 +145,7 @@ The outcome is one of:
 
 ## Step 8: If the dispute is denied (invoice stands)
 
-1. Tell the PM using ACE: explain clearly why the invoice is valid and should be paid, based on the DD and the policy.
+1. Tell the PM using ACE: explain clearly why the invoice is valid and should be paid, based on the DD and the policy. Include a link to the refund policy for reference.
 2. Update the **Payment Issues and Disputes** task from Step 1: the dispute was denied and the invoice stands, so the hold can be released.
 2. Don't offer credits or exceptions outside the policy to end the conversation.
 3. Close the ticket as **Closed** once the PM has the decision, unless they push back.
@@ -152,7 +156,7 @@ Investigate every NOMAD owner dispute with the steps above first. Then follow [S
 
 | Outcome | Who hears first |
 | --- | --- |
-| **Approved** | Tell the owner directly and CC Nomad ([support@nomadlease.com](mailto:support@nomadlease.com)). No escalation form needed. |
+| **Approved** | Tell the owner directly and CC Nomad ([support@nomadlease.com](mailto:support@nomadlease.com)). No escalation form needed. Include the refund policy link. |
 | **Denied** (invoice valid, payment still owed) | **Nomad first.** Send the full supporting package with the **NOMAD SUPPORT ESCALATION FORM** in WL: invoice, job photos, provider breakdown, budget approval history, DD findings and the policy. State that the invoice is valid and Latchel won't provide compensation. Wait for Nomad to align before contacting the owner. Follow up in `#latchel-nomad` if needed. |
 
 ## Handling PM pushback on a denied dispute
