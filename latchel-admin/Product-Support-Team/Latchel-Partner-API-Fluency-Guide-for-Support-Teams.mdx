@@ -447,6 +447,28 @@ Webhook documentation is separate from PAPI and is available in the Help Center 
 | Can I filter to only active/recent records? | Check the parameters for that specific endpoint — most list endpoints support filters. |
 | I need a read-only key | Not available. Latchel does not support scoped API keys. Escalate to CSM if a blocker. |
 | Can I test without affecting live data? | Yes. Use latchel-demo.com/v1 with a separate development API key. |
+| Do we have to use the API for setup requests now? | No. It's encouraged, not required (see "Encouraging Self-Service Setup via API" below). NOMAD is the only customer given notice to move setups to the API. |
+
+### Encouraging Self-Service Setup via API
+
+When a customer sends vendor, property, portfolio, or owner setup requests (e.g., onboarding forms by email), **encourage** them to make those updates themselves through the Partner API. It's faster for them and doesn't wait on our queue. Endpoints to point them to:
+
+| Setup task | Endpoint |
+| --- | --- |
+| Add an owner | POST /owners |
+| Create a portfolio | POST /portfolios |
+| Add a vendor company | POST /vendor-companies |
+| Assign a vendor to a property or portfolio | POST /properties/\{property_id\}/vendor-companies or POST /portfolios/\{portfolio_id\}/vendor-companies |
+| Add or remove a vendor's service ZIP codes | PATCH /vendor-companies/\{vendor_company_id\}/add-service-zipcodes (or remove-service-zipcodes) |
+| Look up trade categories for assignments | GET /categories |
+
+<Note>
+  **This is a suggestion, not a requirement.** Customers can still send setup requests the usual way, and we'll process them. The one exception is **NOMAD**: they were given a 90-day notice to move these setups to the API. Don't tell other customers email requests are going away.
+</Note>
+
+**Suggested wording:**
+
+_We'll take care of this for you! For future updates, you can also add owners, portfolios, vendor companies, and vendor assignments yourself through the Latchel Partner API, and they'll update right away. The documentation is at [papi.latchel.com/api-docs/papi](https://papi.latchel.com/api-docs/papi/), and you can generate an API key from your admin dashboard ([How to Generate an API Key](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Generate-an-API-Key)). Totally optional. We're always happy to handle these for you too._
 
 ## Part 6: When to Escalate
 
