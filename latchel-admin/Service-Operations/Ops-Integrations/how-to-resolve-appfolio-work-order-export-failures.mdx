@@ -51,7 +51,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OI/pages/4058415106/Ho
   This step identifies structural data gaps where a Latchel property is not correctly linked to AppFolio.
 </Note>
 
-1. **Check Sync Method:** In Latchel Admin, go to **PM Profile → Details → Miscellaneous Settings**. Confirm the "Integration Sync Method" is set to "Assigned Work Orders." If settings are incorrect, escalate to the CSM.
+1. **Check Sync Method:** In Latchel Admin, go to **PM Profile → Integrations** tab. Confirm the "Integration Sync Method" is set to "Assigned Work Orders." If settings are incorrect, escalate to the CSM.
 2. **Query the Database:** Open **pgAdmin** and run a query on the `property` table using the address from the failing WO:codeSQL
 3. **Analyze `ref_property_id`:**
 
