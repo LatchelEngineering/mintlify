@@ -5,49 +5,62 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3656318999/Ho
 ---
 
 <Note>
-  The purpose of this document is to walk PS through the steps to take when a PM requests additional coverage for their entire account and/or portfolio. This is how to updated the subscription from **after-hours emergency to 24/7 emergency**.
+  **Purpose:** the steps PS takes when a PM asks to upgrade from **After-Hours Emergency to 24/7 Emergency** on their whole account or on specific portfolios.
+
+  **Who owns it:** PS owns this upgrade, both temporary (e.g., 24/7 for one month) and ongoing. **Always notify the CSM.**
 </Note>
 
-### Step-by-Step Guide:
+<Warning>
+  **After-Hours → 24/7 is the only upgrade PS can make.** Any other subscription change (adding Autopilot, On-Call or other add-ons, changing plans, downgrades, cancellations) goes to the CSM. Don't change the subscription. Escalate using [SOP: Escalating Tickets to the CSM](/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM).
+</Warning>
 
-#### 1. Receive Request.
+## Step 1: Confirm the request
 
-- Confirm if the change will be account wide or specific portfolios.
-- Let the PM know that the price will change to \$1.99/unit for those units.
+Confirm with the PM:
 
-#### 2. Create the Product Package in Latchel.
+- **What they want:** the account is on After-Hours Emergency today and they want 24/7 Emergency.
+- **Where:** the whole account, or specific portfolios.
+- **When:** the start date, and whether it's **temporary** (with an end date) or **ongoing**.
 
-- Go to the PM Account page in Latchel.
-- Go to the Product Packages tab and click New Package.
-  - Enter the name for the new package (use the subscription type).
-- Once the Product Package is created, click on it from the list to add the products.
+<Warning>
+  **Don't quote a price.** Rates depend on each customer's contract. Tell the PM their rate will be confirmed by billing or their CSM.
+</Warning>
 
-<Frame>
-  ![Screenshot 2025-10-16 at 3.06.57 PM.png](/images/PST-11.png)
-</Frame>
+Classify the WL ticket: **Topic: Subscription & Billing → Plan Change (Upgrade)**. Add the **Config Change Made** tag once the change is done.
 
-- For Base Product, select 24/7 Emergency and choose the start date for today.
+## Step 2: Create the product package in Latchel
 
-<Frame>
-  ![Screenshot 2025-10-16 at 3.09.21 PM.png](/images/PST-12.png)
-</Frame>
-
-#### 3. Make the Product Package the Active Subscription.
-
-- Go to the PM Account page or the Portfolio page.
-- Then go to the Subscriptions tab and click New Subscription.
-- You will select the Product Package you just created.
+1. Go to the **PM Account** page in Latchel.
+2. Open the **Product Packages** tab and click **New Package**. Name it after the subscription type (e.g., "24/7 Emergency").
+3. Click the new package in the list to add products.
 
 <Frame>
-  ![Screenshot 2025-10-16 at 3.11.29 PM.png](/images/PST-13.png)
+  ![Screenshot 2025-10-16 at 3.06.57 PM.png](/images/PST-11.png)
 </Frame>
 
-#### 4. Notify Billing.
+4. For **Base Product**, select **24/7 Emergency** and set the **start date** the PM confirmed (today, unless they asked for a later date).
 
-- In the #accounts-receivable channel, use the Subscription Invoicing Request workflow.
-- Fill it out with all the details and the Category of: Change Request (CS).
-- Tag the CSM in the thread for awareness.
+<Frame>
+  ![Screenshot 2025-10-16 at 3.09.21 PM.png](/images/PST-12.png)
+</Frame>
 
-#### 5. Confirm with the PM.
+## Step 3: Make the package the active subscription
 
-- Notify the PM that the change is done and they are good to go!
+1. Go to the **PM Account** page (whole account) or the **Portfolio** page (specific portfolios).
+2. Open the **Subscriptions** tab and click **New Subscription**.
+3. Select the product package you just created.
+
+<Frame>
+  ![Screenshot 2025-10-16 at 3.11.29 PM.png](/images/PST-13.png)
+</Frame>
+
+## Step 4: Notify billing and the CSM
+
+1. In `#accounts-receivable`, submit the **Subscription Invoicing Request** workflow with the category **Change Request (CS)**. See [SOP: Handling Subscription Billing Inquiries](/latchel-admin/Product-Support-Team/SOP-Handling-Subscription-Billing-Inquiries) for the fields.
+2. In **What do you need help with?**, include the new subscription, whether it's account-wide or which portfolios, the start date, and the end date if it's temporary.
+3. Select the PM's **CSM** in the workflow (the Company Owner in HubSpot) and tag them in the thread so they're aware.
+4. Paste the Slack link into the WL ticket as an internal note. If AR doesn't respond, tag **@Donita** in the thread.
+
+## Step 5: Confirm with the PM
+
+Let the PM know the change is done and when it takes effect, and that billing or their CSM will confirm the rate. Close the ticket as **Closed**.
