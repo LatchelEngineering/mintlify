@@ -22,7 +22,22 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3176038407/SO
 
 All of these land in WL. Follow [SOP: Handling New Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-New-Ticket-in-Product-Support) to assign yourself, start the timer and link the Customer Profile. For Ops escalations, also follow [SOP: Handling Ops Escalations](/latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations).
 
-## Step 1: Classify the ticket
+## Step 1: Flag the dispute to the Payments team
+
+Do this as soon as the dispute is received, **whether or not the invoice has been paid**. Check the WO's invoice to see if it has been paid, then create a task on the WO:
+
+1. On the WO, click **Action → Create Task**.
+2. Add a subject line and set **Assign a Team** to **Payment Issues and Disputes**.
+3. In the task, include the **WL ticket URL** and the message below.
+
+| Invoice status | What the task says |
+| --- | --- |
+| **Not paid yet** | The invoice is under dispute. **Hold the charge** until the dispute findings are final. |
+| **Already paid** | FYI: the invoice is under dispute and is being reviewed. |
+
+Add an internal note on the WL ticket that the task was created.
+
+## Step 2: Classify the ticket
 
 | Field | Value |
 | --- | --- |
@@ -33,12 +48,16 @@ All of these land in WL. Follow [SOP: Handling New Tickets](/latchel-admin/Produ
 
 See [Job Aid: Ticket Category, Attributes, and Tags](/latchel-admin/Product-Support-Team/Job-Aid-Interaction-Tags-Explained).
 
-## Step 2: Check eligibility against the policy
+## Step 3: Check eligibility against the policy
 
 Always check the policy **before** opening a DD. Record both timestamps on the ticket as an internal note:
 
-- The date and time the **PM reported the dispute**
+- The date and time the **PM first reported the dispute**
 - The date and time the **invoice was submitted**
+
+<Warning>
+  **Find the PM's first report, not when the ticket reached PS.** A dispute often lands in WL hours or days after the PM first raised it. Check every channel the PM used: call transcripts, webchat, SMS and emails, plus WO notes and activity. Use the **earliest** time the PM disputed the charge. Getting this wrong can put an eligible dispute outside the 72-hour window.
+</Warning>
 
 | **Reported within 72 hours of the invoice being submitted** | **Reported within 45 days after the invoice date** | **Reported more than 45 days after the invoice date** |
 | --- | --- | --- |
@@ -65,33 +84,36 @@ Always check the policy **before** opening a DD. Record both timestamps on the t
   **LVN guarantee and warranty:** LVN providers give a 30-day workmanship guarantee and a 1-year parts warranty. Both are voided if a **different provider** worked on the same issue (even one sourced through Latchel), and don't apply to end-of-life equipment when replacement was denied, or to a deeper root cause that was identified but not addressed. Preferred Service Providers aren't covered. Recalls go to [team@latchel.com](mailto:team@latchel.com).
 </Note>
 
-## Step 3: Review before you dive
+## Step 4: Review before you dive
 
 - **Check the account's recent tickets** for related disputes and any **prior commitments** (credits or exceptions already promised). Link related tickets.
 - **Check what's already on the WO** before asking the SP for more detail. If the invoice was approved, the estimate went to the PM and the line items are there, you usually have what you need.
-- **If the invoice is still unpaid,** you can ask Accounts Payable to hold the SP payment while the dispute is reviewed (see Step 6).
 
-## Step 4: Submit the DD and acknowledge the PM
+## Step 5: Submit the DD and acknowledge the PM
 
-1. In `#ps-dd-sddi`, click **DD Request** and fill out the form (see [How to: Submit a Deep Dive Request](/latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request)):
-   | Field | What to enter |
-   | --- | --- |
-   | **PM Company Name** | The PM or owner company |
-   | **Who is the CSM?** | From HubSpot (Company Owner) |
-   | **ASM Link** | The WL ticket for this dispute |
-   | **Type of DD?** | **Invoice Dispute** |
-   | **WO Link** | The disputed work order |
-   | **Describe The Issue** | What the PM is disputing and why |
-   | **If Invoice Dispute, what \$ amount is being disputed?** | The dollar amount (attach the invoice in the thread) |
-   | **What initial information/review can you provide?** | Both timestamps from Step 2, the refund window, whether the guarantee was voided, prior commitments and related tickets from Step 3 |
-   | **What is the question you need PS to help you answer…?** | The specific question the DD should answer (e.g., "Was the \$250 trip charge approved within budget?") |
-2. Paste the Slack link into the WL ticket as an internal note and add the **DD Requested** tag.
-3. Reply to the PM with the **Submit DD** template in WL. Update the WO status line in the template before sending. It tells the PM the review may take **up to seven business days**.
-4. Set the ticket to **Escalated**. If it returns to Needs Response before the DD is done, move it back to Escalated and send the PM a short status update.
+**1. Submit the DD.** In `#ps-dd-sddi`, click **DD Request** and fill out the form (see [How to: Submit a Deep Dive Request](/latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request)):
 
-The DD itself follows [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process) (3-day SLA). Post the conclusion on the WL ticket as an internal note with the DD ticket link and the WO link.
+| Field | What to enter |
+| --- | --- |
+| **PM Company Name** | The PM or owner company |
+| **Who is the CSM?** | From HubSpot (Company Owner) |
+| **ASM Link** | The WL ticket for this dispute |
+| **Type of DD?** | **Invoice Dispute** |
+| **WO Link** | The disputed work order |
+| **Describe The Issue** | What the PM is disputing and why |
+| **If Invoice Dispute, what \$ amount is being disputed?** | The dollar amount (attach the invoice in the thread) |
+| **What initial information/review can you provide?** | Both timestamps from Step 3, the refund window, whether the guarantee was voided, the invoice payment status from Step 1, and prior commitments and related tickets from Step 4 |
+| **What is the question you need PS to help you answer…?** | The specific question the DD should answer (e.g., "Was the \$250 trip charge approved within budget?") |
 
-## Step 5: Workshop the conclusion
+**2. Link it.** Paste the Slack link into the WL ticket as an internal note and add the **DD Requested** tag.
+
+**3. Acknowledge the PM.** Reply with the **Submit DD** template in WL. Update the WO status line in the template before sending. It tells the PM the review may take **up to seven business days**.
+
+**4. Set the ticket to Escalated.** If it returns to Needs Response before the DD is done, move it back to Escalated and send the PM a short status update.
+
+The DD itself follows [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process). Post the conclusion on the WL ticket as an internal note with the DD ticket link and the WO link.
+
+## Step 6: Workshop the conclusion
 
 Before anything goes to the customer, submit your draft in `#ps-team-chat` using the **DD Conclusion Workshop** workflow. Write it with the [ACE framework](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE) and always reference the Guarantee and Refund Request Policy.
 
@@ -100,9 +122,9 @@ The outcome is one of:
 - **Approved:** the dispute is valid and a full or partial refund or credit is owed.
 - **Denied:** the invoice is valid and stands.
 
-## Step 6: If the dispute is approved (refund)
+## Step 7: If the dispute is approved (refund)
 
-1. Submit the **Invoice Dispute** workflow in `#work-order-payments` with the DD link, the dispute amount, both timestamps, the refund window (72 hours or 45 days) and whether the workmanship guarantee was voided. Put the DD findings in **Describe the issue**.
+1. Submit the **Invoice Dispute** workflow in `#work-order-payments` with the DD link, the WL ticket link, the dispute amount, both timestamps, the refund window (72 hours or 45 days) and whether the workmanship guarantee was voided. Put the DD findings in **Describe the issue**.
 2. **If Latchel is covering the cost** (a Latchel error or a one-time exception), tag **@Will Gordon** and **@Amrit Parajuli** for approval before you tell the PM.
 3. **Accounts Payable (Samantha Terreros)** acknowledges the post, works with the SP and processes the refund. She confirms in the thread. AP doesn't contact the PM.
 4. Tell the PM using ACE: the refund amount, the method, and the timeline (refunds can take up to 10 business days to show).
@@ -112,9 +134,10 @@ The outcome is one of:
   For a follow-up on a refund that's already in progress, reply in the existing `#work-order-payments` thread and tag @Samantha. Don't submit a new workflow.
 </Tip>
 
-## Step 7: If the dispute is denied (invoice stands)
+## Step 8: If the dispute is denied (invoice stands)
 
 1. Tell the PM using ACE: explain clearly why the invoice is valid and should be paid, based on the DD and the policy.
+2. Update the **Payment Issues and Disputes** task from Step 1: the dispute was denied and the invoice stands, so the hold can be released.
 2. Don't offer credits or exceptions outside the policy to end the conversation.
 3. Close the ticket as **Closed** once the PM has the decision, unless they push back.
 
@@ -144,7 +167,9 @@ Investigate every NOMAD owner dispute with the steps above first. Then follow [S
 
 | What | Where |
 | --- | --- |
+| Flag the dispute so Payments holds or is aware | WO → **Action → Create Task** → team **Payment Issues and Disputes** |
 | Open a DD on a disputed invoice | `#ps-dd-sddi` → **DD Request** (Type: Invoice Dispute) |
+| Acknowledge the PM | WL template **Submit DD** (up to seven business days) |
 | Review the conclusion before sending | `#ps-team-chat` → **DD Conclusion Workshop** |
 | Approved refund, or Latchel covering a cost | `#work-order-payments` → **Invoice Dispute** |
 | Follow-up on a refund in progress | Existing `#work-order-payments` thread, tag @Samantha |
