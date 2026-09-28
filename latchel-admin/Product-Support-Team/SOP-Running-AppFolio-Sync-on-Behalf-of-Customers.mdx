@@ -136,7 +136,7 @@ Add the PM to the [software login spreadsheet](https://docs.google.com/spreadshe
 
 #### Step 8 - Flag as Latchel-Managed
 
-1. Make sure the **Latchel-managed** setting is on for the PM's integration so Integration Health uses the right thresholds and DS picks it up in daily monitoring. If you can't change it, ask in `#integration-health`.
+1. On the PM's account profile → **Integrations** tab, turn on the **Latchel Managed** toggle and click **Save**. This tightens the sync health thresholds and routes stale syncs to Latchel instead of the PM, so DS picks it up in daily monitoring. Leave **Frequent Sync** as is unless it's needed.
 2. Post in `#integration-health` that Latchel is now running the sync for this PM.
 3. After the next dashboard check, confirm the PM's row shows **Managed by: Latchel** and fresh **Last data seen**.
 
