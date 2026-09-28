@@ -1,0 +1,82 @@
+---
+title: "Job Aid: On-Call URLs (Intake Outcome vs. Contact Rotation)"
+sidebarTitle: "Job Aid: On-Call URLs"
+description: "The same kind of on-call URL can drive automated on-call alerts or act as a call schedule for Ops. How to tell which one you're looking at, and what to check."
+groups:
+  - "latchel"
+---
+
+<Note>
+  **Who this is for:** Product Support associates working tickets about on-call alerts, escalation contacts or pre-dispatch contacts.
+
+  **Why it matters:** an on-call URL (`app.latchel.com/admin/on-call-rotations/...`) always points to a **Contact Rotation**. But the rotation can be used in two very different ways. Before you troubleshoot, work out which way *this* rotation is being used.
+</Note>
+
+## The two paths at a glance
+
+| | **Path 1: Contact On-Call intake outcome** | **Path 2: Contact rotation as a call schedule** |
+| --- | --- | --- |
+| **Where you see it** | As the **outcome** of an intake rule (**State: Contact On-Call**) in the PM's Intake Settings | In the **Emergency Escalation Contacts (EEC)** field or in a **Pre-Dispatch Instruction** |
+| **What it does** | Creates an **On-Call Alert** instead of a work order and **automatically pings** whoever is on call | Nothing automatic. It's a **schedule** Ops opens to see who to call, in what order, for the current day and time |
+| **Who acts** | The PM's in-house on-call tech (or backup) acknowledges the alert and contacts the resident | Ops associates call the contacts manually, following the layers in the rotation |
+| **Acknowledgment** | Required. If the tech doesn't acknowledge within the PM's SLA, it moves to the backup, then escalates to the PM's final escalation contacts by email | None. Ops follows the normal no-answer rules for EEC or pre-dispatch |
+| **Who can use it** | Only PMs with the **On-Call add-on** (property **Addon** field shows **On-Call**) | Any PM |
+| **Where to track it** | **On-Call Alerts** tab on the PM, portfolio, property or resident view (not in global search) | The work order, calls linked to the work order |
+
+Both paths use the same rotation features: layered schedules by day and time, and **absences** people can mark when they're unavailable.
+
+## Path 1: Contact On-Call intake outcome (automated alerts)
+
+This is intake and triage only. Latchel doesn't dispatch a vendor. The alert hands the issue to the PM's in-house team.
+
+1. Resident submits a request, and Harmonia matches it to an intake rule.
+2. If that rule's outcome is **Contact On-Call**, an **On-Call Alert** is created instead of a work order.
+3. The on-call tech for the current time block is alerted by SMS/phone and must **acknowledge**.
+4. No acknowledgment within the PM's SLA → the **backup** is alerted → still nothing → **Escalated** (the PM's final escalation contacts are emailed).
+5. Once acknowledged (**Successful**), the tech contacts the resident.
+
+**Alert statuses:** Alerting Vendor · Alerting Back-up · Escalated · Successful · Cancelled.
+
+<Warning>
+  **If any other outcome matches (Emergency, Urgent, Normal, etc.), a regular work order is created and no alert goes out**, even on an On-Call account. An emergency that "should have been an on-call alert" almost always means the rule's outcome is set to **Emergency** instead of **Contact On-Call**.
+</Warning>
+
+## Path 2: Contact rotation as a call schedule (EEC and pre-dispatch)
+
+Since April 2026, PMs with schedules in their EEC or pre-dispatch instructions use a contact rotation URL instead of a free-form contact list.
+
+- The rotation shows **who to call first and in what order**, based on day and time. It can be simple (one person) or complex (layers, business hours vs. after hours vs. weekends).
+- It can include PM users, EECs, service providers, or a mix.
+- It does **not** tell Ops to call anyone by itself. Ops only uses it once they've reached a step that requires a call (EEC for PD/EH, a pre-dispatch contact, an unresponsive resident, etc.).
+- People marked **absent** are skipped.
+
+Ops follows [Service Ops: How to Use Contact Rotations (EEC + Pre-Dispatch)](/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-How-to-Use-Contact-Rotations-EEC-Pre-Dispatch).
+
+## How to tell which one you're looking at
+
+1. **Find where the URL is referenced.**
+   - In an **intake rule outcome** → Path 1.
+   - In the **EEC field** or a **Pre-Dispatch Instruction** → Path 2.
+   - The same rotation can be used for both. Check each place separately.
+2. **Check the subscription.** No **On-Call** add-on means Path 1 isn't available, and any on-call URL is a schedule (Path 2).
+3. **Check what was created.** An **On-Call Alert** means Path 1 fired. A **work order** means it didn't, whatever the rotation says.
+
+## What to check on common tickets
+
+| **Ticket** | **Check** |
+| --- | --- |
+| "This should have been an on-call alert, but it came in as an Emergency WO" | The WO's **Intake Details → Outcome**: which rule matched, and is that rule's outcome **Contact On-Call** or **Emergency**? Also check Harmonia's reading of the resident's words and any temperature-based rules. |
+| "The on-call tech never got pinged" | The alert exists in **On-Call Alerts**, its status, the rotation attached to the rule, the current time block and any absences. |
+| "Ops couldn't reach anyone after hours" | Which rotation is linked in the **EEC** (portfolio-level vs. company-level), whether it's **Active**, and whether the after-hours time blocks actually have people in them. |
+| "Ops called the wrong person before dispatch" | The rotation linked in the **Pre-Dispatch Instruction**, the time block when Ops handled it, and whether the instruction says what to do if no one answers. |
+
+<Warning>
+  **Don't change a PM's intake rules or rotations to force one alert or call through.** Rule outcomes and rotations are the PM's decisions. Confirm the change with the PM in writing, and never flip a rule temporarily and "restore" it without the PM's decision on record.
+</Warning>
+
+## Related pages
+
+- [SOP: Pre-Dispatch Instructions & Critical Notes](/latchel-admin/Product-Support-Team/SOP-Pre-Dispatch-Instructions-Critical-Notes)
+- [Service Ops: How to Use Contact Rotations (EEC + Pre-Dispatch)](/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-How-to-Use-Contact-Rotations-EEC-Pre-Dispatch)
+- [Follow Up Guidelines for On-Call Customers](/latchel-admin/Service-Operations/Production-Documentation/Follow-Up-Guidelines-for-On-Call-Customers-app-latchel-com)
+- PM help guides: [Contact Rotation: Getting Started](/s/topic/0TO5e000000h9wqGAA/on-call-rotation-getting-started) · [Setting Up Absences](/s/topic/0TO5e000000h9wqGAA/setting-up-absences) · [Managing Intake Settings](/s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings)
