@@ -5,14 +5,45 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3057614850/Jo
 ---
 
 <Note>
-  This Job Aid is used to share the details of the top PM requested action sets. It will also to serve to share those that can be updated and changed based on the specific PM request.
+  This job aid covers what Action Sets are, how to request one, and the Action Sets PMs request most often. Use the list below to find an existing Action Set to model a new request after.
 </Note>
+
+### What is an Action Set?
+
+An **Action Set** is an automation we build for a specific PM when they need something that's different from our normal automations and standard process.
+
+Every Action Set needs three things:
+
+| **Part** | **What it means** | **Example** |
+| --- | --- | --- |
+| **Trigger** | The event that starts the automation. | A work order is created, scheduled or moves into a certain state. |
+| **Logic** | The conditions that must be true for it to run. | Emergency only, a specific portfolio, a specific problem type (like HVAC), or after X days. |
+| **Action** | What the automation does. | Sends a text or email, assigns a vendor, or changes the work order's state. |
+
+The most common requests fall into three groups:
+
+- **Notifications:** Send a specific text or email to an owner, PM or resident when something happens. For example, text the PM when an emergency work order is created or scheduled, or when an emergency gets "stuck."
+- **Vendor assignment:** Auto-assign a specific vendor for certain types of work orders, or stop auto-assigning one.
+- **Work order state changes:** Automatically move a work order into a different state based on logic. For example, auto-cancel after X days with no resident scheduling, or keep work orders in Pending for a specific portfolio.
+
+### Before you request an Action Set
+
+**Use the settings we already have first.** Action Sets are custom builds, so only request one when no existing setting can do what the PM needs. Check whether the request can be handled by:
+
+- **Intake Settings**, for how work orders are classified (emergency, urgent, normal, resident responsible). See [Managing Intake Settings](/s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings).
+- **Pre-Dispatch Instructions or Critical Notes.** See [SOP: Pre-Dispatch Instructions & Critical Notes](/latchel-admin/Product-Support-Team/SOP-Pre-Dispatch-Instructions-Critical-Notes).
+- **Recurring work orders**, for work that needs to happen on a schedule. See [How to Submit and Manage Recurring Work Orders](/s/topic/0TO5e000000h9wqGAA/how-to-submit-and-manage-recurring-work-orders).
+- **Contact rotations**, for who gets called or alerted. See [Job Aid: On-Call URLs](/latchel-admin/Product-Support-Team/Job-Aid-On-Call-URLs-Intake-Outcome-vs-Contact-Rotation).
+
+<Tip>
+  **The PM already has a similar Action Set?** It's often faster to add the PM, portfolio or property to an existing Action Set Group, or to exclude them from one, than to build something new. Say so in your request.
+</Tip>
 
 ### How to: Request New Action Sets
 
-1. Review the below table.
-2. Find the Action Set you would like model your request after.
-3. In the #pd_cn_actionset Slack Channel, fill out the Action Set Request workflow and submit:
+1. Review the list of Action Sets below.
+2. Find the Action Set you'd like to model your request after.
+3. In the `#pd_cn_actionset` Slack channel, fill out the **Action Set Request** workflow and submit:
 
 <Frame>
   ![Screenshot 2024-11-07 at 8.09.24 AM.png](/images/PST-94.png)
@@ -43,12 +74,22 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3057614850/Jo
 
 - **New Action Set Request:**
   - Share all the details for the new request, such as:
-    - Emergency WOs, Nonemergency WOs, Both
-    - Specific script/verbiage
-    - Who the notification should go to
-    - Email, SMS, Both
-    - State changes for the WO
-    - WO Problem(s)
+    - **Scope:** the whole company, or specific portfolio(s) or property(ies). Include the portfolio or property IDs.
+    - **Trigger:** what should start it (WO created, scheduled, moved to a certain state, etc.).
+    - Emergency WOs, non-emergency WOs, or both
+    - WO problem(s), if it only applies to certain problems (like HVAC)
+    - For notifications: who it goes to (with their phone number or email), email, SMS or both, and the exact script/verbiage
+    - For vendor assignment: the vendor's profile link
+    - For state changes: which state the WO should move to
+  - If there's no existing Action Set to model it after, enter **N/A** in the URL fields and describe the request in full.
+
+### What happens after you submit
+
+1. The request is reviewed in the Slack thread. If an existing setting (like Intake Settings or a recurring work order) is a better fit, we'll point you there instead.
+2. The Action Set is built as a draft, then reviewed before it's published and assigned to the PM, portfolio or property.
+3. You'll be tagged in the thread once it's live. Let the PM know it's set up.
+
+### Top PM Requested Action Sets
 
 <AccordionGroup>
   <Accordion title="Auto-Close Work Order (Unresponsive Resident)">
