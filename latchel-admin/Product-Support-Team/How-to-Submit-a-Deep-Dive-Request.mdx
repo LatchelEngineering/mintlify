@@ -5,65 +5,77 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3201728543/Ho
 ---
 
 <Note>
-  **Purpose**: A Deep Dive is a **detailed investigation conducted by the Product Support Team** to resolve complex or unresolved issues raised by property managers (PMs), residents, owners, or service providers. This SOP outlines **when and how to submit** a Deep Dive request to ensure issues are escalated efficiently and accurately.
+  **Purpose**: A Deep Dive (DD) is a **detailed investigation by the Product Support (PS) team** to resolve complex or unresolved issues raised by property managers (PMs), residents, owners, or service providers (SPs). This SOP covers **when and how to submit** a DD request so issues are escalated efficiently and accurately. For the full DD process, see [Product Support Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management).
 </Note>
 
 ### **1. When to Request a Deep Dive**
 
-Submit a Deep Dive request **only after**:
+Submit a DD request **only after**:
 
-- You’ve **fully investigated the issue** using available resources (e.g., work order history, PM settings, call recordings, message threads, etc.).
-- You’ve spent approximately **10–15 minutes attempting to resolve** the issue and it's clearly going to take longer.
+- You've **investigated the issue** using the resources available to you (e.g., work order history, PM settings, call recordings, message threads).
+- You've spent approximately **10–15 minutes** trying to resolve it and it's clearly going to take longer.
 
 <Note>
-  If the issue can be resolved within that timeframe, do **not** submit a Deep Dive. These are reserved for **complex issues requiring deeper analysis**.
+  If the issue can be resolved within that time, do **not** submit a DD. DDs are reserved for **complex issues that need deeper analysis**.
 </Note>
 
 ### **2. Common Reasons for a Deep Dive Request**
 
 - A customer is **unhappy with how a work order was handled**.
 - A PM, resident, or vendor reports **service delays or availability issues**.
-- A PM requests **clarification on Latchel’s actions**.
-- An agent acted **outside of Latchel’s policies**, and the cause is unclear (even without a complaint).
-- A resident submitted a **low work order review score**.
+- A PM asks **why Latchel did something** (e.g., severity, vendor assignment, who was or wasn't called).
+- An agent acted **outside of Latchel's policies**, and the cause is unclear (even without a complaint).
+- A PM or owner **disputes a work order invoice** (use the Invoice Dispute DD workflow).
+
+<Note>
+  Low work order review scores, CSAT, and Google Reviews go through **SDDI** tickets instead, which are created automatically. See [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets).
+</Note>
 
 ### **3. Common Deep Dive Requesters**
 
 | Role | Typical Scenario |
 | --- | --- |
-| Product Support Associates (PS) | Receiving complaints through Assembly tickets. |
-| Customer Success Managers (CSMs) | Escalations during PM calls, meetings, or Assembly ticket. |
-| Finance / Accounts Payable | Service provider complaints about payments or invoices. PMs disputing an invoice. |
+| Product Support Associates (PS) | Complaints received through Wavelength (WL) tickets. |
+| Customer Success Managers (CSMs) | Escalations during PM calls, meetings, or a WL ticket. |
+| Accounts Payable | A PM disputes an invoice with them (submitted as an **Invoice Dispute DD**). |
 | Service Operations Support / Coach | Unusual system behavior or unclear agent actions. |
 
-### **4. Preparing for a Deep Dive Request**
+### **4. Pick the Right Workflow**
 
-Before submitting a Deep Dive request, make sure you have:
+Both workflows are in the `#ps-dd-sddi` Slack channel.
 
-- A **clear and specific description** of the problem and any key questions. (If vague, ask the customer for clarification.)
-- **Relevant details** from the complainant — dates, times, names, contact info, and any context tied to Latchel interactions.
-- Your **initial investigation notes**, including findings and reviewed resources.
+| Workflow | Use it for | Don't use it for |
+| --- | --- | --- |
+| **DD Request** | Standard dives: the "why" questions (why wasn't this treated as an emergency, why was this SP assigned, why wasn't the on-call contact called, etc.). | Invoice disputes |
+| **Invoice Dispute DD** | Any disputed work order invoice. This is the **only** way to submit an invoice dispute dive. | Anything that isn't an invoice dispute |
+
+### **5. Prepare Before You Submit**
+
+Have these ready:
+
+- **One clear question** the DD should answer. If the customer's complaint is vague, ask them to clarify first.
+- **What you've already checked** and what you found, with dates and times.
+- **What the customer expected** to happen. The gap between that and what actually happened is what the DD explains.
+- **Any prior commitments** already made to the customer (credits, exceptions, callbacks) and links to related tickets.
+
+<Tip>
+  The form is a handoff, not the dive itself. You don't need to review settings, logs, or transcripts in depth. The specialist does that. Just share what you've found and what needs answering.
+</Tip>
 
 ---
 
-### **Step-by-Step Guide to Submit a Deep Dive Request:**
+### **Step-by-Step: Standard DD Request**
 
-#### **Initiate the Request in Slack**:
+#### **1. Open the workflow**
 
-1. Navigate to the `#ps-dd-sddi` Slack channel.
-2. Select the **“DD Request”** workflow.
-
-<Warning>
-  **Invoice disputes have their own workflow.** For a disputed WO invoice, use the **Invoice Dispute DD** workflow in `#ps-dd-sddi` instead, and follow [SOP: Handling Work Order Invoice Disputes](/latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes). The steps below are for standard dives.
-</Warning>
+1. Go to `#ps-dd-sddi` in Slack.
+2. Select the **DD Request** workflow.
 
 <Frame>
   ![image-20250929-214633.png](/images/PST-18.png)
 </Frame>
 
-#### **Complete the Deep Dive Workflow**:
-
-The form is a handoff, not the dive itself. Tell the specialist what you've found so far and what you need answered. They'll dig into the settings, logs and transcripts.
+#### **2. Complete the form**
 
 | Field | What to enter |
 | --- | --- |
@@ -74,14 +86,15 @@ The form is a handoff, not the dive itself. Tell the specialist what you've foun
 | **Who raised it?** | Who the answer is ultimately for (PM, owner, resident, SP, CSM, Ops, etc.) |
 | **What outcome is being questioned?** | The outcome the customer wants explained (e.g., severity, vendor assignment, who was or wasn't called) |
 | **What have you found so far in your research?** | What you checked and what you found. Include dates and times |
-| **What did the customer expect to happen?** | What the customer thought should have happened. The gap between this and what actually happened is what the DD explains |
+| **What did the customer expect to happen?** | What the customer thought should have happened |
 | **Prior commitments or related tickets?** | Anything already promised to the customer, and links to related tickets |
 | **What question should the DD answer?** | One clear "why" question, e.g., "Why was this classified as Normal instead of Emergency?" or "Why wasn't the on-call contact called?" |
 
-#### **Submit the Request**:
+#### **3. Submit**
 
-1. Once the form is completed, click **Submit**.
-2. The request will be posted in the Slack channel and **automatically generate a ticket** in the PS Deep Dive Tickets Teamspace in Wavelength (WL).
+1. Click **Submit**.
+2. The request posts in `#ps-dd-sddi` and **automatically creates a ticket** in the **PS Deep Dive Tickets** teamspace in WL.
+3. If you're working a WL ticket, paste the Slack link into it as an internal note and add the **DD Requested** tag.
 
 <Frame>
   ![image-20250917-220626.png](/images/PST-19.png)
@@ -89,8 +102,36 @@ The form is a handoff, not the dive itself. Tell the specialist what you've foun
 
 ---
 
+### **Step-by-Step: Invoice Dispute DD**
+
+<Warning>
+  Before submitting, complete the first steps of [SOP: Handling Work Order Invoice Disputes](/latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes): flag the dispute to Payments with a WO task, check the refund window against the policy, and check what's already on the WO. Disputes reported **more than 45 days** after the invoice date aren't eligible and don't need a DD.
+</Warning>
+
+1. In `#ps-dd-sddi`, select **Invoice Dispute DD** (not DD Request).
+2. Fill out the form. In addition to the company, CSM, WL, and WO links, it asks for:
+   - The **disputed amount** (attach the invoice in the thread)
+   - The **date/time the PM first reported the dispute** (the earliest time across calls, webchat, SMS, and email, not when the ticket reached PS)
+   - The **date/time the invoice was submitted**
+   - The **refund window** (within 72 hours / within 45 days / over 45 days)
+   - Whether the **invoice is paid**, and whether you **created a Payments task** on the WO
+   - **Prior commitments or related tickets**
+   - **What the PM is disputing and why**, **what initial review you've done**, and **the question the DD should answer**
+3. Submit, then paste the Slack link into the WL ticket as an internal note and add the **DD Requested** tag.
+4. Acknowledge the PM with the **Submit DD** template in WL (review can take up to seven business days).
+
+---
+
 ### **After Submission**
 
-Once the Deep Dive request is submitted, the assigned Product Support Specialist will review and thoroughly investigate the issue. You will receive updates and findings either through Assembly or in the same Slack thread where the request was originally posted.
+- A PS specialist picks up the DD, investigates, and posts updates and findings on the WL ticket or in the same Slack thread where you submitted it.
+- DDs have a **3-day completion SLA**.
+- **Stay engaged.** Answer follow-up questions quickly and watch the thread. DDs go fastest when requesters give clear context and stay involved.
+- **Before anything goes back to the customer**, the conclusion is reviewed through the **DD Conclusion Workshop** workflow in `#ps-team-chat` and written with the [ACE framework](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE). Don't share findings with the customer before that review.
 
-**It’s important to remain engaged throughout the process by responding to any follow-up questions and monitoring the progress to ensure the matter is resolved in a timely manner.** Deep Dive requests are most effective when requesters provide clear context and stay actively involved in the resolution process.
+### **Related Pages**
+
+- [Product Support Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management)
+- [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process)
+- [SOP: Handling Work Order Invoice Disputes](/latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes)
+- [DD Customer Conclusion Email Framework (ACE)](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE)
