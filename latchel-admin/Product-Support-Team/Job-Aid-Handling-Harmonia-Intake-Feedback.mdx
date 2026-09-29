@@ -1,0 +1,85 @@
+---
+title: "Job Aid: Handling Harmonia Intake Feedback"
+sidebarTitle: "Job Aid: Harmonia Intake Feedback"
+description: "What to do when Product tags @ps-support on intake feedback in #harmonia-feedback: review the intake, fix the PM's rules, test them and close the loop with the PM."
+---
+
+<Note>
+  **Who this is for:** Product Support associates handling intake feedback that lands in `#harmonia-feedback`.
+
+  **Why it matters:** PMs rate how Harmonia classified a work order with the **thumbs up / thumbs down** buttons next to **Intake Processing Details**. That feedback is how we catch rules that aren't working for the PM, and how Product finds gaps in Harmonia itself.
+</Note>
+
+## How feedback gets to PS
+
+1. A PM (or a Latchel team member) clicks **thumbs up** or **thumbs down** on a work order's intake details and adds a comment.
+   - If a PM sends intake feedback to us **by email** instead, submit it for them from the work order: open **Intake Details**, click thumbs up or down, and paste the PM's **exact** words.
+2. The feedback posts to `#harmonia-feedback` with a link to the **intake session**, the company, the user and their comment.
+3. **Product reviews it and routes it:**
+   - A rule or setup issue on the PM's account → Product tags **@ps-support** in the thread.
+   - An Ops handling issue → Product tags Ops leadership.
+   - A Harmonia issue (how it reads, asks or matches) → Product works on the fix. Product may also tag PS to update the rule in the meantime.
+
+<Tip>
+  **Thumbs up** feedback doesn't need any action. React to it so the team sees the win.
+</Tip>
+
+## When PS is tagged
+
+### 1. Claim it
+
+Reply in the thread so the team knows you've got it (for example, _"Will check this one"_).
+
+### 2. Review the intake session
+
+Open the **Source** link and review:
+
+- **What the resident actually said** in the conversation and their troubleshooting answers.
+- **Which rule matched**, and Harmonia's reasoning for it.
+- **Which rules were skipped**, and why they didn't apply.
+- **Which rule set the property uses.** Rules can be applied at the company, portfolio or property level, so check which rule set applied to this property. See [Configuration Inheritance](/s/topic/0TO5e000000h9wqGAA/Configuration-Inheritance-Property-Portfolio-Company-Level).
+
+### 3. Figure out what kind of problem it is
+
+| **What you find** | **What it means** | **What to do** |
+| --- | --- | --- |
+| A rule matched and did exactly what it says, but the PM wants a different outcome | The rule reflects an old or different preference | Confirm the scope with the PM first (see below), then update the rule. |
+| The rule is worded too narrowly, so a situation the PM clearly meant to include didn't match | The rule needs clearer or broader wording | Rewrite the rule, test it, then let the PM know what changed. |
+| No rule matched, so the request fell to the fallback outcome | The PM's rules have a gap | Add or broaden a rule, test it, then let the PM know. |
+| The rule is right, but Harmonia misread the conversation or didn't ask the right questions | A Harmonia issue | Post what you found in the thread. Product owns the fix. If a rule tweak helps in the meantime, make it and tell the PM we're also working on a fix. |
+| The issue is about how Ops handled the work order, or something outside intake (skills, scheduling, vendor assignment, merges) | Not an intake rule issue | Post what you found in the thread. Handle any PM follow-up with the right SOP. |
+
+<Warning>
+  **Confirm the scope before changing a PM's preference.** If the feedback could mean a change for one owner, one portfolio or the whole account, ask the PM which one they want. For a single owner or portfolio, duplicate the rule set, change the rule, and apply the copy only to those properties. Never change a rule to force one outcome and then change it back. See [Job Aid: On-Call URLs](/latchel-admin/Product-Support-Team/Job-Aid-On-Call-URLs-Intake-Outcome-vs-Contact-Rotation).
+</Warning>
+
+### 4. Update and test the rule
+
+1. Open the PM's rule set and edit the rule. See [Managing Intake Settings](/s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings).
+2. Use the [Rule Analyzer](/s/topic/0TO5e000000h9wqGAA/intake-settings-rule-analyzer) to check the rule as you write it.
+3. **Test it with a resident simulation** using the resident's wording from the original intake. Confirm the right rule matches and the outcome is what the PM wants.
+4. Test one or two situations the rule **shouldn't** catch, so the change doesn't pull in the wrong work orders.
+
+<Tip>
+  **Write rules the way Harmonia reads them.** Rule matching can be very literal. Describe the situation broadly (for example, _"there is an electrical issue"_) and then list the conditions, rather than naming one specific cause (_"the breaker needs to be reset"_).
+</Tip>
+
+### 5. Post what you did in the thread
+
+Reply in the `#harmonia-feedback` thread with:
+
+- What you found (which rule matched or didn't, and why)
+- The old and new rule wording
+- That you tested it, and the result
+
+### 6. Close the loop with the PM
+
+Email the PM to let them know what we found and what we changed. If Product is also working on a Harmonia fix, let the PM know that too. If you need the PM's decision (like the scope of a change), ask before you make the update.
+
+## Related pages
+
+- [Introduction to Intake Settings](/s/topic/0TO5e000000h9wqGAA/Introduction-to-Intake-Settings)
+- [Managing Intake Settings](/s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings)
+- [Intake Settings Rule Analyzer](/s/topic/0TO5e000000h9wqGAA/intake-settings-rule-analyzer)
+- [Work Order Processing with Intake Settings](/s/topic/0TO5e000000h9wqGAA/Work-Order-Processing-With-Intake-Settings)
+- [Job Aid: Slack Channels & Escalation Workflows](/latchel-admin/Product-Support-Team/Job-Aid-Slack-Channels-Escalation-Workflows)
