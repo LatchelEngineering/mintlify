@@ -1,56 +1,52 @@
 ---
 title: "How to Handle: Autopilot PM Explanation"
-groups: ["latchel"]
+groups:
+  - "latchel"
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3175710740/How+to+Handle+Autopilot+PM+Explanation"
 ---
 
 <Note>
-  Latchel Ops agents communicate consistently with Property Managers (PM) to coordinate work orders, provide updates, and outline the next steps. Our primary communication tool is the [Support Webchat](https://latchel.atlassian.net/wiki/x/PIAImw).
+  **When to use this:** An Autopilot PM asked Ops to take action on a work order for them (for example, call the resident until they respond, keep troubleshooting, or source another vendor), then got frustrated or ran into trouble with the self-service tools. Ops escalates it to PS, and PS explains how Autopilot works.
+
+  - **Post-onboarding PMs:** PS owns this.
+  - **PMs still in onboarding:** the CSM owns this. See [Product Support Team vs Customer Success Managers](/latchel-admin/Product-Support-Team/Product-Support-Team-vs-Customer-Success-Managers).
 </Note>
 
-<Warning>
-  When a Property Manager is on our Autopilot product and requests a Latchel Ops Agent to perform an action or update a work order, the Ops agent should do the following:
+## How Ops handles Autopilot PM requests
 
-  1. If the Property Manager (PM) reports an emergency or urgent issue:
-  2. Take immediate action.
-  3. Do NOT provide a help guide.
-  4. If the PM says they are blocked or have a limitation:
+Ops talks with PMs mostly through SMS and webchat. When an Autopilot PM asks Ops to take an action or update a work order, Ops follows these rules:
 
-  - Assist them directly—do not question their limitation or send a help guide.
-  - Take the necessary action on their behalf and document the action and reason.
+| **Situation** | **What Ops does** |
+| --- | --- |
+| The PM reports an **emergency or urgent** issue | Takes action right away. Doesn't send a help guide. |
+| The PM says they're **blocked** or have a limitation | Helps them directly and takes the action for them. Doesn't question the limitation or send a help guide. Documents the action and the reason. |
+| The PM is **unsure how to do it** (no blocker, not an emergency) | Sends the relevant help guide and offers to walk them through it. If there's no help guide, takes the action for them and requests a new help article. |
 
-  3. If the PM is simply unsure how to proceed (no blocker, not an emergency):
+If the PM is frustrated with this or has trouble with the self-service tools, Ops escalates to PS through the **PS Escalation** workflow in `#ps-escalation`, which creates a ticket in Wavelength.
 
-  - First, provide a relevant help guide and offer to walk them through the steps.
-  - If there is no help guide available, take action for them and submit a request to create a new help article.
+References: [How to: Handle SMS/Webchat Contacts (New Support Framework)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework) · [How to: Handle Autopilot WOs](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Autopilot-WOs) · [How to: Escalate to Product Support](/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
 
-  Reference: [How to: Handle SMS/Webchat Contacts (New Support Framework)](https://latchel.atlassian.net/wiki/x/IgBELQ) & [How to: Handle Autopilot WOs](https://latchel.atlassian.net/wiki/x/AYDNsg)
-</Warning>
+## Step-by-step guide
 
-If the Property Manager encounters any issues with self-service tools or grows frustrated on their service expectations, the Ops agents should [escalate the situation to Product Support](https://latchel.atlassian.net/wiki/x/JQCJW), which will create a ASM Ticket for resolution.
+<Tip>
+  This is an Ops escalation, so follow [SOP: Handling Ops Escalations](/latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations) for creating the PM email and closing the Ops ticket. The steps below cover what's specific to Autopilot.
+</Tip>
 
-### ASM Ticket Step-by-step Guide:
-
-1. Review the ticket details and the escalation summary from Ops.
-2. Navigate to the Latchel profile of the PM User in the escalation.
-3. **Review the chat transcript/call recording** to fully understand the:
-   1. Context
-   2. Tone of the conversation (e.g., frustration, confusion, satisfaction, etc.)
-   3. What action the PM was asking Ops to take, including the Help Guide Ops shared with them.
-
-<Warning>
-  If there are concerns about how our Ops Agent handled the conversation or if they failed to share the most relevant Help Guide, please submit the improvement opportunity through the Agent Feedback workflow to **#svc-ops-feedback**.
-</Warning>
-
-4. Send the **Autopilot Explanation template** to the PM user email.
+1. **Review the escalation.** Read the Escalation Summary from Ops and the work order activity.
+2. **Review the conversation.** Go to the PM user's Latchel profile and review the chat transcript or call recording to understand:
+   - The context
+   - The tone (frustration, confusion, etc.)
+   - What the PM asked Ops to do, and which help guide Ops shared
+3. **Flag any Ops concerns.** If Ops didn't handle the conversation well or didn't share the most relevant help guide, submit it through the **Agent Feedback** workflow in `#svc-ops-feedback`.
+4. **Email the PM.** In Wavelength, create a new email with **Escalation via Email** and insert the **Autopilot Explanation** template.
 
 <Frame>
-  ![Screenshot 2025-09-30 at 1.05.28 PM.png](/images/PST-2.png)
+  ![Screenshot 2025-09-30 at 1.05.28 PM.png](/images/PST-2.png)
 </Frame>
 
-5. Once the template has been inserted into the Ticket draft, fill out CONTEXT area with the relevant information based on the webchat conversation.
-6. Send the email.
+5. **Fill in the CONTEXT section** of the template with the details from the PM's conversation with Ops.
+6. **Send the email.** Then update Ops and close the Ops escalation ticket per [SOP: Handling Ops Escalations](/latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations).
 
 <Warning>
-  If the PM pushes back on this response and becomes irate/frustrated, [PS should escalate ASM to the CSM](https://latchel.atlassian.net/wiki/x/VoDpnQ) to handle from there.
+  **If the PM pushes back and gets frustrated**, escalate the ticket to the CSM with the **New Escalation from PS** workflow in `#csm-escalations`. See [SOP: Escalating Tickets to the CSM](/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM).
 </Warning>
