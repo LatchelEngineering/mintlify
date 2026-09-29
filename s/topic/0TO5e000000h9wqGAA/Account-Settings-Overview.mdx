@@ -1,6 +1,6 @@
 ---
 title: "Account Settings"
-description: "Welcome to the Account Settings Help Guides! This section provides step-by-step instructions for managing key settings in Latchel, ensuring your account is configured to meet your property management needs. Whether you need to add properties and residents, adjust severity and responsibility settings, or customize service provider prioritization, these guides will help you navigate and optimize your account settings with ease.  Explore the articles below to learn how to efficiently configure and manage your account!"
+description: "Welcome to the Account Settings Help Guides! This section provides step-by-step instructions for managing key settings in Latchel, ensuring your account is configured to meet your property management needs. Whether you need to add properties and residents, set up your intake rules, or customize service provider prioritization, these guides will help you navigate and optimize your account settings with ease. Explore the articles below to learn how to efficiently configure and manage your account!"
 sidebarTitle: "Overview"
 ---
 
@@ -44,32 +44,38 @@ sidebarTitle: "Overview"
   Adjust the budget threshold that triggers approval requirements on work orders.
 </Card>
 
-### **Emergency Temperature Settings**
-
-<CardGroup cols={2}>
-  <Card title="How Emergency Temperature and Severity Settings Work Together" icon="temperature-full" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/How-Emergency-Temperature-and-Severity-Settings-Work-Together">
-    Understand how temp thresholds and severity levels combine for emergency decisions.
-  </Card>
-
-  <Card title="How to Add Emergency Temperature Thresholds" icon="temperature-list" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/How-to-Add-Emergency-Temperature-Thresholds">
-    Set temperature ranges that trigger emergency classifications.
-  </Card>
-</CardGroup>
-
 ### **Non-Emergency Scheduling**
 
 <Card title="Set Up Non-Emergency Schedule" color="#ff9b8a" icon="calendar-xmark" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/Set-Up-Non-Emergency-Schedule">
   Define your team’s availability hours for handling non-urgent work orders.
 </Card>
 
-### **Severity and Responsibility Settings**
+### **Intake Settings**
+
+<Note>
+  Intake Settings replaced Severity and Responsibility Settings and Emergency Temperature Settings. You now set your own plain-language rules for what counts as an emergency, a non-emergency, or a work order that needs your approval.
+</Note>
+
+<CardGroup cols={1}>
+  <Card title="Introduction to Intake Settings" icon="gear-complex-code" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/Introduction-to-Intake-Settings">
+    Learn how Intake Settings control how your work orders are classified and routed.
+  </Card>
+</CardGroup>
 
 <CardGroup cols={2}>
-  <Card title="Managing Severity and Responsibility Settings" icon="route-highway" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/Managing-Severity-and-Responsibility-Settings">
-    Edit default rules for how issues are categorized and who’s responsible.
+  <Card title="Managing Intake Settings" color="#ff9b8a" icon="arrows-to-line" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings">
+    Create and edit rules for your work orders to match your team's preferences.
   </Card>
 
-  <Card title="How to Edit Existing Severity and Responsibility Preset" icon="arrow-down-a-z" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/How-to-Edit-Existing-Severity-and-Responsibility-Preset">
-    Update preset rules to better match your team’s maintenance preferences.
+  <Card title="Intake Settings Rule Analyzer" color="#ff9b8a" icon="head-side-brain" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/intake-settings-rule-analyzer">
+    Write clearer intake rules and test them with a simulated resident conversation.
+  </Card>
+
+  <Card title="How Emergency Temperature Works with Intake Settings" color="#ff9b8a" icon="temperature-sun" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/How-Emergency-Temperature-Works-with-Intake-Settings">
+    Set rules for when heating or cooling issues count as emergencies.
+  </Card>
+
+  <Card title="Work Order Processing with Intake Settings" color="#ff9b8a" icon="list-check" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/Work-Order-Processing-With-Intake-Settings">
+    See how your intake rules are applied when a work order comes in.
   </Card>
 </CardGroup>
