@@ -1,0 +1,133 @@
+---
+title: "SOP: Handling Email Delivery Issues (SendGrid)"
+sidebarTitle: "SOP: Email Delivery Issues (SendGrid)"
+description: "What to do when a PM, resident, service provider or owner says they aren't getting emails from Latchel: check their Latchel settings, check SendGrid, clear suppressions, and escalate to the email provider when the block is on their side."
+---
+
+<Note>
+  **Who this is for:** Product Support associates handling any ticket where someone says they aren't getting emails from Latchel.
+
+  **What it covers:** Every email the Latchel platform sends, to **any user type** (PMs, residents, service providers and owners). For example: password resets, work order and job notifications, invoice notifications, owner updates and estimate or approval requests.
+
+  **SMS instead of email?** Use [Job Aid: Searching and Analyzing Messaging Logs in Twilio](/latchel-admin/Product-Support-Team/Job-Aid-Searching-and-Analyzing-Messaging-Logs-in-Twilio).
+</Note>
+
+## How Latchel emails are sent
+
+Latchel sends platform emails through **SendGrid**. SendGrid keeps a log of every email (delivered, bounced, blocked, dropped or deferred) and keeps **suppression lists** of addresses it will stop sending to. When someone says they never got an email, the answer is almost always in one of three places:
+
+1. **Latchel:** the email was never sent (wrong address, no user, or the notification is turned off).
+2. **SendGrid:** the email was sent but SendGrid suppressed it or it bounced.
+3. **The recipient's side:** SendGrid delivered it, but their inbox, company filter or email provider (like AT&T or Yahoo) blocked or filtered it.
+
+Work through them in that order.
+
+## Step 1. Gather the details
+
+Ask for, or confirm from the ticket:
+
+- The **exact email address** they expect emails at.
+- **Which email** they're missing (password reset, job notification, invoice notification, etc.) and roughly **when** it should have come.
+- Whether they're getting **any** Latchel emails, or if it's just one type.
+- That they've checked **spam, junk and other folders**, plus any **filters, rules or blocklists** in their email account.
+
+## Step 2. Check Latchel first
+
+1. **Confirm the user exists** in Latchel and the email on their profile matches the address they gave you. A missing user or a typo in the address means nothing was ever sent.
+   - If there's no user, confirm with the right people whether a user can be created (for example, the PM for a resident or a new PM user).
+2. **Check the user's contact settings** on their profile. Make sure email is turned on for the type of notification they're missing.
+3. **Check the account-level setting** if it applies. For example, invoice notifications are set in the PM's **Maintenance Communication Settings**, and job alerts go to the members of a **User Group**.
+
+<Tip>
+  If a setting was off, turn it on (or ask the PM to, if it's their setting), then have Latchel send the email again, for example with a new password reset. Confirm they got it before you move on.
+</Tip>
+
+## Step 3. Check SendGrid
+
+1. Log in to **SendGrid** and open **Activity**.
+2. Search for the **email address**.
+3. Find the email they're missing and note its **status** and **reason**.
+
+| **SendGrid status** | **What it means** | **What to do** |
+| --- | --- | --- |
+| **Delivered** | Their email server accepted it. | The problem is on their side. Go to [Step 5](#step-5-delivered-but-not-received-ask-them-to-whitelist-latchel). |
+| **Bounced** | Their server rejected it (bad address, full mailbox, or a block). | Check the reason in **Suppressions → Bounces** (Step 4). |
+| **Blocked** | Their email provider refused it, often because of our sending IP. | Check **Suppressions → Blocks** (Step 4). If the provider is blocking our IP, go to [Step 6](#step-6-escalate-to-the-email-provider-isp-outreach). |
+| **Dropped** | SendGrid didn't send it because the address is on a suppression list. | Check the suppression lists (Step 4). |
+| **Deferred** | Their server asked SendGrid to try again later. | Usually temporary. Check again later. If it keeps deferring, treat it like a block. |
+| **No record at all** | Latchel never sent it. | Go back to Step 2. If Latchel settings look right, submit a bug report. |
+
+## Step 4. Check the suppression lists
+
+In SendGrid, go to **Suppressions** and search for the email address in each list:
+
+| **List** | **What it means** | **What to do** |
+| --- | --- | --- |
+| **Bounces** | A past email bounced, so SendGrid stopped sending. The entry shows why it bounced. | Fix the cause first (for example, a typo or a full mailbox). Then remove the address from the list. |
+| **Global Unsubscribes** | The recipient unsubscribed from **all** Latchel emails. | Only remove it if the person confirms they want Latchel emails again. Note their confirmation on the ticket. |
+| **Blocks** | Their email provider blocked a past email. The entry shows the provider's error message. | Remove the address from the list. If the error shows the provider is blocking our IP, also go to Step 6. |
+| **Spam Reports** | The recipient marked a Latchel email as spam. | Only remove it if the person confirms they want Latchel emails again. Ask them to mark Latchel as "not spam" too. |
+
+<Warning>
+  **You need SendGrid write access to remove an address from a suppression list.** If you don't have it, post in `#product` and tag **Ben Heller** with the email address and which list it's on. See also [Job-Aid: SendGrid Training – Unblocking Bounced Emails](/latchel-admin/Customer-Success-Team/job-aid-send-grid-training-unblocking-bounced-emails).
+</Warning>
+
+After you remove an address, have Latchel send the email again and confirm it arrived.
+
+## Step 5. Delivered but not received: ask them to whitelist Latchel
+
+If SendGrid shows **Delivered** and nothing is wrong on our end, the email is being filtered on their side. Ask them to whitelist the **@latchel.com** domain. If their email is managed by a company IT team, send them these steps for their admin:
+
+| **Google Workspace (Admin Console)** | **Microsoft 365 (Exchange Online)** |
+| --- | --- |
+| <ol><li>Go to [admin.google.com](https://admin.google.com/).</li><li>Go to **Apps → Google Workspace → Gmail → Spam, Phishing and Malware**.</li><li>Find **Email allowlist** or **Bypass spam filters for messages received from addresses or domains**.</li><li>Add **latchel.com**.</li><li>Save.</li></ol> | <ol><li>Go to [security.microsoft.com](https://security.microsoft.com/).</li><li>Go to **Policies & Rules → Threat policies → Anti-spam**.</li><li>Edit the default spam filter policy.</li><li>Under **Allow lists**, add **latchel.com** to Allowed domains (or the specific addresses to Allowed senders).</li><li>Save the policy.</li></ol> |
+
+Once they've whitelisted Latchel, have Latchel send the email again and confirm it arrived. If they've whitelisted us, unblocked us and still aren't getting anything, review the SendGrid log again for a block at the provider level.
+
+## Step 6. Escalate to the email provider (ISP outreach)
+
+Use this when SendGrid shows the recipient's **email provider** (not the person) is blocking Latchel. You'll usually see this with consumer providers like AT&T, Yahoo or Comcast.
+
+1. **Get the details from SendGrid:**
+   - The **blocked IP** (for example, `149.72.120.244`)
+   - The **full error message** (for example, `553 5.3.0 flph833 DNSBL: RBL 521 <149.72.120.244> is blocked`)
+2. **Email the provider's abuse or postmaster team** (for example, abuse@att.net) using the template below.
+3. **If they reply asking for more detail,** send the blocked IP, the full error message, our domains and sending addresses, and confirm we follow email best practices (SPF, DKIM, DMARC and unsubscribe policies).
+4. **AT&T and Yahoo:** they may send you to the Yahoo Postmaster. Fill out the form at [help.yahoo.com/kb/postmaster](https://help.yahoo.com/kb/postmaster) with the SendGrid IP, our domain and a summary. Their sender best practices are at [senders.yahooinc.com/best-practices](https://senders.yahooinc.com/best-practices/).
+5. While you wait, let the customer know we've asked their email provider to unblock us. If they have a different email address (like Gmail), offer to update their profile to that address in the meantime.
+
+<Accordion title="Template: Email to the email provider">
+  **Subject:** Request for IP removal from blocklist
+
+  Hello [Provider] team,
+
+  We're requesting help unblocking an IP that Latchel uses to send transactional emails to our users.
+
+  **Blocked IP:** [IP from SendGrid]
+  **Error message:** [full error from SendGrid]
+  **Domain:** latchel.com
+  **Sending addresses:** scheduler@latchel.com, team@latchel.com, noreply@latchel.com
+  **Affected recipient:** [customer's email address]
+
+  These are transactional, account-related emails (such as password resets and maintenance updates) that the recipient needs to receive. We follow email best practices, including SPF, DKIM and DMARC.
+
+  Please let us know of any next steps or if you need more information.
+
+  Thank you,
+  [Your name]
+  Latchel Product Support
+</Accordion>
+
+## Step 7. Confirm and close
+
+1. **Test delivery.** Have Latchel send the email again (for example, a password reset) and confirm with the customer that it arrived.
+2. **Document it on the ticket** as an internal note: what you found (status and reason in SendGrid), what you changed (setting turned on, suppression removed, whitelist, ISP request) and the result.
+3. **Flag repeat issues.** If the same provider or IP keeps blocking us, post it in `#bug-report` so Product can look at our sending setup.
+4. Close the ticket. See [SOP: Closing Tickets](/latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support).
+
+## Related pages
+
+- [Job Aid: Searching and Analyzing Messaging Logs in Twilio](/latchel-admin/Product-Support-Team/Job-Aid-Searching-and-Analyzing-Messaging-Logs-in-Twilio)
+- [Job-Aid: SendGrid Training – Unblocking Bounced Emails](/latchel-admin/Customer-Success-Team/job-aid-send-grid-training-unblocking-bounced-emails)
+- [Job Aid: Handling User Login Issues](/latchel-admin/Product-Support-Team/Job-Aid-Handling-User-Login-Issues)
+- [SOP: Handling SP Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-Service-Provider-SP-Cases)

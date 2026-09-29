@@ -1222,6 +1222,7 @@
                           "latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request",
                           "latchel-admin/Product-Support-Team/How-to-Request-a-Deep-Dive-Investigation",
                           "latchel-admin/Product-Support-Team/Job-Aid-Searching-and-Analyzing-Messaging-Logs-in-Twilio",
+                          "latchel-admin/Product-Support-Team/SOP-Handling-Email-Delivery-Issues-SendGrid",
                           {
                             "group": "Job Aid: SDDI Tickets",
                             "pages": [
