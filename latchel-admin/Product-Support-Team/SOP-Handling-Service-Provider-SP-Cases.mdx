@@ -1,83 +1,124 @@
 ---
-title: "SOP: Handling Service Provider (SP) Cases"
-groups: ["latchel"]
+title: "SOP: Handling Service Provider (SP) Tickets"
+groups:
+  - "latchel"
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3198582800/SOP+Handling+Service+Provider+SP+Cases"
 ---
 
 <Note>
-  This procedure provides guidance on managing cases related to service providers associated with a Property Manager (PM) and/or enrolled in our Latchel Contractor Network (LCN).
+  This SOP covers tickets from or about service providers (SPs): payments, skills, training, opting out, preferred status, joining the LCN, feature requests and email problems.
 </Note>
 
-#### Responsibilities:
+### Who handles what
 
-- **Ops Agents** are primarily responsible for communication with service providers, using Help Guides and specialized scripts for common scenarios. See this resource: [Help Center Reference Guide](https://help.latchel.com/Help-Center-Reference-Guide)
-- **Escalation to Product Support** occurs if the SP becomes extremely irate or frustrated.
+- **Ops agents** handle most day-to-day communication with SPs, using help guides and scripts for common scenarios. See the [Help Center Reference Guide](/latchel-admin/Service-Operations/Production-Documentation/Help-Center-Reference-Guide) and [PS Team vs Ops Agents](/latchel-admin/Product-Support-Team/product-support-team-vs-ops-agent).
+- **Ops escalates to PS** when the SP is very frustrated or the request needs PS (payments, account changes, opt-outs). See [SOP: Handling Ops Escalations](/latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations).
+- **LCN and LVN escalations** have their own SOPs: [SOP: How to Handle LCN SPs Escalations](/latchel-admin/Product-Support-Team/SOP-How-to-Handle-LCN-SPs-Escalations) and [SOP: How to Handle LVN Escalations](/latchel-admin/Product-Support-Team/SOP-How-to-Handle-LVN-Escalations).
 
-### Payment Issues
+### Start here: what type of SP is it?
 
-For All Scenarios,
+Most SP tickets are handled differently depending on the SP's type **on that work order**. Open the work order and check whether the SP is:
 
-1. Navigate to the Work Order (WO): Locate the WO in question.
-2. **Identify SP Type:** Determine if the SP is Preferred, LCN, or LVN for that WO.
-3. Based on what kind of SP it is, follow the below:
+| **Type** | **What it means** |
+| --- | --- |
+| **Preferred** | A vendor the PM added and prioritizes themselves. The PM owns the relationship, so most changes go through the PM. |
+| **LCN** (Latchel Contractor Network) | Like a yellow pages: anyone who signs up and wants jobs. Latchel doesn't manage licensing or vet these vendors. |
+| **LVN** (Latchel Vendor Network) | Latchel's national vendor partners. Their work is backed by the workmanship guarantee in our refund policy. Escalations go to `#lvn-war-room`. |
 
-#### Scenario 1: Payment is Delayed.
+## Payment issues
+
+For all payment tickets:
+
+1. Open the work order.
+2. Check the SP type on that work order (Preferred, LCN or LVN).
+3. Follow the scenario below.
+
+<Warning>
+  **Don't share payment status with the SP yourself** if it's unpaid or pending. Send it to Finance through the **Payment Inquiry** workflow in `#work-order-payments` and include the work order link.
+</Warning>
+
+### Scenario 1: Payment is delayed
 
 | **Preferred SPs** | **LCN \| LVN SPs** |
 | --- | --- |
-| Access the Property Manager’s (PM) Company Profile and open the Payments tab. <ol><li>Scroll to the Payment Settings box.</li><li>Check the status of "Preferred Service Provider Payments." <ol><li>**If ON:** Forward the escalation to team@latchel with "ATTN TO: SAM with FINANCE" and request payment processing.</li><li>**If OFF:** Notify the PM via email that their preferred SP seeks payment for the WO</li></ol></li></ol> | 1. Forward the escalation to team@latchel with "ATTN TO: SAM with FINANCE" and request payment processing.<br /> |
+| Open the PM's company profile and go to the **Payments** tab. In the **Payment Settings** box, check **Preferred Service Provider Payments**. <ul><li>**If ON:** Submit the **Payment Inquiry** workflow in `#work-order-payments` with the work order link and ask Finance to process the payment.</li><li>**If OFF:** Latchel doesn't pay this SP. Email the PM to let them know their preferred SP is asking for payment on the work order.</li></ul> | Submit the **Payment Inquiry** workflow in `#work-order-payments` with the work order link and ask Finance to process the payment. |
 
-#### Scenario 2: No Payment Due to Over-Budget Invoice (Not Approved)
+### Scenario 2: No payment because the invoice went over the approved budget
 
 | **Preferred SPs** | **LCN \| LVN SPs** |
 | --- | --- |
-| <ol><li>Access the PM Company Profile in Latchel, open the Payments tab, and verify payment status. <ol><li>**If ON** → Forward the escalation to team@latchel with “ATTN TO: SAM with FINANCE” for payment processing **up to the approved budget.** <ul><li>Any balance disputes with the SP will be managed by finance.</li></ul></li><li>**If OFF** → Notify the PM via email that the SP is seeking payment. <ol><li>As this is their preferred SP, any invoice negotiation for going over budget without approval should be done between the PM and SP.</li></ol></li></ol></li></ol> | <ol><li>Forward the escalation to team@latchel with “ATTN TO: SAM with FINANCE” for payment processing **up to the approved budget.** <ul><li>Any balance disputes with the SP will be managed by finance.</li></ul></li></ol> For **LVN** **SPs**: <ol><li>Document the details, high-level timeline, the approved budget, and the invoice amount.</li><li>Post this information in #lvn-war-room tagging @lvn-escalations.</li></ol> |
+| Check **Preferred Service Provider Payments** on the PM's **Payments** tab. <ul><li>**If ON:** Submit the **Payment Inquiry** workflow in `#work-order-payments` for payment **up to the approved budget**. Finance handles any dispute over the balance.</li><li>**If OFF:** Email the PM that the SP is asking for payment. Because it's their preferred SP, any negotiation over going past the budget without approval is between the PM and the SP.</li></ul> | **LCN:** Submit the **Payment Inquiry** workflow in `#work-order-payments` for payment **up to the approved budget**. Finance handles any dispute over the balance. <br /><br />**LVN:** Document the details, a high-level timeline, the approved budget and the invoice amount. Post it in `#lvn-war-room` and tag `@lvn-escalations`. |
 
-#### Scenario 3: Setting Up Direct Deposit Payment
+### Scenario 3: Setting up direct deposit
 
-- All SPs can set up direct deposit. PS can email SPs directly with a link to the [Help Guide](https://help.latchel.com/s/article/How-can-a-Service-Provider-Add-Their-Bank-Account-Information).
+Any SP can set up direct deposit themselves. Email them the help guide: [How can a Service Provider Add Their Bank Account Information](/s/topic/0TO5e000000h9wpGAA/How-can-a-Service-Provider-Add-Their-Bank-Account-Information).
 
-### Feature Request
-
-1. When a feature request is received from an SP, email the **SP Feature Request Template in Assembly**.
-2. Once all details are gathered, submit the request via the Feature Request workflow in the #feature-requests Slack channel.
-3. Communicate submission confirmation to the SP, then close the case.
-
-### Update Assigned Skills
+## Updating assigned skills
 
 <Note>
-  A service providers assigned skills correlates to the type of WOs they offered. It directly reflect the trades/work the service provider **can** complete.
+  An SP's skills decide which work orders they're offered. They should match the trades the SP **can** do.
 </Note>
 
-| **Preferred** | **LCN \| LVN** |
+| **Preferred SPs** | **LCN \| LVN SPs** |
 | --- | --- |
-| <ol><li>Review the request - Is the request to **add** or **remove** a skill?</li><li>Navigate to the SP Profile.</li><li>Under the Details tab, review the Skill box for current skills assigned.</li><li>Determine, based on the SP request, if the skill needs be **removed** or **added.**</li><li>Notify the PM of this update needed and share the following help guide to assist: [<u>How to Edit Service Provider Skills</u>](https://help.latchel.com/s/article/How-to-Edit-Service-Provider-Skills "https://help.latchel.com/s/article/How-to-Edit-Service-Provider-Skills")</li><li>If PM is unable to update, PS may perform the update on their behalf.</li></ol> | Ops Agents can take care of this directly. See: [Product Support Team vs Ops Agents](https://latchel.atlassian.net/wiki/x/AQB1sQ) If the case is received <u>by the Ops Team</u>: <ol><li>Reply by to Ops at [<u>team@latchel.com</u>](mailto:team@latchel.com "mailto:team@latchel.com") and request for them to make this update in Latchel.</li><li>PS can refer to [<u>this SOP</u>](https://latchel.atlassian.net/wiki/spaces/SR/pages/2977234945 "https://latchel.atlassian.net/wiki/spaces/SR/pages/2977234945").</li></ol> If the case is received <u>directly by the SP</u>: <ol><li>Forward the email to Ops at [<u>team@latchel.com</u>](mailto:team@latchel.com "mailto:team@latchel.com") and CC the SP.</li><li>Request for Ops to make this update in Latchel.</li></ol> |
+| <ol><li>Confirm whether the SP wants a skill **added** or **removed**.</li><li>Open the SP's profile and review the **Skills** box on the **Details** tab.</li><li>Let the PM know the update is needed and send them [How to Edit Service Provider Skills](/s/topic/0TO5e000000h9wqGAA/How-to-Edit-Service-Provider-Skills).</li><li>If the PM can't make the update, PS can make it for them.</li></ol> | Ops agents handle this. Reassign the ticket to the **Operations Team Email** teamspace in Wavelength. |
 
-### Training Request
+## Training requests
 
 | **Preferred SPs** | **LCN \| LVN SPs** |
 | --- | --- |
-| <ol><li>Notify the Preferred PM that their SP needs some training and assistance in using the platform. <ol><li>Provide relevant resources such as [<u>Top Service Provider Articles</u>](https://help.latchel.com/s/topic/0TO5e000000h9wpGAA/top-service-provider-articles "https://help.latchel.com/s/topic/0TO5e000000h9wpGAA/top-service-provider-articles") and [<u>Latchel Assets</u>](https://latchel.com/latchel-assets/ "https://latchel.com/latchel-assets/").</li></ol></li><li>If the PM pushes back, send the below template (adjust as needed based on the convo):</li></ol> “Hi \[PM NAME\], Before we proceed, I wanted to share the ready-to-use email template we created for your preferred service provider. This template includes relevant help guides and outlines communication expectations to support the training needs for your provider. <ul><li>You can download the “**Vendor Notification Template**” on [<u>this</u>](https://latchel.com/latchel-assets/ "https://latchel.com/latchel-assets/") page</li></ul> Is there anything we could improve to make this training asset more effective? If you need further assistance, please feel free to reach out.” <ol><li>If the PM continues to push back, request approval from the PM to share the info directly with the SP.</li><li>Share the relevant info, help guides, assets, etc. with the PM.</li></ol> | <ol><li>Provide relevant resources such as [<u>Top Service Provider Articles</u>](https://help.latchel.com/s/topic/0TO5e000000h9wpGAA/top-service-provider-articles "https://help.latchel.com/s/topic/0TO5e000000h9wpGAA/top-service-provider-articles").</li></ol> If the shared Help Guide(s) does **not** help with SP request, PS should: <ol><li>Try impersonating the SP in Latchel to assist with question.</li><li>Create a loom video and/or detailed email (with screenshots) detailing the steps to assist the SP.</li><li>Submit for a New Help Guide in #help-guide-requests to assist SPs going forward.</li><li>Close the loop with the SP upon confirmation of understanding/completion.</li></ol> |
+| <ol><li>Let the PM know their SP needs help using the platform, and share resources like [Service Provider Help Guides](/s/topic/0TO5e000000h9wpGAA/service-provider-help-guides) and [Latchel Assets](https://latchel.com/latchel-assets/).</li><li>If the PM pushes back, send the message below (adjust it to the conversation).</li><li>If the PM still pushes back, ask for their OK to share the information with the SP directly. Then send the SP the relevant help guides and assets.</li></ol> | <ol><li>Send the SP the relevant [Service Provider Help Guides](/s/topic/0TO5e000000h9wpGAA/service-provider-help-guides).</li><li>If the help guides don't answer their question:<ul><li>Impersonate the SP in Latchel to see what they see.</li><li>Send a Loom or a detailed email with screenshots walking them through the steps.</li><li>Request a new help guide in `#help-guide-requests` so future SPs have one.</li></ul></li><li>Close the loop once the SP confirms they're all set.</li></ol> |
 
-### Complete Opt-Out of Latchel:
+<Accordion title="Message to the PM when they push back on training their SP">
+  Hi [PM name],
+
+  Before we proceed, I wanted to share the ready-to-use email template we created for your preferred service providers. It includes the relevant help guides and lays out communication expectations, so it should cover your provider's training needs.
+
+  You can download the **Vendor Notification Template** from our [Latchel Assets](https://latchel.com/latchel-assets/) page.
+
+  Is there anything we could improve to make this more helpful? If you need anything else, just let us know.
+</Accordion>
+
+## Opting out of Latchel completely
 
 | **Preferred SPs** | **LCN \| LVN SPs** |
 | --- | --- |
-| <ol><li>Notify the PM that their SP requests to opt-out and await further instructions on how to proceed. <ol><li>If approved, disable the SP account after obtaining SP feedback. <ul><li>Share feedback in the #product Slack channel and close the loop with the SP.</li></ul></li><li>If not approved, request the PM to address this with their preferred SP.</li></ol></li></ol> | <ol><li>Gather feedback by sending the **SP Request to Opt Out Template in Assembly.**</li><li>Follow the [<u>Follow-Up Procedure</u>](/latchel-admin/Product-Support-Team/SOP-Managing-Unresponsive-Property-Managers-in-Case-Management "/latchel-admin/Product-Support-Team/SOP-Managing-Unresponsive-Property-Managers-in-Case-Management").</li><li>If/When Feedback is gathered, PS should share that feedback in the #product Slack Channel.</li><li>Close the loop with the SP.</li><li>Disable the SP account.</li></ol> |
+| <ol><li>Let the PM know their SP wants to opt out, and wait for their direction.</li><li>**If the PM approves:** ask the SP for their feedback, then disable the SP account. Share the feedback in `#product` and close the loop with the SP.</li><li>**If the PM doesn't approve:** ask the PM to work it out with their SP.</li></ol> | <ol><li>Email the SP to ask why they want to opt out.</li><li>If they don't reply, follow up using [SOP: Managing Unresponsive Property Managers](/latchel-admin/Product-Support-Team/SOP-Managing-Unresponsive-Property-Managers-in-Case-Management).</li><li>Share any feedback you get in `#product`.</li><li>Close the loop with the SP, then disable the SP account.</li></ol> |
 
-### Opt-Out of Specific PM Company:
+## Opting out of a specific PM company
 
 | **Preferred SPs** | **LCN \| LVN SPs** |
 | --- | --- |
-| <ul><li>Follow the same notification and approval process for opting out of Latchel for Preferred SPs (above).</li></ul> | <ol><li>PS should obtain feedback from the SP on why they would no longer like to receive WOs for a specific PM.</li><li>Follow the [<u>Follow-Up Procedure</u>](/latchel-admin/Product-Support-Team/SOP-Managing-Unresponsive-Property-Managers-in-Case-Management "/latchel-admin/Product-Support-Team/SOP-Managing-Unresponsive-Property-Managers-in-Case-Management").</li><li>Provide guidance on how SPs can reject WOs from specific PMs. [Message from New Help Guide Request in #help-guide-requests](https://latchel.slack.com/archives/C04B3PNJ24V/p1730743338314709)</li><li>Close the loop with the SP.</li></ol> |
+| Follow the same steps as opting out of Latchel completely (above). | <ol><li>Ask the SP why they no longer want work orders from that PM.</li><li>If they don't reply, follow up using [SOP: Managing Unresponsive Property Managers](/latchel-admin/Product-Support-Team/SOP-Managing-Unresponsive-Property-Managers-in-Case-Management).</li><li>Show them how to reject work orders from that PM: [How to Reject a Work Order](/s/topic/0TO5e000000h9wpGAA/How-to-Reject-a-Work-Order-Service-Provider).</li><li>Close the loop with the SP.</li></ol> |
 
-### Request to be Preferred for a Specific PM Company
+## Request to be preferred for a specific PM company
 
-| **Preferred SPs** | **LCN \| LVN** |
-| --- | --- |
-| <ol><li>Confirm the current preferred status of the SP: <ol><li>If the SP is already a preferred SP for the PM company in question, notify the SP that they are already a Preferred SP for that PM company.</li><li>If the SP is preferred, but not for the PM company in question, refer to the steps in the LCN and LVN column on the righthand side of this table.</li></ol></li></ol> | <ol><li>Notify the PM of the SP request to be added to the PM’s preferred service provider network. <ol><li>If **approved**: <ol><li>add the SP to the PM network by following these steps:</li><li>Navigate the SP Profile in Latchel.</li><li>Go to the Preferred PMs tab.</li><li>From there, click the “+ Add PM” button on the right-hand side of the screen.</li><li>Search the PM Company name and select them.</li><li>Once selected, click “Submit”.</li><li>Notify the PM and the SP that this is completed and close the loop.</li></ol></li><li>If **denied**: <ol><li>Thank the PM for letting us know confirming that no changes will be made to their account.</li><li>Close the loop with the SP, letting them know this PM has denied the request at this time.</li></ol></li></ol></li></ol> |
+1. **Check the SP's current preferred status.** If they're already a preferred SP for that PM, let them know, and you're done.
+2. **Ask the PM** whether they want the SP added to their preferred service providers.
+3. **If the PM approves:**
+   1. Open the SP's profile in Latchel and go to the **Preferred PMs** tab.
+   2. Click **\+ Add PM**, search for the PM company, select it and click **Submit**.
+   3. Let the PM and the SP know it's done.
+4. **If the PM declines:** thank the PM and confirm no changes will be made. Then let the SP know the PM declined the request for now.
 
-### Request to Join LCN
+## Request to join the LCN
 
-1. Sometimes we get requests from SP Companies reaching out requesting to join our Latchel Network and opt in to accept WOs.
-2. After searching for the SP email address in Latchel, if there is no record of the email or SP in Latchel, PS can send the [**SP wants to join LCN** Assembly email template](https://latchel1.lightning.force.com/lightning/r/EmailTemplate/00XUS00000CI7VZ2A1/view?queryScope=userFolders).
+When an SP company asks to join our network and start accepting work orders, **Ops can handle it.** Reassign the ticket to the **Operations Team Email** teamspace in Wavelength.
+
+If you're handling it yourself:
+
+1. Search Latchel for the SP's email address.
+2. If there's no record of the SP, send the **SP wants to join LCN** template in Wavelength. It shares the sign-up link: [latchel.com/vendor-sign-up](https://latchel.com/vendor-sign-up/).
+3. If the SP already has a Latchel account, send them [How to Opt Into the Latchel Contractor Network](/s/topic/0TO5e000000h9wqGAA/How-to-Opt-Into-the-Latchel-Contractor-Network).
+
+## Feature requests
+
+1. Ask the SP for the details: what they'd like to see, and the problem it would solve for them.
+2. Submit the request with the **Feature Request** form in the app. It posts to `#feature-requests` automatically. See [How to Handle: Feature Requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests).
+3. Let the SP know it's been submitted, then close the ticket.
+
+## Not getting emails or can't log in
+
+- **Not getting emails** (job notifications, password resets, etc.): follow [SOP: Handling Email Delivery Issues (SendGrid)](/latchel-admin/Product-Support-Team/SOP-Handling-Email-Delivery-Issues-SendGrid).
+- **Not getting texts:** see [Job Aid: Searching and Analyzing Messaging Logs in Twilio](/latchel-admin/Product-Support-Team/Job-Aid-Searching-and-Analyzing-Messaging-Logs-in-Twilio).
+- **Can't log in:** see [Job Aid: Handling User Login Issues](/latchel-admin/Product-Support-Team/Job-Aid-Handling-User-Login-Issues) and [Resetting Your Latchel Password (Service Provider)](/s/topic/0TO5e000000h9wpGAA/Resetting-Your-Latchel-Password-Service-Provider).
