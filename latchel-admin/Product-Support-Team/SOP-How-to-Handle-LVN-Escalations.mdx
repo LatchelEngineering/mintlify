@@ -28,8 +28,8 @@ Ops handles most day-to-day LVN work (unresponsive vendors, tech changes, cancel
   **Don't reassign a job to a different LVN company if the original LVN company has already been to the property.**
 </Warning>
 
-1. **Offer a different technician from the same LVN company first.** Let the PM know we can ask the LVN company to send a different technician and make sure the original one isn't sent to their property again. This keeps the warranty and workmanship guarantee in place.
-2. **If the PM is OK with a new technician,** submit the **Tech Change Request** workflow in `#lvn-escalations`.
+1. **Offer a different technician from the same LVN company first.** Send the **Remove LVN from WO** template in Wavelength. It explains that the LVN company assigns individual technicians, and that we can ask them to send a different technician and make sure the original one isn't sent to the PM's property again. This keeps the warranty and workmanship guarantee in place.
+2. **If the PM is OK with a new technician,** reach out to the LVN company. Ask them to reassign the work order to a different technician and to stop dispatching the original technician to this PM's properties.
 3. **If the PM wants a different company** (for example, switching from Puls to Keepe, or using their own vendor), check whether the original LVN company has **visited the property** or **been paid**:
    - **Yes:** confirm the PM agrees to pay the original invoice. There's likely a dispatch or service fee owed. Let them know the original provider's warranty may no longer apply.
    - **No:** cancel the original work order and create a new one. Ask the PM which SP to assign, assign them, and [lock in the SP](/s/topic/0TO5e000000h9wqGAA/How-to-Enable-Service-Provider-Locked-In-on-a-Work-Order-New-Experience).
@@ -44,7 +44,7 @@ Ops handles most day-to-day LVN work (unresponsive vendors, tech changes, cancel
 
 ## A PM never wants to work with an LVN company again
 
-1. **Explain that the LVN is all or nothing.** We can't blacklist one LVN company. The PM can either turn the LVN off completely or keep it on.
+1. **Explain that the LVN is all or nothing.** Send the **Blacklist LVN Company** template in Wavelength. It explains that we can't remove one LVN company, and that the PM can either turn the LVN off completely or keep it on.
 2. **If the PM wants it off:**
    1. Open the PM company in Latchel.
    2. On the **Account Details** tab, find the **Vendor Assignment Automation** box.
@@ -73,17 +73,10 @@ Ops handles most day-to-day LVN work (unresponsive vendors, tech changes, cancel
 Use the options below as a guide and tailor them to the situation.
 
 <AccordionGroup>
-  <Accordion title="Send vendor feedback">
-    |  | **Next steps** |
-    | --- | --- |
-    | **When** | The LVN vendor's actions or behavior caused the issue (for example, going over budget without approval). |
-    | **Action** | Submit the **LVN Vendor Feedback** workflow in `#vendor-feedback`. See [Job Aid: PS DD and SDDI Category Matrix](/latchel-admin/Product-Support-Team/Job-Aid-PS-DD-and-SDDI-Category-Matrix). |
-  </Accordion>
-
   <Accordion title="Escalate to Latchel leadership (if needed)">
     |  | **Next steps** |
     | --- | --- |
-    | **When** | The issue is systemic, or the vendor's behavior is concerning. |
+    | **When** | The LVN vendor's actions or behavior caused the issue (for example, going over budget without approval), the issue is systemic, or the vendor's behavior is concerning. |
     | **Action** | Post in `#lvn-war-room`, tag `@lvn-escalations` and include the ticket link. |
     | **Resources** | [Product Support Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management) |
   </Accordion>
