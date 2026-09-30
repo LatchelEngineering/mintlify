@@ -4,79 +4,93 @@ groups: ["latchel"]
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3176071178/SOP+How+to+Handle+LCN+SPs+Escalations"
 ---
 
-Latchel Contractor Network (LCN) is a network of service providers Property Managers can decide to opt into as a backup to their preferred vendors:
-
-- Emergency Workflow: You may opt-in to have Latchel source new service providers if nobody from your preferred network is available to accept the job. Our team may source a new provider on the spot or source someone that we have previously worked with in your area.
-- Non-Emergency Workflow: Get access to Latchel's service provider network when your preferred providers are not available to complete your non-emergency jobs. If you select to opt-in to have Latchel source new service providers for an emergency job, you’ll instantly gain access to a directory of service providers Latchel has previously worked with in your area.
-
-If a PM requests to blacklist an LCN Company so that they are NEVER assigned to their WOs, you will:
-
-1. Navigate to the LCN Company in Latchel.
-2. Under the Preferred PMs tab, you will click the “\+ Add PM” button.
-3. From that pop-up, search the PM Company name and add them as a Preferred PM.
-4. Once added, then navigate to the PM Company in Latchel.
-5. From the PM Company page, click on the “Service Providers” tab.
-6. Once on this page, go to the “Service Provider Management” tab. In the Search bar, search for the LCN Company.
-7. When the LCN Company populates, click the three dots on the right side, and the choose “Blacklist Service Provider” option from the drop-down.
-8. Once completed, confirm that this is complete by going to the “Blacklisted Service Providers Management” tab.
-9. When on this page, confirm that you see the LCN Company and then you are good to go!
-
-#### How to: Enable LCN
-
-[How to Opt Into the Latchel Contractor Network](https://help.latchel.com/s/article/How-to-Opt-Into-the-Latchel-Contractor-Network)
-
-- The PM only wants LCN for certain WO Problems? [Setting Up Latchel Contracted Network (LCN) Preferences](https://help.latchel.com/s/article/Setting-Up-Latchel-Contracted-Network-LCN-Preferences)
-
-#### How to: Disable LCN
-
-Refer to: [How to Opt Out of the Latchel Contractor Network](https://help.latchel.com/s/article/How-to-Opt-Out-of-Latchel-Contractor-Network)
-
-1. **Opt the PM out of LCN** (if not already done).
-2. Attempt to **delete all LCN payment methods**.
-
-**If Payment Methods Cannot Be Deleted**
-
-If deletion fails, it means the payment method is **actively in use**.
-
-- Check portfolios and/or properties where LCN vendor payments are enabled. Queries to find where LCN is payment method is being used:
-  ```sql lines
-  SELECT * from payment_method
-  WHERE relation_id = 37645 -- replace with PM company Id
-  AND relation_type = 'Latchel\Company'
-  ```
-  ```sql lines
-  SELECT * from portfolio -- this can be replaced by property as well
-  where pm_company_id = 37645
-  AND use_lcn_vendor_payments in (
-  ) -- list payment method ID's you want to find
-  ```
-
-- Remove Usage - Temporarily **activate LCN (if needed)** to allow edits.
-- Remove the LCN payment method from:
-  - Portfolios
-  - Properties
-- **Deactivate LCN again fully.**
-
 <Note>
-  - The PM only wants LCN for certain WO Problems? [Setting Up Latchel Contracted Network (LCN) Preferences](https://help.latchel.com/s/article/Setting-Up-Latchel-Contracted-Network-LCN-Preferences)
+  **What the LCN is:** The Latchel Contractor Network (LCN) is like a yellow pages. Anyone who signs up and wants jobs can join. Latchel doesn't manage licensing or vet these vendors. PMs can opt in to use the LCN as a backup when their preferred vendors aren't available:
+
+  - **Emergency work orders:** Latchel can source a new service provider on the spot, or use one we've worked with before in the area, when no one in the PM's preferred network can take the job.
+  - **Non-emergency work orders:** the PM gets access to LCN vendors when their preferred vendors aren't available.
+
+  For the other SP types (Preferred and LVN), see [SOP: Handling Service Provider (SP) Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-Service-Provider-SP-Cases).
 </Note>
 
-#### How to: Handle SPs requesting to join LCN
+## PM requests
 
-- [A Guide in Joining Latchel Contractor Network](https://help.latchel.com/s/article/A-Guide-in-Joining-Latchel-Contractor-Network)
-- [Vendor Sign Up Page](https://latchel.com/vendor-sign-up/)
+### A PM wants to blacklist an LCN company
 
-#### How to: Handle SPs requesting to be removed from WOs
+Use this when a PM never wants a specific LCN company assigned to their work orders.
 
-Single Individual WO:
+1. Open the **LCN company** in Latchel.
+2. On the **Preferred PMs** tab, click **\+ Add PM**. Search for the PM company and add it.
+3. Open the **PM company** in Latchel and go to the **Service Providers** tab.
+4. Open **Service Provider Management** and search for the LCN company.
+5. Click the **three dots** next to the LCN company and choose **Blacklist Service Provider**.
+6. Confirm it worked: open **Blacklisted Service Providers Management** and check that the LCN company is listed.
+7. Let the PM know it's done.
 
-- Already Assigned to the WO?
-  - The SP can go to the WO in their dashboard and click the blue button in the top right corner of the WO that says “Provide Work Order Update”.
-  - From there, select “Remove Me From This Work Order”. For more details, see [this Help Guide](https://help.latchel.com/s/article/A-Service-Provider-s-Guide-in-Updating-a-Work-Order).
-- Not Assigned?
-  - The SP can reject the WO when it is offered to them. For more details, see [this Help Guide](https://help.latchel.com/s/article/How-to-Reject-a-Work-Order-Service-Provider).
+PM help guide: [How To Blacklist a Service Provider](/s/topic/0TO5e000000h9wqGAA/How-To-Blacklist-a-Service-Provider)
 
-All Latchel WOs:
+### A PM wants to turn on the LCN
 
-1. Navigate the LCN Company page.
-2. Click the three dots in the top right corner. Select Disable Account.
+Send the PM [How to Opt Into the Latchel Contractor Network](/s/topic/0TO5e000000h9wqGAA/How-to-Opt-Into-the-Latchel-Contractor-Network).
+
+<Tip>
+  **Only want the LCN for certain problems?** PMs can limit it to specific work order problems. See [Setting Up Latchel Contracted Network (LCN) Preferences](/s/topic/0TO5e000000h9wqGAA/Setting-Up-Latchel-Contracted-Network-LCN-Preferences).
+</Tip>
+
+### A PM wants to turn off the LCN
+
+PM help guide: [How to Opt Out of the Latchel Contractor Network](/s/topic/0TO5e000000h9wqGAA/How-to-Opt-Out-of-Latchel-Contractor-Network)
+
+1. **Opt the PM out of the LCN** if it isn't already done.
+2. **Delete all LCN payment methods** on the account.
+3. **If a payment method won't delete,** it's still in use on a portfolio or property:
+   1. Find where it's used with the queries below.
+   2. Temporarily turn the LCN back on if you need to, so you can make edits.
+   3. Remove the LCN payment method from each portfolio and property that uses it.
+   4. Delete the payment method, then turn the LCN off again.
+
+<Accordion title="Queries: find where an LCN payment method is used">
+  Find the PM company's payment methods:
+
+  ```sql lines
+  SELECT * FROM payment_method
+  WHERE relation_id = 37645 -- replace with the PM company ID
+  AND relation_type = 'Latchel\Company'
+  ```
+
+  Find portfolios using them (swap `portfolio` for `property` to check properties):
+
+  ```sql lines
+  SELECT * FROM portfolio
+  WHERE pm_company_id = 37645 -- replace with the PM company ID
+  AND use_lcn_vendor_payments IN (
+  ) -- list the payment method IDs you want to find
+  ```
+</Accordion>
+
+## SP requests
+
+### An SP wants to join the LCN
+
+Ops can handle these. Reassign the ticket to the **Operations Team Email** teamspace in Wavelength.
+
+If you're handling it yourself, see [SOP: Handling Service Provider (SP) Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-Service-Provider-SP-Cases). Useful links:
+
+- [A Guide in Joining Latchel Contractor Network](/s/topic/0TO5e000000h9wpGAA/A-Guide-in-Joining-Latchel-Contractor-Network)
+- [Vendor sign-up page](https://latchel.com/vendor-sign-up/)
+
+### An SP wants to be removed from a work order
+
+| **Situation** | **What the SP does** |
+| --- | --- |
+| **Already assigned** to the work order | In their dashboard, open the work order and click **Provide Work Order Update** (top right), then choose **Remove Me From This Work Order**. See [A Service Provider's Guide in Updating a Work Order](/s/topic/0TO5e000000h9wpGAA/A-Service-Provider-s-Guide-in-Updating-a-Work-Order). |
+| **Not assigned yet** | Reject the work order when it's offered. See [How to Reject a Work Order](/s/topic/0TO5e000000h9wpGAA/How-to-Reject-a-Work-Order-Service-Provider). |
+
+### An SP doesn't want any more Latchel work orders
+
+1. Ask the SP why, and share any feedback in `#product`.
+2. Open the LCN company's page in Latchel.
+3. Click the **three dots** (top right) and choose **Disable Account**.
+4. Let the SP know it's done, then close the ticket.
+
+For opting out of just one PM company, see [SOP: Handling Service Provider (SP) Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-Service-Provider-SP-Cases).
