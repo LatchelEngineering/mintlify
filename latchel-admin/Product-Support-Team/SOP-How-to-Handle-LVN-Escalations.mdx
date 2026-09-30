@@ -11,7 +11,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3175874577/SO
   - use Latchel technology for every work order
   - get paid only through Latchel's direct deposit payouts
   - guarantee every technician is vetted, licensed, bonded and insured
-  - offer free recalls. Their work is backed by at least a **30-day workmanship guarantee** in the [Latchel Guarantee and Refund Request Policy](/s/topic/0TO5e000000h9wqGAA/Latchel-Guarantee-and-Refund-Request-Policy).
+  - offer free recalls. Their work is backed by at least a **30-day workmanship guarantee** (if the same issue comes back, they fix it at no extra cost) and a **1-year warranty on parts**. See the [Latchel Guarantee and Refund Request Policy](/s/topic/0TO5e000000h9wqGAA/Latchel-Guarantee-and-Refund-Request-Policy#the-refund-policy).
 
   **How to spot one:** an LVN service provider has a **Latchel Vendor Network** tag next to their name on the work order. For the current list of LVN companies and how the LVN differs from the LCN, see [Latchel Vendor Network FAQs](/latchel-admin/Product-Engineering/latchel-vendor-network-faqs).
 </Note>
@@ -29,8 +29,8 @@ Ops handles most day-to-day LVN work (unresponsive vendors, tech changes, cancel
 </Warning>
 
 1. **Offer a different technician from the same LVN company first.** Send the **Remove LVN from WO** template in Wavelength. It explains that the LVN company assigns individual technicians, and that we can ask them to send a different technician and make sure the original one isn't sent to the PM's property again. This keeps the warranty and workmanship guarantee in place.
-2. **If the PM is OK with a new technician,** reach out to the LVN company. Ask them to reassign the work order to a different technician and to stop dispatching the original technician to this PM's properties.
-3. **If the PM wants a different company** (for example, switching from Puls to Keepe, or using their own vendor), check whether the original LVN company has **visited the property** or **been paid**:
+2. **If the PM is OK with a new technician,** reach out to the LVN company through their **shared Slack channel** or by **email**. Ask them to reassign the work order to a different technician and to stop dispatching the original technician to this PM's properties. Contacts are in [Latchel Vendor Network FAQs](/latchel-admin/Product-Engineering/latchel-vendor-network-faqs#who-are-our-current-lvn-vendors).
+3. **If the PM wants a different company** (another LVN company or their own vendor), check whether the original LVN company has **visited the property** or **been paid**:
    - **Yes:** confirm the PM agrees to pay the original invoice. There's likely a dispatch or service fee owed. Let them know the original provider's warranty may no longer apply.
    - **No:** cancel the original work order and create a new one. Ask the PM which SP to assign, assign them, and [lock in the SP](/s/topic/0TO5e000000h9wqGAA/How-to-Enable-Service-Provider-Locked-In-on-a-Work-Order-New-Experience).
 
@@ -73,12 +73,12 @@ Ops handles most day-to-day LVN work (unresponsive vendors, tech changes, cancel
 Use the options below as a guide and tailor them to the situation.
 
 <AccordionGroup>
-  <Accordion title="Escalate to Latchel leadership (if needed)">
+  <Accordion title="Share feedback with the LVN company">
     |  | **Next steps** |
     | --- | --- |
-    | **When** | The LVN vendor's actions or behavior caused the issue (for example, going over budget without approval), the issue is systemic, or the vendor's behavior is concerning. |
-    | **Action** | Post in `#lvn-war-room`, tag `@lvn-escalations` and include the ticket link. |
-    | **Resources** | [Product Support Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management) |
+    | **When** | The LVN vendor's actions or behavior caused the issue (for example, going over budget without approval). |
+    | **Action** | Reach out to the LVN company through their **shared Slack channel** or by **email**. Include the work order link, what happened and what the PM is asking for. If the issue is systemic or the vendor's behavior is concerning, flag it to the PS Manager. |
+    | **Resources** | <ul><li>[Latchel Vendor Network FAQs](/latchel-admin/Product-Engineering/latchel-vendor-network-faqs#who-are-our-current-lvn-vendors)</li><li>[Product Support Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management)</li></ul> |
   </Accordion>
 
   <Accordion title="Refund or compensation (if eligible)">
