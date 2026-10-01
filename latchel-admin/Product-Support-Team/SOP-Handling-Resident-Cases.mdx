@@ -6,39 +6,25 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3198451733/SO
 ---
 
 <Note>
-  **Purpose:** How to handle tickets from residents who belong to a PM company. Residents are the PM's customers, so most resident tickets go to the PM to answer. PS only replies to the resident directly in the approved scenarios below.
+  **Ops owns all resident conversations.** PS doesn't reply to residents directly. Residents are the PM's customers, and Ops handles their questions day to day, including work orders, dashboard access and benefits.
 </Note>
 
-## When PS can reply to the resident directly
+## A resident ticket lands in the PS queue
 
-| **Scenario** | **What to do** |
-| --- | --- |
-| **Resident-responsible work order** | Follow [How to: Handle Resident Responsible WOs](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Resident-Responsible-WOs). Resident-responsible requests are directed to Amenify. See [How To: Respond to Amenify Inquiries](/latchel-admin/Product-Support-Team/Benefits-Partnerships/How-To-Respond-to-Amenify-inquiries). |
-| **Resident can't get to their dashboard** | If the resident profile is **active**, send them their [Public Dashboard URL](/latchel-admin/Product-Support-Team/Job-Aid-How-to-Locate-Public-Dashboard-URLs) after confirming their identity. |
-| **Resident benefits question** | Follow the benefit's FAQ in [Latchel Resident Benefits](/latchel-admin/Product-Support-Team/Latchel-Resident-Benefits). |
+1. Don't reply to the resident.
+2. Reassign the ticket to the **Operations Team Email** teamspace in Wavelength. Ops will take it from there, including looping in the PM if needed.
 
-<Warning>
-  **Everything else goes to the PM.** If the resident's question isn't one of the scenarios above, follow the steps below to send it to their PM.
-</Warning>
+## Ops escalates a resident question to PS
 
-## Step 1: Find the resident's profile
+Ops may escalate when they don't know the answer, for example through the **Benefits Review** workflow for benefits questions.
 
-1. Search Latchel for the resident by **email address**.
-2. Check **Disabled** in the search so deactivated accounts show up too.
+1. Find the answer (check the SOP, FAQ or account settings that apply).
+2. **Reply to Ops in the Slack thread** with the information they need. Ops passes it on to the resident.
+3. If the answer depends on the PM (their settings, approvals or policies), say so in the thread so Ops can loop in the PM.
 
-## Step 2: Find the resident's PM company
+## Related pages
 
-1. On the resident's profile (**Details** tab), click the **Property** listed.
-2. On the property page, scroll to the **Details** tab.
-3. In the **Property Manager** section, note the **PM Company**.
-
-## Step 3: Find a PM contact email
-
-1. Find the PM company's **Primary User**.
-2. Check the **User Groups** section for the **Default User Group**.
-3. Pick the best contact, usually the Primary User or the Default User Group. See [How to: Locate the "Default Notification User Group" contact(s)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Locate-the-Default-Notification-User-Group-contacts).
-
-## Step 4: Send the resident's question to the PM
-
-1. In Wavelength, use the **Resident Inquiry for PM** template to email the PM contact.
-2. Close the ticket. See [SOP: Closing Tickets](/latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support).
+- [Product Support Team vs Ops Agents](/latchel-admin/Product-Support-Team/product-support-team-vs-ops-agent)
+- [SOP: Handling Ops Escalations](/latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations)
+- [Latchel Resident Benefits](/latchel-admin/Product-Support-Team/Latchel-Resident-Benefits)
+- [How to: Handle Resident Responsible WOs](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Resident-Responsible-WOs) (Ops)
