@@ -5,81 +5,39 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3175677986/Jo
 ---
 
 <Note>
-  **Objective:** Assist users (Service Providers, Property Managers, and Residents) experiencing login issues by confirming email validity and facilitating access to their accounts.
+  **Objective:** Help service providers, property managers and residents who can't log in, by confirming their account and email and getting them a way back in.
 </Note>
 
----
+<Warning>
+  **Verify identity first.** Before sending any login email or link, confirm you're talking to the account owner. Ask for their address, phone number or another detail on file. Never send a login link to an email address that doesn't match the profile.
+</Warning>
 
-#### Step 1: Confirm User is Active
+## Step 1: Confirm the user is active
 
-- **Access User Profile:**
-  - Navigate to the user’s profile in the system.
-  - Verify that the user account is active.
+1. Search for the user in Latchel by **email address**. Check **Disabled** in the search so deactivated accounts show up too.
+2. Open their profile and confirm the account is **active**.
 
----
+   - If it's disabled, find out why before you do anything else. For a resident, the PM decides whether to reactivate. See [SOP: Handling Resident Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-Resident-Cases).
 
-#### **Step 2: Email Validity**
+## Step 2: Confirm the email address
 
-- **Access User Profile:**
-  - Verify that the email is correctly entered and valid for the user experiencing login problems.
+1. Check that the email on the profile is spelled correctly and matches the address the user is trying to log in with.
+2. If it's wrong, update it (or, for a PM's resident or user, ask the PM to), then continue.
 
----
+## Step 3: Get them back in, by user type
 
-#### **Step 3: Resolve Login Issues by User Type**
-
-**A. Service Providers**
-
-1. **Access User Profile:**
-
-- Locate the Service Provider’s profile.
-
-2. **Initiate Login Email:**
-
-- Click the three dots located on the user profile.
-- Select "Send Account Email."
+| **User type** | **What to do** |
+| --- | --- |
+| **Service provider** | Open the SP's profile, click the **three dots** and select **Send Account Email**. This sends them a login email. SP help guide: [Resetting Your Latchel Password (Service Provider)](/s/topic/0TO5e000000h9wpGAA/Resetting-Your-Latchel-Password-Service-Provider). |
+| **Property manager** | Open the PM user's profile, click the **three dots** and select **Send Account Email**. PM help guide: [How to Change/Reset the Password of a Latchel User's Login](/s/topic/0TO5e000000h9wqGAA/How-to-Change-Reset-the-Password-of-a-Latchel-User-s-Login). |
+| **Resident** | Residents use their **Resident Public Dashboard URL** instead of a password. Copy it from the resident's profile (**Details** tab, **Miscellaneous** box) and email it to them. See [Job Aid: How to Locate Public Dashboard URLs](/latchel-admin/Product-Support-Team/Job-Aid-How-to-Locate-Public-Dashboard-URLs). Only send it if the resident profile is **active**. |
 
 <Frame>
   ![Latchel-10-02-2024\_01\_13\_PM.png](/images/PST-111.png)
 </Frame>
 
-- This will trigger a login email to the Service Provider.
+## Step 4: Confirm and follow up
 
-**B. Property Managers**
-
-1. **Access User Profile:**
-
-- Locate the Property Manager’s profile.
-
-2. **Initiate Login Email:**
-
-- Click the three dots located on the user profile.
-- Select "Send Account Email."
-- This will trigger a login email to the Property Manager.
-
-**C. Residents**
-
-1. **Access Resident Profile:**
-
-- Locate the Resident’s profile.
-
-2. **Obtain Public Dashboard URL:**
-
-- Navigate to the resident’s miscellaneous settings.
-- Copy the Resident Public Dashboard URL.
-  - Refer to [Job Aid: How to Locate Public Dashboard URLs](https://help.latchel.com/Job-Aid-How-to-Locate-Public-Dashboard-URLs)
-
-3. **Send URL:**
-
-- Email the Resident Public Dashboard URL to the resident.
-- This allows the resident to access their dashboard directly.
-
----
-
-**Step 4: Follow-Up**
-
-- Ensure confirmation of receipt of email or URL by the user.
-- Provide any additional assistance if further issues arise.
-
-<Warning>
-  **Note:** Always maintain privacy and security protocols when handling user information and sending emails. Confirm the user's identity by asking for their address, phone number, or another unique piece of information on file.
-</Warning>
+1. Ask the user to confirm they got the email or link and could log in.
+2. **Didn't get the email?** Follow [SOP: Handling Email Delivery Issues (SendGrid)](/latchel-admin/Product-Support-Team/SOP-Handling-Email-Delivery-Issues-SendGrid).
+3. Once they're in, close the ticket. See [SOP: Closing Tickets](/latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support).
