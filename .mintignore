@@ -1,0 +1,11 @@
+# Files and folders that should never be published to help.latchel.com.
+# Uses .gitignore-style patterns. (.mintlify/, .github/, .claude/, node_modules
+# and README.md are already excluded by Mintlify automatically.)
+
+# Migration and link-audit tooling
+_audit/
+_confluence-export/
+
+# Drafts: put work-in-progress guides here or name them *.draft.mdx
+drafts/
+*.draft.mdx
