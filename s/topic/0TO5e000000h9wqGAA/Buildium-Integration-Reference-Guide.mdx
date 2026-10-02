@@ -48,7 +48,8 @@ The two-way sync between Buildium and Latchel ensures that key data—like prope
 - **Properties:** The complete property address, along with the property ID, unit ID, and status, is brought over to Latchel. During subsequent synchronizations of the same property, both the address and integration data are interpreted to prevent duplicate property entries in Latchel.
 - **Residents:** Latchel syncs all eligible residents from Buildium every hour. Unlike other integrations that only sync recently added or edited residents, Buildium syncs all current (non-"Past") residents at a property so they can submit work orders in Latchel.
   Key resident fields mapped from Buildium to Latchel include name, email, phone numbers (prioritizing cell \> home \> work \> fax), property/unit IDs, and move-in/move-out dates. A primary phone number is required and is selected based on priority.
-  Once a resident is created in Latchel, only specific fields are updated during future syncs—such as property/unit associations and move-in/move-out dates. Residents are marked inactive in Latchel after their move-out date.
+  Once a resident is created in Latchel, future syncs update their contact info, property/unit associations, and move-in/move-out dates. Residents are marked inactive in Latchel after their move-out date.
+  In Latchel, contact info synced from Buildium shows as the **PMS** source. You can set it as **Primary**, but you can't delete it in Latchel.
 - **Work Orders:** The Buildium integration no longer imports work orders to Latchel by default.
 
 <Tip>
