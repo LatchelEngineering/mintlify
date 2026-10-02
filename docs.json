@@ -571,7 +571,6 @@
                 "public": true,
                 "pages": [
                   "s/topic/0TO5e000000h9wsGAA/latchel-newsletter",
-                  "s/topic/0TO5e000000h9wsGAA/latchel-newsletter",
                   {
                     "group": "2026 Newsletters",
                     "public": true,
@@ -594,7 +593,7 @@
                       "s/topic/0TO5e000000h9wsGAA/march-9-2026",
                       "s/topic/0TO5e000000h9wsGAA/february-23-2026",
                       "s/topic/0TO5e000000h9wsGAA/february-9-2026",
-                      "product-updates/whats-new/2026-newsletters/january-26-2026",
+                      "s/topic/0TO5e000000h9wsGAA/january-26-2026",
                       "s/topic/0TO5e000000h9wsGAA/Jan-12-26-release"
                     ]
                   },
@@ -876,7 +875,8 @@
                           "latchel-admin/Service-Operations/Call-Centers/dueling-call-center-technical-guide",
                           "latchel-admin/Service-Operations/Call-Centers/investigating-dueling-call-center-call-records-in-latchel-via-twilio-and-pg-admin",
                           "latchel-admin/Service-Operations/Call-Centers/how-to-add-a-new-call-center-and-adjust-delays",
-                          "latchel-admin/Service-Operations/Call-Centers/call-battle-flow-chart"
+                          "latchel-admin/Service-Operations/Call-Centers/call-battle-flow-chart",
+                          "latchel-admin/Product-Support-Team/Job-Aid-Call-Center-Interaction-Review-Calibration-Guidelines"
                         ]
                       },
                       {
