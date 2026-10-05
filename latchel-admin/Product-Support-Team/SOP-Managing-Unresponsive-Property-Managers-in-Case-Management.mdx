@@ -5,51 +5,42 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3198812172/SO
 ---
 
 <Note>
-  **Objective:** This SOP outlines the steps to handle unresponsive Property Managers (PMs) and manage case statuses effectively to ensure consistent communication and accountability in the case management process.
+  **Objective:** How to follow up when a PM doesn't reply, and when to close the ticket, so every PM gets a consistent follow-up and no ticket sits open forever.
 </Note>
 
-### **1. Case Status Flow**
+## How the ticket status moves
 
-When a response to the PM is sent, the case status will automatically change to **"Open"**
+1. When you reply to the PM, the Wavelength ticket automatically moves to **Open**.
+2. If the PM doesn't reply within **24 hours**, the ticket automatically moves back to **Needs Response**.
+3. When it comes back to **Needs Response**, PS owns the follow-up.
 
-**1.1 Automatic Re-Opening**
+## First reopen: send one follow-up
 
-- If the PM is **unresponsive for 24 hours**, the system will automatically change the case status back to **"Needs Response."**
-- When the case re-opens, the **PS team** is responsible for following up with the PM.
+When the ticket reopens because the PM hasn't replied:
 
-### **2. Follow-Up Procedure**
-
-Upon the case automatically re-opening due to PM unresponsiveness, follow these steps:
-
-##### **2.1 Sending the Unresponsive PM Follow-Up**
-
-- The PS team should send the **Unresponsive PM Follow-Up** email using the pre-approved Assembly Template. **Action Required:**
-  - Use the **Unresponsive PM Follow-Up Assembly Template**[ ](https://latchel1.lightning.force.com/lightning/r/EmailTemplate/00XUS000002Tryp2AC/view?queryScope=userFolders)(navigate to the template directory within Assembly).
+1. Send the PM a **short follow-up** with the **Unresponsive PM Follow-Up** template in Wavelength. Don't copy and paste your original message. A quick nudge is easier for the PM to act on.
+2. If you've been waiting on another team (Finance, Data Support, Engineering), send the PM an **update on where things stand** instead.
+3. The ticket moves back to **Open**.
 
 <Warning>
-  Follow-up is NOT necessary for tickets about the below. PS can move the ticket to Closed when it re-opens.
+  **No follow-up needed** for these ticket types. When they reopen, close the ticket:
 
-  - [Feature Requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests)
-  - [Bulk Account Updates](/latchel-admin/Product-Support-Team/How-to-Handle-PM-Account-Updates): also let Data Support know in the Slack thread that we never got the details from the PM.
-  - Bug Reports - Low Impact
+  - [Feature requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests)
+  - [Bulk account updates](/latchel-admin/Product-Support-Team/How-to-Handle-PM-Account-Updates). Also let Data Support know in the Slack thread that we never got the details from the PM.
+  - Low-impact bug reports
 </Warning>
 
-- This follow-up will return the case status to **"Open"**
+## If the PM replies
 
-### **3. Handling Responses from the PM**
+Answer their question or share next steps, then close the loop. See [SOP: Closing Tickets](/latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support).
 
-If the PM responds to the follow-up, answer the PMs question/share next steps based on the conversation. Close the loop with the PM accordingly. 
+## Second reopen: close the ticket
 
-(Resource: [SOP: Closing Tickets](/latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support)).
+If the PM still hasn't replied and the ticket reopens again after another **24 hours**:
 
-### **4. Managing Continued PM Unresponsiveness**
+1. Close the ticket as unresponsive.
+2. The PS CSAT survey goes out automatically **24 hours** after the ticket closes, the same as every closed PS ticket. See [Job Aid: Wavelength PS Automation Explained](/latchel-admin/Product-Support-Team/Job-Aid-Assembly-Case-Automation-Explained).
 
-If the PM remains unresponsive and the case automatically re-opens again after another **24-hour period**, follow these steps:
-
-##### **4.1 Closing the Case Due to PM Unresponsiveness**
-
-- Change the case status to **"Closed."**
-
-##### **4.2 CSAT Survey Automation**
-
-- Upon closing the case as "Closed Unresponsive," the system will automatically trigger the[ **PS CSAT Survey template**](/latchel-admin/Product-Support-Team/Job-Aid-Assembly-Case-Automation-Explained) to be sent to the PM.
+<Tip>
+  **Bias for action.** If the PM's silence is blocking something you can safely move forward yourself (for example, a setting they already asked for), do it and tell them what you did, rather than waiting on a reply.
+</Tip>
