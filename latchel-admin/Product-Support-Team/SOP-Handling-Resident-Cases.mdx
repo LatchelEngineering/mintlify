@@ -1,41 +1,57 @@
 ---
-title: "SOP: Handling Resident Cases"
-groups: ["latchel"]
+title: "SOP: Handling Resident Tickets"
+groups:
+  - "latchel"
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3198451733/SOP+Handling+Resident+Cases"
 ---
 
 <Note>
-  **Purpose**: This procedure outlines how to handle cases related to residents who are associated with a Property Manager. The majority of Resident Cases will be shared with their property manager but there a few scenarios where PS will directly communicate with the resident.
+  **PS doesn't reply to residents directly.** Residents are the PM's customers. Ops owns resident conversations about maintenance, and anything else goes to the PM.
 </Note>
 
-#### Scenarios Approved to Communicate directly with the Resident:
+## Where does the resident's ticket go?
 
-- Scenario 1: [How to: Handle Resident Responsible WOs](https://help.latchel.com/How-to:-Handle-Resident-Responsible-WOs).
-- Scenario 2: If the Resident Profile is ACTIVE, PS can send[ their Public Dashboard URL](https://help.latchel.com/Job-Aid:-How-to-Locate-Public-Dashboard-URLs) if the resident is looking for ways to access their dashboard.
+| **The resident's ticket is about...** | **Send it to** |
+| --- | --- |
+| **Maintenance** (a work order, scheduling, dashboard access, benefits, etc.) | **Ops.** Reassign the ticket to the **Operations Team Email** teamspace in Wavelength. |
+| **Anything not maintenance related** (rent, lease, move-out, deposits, etc.) | **The PM.** Follow the steps below. |
+| **A work order delay caused by the PM** (waiting on PM approval, PM never responded, PM-side hold) | **The PM.** Follow the steps below. |
 
-<Warning>
-  All other scenarios should be sent to the Property Manager to communicate to the Resident. Continue to the steps below if this is an unpproved scenario and an escalation to the PM is required.
-</Warning>
+## Sending a resident's question to the PM
 
-#### **Step 1: Access the Resident Profile**
+### Step 1: Find the resident's profile
 
-1. Search for the resident profile in Latchel by using their **email address**.
-2. Ensure that the **“Disabled” option** is checked when performing the search to include deactivated accounts.
+1. Search Latchel for the resident by **email address**.
+2. Check **Disabled** in the search so deactivated accounts show up too.
 
-#### **Step 2: Identify the Resident’s Property Management (PM) Company**
+### Step 2: Find the resident's PM company
 
-1. Once on the Resident Profile, you will automatically be on the Details tab.
-2. Click on the Property listed below the Details tab.
-3. On the Property page, scroll down to the **Details** tab.
-4. Locate the **Property Manager** section to find the **PM Company** associated with the owner.
+1. On the resident's profile (**Details** tab), click the **Property** listed.
+2. On the property page, scroll to the **Details** tab.
+3. In the **Property Manager** section, note the **PM Company**.
 
-#### **Step 3: Find a PM Contact Email**
+### Step 3: Find a PM contact email
 
-1. Identify the **Primary User** for the PM Company from the Property Manager information.
-2. Review the **User Groups** section for the **Default User Group**.
-3. Select the most appropriate email for reaching out to the PM, typically from the Primary User or Default User Group
+1. Find the PM company's **Primary User**.
+2. Check the **User Groups** section for the **Default User Group**.
+3. Pick the best contact, usually the Primary User or the Default User Group. See [How to: Locate the "Default Notification User Group" contact(s)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Locate-the-Default-Notification-User-Group-contacts).
 
-#### **Step 4: Contact the PM Regarding the Resident’s Inquiry**
+### Step 4: Email the PM
 
-1. Use the **Resident Inquiry for PM Template** in Assembly to craft your email to the PM.
-2. Send the email to the selected PM contact to address the resident’s inquiry.
+1. Email the PM contact from Wavelength. Include the resident's name, the property, the resident's question and, for a delay, the work order link and what's waiting on the PM.
+2. Close the ticket. See [SOP: Closing Tickets](/latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support).
+
+## Ops escalates a resident question to PS
+
+Ops may escalate when they don't know the answer, for example through the **Benefits Review** workflow for benefits questions.
+
+1. Find the answer (check the SOP, FAQ or account settings that apply).
+2. **Reply to Ops in the Slack thread** with the information they need. Ops passes it on to the resident.
+3. If the answer depends on the PM (their settings, approvals or policies), say so in the thread.
+
+## Related pages
+
+- [Product Support Team vs Ops Agents](/latchel-admin/Product-Support-Team/product-support-team-vs-ops-agent)
+- [SOP: Handling Ops Escalations](/latchel-admin/Product-Support-Team/SOP-Handling-Ops-Escalations)
+- [Latchel Resident Benefits](/latchel-admin/Product-Support-Team/Latchel-Resident-Benefits)
+- [How to: Handle Resident Responsible WOs](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Resident-Responsible-WOs) (Ops)

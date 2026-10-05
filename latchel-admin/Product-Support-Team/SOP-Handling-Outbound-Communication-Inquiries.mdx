@@ -5,36 +5,33 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3175809052/SO
 ---
 
 <Note>
-  This document outlines the procedures for handling outbound communications by our team, focusing on requests, complaints, and issues/bugs.
+  How to handle PM tickets about the calls, texts and emails Latchel sends: **requests** for a new communication, **complaints** about how often they hear from us, and **issues** where a communication didn't arrive.
 </Note>
 
-#### How to Handle: Requests
+## Requests
 
-_For requests like "Call me for X" or "SMS me when X happens":_
+_Examples: "Call me for X," "Text me when X happens."_
 
-1. **Standard System Communications**:
-   1. Utilize existing user group configurations for predefined communication preferences.
-      1. [**Create User Groups**](https://help.latchel.com/s/article/How-to-Create-User-Groups): Set up user groups when necessary to manage specific communication preferences efficiently.
-      2. [**Emergency Escalation Contacts**](https://help.latchel.com/s/article/How-to-Update-Your-Escalation-Contacts)**:** Refer to emergency escalation contacts for urgent requests that fall outside the norm.
-      3. **Pre-Dispatch Instructions & Critical Notes**: Ensure reference to critical notes using the pre-dispatch instructions here: [https://latchel.atlassian.net/wiki/x/AYD\_pw](https://latchel.atlassian.net/wiki/x/AYD_pw)
-      4. **Additional Non-Standard Communications Solutions**: Implement or adjust action sets as needed: [Action Sets](https://latchel.atlassian.net/wiki/x/AoA-tg).
-2. **Unique Complaints Not Covered:?**
-   1. Follow the escalation protocol on [https://latchel.atlassian.net/wiki/x/B4BKvQ](https://latchel.atlassian.net/wiki/x/B4BKvQ) .
+1. **Check whether existing settings can do it:**
+   - **User groups and notification settings:** who gets which notifications. See [Communication & Notification Settings](/s/topic/0TO5e000000h9wqGAA/Communication-Notification-Settings-Overview).
+   - **Emergency escalation contacts and contact rotations:** who we call for emergencies. These are admin only, so PS makes the changes. See [Account Settings](/latchel-admin/Product-Support-Team/account-settings) and [Job Aid: On-Call URLs](/latchel-admin/Product-Support-Team/Job-Aid-On-Call-URLs-Intake-Outcome-vs-Contact-Rotation).
+   - **Pre-dispatch instructions and critical notes:** see [SOP: Pre-Dispatch Instructions & Critical Notes](/latchel-admin/Product-Support-Team/SOP-Pre-Dispatch-Instructions-Critical-Notes).
+   - **Action Sets:** for communications the standard settings don't cover. See [Job Aid: Top PM Requested Action Sets](/latchel-admin/Product-Support-Team/Job-Aid-Top-PM-Requested-Action-Sets).
+2. **Nothing covers it?** Treat it as a feature request. See [How to Handle: Feature Requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests).
 
-#### How to Handle: Complaints
+## Complaints
 
-_For complaints such as "Too often" or "Not enough" communications:_
+_Examples: "You contact us too often," "We don't hear enough."_
 
-1. **Initial Contact:** Email the customer using [the Outbound Comm Complaint SF Template](https://latchel1.lightning.force.com/lightning/r/EmailTemplate/00XUS00000CgFzp2AF/view) to gather details.
-2. **Response Procedure:** Based on customer feedback, proceed with one of the following:
-   1. Refer to steps 1-2 in the “How to Handle: Requests” section above.
+1. Email the PM to get the details: which communications, who's receiving them, and what they'd prefer instead.
+2. Based on their answer, follow the **Requests** steps above to adjust their settings.
 
-#### How to Handle: Issues/Bugs
+## Issues and bugs
 
-_For issues like "Not getting notified when X happens":_
+_Example: "I'm not getting notified when X happens."_
 
-1. Troubleshooting Steps:
-   1. For email issues, refer to troubleshooting: [Email Troubleshooting](https://latchel.atlassian.net/wiki/x/AYA5kQ).
-   2. For SMS issues, follow these steps: [SMS Troubleshooting](https://latchel.atlassian.net/wiki/x/PwBQvw).
-2. **Escalation**:
-   1. If troubleshooting does not resolve the issue, report the bug in the #bug-report Slack Channel using the Bug Report workflow.
+1. **Troubleshoot first:**
+   - **Email:** [SOP: Handling Email Delivery Issues (SendGrid)](/latchel-admin/Product-Support-Team/SOP-Handling-Email-Delivery-Issues-SendGrid)
+   - **Texts and calls:** [Job Aid: Using the Twilio Console (Logs & Phone Numbers)](/latchel-admin/Product-Support-Team/Job-Aid-Searching-and-Analyzing-Messaging-Logs-in-Twilio)
+   - Also confirm the user is in the right user group and has the notification turned on.
+2. **Still not working?** Report it in `#bug-report` with the **Bug Report** workflow.
