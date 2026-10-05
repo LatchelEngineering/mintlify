@@ -32,6 +32,7 @@ description: "The Rent Manager Integration with Latchel makes property maintenan
   4. **DO NOT** create properties or residents in Latchel. We look at Rent Manager for this data.
   5. Service Issues in Rent Manager can have several properties and units. If this happens, Latchel only takes the first one. We recommend only having a single property or unit on a Service Issue.
   6. Resident & property/unit data will sync from Rent Manager to Latchel when the integration is initially activated. After the initial activation, only **NEW** residents, properties, and units in Rent Manager will be synced to Latchel. You will need to deactivate residents, properties, and units in Latchel.
+  7. Contact info for existing residents also syncs. Every hour, Latchel picks up residents who were updated in Rent Manager and brings over their latest contact info. In Latchel, you can set the Rent Manager contact info as **Primary**, but you can't delete it.
 </Tip>
 
 ### **Work Orders/Service Issues**

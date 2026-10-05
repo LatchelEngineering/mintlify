@@ -68,7 +68,8 @@ When a property is deactivated through this process. It will be logged to the pr
   Properties that were manually disabled in Latchel, whether requested or not, will not automatically reactivate, even if the status of the property in Propertyware is still active.
 </Note>
 
-2. **Residents -** The integration will not currently update contact information, name nor “**active**” status. Once a resident is created a two things will change on the subsequent sync:
+2. **Residents -** The integration will not currently update the name nor “**active**” status. Once a resident is created, these things will change on subsequent syncs:
+   - **Contact information**, for residents updated in Propertyware. In Latchel, this contact info shows as the **PMS** source. You can set it as **Primary**, but you can't delete it in Latchel.
    - The **property and unit** the resident is associated with
    - The **move\_in and move\_out dates**. Any issues with move in/out dates needs to be resolved in Propertyware when an integration is in place. These fields can be found on the tenant's lease.
 
