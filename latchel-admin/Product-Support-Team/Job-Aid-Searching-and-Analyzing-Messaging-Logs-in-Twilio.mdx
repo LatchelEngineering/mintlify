@@ -1,11 +1,12 @@
 ---
-title: "Job Aid: Searching and Analyzing Messaging Logs in Twilio"
-groups: ["latchel"]
+title: "Job Aid: Using the Twilio Console (Logs & Phone Numbers)"
+groups:
+  - "latchel"
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3209691199/Job+Aid+Searching+and+Analyzing+Messaging+Logs+in+Twilio"
 ---
 
 <Note>
-  **Objective**: This job aid provides guidance on how to **search for messaging logs in Twilio** and **analyze message details** to support troubleshooting, track communication flow, and verify delivery outcomes.
+  **Objective**: This job aid covers how to **search and analyze messaging logs**, **check call logs** and **release phone numbers** in the Twilio Console, to support troubleshooting, track communication flow, and verify delivery outcomes.
 </Note>
 
 <Warning>
@@ -22,32 +23,24 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3209691199/Jo
 
   For the quickest support, PMs should use the designated Latchel phone numbers and channels:
 
-  - 📞 [Latchel Phone Numbers](#)
-  - 📩 [How to Contact Latchel](#)
+  - 📞 [Latchel Phone Numbers](/s/topic/0TO5e000000h9wqGAA/Latchel-Phone-Numbers)
+  - 📩 [How to Contact Latchel](/s/topic/0TO5e000000h9wqGAA/How-to-Contact-Latchel)
 </Note>
+
+<Info>
+  **The Twilio Console has a new UI.** Menus moved from **Monitor** and **Develop** to **Communications** and a **Phone numbers** button on Home. See Abi's walkthrough deck: [Twilio Console: What Changed](https://docs.google.com/presentation/d/1QOkdVH2Xl3PI5qc4PcgezayyvBwpbSux4I8t99q0UT4/edit?usp=sharing).
+</Info>
 
 #### **Accessing Messaging Logs in Twilio**
 
-1. **Login**: Navigate to [https://www.twilio.com/console](https://www.twilio.com/console)  and log in using your credentials.
-2. **Navigate to Messaging Logs**:
-
-- From the left-hand menu, click **“Monitor.”**
-- Under **“Monitor,”** select **“Logs.”**
-- Click **“Messaging”** to open the full list of message logs.
-
-<Frame>
-  ![Logs-Messaging-Twilio-Console-10-16-2024\_11\_13\_AM.png](/images/PST-20.png)
-</Frame>
+1. **Log in:** Go to [twilio.com/console](https://www.twilio.com/console) and log in. You land on **Home**.
+2. **Open Messaging Logs:** In the left menu, go to **Communications > Messaging > Logs** (this used to be **Monitor > Logs > Messaging**).
 
 ---
 
 #### **Searching for Messaging Logs**
 
 You can filter and search messaging logs based on specific criteria to locate relevant message details quickly.
-
-<Frame>
-  ![Logs-Messaging-Twilio-Console-10-16-2024\_11\_13\_AM (1).png](/images/PST-21.png)
-</Frame>
 
 ##### **1. Search by Date Range**
 
@@ -120,10 +113,6 @@ Once the relevant logs are retrieved, you’ll be able to see detailed informati
 
 #### **Practical Example of Log Interpretation**
 
-<Frame>
-  ![Logs-Messaging-Twilio-Console-10-16-2024\_11\_16\_AM.png](/images/PST-22.png)
-</Frame>
-
 Here’s an example of how you would interpret a messaging log:
 
 1. **Message SID**: `SMxxxxxxxxxxxxxxxxxxxxx`
@@ -149,6 +138,36 @@ Here’s an example of how you would interpret a messaging log:
 6. **Error Code**: `30007`
 
 - This indicates **carrier filtering**, which means the message may have been flagged as spam by the carrier. To resolve this, you may need to revise the message content to ensure it complies with carrier regulations.
+
+---
+
+#### **Checking Call Logs**
+
+Call logs are on the same page as before, under a new menu path:
+
+- **New:** **Communications > Voice > Logs**
+- **Old:** Monitor > Logs > Voice
+
+Use call logs to confirm whether a call came in, when, from which number, and how it was routed (for example, a PM sent to voicemail).
+
+---
+
+#### **Releasing a Phone Number**
+
+1. **Log in** to the Twilio Console. You land on **Home**. Click the **Phone numbers** button at the top right.
+2. **Search My Inventory.** Paste the number as-is, even formatted like `(206) 222-4966`. You don't need to strip out extra characters anymore.
+3. **Release it.** Click the number, then click the red **Release phone number** button at the top right of the configuration page.
+
+Released numbers are listed under **Numbers & senders > Released Numbers**.
+
+<Accordion title="Old vs. new: releasing a number">
+  |  | **Old** | **New** |
+  | --- | --- | --- |
+  | **Navigation** | Develop > Phone Numbers > Manage > Active numbers | Home > **Phone numbers** button > My Inventory |
+  | **Search** | Number filter + Filter button, digits only | One search box that accepts pasted, formatted numbers |
+  | **Release button** | Actions card on the Properties page | Red button, top right of the configuration page |
+  | **Released list** | Manage > Released numbers | Numbers & senders > Released Numbers |
+</Accordion>
 
 ---
 
