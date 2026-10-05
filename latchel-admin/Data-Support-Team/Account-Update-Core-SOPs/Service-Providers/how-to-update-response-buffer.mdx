@@ -1,0 +1,54 @@
+---
+title: "How to Update Service Provider Response Buffer"
+sidebarTitle: "Update Response Buffer"
+description: "How to set how long Latchel waits for a service provider to accept a job before contacting the next one."
+groups: ["latchel"]
+---
+
+On non-emergency work orders, each preferred SP gets a window to accept the job before Latchel moves to the next SP on the priority list. This window is the **Response Buffer**. The default is 1 hour.
+
+<Check>
+  **In other words:**
+
+  The response buffer is set per SP, per skill category. It only counts business hours, from 8 AM to 5 PM.
+</Check>
+
+### **How to Update the Response Buffer**
+
+<Steps>
+  <Step title="Impersonate the PM." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    In app.latchel.com, impersonate a user from the PM company.
+  </Step>
+  <Step title="Open Categories & Prioritization." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Go to **People > Service Providers > Categories & Prioritization** and expand the skill category.
+  </Step>
+  <Step title="Click the ellipsis next to the SP and choose Edit Settings." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Change the **Response Buffer** to the requested time.
+  </Step>
+  <Step title="Click Save." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    Repeat for each category the request covers. The buffer doesn't carry over between categories.
+  </Step>
+  <Step title="Check portfolio and property levels." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    If the PM has portfolio- or property-level prioritization, update the buffer there too.
+  </Step>
+</Steps>
+
+### **Things to Remember**
+
+<Warning>
+  The **last or only SP** in every skill category must have a **72-hour** response buffer. Check this whenever you add, remove, or reorder SPs.
+</Warning>
+
+<Note>
+  The timer starts when the job text is sent and only runs during business hours. For example, if SP 1 is texted at 4:30 PM with a 1-hour buffer, SP 2 is contacted at 8 AM the next business day.
+</Note>
+
+<Tip>
+  Use queries **V33**, **V34**, and **V35** to export response buffers at the company, portfolio, and property level. A blank value means the 60-minute default.
+</Tip>
+
+**Related guides**
+
+<Card title="Customize How Long Latchel Waits Before Contacting Your Next Service Provider" color="#ff9b8a" icon="hourglass-half" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/Customize-How-Long-Latchel-Waits-Before-Contacting-Your-Next-Service-Provider">
+  The PM-facing guide to the response buffer.
+</Card>

@@ -1,0 +1,78 @@
+---
+title: "How to Assign Properties to Portfolios"
+sidebarTitle: "Assign Properties to Portfolios"
+description: "How to add properties to a portfolio one at a time in the Latchel admin, or in bulk with the Data Support Tool."
+groups: ["latchel"]
+---
+
+Use this SOP when a PM asks to add or move properties into a portfolio. For a handful of properties, update them in the Latchel admin. For larger lists, use the Data Support Tool.
+
+### **Before You Start**
+
+<Steps>
+  <Step title="Get the list of properties and portfolios." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Confirm the PM's file shows which property goes into which portfolio.
+  </Step>
+  <Step title="Pull the current portfolio assignments." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Run **PORT26** (add `p.owner_id` to see owners) or **PORT10** for properties that aren't in a portfolio yet. See [Required Reports](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Reports/required-reports).
+  </Step>
+  <Step title="Make sure every portfolio exists." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Create any missing portfolios first. See [How to Manage Portfolios](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Portfolios/how-to-manage-portfolios). Note each portfolio ID from the end of its URL.
+  </Step>
+</Steps>
+
+### **Option A: Assign a Few Properties in the Latchel Admin**
+
+<Steps>
+  <Step title="Open the property." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Open the PM company profile, go to **Properties**, and open the property.
+  </Step>
+  <Step title="Go to the Portfolio section." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Scroll down to **Portfolio**, click the three dots, and choose **Set portfolio**.
+  </Step>
+  <Step title="Choose the portfolio and click Submit." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Repeat for each property.
+  </Step>
+</Steps>
+
+<Tip>
+  You can also add properties from the portfolio itself while impersonating the PM: open the portfolio, go to the **Properties** tab, click **Add Property**, and search for the address.
+</Tip>
+
+### **Option B: Assign Many Properties With the DS Tool**
+
+<Steps>
+  <Step title="Get the property IDs." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Run **Match Properties** in the [Data Support Tool](/latchel-admin/Data-Support-Team/Latchel-Data-Support-Tool-Guide) with the PM's file to get each `property_id`.
+  </Step>
+  <Step title="Build the CSV." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Create a CSV with two columns: `property_id` and `portfolio_id`.
+  </Step>
+  <Step title="Run Update Properties." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Use **Bulk Update via API > Update Properties**. Test in Demo, then apply in Production. See [How to Bulk Update Properties and Residents Using the DS Tool](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Bulk-Updates/how-to-bulk-update-properties-and-residents).
+  </Step>
+</Steps>
+
+### **After You Assign**
+
+<Steps>
+  <Step title="Verify the assignments." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Re-run **PORT26** and compare it with the PM's file. Every property should be in the right portfolio.
+  </Step>
+  <Step title="Check the inherited settings." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Spot-check a moved property to confirm it now shows the portfolio's owner, assigned PM, and service provider prioritization.
+  </Step>
+  <Step title="Document and close the ticket." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Follow the closing steps in the [Data Support Workflow](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Workflow/data-support-workflow). Share the PORT26 export with the requester if the PM wants to verify it.
+  </Step>
+</Steps>
+
+### **Things to Remember**
+
+<Warning>
+  If a property has inheritance turned off, it keeps its own settings even after you move it into a portfolio. Ask the requester whether it should follow the portfolio before you turn inheritance back on.
+</Warning>
+
+<Note>
+  You can assign properties to portfolios on integrated accounts too. It's one of the property updates allowed when an integration is active.
+</Note>

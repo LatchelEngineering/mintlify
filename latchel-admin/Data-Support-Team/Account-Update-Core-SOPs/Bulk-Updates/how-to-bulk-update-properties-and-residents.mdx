@@ -1,0 +1,126 @@
+---
+title: "How to Bulk Update Properties and Residents Using the DS Tool"
+sidebarTitle: "Bulk Update Using the DS Tool"
+description: "The step-by-step process for preparing, testing, and applying bulk property and resident updates with the Data Support Tool."
+groups: ["latchel"]
+---
+
+The Latchel Data Support Tool, built by Matias Cantella, lets us match a PM's property and resident list to Latchel and apply bulk updates through the Partner API, with no code and no engineering help. This SOP covers how to use it in a ticket. For details on every screen, field, and operation, see the [Latchel Data Support Tool Guide](/latchel-admin/Data-Support-Team/Latchel-Data-Support-Tool-Guide).
+
+<Check>
+  **In other words:**
+
+  Match first, build a clean CSV, test in Demo, apply in Production, and always save the results log.
+</Check>
+
+### **When to Use the DS Tool**
+
+Use the tool when a request has too many records to update one by one. Common uses:
+
+- Enabling or disabling properties and residents
+- Updating resident contact info and move dates
+- Adding residents to existing properties
+- Assigning properties to portfolios, owners, or PM users
+- Adding reference IDs during a data migration
+- Creating owners and assigning them to properties
+- Subscribing or unsubscribing properties from a package
+
+<Warning>
+  The tool can't create properties. To bulk create properties on a non-integrated account, use **Bulk Update Properties** from the three-dot menu on the PM company's **Properties** tab in the Latchel admin.
+</Warning>
+
+### **How to Bulk Update Properties and Residents**
+
+<Steps>
+  <Step title="Open the tool and set the PM Company ID." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Sign in with the shared team password. Paste the PM company's admin URL or company ID. A green banner confirms the scope.
+
+    <Note>
+      Every operation is locked to this PM Company ID. Rows with IDs from another PM company are blocked automatically.
+    </Note>
+  </Step>
+  <Step title="Get the Latchel IDs." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    - **For property updates:** run **Match Properties** with the PM's file to get each `property_id`. Review every **IN MANUAL REVIEW** row, and look into every **NO MATCH** and **MATCHED INACTIVE** row before using it.
+    - **For resident updates:** run **Match Residents** and copy the `user_id` values.
+
+    Click **Refresh from API** if you need the latest data.
+  </Step>
+  <Step title="Build your CSV." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Create one row per record, with the required ID column plus only the fields you're changing. See the Tool Guide for the full list of fields for each operation.
+
+    | Operation | Required columns |
+    | --- | --- |
+    | **Update Properties** | `property_id` |
+    | **Update Residents** | `user_id` (plus `property_id` for `is_active`, `move_in_date`, or `move_out_date`) |
+    | **Add Residents to Properties** | `property_id`, `name` |
+
+    <Tip>
+      Empty cells mean "don't change this field." Leave a cell blank instead of re-entering the current value.
+    </Tip>
+  </Step>
+  <Step title="Get the PM's API key." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    In app.latchel.com, impersonate a user from the PM company. Go to **Account Settings > Integrations** and copy the API key at the bottom of the page.
+
+    <Warning>
+      Each API key belongs to one PM company. Double-check that you're using the right key before you run anything.
+    </Warning>
+  </Step>
+  <Step title="Test in Demo." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    Choose **Bulk Update via API**, select the **Demo** environment, and enter the API key. Choose the operation and upload your CSV. Check the preview to confirm each row shows the changes you expect.
+
+    For a large batch or a new operation, test a small sample first.
+  </Step>
+  <Step title="Apply in Production." icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
+    Switch to **Production**, re-enter the API key, and upload the same CSV. Review the preview again. Rows with no changes are flagged with ⚠️ and skipped. Check the confirmation box, then click **Apply changes**.
+  </Step>
+  <Step title="Review and save the results log." icon="7" iconType="sharp-solid" stepNumber={7} titleSize="h4">
+    When the run finishes, check the results table. Every row should show ✅ OK (HTTP 200).
+
+    | Code | Meaning | What to do |
+    | --- | --- | --- |
+    | **200** | Success | Nothing |
+    | **422** | Validation error | Read the **Detail** column, fix the row, and re-run only the failed rows |
+    | **404** | Record not found | Check the ID and the PM Company ID |
+
+    Click **Download results log** and attach it to the ASM ticket. This is required for every production run.
+  </Step>
+  <Step title="Verify in Latchel and close the ticket." icon="8" iconType="sharp-solid" stepNumber={8} titleSize="h4">
+    Spot-check a few records in the Latchel admin and re-run your Latchel report to confirm the counts. Then document and close the ticket as described in the [Data Support Workflow](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Workflow/data-support-workflow).
+  </Step>
+</Steps>
+
+### **Things to Remember**
+
+<Warning>
+  - **Phone numbers** must be valid US numbers. Fake numbers like 555-XXXX are rejected.
+  - **Emails** must be unique in Latchel. If an email belongs to another user, that row fails.
+  - **Tenancy fields** (`is_active`, `move_in_date`, `move_out_date`) need `property_id` in the same row.
+</Warning>
+
+<Note>
+  The Partner API allows **600 calls per 10 minutes**. The tool shows how many calls are left while it runs, so split very large batches.
+</Note>
+
+<Tip>
+  Most errors come from the wrong API key, running in Demo instead of Production, or unusual address formats such as address ranges or the same text in Address 1 and Address 2.
+</Tip>
+
+### **Frequently Asked Questions**
+
+<AccordionGroup>
+  <Accordion title="Can I add residents to an integrated account with the tool?">
+    No. On integrated accounts, the integration creates residents. You can still update contact info, move dates, and status to match the PM's report.
+  </Accordion>
+  <Accordion title="What if a production run has unexpected errors?">
+    Download the results log and share it with the Data Support Lead, along with your CSV.
+  </Accordion>
+  <Accordion title="Who do I contact for tool access or bugs?">
+    Reach out to Matias Cantella for the shared password or to report an issue. You can also log feedback in the team's Feedback & Suggestions log linked in the Tool Guide.
+  </Accordion>
+</AccordionGroup>
+
+**Related guides**
+
+<Card title="Latchel Data Support Tool Guide" color="#ff9b8a" icon="screwdriver-wrench" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Latchel-Data-Support-Tool-Guide">
+  A full reference for every screen, operation, and field in the tool.
+</Card>

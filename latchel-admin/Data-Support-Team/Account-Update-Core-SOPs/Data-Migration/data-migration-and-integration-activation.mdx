@@ -1,0 +1,207 @@
+---
+title: "Data Migration and Integration Activation"
+sidebarTitle: "Data Migration Task"
+description: "How Data Support matches reference IDs for existing properties and residents, adds them in Latchel, and activates the PM's integration."
+groups: ["latchel"]
+---
+
+Some customers already have properties and residents in Latchel before they connect their property management software (PMS). If we turn on the integration without preparing their data, the sync creates a second copy of every property and resident.
+
+A **Data Migration** prevents this. We find the PMS reference IDs for every existing property and resident and add them to the matching records in Latchel. Once the IDs are in place, the integration knows which records to update instead of create.
+
+<Check>
+  **What's changed:** Data Support now completes the whole process. **We add the reference IDs in Latchel and activate the integration ourselves.** Product Engineering is no longer involved, so there's no need to send CSVs to Product or give them a one-week heads-up.
+</Check>
+
+<Warning>
+  A data migration takes about **2–3 weeks**, depending on how many records need matching. Make sure the requester reminds the customer of this timeline to avoid escalations later.
+</Warning>
+
+### **When a Data Migration Is Needed**
+
+| Situation | What to do |
+| --- | --- |
+| The customer **has** properties or residents in Latchel **and** wants to activate an integration | Complete a data migration (Parts 1–4), then activate (Part 5) |
+| The customer has **no** data in Latchel | Skip the migration. Go straight to [Part 5: Activate the Integration](#part-5-activate-the-integration). Only the PMS credentials are needed. |
+
+### **How Requests Reach Us**
+
+PS or CS submits the **Account Update Request** Typeform in **#data-support-requests** and chooses **Activate Integration (Data Migration Request)**. The form asks:
+
+- Whether the customer has existing properties and residents in Latchel
+- Which PMS they use
+- The PMS credentials
+
+<Note>
+  If PS or CS finds that an integrated customer needs a migration while troubleshooting, they escalate the ASM ticket to the Data Support team space with **Data Migration** as the task type. They shouldn't activate the integration themselves.
+</Note>
+
+### **Part 1: Gather the Reports**
+
+<Steps>
+  <Step title="Check the request for credentials and reports." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    We need one of these:
+
+    - **The PMS credentials and login URL.** With these, we can export the reports ourselves.
+    - **The customer's property and resident reports with reference IDs.**
+
+    If neither is complete, set the ticket to **Escalated** and tell the requester exactly what's missing. See the [Latchel Integrations Wiki](/latchel-admin/Product-Engineering/latchel-integrations-wiki/latchel-integrations-wiki) for the credentials each PMS needs.
+  </Step>
+  <Step title="Export the PM's reports with reference IDs." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Log in to the PMS and export the property and resident reports. See the PMS table in [Required Reports](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Reports/required-reports) or [How to Export Reports with Reference IDs](/s/topic/0TO5e000000h9wqGAA/How-to-Export-Reports-with-Reference-IDs).
+
+    Make sure you have:
+
+    - **Properties:** `ref_property_id` and `ref_unit_id`
+    - **Residents:** `ref_user_id`
+
+    <Tip>
+      If the PMS login doesn't have permission to see a report, ask the requester to have the PM fix the permissions.
+    </Tip>
+  </Step>
+  <Step title="Export Latchel's data." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Run the **R4** query in pgAdmin from the [Job Aid: SQL Queries](/latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/Job-Aid-SQL-Queries). It lists every property and resident, including vacant units.
+  </Step>
+</Steps>
+
+### **Part 2: Match the Records**
+
+<Steps>
+  <Step title="Match properties." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Go down the Latchel property list and find each property in the PM's report. Pay close attention to address 1 and address 2. For each match, copy the `ref_property_id` and `ref_unit_id` into the Latchel sheet. If you can't find a match or aren't sure, leave both blank.
+
+    <Tip>
+      **Match Properties** in the [Data Support Tool](/latchel-admin/Data-Support-Team/Latchel-Data-Support-Tool-Guide) can do the first pass for you. Review every row that isn't **HIGH CONFIDENCE**.
+    </Tip>
+  </Step>
+  <Step title="Match residents." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Go down the Latchel resident list and find each resident in the PM's report. Names may be misspelled in either file, so use name, email, and phone together. For each match, copy the `ref_user_id` into the Latchel sheet. If you can't find a match or aren't sure, leave it blank.
+  </Step>
+  <Step title="Check the reference IDs." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    - A `ref_property_id` can repeat across several units. This means it's a multi-unit address.
+    - Every `ref_unit_id` must be **unique**.
+  </Step>
+</Steps>
+
+<Tip>
+  VLOOKUP and INDEX + MATCH make matching much faster. Conditional formatting helps you spot unmatched rows.
+</Tip>
+
+| PMS | `ref_property_id` | `ref_unit_id` | `ref_user_id` |
+| --- | --- | --- | --- |
+| **AppFolio** | Property ID | Unit ID | Tenant ID |
+| **Propertyware** | Building ID | Unit ID (can match the Building ID for single units) | Entity ID |
+| **Rent Manager** | Property ID | Unit ID | Contact ID |
+| **Rentvine** | Property ID | Unit ID | Tenant ID |
+| **Yardi** | Property Code | Unit Code | Tenant Code |
+
+Video overview of matching (from the original job aid): [Loom](https://www.loom.com/share/cdc6dd652d9b44d48506790018d5f3bf)
+
+### **Part 3: Add the Reference IDs in Latchel**
+
+<Steps>
+  <Step title="Build the CSV files." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Include only matched records.
+
+    | File | Columns |
+    | --- | --- |
+    | **Properties** | `property_id`, `ref_property_id`, `ref_unit_id` |
+    | **Residents** | `user_id`, `ref_user_id` |
+  </Step>
+  <Step title="Upload them with the DS Tool." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    In the Data Support Tool, use **Bulk Update via API**:
+
+    - **Update Properties** for the properties CSV
+    - **Update Residents** for the residents CSV
+
+    Test in **Demo** first, then apply in **Production** and download the results log. See [How to Bulk Update Properties and Residents Using the DS Tool](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Bulk-Updates/how-to-bulk-update-properties-and-residents).
+  </Step>
+  <Step title="Fix single records on the property page." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    For one-off corrections, admins can edit a property's reference property ID and unit ID directly on the property page in the Latchel admin.
+
+    <Warning>
+      Reference IDs control the sync. A wrong ID can link a Latchel record to the wrong PMS record. Double-check before you save.
+    </Warning>
+  </Step>
+  <Step title="Verify the IDs." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    Re-run **R4** and confirm every matched record now has its reference IDs.
+  </Step>
+</Steps>
+
+### **Part 4: Clean Up Unmatched Records**
+
+<Steps>
+  <Step title="Move misassigned residents." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    If a resident matches the PM's report but is on the wrong property in Latchel, move them to the correct property.
+  </Step>
+  <Step title="Confirm before disabling unmatched records." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Unmatched properties and residents need to be disabled. Ask the requester to confirm first, and handle it as a separate Account Update Request.
+  </Step>
+  <Step title="Note outdated contact info." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    You don't need to update outdated resident contact info during a migration. Tell the requester about any discrepancies so they can submit a separate request.
+  </Step>
+</Steps>
+
+### **Part 5: Activate the Integration**
+
+<Steps>
+  <Step title="Submit the Activate Integration workflow." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Go to **#feature-requests**, open the workflows bookmarked at the top of the channel, and choose **Activate Integration**. Fill out:
+
+    - Requester's name
+    - Company's name and company URL
+    - Company's third-party integration
+    - Integration credentials
+    - CSM
+    - Deadline
+    - Related ASM ticket
+    - Attached reports (your CSVs, if you did a migration)
+
+    Click **Submit**.
+  </Step>
+  <Step title="Activate the integration on the Integrations tab." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Open the PM company in the Latchel admin, go to the **Integrations** tab, and enter the PMS credentials. All PMS integrations can now be activated here without Product Engineering: AppFolio (Chrome plug-in), Rent Manager, Propertyware, Yardi, Rentvine, and Buildium.
+
+    Follow the steps for the PMS in its reference guide:
+
+    - [AppFolio](/latchel-admin/Product-Engineering/latchel-integrations-wiki/appfolio-reference-guide-the-latchel-data-sync)
+    - [Rent Manager](/latchel-admin/Product-Engineering/latchel-integrations-wiki/rent-manager-reference-guide)
+    - [Propertyware](/latchel-admin/Product-Engineering/latchel-integrations-wiki/propertyware-reference-guide)
+    - [Yardi](/latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide)
+    - [Rentvine](/latchel-admin/Product-Engineering/latchel-integrations-wiki/rentvine-reference-guide)
+    - [Buildium](/latchel-admin/Product-Engineering/latchel-integrations-wiki/buildium-reference-guide) (enter the client ID and secret from the PM's Buildium API key)
+  </Step>
+  <Step title="Confirm the work order sync settings with the CSM." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Ask the CSM how the PM wants work orders to sync, then set them in the company's **Miscellaneous Settings**:
+
+    - **Integration Sync Method:** Assigned Work Orders, All Work Orders, or No Work Orders
+    - **Integration Work Order Update Conditions:** for example, update on completed and canceled
+  </Step>
+  <Step title="Lock manual property and resident changes." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    Make sure **Property Modification** and **Resident Modification** are disabled under **Miscellaneous Settings**. This keeps anyone from adding records manually that the integration should create.
+  </Step>
+  <Step title="Audit the first sync." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    After the first sync runs, check for duplicates and compare the active unit count with the PM's report. Merge any duplicates, and log any follow-up updates as a new Account Update Request.
+  </Step>
+  <Step title="Update and close the ticket." icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
+    In the ASM ticket, add an internal note with the worksheet, the results logs, and the link to your **#feature-requests** post. Tell the requester the integration is active, then close the ticket.
+  </Step>
+</Steps>
+
+<Note>
+  After activation, the requester should advise the customer to turn off maintenance request submissions in their PMS so residents only submit through Latchel.
+</Note>
+
+### **Frequently Asked Questions**
+
+<AccordionGroup>
+  <Accordion title="Does Product Engineering still need to assign reference IDs?">
+    No. Data Support adds reference IDs with the DS Tool or on the property page, and activates the integration on the Integrations tab.
+  </Accordion>
+  <Accordion title="What if the customer has no data in Latchel?">
+    Skip the migration. Get the PMS credentials and go straight to Part 5.
+  </Accordion>
+  <Accordion title="What if the integration has problems after activation?">
+    Escalate to the CSM with the PS Escalate to CSM workflow. See [How to Escalate Issues to the CSM](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Escalations/how-to-escalate-issues-to-csm).
+  </Accordion>
+</AccordionGroup>

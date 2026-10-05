@@ -1,0 +1,67 @@
+---
+title: "How to Manage Service Providers"
+sidebarTitle: "Overview"
+description: "An overview of the service provider updates Data Support handles, with links to each SOP."
+groups: ["latchel"]
+---
+
+Service provider (SP) setup decides who Latchel contacts for every work order. When an SP is missing, prioritized wrong, or missing a skill, work orders stall or go to the wrong vendor. These SOPs cover every SP update that comes to Data Support.
+
+<Check>
+  **In other words:**
+
+  An SP can only get a PM's work orders if they're added to Latchel, assigned to the PM, given the right skills, and prioritized in the right skill categories.
+</Check>
+
+### **How Service Provider Requests Reach Us**
+
+- **Account Update Request** Typeform: **Portfolios > Manage Service Provider**, or service provider updates under the property options
+- **New Vendor Self-Onboard** Typeform: a vendor signs up for a PM, such as Nomad
+- **Owner-preferred SP** Jotform: an owner asks to add their own vendor
+- **Add New Preferred Service Provider for Owners** workflow in **#ops_info_center**: Ops assigned an SP to a live work order and needs DS to finish the setup
+
+### **Before You Start**
+
+<Warning>
+  Know which level you're changing. SP prioritization can be set at the **Company**, **Portfolio**, and **Property** level, and lower levels inherit from higher ones unless inheritance is turned off. Check all levels before you make a change. See [Configuration Inheritance](/s/topic/0TO5e000000h9wqGAA/Configuration-Inheritance-Property-Portfolio-Company-Level).
+</Warning>
+
+<Tip>
+  Many settings are easiest to reach from the PM's dashboard. To get there, impersonate a user from the PM company in app.latchel.com.
+</Tip>
+
+### **Service Provider SOPs**
+
+<CardGroup cols={2}>
+  <Card title="Add New Service Providers" color="#ff9b8a" icon="user-plus" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-add-new-service-providers">
+    Create a new SP profile without duplicates.
+  </Card>
+  <Card title="Assign Service Providers to Property Managers" color="#ff9b8a" icon="handshake" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-assign-service-providers-to-property-managers">
+    Make an SP a preferred SP for a PM company.
+  </Card>
+  <Card title="Update Prioritization" color="#ff9b8a" icon="arrow-down-1-9" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-update-service-provider-prioritization">
+    Set the order Latchel contacts SPs in each skill category.
+  </Card>
+  <Card title="Update Skills" color="#ff9b8a" icon="toolbox" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-update-service-provider-skills">
+    Add or remove skills on an SP's profile or a PM's priority list.
+  </Card>
+  <Card title="Update Response Buffer" color="#ff9b8a" icon="hourglass-half" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-update-response-buffer">
+    Set how long Latchel waits before contacting the next SP.
+  </Card>
+  <Card title="Set as VIP" color="#ff9b8a" icon="crown" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-set-service-provider-as-vip">
+    Let an SP accept jobs without scheduling an arrival time.
+  </Card>
+  <Card title="Turn Invoice Collection On and Off" color="#ff9b8a" icon="file-invoice-dollar" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-turn-on-and-off-invoice-collection">
+    Control whether Latchel requests invoices from an SP.
+  </Card>
+</CardGroup>
+
+### **Things to Remember**
+
+<Warning>
+  Latchel doesn't support warranty companies (for example, GE Home Warranty) as SPs. Let the PM or owner know, because work orders sent to them would end up in Pending.
+</Warning>
+
+<Note>
+  For property-specific SP requests, like a vendor who should only handle one building's boilers, write your recommendation in the ticket and have the CSM confirm it with the PM before you remove skills from other SPs.
+</Note>

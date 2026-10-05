@@ -1,0 +1,76 @@
+---
+title: "How to Update Service Provider Prioritization"
+sidebarTitle: "Update Prioritization"
+description: "How to add, reorder, and remove service providers in a PM's skill category priority lists at the company, portfolio, and property level."
+groups: ["latchel"]
+---
+
+Prioritization sets the order Latchel contacts SPs in each skill category. The #1 SP gets the job first, and the next SP is contacted only after the response buffer runs out. Getting the order right means work orders reach the PM's preferred vendor first.
+
+<Check>
+  **In other words:**
+
+  Each skill category has its own ranked list. Lists can be set at the Company, Portfolio, or Property level, and lower levels inherit from higher ones.
+</Check>
+
+### **Before You Start**
+
+- Pull the current prioritization with queries **V19–V24** so you can compare it with the PM's request. See [Required Reports](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Reports/required-reports).
+- Confirm which level the PM wants to change: the whole company, a portfolio, or specific properties.
+- Make sure each SP is already assigned to the PM. See [How to Assign Service Providers to Property Managers](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-assign-service-providers-to-property-managers).
+
+### **How to Update Company-Level Prioritization**
+
+<Steps>
+  <Step title="Open the PM's Categories & Priorities." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Go to **People > Property Managers**, open the PM's profile, then the **vendors** tab and the **Categories & Priorities** sub-tab.
+  </Step>
+  <Step title="Add the SP to a category." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Open the skill category and click **+ include vendor**. Click **+include** next to the SP, select the skills to include, and click **save**.
+
+    New SPs are added to the bottom of the list. If an SP covers several categories, add them to each one.
+  </Step>
+  <Step title="Reorder the list." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Click **Edit Priorities**, drag each SP by the six-dot icon into the right order, and click **Done Updating Priorities**.
+  </Step>
+  <Step title="Remove an SP if needed." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    Click the three dots next to the SP and choose **Remove from priority list**.
+  </Step>
+</Steps>
+
+### **How to Update Portfolio-Level Prioritization**
+
+<Steps>
+  <Step title="Open the portfolio's Service Providers tab." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Open the portfolio from the PM company's **Portfolios** tab, then go to **Service Providers > Categories & Priorities**.
+  </Step>
+  <Step title="Add the SP to one or more categories." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    - **One category:** choose the category, click **+ Include Service Provider**, then **+ include**, and select the properties in the pop-up. Click **Continue**.
+    - **Several categories:** click the three dots and choose **Prioritize Service Provider for Multiple Skills**. Search for the SP, choose the skills or **Check All Categories**, choose top or bottom of the list, and click **Prioritize**.
+  </Step>
+  <Step title="Turn off inheritance if the portfolio should differ from the company." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    If inheritance stays on, company-level changes can overwrite the portfolio's list.
+  </Step>
+</Steps>
+
+<Tip>
+  When several portfolios need the same list, use **Copy Service Provider Settings from Another Portfolio** instead of rebuilding each one.
+</Tip>
+
+### **How to Update Property-Level Prioritization**
+
+Open the property and go to the **Service Provider** tab. Click the ellipsis next to **Service Provider Prioritization** and choose **Copy Company Priorities** to start from the parent list, then adjust it. Turning this off disables inheritance for that property. See [How to Copy Company or Portfolio Service Provider Prioritization](/s/topic/0TO5e000000h9wqGAA/How-to-Copy-Company-or-Portfolio-Service-Provider-Prioritization).
+
+### **Things to Remember**
+
+<Note>
+  If the PM hasn't said who should be first, set a handyman as priority 1 and put the others after them.
+</Note>
+
+<Warning>
+  After you change the order, check the **response buffer** for the SP who is now last in each category. The last or only SP in a category should have a 72-hour buffer. See [How to Update Response Buffer](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-update-response-buffer).
+</Warning>
+
+<Note>
+  For owner-preferred SPs, prioritize only in the owner's portfolio, not at the company level.
+</Note>

@@ -1,0 +1,68 @@
+---
+title: "How to Add New Service Providers"
+sidebarTitle: "Add New Service Providers"
+description: "How to create a complete, duplicate-free service provider profile in the Latchel admin."
+groups: ["latchel"]
+---
+
+A complete SP profile, with the right contact info, skills, and address, means the SP can be dispatched right away. Always check for an existing profile first, because duplicate SPs split work order history and cause dispatch errors.
+
+### **How to Add a New Service Provider**
+
+<Steps>
+  <Step title="Collect the SP's details." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    From the request, confirm you have the SP company name, primary contact name, email, phone number, address, and the skills to add. For a self-onboard request, also note the service territories.
+  </Step>
+  <Step title="Search for an existing profile." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Go to **People > Service Providers** and search by company name, email, and phone number.
+
+    - **Found an exact match?** Don't create a new profile. Verify the contact info, then go to [How to Assign Service Providers to Property Managers](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-assign-service-providers-to-property-managers).
+    - **Found a close match** (same email, phone, or contact, but a slightly different name or address)? Follow the duplicate check in [How To Add a New Service Provider (Service Operations)](/latchel-admin/Service-Operations/Production-Documentation/How-To-Add-a-New-Service-Provider) before going further.
+    - **No match?** Continue to the next step.
+  </Step>
+  <Step title="Click + New Service Provider." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    You'll find it at the top right of the **Service Providers** page.
+  </Step>
+  <Step title="Enter the company information." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    | Field | What to enter |
+    | --- | --- |
+    | **Primary Contact Email** | Required. If the SP has no email, use the company name + `@noemail.com`, then remove it after the profile is saved. |
+    | **Company Name** | The name the SP operates under |
+    | **Primary Contact Name** | First and last name |
+    | **Primary Contact Phone** | The main number Latchel will use for all outreach |
+    | **Critical Notes** | Secondary numbers or contacts, and contact restrictions |
+    | **Company Critical Notes** | Business rules, such as "closed on Mondays" |
+  </Step>
+  <Step title="Leave In-Network off." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    Keep **Is the Service Provider In-Network?** toggled off. Only SPs who have joined the Latchel Contractor Network should have it on, because it affects billing.
+  </Step>
+  <Step title="Add skills." icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
+    - Click **+ Add Skills** for trade-specific SPs, such as plumbers or electricians.
+    - Click **+ Add Quick Create Skill Set** for handymen and general contractors.
+
+    Add every skill listed in the request. See [How to Update Skills](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-update-service-provider-skills).
+  </Step>
+  <Step title="Click Save, then add the address." icon="7" iconType="sharp-solid" stepNumber={7} titleSize="h4">
+    After the profile is created, go to the address section of the SP's profile and add their address. It's used on invoices.
+  </Step>
+  <Step title="Assign the SP to the PM and prioritize them." icon="8" iconType="sharp-solid" stepNumber={8} titleSize="h4">
+    An SP can't get work orders until they're assigned and prioritized. Continue with [How to Assign Service Providers to Property Managers](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-assign-service-providers-to-property-managers) and [How to Update Prioritization](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-update-service-provider-prioritization).
+  </Step>
+</Steps>
+
+### **Self-Onboard vs. Owner-Preferred Requests**
+
+| Request type | Where to prioritize | Territories |
+| --- | --- | --- |
+| **New Vendor Self-Onboard** (Typeform) | Company level | Add the territories from the form. See [How to Assign Service Provider to a Territory / Zip Code](/s/topic/0TO5e000000h9wqGAA/How-to-Assign-Service-Provider-to-a-Territory-Zip-Code). |
+| **Owner-preferred SP** (Jotform) | Only in the owner's portfolio | Not needed |
+
+### **Things to Remember**
+
+<Note>
+  New SPs default to the **Issued Cards** payment system. If they want Direct Deposit, they set it up after they receive their login email.
+</Note>
+
+<Warning>
+  Don't add an SP if you can't verify their phone number. Confirm the correct number with the CSM first.
+</Warning>
