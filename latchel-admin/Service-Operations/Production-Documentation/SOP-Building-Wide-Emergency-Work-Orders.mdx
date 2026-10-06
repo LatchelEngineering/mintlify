@@ -7,163 +7,133 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/3893723137/S
 ## 🧠 What This Process Is Trying to Solve
 
 <Note>
-  To reduce vendor confusion, duplicate charges, repeated calls to the property team, and unnecessary notifications, Troubleshooters should confirm whether an issue is isolated to **a single unit** or **affects multiple units within the building (e.g., a shared boiler or HVAC system)** before dispatching a technician. The goal is to keep **one work order as the source of truth** for a building-level incident, avoid redundant work orders, save time and costs, and ensure timely, accurate support for both residents and property managers.
+  When one building-level problem (e.g., a shared boiler or HVAC system) affects **multiple units**, each resident may submit their own emergency work order. Handling each one separately leads to **duplicate dispatches, duplicate charges, repeated calls to the property team, and confusion for vendors**.
+
+  The goal is to keep **one work order — the Main WO — as the single source of truth** for the incident, so the issue is troubleshot, escalated, and dispatched **once**, while every affected resident is still kept informed.
 </Note>
 
-<Warning>
-  📌 **When to Use**
+## 📘 Key Terms
 
-  This SOP should be applied **only when all of the following conditions are satisfied**:
-
-  - Multiple **emergency** reports or work orders are submitted from **different units within the same building**, occurring within the **same incident window** (i.e., they pertain to the same active issue reported around the same time).
-  - The issue is likely **building-level** in nature (e.g., a shared boiler or HVAC system serving the entire building).
-  - The system can be **confirmed as shared** among the affected units (see the **Verification** section below).
-
-  🚫 **When NOT to Use**
-
-  Do **not** consolidate work orders if:
-
-  - The issues are **unit-specific** (e.g., a leak in a single unit, a unit-specific heater, or a unit's electrical panel).
-  - The reports are **duplicates from the same unit** → follow [(⛑EMERGENCY) How to: Handle Duplicate Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Duplicate-Work-Orders).
-  - The issue is a **utility outage** (no water, no gas, no power from the utility company's side) → follow [(Emergency) How to: Handle a Utility Issue](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-a-Utility-Issue).
-  - The issue is a **911 situation** (e.g., fire, gas leak, carbon monoxide) → follow [How to: Handle 911-Severity Type Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders) first.
-  - The work orders are **non-emergency** per the PM's intake settings → see **FAQ Q3**.
-  - Shared equipment **cannot be confirmed** using any of the verification methods below.
-
-  ⚠️ **If uncertain:** handle each work order separately using [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders), add a note on each WO listing the other related WO numbers, and escalate to the **Operations Support Specialists** via **#ops_assistance_hub** for guidance.
-</Warning>
-
-## 📘 Definitions
-
-- **Incident:** Multiple reports of the **same issue type**, from the **same building**, within the **same incident window** (e.g., "boiler down" reports occurring close together).
-- **Main WO:** The single work order that is **troubleshot, escalated, dispatched, and tracked** as the source of truth for the incident.
-- **Duplicate WO:** Any additional work order from **other units** for the same building-level incident. Duplicate WOs are **not dispatched** and are **canceled** once the resident has been informed.
+- **Incident:** Reports of the **same issue type**, from **different units in the same building**, happening around the **same time** (e.g., several "boiler down" reports in one evening).
+- **Main WO:** The **one** work order for the incident that is troubleshot, escalated, dispatched, and updated.
+- **Duplicate WO:** Every other work order from **another unit** for the same incident. Duplicate WOs are **never dispatched or escalated** and are **canceled** after the resident is informed.
 
 <Note>
-  📝 **Merging is not an option here.** The system only allows merging work orders under the **same property (unit)**. Units in the same building are separate properties, so building-wide duplicates are handled by **canceling and referencing the Main WO**, as outlined in this SOP — not by merging.
+  📝 **Merging is not an option for building-wide duplicates.** The system only allows merging work orders under the **same property (unit)**. Units in the same building are separate properties, so building-wide duplicates are handled by **canceling them and referencing the Main WO**, as described in this SOP.
 </Note>
-
-## 📌 Verification: Confirm It's a Shared System
-
-Before consolidating work orders, confirm **at least one** of the following:
-
-1. **Property / PM notes:** The property, critical notes, or pre-dispatch notes indicate a **shared building system** (e.g., boiler, water heater, HVAC system, or building-wide electrical panel).
-2. **Prior work orders:** Previous work orders reference a **single equipment tag or location** serving the building.
-3. **PM / EEC confirmation:** The Property Manager or an Emergency Escalation Contact confirms the system is shared.
-4. **Service Provider note:** A Service Provider's notes on a related WO confirm the system serves multiple units.
-
-⚠️ **If none of these can be confirmed:** do **not** consolidate the work orders. Follow the "If uncertain" guidance above.
 
 ## 📋 Step-by-Step Process
 
 <Warning>
-  When the same issue impacts multiple units within a building, handling separate work orders for each unit can create confusion and may result in duplicate dispatches, duplicate charges, or repeated calls to the property team. To prevent this, **review and identify any existing work orders** related to the same concern within the same building, following the process below.
+  **Use a different SOP if any of these apply:**
 
-  **For widespread utility outages:** refer to [(Emergency) How to: Handle a Utility Issue](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-a-Utility-Issue)
-
-  **For duplicate issues affecting a single unit:** refer to [(⛑EMERGENCY) How to: Handle Duplicate Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Duplicate-Work-Orders)
+  - **911 situation** (fire, gas leak, carbon monoxide) → [How to: Handle 911-Severity Type Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders) **first**.
+  - **Utility outage** (no water, gas, or power from the utility company's side) → [(Emergency) How to: Handle a Utility Issue](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-a-Utility-Issue).
+  - **Same issue reported more than once from the same unit** → [(⛑EMERGENCY) How to: Handle Duplicate Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Duplicate-Work-Orders).
+  - **Unit-specific issue** (e.g., a leak inside one unit, a unit's own heater or electrical panel) → [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders).
+  - **Non-emergency** per the PM's intake settings → see **FAQ Q2**.
 </Warning>
 
-### Step 1: Confirm Building-Level Incident
+### Step 1: Confirm This SOP Applies
 
-1. **Confirm the building address**
-   1. Verify that all reports originate from the **same street address**, even if unit numbers differ.
-2. **Confirm the issue category**
-   1. Ensure the reported problem falls under the **same type of issue** (e.g., boiler down, no heat) and appears to affect the **building** rather than individual units.
-3. **Check for existing work orders**
-   1. Copy the building's street address **without the unit number**.
-   2. Open the **Property Manager (PM) profile** and go to the **Maintenance** tab.
-   3. Paste the address into the search bar to display all work orders for units within that building.
-   4. Check whether a **Main WO** already exists (its title starts with **"Main WO -"**).
-      1. **If a Main WO exists:** go to **Step 3** below.
-      2. **If related WOs exist but no Main WO has been set up yet:** go to **Step 2** below.
-      3. **If no related WOs exist:** see **FAQ Q1**.
-4. **Confirm it's a shared system** using the **Verification** section above.
+Confirm **all three** before treating reports as one building-wide incident:
 
-⚠️ **Note:** This step is critical to prevent confusion, duplicate dispatches, and repeated PM calls, and to ensure consistent handling of building-level issues.
+1. **Same building:** The reports come from the **same street address**, even if the unit numbers differ.
+2. **Same issue:** The reports describe the **same type of problem** (e.g., boiler down, no heat) and point to the **building**, not to individual units.
+3. **Shared system confirmed:** At least **one** of the following confirms the equipment serves multiple units:
+   1. **Property / PM notes:** Property, critical, or pre-dispatch notes mention a **shared building system** (e.g., boiler, water heater, HVAC system, building-wide electrical panel).
+   2. **Prior work orders:** Previous work orders reference a **single equipment tag or location** serving the building.
+   3. **PM / EEC confirmation:** The Property Manager or an Emergency Escalation Contact confirms the system is shared.
+   4. **Service Provider note:** A Service Provider's notes on a related WO confirm the system serves multiple units.
 
-### Step 2: Select the "Main" Work Order
+⚠️ **If you can't confirm all three:** do **not** consolidate. Handle each work order separately using [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders), add a note on each WO listing the other related WO numbers, and escalate to the **Operations Support Specialists** via **#ops_assistance_hub** for guidance.
 
-1. **Identify the Main WO**
-   1. Select the **earliest created active work order** for the incident as the **Main WO**.
-   2. 📝 **NOTE:** If the earliest work order was already **canceled or completed**, do not use it — select the earliest work order that is still **active**.
-   3. 📝 **NOTE:** If a Service Provider has already been dispatched on a **different** work order for this incident, do not choose a Main WO on your own — escalate to the **Operations Support Specialists** via **#ops_assistance_hub** before proceeding to avoid a double dispatch.
-2. **Update the Main WO title (required)**
+### Step 2: Search for Existing Work Orders in the Building
+
+1. Copy the building's street address **without the unit number**.
+2. Open the **Property Manager (PM) profile** and go to the **Maintenance** tab.
+3. Paste the address into the search bar to display all work orders for units in that building.
+4. Use what you find to decide your next step:
+
+| What you find | What to do |
+| --- | --- |
+| A work order whose title starts with **"Main WO -"** | The Main WO already exists. Your work order is a **Duplicate WO** → go to **Step 4**. |
+| Other active work orders for the same issue, but **no Main WO** yet | Set up the Main WO → go to **Step 3**. |
+| **No other work orders** for this issue | Your work order becomes the Main WO → go to **Step 3**. Expect more reports. |
+
+### Step 3: Set Up and Work the Main WO
+
+1. **Choose the Main WO**
+   1. Select the **earliest created active work order** for the incident.
+   2. 📝 **NOTE:** If the earliest work order was already **canceled or completed**, skip it and select the earliest work order that is still **active**.
+   3. 📝 **NOTE:** If a Service Provider has already been dispatched on a **different** work order for this incident, do not choose on your own — escalate to the **Operations Support Specialists** via **#ops_assistance_hub** first to avoid a double dispatch.
+2. **Rename the Main WO**
    1. Format: **Main WO - (Issue)**
    2. Example: **Main WO - Boiler Down**
-3. **Add a note to the Main WO (required)** that includes:
-   1. **Issue:** A concise 1-sentence summary of the problem.
+3. **Add a note to the Main WO** that includes:
+   1. **Issue:** A 1-sentence summary of the problem.
    2. **Units Reporting:** A running list of affected units (e.g., Unit 101, Unit 203, Unit 305…).
-   3. **Verification Method Used:** How you confirmed the building-level issue (property note, PM/EEC confirmed, prior WO, or Service Provider note).
-4. **Handle the Main WO as a standard emergency WO.** Troubleshoot, classify severity per the PM's intake settings, and escalate or dispatch following [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders).
+   3. **Verification Method Used:** How you confirmed the shared system (property note, PM/EEC confirmed, prior WO, or Service Provider note).
+4. **Post in #ops_info_center** so the team knows not to dispatch or escalate from other units' work orders. Reply in the **same thread** whenever new units report or the incident changes.
 
-   1. If the issue is in a **common area** (e.g., a boiler room), follow the **common area** guidance in that SOP — call residents for **access information and clarification only**, not troubleshooting.
+   1. 📝 _"Building-level emergency consolidation in progress: [Building Address] – [Issue]._<br />_Tracking under Main WO #[number]. Multiple units reporting. Please do not dispatch from additional unit WOs or call the escalation contacts again for this incident."_
+5. **Work the Main WO as a standard emergency WO.** Troubleshoot, classify severity per the PM's intake settings, and escalate or dispatch following [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders).
 
-### Step 3: Handle All New Work Orders as Duplicates
+   1. Use the [Job Aid: Troubleshooter Question Bank](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Troubleshooter-Question-Bank) for troubleshooting guidance.
+   2. If the issue is in a **common area** (e.g., a boiler room), follow the **common area** guidance in that SOP — call residents for **access information and clarification only**, not troubleshooting. See **FAQ Q4**.
+6. **Dispatch and escalate from the Main WO only.**
 
-For every **new WO** submitted from **another unit** for the **same incident within the same window**:
+   1. All Service Provider dispatches and EEC/PM calls for the incident happen on the **Main WO**.
+7. **Keep every update on the Main WO.**
 
-1. **Do not dispatch** from the new WO. ❌
-2. **Do not call the Escalation Contacts again** from the new WO. 📵
-   1. If the EEC/PM has already been contacted about this incident on the Main WO and there are **no new updates or changes**, do **not** call again. This follows the General Rule in the Key Reminders of [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
-   2. Instead, **link the existing EEC call** to the new WO and reference it in your note. Refer to [How to: Link Calls to a WO](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Link-Calls-to-a-WO).
-   3. Only call again if the new report brings **new information** that changes the situation (e.g., the issue has escalated to PD/EH — see **FAQ Q2**).
+   1. Record all **Service Provider updates, approvals, EEC/PM calls, and status changes** on the Main WO.
+   2. Link every call related to the incident to the Main WO. Refer to [How to: Link Calls to a WO](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Link-Calls-to-a-WO).
+
+### Step 4: Handle Each Duplicate WO
+
+Repeat this for **every work order** from **another unit** for the same incident:
+
+1. **Do not dispatch** from the duplicate WO. ❌
+2. **Do not call the Escalation Contacts again.** 📵
+   1. If the EEC/PM was already contacted about this incident on the Main WO and there are **no new updates or changes**, do **not** call again. This follows the General Rule in the Key Reminders of [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
+   2. Instead, **link the existing EEC call** to the duplicate WO and mention it in your note. Refer to [How to: Link Calls to a WO](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Link-Calls-to-a-WO).
+   3. Only call again if the new report brings **new information** that changes the situation (e.g., the issue is now PD/EH) — see **FAQ Q1**.
 3. **Contact the resident and set expectations**
-
-   1. Advise the resident that their report is being tracked under the Main WO and that **no separate dispatch will be made**.
-   2. 🗨️ **Say something like (call or SMS):** _"Hello [Resident Name], your report has been consolidated as part of a building-wide issue and is being tracked under Main WO #[number]. To ensure a coordinated resolution, no separate dispatch will be made for your unit, and your duplicate request will be canceled. If anything changes or gets worse in your unit, please contact us right away. We appreciate your understanding."_
-   3. 📝 **NOTE:** If you **cannot reach the resident**, do **not** cancel the WO yet. Follow the unresponsive-resident steps in [(⛑EMERGENCY) How to: Handle Duplicate Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Duplicate-Work-Orders) and state in your notes that this WO appears to be part of Main WO #[number]. Do not repeat EEC calls already made on the Main WO (see item 2 above).
-4. **Update the duplicate WO title**
-
-   1. Add **"Duplicate"** at the beginning of the work order title (same as the single-unit duplicate process).
+   1. 🗨️ **Say something like (call or SMS):** _"Hello [Resident Name], your report has been consolidated as part of a building-wide issue and is being tracked under Main WO #[number]. To ensure a coordinated resolution, no separate dispatch will be made for your unit, and your duplicate request will be canceled. If anything changes or gets worse in your unit, please contact us right away. We appreciate your understanding."_
+   2. 📝 **NOTE:** If you **cannot reach the resident**, do **not** cancel the WO yet. Follow the unresponsive-resident steps in [(⛑EMERGENCY) How to: Handle Duplicate Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Duplicate-Work-Orders) and note that this WO appears to be part of Main WO #[number]. Still do not repeat EEC calls already made on the Main WO.
+4. **Rename the duplicate WO**
+   1. Add **"Duplicate"** at the beginning of the title (same as the single-unit duplicate process).
    2. Example: **Duplicate - Main WO #[number] - Boiler Down**
 5. **Add a note to the duplicate WO** 📝 with the **Main WO number and link** 🔗.
-
-   1. Suggested template: _"This appears to be the same building-level emergency affecting multiple units. This unit's report is being tracked under Main WO #[number] ([link]). No separate dispatch created."_
-6. **Cancel the duplicate WO**
-
-   1. Cancel the duplicate WO via the **Take Action** button so it cannot be dispatched by mistake.
+   1. _"This appears to be the same building-level emergency affecting multiple units. This unit's report is being tracked under Main WO #[number] ([link]). No separate dispatch created."_
+6. **Cancel the duplicate WO** via the **Take Action** button so it cannot be dispatched by mistake.
 7. **Update the Main WO**
+   1. Add the unit to the **"Units Reporting"** list.
+   2. Add the **duplicate WO number** to the Main WO note.
+   3. Reply in the **#ops_info_center** thread with the new unit.
 
-   1. Add the new unit to the **"Units Reporting"** list.
-   2. Add the **duplicate WO number** to the Main WO note so anyone reviewing the Main WO can see every related report.
+### ✅ Quick Reference: Main WO vs. Duplicate WO
 
-### Step 4: Dispatch Only From the Main Work Order
-
-1. **Dispatch from the Main WO only**
-   1. All Service Provider dispatches must be initiated from the **Main WO**. Do **not** dispatch from duplicate WOs.
-2. **Verify the Main WO title**
-   1. Ensure the title clearly reflects the **building-level impact** (e.g., Main WO - Boiler Down).
-3. **Keep all updates in the Main WO**
-   1. Record all **Service Provider updates, approvals, EEC/PM calls, and status changes** in the Main WO so there is a single source of truth for the incident.
-   2. Link all calls related to the incident to the Main WO. Refer to [How to: Link Calls to a WO](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Link-Calls-to-a-WO).
-
-### Step 5: Notify the Relevant Channel for Visibility 📢
-
-1. **Post in the #ops_info_center channel** once the **Main WO** is established.
-2. **Update the same post (thread)** if there are changes to the incident or new units reporting.
-3. Use the suggested template:
-   1. 📝 _"Building-level emergency consolidation in progress: [Building Address] – [Issue]._<br />_Tracking under Main WO #[number]. Multiple units reporting. Please do not dispatch from additional unit WOs or call the escalation contacts again for this incident."_
+| Action | Main WO | Duplicate WO |
+| --- | --- | --- |
+| Troubleshoot | ✅ Yes | ❌ No — contact the resident to set expectations only |
+| Call EEC / PM | ✅ Yes | ❌ No — link the existing call (unless there is new information) |
+| Dispatch a Service Provider | ✅ Yes | ❌ Never |
+| Title | **Main WO - (Issue)** | **Duplicate - Main WO #[number] - (Issue)** |
+| Notes | Issue, Units Reporting, Verification Method, duplicate WO numbers | Main WO number and link |
+| Final status | Worked to completion | Canceled via **Take Action** |
 
 ## ❓Frequently Asked Questions
 
-<Accordion title="Q1: What if there is no report yet for this building-wide issue?">
-  1. Complete **Step 1 of this SOP** to verify whether any existing work orders have been submitted for the same issue.
-  2. **If no existing work orders are found:**
-     1. Treat the incoming report as a **normal emergency work order**. Follow [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders).
-     2. Use the [Job Aid: Troubleshooter Question Bank](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Troubleshooter-Question-Bank) for troubleshooting guidance.
-  3. If the issue is confirmed to be building-level (see **Verification**), designate this work order as the **Main WO** (Step 2) and post an update in **#ops_info_center** (Step 5) so the team knows to expect more reports.
-</Accordion>
-
-<Accordion title="Q2: What if the situation escalates to a Property Damaging / Extreme Habitability (PD/EH) category?">
+<Accordion title="Q1: What if the situation escalates to a Property Damaging / Extreme Habitability (PD/EH) category?">
   1. If a new report shows the incident now qualifies as **PD/EH**, make sure the **EEC is contacted from the Main WO** if they have not already been notified about the PD/EH situation. Refer to [How to: Identify Property Damage and Extreme Habitability Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations).
   2. Manually trigger the **"Who Ya Gonna Call"** tool from the **Action Menu** of the Main WO to get the correct contacts and call order based on time of day and scenario. Review the AI recommendation first, and verify it against the original escalation instructions displayed below it.
   3. Follow [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
-  4. **Link the calls** to both the new report and the **Main WO** for proper documentation. Refer to [How to: Link Calls to a WO](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Link-Calls-to-a-WO).
+  4. **Link the calls** to both the new report and the **Main WO**. Refer to [How to: Link Calls to a WO](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Link-Calls-to-a-WO).
   5. If the escalation is a **911 situation** (e.g., gas leak, fire, carbon monoxide), follow [How to: Handle 911-Severity Type Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders) first.
 </Accordion>
 
-<Accordion title="Q3: Several units reported the same building-level issue, but it is NOT an emergency per the PM's intake settings. Does this SOP apply?">
+<Accordion title="Q2: Several units reported the same building-level issue, but it is NOT an emergency per the PM's intake settings. Does this SOP apply?">
   No. This SOP covers **emergency** work orders only.
 
   1. Handle each work order according to the PM's intake settings and the standard non-emergency process. Do **not** cancel them as duplicates.
@@ -171,23 +141,23 @@ For every **new WO** submitted from **another unit** for the **same incident wit
   3. If you're unsure, escalate to the **Operations Support Specialists** via **#ops_assistance_hub**.
 </Accordion>
 
-<Accordion title="Q4: A resident follows up (call, voicemail, SMS, or email) about the building-wide issue, but I can't identify their unit. Which work order do I use?">
-  1. Search the building address without the unit number (Step 1) to find the **Main WO**.
-  2. **If a Main WO exists:** log the follow-up on the **Main WO** (link the call or add a note/task there) per [SOP: Work Order Follow ups and Updates](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates). Note in the WO that the caller's unit could not be identified.
-  3. **If there are multiple active WOs but no Main WO yet:** confirm the issue meets this SOP's criteria, set up the Main WO using Step 2 (earliest created active WO), and log the follow-up there.
+<Accordion title="Q3: A resident follows up (call, voicemail, SMS, or email) about the building-wide issue, but I can't identify their unit. Which work order do I use?">
+  1. Search the building address without the unit number (**Step 2**) to find the **Main WO**.
+  2. **If a Main WO exists:** log the follow-up on the **Main WO** (link the call or add a note/task there) per [SOP: Work Order Follow ups and Updates](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates). Note that the caller's unit could not be identified.
+  3. **If there are multiple active WOs but no Main WO yet:** confirm the issue meets **Step 1**, set up the Main WO using **Step 3**, and log the follow-up there.
   4. If the callback number reaches the **property management office** instead of the resident, do not treat the PM office as the resident. Document the attempt on the Main WO.
 </Accordion>
 
-<Accordion title="Q5: The issue is in a common area (e.g., boiler room, hallway, fire alarm panel) and several residents reported it. How many work orders should there be?">
-  **One.** A common-area issue reported by several residents is handled under a single **Main WO**, and the other reports are handled as duplicates using Step 3.
+<Accordion title="Q4: The issue is in a common area (e.g., boiler room, hallway, fire alarm panel) and several residents reported it. How many work orders should there be?">
+  **One.** A common-area issue reported by several residents is handled under a single **Main WO**, and the other reports are handled as duplicates using **Step 4**.
 
   1. Follow the **common area** guidance in [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders): call residents for **access information and clarification only** — do not ask them to troubleshoot a common-area issue.
   2. If access information is needed to dispatch and only the PM can provide it (e.g., locked boiler room, building entry authorization), use **PM Input Needed Before Dispatch** per Scenario 2 of [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
 </Accordion>
 
-<Accordion title="Q6: A non-resident (e.g., utility company, gas company, water department) reports a building-wide issue but can't give a unit number. What do I do?">
+<Accordion title="Q5: A non-resident (e.g., utility company, gas company, water department) reports a building-wide issue but can't give a unit number. What do I do?">
   1. **If it is a 911 situation** (e.g., gas leak): follow [How to: Handle 911-Severity Type Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders). Resident and public safety come first.
-  2. **Search the building address** (Step 1) for an existing Main WO or related work orders. If one exists, add the caller's information to that WO as a note and link the call.
+  2. **Search the building address** (**Step 2**) for an existing Main WO or related work orders. If one exists, add the caller's information to that WO as a note and link the call.
   3. **If the issue is PD/EH and there is no related WO:** the PM must be notified even without a work order. Open **Who Ya Gonna Call** from the **PM Company** or **Property** page and follow [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
   4. **If the issue is not PD/EH:** route the caller's message to the PM using **"Caller is Property Owner or Utility"** in [How to: Intake Non-Resident Requests (Non-maintenance Requests)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Intake-Non-Resident-Requests-Non-maintenance-Requests).
   5. **On-Call customers** (app.latchel.com): the PM Outbound Communication job aid does not apply. Follow [Follow Up Guidelines for On-Call Customers (app.latchel.com)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Follow-Up-Guidelines-for-On-Call-Customers-app-latchel-com) and escalate to the **Operations Support Specialists** via **#ops_assistance_hub** if no unit can be identified.
