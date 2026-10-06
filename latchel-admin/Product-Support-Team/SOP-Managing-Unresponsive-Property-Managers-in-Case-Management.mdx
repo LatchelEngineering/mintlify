@@ -1,6 +1,7 @@
 ---
 title: "SOP: Managing Unresponsive Property Managers"
-groups: ["latchel"]
+groups:
+  - "latchel"
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3198812172/SOP+Managing+Unresponsive+Property+Managers+in+Case+Management"
 ---
 
@@ -8,19 +9,27 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3198812172/SO
   **Objective:** How to follow up when a PM doesn't reply, and when to close the ticket, so every PM gets a consistent follow-up and no ticket sits open forever.
 </Note>
 
+<Tip>
+  **Bias for action: we're the experts.** If the PM hasn't answered and you can make an educated guess about what they need, **do it**, then tell them what you did and how to change it if they'd prefer something else. Don't let a ticket stall waiting on a reply when you can safely move it forward.
+</Tip>
+
 ## How the ticket status moves
 
 1. When you reply to the PM, the Wavelength ticket automatically moves to **Open**.
 2. If the PM doesn't reply within **24 hours**, the ticket automatically moves back to **Needs Response**.
 3. When it comes back to **Needs Response**, PS owns the follow-up.
 
-## First reopen: send one follow-up
+## First reopen: act, then follow up
 
-When the ticket reopens because the PM hasn't replied:
+When the ticket reopens because the PM hasn't replied, decide which situation you're in:
 
-1. Send the PM a **short follow-up** with the **Unresponsive PM Follow-Up** template in Wavelength. Don't copy and paste your original message. A quick nudge is easier for the PM to act on.
-2. If you've been waiting on another team (Finance, Data Support, Engineering), send the PM an **update on where things stand** instead.
-3. The ticket moves back to **Open**.
+| **Situation** | **What to do** | **Template** |
+| --- | --- | --- |
+| **You can make an educated guess** about what the PM needs (a setting, an update, a next step) | Take the action, then let the PM know what you did and that they can reply if they'd like it changed. | **Unresponsive PM Follow-Up (Bias for Action)** template in Wavelength |
+| **You truly need the PM's answer** to move forward | Send a short follow-up asking for what you need. Don't copy and paste your original message. | **Unresponsive PM Follow-Up** template in Wavelength |
+| **You're waiting on another team** (Finance, Data Support, Engineering) | Send the PM an update on where things stand. | — |
+
+The ticket moves back to **Open** after you send it.
 
 <Warning>
   **No follow-up needed** for these ticket types. When they reopen, close the ticket:
@@ -41,6 +50,6 @@ If the PM still hasn't replied and the ticket reopens again after another **24 h
 1. Close the ticket as unresponsive.
 2. The PS CSAT survey goes out automatically **24 hours** after the ticket closes, the same as every closed PS ticket. See [Job Aid: Wavelength PS Automation Explained](/latchel-admin/Product-Support-Team/Job-Aid-Assembly-Case-Automation-Explained).
 
-<Tip>
-  **Bias for action.** If the PM's silence is blocking something you can safely move forward yourself (for example, a setting they already asked for), do it and tell them what you did, rather than waiting on a reply.
-</Tip>
+<Note>
+  Bias for action is part of the PS Quality Audit (item **E1**). See [PS CX Audit Guidelines](/latchel-admin/Product-Support-Team/PS-CX-Audit-Guidelines).
+</Note>
