@@ -1,0 +1,154 @@
+---
+title: "Data Support Workflow: How to Check and Update Properties and Residents"
+sidebarTitle: "Data Support Workflow"
+description: "The end-to-end process for receiving, checking, completing, and closing a property or resident account update."
+groups: ["latchel"]
+---
+
+Every property and resident update follows the same path: vet the request, check the account, compare the PM's data with Latchel, make the changes, verify them, and close the loop. Following the same steps each time keeps accounts accurate and makes our work easy to audit.
+
+<Check>
+  **In other words:**
+
+  Never update an account until you know whether it's integrated, what the PM's source of truth says, and exactly what's different in Latchel.
+</Check>
+
+### **How Requests Reach Us**
+
+- Product Support (PS) and Customer Success (CS) submit the **Account Update Request** Typeform in **#data-support-requests**.
+- Each submission posts to the channel and creates an Assembly (ASM) ticket in the Data Support team space.
+- Requests for subscription disputes use the **Active Unit Adj** Typeform instead.
+
+<Note>
+  Both Typeforms are for Latchel admins only. Never share the links with customers.
+</Note>
+
+### **How to Check and Update Properties and Residents**
+
+<Steps>
+  <Step title="Vet the request." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Open the ASM ticket and read the Typeform answers. Confirm:
+
+    - Which PM company and company URL it's for
+    - Whether it covers the whole account, one portfolio, or specific properties
+    - What change is needed (add, enable, disable, update, or merge)
+    - Whether residents also need updating
+    - That the PM's spreadsheet is attached and shared as "Anyone with the link"
+    - The priority and deadline
+
+    If anything is missing or unclear, see [When You Need More Information](#when-you-need-more-information).
+  </Step>
+  <Step title="Check whether the account has an active integration." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Open the PM company in the Latchel admin and go to the **Integrations** tab. A PMS logo means the integration is active.
+
+    <Warning>
+      **Never add properties or residents manually to an integrated account.** The integration creates them. Adding them by hand causes duplicates.
+    </Warning>
+
+    | On an integrated account, you **can**... | You **can't**... |
+    | --- | --- |
+    | Enable or disable properties and residents to match the PM's report | Add new properties or residents |
+    | Update resident contact info, move-in and move-out dates, and name spelling | Bulk import properties |
+    | Move a resident to the correct property or unit | |
+    | Assign owners and portfolios, update escalation contacts, service provider prioritization, and severity and responsibility | |
+
+    Also confirm that **Property Modification** and **Resident Modification** are disabled under **Miscellaneous Settings** on the company's details tab. These must always be disabled for integrated customers.
+  </Step>
+  <Step title="Pull the reports." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Get the PM's source of truth and Latchel's current data side by side. See [Required Reports](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Reports/required-reports) for which reports to pull for each request type.
+
+    For integrated accounts, also download the property report from the company's **Integrations** tab.
+  </Step>
+  <Step title="Compare the PM's data with Latchel." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    Build a worksheet that compares the two lists. Match on address 1 and address 2 for properties, and on name, email, and phone for residents. You can use the **Match Properties** and **Match Residents** tools in the [Data Support Tool](/latchel-admin/Data-Support-Team/Latchel-Data-Support-Tool-Guide), or VLOOKUP and INDEX + MATCH in a spreadsheet.
+
+    Sort every record into one of these buckets:
+
+    | What you find | What to do |
+    | --- | --- |
+    | Active in Latchel, not in the PM's report | **Disable** |
+    | In the PM's report, not in Latchel | **Add** (non-integrated accounts only) |
+    | Disabled in Latchel, in the PM's report | **Enable** |
+    | In both, but contact info is outdated | **Update** contact info |
+    | Two Latchel records for the same property or resident | **Merge** (see the tip below) |
+
+    <Warning>
+      For multi-unit properties, **move residents out** instead of disabling them. Disabling a resident deactivates them in every unit.
+    </Warning>
+
+    <Tip>
+      On integrated accounts, don't merge records that each have their own unique reference ID. The sync only matches on reference IDs, so merging them breaks the sync. Find the active reference ID first and disable the wrong record.
+    </Tip>
+  </Step>
+  <Step title="Make the updates." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    Choose the method that fits the size of the change:
+
+    - **A few records:** update them directly in the Latchel admin.
+    - **Many records:** use the Data Support Tool. See [How to Bulk Update Properties and Residents Using the DS Tool](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Bulk-Updates/how-to-bulk-update-properties-and-residents).
+  </Step>
+  <Step title="Verify the result." icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
+    Re-run the Latchel report and confirm:
+
+    - The active property and resident counts match the PM's report.
+    - No new duplicates were created.
+    - Every row in the DS Tool results log shows ✅ OK, if you used it.
+  </Step>
+  <Step title="Document and close the ticket." icon="7" iconType="sharp-solid" stepNumber={7} titleSize="h4">
+    In the ASM ticket:
+
+    1. Add an **internal note** with the worksheet URL, the actions you took, and the final active property and resident counts.
+    2. Add a **public note** to the requester summarizing what changed.
+    3. Close the loop based on who requested it:
+
+    | Requester | What to do |
+    | --- | --- |
+    | CSM, onboarding request | Public note, then close. No PS escalation needed. |
+    | CSM, non-onboarding request | Public note, then escalate to PS to close the loop with the PM. |
+    | CPT (Optional Benefits) | Public note, then close. |
+    | PS | Public note, then close. PS updates the PM. |
+
+    4. Set the ticket status to **Closed**.
+
+    If there are discrepancies you couldn't resolve, list them for PS in a child ticket and attach a CSV if the list is long.
+  </Step>
+</Steps>
+
+### **When You Need More Information**
+
+<Steps>
+  <Step title="Ask the requester in the ticket." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    @mention the requester in the ASM ticket with a specific question. Mention the CSM for onboarding requests, and CPT for Optional Benefits requests.
+  </Step>
+  <Step title="Set the ticket to Escalated." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    The ticket moves to **Needs Response** when the requester replies.
+  </Step>
+  <Step title="Follow the response policy." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Wait up to **3 business days** for a reply. Any reply resets the clock, for up to 3 cycles (9 business days total). If there's still no answer, close the ticket and let the requester know.
+  </Step>
+</Steps>
+
+<Note>
+  Use the **DS Escalate** workflow in **#data-support-team** when an account update task needs a decision on the next action. For integration issues, escalate to the CSM instead. See [How to Escalate Issues to the CSM](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Escalations/how-to-escalate-issues-to-csm).
+</Note>
+
+### **Things to Remember**
+
+<Warning>
+  The integration only syncs records from active to inactive. If a PM reactivates a property in their PMS, it won't reactivate in Latchel. Enable it manually based on the PM's report.
+</Warning>
+
+<Note>
+  **Optional Benefits accounts:**
+  - **Optional Benefits only:** activate or deactivate records so that only the properties and residents in the PM's report stay active.
+  - **Maintenance + Optional Benefits:** don't deactivate units that aren't on the list. End their inherited subscription and set them to a Maintenance-only package instead.
+</Note>
+
+<Tip>
+  Updating outdated resident contact info isn't part of a data migration task. If you find outdated info during one, tell the requester and ask them to submit a separate Account Update Request.
+</Tip>
+
+**Related guides**
+
+<Card title="Required Reports" color="#ff9b8a" icon="file-chart-column" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Reports/required-reports">
+  Which reports to pull for each type of account update.
+</Card>

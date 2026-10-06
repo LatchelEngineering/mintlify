@@ -1,0 +1,93 @@
+---
+title: "How to Escalate Issues to the CSM"
+sidebarTitle: "Escalate Issues to the CSM"
+description: "When and how Data Support escalates an issue to the customer's CSM with the PS Escalate to CSM workflow in #csm-escalations."
+groups: ["latchel"]
+---
+
+Some issues need the customer's Customer Success Manager (CSM) to take ownership, especially when the PM has to act or a relationship decision is involved. The **PS Escalate to CSM** workflow in **#csm-escalations** hands the issue to the CSM with full context and lets us track every escalation.
+
+<Check>
+  **In other words:**
+
+  Use the workflow to **transfer ownership** to the CSM. For a quick question, message the CSM directly instead.
+</Check>
+
+### **When to Escalate to the CSM**
+
+| Escalate to the CSM | Use the DS Escalate workflow in #data-support-team |
+| --- | --- |
+| Integration issues, such as work orders not syncing or a **Failing** status on the Integration Health Dashboard | An account update task needs a decision on the next action |
+| The PM hasn't responded to requests to run a sync or fix PMS permissions | You need team input before you continue a ticket |
+| A data migration is needed before an integration can be activated, and the PM needs to know | |
+| The PM is frustrated, asks for a call or training, or wants to cancel | |
+| An email thread is getting complex and a call is recommended | |
+
+<Note>
+  Common integration examples: AppFolio work orders don't sync because no Team Latchel user is assigned in AppFolio, or the PM's integration shows **Failing** and they haven't replied to "run sync" emails.
+</Note>
+
+### **How to Escalate an Issue to the CSM**
+
+<Steps>
+  <Step title="Gather the details." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Have these ready:
+
+    - The PM company name and Latchel customer profile URL (app.latchel.com/admin/pm-company/…)
+    - The ASM ticket link
+    - A work order link, if the issue involves a work order
+    - What you've already checked and done
+  </Step>
+  <Step title="Find the assigned CSM." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    In HubSpot, search for the PM company. The **Company Owner** is the CSM.
+  </Step>
+  <Step title="Start the PS Escalate to CSM workflow." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Go to **#csm-escalations** and start the **PS Escalate to CSM** workflow from the channel's workflows.
+  </Step>
+  <Step title="Fill out the form." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    | Field | What to enter |
+    | --- | --- |
+    | **Company Name** | The PM company |
+    | **CSM** | The CSM from HubSpot |
+    | **Customer Profile URL Link** | The PM company's admin URL |
+    | **Priority** | See the priority table below |
+    | **ASM Link** | The ASM ticket |
+    | **Work Order Link** | If applicable |
+    | **Escalation Category** | Choose the closest match. Use **Other** for integration issues if no category fits. |
+    | **Issue Summary** | Context, what you checked, what you did, and links. Don't paste the PM's message word for word. |
+    | **Next Steps** | Why you're escalating, what you recommend, and what you need from the CSM |
+
+    | Priority | When to use it |
+    | --- | --- |
+    | **URGENT** | Needs action right away. A delay could lead to churn or service impact. |
+    | **MEDIUM** | Can wait until the next business day |
+    | **NORMAL** | Training requests, account upgrades, or other non-urgent follow-ups |
+  </Step>
+  <Step title="Click Submit." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    The workflow posts in **#csm-escalations** and tags the CSM.
+  </Step>
+  <Step title="Update the ASM ticket." icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
+    1. Copy the Slack link to the workflow post and paste it into the ticket as an **internal note**.
+    2. Set **Owner** to the CSM and **Team Owner** to **Customer Success**.
+    3. Set the status to **Needs Response**.
+  </Step>
+  <Step title="Follow the thread." icon="7" iconType="sharp-solid" stepNumber={7} titleSize="h4">
+    Answer the CSM's questions in the Slack thread. If the CSM sends back a task for Data Support, such as updates after the PM fixes their sync, handle it through a new or reopened ASM ticket.
+  </Step>
+</Steps>
+
+### **Things to Remember**
+
+<Warning>
+  Don't use Assembly's **Escalate Via** option to create a new CS ticket. Always use the Slack workflow, because CSM escalations are tracked through it.
+</Warning>
+
+<Tip>
+  Write the Issue Summary so the CSM can act without opening the ticket. Include the integration type, when the problem started, and what the PM needs to do.
+</Tip>
+
+**Related guides**
+
+<Card title="SOP: Escalating Tickets to the CSM" color="#ff9b8a" icon="arrow-up-right-from-square" iconType="duotone" horizontal href="/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM">
+  The Product Support version of this process, including the PM email template.
+</Card>

@@ -1367,10 +1367,70 @@
                   "light": "#ff9b8a",
                   "dark": "#ff9b8a"
                 },
-                "pages": [
-                  "latchel-admin/Data-Support-Team/Latchel-Data-Support-Tool-Guide"
-                ],
-                "hidden": true
+                "groups": [
+                  {
+                    "group": "Data Support Team Pages",
+                    "pages": [
+                      "latchel-admin/Data-Support-Team/data-support-overview",
+                      "latchel-admin/Data-Support-Team/Latchel-Data-Support-Tool-Guide"
+                    ]
+                  },
+                  {
+                    "group": "Account Update - Core SOPs",
+                    "pages": [
+                      {
+                        "group": "Workflow",
+                        "pages": [
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Workflow/data-support-workflow"
+                        ]
+                      },
+                      {
+                        "group": "Reports",
+                        "pages": [
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Reports/required-reports"
+                        ]
+                      },
+                      {
+                        "group": "Bulk Updates",
+                        "pages": [
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Bulk-Updates/how-to-bulk-update-properties-and-residents"
+                        ]
+                      },
+                      {
+                        "group": "How to Manage Service Providers",
+                        "pages": [
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-manage-service-providers",
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-add-new-service-providers",
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-assign-service-providers-to-property-managers",
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-update-service-provider-prioritization",
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-update-service-provider-skills",
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-update-response-buffer",
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-set-service-provider-as-vip",
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Service-Providers/how-to-turn-on-and-off-invoice-collection"
+                        ]
+                      },
+                      {
+                        "group": "How to Manage Portfolios",
+                        "pages": [
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Portfolios/how-to-manage-portfolios",
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Portfolios/how-to-assign-properties-to-portfolios"
+                        ]
+                      },
+                      {
+                        "group": "Escalations",
+                        "pages": [
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Escalations/how-to-escalate-issues-to-csm"
+                        ]
+                      },
+                      {
+                        "group": "Data Migration",
+                        "pages": [
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Data-Migration/data-migration-and-integration-activation"
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "dropdown": "Customer Success Team",

@@ -1,0 +1,91 @@
+---
+title: "What Reports Are Necessary for Data Support Tasks"
+sidebarTitle: "Required Reports"
+description: "The reports to pull for each type of account update, and where to find them."
+groups: ["latchel"]
+---
+
+Every account update compares two things: the PM's source of truth and what's in Latchel today. This page lists the reports you need for each, so you can start every ticket with the right data.
+
+<Check>
+  **In other words:**
+
+  Always have the PM's report and a fresh Latchel report open before you change anything. Then save the results as proof of what changed.
+</Check>
+
+### **1. The PM's Report (Source of Truth)**
+
+This usually comes attached to the Account Update Request as a spreadsheet. For integrated accounts, you can also export it yourself from the PMS if you have the PM's credentials.
+
+| PMS | Report | Reference ID columns |
+| --- | --- | --- |
+| **AppFolio** | **Reports > Tenant Directory** (status and type All, active only, ungrouped) | Property ID, Unit ID, Tenant ID |
+| **Propertyware** | **Units** report and **Contacts** report | Building Entity ID (property), Unit Entity ID (unit), Entity ID (tenant) |
+| **Rent Manager** | **Report Writer Manager > Unit > Unit Export** | Property ID, Unit ID, Contact ID (resident) |
+| **Rentvine** | **Lease Tenants** and **Tenants** CSVs | Property ID, Unit ID, Tenant ID |
+| **Buildium** | **Current Tenants** CSV | See the [Buildium Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/buildium-reference-guide) |
+| **Yardi** | Property and resident data | Property Code, Unit Code, Tenant Code. See the [Yardi Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide) |
+| **No integration** | The PM's own property and resident list | None |
+
+<Tip>
+  Share the PM-facing guide [How to Export Reports with Reference IDs](/s/topic/0TO5e000000h9wqGAA/How-to-Export-Reports-with-Reference-IDs) when you need the PM to pull the report themselves.
+</Tip>
+
+### **2. Latchel Reports**
+
+Export these from pgAdmin using the [Job Aid: SQL Queries](/latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/Job-Aid-SQL-Queries). Replace `####` with the PM's company ID, which is the number at the end of the PM company URL. If you're new to pgAdmin, start with [How to Execute SQL Queries in pgAdmin](/latchel-admin/Customer-Success-Team/SQL-Queries-PGAdmin-Job-Aids/How-to-Execute-SQL-Queries-in-Pg-Admin).
+
+| Query | What it gives you | Use it for |
+| --- | --- | --- |
+| **P1** | All active properties for a PM (remove the active filter for all, or use 0 for inactive) | Property updates and counts |
+| **P2** | Active properties with no reference IDs | Integration and migration checks |
+| **P12** | Property status changes, with who changed them and when | Investigating unexpected activations or deactivations |
+| **P14** | Properties without a portfolio | Portfolio assignments |
+| **R3** | All tenants with reference ID columns | Resident updates on integrated accounts |
+| **R4** | All properties and residents, including vacant units, primary phone, and email | **Data migration**, full property and resident audits |
+| **PORT10** | Active properties not in a portfolio | Portfolio assignments |
+| **PORT26** | Portfolio assignment, including disabled properties (add `p.owner_id` to see owners) | Portfolio and owner verification |
+| **V18** | Service providers with categories and skills | Skill updates |
+| **V19–V24** | Prioritized service providers at the company, portfolio, and property level | Prioritization updates |
+| **V33–V35** | Response buffer by level. A blank buffer means the 60-minute default. | Response buffer audits |
+
+<Note>
+  pgAdmin shows the first 1,000 rows on screen. Use **Download as CSV** to get the full result.
+</Note>
+
+You can also get live property and resident lists from the **Match Properties** and **Match Residents** tools in the [Data Support Tool](/latchel-admin/Data-Support-Team/Latchel-Data-Support-Tool-Guide). These pull directly from the Partner API, so they're always current.
+
+### **3. Integration Reports**
+
+Use these for integrated accounts.
+
+| Report | Where to find it | Use it for |
+| --- | --- | --- |
+| **Property report** | PM company > **Integrations** tab > download the property report (1 = active) | Finding which reference ID is active, duplicate investigations |
+| **Reconciliation Report** | PM company > **Integrations** tab | Comparing PMS data with Latchel data |
+| **Integration Health Dashboard** | app.latchel.com/admin/integration-health | Checking whether the integration is syncing or failing |
+
+### **4. Reports to Save When You're Done**
+
+- **Your comparison worksheet**, linked in the ASM ticket's internal note
+- **The DS Tool results log** for every production run (click **Download results log**)
+- **Final active property and resident counts**, written in the internal note
+
+### **Which Reports Do I Need?**
+
+| Request type | PM's report | Latchel report | Integration report |
+| --- | --- | --- | --- |
+| Add, enable, or disable properties | ✅ | P1 | ✅ if integrated |
+| Add or update residents | ✅ | R3 or Match Residents | ✅ if integrated |
+| Merge duplicates | Optional | P1 and R3, plus P12 | ✅ Property report |
+| Active unit adjustment | ✅ | P1 | ✅ if integrated |
+| Assign properties to portfolios | ✅ | PORT26 or PORT10 | |
+| Service provider updates | ✅ PM's list | V18, V19–V24, V33–V35 | |
+| Data migration | ✅ with reference IDs | R4 | |
+| Optional Benefits audit | ✅ CPT report | P1 and R3 | |
+
+**Related guides**
+
+<Card title="Data Support Workflow" color="#ff9b8a" icon="diagram-project" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Workflow/data-support-workflow">
+  How we check and update properties and residents, from ticket to close.
+</Card>
