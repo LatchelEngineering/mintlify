@@ -163,51 +163,97 @@ Before sending any DD Conclusion email, confirm:
 - Is there a concrete resolution stated (not "under review" or "being assessed")?
 - Is there a named owner and a specific timeframe?
 - Does the email end with a statement, not an open question asking the PM what to do next?
+- Does it state a clear **conclusion** (whose issue it was and why), not just a summary of findings?
+- Is the body under about 150 words?
+- If you used AI, did you check every fact against the work order and cut it down?
+
+---
+
+## Where Drafts Still Miss
+
+These come up most often in the DD conclusion reviews. Check for them before you post your draft for review.
+
+| **Miss** | **What it looks like** | **Fix** |
+| --- | --- | --- |
+| **Investigation-first opener** | "After reviewing the full record, here is what we found…" | Open with what the customer experienced or needs to know. |
+| **Summary instead of a conclusion** | Lists everything that happened but never says what it means | Say your verdict plainly: whose issue it was and what we're doing about it. |
+| **Too long** | Several paragraphs, or longer after running it through AI | Aim for **under 150 words** in the body. If AI made it longer, it made it worse. |
+| **Timeline by default** | A bulleted timeline added even though the customer didn't dispute the sequence | Only include a timeline when the dispute **is** about what happened when. Keep it to 3–5 bullets. |
+| **Open-ended close** | "Please let us know if there's anything else you'd like us to pull together." | End on a statement: what happens next, who, and when. |
+| **Apologizing when we weren't at fault** | "We apologize for any inconvenience" when the delay was the resident's | Acknowledge the frustration, state the facts, and skip the blanket apology. Own it only when it's ours. |
+
+<Warning>
+  **AI is a tool, not the author.** Always check the AI output against the work order and your findings, and cut it down before posting. You're responsible for every fact and every promise in the email.
+</Warning>
 
 ---
 
 ## AI Validation Prompt
 
-Use this prompt to validate any DD Conclusion draft before sending. Paste it into Claude (or any AI tool) along with the draft email. The model will score it against the ACE framework and return a revised version if it doesn't pass.
+Use this prompt to check a DD Conclusion draft before you post it for review. Paste it into Claude (or your AI tool), fill in the two sections at the bottom, and run it.
 
 <Note>
-  **How to use:** Copy the prompt below. Paste your draft email at the bottom where indicated. Run it in Claude or your AI tool. If the draft fails any ACE criteria, the model will return an improved version — review it, adjust for any case-specific details, then send.
+  **How to use:**
+
+  1. Copy the full prompt below.
+  2. Under **Case facts**, paste a few bullet points from your findings: what happened, whose issue it was, and what we're doing about it. The AI can't check facts it doesn't have.
+  3. Under **Draft email**, paste your draft.
+  4. Read the scorecard. If it says REVISE, review the rewrite against the work order, adjust anything in [brackets], and make it your own before posting.
 </Note>
 
 ```text wrap
-You are a customer communication coach for Latchel, a property maintenance coordination company. Your job is to validate DD Conclusion emails against the ACE Framework before they go to customers.
+You are reviewing a customer email for Latchel, a property maintenance company. The email shares the conclusion of an internal investigation (a "Deep Dive") with a property manager. Your job is to make the email SHORTER and CLEARER, not longer.
 
-The ACE Framework
+Judge the draft against the ACE framework:
 
-**A — Acknowledge the Impact (not the case)**
-- Opens by naming what the customer experienced, not what was investigated
-- No "we completed our review" / "after our investigation" openers
-- No pleasantries ("Good day!", "Hope you're doing well")
-- No work order or case numbers in the first sentence
+A - ACKNOWLEDGE THE IMPACT
+- The first sentence names what the customer experienced or needs to know.
+- FAIL if it opens with the investigation: "we reviewed", "after our investigation", "after reviewing the full record", "here is what we found", "thank you for your patience while we reviewed".
+- FAIL if it opens with a pleasantry ("Good day!", "Hope you're well") or a work order / ticket number.
 
-**C — Clarify the Cause (plain English, one paragraph max)**
-- Root cause explained simply, without system jargon
-- Owns the issue where Latchel is at fault
-- If a timeline is included, it uses bullet points with timestamps — NOT narrative prose
-- No more than 3-4 sentences for the explanation
+C - CLARIFY THE CAUSE
+- States a clear CONCLUSION, not just a summary: whose issue it was (Latchel, the vendor, the resident, the PM, or a system gap) and why, in plain English.
+- 3 sentences or fewer. No system jargon or internal terms.
+- Owns it clearly when Latchel was at fault. Does NOT apologize for things that weren't Latchel's fault. Acknowledging frustration is fine.
+- A timeline is allowed ONLY if the customer is disputing what happened when. If included: 3 to 5 bullets, each starting with a date, no narrative. If the customer is not disputing the sequence, the timeline should be removed.
 
-**E — Execute the Resolution (concrete action + next steps)**
-- States a specific resolution (refund, fix, escalation) — not "being reviewed" or "under assessment"
-- Includes a named owner (person or team) AND a timeframe
-- Ends with a statement, not an open question ("please let us know how you'd like to proceed" fails this)
-- One prevention sentence if applicable
+E - EXECUTE THE RESOLUTION
+- States a specific outcome (credit, refund, fix, next visit, or "no change, and here's why"). FAIL on "is being reviewed", "under assessment", "will keep you informed".
+- Names who owns the next step and by when.
+- Ends with a statement. FAIL if it ends with an open question like "please let us know how you'd like to proceed" or "let us know if there's anything else". One specific question the customer must answer is OK.
+- One sentence on prevention, only if something is actually changing.
 
-Your Task
+LENGTH
+- The body should be under 150 words. FAIL if it's over 200.
 
-1. Score the email against each ACE criterion (pass/fail with a brief note)
-2. Give an overall verdict: PASS (ready to send) or REVISE (needs changes)
-3. If REVISE: rewrite the email applying the ACE Framework. Keep all factual details from the original. Do not invent resolutions or timelines — use [brackets] as placeholders where case-specific information is needed.
-4. Flag any factual details in the original that should be verified before sending.
+RULES FOR YOUR REWRITE
+- Your rewrite must be SHORTER than the original draft.
+- Use ONLY facts from the case facts and the draft. Never invent amounts, dates, credits, owners or commitments. Use [brackets] for anything missing.
+- Keep the associate's conclusion. Do not soften it or turn it into a neutral summary.
+- Plain, warm, direct. No "we apologize for any inconvenience". No "rest assured". No exclamation points.
+
+RESPOND IN EXACTLY THIS FORMAT:
+
+SCORECARD
+A - Acknowledge: PASS/FAIL - one short reason
+C - Clarify: PASS/FAIL - one short reason
+E - Execute: PASS/FAIL - one short reason
+Length: X words - PASS/FAIL
+VERDICT: SEND or REVISE
+
+REWRITE (only if REVISE)
+[the rewritten email]
+
+CHECK BEFORE SENDING
+- [any fact, amount, date or promise the associate must verify]
+- [any fact in the draft that conflicts with the case facts]
 
 ---
 
-Draft Email to Evaluate
+CASE FACTS (from the associate's findings):
+[PASTE 3-6 BULLETS: what happened, whose issue it was, what we're doing, who owns it, by when]
 
+DRAFT EMAIL:
 [PASTE DRAFT HERE]
 ```
 
@@ -217,7 +263,7 @@ Draft Email to Evaluate
 
 None of this changes how thoroughly we investigate. The depth of the DD work is what makes the customer email possible — it gives us the root cause, the timeline, and the facts we need to make confident decisions.
 
-The shift is in how we translate that work for the customer. The investigation findings belong in internal documentation (Jira, ASM notes, the Slack thread). The customer email is a distillation: acknowledge their experience, explain what happened simply, and close with a clear resolution.
+The shift is in how we translate that work for the customer. The investigation findings belong in internal documentation (Jira, Wavelength ticket notes, the Slack thread). The customer email is a distillation: acknowledge their experience, explain what happened simply, and close with a clear resolution.
 
 <Note>
   **Principle to remember:** Effort is not communication. A detailed investigation summary that leaves the customer without a clear answer is a communication failure, regardless of the work that went into it.
