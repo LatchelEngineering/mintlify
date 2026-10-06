@@ -4,35 +4,77 @@ groups: ["latchel"]
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/2887811074/SOP+PS+CX+Audit+Process"
 ---
 
-## Purpose
-
 <Note>
-**Purpose of this document**
+**Purpose:** The end-to-end weekly **PS Quality Audit**: how tickets are picked, scored and shared, and what associates do with the results.
 
-The purpose of this document is to provide a high-level overview of the process and steps to complete the PS CX Audit.
+**Who should read this:** PS associates and anyone who audits PS tickets.
+
+**How tickets are scored** (the 13 items, weights and calibration) is covered in [PS CX Audit Guidelines](/latchel-admin/Product-Support-Team/PS-CX-Audit-Guidelines).
 </Note>
 
-<Note>
-**Who should read this document?**
+## The weekly cycle at a glance
 
-PS Associates and CS Team
-</Note>
+| **Step** | **Who** | **When** |
+| --- | --- | --- |
+| 1. Pull a random sample of tickets | Report (automatic) | Start of the week, for the previous Monday–Sunday |
+| 2. Verify and score each ticket | Auditor | During the week |
+| 3. Review and submit scores | Auditor (PS Manager approves) | During the week |
+| 4. Share results with each associate | PS Manager | After submission |
+| 5. Complete follow-ups | Associate | Within **3 business days** |
+| 6. Dispute a score (optional) | Associate | After reviewing results |
 
-### Step-by-Step Guide
+## Step 1: Tickets are pulled
 
-#### Step 1 - Auditors complete [PS CX Audit Form](https://docs.google.com/forms/d/e/1FAIpQLSd_G_7r_l4KI7rAoMDZ6Ib4YSPlnOV9LYh17nPo8MS3kscuvA/viewform).
+A report pulls a **random sample of 3 closed Wavelength tickets per associate** from the most recent Monday–Sunday report period into the audit tracker. Every ticket in the sample is audited.
 
-- On a weekly basis, the auditors should complete the PS CX Audit Form for their agreed upon number of cases.
-  - Auditors should select a random sampling of cases from the week to audit. Auditing Compliance will be monitored in [this report](https://docs.google.com/spreadsheets/d/1jGgQoUBhIH3ehQHM7BNdtjp9ZmFVLrPhqsZaHvd5Lds/edit?resourcekey#gid=668825421) to ensure the agreed upon number of cases audits are being completed on a weekly basis.
-  - Auditors should follow [these guidelines](https://latchel.atlassian.net/l/cp/2Pnjamp7) when filling out the form per case.
+## Step 2: Verify and score
 
-#### Step 2 - Scores will be shared with PS Associates.
+For each ticket, the auditor:
 
-1. All completed audit entries will dump into [this report](https://docs.google.com/spreadsheets/d/1jGgQoUBhIH3ehQHM7BNdtjp9ZmFVLrPhqsZaHvd5Lds/edit?usp=sharing). PS Associates will be given the opportunity to review their audits and scores from the previous week.
+1. **Reads the full ticket**, including every earlier message and any quoted email chain, plus the parent Ops escalation if there is one.
+2. **Opens every source the ticket mentions:** each work order (Details and Activity, including the SMS and Calls filters), Slack threads, Latchel admin records, help guides and the SOP or Job Aid for the scenario.
+3. **Checks every claim against the record as it stood when the reply went out**, not against what it looks like today. Work orders often change after the reply.
+4. **Scores the 13 items** on the [PS Quality Audit form](https://docs.google.com/forms/d/e/1FAIpQLSegLUzj7BaRwtAEri7TAtyfJOvC3PU5dHHSlwMuQmOf06m7pg/viewform), following the [PS CX Audit Guidelines](/latchel-admin/Product-Support-Team/PS-CX-Audit-Guidelines).
+5. **Fills in the notes:** what was great, what could be better (with suggested wording or the right step), and the documentation check.
+6. **Logs a follow-up** for any No or Partial that can still be fixed (see Step 5).
 
-#### Step 3 - PS Associate has opportunity to Dispute an Audit.
+<Warning>
+  **A thread-only review isn't an audit.** If a source can't be opened, the auditor marks that item unverified and says so, rather than scoring it from the thread alone.
+</Warning>
 
-1. Following the review of their scores, PS associates will be given the opportunity to dispute an audit score and request a reassessment via this [PS CX Audit Reassessment Dispute form](https://docs.google.com/forms/d/e/1FAIpQLSeT6dIOGvyP6JfgJRWcAjsKiMjYp7lRr_4D4MQ5eR8iJz3OrQ/viewform).
-  - Audit Reassessment requests will dump into [this report](https://latchel.atlassian.net/wiki/pages/resumedraft.action?draftId=2887811074&draftShareId=02d36e46-5e8d-4fe1-86e7-2a1387684857). Reassessment requests will be reviewed by the PSM.
-    - If the reassessment is Valid and Applicable, feedback will be provided to the auditor and a new score will be determined for the PS Associate.
-    - If the reassessment is Not Valid and Not Applicable, feedback will be provided to the PS Associate.
+## Step 3: Review and submit
+
+1. The auditor reviews scores with the PS Manager before submitting, especially anything that depends on a judgment call or an unverified source.
+2. Scores are submitted through the form and land in the audit workbook, which calculates each category and the overall %.
+3. The auditor marks each ticket **Audit Completed** in the tracker.
+
+## Step 4: Results are shared
+
+Each associate gets their own results: scores, what went well, what to improve, and any follow-ups with deadlines. Individual and team scores are shared directly, not on a shared page.
+
+<Tip>
+  **Patterns matter more than single misses.** When the same issue shows up across several tickets or associates (for example, tickets sitting before they're assigned), it's handled as a team or process fix, not as individual coaching items.
+</Tip>
+
+## Step 5: Complete follow-ups
+
+If your audit includes a follow-up, complete it within **3 business days** (weekends and office closures don't count).
+
+| **Follow-up type** | **What you do** |
+| --- | --- |
+| **Corrective Action** | Redo the missed step: answer the unanswered question, fix the setting, add the missing note or tag. |
+| **Bug** | Report the bug in `#bug-report` with the Bug Report workflow and add the link to the ticket. |
+| **Feature Request** | Submit it with the Feature Request form in `#feature-requests`. See [How to Handle: Feature Requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests). |
+| **Follow-Up & Process Gap** | Close the loop with the customer or team, and flag the gap to the PS Manager. |
+| **Bias for Action** | Take the action you should have taken, then let the customer know. See [SOP: Managing Unresponsive PMs](/latchel-admin/Product-Support-Team/SOP-Managing-Unresponsive-Property-Managers-in-Case-Management). |
+
+When you're done, reply to the PS Manager with what you did and any links.
+
+## Step 6: Dispute a score (optional)
+
+If you think a score is wrong, you can ask for a reassessment with the [PS CX Audit Reassessment Dispute form](https://docs.google.com/forms/d/e/1FAIpQLSeT6dIOGvyP6JfgJRWcAjsKiMjYp7lRr_4D4MQ5eR8iJz3OrQ/viewform). Include the ticket link, the item you're disputing, and why (point to the SOP, work order or record that supports you).
+
+The PS Manager reviews every dispute:
+
+  - **Valid:** the score is corrected, and the auditor gets the feedback so future audits are scored the same way.
+  - **Not valid:** you get an explanation of why the score stands.
