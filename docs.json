@@ -1428,6 +1428,12 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    "group": "Team Management",
+                    "pages": [
+                      "latchel-admin/Data-Support-Team/Team-Management/how-to-update-weekly-team-stats"
+                    ]
                   }
                 ]
               },

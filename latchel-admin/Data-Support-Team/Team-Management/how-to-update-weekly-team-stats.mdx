@@ -1,0 +1,238 @@
+---
+title: "How to Update Weekly Team Stats"
+sidebarTitle: "Update Weekly Team Stats"
+description: "How to export the Assembly raw data, load it into the DS Team Pulse artifact, and keep the team list, holidays, and weekly Help Center update current."
+groups: ["latchel"]
+---
+
+Every Tuesday, the Data Support Team reviews last week's numbers in our Weekly Business Review (WBR). **DS Team Pulse** turns four Assembly exports into a full report: ticket counts, completion rate, backlog, handling time, resolution time, first response time, integrations, month-to-date and quarterly stats, and top companies. A weekly routine adds the Help Center section on its own, so nobody has to gather it by hand.
+
+<Tip>
+  **DS Team Pulse:** [https://claude.ai/artifact/V3MbcmF4P4Jmr2nDCgo99n](https://claude.ai/artifact/V3MbcmF4P4Jmr2nDCgo99n)
+
+  The page is shared with everyone at Latchel. When someone uploads new data or saves settings, everyone who opens the page sees the same report.
+</Tip>
+
+<Check>
+  **In other words:**
+
+  Export the four raw data reports from Assembly, drop them into DS Team Pulse, pick the report week, and the stats are ready for the WBR. Once a year, update the holidays. When someone joins the team, add them to the team list.
+</Check>
+
+### **Objectives**
+
+- Give the team one accurate, shared source for weekly stats, ready before the Tuesday WBR.
+- Count only Data Support work: tickets assigned to DS team members, timed in business hours.
+- Save time with an automatic weekly update of the Help Center guides we published and updated.
+- Keep the report accurate over time by maintaining the holiday list and team members.
+
+### **Before You Start**
+
+- You need access to the Data Support team space in Assembly, with permission to export reports.
+- Open DS Team Pulse while signed in to claude.ai with your Latchel account.
+- Exports work best on a laptop or desktop.
+
+### **Part 1: Export the Raw Data From Assembly**
+
+You need **four** exports, one from each of these Assembly reports:
+
+| Assembly report | What it's used for | Typical file name |
+| --- | --- | --- |
+| **Interactions** | Ticket counts, statuses, categories, integrations, and companies | `export_tickets.csv` |
+| **Resolution Times** | Average resolution time | `raw_resolution_time.csv` |
+| **Time to First Response** | Average first response time | `raw_first_response_time.csv` |
+| **Timer** | Average handling time | `timer_raw_export.csv` |
+
+<Warning>
+  **Use the second export option for each report.** Each of these reports has more than one export option. The **second** one is the **raw data** export, and it's the only one DS Team Pulse can read. The first export is a summary, and the page will reject it because columns are missing.
+</Warning>
+
+<Steps>
+  <Step title="Open the Interactions report in Assembly." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Go to the reports for the Data Support team space and open **Interactions**.
+  </Step>
+  <Step title="Set the date range." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Set the range to start on **January 1 of the current year** and end **today**. DS Team Pulse uses the full year for the Quarterly stats and Top companies sections, and the last four weeks for the weekly numbers.
+
+    Use the same date range for all four exports.
+  </Step>
+  <Step title="Export the raw data." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Click export and choose the **second** export option (raw data). Save the CSV to your computer.
+
+    {/* TODO: screenshot of the Assembly export menu with the second (raw data) option highlighted */}
+  </Step>
+  <Step title="Repeat for the other three reports." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    Do the same for **Resolution Times**, **Time to First Response**, and **Timer**, using the second export option each time.
+  </Step>
+  <Step title="Check the file names." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    Keep the words "resolution" and "first response" in those two file names. Both files have the same columns, so DS Team Pulse uses the file name to tell them apart. If you rename them, you'll need to pick each file's type by hand in Part 2.
+  </Step>
+</Steps>
+
+### **Part 2: Load the Exports Into DS Team Pulse**
+
+<Steps>
+  <Step title="Open DS Team Pulse." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Go to [https://claude.ai/artifact/V3MbcmF4P4Jmr2nDCgo99n](https://claude.ai/artifact/V3MbcmF4P4Jmr2nDCgo99n). If data was uploaded before, the last report loads automatically.
+  </Step>
+  <Step title="Drop all four files at once." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Drag the four CSV files onto the box that says **Drop all 4 exports here at once**, or click **Upload files** and select them.
+
+    <Tip>
+      To replace just one file, for example a corrected Timer export, drop only that file. The other three stay as they are.
+    </Tip>
+  </Step>
+  <Step title="Check that each file is matched to the right report." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    A panel titled **Check the files before building the report** lists each file with its row count and the report type the page detected. Confirm each one:
+
+    | File | Should say "This is the..." |
+    | --- | --- |
+    | Interactions export | **Ticket export** |
+    | Resolution Times export | **Resolution time** |
+    | Time to First Response export | **First response time** |
+    | Timer export | **Timer** |
+
+    If a type is wrong, change it in the dropdown. Choose **Skip this file** to leave a file out. If a file shows an error, it's usually the summary export instead of the raw data, so go back to Part 1 and use the second export option.
+  </Step>
+  <Step title="Click Build report." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    The report builds and saves automatically. A message confirms: **Saved. Everyone with this page now sees this report.**
+
+    <Note>
+      If you see "This view can't save," the report only shows in your browser until you close the page. Reopen DS Team Pulse from the link above and upload again.
+    </Note>
+  </Step>
+  <Step title="Choose the report week." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    The **Report week** dropdown defaults to the most recent full week. Weeks run Sunday to Saturday. For the Tuesday WBR, keep it on last week. Choose another week to look back.
+  </Step>
+  <Step title="Review the report." icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
+    Use the section links at the top to jump around:
+
+    | Section | What it shows |
+    | --- | --- |
+    | **4 weeks** | 4-week averages for handling, resolution, and first response time, by group and by person |
+    | **Tickets** | Created, completed (with completion rate), and backlog for the report week |
+    | **Integrations** | Tickets created per week by integration tag |
+    | **Help Center** | Help guides published or updated that week (added by the weekly routine, see Part 3) |
+    | **Oldest open** | The oldest unresolved tickets at the time of the review |
+    | **Month to date** | This month compared with last month, with averages by group |
+    | **Quarters** | Quarterly stats for the year |
+    | **Top companies** | Requests per company, by quarter and year to date |
+    | **Summary of tickets** | Every ticket in the export, by category |
+
+    The line under the page header shows who is counted and how many tickets or timer entries were left out.
+  </Step>
+</Steps>
+
+<Note>
+  **How the numbers are counted:**
+  - Only tickets assigned to the team members in the settings count. Timer entries count only when the **End User** is on the team, so Product Support time is left out.
+  - Tickets in a **Not Actionable** category are always left out.
+  - All times use business hours only: **Monday to Friday, 4:30 AM to 1:00 PM Pacific**. Weekends and the holidays in the settings are skipped.
+</Note>
+
+### **Part 3: The Weekly Help Center Routine**
+
+A scheduled routine, **DS Team Pulse: weekly Help Center update**, fills in the Help Center section for you.
+
+| | |
+| --- | --- |
+| **When it runs** | Every Tuesday at about 4:00 AM Pacific |
+| **What it covers** | The week that just ended (Sunday to Saturday) |
+| **What it adds** | Public help guides on help.latchel.com that were newly published or updated that week, each with a one-sentence summary and its audience (Property Manager, Resident, Service Provider, or Newsletter) |
+| **What it leaves out** | Internal Latchel Admin pages, deleted pages, and formatting-only edits |
+| **Where it runs** | The Claude desktop app on the Data Support Lead's computer |
+
+<Steps>
+  <Step title="Check the Help Center section before the WBR." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    On Tuesday morning, open DS Team Pulse with last week selected and scroll to **Help Center**. You should see **Newly published help guides** and **Updated help guides** for that week. If nothing changed that week, the section says so.
+  </Step>
+  <Step title="If the section hasn't loaded, run the routine manually." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    If you see "Help Center changes for Week N haven't been loaded yet," the routine didn't run. This can happen when the computer was off or the Claude desktop app was closed at 4:00 AM.
+
+    Ask the Data Support Lead to open the Claude desktop app, go to **Scheduled tasks**, find **DS Team Pulse: weekly Help Center update**, and click **Run now**. The section updates on the page for everyone when it finishes.
+  </Step>
+</Steps>
+
+<Warning>
+  The routine only reads the help center and writes to the Help Center section. It never changes the uploaded stats or the settings. Don't edit or delete the routine without the Data Support Lead.
+</Warning>
+
+### **Part 4: Keep Team Members Up to Date**
+
+The report only counts tickets for the people in the team list. When a new Data Support team member joins, add them, or their tickets won't show up in the stats.
+
+<Steps>
+  <Step title="Open the settings." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    In DS Team Pulse, click **Team, business hours and holidays** to expand it.
+  </Step>
+  <Step title="Add the new team member's name." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    In **Team members**, add the name on its own line, **spelled exactly as it appears in Assembly** (for example, `Jaqueline Lopez`). If the name doesn't match Assembly, their tickets won't be counted.
+  </Step>
+  <Step title="Click Save settings." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    You'll see **Saved for everyone.** The report rebuilds right away with the new team member included.
+
+    <Note>
+      If you see "Applied here only. You don't have permission to save settings," the change only applies in your view. Ask the Data Support Lead to save it.
+    </Note>
+  </Step>
+</Steps>
+
+<Tip>
+  When someone leaves the Data Support Team, remove their name the same way so their future tickets aren't counted. Their past tickets drop out of the report too, so make the change after the last WBR that should include them.
+</Tip>
+
+### **Part 5: Update the Holiday List Every Year**
+
+Business-hour times skip Latchel holidays. **The holiday list must be updated every year.** Otherwise, next year's holidays count as working days, and resolution and response times look longer than they really are.
+
+<Steps>
+  <Step title="Get next year's Latchel holiday calendar." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Use the official holiday dates from People Ops. Use the **observed** date when a holiday falls on a weekend.
+  </Step>
+  <Step title="Open the settings." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    In DS Team Pulse, click **Team, business hours and holidays** to expand it.
+  </Step>
+  <Step title="Add each holiday date." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    In **Latchel holidays**, add each date on its own line in `YYYY-MM-DD` format, for example `2027-01-01`. Keep the current year's dates, since the report still uses them for this year's quarterly and month-to-date stats.
+  </Step>
+  <Step title="Click Save settings." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    Confirm you see **Saved for everyone.**
+  </Step>
+</Steps>
+
+<Note>
+  Do this every December, before the first WBR of the new year. Add any extra company holidays People Ops announces during the year as they come up.
+</Note>
+
+### **Weekly Checklist**
+
+- [ ] Export the raw data (second export option) for **Interactions**, **Resolution Times**, **Time to First Response**, and **Timer**, from January 1 to today
+- [ ] Drop all four files into DS Team Pulse and confirm each file's type
+- [ ] Click **Build report** and confirm it saved for everyone
+- [ ] Set **Report week** to last week
+- [ ] Check that the **Help Center** section loaded, or ask for the routine to be run manually
+- [ ] New team member? Add them in **Team members** and save
+- [ ] December? Add next year's holidays and save
+
+### **Frequently Asked Questions**
+
+<AccordionGroup>
+  <Accordion title="The page says a file is missing a column. What happened?">
+    You most likely used the first (summary) export. Go back to Assembly and use the second export option, which gives the raw data.
+  </Accordion>
+  <Accordion title="Both time reports were detected as the same type. How do I fix it?">
+    The Resolution Times and Time to First Response exports have the same columns, so the page tells them apart by file name. Pick the right type for each in the **Check the files** panel, or rename the files to include "resolution" and "first response."
+  </Accordion>
+  <Accordion title="A team member's tickets are missing from the report.">
+    Check that their name in **Team members** matches Assembly exactly, then click **Save settings**.
+  </Accordion>
+  <Accordion title="Do I need to upload every week?">
+    Yes. Upload fresh exports before each WBR so the report includes last week's tickets and current statuses.
+  </Accordion>
+</AccordionGroup>
+
+**Related guides**
+
+<Card title="Data Support Overview" color="#ff9b8a" icon="database" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/data-support-overview">
+  Our mission, responsibilities, and tasks as a team.
+</Card>
