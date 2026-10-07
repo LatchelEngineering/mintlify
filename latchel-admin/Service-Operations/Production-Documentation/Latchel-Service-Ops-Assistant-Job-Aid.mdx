@@ -1,6 +1,7 @@
 ---
-title: "Latchel Service Ops Assistant Job Aid"
-groups: ["latchel"]
+title: "(Operations Support Specialist) Job-Aid: Latchel Service Ops Assistant Plug-in "
+groups:
+  - "latchel"
 ---
 
 ## What Is It?
@@ -15,9 +16,9 @@ As of August 6, 2026: use the plugin's **Next Task** feature to manage your work
 
 <Accordion title="Steps to Install and Login">
 - **Step 1 —** Install from the [Chrome Web Store](https://chromewebstore.google.com/detail/latchel-service-ops-assis/jnpnnoibhffecliboocloalbfmofgfge?authuser=0&hl=en).
-- **Step 2 —** Log in with your @latchel.com Google account on any [app.latchel.com](http://app.latchel.com) page. Only http://latchel.com  team members can use it.
+- **Step 2 —** **No separate login.** The plugin uses your [app.latchel.com](http://app.latchel.com) login automatically. Just be logged into Latchel.
 - **Step 3 —** If you don't see expected features, restart Chrome and log back in — this resolves most sync/update issues.
-- **Checking version —** Check your installed version any time via the gear (Settings) icon after logging in. This job aid reflects plugin version **0.5.3** (current as of 8/12/26).
+- **Checking version —** Check your installed version any time via the gear (Settings) icon after logging in. This job aid reflects plugin version **0.6.7** (current as of 10/6/26).
 </Accordion>
 
 ## Keeping It Updated
@@ -107,9 +108,7 @@ The sections below match what you'll see in the plugin, in the order you'll typi
 
 <Accordion title="Steps">
 1. Confirm you're on the **All queues** tab.
-  1. 
 2. Each card is one queue, such as Troubleshooter or Operations Associate, etc. The bar chart shows how tasks are distributed by age.
-  1. 
 3. Click a **future tasks** link on any card to preview what's coming up in that queue before it's due.
 
 You can remove queues that don't apply to your current assignment from Settings, so only relevant queues show here.
@@ -177,7 +176,6 @@ As of 0.5.3, this choice now persists across navigation and page reload — it u
   1. Under **Start With**, choose whether the plugin opens to **All queues** or **Next task** by default.
   2. Under **Default queues**, remove any queues that don't apply to your role so they don't clutter your view.
   3. Scroll down and click **Save defaults** to apply your choices.
-  4. 
 2. Use **Submit feedback** any time to send a suggestion or report a bug directly from the plugin.
 
 <Frame>
@@ -194,9 +192,9 @@ The first 7 walkthrough items focus on queue and task management from the Consol
 2. Review the WO context at the top of the plugin, including **Status** and **Managed By**.
 3. If an emergency WO is being managed by PM, review the alert and use the available actions when appropriate, such as **Switch to Latchel** or **Move to Urgent**.
 4. Check the next suggested task, then use **Assign me & Go** when you are ready to take the work.
-5. Review **Critical notes & escalation**, including Critical Notes, Pre-Dispatch Instructions, and Escalation Contact / EEC on-call details.
+5. Review Critical notes & escalation, including Critical Notes (from both the vendor and the PM Company), Pre-Dispatch Instructions, and Escalation Contact / EEC on-call details.
 6. Use the surfaced **Resident & Vendor Callback** number when follow-up is needed.
-7. Open the **Intake transcript** when you need more context, and check **Related jobs** for duplicates or connected work.
+7. Open the **Intake transcript** when you need more context, and check **Related jobs** for duplicates or connected work. Duplicates from the full past 6 months now show in Related Jobs.
 8. Use **Quality CX call tips** as the call-quality reminder while working the WO.
 
 <Note>
@@ -213,6 +211,7 @@ The first 7 walkthrough items focus on queue and task management from the Consol
 - The plugin shows you as **"idle"** after **10 minutes** of no interaction with the plugin window. Any interaction resumes active status immediately.
 - This is **local to the plugin only** — it does **not** change your actual status in Latchel. (It's designed this way so the plugin isn't checking in with the database every minute while you're away.)
 - It's a useful signal — for you or a lead — that someone may be away from their desk without setting "On Break," or that their computer/network may have frozen. It is not itself a status change, so remember to set your real status if you're stepping away.
+- Next Task refreshes every 5s when queues are empty, and the stuck Next Task bar after going idle is fixed.
 
 ## Amazon Connect Capacity Alert
 
@@ -232,6 +231,14 @@ The alert includes an audio signal by default (can be overridden with your own s
 **Idle status exception:** Ops Support/Leadership users normally go idle after 10 minutes like everyone else, but while the Support Dashboard is open, this specific alert check keeps running for up to **2 hours** of inactivity (as long as the tab stays open — it won't refresh if the tab isn't visible). This is so the alert can still catch you even if you've stepped away from your keyboard but left the dashboard open.
 </Note>
 
+## Sheriff Integration
+
+**Shift & schedule visibility (Ops Support + Supervisors only).** As of 0.6.6, you can see team shifts and schedules from Sheriff inside the plugin. Use it to compare who is scheduled against who is actually in the right status. This is especially useful for phone coverage alongside the Amazon Connect alert.
+
+**Clock in/out and breaks.** Everyone can clock in and out and start or end breaks in Sheriff from the plugin. Changing status from the plugin keeps Latchel and Sheriff in sync.
+
+**Late clock-out reasons.** As of 0.6.7, associates who clock out 15+ minutes past their scheduled end are asked for a reason. That reason appears in Sheriff when timesheets are reviewed.
+
 ## Feature Quick Reference
 
 | Feature | What it does |
@@ -242,7 +249,7 @@ The alert includes an audio signal by default (can be overridden with your own s
 | Future Tasks | A heads-up view of what's coming up next in your queue. |
 | Queue filtering | Remove queues that don't apply to your current assignment so Next Task surfaces only relevant work. |
 | Aging bars | Click to see tasks in a specific age range within a queue. |
-| Callback numbers | Resident and vendor callback numbers are surfaced automatically. |
+| Callback numbers | Resident and vendor callback numbers are surfaced automatically. One-click copy for resident and vendor callback numbers. |
 | Vendor critical notes | Critical notes from vendors surfaced automatically, with origin attribution. |
 | Quick Assign to me | Assign a task to yourself without opening the work order page. |
 | Ops Support overview | Consolidates several reports Ops Support previously had to switch between, plus a current-conversations messages summary. |
@@ -255,6 +262,12 @@ The alert includes an audio signal by default (can be overridden with your own s
 | Plugin task list | As of 0.5.2, this replaced the in-app Tasks view entirely — it reflects the official prioritization logic described above, unlike the old Tasks page. |
 | Resizable, snapping widget | As of 0.5.2, you can resize the widget. It automatically snaps left and shrinks to its minimum size while you're viewing a task, so it doesn't obscure the Activity feed. |
 | Amazon Connect capacity alert | As of 0.5.3, warns Ops Support/Leadership when Amazon Connect is understaffed and at high risk of call rollover. See "Amazon Connect Capacity Alert" above. |
+| Sheriff time clock | Clock in/out and start/end breaks from the plugin, with status synced to Sheriff (0.6.6) |
+| Shift/schedule visibility | Ops Support and Supervisors see scheduled shifts via Sheriff (0.6.6). |
+| Late clock-out reason | **P**rompts for a reason at 15+ min past scheduled end and pushes it to Sheriff (0.6.7). |
+| Conversations Templates button | Templates are accessible from the Conversations tab (9/29). |
+| SP alternate phone numbers and emails in the Find Service Provider modal, with click-to-copy email. |  |
+| Special Notes | Saved locally for 30 days and not committed to the Activity log until you save them. |
 
 ## Quick Troubleshooting
 
@@ -266,3 +279,6 @@ The alert includes an audio signal by default (can be overridden with your own s
 | Unsure which task to work next | Use Next Task — it's the primary way to pick up work and always applies the priority order automatically. |
 | A queue you expect (e.g. SMS Webchat) isn't showing up | Check your **console user-group membership** in Latchel (Settings → User Groups) — Next Task follows the console groups, not informal Slack team names. Ask a lead to confirm/update your group if needed. |
 | Still looking for the old in-app Tasks page | It was replaced in 0.5.2 by the plugin's own task list, which reflects the official prioritization logic — use Next Task or All Queues in the plugin instead. |
+| Sheriff clock-in or break buttons missing or not working | Check that you're on 0.6.6+ and restart Chrome. If it still fails, tell a lead, since Sheriff permissions may need updating |
+| Plugin looks disabled or shows an old view | Check that the extension is enabled in Chrome, sign out of the console and back in, and reinstall if needed |
+| An email you're handling in Assembly isn't showing in the plugin | Fixed in 0.6.6, so update first. If it continues, confirm your name matches in both Latchel and Assembly, then report it. |
