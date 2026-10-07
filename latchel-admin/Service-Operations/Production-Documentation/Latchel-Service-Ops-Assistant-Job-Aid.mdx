@@ -96,11 +96,7 @@ The sections below match what you'll see in the plugin, in the order you'll typi
 <Accordion title="Steps">
 1. **Read —** Read the message — it usually explains a change to a number, workflow, or field.
 2. **Acknowledge —** Check "Never show me again" only once you've noted the change; otherwise leave it unchecked so you see it again next session.
-3. **Continue —** Click Dismiss, or click All queues / Next task to jump straight into your work.
-
-<Frame>
-  ![](/images/SVC-979.png)
-</Frame>
+3. **Click Assign me & Go to take it and jump straight into the work order. You can also open it in a new tab so you don't lose the page you're working from.**
 </Accordion>
 
 ### 2. All Queues — Seeing Everything at Once
@@ -194,6 +190,7 @@ The first 7 walkthrough items focus on queue and task management from the Consol
 5. Review Critical notes & escalation, including Critical Notes (from both the vendor and the PM Company), Pre-Dispatch Instructions, and Escalation Contact / EEC on-call details.
 6. Use the surfaced **Resident & Vendor Callback** number when follow-up is needed.
 7. Open the **Intake transcript** when you need more context, and check **Related jobs** for duplicates or connected work. Duplicates from the full past 6 months now show in Related Jobs.
+8. Use **Test Intake Rules** to check which intake rules match the WO. It pre-fills from the WO description, so edit as needed, and confirm the result before acting since it's AI-based.
 8. Use **Quality CX call tips** as the call-quality reminder while working the WO.
 
 <Note>
@@ -249,11 +246,11 @@ The alert includes an audio signal by default (can be overridden with your own s
 | Queue filtering | Remove queues that don't apply to your current assignment so Next Task surfaces only relevant work. |
 | Aging bars | Click to see tasks in a specific age range within a queue. |
 | Callback numbers | Resident and vendor callback numbers are surfaced automatically. One-click copy for resident and vendor callback numbers. |
-| Vendor critical notes | Critical notes from vendors surfaced automatically, with origin attribution. |
+| Critical notes (vendor + PM Company) | Critical notes from both the vendor and the PM Company surfaced automatically, with origin attribution. |
 | Quick Assign to me | Assign a task to yourself without opening the work order page. |
 | Ops Support overview | Consolidates several reports Ops Support previously had to switch between, plus a current-conversations messages summary. |
 | Amazon Connect dashboard | Inbound call metrics integration for Ops Support. |
-| Email Queues + Assembly integration | Email-based task queues alongside Assembly conversations. Includes a toggle to show assigned vs. unassigned-only emails. |
+| Email Queues + Assembly integration | Email-based task queues alongside Assembly conversations. Includes a toggle to show assigned vs. unassigned-only emails. As of 0.6.4, Ops Support has added email visibility. |
 | Forwarded to PM options | Handles special cases where a work order is in the wrong status. |
 | Managed By visibility | See, and in some cases change, who manages a property or WO. |
 | Idle status | Shows "idle" after 10 minutes of no interaction with the plugin window. Local to the plugin only — does not change your real Latchel status. |
@@ -263,17 +260,19 @@ The alert includes an audio signal by default (can be overridden with your own s
 | Amazon Connect capacity alert | As of 0.5.3, warns Ops Support/Leadership when Amazon Connect is understaffed and at high risk of call rollover. See "Amazon Connect Capacity Alert" above. |
 | Sheriff time clock | Clock in/out and start/end breaks from the plugin, with status synced to Sheriff (0.6.6) |
 | Shift/schedule visibility | Ops Support and Supervisors see scheduled shifts via Sheriff (0.6.6). |
-| Late clock-out reason | **P**rompts for a reason at 15+ min past scheduled end and pushes it to Sheriff (0.6.7). |
-| Conversations Templates button | Templates are accessible from the Conversations tab (9/29). |
-| SP alternate phone numbers and emails in the Find Service Provider modal, with click-to-copy email. |  |
+| Late clock-out reason | Prompts for a reason at 15+ min past scheduled end and pushes it to Sheriff (0.6.7). |
+| Templates | Searchable library of SMS, call note, and task note templates. Open it with the ⚡ icon, the Templates button on the Conversations tab, or by typing ;;. Keyword shortcuts (e.g. ;;rut) and merge fields auto-fill WO details. Also available in task forms. Pressing Enter in SMS selects a template without sending it (0.6.1–0.6.2). |
+| Sourcing contact details | Shows the SP's alternate phone numbers and email in the Find Service Provider modal, with one-click copy for the email (0.5.5/0.6.0). |
 | Special Notes | Saved locally for 30 days and not committed to the Activity log until you save them. |
+| Assembly job link | In Assembly, click the Latchel icon to add a link to a recently viewed job in an internal note. A ✅ confirms it was added (0.6.2). |
+| Test Intake Rules | Check which intake rules match a WO without leaving it. Pre-fills from the WO description. AI-based, so confirm before acting (0.6.4). |
+| Weather Check | Live forecast for the property's location on every WO (0.6.4). |
 
 ## Quick Troubleshooting
 
 | Symptom | What to do |
 | --- | --- |
 | Not seeing a feature everyone's talking about | Confirm your version in Settings, then restart Chrome and log back in. |
-| Getting logged out frequently | Update to the latest version — this was a known issue fixed in 0.4.2. Still happening after updating? Report it. |
 | Latchel feels slow | Force-update to 0.5.0+; a database-load issue causing slowness was fixed in that release. |
 | Unsure which task to work next | Use Next Task — it's the primary way to pick up work and always applies the priority order automatically. |
 | A queue you expect (e.g. SMS Webchat) isn't showing up | Check your **console user-group membership** in Latchel (Settings → User Groups) — Next Task follows the console groups, not informal Slack team names. Ask a lead to confirm/update your group if needed. |
