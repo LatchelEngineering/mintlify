@@ -1,0 +1,53 @@
+---
+title: "DS Team Pulse: Overview for Managers"
+---
+
+DS Team Pulse is the Data Support team's weekly scorecard: one page with last week's handling, resolution and first response times, ticket volumes and backlog, integration and customer trends, and help center changes, ready for Tuesday's Weekly Business Review.
+
+## What it is and how to open it
+
+Open it at [DS Team Pulse](https://claude.ai/artifact/V3MbcmF4P4Jmr2nDCgo99n). It runs in the browser, with nothing to install, and anyone at Latchel can open the link.
+
+- **Data source:** the team's own Assembly exports (tickets, timer, resolution time, first response time). Malen uploads them each week, and the page does the counting.
+- **Help center:** public help guide changes on help.latchel.com are added automatically every Tuesday morning.
+- **Who's counted:** Data Support only (Jaqueline Lopez, Aldrin Nacional, Malen Macasaquit). Not Actionable tickets and PS Team timer entries are left out.
+- **Viewing vs editing:** everyone sees the same numbers. Viewers can read and switch weeks; only editors can upload new data.
+
+## What you'll see
+
+The page opens on the most recent completed week (e.g. Week 40, Sep 27 – Oct 3). A **Report week** dropdown at the top switches to any earlier week, and the links next to it jump to each section.
+
+| Section | What it shows |
+| :-- | :-- |
+| Last 4 weeks | Avg handling time (hours), avg resolution time and avg first response time (business days), shown separately for **Account Update & Active Unit Adj** and **Nomad & RentRedi**. Each has a 4-week bar chart, the change vs the prior week, and a weekly table of Created, Completed, Completion rate and Backlog. |
+| Why it went up | Appears under a chart only when a time rises 20% or more week over week: the 3 tickets behind the rise, why each one stood out, and what the average would be without them. |
+| By person | Each teammate's averages and closed tickets over the last 4 weeks. |
+| Tickets | Created, Completed (with completion rate) and Backlog for the week, broken down by category and status. |
+| Tickets by integration | Tickets created per week by integration tag (Appfolio, RentVine, Rent Manager, Propertyware, Buildium, No Integration), with each integration's ticket values and the list of tickets. |
+| Help Center | Public help guides newly published or updated that week, each linked, with a one-line note and an audience tag (Property Manager, Resident, Service Provider, Newsletter). |
+| Oldest unresolved ticket | The oldest ticket still open at the time of the review: ticket number, age, summary and owner, plus the next oldest. |
+| Month to date | Created and closed this month, and each group's averages vs the same days last month. |
+| Quarterly stats | Created, closed and each group's averages per calendar quarter. |
+| Top companies | The PMs sending the most requests, by quarter and year to date, with their software and ticket values. Filter by group, rank by quarter, show top 5, top 10 or all. |
+| Summary of tickets | Every ticket by category: totals, closed, still open, and averages per group. |
+
+## How the numbers are counted
+
+All times count business hours only: Monday–Friday, 4:30am–1:00pm Pacific, skipping weekends and Latchel holidays. Weeks run Sunday to Saturday.
+
+- **Days:** resolution and first response times are in business days, where 1 day = 8.5 business hours. Handling time is in hours.
+- **Handling time:** the ticket's timer time, added up per ticket.
+- **Resolution time:** start to close. Every close counts, including a reopened ticket's later closes.
+- **Groups:** averages are never mixed across the two groups. Tickets in the "Unknown" category count in totals but not in group averages.
+- **Created** = new tickets that week + the previous week's backlog carried over + reopened tickets.
+- **Completed** = tickets closed that week. A ticket closed several times in the same week counts once; closed again in a later week, it counts again that week.
+- **Backlog** = Created − Completed. It carries over as the next week's starting backlog.
+- **Completion rate** = Completed ÷ Created. Week 40: 46 of 55 = 84%.
+
+## Weekly routine
+
+The page updates itself for each Tuesday's review; managers only need to open the link.
+
+1. **Tuesday ~4:00am PT:** a scheduled job adds the past week's public help guide changes to the Help Center section.
+2. **Tuesday morning:** Malen exports the four Assembly reports and uploads them with **Upload files**; every stat refreshes for everyone who opens the link.
+3. **Weekly Business Review:** open the link. It shows the week just ended (Sunday–Saturday), along with the review date.

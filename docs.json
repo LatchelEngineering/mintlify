@@ -1433,6 +1433,7 @@
                   {
                     "group": "Team Management",
                     "pages": [
+                      "ds-team-pulse-overview-for-managers",
                       "latchel-admin/Data-Support-Team/Team-Management/how-to-update-weekly-team-stats"
                     ]
                   }
