@@ -45,7 +45,7 @@ If your queues look wrong, do not immediately assume the plugin is broken. First
 1. Open the Latchel Service Ops Assistant.
 2. Go to **Next Task**.
 3. Review the task title, urgency, due date, and work order context.
-4. Click **Assign me & Go** when you are ready to take the task.
+4. Click **Assign me & Go** when you are ready to take the task. You can also open it in a new tab so you don't lose the page you're working from.
 5. Work the task using the context and reminders shown inside the assistant.
 
 Do not choose tasks only because they appear older in one queue. Next Task considers emergency status, urgency, priority, and age in the correct order.
@@ -75,7 +75,7 @@ You shouldn't have to dig for this information — the assistant puts it in fron
 - **Photos** — Any photos attached to the work order (from the resident, vendor, or tech) are pulled into one gallery on the job, so you don't have to dig through texts or emails to see what the issue looks like.
 - **Templates Panel** — A searchable library of pre-written SMS, call notes, and task notes (54+ available), sorted by Relevance/Most Used/A-Z. Open it by clicking the ⚡ templates icon wherever it appears, by clicking the Templates button on the Conversations tab, or by typing ;; in any message or note box. Common templates also have keyword shortcuts, for example ;;rut + Enter inserts "Are you there??" Templates support merge fields (like WO number, resident name, job cost) so the same snippet auto-fills with the right details per job. In SMS, details fill in from the work order linked to the conversation. Templates are also available in task forms. Pressing Enter to select a template in SMS no longer sends it, so you can review and edit before sending.
 - **Common-Area WO Flag** — Flags a work order as being for a common area rather than a resident's unit, so calls to the resident are for access info only — you're not meant to troubleshoot the issue with them since it's not their space. Pulls in any on-file **Access Instructions** for the area so you know how to get in.
-- **Weather Check** — For weather-sensitive jobs, a live forecast for the property's location is surfaced right on the work order, so you can check conditions before scheduling or dispatching.
+- **Weather Check** — A live forecast for the property's location is surfaced right on every work order, not just weather-sensitive jobs, so you can check conditions before scheduling or dispatching.
 - **Test Intake Rules** — Check which intake rules match a work order without leaving it. Describe the issue (it pre-fills from the WO description, so edit it as needed), and the assistant shows which rules matched and which didn't. AI can make mistakes, so always confirm the result is correct before acting on it.
 - **Sourcing contact details** — When you're sourcing a service provider in the **Find Service Provider** modal, the assistant shows the SP's alternate phone numbers and email address, along with the main number. The email has a one-click copy button, so you can reach the SP another way if the main number doesn't connect, without digging through their profile.
 - **Assembly job link** — In Assembly, click the Latchel icon to add a link to a job you recently viewed into an internal note. A ✅ appears once it's added, so you know the link went in.
@@ -86,7 +86,8 @@ You shouldn't have to dig for this information — the assistant puts it in fron
 
 The plugin updates frequently, and some updates change how you work day to day. Here's what's changed recently that affects associates:
 
-- Pressing Enter to pick a template in SMS no longer sends it, so you can edit before sending.
+- **Enter no longer sends SMS templates.** Pressing Enter to pick a template in SMS no longer sends it, so you can edit before sending.
+
 - **Clock in/out and breaks in Sheriff from the plugin.** No need to open Sheriff separately.
 - **Status sync.** Updating your status from the plugin updates both Latchel and Sheriff.
 - **Late clock-out reason.** If you clock out 15+ minutes past your scheduled end, the plugin asks what happened. Your answer goes to Sheriff so your supervisor sees it when approving your timesheet.
@@ -97,6 +98,8 @@ The plugin updates frequently, and some updates change how you work day to day. 
 - **PM Company Critical Notes now surfaced.** Critical notes from the Property Management company — not just vendor notes — now show automatically. Make sure you're checking both.
 - **More reliable duplicate detection.** Related Jobs now correctly looks back a full 6 months, and a bug that was hiding some duplicates on non-Troubleshooting jobs has been fixed. You can trust this section more than before — but always still double-check at the property if nothing appears.
 - **Faster refresh.** When your queue is empty, the plugin now checks for new tasks every 5 seconds instead of every 30–45 seconds. A bug that could get the Next Task bar stuck after going idle has also been fixed.
+- **Test Intake Rules from the work order.** No more opening a separate page to search for and test an intake setting. See "Everything the Assistant Surfaces For You" above.
+- **Weather Check on all work orders, "Assign me & Go" in a new tab, and easier-to-close status dropdowns** (they now close when you click elsewhere on the page).
 
 ## Common Day-to-Day Scenarios
 
@@ -154,7 +157,6 @@ The plugin updates frequently, and some updates change how you work day to day. 
 - Assuming a missing queue is a bug before checking user-group membership.
 - Using All Queues as the daily task picker instead of a visibility tool.
 - Ignoring related jobs and accidentally duplicating work.
-- Changing your status directly in Latchel instead of the plugin, which leaves Sheriff out of sync.
 - Skipping or giving a vague late clock-out reason.
 
 ## Quick Troubleshooting
