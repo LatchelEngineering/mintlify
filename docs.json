@@ -1489,6 +1489,7 @@
                         "pages": [
                           "latchel-admin/Customer-Success-Team/cs-admin-job-aid-onboarding-flow-and-communications-maintenance-only",
                           "latchel-admin/Customer-Success-Team/complete-onboarding-journey",
+                          "latchel-admin/Customer-Success-Team/sop-reactivating-a-returning-customer",
                           {
                             "group": "Sales -> Onboarding Handoff",
                             "pages": [

@@ -1,0 +1,62 @@
+---
+title: "Reactivating a Returning Customer"
+description: "Internal SOP for bringing a former customer back onto Latchel"
+---
+
+Use this when a former customer signs a new agreement and their old account still exists in the Latchel console.
+
+<Warning>
+Do not create a new account. Returning customers are reactivated on their existing account.
+</Warning>
+
+<Steps>
+  <Step title="Sales handoff">
+    - Skip account creation.
+    - Do **not** skip the onboarding email or onboarding packet. Returning customers still get the full onboarding experience.
+  </Step>
+
+  <Step title="Check the account's phone numbers in Twilio">
+    In the Latchel console, open **Maint. Communication Settings** and note both numbers:
+    - **Latchel-Assigned Phone Number**
+    - **Latchel Communication Phone Number**
+
+    Then look each one up in Twilio.
+
+    | Twilio status | Action |
+    | --- | --- |
+    | Still active in Twilio | Leave the number as-is in the console |
+    | Released (not active in Twilio) | Delete the number from the Latchel console |
+
+    <Note>
+    Most returning customers have been gone long enough that their numbers were released, so expect to delete them.
+    </Note>
+  </Step>
+
+  <Step title="Set up the product package">
+    If the product package is not already on the account, set it up manually.
+  </Step>
+
+  <Step title="Start the new subscription">
+    Start the new subscription for the account.
+  </Step>
+
+  <Step title="Reconnect the integration">
+    Check what's currently in the Latchel console, **including disabled properties**.
+
+    **Is this the same integration?**
+
+    | Situation | Action |
+    | --- | --- |
+    | Same PMS **and** same app slug (e.g. AppFolio before, AppFolio now, slug unchanged) | Reactivate the integration as originally set up. You're done with this step. |
+    | Same PMS but a **different app slug** (e.g. AppFolio before, AppFolio now, new slug) | Treat as a new integration. Disable the old integration, then set up a new one. Continue below. |
+    | Different PMS (e.g. Buildium before, AppFolio now) | Disable the old integration, then set up a new integration with the correct PMS. Continue below. |
+
+    **If it's a new integration, handle the old properties:**
+
+    | Properties in the Latchel console | Action |
+    | --- | --- |
+    | None | No cleanup needed |
+    | Under 30 properties | Manually merge the duplicates |
+    | 30 or more properties | Submit a data request for a data migration |
+  </Step>
+</Steps>
