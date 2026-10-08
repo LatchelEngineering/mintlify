@@ -1,7 +1,7 @@
 ---
 title: "How to: Handle 911-Severity Type Work Orders"
-groups: ["latchel"]
-confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/813728366/How+to+Handle+911-Severity+Type+Work+Orders"
+groups:
+  - "latchel"
 ---
 
 ## 🧠 What This Process Is Trying to Solve
@@ -41,6 +41,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/813728366/Ho
    6. ⚡Electrical pole falling/leaning on building or home 
    7. Tree falling onto building
    8. Major flooding
+      1. Including: Uncontrollable flooding with no plumber available: the water cannot be stopped (e.g., the shutoff valve is broken) AND no plumber can go out (Preferred SP can't respond and the PM is not opted into LCN, or no LCN provider is available). Advise the resident to call 911 so emergency services can help stop the water.
    9. Any time a resident is advised to call 911, a PM escalation per the [PM Outbound Communication SOP](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos) is required. Follow that SOP for escalation steps.
 
 ### Step 2 - What Action Agent takes on the Work Order 
@@ -118,20 +119,8 @@ It is critical to identify any indicators of a 911 situation when dealing with c
       2. **IF** issue is an emergency, See: [(⛑OVERVIEW) How to: Handle Emergency Work Orders](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders)
       3. Click on "Take Action" 
       4. Click on "Set a New Confirmed Work Date"
-         1. <img
-              src="/images/e8d5598c-72bc-4d2f-9a50-e1ed93c0fcf1.png"
-              alt="E8d5598c 72bc 4d2f 9a50 E1ed93c0fcf1"
-              title="E8d5598c 72bc 4d2f 9a50 E1ed93c0fcf1"
-              style={{ width:"48%" }}
-            />
       5. Select "Skill Category and Skill" 
-         1. <img
-              src="/images/a03d09eb-1815-4fba-b6dd-7bb0568c1bab.png"
-              alt="A03d09eb 1815 4fba B6dd 7bb0568c1bab"
-              title="A03d09eb 1815 4fba B6dd 7bb0568c1bab"
-              style={{ width:"80%" }}
-            />
-         2. See: [(🏡⛑EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider)
+         1. See: [(🏡⛑EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider)
       6. Notify the property manager of the actions taken. **Sent an SMS to the Property Manager.**  **If SMS is disabled, email the Property Manager instead.**
          1. 💬 **Say something like** : “_Hi, my name is (agent name), and I’m reaching out from Latchel regarding (property address, work order ###). (Resident name) at (property) informed us that (issue). I wanted to let you know that the tenant was able to contact 911, and the findings were (911 findings). The issue has been mitigated.  Since this remains an emergency, we will proceed with dispatching the work order. Please don’t hesitate to Webchat with us or text us at (206)-900-9466 if there’s anything else you’d like us to share.”_
          2. ✉️Email: **_Subject:_**\* Emergency Work Order Update – [Property Address], WO #[Work Order Number]\* _Hi [Property Manager Name],_ _My name is [Associate Name], and I’m reaching out from Latchel regarding [Property Address], work order #[Work Order Number]. [Resident Name] at this property informed us that [brief description of the issue]._ _I wanted to let you know that the tenant was able to contact 911, and the findings were as follows: [911 findings]. The issue has been mitigated. However, since this remains an emergency, we will proceed with dispatching the work order._ _Please don’t hesitate to webchat with us or text us at (206) 900-9466 if there’s anything else you’d like us to share._
@@ -179,7 +168,7 @@ It is critical to identify any indicators of a 911 situation when dealing with c
   4. **Customer Script:** 🗨️ **For PD/EH issues (not 911), say something like:** _"I understand you're dealing with an urgent situation. Since your property management company is currently inactive in our system, we're unable to create a work order at this time. I'd recommend reaching out to your Property Manager directly for assistance. In the meantime, we will send a notification to your Property Manager to make them aware of the situation."_ 🗨️ **For 911 emergencies, say something like:** _"Your safety is our top priority. Please call 911 immediately for emergency assistance. Since your property management company is currently inactive in our system, we're unable to create a work order, but we will send a notification to your Property Manager to make them aware of the emergency."_
   5. **Send a courtesy email to the PM** using the **Failed Escalation Contacts** email under the Emergency escalation contacts tab.
      1. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts#job-aid-critical-pre-dispatch-warranty-special-notes-and-emergency-escalation-contacts).
-  7. **Document the interaction** (call notes, email sent) so there's a record of what was reported and what action was taken.
+  6. **Document the interaction** (call notes, email sent) so there's a record of what was reported and what action was taken.
 
   **Email Template**
 
