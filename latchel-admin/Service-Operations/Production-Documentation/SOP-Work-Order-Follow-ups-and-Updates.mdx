@@ -154,22 +154,12 @@ Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.la
 </Warning>
 
 <Accordion title="PM assigned a specific SP, and that SP is unresponsive or can't schedule in time.">
-  **Ordinary Unresponsiveness**
+  Follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules):
 
-  - **If PD/EH:** call the escalation contacts. Severity and status stay unchanged (Emergency, Scheduling Service Provider) — this is still being actively worked as an emergency.
-  - **If not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, leave the internal de-escalation note. No PM task needed. The WO stays in **Scheduling Service Provider** status.
-
-  **PM insists it's an emergency but restricts us to one specific SP, and that SP is unresponsive (a genuine conflict, not ordinary unresponsiveness):**
-
-  - "Emergency" and "you must use only this one, possibly unreachable provider" aren't compatible. If we must use that person and they don't answer, it isn't functioning as an emergency.
-  - De-escalate to Urgent, keep "(EMERGENCY)" in the title so the SP still treats it with urgency, leave the internal note. No PM task.
-  - Escalate to **Product Support**, or have CS raise the contradiction with the PM directly — this is a policy conflict to resolve, not a one-off WO decision. If the PM pushes back on the de-escalation, use the PM script.
-
-  **PM has an explicit critical note not to contact the SP or the PM once a provider is assigned (a clear instruction, not a conflict):**
-
-  - Do **not** call the SP or the PM — that defeats the purpose of the instruction.
-  - De-escalate to Urgent, keep "(EMERGENCY)" in the title, leave the internal note, and move it out of the active queue.
-  - Escalate to **Product Support** as outlined above.
+  - **Not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, keep the WO in a status the vendor can schedule in and won't read as on hold (such as Scheduling Service Provider), and leave the internal note.
+  - **PD/EH:** if the PM was clearly notified that it's PD/EH, follow **exception B**. Otherwise, call the escalation contacts.
+  - **Critical note says not to follow up with this SP:** follow **exception C**.
+  - **The PM said they'll handle it or asked us to forward:** follow **exception A**.
 </Accordion>
 
 <Accordion title="SP visited, issue not fixed, and they're building an estimate.">
@@ -221,7 +211,7 @@ Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.la
     - Contact the SP **once** the same day about the missed appointment.
     - **SP responsive:** confirm a new appointment time.
     - **SP unresponsive — locked-in and PM-assigned SPs:**
-      - **PD/EH:** contact the emergency escalation contacts.
+      - **PD/EH:** contact the emergency escalation contacts, unless **exception B** of the Stale Emergency rule in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) applies.
       - **Not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, complete the current task if applicable, leave the internal note. Do not create a PM task unless separate PM input or approval is actually needed.
     - **SP unresponsive — not locked in:**
       - **PD/EH:** reassign the WO to another SP. See (EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider.
@@ -467,7 +457,7 @@ There are certain specific cases in which Operations Associates will still need 
   For full scripting, blurbs, and task template, refer to **item #5** under "Handling a Resident cancellation" in the [How to: Handle a Work Order Cancellation](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation#how-to-handle-a-work-order-cancellation).
 </Accordion>
 
-<Accordion title="**Q: How should we handle service providers with critical notes that say SMS and/or email only?**">
+<Accordion title="Q: How should we handle service providers with critical notes that say SMS and/or email only?">
   **A:** Follow the service provider's critical note instead of the standard phone-call path.
 
   **Step 1:** Send the SMS and/or email (depending on what the critical note specifies) immediately and document the attempt in the work order notes.
@@ -475,8 +465,9 @@ There are certain specific cases in which Operations Associates will still need 
   **Step 2:** Take action based on the following:
 
   - **Property Damage (PD) / Extreme Habitability (EH) emergencies:** Do not de-escalate and do not move the work order out of emergency handling. If the service provider does not respond through their required SMS/email contact method, call the PM or emergency escalation contact and follow the unresponsive PM path if they do not respond.
+    - **Exception:** if exception B or C of the Stale Emergency rule applies, follow it instead.
   - **For emergency non-PD/EH follow-ups:** Do not leave the work order sitting in an active follow-up status while waiting for a slower SMS or email response. After the message is sent, apply the same-day decision process based on how the service provider was assigned:
-    - **PM-assigned, PM-requested, locked-in, or critical-note preferred SP:** Do not remove the service provider. De-escalate to Urgent when appropriate and move/forward the work order to Waiting for PM so the status reflects that we are waiting on the PM or their preferred vendor.
+    - **PM-assigned, PM-requested, locked-in, or critical-note preferred SP:** Do not remove the service provider. Follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules): de-escalate to Urgent and keep the WO in a status the vendor can schedule in and won't read as on hold (not Waiting for PM or Forwarded to PM), unless one of its exceptions applies.
     - **Latchel-sourced SP who has not visited the property:** Reassign to another service provider and continue moving the work order forward.
     - **Latchel-sourced SP who has already visited the property (regardless of how many appointments have been missed):** Do not remove or reassign. Forward to PM for direction to avoid unnecessary delays, duplicate diagnostics, or billing issues.
 </Accordion>
