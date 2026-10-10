@@ -10,19 +10,20 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/3805478920/S
 </Info>
 
 <Note>
-  **🧠 Why This Matters:**<br />For emergency work orders, intentional delays and active coordination are incompatible. If a Property Manager (PM) is managing a work order, Latchel is no longer in control of the timeline. To prevent these jobs from going "stale" and to protect our SLA, we must transfer ownership using the **Forward to PM** tool. We do not leave emergencies in active statuses (like Scheduling or Pending) if the PM is the one doing the work.
+  **🧠 Why This Matters:**<br />**Emergencies:** This SOP covers **non-emergency** work orders. For emergencies, follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules). A PM has taken over an emergency only when they explicitly said they will handle it from now on, or asked us to forward it (exception A). In that case, use **Forward to PM**, at any severity.
 </Note>
 
 ## 🔗 Related SOPs
 
 - [SOP: Work Order Follow-ups and Updates](https://help.latchel.com/sop-work-order-follow-ups-and-updates) — Covers follow-up procedures, task creation, and when to move a WO to Waiting for PM vs. keeping current status.
 - [How to: Put a Job on Hold](https://help.latchel.com/how-to-put-a-job-on-hold) — Covers the approved scenarios and mechanics for placing a WO on hold.
+- [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) — Stale Emergency rule and its exceptions. Use this for all emergency work orders.
 
 
 ## 📋 PM Active Management Scenarios
 
 <Note>
-_These guidelines apply to all work orders any time we need to decide whether the PM is actively managing the work order. **However, for Emergencies, identifying active PM management must result in an immediate status change to 'Waiting for PM' (via the Forward to PM tool) to stop the SLA clock.** We do not allow emergencies to remain in active statuses like Pending or Scheduling once PM management is confirmed._
+These guidelines apply to **non-emergency** work orders any time we need to decide whether the PM is actively managing the work order. For emergencies, use exception A of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules).
 
 _The only exception is work orders that were moved to **Needs Approval** due to initial intake rules. Even if these work orders are later escalated, we do **not** consider them to be under active PM management, since **Needs Approval** is the only status they have held as a result of the initial intake process._
 </Note>
@@ -31,38 +32,22 @@ _The only exception is work orders that were moved to **Needs Approval** due to 
   **General Rule: Recent PM Activity**
 
   - **Non-Emergencies (48-Hour Rule):** If the PM has updated the work order in the past 48 hours (e.g., added a note, sent an email, or changed a status), treat it as actively managed. You may leave the work order in its current status and set a follow-up task for the PM.
-  - **🛑 Emergency Rule (Immediate Action):** The 48-hour window does **not** apply to emergencies. If there is _any_ evidence of PM activity from today or yesterday that indicates they are taking control, you must act immediately:
-    1. **Identify the Activity:** This includes the PM adding coordination notes, communicating directly with a resident/vendor, or assigning their own Service Provider.
-    2. **The "Active Path" Test:** Ask yourself: _"Is Latchel still the primary coordinator?"_ If the PM's activity has paused our progress or changed the timeline (e.g., they told the resident they are 'looking into it'), we are no longer on an active emergency path.
-    3. **Stop the Clock:** You must **Forward to PM** immediately.
-
-  **Why:** Intentional delays (like a PM "reviewing" an emergency) and active emergency handling are incompatible. Leaving an emergency in an active status while a PM is "active" in the background creates a **Bad Status** (stale job). You must transfer ownership to stop the SLA clock and protect the team.
+  - **🛑 Emergencies:** The 48-hour rule does **not** apply. Follow exception A of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules): only an explicit statement from the PM that they will handle the work order from now on, or a request to forward it, counts as taking over. Coordination notes, "looking into it," a PM task, or the PM assigning their own Service Provider do not count on their own.
 </Note>
 
 ## ✅ Next Steps After Determining Active PM Management
 
-Once you have determined that a PM is actively managing a work order, your next step depends entirely on the **Priority** of the job.
+Once you have determined that a PM is actively managing a **non-emergency** work order, follow the steps under **Non-Emergencies** below. For emergencies, follow the **Stale Emergency rule** in [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) (exception A if the PM has taken over).
 
-### **🛑 The Emergency Rule (Path A Only)**
+### **Non-Emergencies**
 
-If the work order is an **Emergency**, you do not have the option to leave it in its current status. You must always follow **Path A** to stop the SLA clock:
-
-1. **Use the "Forward to PM" tool immediately.** This transfers ownership to the PM and moves the job to "Waiting for PM" status.
-2. **Reclassify to Urgent:** Unless the issue involves active Property Damage or Extreme Habitability, reclassify the severity to **Urgent**.
-3. **Keep "(EMERGENCY)" in the Title:** When reclassifying to Urgent, you **must retain "(EMERGENCY)" in the work order title.** This ensures the Service Provider still treats the job with the necessary urgency.
-4. **Fallback (No Tool Access):** If you do not have the "Forward to PM" tool, you must **immediately escalate to Support** to have the status moved manually.
-
-   - _Why:_ Leaving an emergency in an active status (Scheduling/Pending) while a PM is managing it creates a **Bad Status** (stale job) that Latchel is unfairly held responsible for.
-
-### **Path B — Non-Emergencies Only**
-
-Use this path **only for Non-Emergencies** when the PM is managing the matter but has not explicitly asked Latchel to stop all action.
+Use these steps for **non-emergency** work orders when the PM is managing the matter but has not explicitly asked Latchel to stop all action. For emergencies, follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules).
 
 1. **Leave the WO in its current status.**
 2. **Create a Task:** Assign a task to the **PM User Group** titled: _"Action Required: PM Instructions or Information Needed."_
 3. **Set Automation:** Set the task to **"Complete task on any job state change."**
 
-**Use the guidelines below to identify active PM management (examples include, but are not limited to):**
+**Use the guidelines below to identify active PM management on non-emergencies (examples include, but are not limited to):**
 
 1. **Direct Communication:** A call, email, or message indicates the PM will handle the request.
    - _Sample:_ Resident says: _"My PM called me this morning and said they’re sending their own plumber today."_
