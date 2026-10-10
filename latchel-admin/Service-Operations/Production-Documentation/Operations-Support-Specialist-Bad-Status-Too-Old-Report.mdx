@@ -59,7 +59,7 @@ Operations Support Specialist works from the plugin’s Bad Status report. The p
   **General Rules**
 
   - If the issue is not genuinely an emergency, don't sit on it — inspect it and move it forward: de-escalate and update the WO. For required de-escalation documentation, title formatting, and task-routing rules, refer to the callout panels above.
-  - If the PM explicitly asks us to treat a work order as an emergency and allows Latchel to obtain a confirmed appointment or alternative provider, treat it as an Emergency. If the PM requires use of one unavailable provider and does not authorize an alternative, escalate the conflict to PS team and de-escalate to Urgent while following the de-escalation documentation and title-formatting rules above.
+  - If the PM explicitly asks us to treat a work order as an emergency and allows Latchel to obtain a confirmed appointment or alternative provider, treat it as an Emergency. If the PM requires use of one specific provider and that provider is unresponsive, follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) (PD/EH: exception B).
   - Follow-up attempts (to an SP or a resident) are capped at 1 attempt before acting on the outcome the same day — no multi-day deferrals or "try again tomorrow" cycles.
   - PM Critical Notes or SP Restrictions: If a PM critical note restricts contacting the SP or states the PM/SP is handling scheduling directly, do not force SP contact attempts. Refer to the [Scenario playbook ](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-Bad-Status-Too-Old-Report#6-scenario-playbook)**section** for scenario-specific de-escalation steps.
 
@@ -100,7 +100,9 @@ Pick one of the three outcomes below and execute it. See [Section 4](https://hel
 ## 2. The three outcomes
 
 <Warning>
-  **Important: Check PD/EH before you de-escalate anything.** If the issue is property-damaging or an extreme habitability situation, it stays **Emergency** and escalation contacts get called — regardless of what an SP told you, how old the WO is, or whether follow-up stalled. See How to: [<u>Identify Property Damage and Extreme Habitability Situations</u>](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Emergency-Escalations-Property-Damaging-and-Extreme-Habitability-Situations#emergency-escalations-property-damaging-and-extreme-habitability-situations "https://latchel.atlassian.net/wiki/spaces/OPS/pages/745504771").
+  **Important: Check PD/EH before you de-escalate anything.** If the issue is property-damaging or an extreme habitability situation, it stays **Emergency** and escalation contacts get called — regardless of what an SP told you, how old the WO is, or whether follow-up stalled. See How to: [<u>Identify Property Damage and Extreme Habitability Situations</u>](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Emergency-Escalations-Property-Damaging-and-Extreme-Habitability-Situations#emergency-escalations-property-damaging-and-extreme-habitability-situations "https://latchel.atlassian.net/wiki/spaces/OPS/pages/745504771"). 
+
+  Exceptions B and C of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) are the only cases where a PD/EH WO is de-escalated.
 </Warning>
 
 <Note>
@@ -113,7 +115,7 @@ The one exception is a PM critical note that instructs us to forward everything 
 | :-- | :-- |
 | **Intervene** | There's still a lever you can pull yourself. Schedule directly, chase a concrete ETA or date, or reassign the vendor where appropriate. Goal: get the WO moving **today**. |
 | **De-escalate to Urgent** | Intervening didn't work, the immediate emergency condition has passed, and there's no concrete near-term resolution date. Follow the de-escalation steps in Section 5. |
-| **Forward to PM** | PM input, approval, or prior PM instructions are needed — or the PM has taken ownership by assigning their own SP. |
+| **Forward to PM** | PM input, approval, or prior PM instructions are needed — or the PM has taken over (exception A of the Stale Emergency rule: the PM explicitly said they'll handle it or asked us to forward). A PM assigning their own SP does not count on its own. |
 
 ## 3. Rules that always apply
 
@@ -126,7 +128,7 @@ The one exception is a PM critical note that instructs us to forward everything 
 | **Internal note is mandatory** | Every intentional de-escalation gets a note explaining why. See the [template](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-Bad-Status-Too-Old-Report#internal-de-escalation-note-mandatory-on-every-de-escalation). |
 | **A task needs a real owner** | Do **not** create a task just because you de-escalated. Create one only when there is a specific pending follow-up action and a clear owner. |
 | **Respect PM critical notes** | If a critical note restricts contacting the SP, or says the PM/SP is handling scheduling directly, do not force SP contact attempts. |
-| **PM-mandated emergencies** | If the PM asks us to treat a WO as an emergency **and** allows a confirmed appointment or alternative provider, treat it as an Emergency. If the PM requires one unavailable provider and won't authorize an alternative, escalate the conflict to the PS team and de-escalate to Urgent. |
+| **PM-mandated emergencies** | If the PM asks us to treat a WO as an emergency **and** allows a confirmed appointment or alternative provider, treat it as an Emergency. If the PM requires one specific provider and that provider is unresponsive, follow the Stale Emergency rule (PD/EH: exception B). |
 | **Budget drops automatically** | Emergency → Urgent automatically lowers the approved budget limit, because budget ceilings are tied to severity. Expected system behavior. No separate action needed. |
 | **On-Call customers are different** | The status guidance in Section 4 does **not** apply to On-Call customers. See the On-Call scenarios in the playbook. |
 | **Forward to PM isn't complete on its own** | For live emergency work orders, forwarding to the PM must result in an actual notification reaching them — not just a status change. After any "Forward to PM" action, confirm the Property Manager was notified. If not, manually notify the property's [**Default Notification User Group**](https://latchel.atlassian.net/wiki/spaces/OPS/pages/2741108810/How+to+Locate+the+Default+Notification+User+Group+contact+s). |
@@ -150,7 +152,7 @@ Each heading below carries the short answer — expand only when you need the de
 
     1. **Intervene** — chase a concrete ETA or date or reassign the vendor if appropriate.
     2. If unsuccessful, **de-escalate to Urgent** when the immediate emergency condition has passed and there is no concrete near-term resolution date.
-    3. **Forward to PM** when the PM has taken ownership, assigned their own SP, or Ops-side action requires PM input/approval.
+    3. **Forward to PM** when the PM has taken over (exception A of the Stale Emergency rule) or Ops-side action requires PM input/approval. A PM assigning their own SP does not count on its own.
 
     **Why is this considered "bad status/too old"?:** The concern is when the WO remains in this status after follow-up has not resulted in a confirmed appointment or concrete ETA. At that point, the WO needs active review instead of remaining in scheduling indefinitely.
   </Tab>
@@ -184,7 +186,7 @@ Each heading below carries the short answer — expand only when you need the de
     - Contact the SP for a **firm ETA** on the materials.
     - **SP gives an ETA and commits to installing promptly on arrival:** lock in a scheduled installation appointment for that date. The WO stays on an active, concrete resolution path and does **not** need de-escalation just because it's waiting for materials.
     - **De-escalate to Urgent if either:** the SP responds but can't give an ETA or won't commit to prompt installation; or the SP is unresponsive with no ETA secured after follow-up. In both cases there's no concrete plan to point to, so the job no longer meets the bar for active emergency handling.
-    - **Forward to PM** when the PM has taken ownership, assigned their own SP, or additional PM input/approval is needed.
+    - **Forward to PM** when the PM has taken over (exception A of the Stale Emergency rule) or additional PM input/approval is needed. A PM assigning their own SP does not count on its own.
 
     **Why it's flagged:** an emergency WO in this status needs a concrete resolution path. A confirmed materials ETA plus an installation appointment keeps it active; an open-ended wait triggers re-evaluation.
   </Tab>
@@ -220,8 +222,7 @@ Each heading below carries the short answer — expand only when you need the de
 
 ## 5. How to de-escalate correctly
 
-1. Confirm it's not PD/EH. Property-damaging or extreme habitability situations do not get de-escalated. Call the escalation contacts instead.
-2. Reclassify Emergency → Urgent. The budget ceiling drops automatically. That's expected.
+1. Confirm it's not PD/EH. Property-damaging or extreme habitability situations do not get de-escalated. Call the escalation contacts instead. The only exceptions are B and C of the Stale Emergency rule.Reclassify Emergency → Urgent. The budget ceiling drops automatically. That's expected.
 3. Keep "(EMERGENCY)" in the WO title so the SP still treats the job with urgency.
 4. Complete the current task, if applicable — only where the scenario calls for it.
 5. Leave the internal note (mandatory). The reason must be visible in the WO so the next person can tell it was reviewed and intentionally moved forward. Use the template.
@@ -236,22 +237,12 @@ Each heading below carries the short answer — expand only when you need the de
 ## 6. Scenario playbook
 
 <Expandable title="PM assigned a specific SP, and that SP is unresponsive or can't schedule in time.">
-  **No restriction on Support following up (ordinary unresponsiveness):**
+  Follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules):
 
-  - **If PD/EH:** call the escalation contacts. Severity and status stay unchanged (Emergency, Scheduling Service Provider) — this is still being actively worked as an emergency.
-  - **If not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, leave the internal de-escalation note. No PM task needed. The WO stays in **Scheduling Service Provider** status.
-
-  **PM insists it's an emergency but restricts us to one specific SP, and that SP is unresponsive (a genuine conflict, not ordinary unresponsiveness):**
-
-  - "Emergency" and "you must use only this one, possibly unreachable provider" aren't compatible. If we must use that person and they don't answer, it isn't functioning as an emergency.
-  - De-escalate to Urgent, keep "(EMERGENCY)" in the title so the SP still treats it with urgency, leave the internal note. No PM task.
-  - Escalate to **Product Support**, or have CS raise the contradiction with the PM directly — this is a policy conflict to resolve, not a one-off WO decision. If the PM pushes back on the de-escalation, use the PM script.
-
-  **PM has an explicit critical note not to contact the SP or the PM once a provider is assigned (a clear instruction, not a conflict):**
-
-  - Do **not** call the SP or the PM — that defeats the purpose of the instruction.
-  - De-escalate to Urgent, keep "(EMERGENCY)" in the title, leave the internal note, and move it out of the active queue.
-  - Escalate to **Product Support** as outlined above.
+  - **Not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, keep the WO in a status the vendor can schedule in and won't read as on hold (such as Scheduling Service Provider), and leave the internal note.
+  - **PD/EH:** if the PM was clearly notified that it's PD/EH, follow **exception B**. Otherwise, call the escalation contacts.
+  - **Critical note says not to follow up with this SP:** follow **exception C**.
+  - **The PM said they'll handle it or asked us to forward:** follow **exception A**.
 </Expandable>
 
 <Expandable title="SP visited, issue not fixed, and they're building an estimate.">
@@ -303,7 +294,7 @@ Each heading below carries the short answer — expand only when you need the de
   - Contact the SP **once** the same day about the missed appointment.
   - **SP responsive:** confirm a new appointment time.
   - **SP unresponsive — locked-in and PM-assigned SPs:**
-    - **PD/EH:** contact the emergency escalation contacts.
+    - **PD/EH:** contact the emergency escalation contacts, unless **exception B** of the Stale Emergency rule in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) applies.
     - **Not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, complete the current task if applicable, leave the internal note. Do not create a PM task unless separate PM input or approval is actually needed.
   - **SP unresponsive — not locked in:**
     - **PD/EH:** reassign the WO to another SP. See [(EMERGENCY) How to: Assign a Preferred \+ Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider).
