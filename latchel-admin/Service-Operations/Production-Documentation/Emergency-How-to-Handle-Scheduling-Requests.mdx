@@ -131,8 +131,8 @@ Emergency work orders typically do not have the status of "Scheduling with Servi
 
    - **If they give a placeholder window** → enter it per Outcome 1. Note in the WO that it's a placeholder pending confirmation.
    - **If they still won't commit to anything** → this call counts as the one attempt.
-     - **PD/EH:** Trigger WYGC, call the escalation contacts, and follow [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos). If there is no response, escalate to Operations Support Specialists and request the WO be moved to **Waiting for PM** following approved scenario **8**. Refer to [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold).
-     - **Non-PD/EH:** Refer to the [Escalating to the PM / Handling Stale Emergencies](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests#escalating-to-the-pm) section and follow the subscription-based next action from the Basic Service Ops Guidelines.
+     - **PD/EH:** Trigger WYGC and call the escalation contacts following [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos). If there is no response, follow path 3 of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules), unless exception B applies.
+     - **Non-PD/EH:** follow path 2 of the **Stale Emergency rule**: de-escalate to Urgent and keep the WO in a status the vendor can schedule in (not Waiting for PM or Forwarded to PM).
 3. Ensure that a notification is sent to the current service provider to avoid them going out to the property (for reassignment cases).
 
 - Proceed to [Step 3: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests#step-3-write-effective-notes "https://latchel.atlassian.net/wiki/spaces/OPS/pages/edit-v2/3308060699?draftShareId=0a57cbfc-1cd0-44d0-b85a-e24e045fda28#Step-3%3A-Write-Effective-Notes").
@@ -198,7 +198,7 @@ In many cases, Service Providers may require budget approval to proceed with add
         1. Follow the reassignment process in [How to: Reassign a Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests#step-3-write-effective-notes).
         2. Note in the WO: _Original SP [name] unavailable after budget approval. Reassigning per SOP._
       - **SP IS locked/PM-assigned:**
-        1. **PD/EH:** Trigger WYGC → Call EEC → If no response, escalate to Ops Support Specialists and request Waiting for PM status following approved scenario 8.
+        1. **PD/EH:** Trigger WYGC → Call EEC → If no response, follow path 3 of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules), unless exception B applies.
         - **ER (non-PD/EH):** Refer to the [<u>Escalating to the PM</u>](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests#escalating-to-the-pm "https://latchel.atlassian.net/wiki/spaces/OPS/pages/3308060699/Emergency+How+to+Handle+Scheduling+Requests#%F0%9F%97%93%EF%B8%8FGeneral-Scheduling-Rules") section and follow the subscription-based next action from the Basic Service Ops Guidelines. Include that budget was approved but [SP Name] is no longer available and PM direction is needed.
         1. Do not reassign without PM approval.
       - Proceed with scheduling the new SP per the standard process once reassignment or PM instruction is confirmed.
@@ -279,12 +279,13 @@ In many cases, Service Providers may require budget approval to proceed with add
   - Send the email/SMS to the service provider per the critical note and document the attempt.
   - Trigger **Who Ya Gonna Call**, call the escalation contacts, and follow [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos).
   - If escalation contacts are unresponsive, escalate to Operations Support Specialists and request that the WO be moved to **Waiting for PM** following approved scenario **8**. Refer to [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold).
+  - **Exception:** if exception B or C of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) applies, follow it instead of requesting Waiting for PM.
 
   **2. Non-Property-Damaging / Non-Extreme Habitability (non-PD/EH) Situations**
 
   - Send the email/SMS to the service provider per the critical note and document the attempt.
   - **If the SP is not locked in and has NOT visited the property:** follow the reassignment process in [How to: Reassign a Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Reassign-a-Service-Provider#how-to-reassign-a-service-provider).
-  - **If the SP is PM-assigned, locked in, or has already visited the property:** refer to the [Escalating to the PM / Handling Stale Emergencies](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests#escalating-to-the-pm) section and follow the subscription-based next action from the Basic Service Ops Guidelines.
+  - **If the SP is PM-assigned, locked in, or has already visited the property:** follow path 2 of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules): de-escalate to Urgent and keep the WO in a status the vendor can schedule in (not Waiting for PM or Forwarded to PM).
 </Accordion>
 
 <Accordion title="What should I do if a preferred vendor or a PM-assigned vendor accepts a non-PD/EH emergency work order and schedules the job for a later date (e.g., 2–3 days out)?">
@@ -304,16 +305,16 @@ In many cases, Service Providers may require budget approval to proceed with add
   - Instructs us to assign the work order to one of their preferred vendors, **and**
   - Explicitly advises that the SP should coordinate the appointment directly with the resident.
 
-  **Process:** Because the PM has taken ownership of SP/resident scheduling coordination, Latchel should assign the preferred vendor, document the instruction, and move/forward the work order to **Waiting for PM** using the applicable PM-routing path.
+  **Process:** Latchel should assign the preferred vendor, document the instruction, and keep the work order in a status the vendor can schedule in and won't read as on hold (not Waiting for PM or Forwarded to PM). This is not exception A (the PM didn't say they will handle the WO). Follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) if it goes stale.
 
   1. **Assign the WO to the PM’s specified preferred vendor.**
      - Update the assignment in the system and ensure the SP receives the work order details through the appropriate dispatch channel.
      - Add a clear WO note documenting the PM’s instruction, including the PM’s name, date/time of the instruction, the named vendor, and the direction that the SP will schedule directly with the resident.
-  2. **Move/forward the WO to Waiting for PM.**
-     - **PD/EH:** Do **not** de-escalate. Keep the WO as Emergency and follow the approved Waiting for PM / PM escalation path. If needed, escalate to Operations Support Specialists to move the WO to **Waiting for PM** following approved scenario **8**. Refer to [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold).
-     - **ER non-PD/EH:** Follow the subscription-based next action in the [Escalating to the PM / Handling Stale Emergencies](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests#escalating-to-the-pm) section and the [General Rule: Recognizing and Handling a Stale Emergency](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency) in the Basic Service Ops Guidelines.
+  2. **Keep the WO in a status the vendor can schedule in and won't read as on hold** (not Waiting for PM or Forwarded to PM).
+     - **Non-PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, and leave the internal note (path 2 of the Stale Emergency rule).
+     - **PD/EH:** keep the WO as Emergency while the SP is responsive and scheduling. If the SP becomes unresponsive, follow exception B of the Stale Emergency rule.
   3. **Do not keep an ongoing Troubleshooter scheduling follow-up open.**
-     - Once the PM-directed vendor is assigned and the WO is routed to Waiting for PM / PM ownership, Latchel is no longer actively coordinating the appointment.
+     - Once the PM-directed vendor is assigned and the PM's instruction is documented, Latchel is no longer actively coordinating the appointment.
      - Re-engage only if the resident reports a concern, the SP contacts us for help, or the PM provides additional instructions.
   4. Proceed to [Step 3: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests#step-3-write-effective-notes).
 </Accordion>
