@@ -43,21 +43,27 @@ groups: ["latchel"]
 <Info>
   ## Major Updates/Training
 
-  ### 1. AI Messaging Beta — Handling Resident & SP Conversations
+  ### Stale Emergencies — One Rule for De-escalating vs. Forwarding to PM
 
-  **What changed:**<br />For beta customers, resident and service provider texts are moving from SMS to **Conversations**. These are browser-based chat threads that **Latchel AI** (formerly Lucia) answers first. Latchel AI transfers the conversation to a person when the customer asks for one or when it can't handle the request. You'll see a new **Conversations** icon next to the SMS icon.
+  **What changed:**<br />Stale emergency handling now lives in one place, the **Stale Emergency rule**, and all related SOPs point to it.
+
+  - **Not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, and keep the WO in a status the vendor can schedule in. Don't forward just because the WO is stale.
+  - **PD/EH:** don't de-escalate. Call the escalation contacts, and if they're unresponsive, Forward to PM.
+  - **Only Forward to PM** when the PM says they'll take over, or when the case matches an approved scenario in How to: Put a Job on Hold.
+  - **New exception:** on a PD/EH WO, if the PM-assigned SP is unresponsive and the PM was already notified that it's PD/EH, de-escalate, keep the WO schedulable, and create a PM task.
 
   **What you need to do:**
 
-  1. Work **both queues** (SMS and Conversations). They have **equal priority**, so always handle the **oldest message first** by timestamp.
+  1. Check the exceptions in the Stale Emergency rule before you de-escalate or forward.
+  2. When a PM asks you to assign a specific SP, ask on the same call whether they want a call back if the SP doesn't answer, and let them know we'll de-escalate if we can't reach either of them. Use the script in the PM Outbound job aid.
 
-  **Beta customers:** [Scarpa Properties](https://app.latchel.com/admin/pm-company/33410)
-
-  **When it takes effect:**<br />**Monday, 9/28/2026.**
+  **When it takes effect:**<br />**Monday, 10/12/26**
 
   **Resources impacted:**
 
-  - [Job Aid: Handling Resident & Service Provider Conversations (AI Messaging Beta)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)
+  - [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) (Stale Emergency rule)
+  - [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
+  - [Service Ops: Guidelines in Determining Active PM Management](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Guidelines-in-Determining-Active-PM-Management-on-a-Work-Order) (now non-emergencies only)
 </Info>
 
 <Tip>
@@ -67,6 +73,9 @@ groups: ["latchel"]
     - New FAQs now available addressing verification calls from non-residents
   - [**How to: Handle Spanish SMS/Emails/Calls**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls#how-to-handle-spanish-sms-emails-calls)
     - Retrieved missing steps in handling TS tasks that are labeled with "Spanish"
-    - Refined steps for associates on what to do when an inbound requests from a spanish speaker is received
+    - Refined steps for associates on what to do when an inbound requests from a Spanish speaker is received
     - Included steps for email admin and for when the email received are from non-resident
+  - [**How to: Handle 911-Severity Type Work Orders**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders#step-1-when-the-resident-should-call-911)
+
+    - Added a new rule under **Major Flooding** for cases involving uncontrollable flooding when no plumber is available.
 </Tip>
