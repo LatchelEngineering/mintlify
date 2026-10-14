@@ -1,69 +1,46 @@
 ---
-title: "How to Approve or Deny a Work Order in Needs Approval"
-description: "When a new maintenance request matches a Needs Approval rule in your Intake Settings, or no rule matches and your fallback is set to Needs Approval, the work order is held until you approve or deny it."
+title: "How to Approve or Deny a Work Order in Needs PM Approval"
+description: "When a new maintenance request requires your approval based on your Intake Settings, the work order is placed in Needs PM Approval. As the Property Manager, you can approve or deny it directly from the work order page."
 ---
 
-When a resident submits a maintenance request, Latchel checks it against your **Intake Settings**. If the request matches one of your **Needs Approval** rules, or if no rule matches and your **"If no rules match"** outcome is set to **Needs Approval**, the work order is placed in **Needs Approval** status.
+Work orders don't only need your approval when they're flagged as duplicates. When a resident submits a request that matches a **Needs Approval** rule in your **Intake Settings**, or no rule matches and your **"If no rules match"** outcome is set to **Needs Approval**, the work order is placed on a pending state (**Needs PM Approval**).
 
-While a work order is in Needs Approval, **Latchel will not dispatch a service provider** until you approve it.
+Latchel will **not dispatch a service provider** until you take action. As the Property Manager, you will have to either **Deny**, or **Approve** the work order so it can move forward to scheduling.
 
 <Note>
-  This guide covers work orders held for approval at intake. If the work order was flagged as a possible duplicate of an existing job, see [How to Approve or Deny a Duplicate Work Order](/s/topic/0TO5e000000h9wqGAA/How-to-Approve-or-Deny-a-Duplicate-Work-Order).
+  The steps are the same as approving or denying a duplicate work order. If the work order was flagged as a possible duplicate of an existing job, see [How to Approve or Deny a Duplicate Work Order](/s/topic/0TO5e000000h9wqGAA/How-to-Approve-or-Deny-a-Duplicate-Work-Order).
 </Note>
 
-### **Finding Work Orders That Need Your Approval**
+Option 1: On the right side of the work order page, you will notice a pop window that says **This work order requires your approval. Click on Approve.**
 
-You can find work orders waiting for your approval in any of these places:
+<Frame>
+  <img src="/images/rtaImage-149.jpg"/>
+</Frame>
 
-- **Action Required** section of your dashboard. Use the **State** filter and select **Needs Approval** to see only these work orders.
-- **Task Page**, which you can open from the **task icon** (box with a check mark) in the upper right corner of the portal.
-- **Notifications**, if your team has set up email or SMS alerts for work orders that need approval. The notification includes a link to the work order.
+Option 2: On the right side of the work order page, look at Open Task: Work Order Requires Approval, then click on **View Details.**
 
-### **Reviewing the Work Order**
+<Frame>
+  <img src="/images/rtaImage-150.jpg"/>
+</Frame>
 
-Before you decide, open the work order and review:
+You will be directed to **ACTIVITY**. This view will allow you to review the information of the work order and choose between **Approve** or **Deny**.
 
-- The **issue details**, photos, and the resident's answers to troubleshooting questions.
-- The **Intake Processing Details**, which show which rule was applied and why the work order needs your approval.
+<Frame>
+  <img src="/images/rtaImage-151.jpg"/>
+</Frame>
+
+Regardless of the option selected, the Property Manager has the authority to either Approve or Deny the work order. Upon choosing to **Approve**, please add a note, specify the approved budget, and click **Submit**. This will initiate the scheduling process for the work order.
+
+<Frame>
+  <img src="/images/rtaImage-152.jpg"/>
+</Frame>
+
+But if you choose **Deny**, indicate a note, and hit **Submit**, then the work order will be canceled.
+
+<Frame>
+  <img src="/images/rtaImage-153.jpg"/>
+</Frame>
 
 <Tip>
-  If the work order shouldn't have needed approval, use the **thumbs down** button next to the **Intake Processing Details** to let us know. If you want similar requests to skip approval in the future, update your rules in [Managing Intake Settings](/s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings).
+  **Want to see why a work order needed your approval?** Check the **Intake Processing Details** on the work order to see which rule was applied. To change which requests need your approval in the future, update your rules in [Managing Intake Settings](/s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings).
 </Tip>
-
-### **Approving or Denying the Work Order**
-
-**Step 1 — Open the approval**
-
-From the work order page, use either option:
-
-- **Option 1:** On the right side of the work order page, find the message **This work order requires your approval** and click **Approve**.
-- **Option 2:** On the right side of the work order page, find the open task **Work Order Requires Approval** and click **View Details**. You'll be taken to the **Activity** tab, where you can choose **Approve** or **Deny**.
-
-**Step 2 — Approve or deny**
-
-- **To approve:** Click **Approve**, add a note, confirm the **approved budget**, and click **Submit**. Latchel will begin finding a service provider and scheduling the work order.
-- **To deny:** Click **Deny**, add a note explaining why, and click **Submit**. The work order will be **canceled**.
-
-<Warning>
-  Work orders in Needs Approval stay on hold until you take action. Review them promptly so residents aren't left waiting.
-</Warning>
-
-### **Related Guides**
-
-<CardGroup cols={2}>
-  <Card title="Work Order Processing with Intake Settings" color="#ff9b8a" icon="list-check" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/Work-Order-Processing-With-Intake-Settings">
-    See how your intake rules are applied when a work order comes in.
-  </Card>
-
-  <Card title="Managing Intake Settings" color="#ff9b8a" icon="arrows-to-line" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings">
-    Create and edit rules, including which requests need your approval.
-  </Card>
-
-  <Card title="Latchel Task Page Overview" color="#ff9b8a" icon="list-check" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/Latchel-Task-Page-Overview">
-    Find and take action on open tasks across your work orders.
-  </Card>
-
-  <Card title="How to Approve or Deny a Duplicate Work Order" color="#ff9b8a" icon="thumbs-up" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/How-to-Approve-or-Deny-a-Duplicate-Work-Order">
-    Review and act on work orders flagged as possible duplicates.
-  </Card>
-</CardGroup>
