@@ -7,7 +7,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/SR/pages/3198779395/SO
 <Note>
   Service Ops associates may need help from the Product Support team to resolve complex customer inquiries. Ops submits these through the **PS Escalation** workflow in the [**#ps-escalation**](https://latchel.slack.com/archives/C08475CCBGR) Slack channel, which creates a ticket in the **Product Support teamspace in Wavelength (WL)**. This SOP walks you through how to spot an Ops escalation and how to handle it.
 
-  - To learn more about the Ops escalation path, refer to [How to: Escalate to Product Support](https://latchel.atlassian.net/wiki/x/JQCJW).
+  - To learn more about the Ops escalation path, refer to [How to: Escalate to Product Support](/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support).
 </Note>
 
 <iframe src="https://www.loom.com/embed/294f03e3ff1f4e2ea348d37a4740460e" title="How to Handle Ops Escalations in Slack" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
@@ -28,14 +28,22 @@ Every submission in #ps-escalation creates a ticket in the Product Support teams
 The ticket comes from the **PS Escalation** workflow in #ps-escalation and includes these details from Ops:
 
 - **Submitter** - the Ops associate who submitted the escalation.
-- **Customer Type** - SP, PM, Owner or Resident.
-- **Did you share a Help Guide?** - which help guide Ops already shared, if any.
-- **Escalation Summary** - what Ops needs help with.
-- **Is this related to a specific work order?** - the work order link, if applicable.
-- **Name of the person that reached out** - with their Latchel profile URL.
-- **Source of the Escalation** - Call, SMS, Email or Webchat.
-- **What is their primary email address?**
-- **Work Order on Hold Due to Pending PS Resolution?** - Yes or No.
+- **How did this come up?** - _The customer asked or complained_, or _I (Ops Agent) noticed something while working a WO_. This decides the Category of the ticket you email the customer from (see [Step 3](#step-3-classify-the-ops-escalation-ticket)).
+- **Channel** - how the customer reached Ops (for example, Call, SMS, Email or Webchat).
+- **Who is it?** - PM, Owner, SP or Resident.
+- **Name + Latchel Profile URL** - the person who reached out, or who Ops was working with.
+- **Email Address** - where to email them.
+- **What did they ask for, or what did you notice?** - the customer's request or complaint, or what Ops noticed. Ops is not expected to know why it happened.
+- **What did you tell them?** - what Ops already said to the customer, including any timeline.
+- **Did you share a Help Guide?** and **Help Guide Link** - whether Ops looked for and shared a guide.
+- **WO Link** - the work order, if there is one.
+- **Is it urgent?** - whether the customer is waiting or it's a safety issue.
+- **Any additional resources?** - screenshots or files.
+- **Anything else we should know?** - extra context from Ops.
+
+<Info>
+  Ops have basic product knowledge. They tell us **what** the customer asked for or what they noticed, not **why** it happened. Finding the cause is PS's job.
+</Info>
 
 #### Benefits Response Review
 
@@ -54,15 +62,17 @@ Ops should handle all communication with residents about their benefits. When Op
 
 ### Step-by-Step Guide
 
-#### Step 1. Thoroughly review the escalation
+#### Step 1. Check urgency, then thoroughly review the escalation
+
+**Check "Is it urgent?" first.** Work urgent escalations before the rest of the queue. If Ops flagged a safety issue (for example no heat, no water, an active leak or a lockout), act on it right away.
 
 <Warning>
-  **Do not take the Escalation Summary at face value.** Ops may copy and paste the customer's wording, or ask for a specific fix when there's a better solution than what they asked for. Before you reach out to anyone, make sure you understand what the escalation truly is.
+  **Do not take "What did they ask for, or what did you notice?" at face value.** Ops may copy and paste the customer's wording, or ask for a specific fix when there's a better solution than what they asked for. Before you reach out to anyone, make sure you understand what the escalation truly is.
 </Warning>
 
 Review everything that applies:
 
-- The **Escalation Summary** from Ops.
+- **What did they ask for, or what did you notice?**, **What did you tell them?** and **Anything else we should know?** from Ops.
 - The **work order activity** (if a work order is shared).
 - The **Intake Settings**.
 - **Pre-Dispatch Instructions, Critical Notes and Emergency Escalation Contacts**.
@@ -78,9 +88,11 @@ Review everything that applies:
   />
 </Frame>
 
+**Check the Help Guide answer.** If Ops didn't share a guide and a [Help Center](https://help.latchel.com/home) guide covers the request, send the link as an **outward reply** on the Ops ticket (it posts to the Slack thread) so Ops can share it next time (for example, _"FYI, this one's covered here: [link]"_). If no guide exists, add the **Help Guide Gap** tag to the ticket.
+
 #### Step 2. Confirm who the escalation is about
 
-Open the Latchel profile URL from the escalation form. The user type appears at the top of the profile page. Don't rely only on the Customer Type Ops selected. Handle the ticket according to the SOP for that user type:
+Open the Latchel profile URL from the escalation form. The user type appears at the top of the profile page. Don't rely only on what Ops selected for **Who is it?**. Handle the ticket according to the SOP for that user type:
 
 - **Property Manager:** continue to Step 3. Most Ops escalations are from PMs.
 - **Service Provider:** refer to [SOP: Handling Service Provider (SP) Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-Service-Provider-SP-Cases).
@@ -95,7 +107,18 @@ Open the Latchel profile URL from the escalation form. The user type appears at 
 
 #### Step 3. Classify the Ops escalation ticket
 
-Assign yourself to the ticket and classify it (see [Job Aid: Ticket Category, Attributes, and Tags](/latchel-admin/Product-Support-Team/Job-Aid-Interaction-Tags-Explained)). Set the Category to **Latchel Ops Escalation**.
+Assign yourself to the ticket and classify it (see [Job Aid: Ticket Category, Attributes, and Tags](/latchel-admin/Product-Support-Team/Job-Aid-Interaction-Tags-Explained)). Set the Category of the **Ops escalation ticket** to **Latchel Ops Escalation**.
+
+The ticket you create in Step 4 (the email thread with the customer) gets its own Category, based on how Ops answered **How did this come up?**:
+
+| **Ops answered** | **Category for the customer email ticket** |
+| --- | --- |
+| _The customer asked or complained_ | The customer's Inbound category: **PM Inbound**, **Owner Inbound**, **Service Provider Inbound** or **Resident Inbound** |
+| _I (Ops Agent) noticed something while working a WO_ | **Latchel Outbound** |
+
+<Warning>
+  Never set the customer email ticket to **Latchel Ops Escalation**. That Category is only for the original #ps-escalation ticket.
+</Warning>
 
 #### Step 4. Create a new email in Wavelength
 
@@ -117,7 +140,7 @@ In the ticket's thread feed, click **\+ Create**, then choose **Escalation via E
 #### Step 5. Address the email
 
 - **From:** change the sender to [**success@latchel.com**](mailto:success@latchel.com).
-- **To:** the person who reached out, using the name and primary email address from the escalation form.
+- **To:** the person who reached out, using the **Name** and **Email Address** from the escalation form.
 - **CC (when needed):** if urgent action is required, you need the PM's help, or there's an issue with an intake setting or work order, check the PM company account for a group inbox (for example, maintenance@, team@ or a shared team email). CC it for extra visibility.
 - **Subject:** use a subject that makes sense for the escalation, for example _"123 Main St - Intake Settings Question"_.
 
@@ -129,7 +152,7 @@ In the ticket's thread feed, click **\+ Create**, then choose **Escalation via E
   - _"We received your request to update XYZ. Here's what we've done."_
 - **If you need more clarity,** ask **open-ended questions**. Probe for details so we know the best path to take.
 
-Add your signature, then click **Escalate** to send.
+Add your signature, then click **Escalate** to send. Then set the new email ticket's Category using the table in [Step 3](#step-3-classify-the-ops-escalation-ticket).
 
 #### Step 7. Update Ops and close the Ops escalation ticket
 
