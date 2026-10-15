@@ -1,6 +1,7 @@
 ---
 title: "Informational: Basic Service Ops Guidelines and Rules"
-groups: ["latchel"]
+groups:
+  - "latchel"
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/776701198/Informational+Basic+Service+Ops+Guidelines+and+Rules"
 ---
 
@@ -73,7 +74,7 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
   | Owner | Property damaging - Extreme Habitability - Emergencies - Non emergencies | Property damaging - Extreme Habitability |  |
   | Property Manager | Property damaging - Extreme Habitability | Property damaging - Extreme Habitability |  |
 
-  ****\*For non-emergencies on Saturday and Sunday, only call or text the Service Providers if their critical notes don't prohibit it.
+  \*\*\*\*\*For non-emergencies on Saturday and Sunday, only call or text the Service Providers if their critical notes don't prohibit it.
 </Accordion>
 
 **📝Additional notes:**
@@ -94,7 +95,7 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
   An emergency work order is meant to be actively driven forward. It goes stale whenever that active handling stops — regardless of why it stopped. This includes, but is not limited to:
 
   - A follow-up attempt goes unanswered (see Follow-Up Procedures below for the specific cadence)
-  - A Property Manager says they will handle the work order (see exception A below)
+  - A Property Manager says they will handle the work order, or is actively managing a PD/EH work order (see exceptions A and D below)
   - The immediate emergency condition has resolved, but the work order hasn't
   - A Property Manager imposes a scheduling or provider constraint that blocks progress
   - Any other situation where there is no concrete next step moving the job forward today
@@ -106,15 +107,23 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
      - **Premium:** create/reassign the task to Operations Associate task group to take the next action, if one is required.
      - **Autopilot:** the system automatically assigns a task to the PM, but only for **new** tasks created after the work order becomes non-emergency. If a task was already open from before the de-escalation, it does **not** get reassigned automatically — create a new task assigned to the PM instead of reassigning the existing one, so the description accurately reflects the current, de-escalated situation.
      - **24/7 / After Hours:** the work order automatically forwards to the PM by the system. If it does not forward automatically, manually forward it via the plugin’s “Forward to PM” button - see [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Operations-Associate-Job-Aid-Latchel-Service-Ops-Assistant-Plug-in#operations-associate-job-aid-latchel-service-ops-assistant-plug-in) on where to find it. If the manual forward option is not available, escalate to Support to have the work order moved to Waiting for PM.
-  2. **PD/EH → Do not de-escalate.** Severity stays Emergency. Call the Emergency Escalation Contacts per [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos). If they are unresponsive, use **Forward to PM**. If the forward option is not available, escalate to Operations Support Specialists to move the WO to **Waiting for PM** (approved scenario "Unresponsive Escalation" in [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold)).
+  3. **PD/EH → Do not de-escalate.** Severity stays Emergency. Call the Emergency Escalation Contacts per [Job Aid: PM Outbound Communication for Emergency WOs](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs). If they are unresponsive, follow the **Important** section in Part 2 of the job aid (approved scenario "Unresponsive Escalation" in [How to: Put a Job on Hold](/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold). If exception B or D below applies, follow that exception instead.
   4. **Regardless of which path you take:**
-
-     - Keep "(EMERGENCY)" in the work order title, so the Service Provider still treats the job with urgency.
-     - Leave the internal note documenting the reason.
+     1. Keep "(EMERGENCY)" in the work order title, so the Service Provider still treats the job with urgency.
+     2. Leave the internal note documenting the reason.
 
   **When to Forward to PM or use Waiting for PM**:
 
-  1. Only when (1) the PM said at any point on the work order that they will take over, or asked us to forward it (exception A), or (2) the situation matches an approved scenario in [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold) — including path 3 above (PD/EH, escalation contacts unresponsive). A stale emergency on its own is not a reason to forward: if it's not PD/EH, follow path 2.
+  1. Forward to PM or use Waiting for PM **only** in these cases:
+     - **Exception A: The PM took over.** At any point on the WO, the PM explicitly said they will handle it from now on, or asked us to forward it. This applies at any severity.
+     - **Exception D: The PM is actively managing a PD/EH WO.** See exception D below.
+     - **Path 3:** PD/EH and the escalation contacts were unresponsive.
+     - **Another approved scenario** in [How to: Put a Job on Hold](/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold).
+
+     **Don't forward when:**
+     - **Exception B applies** (the PM assigned a specific SP). Follow exception B, even if the escalation contacts were unresponsive.
+     - **The WO is only stale.** If it's not PD/EH, follow path 2. If it is PD/EH, follow path 3.
+     - **The PM activity is on a non-PD/EH WO, or the PM only assigned or requested a specific SP.**
 
   ### Exceptions
 
@@ -122,41 +131,46 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
 
   **A. The PM has taken over**
 
-  - **When:** At any point the PM explicitly said they will handle the work order from now on, or asked us to forward it to them — in WO notes, call transcripts, SMS/webchat/email, or critical notes. _A PM assigning or requesting a specific Service Provider does **not** count on its own._
-  - **What to do:** Use **Forward to PM**, at any severity. Unless the issue is PD/EH, also de-escalate to Urgent.
+  1. **When:** At any point the PM explicitly said they will handle the work order from now on, or asked us to forward it to them — in WO notes, call transcripts, SMS/webchat/email, or critical notes. _A PM assigning or requesting a specific Service Provider does **not** count on its own._
+  2. **What to do:** Use **Forward to PM**, at any severity. Unless the issue is PD/EH, also de-escalate to Urgent. If no email is sent to the PM, or the Forward to PM option isn't available, follow steps 1 and 3 of Part 2, branch A in the [job aid](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
 
   **B. PD/EH with an unresponsive PM-assigned Service Provider**
 
-  - **When:** All of the following are true:
-    - The issue is PD/EH.
-    - The PM told us to assign a specific Service Provider (directly, or in critical notes, pre-dispatch notes, or other WO notes).
-    - The PM was notified that the issue is PD/EH: we spoke with the PM or an escalation contact about this WO, we left them a voicemail, SMS, or email stating the issue is PD/EH, or the PM acknowledged it in writing (SMS, webchat, email, or a PM note or task on the WO).
-    - That Service Provider is unresponsive.
-  - **Ask upfront:** The first time the PM tells us to assign a specific Service Provider, ask their preference and set expectations on the same call: **_"If [SP Name] doesn't answer, would you like us to call you back, or do you trust them to handle it from here? Just so you know, if we can't reach [SP Name] and we're also unable to reach you on the call back, we'll move the work order to Urgent on our end, but we'll keep 'EMERGENCY' in the title so [SP Name] still treats it as an emergency. We'll also create a task for you on the work order with the details."_** 
+  1. **When:** All of the following are true:
+     - The issue is PD/EH.
+     - The PM told us to assign a specific Service Provider (directly, or in critical notes, pre-dispatch notes, or other WO notes).
+     - The PM was notified that the issue is PD/EH: we spoke with the PM or an escalation contact about this WO, we left them a voicemail, SMS, or email stating the issue is PD/EH, or the PM acknowledged it in writing (SMS, webchat, email, or a PM note or task on the WO).
+     - That Service Provider is unresponsive.
+  2. **Ask upfront:** The first time the PM tells us to assign a specific Service Provider, ask their preference and set expectations on the same call: **_"If [SP Name] doesn't answer, would you like us to call you back, or do you trust them to handle it from here? Just so you know, if we can't reach [SP Name] and we're also unable to reach you on the call back, we'll move the work order to Urgent on our end, but we'll keep 'EMERGENCY' in the title so [SP Name] still treats it as an emergency. We'll also create a task for you on the work order with the details."_** 
 
-     
-
-    - Document the answer in the WO notes. If they want a call back, call the PM once when the Service Provider is unresponsive. If they give new instructions, follow them.
-  - **What to do** (the PM is unresponsive on the call back, or said to leave it with the Service Provider):
-    1. De-escalate to **Urgent** and keep "(EMERGENCY)" in the title.
-    2. Keep the work order in a status the vendor can schedule in and won't read as on hold (such as Scheduling Service Provider). Do **not** Forward to PM or move it to Waiting for PM, even if the PM is unresponsive. If we are waiting on the SP's estimate, leave it in Pending so the SP can still submit it.
-    3. Leave the internal note: _"De-escalated from Emergency to Urgent — PD/EH, PM-assigned SP [SP Name] has been unresponsive. PM was notified ([contact name], [call / voicemail / SMS / email], [date/time]); PM preference: [call back / SP to handle]. WO kept in [status] so the SP can still schedule. Flagging for team visibility — reach out before re-escalating."_
-    4. Create the PM task (see **PM task for exceptions B and C** below).
-    5. No further follow-up from Latchel.
+      
+     1. Document the answer in the WO notes. If they want a call back, call the PM once when the Service Provider is unresponsive. If they give new instructions, follow them.
+  3. **What to do** (the PM is unresponsive on the call back, or said to leave it with the Service Provider):
+     1. De-escalate to **Urgent** and keep "(EMERGENCY)" in the title.
+     2. Keep the work order in a status the vendor can schedule in and won't read as on hold (such as Scheduling Service Provider). Do **not** Forward to PM or move it to Waiting for PM, even if the PM is unresponsive. If we are waiting on the SP's estimate, leave it in Pending so the SP can still submit it.
+     3. Leave the internal note: _"De-escalated from Emergency to Urgent — PD/EH, PM-assigned SP [SP Name] has been unresponsive. PM was notified ([contact name], [call / voicemail / SMS / email], [date/time]); PM preference: [call back / SP to handle]. WO kept in [status] so the SP can still schedule. Flagging for team visibility — reach out before re-escalating."_
+     4. Create the PM task (see **PM task for exceptions B and C** below).
+     5. No further follow-up from Latchel.
 
   **C. Critical note says not to follow up with the PM-assigned Service Provider**
 
-  - **When:** A critical note says not to follow up with the Service Provider the PM assigned, and gives no other instruction.
-    - **Note:** If the note also says to forward to the PM, follow exception A instead.
-  - **What to do** (any severity):
-    1. Do not call the Service Provider. De-escalate to **Urgent** and keep "(EMERGENCY)" in the title.
-    2. Keep the work order in a status the vendor can schedule in and won't read as on hold (such as Scheduling Service Provider). Do **not** Forward to PM or move it to Waiting for PM. If we are waiting on the SP's estimate, leave it in Pending so the SP can still submit it.
-    3. Leave the internal note: _"De-escalated from Emergency to Urgent — no follow-up with [SP Name] per PM critical note: [quote the note]. WO kept in [status] so the SP can still schedule. Flagging for team visibility — reach out before re-escalating."_
-    4. Submit a [PS ticket](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support#how-to-escalate-to-product-support) so the PM can clarify the critical note if needed.
-    5. **PD/EH:**
-       - If the critical note does not restrict calling the PM, call the escalation contacts per [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos). If the PM answers, follow their direction. If they are unresponsive, create the PM task (see below).
-       - If the critical note also says not to call the PM, do not call. Create the PM task (see below).
-    6. If the resident later reports the issue is still unresolved, do **not** re-escalate. Create a PM task with the resident's update.
+  1. **When:** A critical note says not to follow up with the Service Provider the PM assigned, and gives no other instruction.
+     1. **Note:** If the note also says to forward to the PM, follow exception A instead.
+  2. **What to do** (any severity):
+     1. Do not call the Service Provider. De-escalate to **Urgent** and keep "(EMERGENCY)" in the title.
+     2. Keep the work order in a status the vendor can schedule in and won't read as on hold (such as Scheduling Service Provider). Do **not** Forward to PM or move it to Waiting for PM. If we are waiting on the SP's estimate, leave it in Pending so the SP can still submit it.
+     3. Leave the internal note: _"De-escalated from Emergency to Urgent — no follow-up with [SP Name] per PM critical note: [quote the note]. WO kept in [status] so the SP can still schedule. Flagging for team visibility — reach out before re-escalating."_
+     4. Submit a [PS ticket](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support#how-to-escalate-to-product-support) so the PM can clarify the critical note if needed.
+     5. **PD/EH:**
+        1. If the critical note does not restrict calling the PM, call the escalation contacts per [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos). If the PM answers, follow their direction. If they are unresponsive, create the PM task (see below).
+        2. If the critical note also says not to call the PM, do not call. Create the PM task (see below).
+     6. If the resident later reports the issue is still unresolved, do **not** re-escalate. Create a PM task with the resident's update.
+
+  **D. PD/EH and the PM is actively managing the work order**
+
+  1. **When:** The issue is PD/EH, the escalation contacts were unresponsive, and there's evidence of PM activity from **today or yesterday (property time)** showing the PM is taking control. For examples of what counts, see "The PM is actively managing the WO" under Part 2, branch A of [Job Aid: PM Outbound Communication for Emergency WOs](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs). _A PM assigning or requesting a specific Service Provider does **not** count on its own (see exception B)._
+  2. **What to do:** Follow steps 1–4 of branch A in the job aid. Keep the severity at **Emergency** and keep "(EMERGENCY)" in the title.
+  3. **Not PD/EH:** Exception D doesn't apply. Follow path 2, or exception A if the PM explicitly took over.
 
   **PM task for exceptions B and C**
 
