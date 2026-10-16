@@ -54,7 +54,8 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759332893/Ho
    9. **Lucia Transcript (if applicable)** — If the work order was initiated or transferred by Lucia, review the complete Lucia conversation before contacting the resident or dispatching a service provider. The Lucia transcript may reveal context, resident-reported details, or responses to troubleshooting prompts that affect how the emergency should be classified and handled.
 3. **Call the resident** to troubleshoot. Refer to [(TECH 101) How to: Make Outbound Calls Within the Latchel Console](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Make-Outbound-Calls-Within-the-Latchel-Console#tech-101-how-to-make-outbound-calls-within-the-latchel-console).
    1. **‼️IMPORTANT**<br />**You must attempt to call the resident within 20 minutes of the work order being created or escalated to emergency. This ensures we meet our service level agreement (SLA) and resident expectations.**
-   2. If you cannot reach the resident on the first attempt, continue with the required follow-up call attempts as outlined below.
+   2. If you cannot reach the resident on the first attempt, send this SMS (if enabled) before your next call, so they recognize the Latchel number. Some phones label it “Possible Scam” or “Spam Risk.” Then continue with the required follow-up call attempts as outlined below.
+      1. 🗨️ **Call-ahead SMS:** _“Hi [resident name], this is [your name] from Latchel, the maintenance team for [PM Company Name]. We’re calling you now from this number to troubleshoot your [issue] request. Please pick up when you see our call.”_
    3. If the call disconnects, call the customer back until you have obtained enough details to move the Work Order forward.
 4. **‼️IMPORTANT:** If the WO is for a **common area**, do not ask the resident to troubleshoot the issue itself — they can't fix a common-area problem. Instead, call the resident (or any other active resident in the unit) for two things:
    1. Access info — ask if they can grant entry themselves, or whether they know the entry code/instructions.
@@ -239,7 +240,7 @@ Sometimes residents report an emergency work order but are unreachable. This cou
 <Note>
   **🗂️Process Overview**
 
-  1. Call the resident 3 times in a row.
+  1. Call the resident 3 times. If the 1st call goes unanswered, send the call-ahead SMS before your 2nd attempt.
   2. Check for additional resident phone numbers.
   3. Check for additional residents on the property.
   4. If a different resident makes contact, change the Work Order's resident contact (as needed).
@@ -250,6 +251,9 @@ Sometimes residents report an emergency work order but are unreachable. This cou
 **Steps**
 
 1. **Call the resident 3 times.** 
+   1. If the resident doesn’t answer the 1st call, send this SMS (if enabled) before calling again, so they recognize the Latchel number. Some phones label it “Possible Scam” or “Spam Risk.”
+   2. 🗨️ **Call-ahead SMS:** _“Hi [resident name], this is [your name] from Latchel, the maintenance team for [PM Company Name]. We’re calling you now from this number to troubleshoot your [issue] request. Please pick up when you see our call.”_
+   3. Make your 2nd and 3rd attempts.
 2. **"Can’t reach resident"** - Click this option if you tried calling 3 times and the resident did not pick up.
    1. Leave a voicemail and send an SMS to the resident (if enabled).
    2. 🗨️ Say something like: “_Hello, [resident name]. This is [your name], calling from Latchel, the maintenance intake team for [PM Company Name] regarding your recent maintenance request. I’ve been trying to reach you regarding the work order you submitted for [WO title]. I will now contact any other active residents listed for your property. If I am also unable to reach them, your work order will be forwarded to the appropriate team for proper handling. Please reach out to them directly for next steps. Thank you, and don’t hesitate to send us a text if there’s anything else we can help you with!”_

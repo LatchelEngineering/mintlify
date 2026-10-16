@@ -52,7 +52,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
               7. **When should this cancel?** Cancel on any state change
               8. **What action or information is required from the Property Manager?:** Provide a brief description of what you need from the PM. Ex: _We need your approval or guidance to address the severe damage reported in WO number [provide number]. Please confirm the next steps or let us know how to proceed._
 
-  4. **Document the Escalation:**
+  3. **Document the Escalation:**
      1. Ensure to link the call to the applicable work order. Refer to [How to: Link Calls to a WO](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Link-Calls-to-a-WO#how-to-link-calls-to-a-wo).
         1. Include relevant details such as:
         2. Date and time of the call
@@ -70,6 +70,9 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
   - **SMS-Sourced Work Orders:** SMS-sourced WOs follow the same EEC escalation rules as any other intake channel. Do not treat an SMS-sourced PD/EH WO differently when determining whether to call EECs.
   - **PM tells you to assign a specific SP:** Before ending the call, ask their preference and set expectations: "_If [SP Name] doesn't answer, would you like us to call you back, or do you trust them to handle it from here? Just so you know, if we can't reach [SP Name] and we're also unable to reach you on the call back, we'll move the work order to Urgent on our end, but we'll keep 'EMERGENCY' in the title so [SP Name] still treats it as an emergency. We'll also create a task for you on the work order with the details._"
     - Document their answer, and that expectations were set, in the WO notes, and make sure the PM knows if the issue is property-damaging or extreme habitability. If that SP later becomes unresponsive, see exception B of the **Stale Emergency rule** in [<u>Informational: Basic Service Ops Guidelines and Rules</u>](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules "https://latchel.atlassian.net/wiki/spaces/OPS/pages/776701198").
+  - **When information is missing, ask for it. Don’t say we can’t get it.** Never tell a PM “we can’t,” “we don’t know,” or “we don’t have access.” Say what we couldn’t confirm, then ask the PM to confirm it or act on it directly. Use this formula in calls, voicemails, SMS and form notes: _“We couldn’t [reach the resident / confirm X] to [identify Y]. Can you confirm [Y], or [contact them / take next step] directly?”_ 
+
+    - Ex: _“We couldn’t reach the resident to identify the source unit. Can you confirm the neighboring unit and whether you manage it, or contact them directly?”_
 </Accordion>
 
 <Accordion title="🔧 Understanding the Who Ya Gonna Call (WYGC) Tool">
@@ -163,9 +166,9 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
 
   **WYGC automatically populates** in this guided workflow once you reach the escalation contact step. Use the populated WYGC list to identify the correct EEC contact order for this escalation scenario. The activity log records the scenario, AI recommendation, and contacts used. If an Escalation Contact is unresponsive, leave a voicemail for each contact and then continue to follow the guided workflow.
 
-  <Frame>
-    ![image-20260604-091929.png](/images/SVC-836.png)
-  </Frame>
+  ![image-20260604-091929.png](/images/SVC-836.png)
+
+  📝 When filling in **[what you need from PM]**, phrase it as a request. Ex: _“…We need your help confirming the neighboring unit and whether you manage it, or contacting them directly, so we can assist the resident…”_ Never use “we can’t,” “we don’t know,” or “we don’t have access.”
 
   <Note>
     **Voicemail script for _all but the last person on the Escalation Contacts list_**: _Hi, [Escalation Contact name]! This is [your name] calling from Latchel regarding WO number [provide number] at [property address, including unit #] for a [brief WO description] issue. I’m reaching out because I called [the resident/all residents on record] and they have been unresponsive to my 3 Troubleshooting calls and the issue appears to be [property damaging/an extreme habitability issue]. I will continue to call the rest of your escalation contacts. Please don’t hesitate to send us a Webchat or text us back at (206)-900-9466 if we can assist you with this or any other work orders. Have a nice [day/evening]!_
@@ -216,9 +219,11 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
 
   Send an SMS to all escalation contacts who have SMS enabled. Only skip this step if there are no available SMS options for any of the contacts.
 
+  📝 When filling in **[what you need from PM]**, phrase it as a request. Ex: _“…We need your help confirming the neighboring unit and whether you manage it, or contacting them directly, so we can assist the resident…”_ Never use “we can’t,” “we don’t know,” or “we don’t have access.”
+
   1. **Premium Customer SMS:**<br />_Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, including unit #] for a [brief WO description] issue. I am reaching out because I called [the resident/all residents on record] and they have not responded to 3 troubleshooting calls, and the issue appears [property damaging/extreme habitability]. I’ve called all escalation contacts; the WO is now in “Needs PM Approval” status for your input. Please reply via Webchat or text (206)-900-9466 if we can assist._
   2. **Non-Premium Customer SMS:**<br />_Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, including unit #] for a [brief WO description] issue. I am reaching out because I called [the resident/all residents on record] and they have not responded to 3 troubleshooting calls, and the issue appears [property damaging/extreme habitability]. I’ve called all escalation contacts; the WO is now “Forwarded to PM” for your team. Please reply via Webchat or text (206)-900-9466 if we can assist._
-  3.  **SMS-Originated Work Orders**
+  3.   **SMS-Originated Work Orders**
 
   _"Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, unit #] for a [brief issue description] issue. We received a text message from [Resident Name] reporting this concern, and the issue appears to be [property damaging / an extreme habitability situation]. We were unable to complete full intake as the resident [stopped responding / declined to provide details]. The WO has been created. All escalation contacts have been called and the WO is now in [Needs PM Approval / Forwarded to PM] status. Please reply via Webchat or text (206)-900-9466 if we can assist."_
 </Accordion>
@@ -245,9 +250,28 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
         5. Access information is needed to proceed with dispatch for a confirmed emergency — whether for a common-area entry device or an individual unit lockout (e.g., no lockbox code available, building entry authorization required, no vendor access instructions). Use this path when the PM is the only party who can unblock dispatch by providing access details.
         6. Inaccessible boiler room or utility room, such cases are common when dealing with buildings.
         7. The resident is not available to let a Service Provider in and refuses to give permission to enter.
-        8. There is a leak coming from a different unit and we need to confirm if that unit is part of the PM company
+        8. There is a leak coming from a different unit (above, below, or next door). Follow the **Leak From a Neighboring Unit** steps below **before** choosing PM Input Needed Before Dispatch.
   2. 911 situations
      1. Learn more about handling 911 situations [here](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders).
+
+  <Note>
+     **💧 Leak From a Neighboring Unit**
+
+    1. If you reached the reporting resident, ask: “Do you know which unit the water is coming from? What’s the unit number?”
+    2. If they give a unit number, search the property address and that unit # in Latchel. Check that it sits under the same PM company as this WO.
+    3. If the unit is found and managed by the same PM:
+       1. Call the neighboring resident once to let them know about the possible leak.
+          1.  Say something like: _“Hi, this is [your name] from Latchel, the maintenance team for [PM Company Name]. We’ve had a report of a possible water leak that may be coming from your unit. Could you please check [bathroom/kitchen/water heater area] for any leaks, and turn off the water to that fixture if you see one? Please call or text us back at [Latchel Communication Phone Number].”_
+          2. Note the attempt and its outcome on the WO, including the unit #, the time, and whether the resident answered.
+          3. [confirm] If the neighbor confirms and stops the leak, or gives access, keep troubleshooting or dispatching per intake settings.
+          4. If the neighbor doesn’t answer, continue with PM Input Needed Before Dispatch below, and state in your EEC notes that you already tried to reach that unit.
+    4. If the unit isn’t found, isn’t managed by the same PM, or the resident can’t name the unit, use the current path: Issue IS an emergency → PM Input Needed Before Dispatch, then call the escalation contacts.
+    5. If you could not reach the reporting resident at all, don’t guess which unit is the neighbor. Use Scenario 1 or Scenario 2 as applicable, and phrase the PM request with the “missing information” script (see Key Reminders). 
+  </Note>
+
+  <Warning>
+     **🔒 Privacy:** Never share the reporting resident's name, phone number or unit details with the neighbor. Never share the neighbor's details with the reporting resident. Tell the neighbor only that a possible leak has been reported. 
+  </Warning>
 
   Select _Issue IS an emergency → PM Input Needed Before Dispatch_ from the guided workflow.
 
@@ -261,9 +285,9 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
 
   **WYGC automatically populates** in this guided workflow once you reach the escalation contact step. Use the populated WYGC list to identify the correct EEC contact order for this escalation scenario. The activity log records the scenario, AI recommendation, and contacts used. If an Escalation Contact is unresponsive, leave a voicemail for each contact and then continue to follow the guided workflow.
 
-  <Frame>
-    ![image-20260604-092011.png](/images/SVC-841.png)
-  </Frame>
+  ![image-20260604-092011.png](/images/SVC-841.png)
+
+  📝 When filling in **[what you need from PM]**, phrase it as a request. Ex: _“…We need your help confirming the neighboring unit and whether you manage it, or contacting them directly, so we can assist the resident…”_ Never use “we can’t,” “we don’t know,” or “we don’t have access.”
 
   <Note>
     Voicemail script for **_all but the last person on the Escalation Contacts list_**: _Hi, [Escalation Contact name]! This is [your name] calling from Latchel regarding WO number [provide number] at [property address, including unit #]. I’m reaching out because we’ve [state what was done], and the issue is considered a [property damaging/extreme habitability] situation. We need your help confirming [what you need from PM] so we can assist the resident in troubleshooting their [brief WO description] issue. I will continue to call the rest of your escalation contacts. Please don’t hesitate to send us a Webchat or text us back at (206)-900-9466 if we can assist you with this or any other work orders. Have a nice [day/evening]!_
@@ -309,6 +333,8 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
   Upon submission, the guided workflow will automatically send the WO to the PM.
 
   Send an SMS to all escalation contacts who have SMS enabled. Only skip this step if there are no available SMS options for any of the contacts.
+
+  📝 When filling in **[what you need from PM]**, phrase it as a request. Ex: _“…We need your help confirming the neighboring unit and whether you manage it, or contacting them directly, so we can assist the resident…”_ Never use “we can’t,” “we don’t know,” or “we don’t have access.”
 
   1. **Premium Customer SMS:**<br />_Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, including unit #]. I’m reaching out because we’ve [state what was done], and the issue is considered a [property damaging/extreme habitability] situation. We need your help confirming [what you need from PM] so we can assist the resident in troubleshooting their [brief WO description] issue. I have called all of your Escalation Contacts and the work order has now been placed into “Waiting for PM” status for your input. Please reply via Webchat or text (206)-900-9466 if we can assist._
   2. **Non-Premium Customer SMS:**<br />_Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, including unit #]. I’m reaching out because we’ve [state what was done], and the issue is considered a [property damaging/extreme habitability] situation. We need your help confirming [what you need from PM] so we can assist the resident with their [brief WO description] issue. All escalation contacts have been called; WO is now “Forwarded to PM” for your team. Please reply via Webchat or text (206)-900-9466 if we can assist._
@@ -663,6 +689,14 @@ In any of these cases, Latchel keeps the WO moving, unless the SP bullet above s
   1. Document what the reached EEC confirmed (that the issue is outside their scope and who they said handles it).
   2. If the responsible EEC was **already contacted and unresponsive** — skip the repeat call/voicemail/SMS because those steps were already completed. Follow the **Important** section in Part 2: if the WO is not already forwarded or in Waiting for PM status, use the Forward to PM tool, or escalate to Operations Support Specialists if the tool is not available, to move the WO to Forwarded to PM/Waiting for PM.
   3. If the responsible EEC has **not yet been contacted** — proceed with the full outbound communication steps in this SOP (call, voicemail, SMS). If still unresponsive, follow the **Important** section in Part 2.
+</Accordion>
+
+<Accordion title="Q: The PM asks whether we can look up the neighboring unit ourselves (e.g., 'Don't you have access to AppFolio?' or 'Can't you see which unit is upstairs?'). What do I say?">
+  Latchel has the PM's resident contact information and the list of units they manage. What we don't have is the building layout, meaning which unit is next to, above, or below another. Never tell the PM "we don't have access." Confirm what we have, then ask them to help map the building.
+
+  🗨️ **Say something like:** _"Yes, we do have that integration set up and working as expected. We have access to all resident contact information, as well as the list of units you manage. We would just need your help mapping the building. Could you confirm which unit is adjacent to the one in question? I can confirm that unit is in our system. Once confirmed, we can reach out to the resident right away, or you're welcome to contact them directly if you prefer."_
+
+  Once the PM confirms the unit, search it in Latchel and follow **Leak From a Neighboring Unit** in [Scenario 2](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
 </Accordion>
 
 ## 🎯 When to Break This SOP
