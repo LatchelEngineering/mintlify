@@ -38,17 +38,88 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/1485373477/H
    1. **Determine the status of the existing request:**
    2. **If the request is located and is less than 1 week old:** Respond to the existing thread with your follow-up query.
       1. Note: Provide sufficient details and context in your submission to avoid delays.
-      2.  _Hi @channel The Property Owner is following up on the previous request regarding [brief description of the issue, e.g., the service provider assignment delay]. They would like to check the current status of this request. Please let us know if any additional information is needed from our end. Thank you!_
+      2.   _Hi @channel The Property Owner is following up on the previous request regarding [brief description of the issue, e.g., the service provider assignment delay]. They would like to check the current status of this request. Please let us know if any additional information is needed from our end. Thank you!_
    3. **If the request cannot be found or is older than 1 week:** Handle it as a new concern and move on to Step 2.
       1. **Note:** If you were the one who submitted the original escalation, you'll already have been notified in-thread when PS responded — you may not need to search at all. This search process is mainly for confirming status on a ticket someone else submitted, or one you can't locate the thread for.
 
 ### **Step 2: Initiate the escalation process**
 
-1. The Ops associate submits a request using the '**PS Escalation**' workflow in the #ps-escalation channel by filling out the template questions/field as required.
-   1. Notes and Reminders: Ops must ensure that the requester has a **_valid email address_**, as it is required by our Product Support team for communication. In cases where there is _really_ no email address is available, a contact number must be provided instead.
+1. The Ops associate submits a request using the ‘**PS Escalation**’ workflow in the #ps-escalation channel and completes the form fields below.
+   <table>
+     <colgroup>
+       <col width="272" />
+       <col width="457" />
+     </colgroup>
+     <thead>
+       <tr>
+         <th>**Field**</th>
+         <th>**What to enter**</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>**How did this come up?**</td>
+         <td>Select how the concern came up (e.g., the customer reached out, or you noticed it while working a work order).</td>
+       </tr>
+       <tr>
+         <td>**Channel**</td>
+         <td>Select the channel it came through (e.g., Call, SMS, Email, Webchat).</td>
+       </tr>
+       <tr>
+         <td>**Who is it?**</td>
+         <td>Select the person’s user type (Property Manager, Owner, Resident or Service Provider).</td>
+       </tr>
+       <tr>
+         <td>**Name + Latchel Profile URL**</td>
+         <td>The person’s full name and the link to their Latchel profile.</td>
+       </tr>
+       <tr>
+         <td>**Email Address**</td>
+         <td>The person’s primary email address. See the reminder below.</td>
+       </tr>
+       <tr>
+         <td>**What did they ask for, or what did you notice?**</td>
+         <td>Describe the request or issue with full context and details. Summarize in your own words; don’t just paste the customer’s message.</td>
+       </tr>
+       <tr>
+         <td>**What did you tell them?**</td>
+         <td>What you already communicated, including any troubleshooting and what you told them to expect next.</td>
+       </tr>
+       <tr>
+         <td>**Did you share a Help Guide?**</td>
+         <td>Select Yes or No. See the help guide reminder below.</td>
+       </tr>
+       <tr>
+         <td>**Help Guide Link**</td>
+         <td>If Yes, paste the link to the help guide you shared.</td>
+       </tr>
+       <tr>
+         <td>**WO Link**</td>
+         <td>The link to the related work order, if applicable.</td>
+       </tr>
+       <tr>
+         <td>**Is it urgent?**</td>
+         <td>Select Yes if the concern is time-sensitive, including when an active work order is on hold while waiting for PS.</td>
+       </tr>
+       <tr>
+         <td>**Any additional resources?**</td>
+         <td>Upload screenshots, pictures, etc., if applicable.</td>
+       </tr>
+       <tr>
+         <td>**Anything else we should know?**</td>
+         <td>Any other context PS needs, such as missing contact details or whether the PM/Owner chose to wait for PS before the work order moves forward.</td>
+       </tr>
+     </tbody>
+   </table>
+2. Notes and Reminders: Ops must ensure that the requester has a **_valid email address_**, as it is required by our Product Support team for communication. In cases where there is _really_ no email address is available, a contact number must be provided instead.
+3. **Help guides:** If you shared a help guide with the customer, select **Yes** under **Did you share a Help Guide?** and paste it under **Help Guide Link**. Only select **No** if: 
+
+   - The PM says they’re blocked or have a limitation. Take action right away, don’t question their access, and escalate to Product Support only if it’s a technical or system issue.
+   - The matter is an emergency or urgent.
+   - The PM resists applying changes themselves on an Autopilot subscription.
 
 <Note>
-   **Visibility update:** When Product Support responds to your escalation, their reply — along with the ticket URL — now surfaces back in the original #ps-escalation thread. Because you're tagged in that thread as the submitter, you'll automatically get notified when this happens. No action is needed on your end — this simply gives you visibility into what happened with your escalation instead of having to follow up separately. 
+    **Visibility update:** When Product Support responds to your escalation, their reply — along with the ticket URL — now surfaces back in the original #ps-escalation thread. Because you're tagged in that thread as the submitter, you'll automatically get notified when this happens. No action is needed on your end — this simply gives you visibility into what happened with your escalation instead of having to follow up separately. 
 </Note>
 
 ### **Examples of types of escalations**
@@ -205,10 +276,10 @@ When you escalate a ticket to Product Support, please communicate this with appr
    3. If the Owner disagrees or insisted they will wait for the PS ticket to be resolved, proceed directly to Step b.
       1. **Say something like:**<br />“_Got it—thanks for letting me know. I’ve noted that you’d prefer to wait for the Product Support team to review the issue before we proceed. I’ve paused any action on the work order for now, but let us know if anything changes or you decide to move forward. I’ll escalate this for you right away._” 🎤 **Tip****:** Acknowledge their preference, avoid pressure, and keep the door open for re-engagement.
 2. Escalate to Product Support team by posting the request in the \*ps-escalation \*channel. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support).
-3. When filling out the fields in the workflow, under the field ‘**_Work Order on Hold Due to Pending PS Resolution_**’,
-   1. **Enter “Yes”** if the owner decides to wait for the PS team’s resolution. This action:
-   2. Indicates that the owner has opted to wait.
-   3. Alert the PS team to email an update once the issue is resolved so the work order can be updated accordingly.
+3. When filling out the fields in the workflow, if the owner decides to **wait** for the PS team’s resolution: 
+   1. Select **Yes** under **Is it urgent?**
+   2. Under **Anything else we should know?**, enter: _“Work order on hold. The PM/Owner is waiting for PS resolution before proceeding.”_ This indicates that the owner has opted to wait.
+   3. This alerts the PS team to email an update once the issue is resolved so the work order can be updated accordingly.
       1. Escalate to the Operations Support Specialists so they can place the work order on Pending status with a task assigned to\* Shift Support\* group with the following information:
       2. Subject: PS Ticket Resolution Monitoring
       3. Who is this task about? choose the Owner/PM
@@ -221,7 +292,7 @@ When you escalate a ticket to Product Support, please communicate this with appr
 4. Operations Support Specialists will monitor updates on the PS ticket — to check for updates, go directly to the original #ps-escalation thread the ticket was submitted in, since PS replies now surface there automatically. Once a resolution is provided, they should act based on the outcome to resolve the pending issue on the work order.
    1. If the PS team responds before the task's due date, the Operations Support Specialist team should take immediate action to move the work order forward.
    2. Once the work order progresses, Operations Support Specialists can mark the assigned task as complete.
-5. Enter "No" if the owner chooses not to wait for the PS team's resolution and wants the work order to move forward immediately.
+5. If the owner chooses **not** to wait for the PS team’s resolution and wants the work order to move forward immediately, note under **Anything else we should know?** that the work order is moving forward. Select **Is it urgent?** based on the concern itself.
    1. The PS team shall reach out to them once they've investigated the concern.
 
 ## 🎯 When to Break This SOP
@@ -230,7 +301,7 @@ This SOP is designed to cover the majority of escalation scenarios—roughly 80�
 
 - **Follow-up inquiry is urgent but lacks a Slack thread:**
   - If the issue is clearly a follow-up but you're unable to locate the previous request in the #ps-escalation channel and the matter is time-sensitive (e.g., it's blocking resolution for the customer), proceed with a new escalation in Step 2 instead of waiting for confirmation of the original thread. **Note: if you were the original submitter, check for a reply in your original thread first — PS replies surface there automatically.**
-- **Details are incomplete but the escalation is critical:**<br />If the requester is missing a valid email address and you're unable to obtain it immediately, but the issue is urgent (e.g., a platform function is broken), escalate the concern with a contact number and flag the missing information in the submission. Notify support if further guidance is needed.
+- **Details are incomplete but the escalation is critical:**<br />If the requester is missing a valid email address and you're unable to obtain it immediately, but the issue is urgent (e.g., a platform function is broken), escalate the concern with a contact number, select **Yes** under **Is it urgent?**, and flag the missing information under **Anything else we should know?**
 - **The scenario seems like it should be escalated to Product Support—even if it’s not on the list:**<br />If the situation you're handling feels significant enough to warrant escalation to **Product Support**, even if it’s not listed in the current examples, and you believe immediate action is necessary—**especially if it involves a Property Manager or Owner’s customer experience**—go ahead and escalate. Be sure to flag that this may be a candidate for adding to the escalation list, and briefly explain your reasoning in the submission.
 
 ## 💡 If You Think This SOP Could Be Improved...
