@@ -223,7 +223,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
 
   1. **Premium Customer SMS:**<br />_Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, including unit #] for a [brief WO description] issue. I am reaching out because I called [the resident/all residents on record] and they have not responded to 3 troubleshooting calls, and the issue appears [property damaging/extreme habitability]. I’ve called all escalation contacts; the WO is now in “Needs PM Approval” status for your input. Please reply via Webchat or text (206)-900-9466 if we can assist._
   2. **Non-Premium Customer SMS:**<br />_Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, including unit #] for a [brief WO description] issue. I am reaching out because I called [the resident/all residents on record] and they have not responded to 3 troubleshooting calls, and the issue appears [property damaging/extreme habitability]. I’ve called all escalation contacts; the WO is now “Forwarded to PM” for your team. Please reply via Webchat or text (206)-900-9466 if we can assist._
-  3.   **SMS-Originated Work Orders**
+  3.    **SMS-Originated Work Orders**
 
   _"Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, unit #] for a [brief issue description] issue. We received a text message from [Resident Name] reporting this concern, and the issue appears to be [property damaging / an extreme habitability situation]. We were unable to complete full intake as the resident [stopped responding / declined to provide details]. The WO has been created. All escalation contacts have been called and the WO is now in [Needs PM Approval / Forwarded to PM] status. Please reply via Webchat or text (206)-900-9466 if we can assist."_
 </Accordion>
@@ -255,22 +255,25 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
      1. Learn more about handling 911 situations [here](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders).
 
   <Note>
-     **💧 Leak From a Neighboring Unit**
+      **💧 Leak From a Neighboring Unit**
 
-    1. If you reached the reporting resident, ask: “Do you know which unit the water is coming from? What’s the unit number?”
-    2. If they give a unit number, search the property address and that unit # in Latchel. Check that it sits under the same PM company as this WO.
+    1. **Get the source unit.**
+       1. If you reached the reporting resident, ask: _“Do you know which unit the water is coming from? What’s the unit number?”_
+       2. If the resident doesn’t know, or you’re speaking with the PM, ask the PM for the unit # or the resident’s name.
+    2. **If you get a unit number or resident name**, search it in Latchel. Check that it sits under the **same PM company** as this WO.
     3. If the unit is found and managed by the same PM:
        1. Call the neighboring resident once to let them know about the possible leak.
           1.  Say something like: _“Hi, this is [your name] from Latchel, the maintenance team for [PM Company Name]. We’ve had a report of a possible water leak that may be coming from your unit. Could you please check [bathroom/kitchen/water heater area] for any leaks, and turn off the water to that fixture if you see one? Please call or text us back at [Latchel Communication Phone Number].”_
-          2. Note the attempt and its outcome on the WO, including the unit #, the time, and whether the resident answered.
-          3. [confirm] If the neighbor confirms and stops the leak, or gives access, keep troubleshooting or dispatching per intake settings.
-          4. If the neighbor doesn’t answer, continue with PM Input Needed Before Dispatch below, and state in your EEC notes that you already tried to reach that unit.
+          2. If they don’t answer, leave a voicemail with the same message and send an SMS (if enabled): _“Hi, this is [your name] from Latchel, the maintenance team for [PM Company Name]. We’ve had a report of a possible water leak that may be coming from your unit. Please check for any leaks, turn off the water to that fixture if you see one, and call or text us back at [Latchel Communication Phone Number] as soon as possible.”_ Don’t wait for a reply.
+          3. Note the attempt and its outcome on the WO, including the unit #, the time, and whether the resident answered.
+          4. If the neighbor confirms and stops the leak, or gives access, keep troubleshooting or dispatching per intake settings.
+          5. If the neighbor doesn’t answer, continue with PM Input Needed Before Dispatch below, and state in your EEC notes that you already tried to reach that unit.
     4. If the unit isn’t found, isn’t managed by the same PM, or the resident can’t name the unit, use the current path: Issue IS an emergency → PM Input Needed Before Dispatch, then call the escalation contacts.
     5. If you could not reach the reporting resident at all, don’t guess which unit is the neighbor. Use Scenario 1 or Scenario 2 as applicable, and phrase the PM request with the “missing information” script (see Key Reminders). 
   </Note>
 
   <Warning>
-     **🔒 Privacy:** Never share the reporting resident's name, phone number or unit details with the neighbor. Never share the neighbor's details with the reporting resident. Tell the neighbor only that a possible leak has been reported. 
+      **🔒 Privacy:** Never share the reporting resident's name, phone number or unit details with the neighbor. Never share the neighbor's details with the reporting resident. Tell the neighbor only that a possible leak has been reported. 
   </Warning>
 
   Select _Issue IS an emergency → PM Input Needed Before Dispatch_ from the guided workflow.
