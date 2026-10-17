@@ -1,73 +1,94 @@
 ---
 title: "Operations Weekly Newsletter — Process Update Edition 10/16/2026"
-groups: ["latchel"]
-mode: "wide"
+groups:
+  - "latchel"
 ---
 
-<Note>
+<Info>
   This newsletter is intended as a resource to collect Ops Goals, All Hands information, SOP updates, and Product releases impacting the team in one place, so you're able to refer to any recent changes that took place.
-</Note>
+</Info>
 
 <Warning>
-  Please fill out this form after reading to confirm acknowledgement of the content: [**Form link**](https://forms.gle/tukQZmaA65Yf3a7Q9)
+  Please fill out this form after reading to confirm acknowledgement of the content: [**Form link**](https://forms.gle/uRcZbcJG5MvNSp9z6)
 </Warning>
 
-<Warning>
+<Note>
   Please note that the content of this page may become obsolete over time since its validity is subject to any future changes; therefore, always refer to the actual SOPs and Job Aids for official guidance.
-</Warning>
+</Note>
 
 **All Hands Topics:**
 
-[Recording](https://drive.google.com/file/d/1Lx4HCQ2Ehgd1PJLMVMDbAjrdEyiBuORy/view?usp=sharing)
+[Recording](https://drive.google.com/file/d/1I5dxXsADbqtJlSX_t3SR6MKUwUypiIiO/view?usp=sharing)
 
 - Shout-out
 - Quality performance overview
+- Main update on retiring the confirming completion task and handling leaks from neighboring unit
+- Fixed SOP updates
 
 <Warning>
   ## ⭐ SHOUTOUT
+
+  **Carl — Process Investigator** 🕵️
+
+  On 10/7 in #ops_assistance_hub, Carl got an AC WO with no matching PM intake rule. Instead of defaulting, he checked for an SOP, worked the rules with the lead, then called the tenant and uncovered what wasn't on record: **smoke, a burning smell, and the breaker still on.** The WO stayed an emergency as a fire hazard.
+
+  He followed up the next day with a team-wide heads-up: three commercial units at the property share one AC system, and which WO is primary.
+
+  **Impact:** A fire hazard handled as an emergency (not downgraded), and no duplicate work on that property.
+
+  **Core values:** Insist on High Standards · Eliminate Ambiguity · Develop Extraordinary Teams
 </Warning>
 
 # Documentation Updates
 
-<Columns cols={2}>
-  <Column>
-    <Info>
-      ## Major Updates/Training
+<Warning>
+  ## 🔔 Reminders
 
-      #### Call-Ahead SMS — Helping Residents Recognize Our Troubleshooting Calls
+  - **AI Messaging launches to all customers Wednesday 10/21/2026.** Watch queues and escalate anomalies.
+  - **Confluence is deprecated** — use [Mintlify](https://help.latchel.com) only.
+</Warning>
 
-      **What changed:**<br />Some residents’ phones label the Latchel number “Possible Scam,” so they don’t pick up our troubleshooting calls. There’s now a call-ahead SMS step between the 1st and 2nd TS call attempts.
+<Note>
+  ## 📚 SOP Refreshers
 
-      - **When:** only if the resident doesn’t answer the 1st call. If they pick up, no SMS is needed.
-      - **Not sent when:** SMS isn’t enabled for the resident.
-      - **After the 3rd attempt:** nothing changes. Still leave the voicemail and send the SMS Blurb as usual.
+  1. **Send help guides to PMs** when you interact with them. **Skip the help guide** if it's an emergency/urgent, the PM is blocked, or no guide exists (take the action and request a new one in #help-guide-requests). Reference: [How to: Handle Autopilot PM Explanation](/latchel-admin/Product-Support-Team/How-to-Handle-Autopilot-PM-Explanation).
+  2. **Open Spanish-labeled tasks before deferring** — follow-ups are sometimes for an English-speaking PM or secondary contact, and any associate can handle those.
+</Note>
 
-      **What you need to do:**
+<Info>
+  ## Major Updates/Training
 
-      1. If the resident doesn’t answer your 1st TS call, send this SMS before calling again:
-         1. _“Hi [resident name]! This is Latchel, the maintenance team for [PM Company Name]. We’re calling you to discuss your work order request. Please pick up when you see our call.”_
-      2. Then make your 2nd and 3rd call attempts.
+  #### Call-Ahead SMS — Helping Residents Recognize Our Troubleshooting Calls
 
-      **When it takes effect:**<br />Monday, 10/19/2026
+  **What changed:**<br />Some residents’ phones label the Latchel number “Possible Scam,” so they don’t pick up our troubleshooting calls. There’s now a call-ahead SMS step between the 1st and 2nd TS call attempts.
 
-      **Resources impacted:**
+  - **When:** only if the resident doesn’t answer the 1st call. If they pick up, no SMS is needed.
+  - **Not sent when:** SMS isn’t enabled for the resident.
+  - **After the 3rd attempt:** nothing changes. Still leave the voicemail and send the SMS Blurb as usual.
 
-      - [How to: Properly Diagnose Emergency Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Properly-Diagnose-Emergency-Situations) (step 2, Call the resident)
-      - [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders) (Step 1, item 3; the “Can’t reach resident” steps now reference it)
-    </Info>
-  </Column>
-  <Column>
-    <Tip>
-      ## Minor Updates
+  **What you need to do:**
 
-      - [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
-        - **Leak from a neighboring unit:** Added steps in Scenario 2 to identify the source unit and call the resident of that neighboring unit once before escalating to the PM. Also added a Key Reminder and an FAQ script for asking the PM for missing details instead of saying “we can’t” or “we don’t have access.”
-        - [Job Aid: Troubleshooter Question Bank](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Troubleshooter-Question-Bank)
-          - **Water leak questions:** Added questions to find out whether the leak is coming from a neighboring unit, and which one.
-      - [How to: Escalate to Product Support](/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
-        - **PS Escalation workflow updated:** The form in #ps-escalation has new fields. Review the updated SOP for how to fill each one out, including the Help Guide and work-order-on-hold fields.
-      - [How to: Create a New Work Order from “Incognito Mode” (All Submissions)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Create-a-New-Work-Order-from-Incognito-Mode-All-Submissions)
-        - **Console fallback update:** If you have to create a work order in the Console, leave “Assign a Service Provider manually” set to **No**. Only use it if the PM has already named the SP, and never for On-Call customers. Keep using incognito mode for all other work orders.
-    </Tip>
-  </Column>
-</Columns>
+  1. If the resident doesn’t answer your 1st TS call, send this SMS before calling again:
+     1. _“Hi [resident name]! This is Latchel, the maintenance team for [PM Company Name]. We’re calling you to discuss your work order request. Please pick up when you see our call.”_
+  2. Then make your 2nd and 3rd call attempts.
+
+  **When it takes effect:**<br />Monday, 10/19/2026
+
+  **Resources impacted:**
+
+  - [How to: Properly Diagnose Emergency Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Properly-Diagnose-Emergency-Situations) (step 2, Call the resident)
+  - [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders) (Step 1, item 3; the “Can’t reach resident” steps now reference it)
+</Info>
+
+<Tip>
+  ## Minor Updates
+
+  - [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
+    - **Leak from a neighboring unit:** Added steps in Scenario 2 to identify the source unit and call the resident of that neighboring unit once before escalating to the PM. Also added a Key Reminder and an FAQ script for asking the PM for missing details instead of saying “we can’t” or “we don’t have access.”
+    - [Job Aid: Troubleshooter Question Bank](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Troubleshooter-Question-Bank)
+      - **Water leak questions:** Added questions to find out whether the leak is coming from a neighboring unit, and which one.
+  - [How to: Escalate to Product Support](/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support)
+    - **PS Escalation workflow updated:** The form in #ps-escalation has new fields. Review the updated SOP for how to fill each one out, including the Help Guide and work-order-on-hold fields.
+  - [How to: Create a New Work Order from “Incognito Mode” (All Submissions)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Create-a-New-Work-Order-from-Incognito-Mode-All-Submissions)
+    - **Console fallback update:** If you have to create a work order in the Console, leave “Assign a Service Provider manually” set to **No**. Only use it if the PM has already named the SP, and never for On-Call customers. Keep using incognito mode for all other work orders.
+</Tip>
