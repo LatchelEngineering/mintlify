@@ -9,3 +9,6 @@ _confluence-export/
 # Drafts: put work-in-progress guides here or name them *.draft.mdx
 drafts/
 *.draft.mdx
+
+# Retired guides kept for reference; their old URLs redirect in docs.json
+archive/

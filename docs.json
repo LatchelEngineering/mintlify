@@ -161,7 +161,9 @@
                       "s/topic/0TO5e000000h9wqGAA/latchel-analytics-vendor-insight-section",
                       "s/topic/0TO5e000000h9wqGAA/latchel-analytics-property-insights-section",
                       "s/topic/0TO5e000000h9wqGAA/latchel-analytics-reports-section",
+                      "s/topic/0TO5e000000h9wqGAA/Latchel-Reports-Overview",
                       "s/topic/0TO5e000000h9wqGAA/Latchel-Analytics-Filters",
+                      "s/topic/0TO5e000000h9wqGAA/Latchel-Analytics-Manage-Saved-Views",
                       "s/topic/0TO5e000000h9wqGAA/Latchel-Analytics-Exporting-Reports",
                       "s/topic/0TO5e000000h9wqGAA/Latchel-Analytics-Feedback"
                     ]
@@ -192,7 +194,8 @@
                           "s/topic/0TO5e000000h9wqGAA/Updating-the-Latchel-Data-Sync-Extension",
                           "s/topic/0TO5e000000h9wqGAA/Navigating-the-Latchel-Data-Sync-Extension-New-Version",
                           "s/topic/0TO5e000000h9wqGAA/Prevent-Chrome-from-Interrupting-Your-Auto-Sync",
-                          "s/topic/0TO5e000000h9wqGAA/Disable-Online-Maintenance-Requests"
+                          "s/topic/0TO5e000000h9wqGAA/Disable-Online-Maintenance-Requests",
+                          "s/topic/0TO5e000000h9wqGAA/How-to-Report-Bugs-and-Issues-with-our-Tools"
                         ],
                         "public": true
                       },
@@ -356,7 +359,6 @@
                       "s/topic/0TO5e000000h9wqGAA/How-to-Update-Status-of-Work-Orders-on-Waiting-for-PM",
                       "s/topic/0TO5e000000h9wqGAA/How-to-Enable-Service-Provider-Locked-In-on-a-Work-Order-New-Experience",
                       "s/topic/0TO5e000000h9wqGAA/How-to-Set-a-Work-Order-as-Mandatory-New-Experience",
-                      "s/topic/0TO5e000000h9wqGAA/How-to-Add-a-New-Problem-Location-Setting-From-the-Work-Order-Page-New-Experience",
                       "s/topic/0TO5e000000h9wqGAA/How-to-Provide-Permission-for-Service-Provider-to-Access-Property-for-a-Work-Order-New-Experience",
                       "s/topic/0TO5e000000h9wqGAA/Duplicate-vs-Recall-Work-Order-Know-their-Difference",
                       "s/topic/0TO5e000000h9wqGAA/How-to-Approve-or-Deny-a-Duplicate-Work-Order",
@@ -461,7 +463,6 @@
                 "group": "Resident Help Guides",
                 "public": true,
                 "pages": [
-                  "s/topic/0TO5e000000h9wrGAA/resident-help-guides",
                   "s/topic/0TO5e000000h9wrGAA/resident-help-guides",
                   "s/topic/0TO5e000000h9wrGAA/Resident-Dashboard-Overview",
                   {
@@ -2642,6 +2643,11 @@
     "drilldown": false
   },
   "redirects": [
+    {
+      "source": "/s/topic/0TO5e000000h9wqGAA/How-to-Add-a-New-Problem-Location-Setting-From-the-Work-Order-Page-New-Experience",
+      "destination": "/s/topic/0TO5e000000h9wqGAA/Introduction-to-Intake-Settings",
+      "permanent": true
+    },
     {
       "source": "/untitled-page-3",
       "destination": "/latchel-admin/Service-Operations/Announcements/Operations-Weekly-Newsletter-Process-Update-Edition-09-04-2026",
