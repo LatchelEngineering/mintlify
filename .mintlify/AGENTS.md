@@ -140,11 +140,11 @@ opt-in. Say who it's for and what to do if that's not them.>
   <A one- or two-sentence plain-language summary.>
 </Check>
 
-### **What This Feature Does**
+## **What This Feature Does**
 
 <A short explanation. For 3–4 key capabilities, use a 2-column CardGroup.>
 
-### **How to <Do the Task>**
+## **How to <Do the Task>**
 
 <Steps>
   <Step title="Open the work order." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
@@ -159,11 +159,11 @@ opt-in. Say who it's for and what to do if that's not them.>
   </Step>
 </Steps>
 
-### **Things to Remember**
+## **Things to Remember**
 
 <Tip>, <Warning>, or <Note> callouts for limits, defaults, and gotchas.
 
-### **Frequently Asked Questions**
+## **Frequently Asked Questions**
 
 <AccordionGroup>
   <Accordion title="A question the reader would actually ask?">
@@ -182,9 +182,11 @@ opt-in. Say who it's for and what to do if that's not them.>
 - **Title:** use title case. Task guides start with "How to…". Feature
   explainers use the feature name, for example "24/7 AI Virtual Receptionist".
   Always include a `description`.
-- **Headings:** use `###` with the text bolded, like `### **Heading Text**`.
-  Don't use `#` or `##` in the page body. The page title comes from the
-  frontmatter.
+- **Headings:** use Heading 2 (`##`) with the text bolded for each section
+  of the page, like `## **Heading Text**`. Use `###` only for a sub-section
+  inside a `##` section. Don't use `#` in the page body: the page title comes
+  from the frontmatter. Every guide needs at least one `##` heading so the
+  "On this page" menu shows on the right.
 - **Steps:** put each action in its own `<Step>`. Write the step title as a
   short imperative sentence ending with a period. Include `icon="N"`,
   `iconType="sharp-solid"`, `stepNumber={N}`, and `titleSize="h4"`.
