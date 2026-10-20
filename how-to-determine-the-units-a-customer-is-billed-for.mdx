@@ -1,0 +1,48 @@
+---
+title: "How to Determine the Units a Customer Is Billed For"
+---
+
+### **Overview**
+
+A customer's monthly bill is driven primarily by two factors: their contract, which includes their subscriptions and rates, and the number of units they are billed for. This SOP explains how AR determines the second factor.  
+
+The console houses all serviceable properties a customer has and is therefore the basis for what they should be billed. Depending on how the account was set up, AR pulls the unit count from one of three sources.
+
+### **Source 1: [Unit Count Data Sheet](https://docs.google.com/spreadsheets/d/1eLZVQ0ghXRx7sd1MJlyLoak_Lisg2pbpH4S88jrOOSg/edit?gid=945434483#gid=945434483)**
+
+This is the primary source for the majority of customers, specifically those whose listed subscription is maintenance only, maintenance with mandatory benefits, or those with no marketplace subscriptions like filters and Pinata, and stand-alone benefits.
+
+The system automatically pulls the unit count from the console at 11:59 PM on the last day of the previous month, giving the count for the upcoming billing month. (Example: the September count is pulled at 11:59 PM on August 31.)
+
+Because the pull is automated, integration accuracy matters. From time to time, the PM should still review the count, since the list of active properties in the console may not always be reliable. It is important that they watch for duplicates and properties that were not disabled when they should have been.
+
+To support this, Latchel sends the primary user in the console an automated email on the 21st of each month showing the current console numbers, giving them time to confirm or clean up the count before the pull.
+
+Relevant tabs:
+
+- EOMbySub - determines the count pulled from the console.
+- EOMbyPortfolio - used for customers who prefer to receive invoices per portfolio, or to have the count broken down per portfolio.
+
+### **Source 2: [Bill by Portfolio](https://docs.google.com/spreadsheets/d/1dh-0hciIQea-e7JlVs-s4WH65osQKLqkVHLfqlIeGAY/edit?gid=617904761#gid=617904761)**
+
+A separate tracker that lists the customers included in the EOMbyPortfolio tab. Its first tab contains the customer list along with each customer's instructions on how they prefer to be invoiced. Follow these instructions when obtaining the count, as they are specific to each customer's preference. Refer to the instruction snippets in the tracker.
+
+<img
+  src="/images/image-166.png"
+  alt="Image"
+  title="Image"
+  style={{ width:"86%" }}
+/>
+
+### **Source 3: [Billing Inputs Master Doc](https://docs.google.com/spreadsheets/d/1oNIg2c8Pa9AhjG7xcAO29Q7P_LL4N_5CWeXJzY-7EE8/edit?gid=1383964155#gid=1383964155)**
+
+A spreadsheet shared between AR and the CPT team. It covers customers who have maintenance, marketplace subscriptions, and benefits.
+
+- Orange cells - filled by the CPT team with the GL count of customers, based on the monthly review they conduct. This is the data AR uses to complete the customer's actual invoice.
+- Green cells-  filled by the AR team with counts manually sourced from the Unit Count Data Sheet, to display the holistic count per customer.
+
+![Image](/images/image-167.png "Image")
+
+### Standing Rule: AR must be proactive in identifying patterns. Always compare the current month's count against the previous month's. Any unexpected increase or decrease must be raised on the channel and confirmed by the CSM or the data team before proceeding.
+
+<br />
