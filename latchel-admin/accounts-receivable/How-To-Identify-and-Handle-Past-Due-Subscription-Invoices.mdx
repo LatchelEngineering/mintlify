@@ -1,7 +1,8 @@
 ---
 title: "How To Identify And Handle Past Due Subscription Invoices"
 sidebarTitle: "Overview"
-groups: ["latchel"]
+groups:
+  - "latchel"
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/finance1/pages/3363110913/How+To+Identify+and+Handle+Past+Due+Subscription+Invoices"
 ---
 
@@ -23,11 +24,11 @@ This pertains to a late or unpaid invoice. Synonymous with overdue and open invo
 
 2. **AR Aging Report**
 
-This is used to identify customers with open invoices, track how long those invoices have been outstanding, and review the current status of each account by categorizing them into age from current, 1-30 days, 31-60 days, and 90\+ days old.
+This is used to identify customers with open invoices, track how long those invoices have been outstanding, and review the current status of each account by categorizing them into age from current, 1-30 days, 31-60 days, and 90+ days old.
 
 _How To Generate the AR Aging Report_
 
-- Step 1: Go to Rillet and navigate to Reporting \> AR Aging.
+- Step 1: Go to Rillet and navigate to Reporting > AR Aging.
 - Step 2: Export the report by verifying that the date range is current. Once confirmed, proceed to download the report as a CSV file.
 
 3. **Aging and Payment Checker**
@@ -127,11 +128,11 @@ If a past-due reminder has not been sent, the AR team must ensure that the Payme
 
     Sent to: billing point of contact (POC).
 
-    Hi \[Customer Name\],
+    Hi [Customer Name],
 
     We hope this message finds you well.
 
-    We're reaching out to inform you that payment for your invoice, \$INVOICE\_NUMBER dated \$INVOICE\_DATE in the amount of \$AMOUNT\_DUE, has not yet been received and is now past due. To make things easier for you, we've attached a copy of the invoice for your reference.
+    We're reaching out to inform you that payment for your invoice, \$INVOICE_NUMBER dated \$INVOICE_DATE in the amount of \$AMOUNT_DUE, has not yet been received and is now past due. To make things easier for you, we've attached a copy of the invoice for your reference.
 
     Please arrange payment of the unpaid balance within seven (7) days of this notice. If you have recently sent in payment for this invoice, please disregard this email.
 
@@ -145,15 +146,15 @@ If a past-due reminder has not been sent, the AR team must ensure that the Payme
 
     Sent to: billing point of contact (POC).
 
-    Hi \[Customer Name\],
+    Hi [Customer Name],
 
     We hope this message finds you well.
 
-    We are reaching out to kindly inform you that payment for your \[MONTH\] subscription invoice has not yet been received and is now past due. For your convenience, a copy of the invoice has been attached to this email for your reference.
+    We are reaching out to kindly inform you that payment for your [MONTH] subscription invoice has not yet been received and is now past due. For your convenience, a copy of the invoice has been attached to this email for your reference.
 
     As a valued new customer, we want to ensure your experience with us is smooth and straightforward. Please arrange payment of the outstanding balance within seven (7) days of this notice.
 
-    To initiate payment, we highly recommend setting up autopay with another payment method to ensure your monthly subscription payments remain hassle-free and seamless. You can easily set this up using \[this link\]. Alternatively, you can click the "Set up automatic payments" link on your attached invoice. Please note that Latchel recommends using a bank account as a default payment method, as 3.5% processing fee applies for credit card payments.
+    To initiate payment, we highly recommend setting up autopay with another payment method to ensure your monthly subscription payments remain hassle-free and seamless. You can easily set this up using [this link]. Alternatively, you can click the "Set up automatic payments" link on your attached invoice. Please note that Latchel recommends using a bank account as a default payment method, as 3.5% processing fee applies for credit card payments.
 
     If payment has already been sent, please disregard this message. Should you have any questions or need further assistance, don't hesitate to let us know. We are here to ensure your satisfaction and provide any support you may need.
 
@@ -209,7 +210,7 @@ For all the customers above, we will have to manually run the autopay.
 
   Sent to: billing point of contact (POC).
 
-  Hi \[Customer Name\],
+  Hi [Customer Name],
 
   We hope this message finds you well.
 
@@ -226,13 +227,39 @@ For all the customers above, we will have to manually run the autopay.
 
 Following the first check, where the AR aging report is cross-referenced in the Past Due Summary, we can now review any remaining overdue invoices and follow up on communications accordingly.
 
-**<sup><kbd>Reminder: Written Consent Required Before Multiple Autopay Charges in One Month</kbd></sup>**<br /><sup><kbd>For customers who are tenured and in good standing, we must never automatically charge multiple bills on autopay in the same month (e.g., double or triple billing) without written confirmation from the customer first.</kbd></sup><br />_<sup><kbd>Charging a healthy, long-standing customer several bills at once without warning damages trust. Even when the charges are valid, the customer should hear from us and agree before it happens.</kbd></sup>_
+> **_Reminder: Written Consent Required Before Multiple Autopay Charges in One Month_**<br />_For customers who are tenured and in good standing, we must never automatically charge multiple bills on autopay in the same month (e.g., double or triple billing) without written confirmation from the customer first._<br />_Charging a healthy, long-standing customer several bills at once without warning damages trust. Even when the charges are valid, the customer should hear from us and agree before it happens._
 
-| **<kbd>Customer Situation</kbd>** | **<kbd>Written Consent Needed?</kbd>** | **<kbd>Why?</kbd>** |
-| :-- | :-- | :-- |
-| <kbd>Tenured, in good standing, with multiple bills due because of a Latchel billing delay (e.g., invoice sent late or held on our side)</kbd> | <kbd>✅ **Yes**</kbd> | <kbd>The delay was on us, so the customer should agree before we charge</kbd> |
-| <kbd>Repeatedly late on payments, and we’re collecting what they owe</kbd> | <kbd>❌ No</kbd> | <kbd>We’re recouping outstanding funds</kbd> |
-| <kbd>In the process of ending their service (termination phase)</kbd> | <kbd>❌ No</kbd> | <kbd>We’re settling the final balance</kbd> |
+<table>
+  <colgroup>
+    <col width="317" />
+    <col width="219" />
+    <col width="317" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>**Customer Situation**</th>
+      <th>**Written Consent Needed?**</th>
+      <th>**Why?**</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tenured, in good standing, with multiple bills due because of a Latchel billing delay (e.g., invoice sent late or held on our side)</td>
+      <td>✅ **Yes**</td>
+      <td>The delay was on us, so the customer should agree before we charge</td>
+    </tr>
+    <tr>
+      <td>Repeatedly late on payments, and we’re collecting what they owe</td>
+      <td>❌ No</td>
+      <td>We’re recouping outstanding funds</td>
+    </tr>
+    <tr>
+      <td>In the process of ending their service (termination phase)</td>
+      <td>❌ No</td>
+      <td>We’re settling the final balance</td>
+    </tr>
+  </tbody>
+</table>
 
 **Invoice: Unpaid; Autopay: No**
 
@@ -243,13 +270,13 @@ For customers who are manually paying, confirm if the second automated reminder 
 
   Send to the billing POC and Ultimate Decision Maker (this may be the same person).
 
-  Hi \[insert customer name\],
+  Hi [insert customer name],
 
   We hope this message finds you well.
 
   We are writing to inform you that payment for your January monthly subscription invoice is still past due. For your reference, we've attached all open invoices for your account.
 
-  (If applicable) We have noticed an alternative payment method on file (\[card type/bank name\] ending in \[Last 4 Digits of Payment Method\]). If no payment has been received by \[7 days from today's date\], we will proceed with charging this method to settle the outstanding balance for all open invoices.
+  (If applicable) We have noticed an alternative payment method on file ([card type/bank name] ending in [Last 4 Digits of Payment Method]). If no payment has been received by [7 days from today's date], we will proceed with charging this method to settle the outstanding balance for all open invoices.
 
   (Late fee in contract) A late fee of \$100 will be applied to any invoice that is more than 30 days overdue.
 
@@ -290,11 +317,11 @@ Before sending the second contact attempt, two key points must be confirmed, as 
 
   We're reaching out to inform you that the payment of your (MONTH) subscription invoice with (payment method used) has failed. As a result, the attached invoice is now past due.
 
-  We have noticed an alternative payment method on file (\[card type/bank name\] ending in \[Last 4 Digits of Payment Method\]). If no payment has been received by \[7 days from today's date\], we will proceed with charging this method to settle the outstanding balance for all open invoices.
+  We have noticed an alternative payment method on file ([card type/bank name] ending in [Last 4 Digits of Payment Method]). If no payment has been received by [7 days from today's date], we will proceed with charging this method to settle the outstanding balance for all open invoices.
 
   Please arrange payment of the outstanding balance within seven (7) days of this notice. If you have already submitted payment, kindly disregard this email.
 
-  We highly recommend setting up autopay with another payment method to ensure your monthly subscription payments remain hassle-free and seamless. You can easily set this up using \[this link\]. Alternatively, you can click the "Set up automatic payments" link on your attached invoice. Please note that Latchel recommends using bank account as a default payment method as 3.5% processing fee applies for credit card payments.
+  We highly recommend setting up autopay with another payment method to ensure your monthly subscription payments remain hassle-free and seamless. You can easily set this up using [this link]. Alternatively, you can click the "Set up automatic payments" link on your attached invoice. Please note that Latchel recommends using bank account as a default payment method as 3.5% processing fee applies for credit card payments.
 
   If you have any questions or need assistance, feel free to reply to this email—we're here to help in any way we can!
 
@@ -311,7 +338,7 @@ This step is performed one week after the previous check and primarily applies t
 
     We hope this message finds you well.
 
-    As mentioned in our previous past-due communication regarding your \[month\] subscription invoice, we successfully processed the payment using your alternative payment method (\[Payment Method\], ending in \[last 4 digits\]).
+    As mentioned in our previous past-due communication regarding your [month] subscription invoice, we successfully processed the payment using your alternative payment method ([Payment Method], ending in [last 4 digits]).
 
     To ensure seamless future payments, we've updated this payment method to be your default. If you'd like to use a different payment method, you can update your preferences anytime by visiting this link to your billing portal and setting up a new default payment method.
 
@@ -325,11 +352,11 @@ This step is performed one week after the previous check and primarily applies t
 
     We hope this message finds you well.
 
-    As mentioned in our previous past-due communication regarding your \[month\] subscription invoice, we attempted to process payment using your other payment method on file (\[Payment Method\], ending in \[last 4 digits\]), but the transaction was unsuccessful. As a result, the attached invoice remains past due.
+    As mentioned in our previous past-due communication regarding your [month] subscription invoice, we attempted to process payment using your other payment method on file ([Payment Method], ending in [last 4 digits]), but the transaction was unsuccessful. As a result, the attached invoice remains past due.
 
     Please arrange payment of the outstanding balance within seven (7) days of this notice. If you have already submitted payment, kindly disregard this email.
 
-    To avoid future interruptions, we strongly recommend setting up autopay with an alternative payment method. You can easily do this via \[this LINK\] or by clicking the "Set up automatic payments" link on your attached invoice.
+    To avoid future interruptions, we strongly recommend setting up autopay with an alternative payment method. You can easily do this via [this LINK] or by clicking the "Set up automatic payments" link on your attached invoice.
 
     If you have any questions or require assistance, don't hesitate to reply to this email—we're happy to help!
 
@@ -355,7 +382,7 @@ Similar to the approach for the first overdue invoice, we will contact the custo
 
     We're reaching out to notify you that the payments for your October and November monthly subscription invoices remain outstanding. To assist with your review, we've attached all open invoices associated with your account.
 
-    As a gentle reminder, if the (Month1 Past Due) invoice remains unpaid by the end of the month, a late fee of \[\$100\] \[1.5% of the Month1 Past Due Total\] will be added to your next month's invoice in accordance with our billing policy. We want to ensure you have ample time to review and take any necessary action before this occurs.
+    As a gentle reminder, if the (Month1 Past Due) invoice remains unpaid by the end of the month, a late fee of [\$100] [1.5% of the Month1 Past Due Total] will be added to your next month's invoice in accordance with our billing policy. We want to ensure you have ample time to review and take any necessary action before this occurs.
 
     Additionally, please note that the shipping of filters to your residents is currently on hold until payment is received.
 
@@ -369,13 +396,13 @@ Similar to the approach for the first overdue invoice, we will contact the custo
 
     Send to all account contacts with the Customer Success Manager (CSM) copied.
 
-    Hello \[insert customer name\],
+    Hello [insert customer name],
 
     Hope you're doing well.
 
-    We are following up regarding the past-due invoices for \[Month1\] and \[Month2\], as payment has still not been received. Despite our previous reminder, the matter remains unresolved. For your reference, we have attached the open invoices again.
+    We are following up regarding the past-due invoices for [Month1] and [Month2], as payment has still not been received. Despite our previous reminder, the matter remains unresolved. For your reference, we have attached the open invoices again.
 
-    As mentioned in our previous communication, a late fee of (\$\$) for your \[Month 1\] past due invoice will appear on your \[Month3\]'s invoice. To avoid any service disruptions or additional charges, we kindly request payment within seven (7) days or before the issuance of next month's invoice. If payment has already been made, please disregard this email.
+    As mentioned in our previous communication, a late fee of (\$\$) for your [Month 1] past due invoice will appear on your [Month3]'s invoice. To avoid any service disruptions or additional charges, we kindly request payment within seven (7) days or before the issuance of next month's invoice. If payment has already been made, please disregard this email.
 
     Your immediate attention to this matter is required. Thank you for your cooperation in ensuring that we can continue to provide you with uninterrupted service.
   </Accordion>
@@ -398,7 +425,7 @@ Display the "Urgent Action Required" banner on the customer's profile.
 **_How to Activate the Banner:_**
 
 - [How to Set Up the Non-Payment Reminder Banner](https://help.latchel.com/latchel-admin/accounting/How-to-Set-Up-the-Non-Payment-Reminder-Banner)
-- Additional Context: \[Userpilot for Accounts Receivable – 2024/11/06 11:30 EST – Recording\].
+- Additional Context: [Userpilot for Accounts Receivable – 2024/11/06 11:30 EST – Recording].
 
 2. **Post in the #accounts-receivable Slack Channel.**
 
@@ -460,7 +487,7 @@ Below are the steps to take:
 - Acknowledge the customer's cooperation and willingness to keep the service. Communicate that their account is up to date and that service will not be interrupted.
 
 <Accordion title="Unsuccesful Termination - Customer Paid Template">
-  Hi \[PM's Name\],
+  Hi [PM's Name],
 
   Good day!
 
@@ -486,7 +513,7 @@ Below are the steps to take:
 
   We hope this message finds you well.
 
-  Regrettably, we must inform you that your account with us will be terminated effective today due to continued non-payment. As outlined in our previous notices, including the termination warning sent on \[date\], the outstanding balance of \[amount\] remains unpaid.
+  Regrettably, we must inform you that your account with us will be terminated effective today due to continued non-payment. As outlined in our previous notices, including the termination warning sent on [date], the outstanding balance of [amount] remains unpaid.
 
   Latchel will suspend all services today. Additionally, any unpaid amount may be referred to collections, and you will be responsible for any reasonable attorneys' fees, costs, and expenses incurred by Latchel in collecting overdue payments.
 
