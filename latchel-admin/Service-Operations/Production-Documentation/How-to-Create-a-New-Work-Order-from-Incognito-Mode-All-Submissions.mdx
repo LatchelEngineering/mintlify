@@ -400,30 +400,6 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/781647909/Ho
           1. For work orders in **“Needs Approval”** status, ensure that a notification is sent to the Property Manager once the work order is cancelled. If no automatic notification is triggered, follow the established process to email the Property Manager’s notification group manually.
   </Accordion>
 
-  <Accordion title="What should I do if a work order is created and I think it might be non-maintenance?">
-    If you reviewed that a work order created is a non-maintenance request, follow the below steps:
-
-    How should we handle a work order submitted under an old unit when the resident has already transferred to a new unit?
-
-    If a resident has moved to a new unit but submitted a work order under their **previous unit**, follow these steps:
-
-    1. **If the resident is already listed under the new unit/property address:**
-       1. Confirm the **new address and Property Management company** with the resident.
-       2. Reassign the work order to the correct property address.
-          1. In the **Console**, go to the **Property** view, click the **three dots**, select **Edit Property**, and update the property address to the correct unit where the work order should be assigned. 
-             <Frame>
-               ![image-20260311-234817.png](/images/SVC-405.png)
-             </Frame>
-             <Frame>
-               ![image-20260309-202652.png](/images/SVC-406.png)
-             </Frame>
-    2. **If the resident is not yet listed under the new unit:**
-       1. Refer to [**<u>Step 4 of “How to: Handle ‘Need to Verify’ Emails</u>**](/latchel-admin/Service-Operations/Production-Documentation/how-to-handle-need-to-verify-emails) to verify the information and check PM integrations.
-          1. If the resident can be added to the new unit, reassign the work order to the correct property address by following the instructions above (1.b.i)
-          2. If the resident cannot be added and **PM intervention is required** (e.g., PMs with active integrations), set the tenant’s expectations and cancel the work order submitted under the incorrect property address to prevent it from moving to another status. Once the PM confirms that the tenant should be added to the correct address, resubmit the work order.
-    3. **Write Effective Notes.**
-  </Accordion>
-
   <Accordion title="Edge Case: Resident requests maintenance but declines WO and asks to speak directly with PM">
     **Step 1: Acknowledge and explain why we submit WOs**
 
