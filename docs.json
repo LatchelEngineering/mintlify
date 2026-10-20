@@ -2339,11 +2339,12 @@
                       {
                         "group": "How to Receive and Reconcile Payments",
                         "pages": [
-                          "latchel-admin/accounts-receivable/How-to-Receive-and-Reconcile-Payments",
-                          "latchel-admin/accounts-receivable/How-to-Upload-Bank-Transactions-to-Rillet"
+                          "latchel-admin/accounts-receivable/How-to-Receive-and-Reconcile-Payments"
                         ]
                       },
                       "handling-partial-payments",
+                      "handling-overpayments",
+                      "latchel-admin/accounts-receivable/How-to-Upload-Bank-Transactions-to-Rillet",
                       "latchel-admin/accounts-receivable/How-to-Handle-Basic-AR-Requests",
                       {
                         "group": "How to Handle Monthly Subscription Invoice Adjustments",
