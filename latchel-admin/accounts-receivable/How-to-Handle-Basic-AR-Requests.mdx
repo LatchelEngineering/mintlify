@@ -4,139 +4,220 @@ groups: ["latchel"]
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/finance1/pages/3361079311/How+to+Handle+Basic+AR+Requests"
 ---
 
-<Note>
-  **Purpose**
+## **Purpose**
 
-  This SOP serves as a reference guide for Customer Success Managers (CSMs) and the Product Support (PS) team when handling common Accounts Receivable (AR) inquiries. It provides guidance on how to answer frequently asked billing questions, determine the appropriate AR request category, and identify when a request should be escalated to the AR team.
+This SOP is a reference for Customer Success Managers (CSMs) and the Product Support (PS) team when handling common Accounts Receivable (AR) inquiries. It explains how to:
 
-  For requests not covered in this SOP, please submit the inquiry through the appropriate Slack channel or workflow and coordinate with the AR team as needed.
-</Note>
+- Answer frequently asked billing questions
+- Determine the correct AR request category
+- Recognize when a request should be escalated to the AR team
 
-## Monthly Subscription Invoicing Overview
+**⏰ Reminder:** For anything not covered in this SOP, submit the inquiry through the appropriate Slack channel or workflow and coordinate with the AR team as needed.
 
-- Subscription invoices are generated on the 10th of each month.
-- Invoices are based on the total active unit count recorded in Latchel at midnight UTC on the last day of the previous month.
-- Property Managers are responsible for maintaining accurate unit counts.
-- A reminder email is sent on the 21st of each month to allow time for unit count verification and corrections before invoicing.
-- Most customers are billed under Net 5 payment terms unless otherwise specified in their contract.
-- Customers enrolled in AutoPay are generally charged on the 14th or 15th of each month.
+## **Monthly Subscription Invoicing at a Glance**
 
-## Lockbox Mailing Address for Check Payments
+<table>
+  <colgroup>
+    <col width="189" />
+    <col width="508" />
+  </colgroup>
+  <thead>
+    <tr>
+      <td>**Item**</td>
+      <td>**Detail**</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Invoice date</td>
+      <td>Generated on the 10th of each month.</td>
+    </tr>
+    <tr>
+      <td>Unit count basis</td>
+      <td>Total active unit count in Latchel at midnight UTC on the last day of the previous month.</td>
+    </tr>
+    <tr>
+      <td>AUC Verification Reminder</td>
+      <td>A reminder email goes out on the 21st each month to the primary user in the console, allowing time to verify and correct unit counts before invoicing.</td>
+    </tr>
+    <tr>
+      <td>Payment Terms</td>
+      <td>Most customers are Net 5 unless their contract specifies otherwise; Net 25, Net 30, and Net 45 terms also exist. Note: due to a Rillet adjustment, invoices and contracts show the original net term plus 9 days — so Net 5 appears as Net 14.</td>
+    </tr>
+    <tr>
+      <td>Autopay Charge Date</td>
+      <td>AutoPay customers are generally charged on the afternoon of the 14th or morning of the 15th.</td>
+    </tr>
+  </tbody>
+</table>
 
-Provide the following address if a customer asks where to mail subscription invoice payments:
+## **Lockbox Address for Check Payments**
 
-Latchel, Inc. P.O. Box 200846 Dallas, TX 75320-0846
+If a customer asks where to mail subscription invoice payments, provide:
 
-This address is also listed on all subscription invoices.
+- [ ] **Latchel, Inc.** P.O. Box 200846 Dallas, TX 75320-0846
 
-## AR Request Categories
+This address is also printed on all subscription invoices.
 
-| Topic | Question | AR Category |
-| --- | --- | --- |
-| Payment Method | What is my current payment method? | General Question |
-| Payment Method | How can I update my payment method? | Change Request |
-| Payment Method | What is the credit card processing fee? | General Question |
-| Payment Method | How can I add or remove AutoPay? | Change Request |
-| Billing POC | Who are the current billing contacts? | General Question |
-| Billing POC | How can I update the billing contact? | Change Request |
-| Invoices | Can I receive copies of invoices or payment history? | General Question |
-| Invoices | How am I being billed or what unit count was used? | General Question or Billing Dispute |
-| Billing Dispute | Why is my invoice amount higher than expected? | General Question or Billing Dispute |
-
-## Handling Common Requests
-
-### Payment Method Changes
-
-If a customer wants to update their payment method, add or remove AutoPay, or update banking information:
-
-1. Post in **#accounts-receivable**.
-2. Submit a **Subscription Invoicing Request** workflow.
-3. Select **Change Request** as the category.
-4. Include the customer's name and requested changes.
-
-### Billing Contact Updates
-
-If a customer wants to add, remove, or update a billing contact:
-
-1. Post in **#accounts-receivable**.
-2. Submit a **Subscription Invoicing Request** workflow.
-3. Select **Change Request** as the category.
-4. Include the new billing contact information.
-
-### Invoice Copies and Payment History
-
-- Customers can obtain invoice PDFs through the original invoice email sent to billing contacts.
-- If they no longer have access to the email:
-  - Direct them to contact [billing@latchel.com](mailto:billing@latchel.com).
-  - Alternatively, submit a request in **#accounts-receivable**.
-- Currently, there is no customer-facing billing portal available.
-
-### Unit Count Questions and Billing Disputes
-
-If a customer questions their unit count or disputes an invoice:
-
-1. Post in **#accounts-receivable**.
-2. Submit a **Subscription Invoicing Request** workflow.
-3. Select **Billing Dispute** as the category.
-4. Include:
-   - Customer name
-   - Expected unit count
-   - Invoice number or invoice month
-   - Supporting details provided by the customer
-
-For questions related to future billing counts, refer to the **Intake Process for Active Unit Adjustments**.
-
-### Questions About Increased Invoice Amounts
-
-If a customer asks why their invoice increased:
-
-- Determine whether the increase is due to:
-  - Unit count changes
-  - Pricing updates
-  - Additional products or services
-  - Contract changes
-- If the reason cannot be immediately determined, submit a request in **#accounts-receivable** for review.
-- If the customer disputes the increase, process it as a **Billing Dispute**.
-
-### Current Billing Information Requests
-
-Questions such as:
-
-- What payment method is currently on file?
-- Who are the billing contacts?
-- Is AutoPay enabled?
-
-Should be submitted to **#accounts-receivable** as a **General Question** request.
-
-## Account Termination Requests
-
-### Permanent Termination
-
-- Account terminations are handled by the assigned Customer Success Manager.
-- CSMs should follow the **Account Termination Steps SOP**.
-- Product Support should escalate the request through the **Escalate to CSM** workflow and tag the assigned CSM.
-
-### Future-Dated Terminations
-
-- Only the assigned CSM may schedule future account closures.
-- The CSM should:
-  1. Set a reminder for the requested termination date.
-  2. Follow the **Account Termination Steps SOP** when the date arrives.
-
-### Temporary Service Inactivation
-
-Temporary account inactivation is not currently supported.
-
-## Escalation Guidelines
+## **Escalation Guidelines**
 
 Submit a request to the AR team whenever:
 
-- A billing record requires modification.
-- Payment methods need updating.
-- Billing contacts need updating.
-- A customer disputes an invoice.
-- Unit count adjustments are requested.
-- Invoice history is needed and cannot be obtained through existing records.
-- The request involves subscription billing and you are unsure how to proceed.
+- A billing record needs modifying
+- Payment methods need updating
+- Billing contacts need updating
+- A customer disputes an invoice
+- Unit count adjustments are requested
+- Invoice history is needed and can't be obtained from existing records
+- The request involves subscription billing and you're unsure how to proceed
 
-When in doubt, submit the request in **#accounts-receivable** and include all relevant customer information to minimize back-and-forth communication.
+**_When in doubt, submit the request in #accounts-receivable with all relevant customer information to minimize back-and-forth._**
+
+## **AR Request Categories**
+
+Use this table to classify an inquiry before submitting it
+
+<table>
+  <colgroup>
+    <col width="170" />
+    <col width="352" />
+    <col width="373" />
+  </colgroup>
+  <thead>
+    <tr>
+      <td>**Topic**</td>
+      <td>**Question**</td>
+      <td>**AR Category**</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Payment method</td>
+      <td>What is my current payment method?</td>
+      <td>General Question</td>
+    </tr>
+    <tr>
+      <td>Payment method</td>
+      <td>How can I update my payment method?</td>
+      <td>Change Request</td>
+    </tr>
+    <tr>
+      <td>Payment method</td>
+      <td>What is the credit card processing fee?</td>
+      <td>General Question</td>
+    </tr>
+    <tr>
+      <td>Payment method</td>
+      <td>How can I add or remove AutoPay?</td>
+      <td>Change Request</td>
+    </tr>
+    <tr>
+      <td>Billing POC</td>
+      <td>Who are the current billing contacts?</td>
+      <td>General Question</td>
+    </tr>
+    <tr>
+      <td>Billing POC</td>
+      <td>How can I update the billing contact?</td>
+      <td>Change Request</td>
+    </tr>
+    <tr>
+      <td>Invoices</td>
+      <td>Can I receive copies of invoices or payment history?</td>
+      <td>General Question</td>
+    </tr>
+    <tr>
+      <td>Invoices</td>
+      <td>How am I being billed / what unit count was used?</td>
+      <td>General Question or Billing Dispute</td>
+    </tr>
+    <tr>
+      <td>Billing dispute</td>
+      <td>Why is my invoice higher than expected?</td>
+      <td>General Question or Billing Dispute</td>
+    </tr>
+  </tbody>
+</table>
+
+## **Handling Common Requests**
+
+Most requests follow the same submission path. Use it as your default, then check the table to select the right category and include what's required.
+
+Standard submission steps:
+
+1. Post in #accounts-receivable.
+2. Submit a Subscription Invoicing Request workflow.
+3. Select the correct category (see table).
+4. Include the required details (see table).
+
+**By request type**
+
+<table>
+  <colgroup>
+    <col width="320" />
+    <col width="407" />
+    <col width="236" />
+  </colgroup>
+  <thead>
+    <tr>
+      <td>**Request**</td>
+      <td>**Include**</td>
+      <td>**AR Category**</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Update payment method / add or remove AutoPay / update banking info</td>
+      <td>Customer name and the requested changes</td>
+      <td>Change Request</td>
+    </tr>
+    <tr>
+      <td>Add, remove, or update a billing contact</td>
+      <td>The new billing contact information</td>
+      <td>Change Request</td>
+    </tr>
+    <tr>
+      <td>Unit count question or invoice dispute</td>
+      <td>Customer name, expected unit count, invoice number or month, and any supporting details from the customer</td>
+      <td>Billing Dispute</td>
+    </tr>
+    <tr>
+      <td>Current billing info (payment method on file, billing contacts, AutoPay status)</td>
+      <td>The specific question</td>
+      <td>General Question</td>
+    </tr>
+  </tbody>
+</table>
+
+## **Invoice copies and payment history**
+
+Customers can get invoice PDFs from the original invoice email sent to their billing contacts. If they no longer have access:
+
+- Direct them to [billing@latchel.com](mailto:billing@latchel.com), or
+- Submit a request in #accounts-receivable.
+
+**There is currently no customer-facing billing portal. This is a known Latchel limitation; a feature request has already been submitted, so you can advise the PM accordingly.**
+
+## **Questions about an increased invoice**
+
+Subscription invoices aren’t accessible in the Latchel console. To have an invoice reviewed, submit a request in the **#accounts-receivable** channel, and the AR team will look into it and get back to you with answers to your billing questions.
+
+## **Account Termination Requests**
+
+**Permanent termination**
+
+- Terminations are handled by the assigned CSM, following the _Account Termination Steps_ SOP.
+- Product Support should escalate via the Escalate to CSM workflow and tag the assigned CSM. _Note:_ no post in #accounts-receivable is necessary for termination requests.
+
+**Future-dated termination**
+
+Only the assigned CSM may schedule a future closure. The CSM should:
+
+1. Set a reminder for the requested termination date.
+2. Follow the _Account Termination Steps_ SOP when the date arrives.
+
+**Temporary service inactivation**
+
+Temporary service inactivation is not currently supported. However, Latchel does support temporary subscription changes, and the CSM must be involved in the process. On the AR side, we cover only the billing effects — the actual change to the service is handled separately. AR provides prorated billing, so please provide the applicable dates and rates for accurate invoicing.
+
+<br /><br />
