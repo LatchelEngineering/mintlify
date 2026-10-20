@@ -1403,7 +1403,9 @@
                       },
                       {
                         "group": "Optional Benefits",
-                        "pages": []
+                        "pages": [
+                          "latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Optional-Benefits/how-to-manage-optional-benefits-requests"
+                        ]
                       },
                       {
                         "group": "How to Manage Service Providers",

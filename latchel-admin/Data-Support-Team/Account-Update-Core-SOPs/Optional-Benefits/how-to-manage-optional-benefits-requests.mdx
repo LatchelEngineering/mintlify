@@ -1,0 +1,185 @@
+---
+title: "How to Manage Optional Benefits Requests"
+sidebarTitle: "Manage Optional Benefits Requests"
+description: "How Data Support processes the monthly Optional Benefits requests from CPT for Optional Benefits Only and Maintenance + Optional Benefits customers."
+groups:
+  - "latchel"
+---
+
+Optional Benefits (also called RBP or Home Assistant) is billed per opted-in resident or unit. Latchel uses the product package on each subscription to control who can see and use benefits. Every month, CPT pulls the opt-in report from the PM, usually based on the benefits GL code in the PMS, and sends it to us. Our job is to make Latchel match that report before invoicing, so Finance bills the right count and only enrolled residents get benefits.
+
+<Check>
+  **In other words:**
+
+  **Optional Benefits Only:** only the properties and residents in the report stay active.
+
+  **Maintenance + Optional Benefits:** nothing is disabled. Only the subscriptions change.
+</Check>
+
+<Warning>
+  **Ownership is changing.** In September 2026, CPT was given access to the bulk update tool so they can run the monthly opt-in and opt-out updates themselves, replacing the "Active Units for Optional Benefits" tickets to Data Support. Confirm with the Data Support Lead which steps Data Support still owns before you start.
+</Warning>
+
+## **Monthly Cadence**
+
+| When | What happens |
+| --- | --- |
+| **Days 1–5 of the month** | CPT submits one Account Update Request per customer, marked **High** priority. |
+| **Same day** | Acknowledge each ticket. The Data Support Lead splits the batch evenly across the team. |
+| **By the ticket deadline** | Complete each ticket by the deadline CPT set, usually 3–5 days after submission. |
+| **Before invoicing day** | Every ticket is closed with final counts, so Finance bills from the updated console. |
+
+<Note>
+  The first week of the month is also invoicing week, so active-unit adjustment tickets increase at the same time. Treat both ticket types as top priority that week.
+</Note>
+
+## **How to Identify the Request Type**
+
+The requests come through the **Account Update Request** Typeform in **#data-support-requests**. Check these fields before you start:
+
+| Field | What to look for |
+| --- | --- |
+| **Property update request** | **Optional Benefits Only (For CPT Use Only)** or **Maintenance + Optional Benefits (For CPT use Only)**. This tells you which process to follow. |
+| **Update residents?** | Usually **Yes**, with **Update status (activate/deactivate)** |
+| **Third-party integration** | Usually **Yes**. Check the integration before you disable anything, because a sync can turn properties back on. |
+| **PM spreadsheet** | CPT's **Active Units for Optional Benefits** report of opted-in properties and residents. This is the source of truth for the month. |
+| **Priority / deadline** | **High**, with a date about 3–5 days out |
+
+Before you make changes, confirm the customer's contract type in the Latchel console and HubSpot. If the form and the current subscription don't agree, ask CPT or the CSM in the ticket thread before you change anything.
+
+## **How to Process an Optional Benefits Only Request**
+
+Only the properties and residents in the report stay active.
+
+<Steps>
+  <Step title="Pull the current data." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Pull the customer's current properties and residents from pgAdmin or the console. See [Required Reports](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Reports/required-reports).
+  </Step>
+  <Step title="Match the report to Latchel." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Match each row in CPT's report to its Latchel property and resident. Use reference IDs, and watch for duplicate or disabled copies of the same address.
+  </Step>
+  <Step title="Activate what's in the report." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Enable any property or resident in the report that is currently disabled.
+  </Step>
+  <Step title="Disable what's not in the report." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    Disable every property and resident that isn't in the report.
+
+    <Warning>
+      If a large number of records will be disabled, confirm with CPT in the ticket thread first.
+    </Warning>
+  </Step>
+  <Step title="Verify the counts." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    Re-pull the report and confirm the active properties and residents match CPT's report exactly.
+  </Step>
+</Steps>
+
+## **How to Process a Maintenance + Optional Benefits Request**
+
+Only the subscriptions change. **Never disable a property or resident** for this request type.
+
+<Steps>
+  <Step title="Find the right packages." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    In the PM's product packages in the Latchel admin, find the maintenance-only package that matches the customer's plan (for example, `24/7 Emergency`, or the Autopilot equivalent) and its benefits version (for example, `24/7 Emergency + Benefits(Opt)`).
+  </Step>
+  <Step title="Subscribe the opted-in properties to the benefits package." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Subscribe **each property in the report** to the benefits package at the property level. Use the bulk update tool (see below) for more than a few properties.
+  </Step>
+  <Step title="Set the company subscription to maintenance only." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    After the properties are done, set the **company-level** subscription to the maintenance-only package.
+
+    <Warning>
+      Do this step last. If you change the company package first, opted-in residents lose access to benefits until their properties are updated.
+    </Warning>
+  </Step>
+  <Step title="Remove benefits from properties that opted out." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    For properties that were in last month's report but aren't in this one, remove the benefits package so they fall back to the company default.
+  </Step>
+  <Step title="Confirm the residents." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    Confirm that every resident in the report is active on their property.
+  </Step>
+  <Step title="Report the totals." icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
+    In the ticket, report the number of properties on maintenance only, the number on maintenance + benefits, and the residents confirmed.
+  </Step>
+</Steps>
+
+<Note>
+  Match the packages to the customer's plan. A customer on Autopilot gets the Autopilot packages, not 24/7 Emergency.
+</Note>
+
+## **How to Update Subscriptions With the Bulk Update Tool**
+
+The bulk update tool has two options for Optional Benefits: **Subscribe properties to a package** and **Unsubscribe properties from a package**.
+
+<Steps>
+  <Step title="Open the tool and set the PM." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Open the [bulk update tool](https://latchel-matcher-110204726220.us-central1.run.app) and sign in with your Latchel Google account. Match the PM by Latchel URL or PM ID, and choose **Production**.
+  </Step>
+  <Step title="Enter the PM's API key." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Paste the PM's API key from **Account Settings > Integrations** in Latchel.
+  </Step>
+  <Step title="Choose the operation and package." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Choose **Bulk update via API > Subscribe properties to a package**. Enter the package ID of the benefits package from the PM's product packages in the Latchel admin.
+  </Step>
+  <Step title="Upload the CSV." icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    Upload a CSV with one required column, `property_id`.
+
+    <Warning>
+      Use the **Latchel** property ID (the last digits of the property URL, or from pgAdmin), not the PMS property ID.
+    </Warning>
+  </Step>
+  <Step title="Review and submit." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    Check the preview, which shows the Latchel address next to each ID, then submit. For each property, the tool ends the current subscription and subscribes it to the package you entered. Download the results log and attach it to the ASM ticket.
+  </Step>
+</Steps>
+
+To take properties off benefits, choose **Unsubscribe properties from a package** and upload a CSV of property IDs. The properties fall back to the portfolio or company default.
+
+## **Special Cases**
+
+| Situation | What to do |
+| --- | --- |
+| **Individual enrollment requests mid-month** (currently RPM Colorado) | Confirm the resident is on the property, add the benefits package to that property's subscription, and let the PM know it's done. Log it in the Optional Benefits tracking sheet (property address, resident, ASM ticket, date received, date completed, one tab per month). Keep these residents enrolled when the next monthly report arrives, even if they aren't in it, and let CPT know so ledgering stays accurate. |
+| **A resident with a future move-in date isn't in Latchel** | This is expected. Residents sync on their move-in date, and AppFolio Future Tenants don't sync before then. Tell the PM the resident will be enrolled after move-in, track them separately, and enroll them once they sync. |
+| **A customer whose plan includes benefits by default** | Don't change the main subscription until the CSM confirms. For example, RPM Teyata was moved to 24/7 Emergency only, because local rules require resident consent before benefits can be charged. |
+| **Duplicate or disabled copies of the same address** | Match residents carefully, because the correct resident can be on the disabled duplicate. Keep the record that has both `ref_property_id` and `ref_unit_id`, and merge the others into it. |
+| **A resident looks missing from Latchel** | Check for name variations and verify reference IDs before reporting the resident as missing. |
+| **A PM sends a report directly to us** | Don't act on it. Close the ticket and wait for CPT's monthly request. |
+| **The PM doesn't know they have an active integration** | Pause and ask CS and CPT for guidance in **#ps-cs-sync** before you make property or resident changes. |
+
+## **How to Close the Ticket**
+
+Reply in the ticket thread with the final counts, then close it as described in the [Data Support Workflow](/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Workflow/data-support-workflow).
+
+**Optional Benefits Only:**
+
+> Hello @Jerna, your request for [PM name] is complete. I disabled the properties and residents that are not in the report. [PM name] now has [X] active properties and [Y] active residents, matching the report. Please let me know if you have any questions.
+
+**Maintenance + Optional Benefits:**
+
+> Hello @Jerna, I've completed your request for [PM name] based on the Maintenance + Optional Benefits setup. The company subscription is now [maintenance package]. Of the [total] active properties, [N] are on [maintenance package] and the [M] properties in the report are on [maintenance + benefits package]. All [R] residents in the report are active. No properties or residents were disabled.
+
+## **Things to Remember**
+
+<Warning>
+  - Never disable properties or residents for a Maintenance + Optional Benefits customer.
+  - Always subscribe the properties to the benefits package before you change the company-level subscription.
+  - Use the Latchel property ID in bulk update CSVs, never the PMS ID.
+</Warning>
+
+<Tip>
+  If the request type on the form doesn't match the customer's current subscription, stop and confirm with CPT or the CSM before you make changes.
+</Tip>
+
+## **Open Items (Remove Before Publishing)**
+
+- **Ownership:** Since CPT now runs the bulk update tool, does Data Support still get monthly tickets, or does this SOP become a backup and QA guide?
+- **Optional Benefits Only disables:** The bulk update tool only changes subscriptions. Who disables properties and residents once CPT takes over?
+- **Invoicing deadline:** Confirm the exact invoicing date or billing-input cutoff to use as the hard deadline.
+- **Unknown integrations:** The September 2026 question in #ps-cs-sync (Chosen PM) about unknown integrations, GL reports, and who confirms the subscription tier is still unanswered.
+- **RPM Colorado:** Confirm whether individual requests and the monthly report will both continue.
+
+**Related guides**
+
+<Card title="How to Bulk Update Properties and Residents Using the DS Tool" color="#ff9b8a" icon="screwdriver-wrench" iconType="duotone" horizontal href="/latchel-admin/Data-Support-Team/Account-Update-Core-SOPs/Bulk-Updates/how-to-bulk-update-properties-and-residents">
+  The full process for preparing, testing, and applying bulk updates with the DS Tool.
+</Card>
