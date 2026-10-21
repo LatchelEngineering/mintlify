@@ -1,7 +1,7 @@
 ---
 title: "SOP: Validating Claude's Weekly CX Email Audit"
 sidebarTitle: "Validating Claude's CX Email Audit"
-description: "How Claude runs the weekly Customer Experience email audit, what it writes to the response sheet, and how Quality validates and finishes each row."
+description: "How Claude runs the weekly Customer Experience email audit, what it writes to the response sheet, and how Quality validates each row."
 icon:
   name: "envelope"
   style: "regular"
@@ -52,10 +52,10 @@ Claude runs automatically at about **3:00 AM PT** every Monday as the auditor **
 - Writes one row per agent into the **Form Responses 1** tab of the [response workbook](https://docs.google.com/spreadsheets/d/1mWE0GQgmk400STrZ6FiFZDjmcTFzXy4xSVTG70saCFM/edit), directly after the last populated row.
 - Fills the calculated columns **AB through AQ** for each new row with the same formulas used in earlier rows.
 - Reads everything back from the sheet to confirm the stored values reproduce the score.
-- Sends a summary notification and ends with a final report, a consolidated human-review list, the tickets awaiting closure, and a survey values block.
+- Sends a summary notification and ends with a final report, a consolidated human-review list, and a survey values block.
 
 <Danger>
-  Claude never emails or messages an agent, never changes a ticket, and never closes an Assembly ticket. Closing tickets is a human step (see Step 5).
+  Claude never emails or messages an agent, never changes a ticket, and never closes an Assembly ticket.
 </Danger>
 
 <Warning>
@@ -120,15 +120,15 @@ The run report may include these warnings:
 
 #### Step 5 - Close out
 
-1. Close the Assembly tickets listed under "tickets awaiting closure" in the final report, if they are still open.
-2. Use the validated rows for agent coaching and the normal Customer Experience reporting.
-3. Once the team is ready to send results to agents, fill column AR for the validated rows as a deliberate step (see the warning above).
+1. Use the validated rows for agent coaching and the normal Customer Experience reporting.
+2. Once the team is ready to send results to agents, fill column AR for the validated rows as a deliberate step (see the warning above).
 
 ### Correcting Claude's mistakes
 
 - Fix the cell directly in the sheet. Claude only appends new rows each week and does not rewrite earlier weeks.
 - Do not delete a row to "redo" it. Correct it in place so the sheet and the duplicate check by ticket link stay accurate.
 - If you see the same mistake more than once (for example a rubric item that is repeatedly scored the wrong way), tell **Jennifer Lye** so Claude's instructions can be updated.
+- Never paste customer emails or phone numbers into Slack. Use the ticket number.
 
 ## If You Think This SOP Could Be Improved...
 
