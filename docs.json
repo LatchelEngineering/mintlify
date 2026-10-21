@@ -91,7 +91,8 @@
                           "s/topic/0TO5e000000h9wqGAA/intake-conversation-settings"
                         ],
                         "public": true
-                      }
+                      },
+                      "s/topic/0TO5e000000h9wqGAA/ai-messaging"
                     ],
                     "public": true
                   },
@@ -480,7 +481,8 @@
                       "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Update-Maintenance-Schedule-Availability",
                       "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Add-Images-and-Files-on-a-Work-Order",
                       "s/topic/0TO5e000000h9wrGAA/Cancelling-A-Work-Order-Resident",
-                      "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Generate-Work-Order-Details-in-PDF"
+                      "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Generate-Work-Order-Details-in-PDF",
+                      "s/topic/0TO5e000000h9wrGAA/messaging-us-about-your-work-order"
                     ]
                   },
                   {
@@ -546,7 +548,8 @@
                       "s/topic/0TO5e000000h9wpGAA/How-Service-Providers-View-their-Work-Order-Calendar",
                       "s/topic/0TO5e000000h9wpGAA/How-to-Move-Work-Orders-Forward-When-Your-Action-is-Required",
                       "s/topic/0TO5e000000h9wpGAA/How-to-Reject-a-Work-Order-Service-Provider",
-                      "s/topic/0TO5e000000h9wpGAA/Clock-in-and-clock-out-on-work-orders"
+                      "s/topic/0TO5e000000h9wpGAA/Clock-in-and-clock-out-on-work-orders",
+                      "s/topic/0TO5e000000h9wpGAA/messaging-us-about-a-work-order"
                     ]
                   },
                   {
