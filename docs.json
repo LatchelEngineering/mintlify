@@ -1447,6 +1447,12 @@
                     ]
                   },
                   {
+                    "group": "Help Center",
+                    "pages": [
+                      "latchel-admin/Data-Support-Team/Help-Center/how-to-update-help-guides-from-product-releases"
+                    ]
+                  },
+                  {
                     "group": "Team Management",
                     "pages": [
                       "ds-team-pulse-overview-for-managers",
