@@ -1,0 +1,136 @@
+---
+title: "SOP: Validating Claude's Weekly CX Email Audit"
+sidebarTitle: "Validating Claude's CX Email Audit"
+description: "How Claude runs the weekly Customer Experience email audit, what it writes to the response sheet, and how Quality validates and finishes each row."
+icon:
+  name: "envelope"
+  style: "regular"
+  library: "fontawesome"
+groups:
+  - "latchel"
+---
+
+## Purpose
+
+<Note>
+  **Purpose of this document**
+
+  Every Monday, Claude (Latchel's AI agent) runs the Customer Experience email audit automatically. For each agent on the Service Ops roster it picks one eligible email interaction from Assembly (read through the Wavelength connector), scores it against the Customer Experience email rubric, and writes the result as a row in the response workbook. Claude does the first pass; **the Quality team is the human verification step.** This SOP explains what Claude produces, how to validate it, and what to do when something looks wrong.
+</Note>
+
+<Note>
+  **Who should read this document?**
+
+  Quality Associates and Managers
+</Note>
+
+## Content
+
+### Background and Deviation Guidelines
+
+<Note>
+  **What this process is trying to solve:**
+
+  Email audits used to be done one ticket at a time by hand. Claude now samples and scores one email per agent each week so every agent is covered. But Claude only sees the customer-visible email thread. It cannot see internal notes or Latchel Console, and it can misread context. A Quality associate checks the flagged items before the scores are used for coaching or reporting.
+</Note>
+
+<Warning>
+  **When to break this SOP**
+
+  - Claude's run fails or no new rows appear by mid-morning Monday. Tell Jennifer Lye and complete the audits manually using [SOP: How to Conduct Customer Experience Reviews: Calls, SMS, Email](/latchel-admin/Service-Operations/Quality-Program/SOP-How-to-Conduct-Customer-Experience-Reviews-Calls-SMS-Email).
+  - You find an emergency or safety issue in a sampled ticket. Escalate it right away; don't wait for the weekly cycle.
+</Warning>
+
+### What Claude does every Monday
+
+Claude runs automatically at about **3:00 AM PT** every Monday as the auditor **Diana Rivera**, and:
+
+- Builds the roster from the **Shift Schedules by skill** tab of the [shift schedule sheet](https://docs.google.com/spreadsheets/d/1S7ybxAhNH_JIMlYyV-zFLacL2bptWb9kWTjHPiWwDik/edit#gid=732810503), keeping only people whose role is **OA-T, CC or SMS**.
+- Samples **one eligible email ticket per agent** from the Operations Email Team over the last 7 days. It skips any ticket already listed in column D of the response workbook.
+- Identifies who wrote the email by the **signature** on the message, because the ticket assignee is not always the person who wrote the reply.
+- Reads the full email thread and scores it against the Customer Experience email rubric. Every score comes from what Assembly returned.
+- Writes one row per agent into the **Form Responses 1** tab of the [response workbook](https://docs.google.com/spreadsheets/d/1mWE0GQgmk400STrZ6FiFZDjmcTFzXy4xSVTG70saCFM/edit), directly after the last populated row.
+- Fills the calculated columns **AB through AQ** for each new row with the same formulas used in earlier rows.
+- Reads everything back from the sheet to confirm the stored values reproduce the score.
+- Sends a summary notification and ends with a final report, a consolidated human-review list, the tickets awaiting closure, and a survey values block.
+
+<Danger>
+  Claude never emails or messages an agent, never changes a ticket, and never closes an Assembly ticket. Closing tickets is a human step (see Step 5).
+</Danger>
+
+<Warning>
+  **Column AR is left blank on purpose.** AR looks up the agent's email address, and filling it sends the results to the agent. The team has not turned that on yet, so Claude does not fill it. Do not fill AR on Claude's rows unless Quality leadership has said the agent notification is ready.
+</Warning>
+
+### Who owns each column
+
+| Column(s) | Filled by | What you do |
+| --- | --- | --- |
+| A–D (timestamp, agent, auditor, ticket link) | Claude | Spot-check that the ticket link opens the right email |
+| E, F, G, H, K, L, N, P, S, T (rubric answers: Yes / No / Not applicable) | Claude | **Validate**, especially any answer flagged for review |
+| I (strengths) | Claude | Check it explains a real customer-service behavior, not just a completed task |
+| J (improvements and **Human verification** lines) | Claude | **Work through every Human verification line** |
+| O (escalation or shout-out) | Claude, only when a criterion is clearly met | Confirm it is warranted |
+| M, Q, R | Blank | Leave blank |
+| AB–AI, AP–AQ (calculated) | Claude (formulas) | Check there are no errors |
+| AJ–AO, AR–BI | Not filled by Claude | Leave as is |
+
+### Step by step guide
+
+#### Step 1 - Confirm the run completed
+
+1. Open the **Form Responses 1** tab and look at the rows after the last row from the previous week. There should be one row per scored agent, with no blank row in between.
+2. Open the run's notification or final report. It lists each agent's result code, scores, agents that were not scored, and the human-review list.
+
+<Tip>
+  Agents can be not scored without the run failing. `NOT_SCORED_NO_SAMPLE` means no email signed by that agent was found in the window. `NOT_SCORED_AMBIGUOUS_AGENT_NAME` means the signature matches more than one agent (for example a shared first name), so Claude would not guess. Audit those agents manually if you need coverage this week.
+</Tip>
+
+#### Step 2 - Spot-check the sample
+
+1. Open the ticket link in column D for each new row.
+2. Confirm the email was written by the agent in column B and falls in the audit window.
+3. If Claude picked the wrong ticket or the wrong agent, tell Jennifer Lye. Do not silently replace the row.
+
+#### Step 3 - Work the human-review list
+
+Claude only sees the customer-visible thread. Anything that depends on internal notes, Latchel Console, or a call that isn't in the email is flagged instead of guessed. A flag appears two ways:
+
+- A line starting **Human verification:** at the end of column J.
+- An entry in the run's consolidated human-review list.
+
+For each flag:
+
+1. Open the ticket and the related work order, and check the specific item the line names (for example, whether an internal note was added, who sent an unsigned earlier reply, or whether a vendor's cancellation was routed correctly).
+2. If the original answer holds, no change is needed.
+3. If the evidence changes an answer, update the rubric cell and the matching text in column J so the written feedback and the Yes/No answers agree. Every **No** needs a matching improvement item in column J.
+4. Check that the calculated score in column AH still reflects the corrected answers.
+
+<Note>
+  **Not applicable** means the behavior was genuinely not required for that email. It is never used when evidence is missing. Column N (internal notes) is usually Not applicable with a Human verification line because internal notes are not visible to Claude.
+</Note>
+
+#### Step 4 - Check borderline scores and templates
+
+The run report may include these warnings:
+
+- **`WARNING_BORDERLINE_SCORE`**: a rubric answer could reasonably be Yes or No, and the choice changes the score. Decide the correct answer and, if needed, update the cell and column J.
+- **`WARNING_TEMPLATE_UNMATCHED`**: the agent wrote from scratch and no approved template fit the situation. Confirm the reply was appropriate. If the same situation keeps appearing, raise it so a template can be considered.
+- **`WARNING_HUMAN_REVIEW`**: at least one item needs a person to confirm it. See Step 3.
+
+#### Step 5 - Close out
+
+1. Close the Assembly tickets listed under "tickets awaiting closure" in the final report, if they are still open.
+2. Use the validated rows for agent coaching and the normal Customer Experience reporting.
+3. Once the team is ready to send results to agents, fill column AR for the validated rows as a deliberate step (see the warning above).
+
+### Correcting Claude's mistakes
+
+- Fix the cell directly in the sheet. Claude only appends new rows each week and does not rewrite earlier weeks.
+- Do not delete a row to "redo" it. Correct it in place so the sheet and the duplicate check by ticket link stay accurate.
+- If you see the same mistake more than once (for example a rubric item that is repeatedly scored the wrong way), tell **Jennifer Lye** so Claude's instructions can be updated.
+- Never paste customer emails or phone numbers into Slack. Use the ticket number.
+
+## If You Think This SOP Could Be Improved...
+
+Noticed something clunky or confusing in this process, or had a situation that wasn't covered here? Share your suggestion in the [SOP Feedback Form](https://slack.com/shortcuts/Ft07C0TDU4N9/9439ee41aae76a4a602b6c186ce4a6cd) or tell your manager.
