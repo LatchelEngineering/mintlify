@@ -1,0 +1,147 @@
+---
+title: "SOP: Validating AI Agent's Weekly CSAT QA Review"
+sidebarTitle: "Validating Claude's CSAT QA Review"
+description: "How Quality associates verify the CSAT review Claude runs every Monday, what to fill in, and how to close out each callout."
+icon:
+  name: "bilibili"
+  style: "regular"
+  library: "fontawesome"
+---
+
+## Purpose
+
+<Note>
+  **Purpose of this document**
+
+  Every Monday morning, Claude (Latchel's AI agent) runs the weekly Service Ops CSAT review automatically. It logs each new Typeform response in the **QA Review** tab, flags investigations, posts SDDIs and a summary to Slack, and updates the Customer Churn '26 spreadsheet. Claude does the first pass; **the Quality team is the human verification step.** This SOP explains what Claude produces, how to validate it, which columns you own, and how to close out each callout.
+</Note>
+
+<Note>
+  **Who should read this document?**
+
+  Quality Associates and Managers
+</Note>
+
+## Content
+
+### Background and Deviation Guidelines
+
+<Note>
+  **What This Process Is Trying to Solve:**
+
+  Claude speeds up the CSAT review by doing the lookups (BigQuery, Wavelength, Slack) and the first categorization. But Claude can misread a comment, miss context, or pick the wrong category. A Quality associate validates its output before anyone acts on it, so the data we report is accurate and every customer callout is reviewed by a person who decides the right next step.
+</Note>
+
+<Warning>
+  **When to break this SOP**
+
+  - Claude's run fails or doesn't post by mid-morning Monday. Tell Jennifer Lye and run the review manually using [How to: Update and Report CSAT Feedback](/latchel-admin/Service-Operations/Quality-Program/How-to-Update-and-Report-CSAT-Feedback).
+  - You find an emergency or safety issue Claude didn't flag. Escalate it right away; don't wait for the weekly cycle.
+</Warning>
+
+### What Claude does every Monday
+
+Claude runs at about **7:48 AM PT** every Monday and:
+
+- Adds one row per new survey response to the **QA Review** tab of the [Ops CSAT Results](https://docs.google.com/spreadsheets/d/1YW7plF1nwkS-I2U1DyAmHWsDoR3uojEY0Pss2DA-QGU/edit#gid=0) sheet (columns A–Z). Each new row has today's date in **column Y (Reviewed on)**.
+- Looks up identifiable customers (only when they gave an email or WO number) in BigQuery and Wavelength, and writes what it found in **column Q (Investigation notes)**.
+- Posts an SDDI to **#ps-dd-sddi** for each row that needs one (L = Yes), and links the post in column Z.
+- Moves AI/Lucia feedback to the Lucia CSAT sheet.
+- Posts one summary to **#svc-ops-sync**.
+- Fills the CSAT rows (57–65) for the week that just ended in the **Customer Churn '26** tab of Svc Operations Team Level Metrics.
+
+<Danger>
+  Claude never contacts customers, never decides who should contact them, and never opens ASM tickets. Those decisions belong to people.
+</Danger>
+
+### Who owns each column
+
+| Column(s) | Filled by | What you do |
+| --- | --- | --- |
+| A–F, R–U, W–Y | Claude (copied or looked up) | Spot-check only |
+| G–K (associate feedback, theme, Ops controllable) | Claude | **Validate and correct** |
+| L–M (SDDI needed, priority) | Claude | **Validate** |
+| N (ASM link) | Product Support | Leave as is |
+| O–P (product opportunity) | Claude | **Validate** |
+| Q (Investigation notes) | Claude | **Validate the facts** |
+| V (Route to) | Claude | **Validate** |
+| Z (SDDI Slack post) | Claude | Leave as is |
+| **AA (Quality review status)** | **Quality** | Set to "Resolved" when your review is done |
+
+### Step by step guide
+
+#### Step 1 - Open Monday's output
+
+1. Open the Claude summary in **#svc-ops-sync**. Its sections are: 1. Associate feedback, 2. Product feedback, 3. Investigations required (SDDI and Quality to review), 4. Investigations without an ASM link, 5. Other routing, and 6. Actionable but untraceable.
+2. Open the **QA Review** tab and filter **column Y (Reviewed on)** to today's date. These are the rows to validate.
+
+#### Step 2 - Validate the categorization on every new row
+
+1. Read the feedback in **column A**.
+2. Check **column G**: is it about how a Latchel associate handled the interaction? Blank feedback is always "Yes".
+3. Check **column H (Theme)** against the comment.
+4. Check **column I (Ops Controllable / Non-Ops Controllable)**.
+   - Ops Controllable: something Service Ops can change through process, training or resources.
+   - Non-Ops Controllable: PM decisions, vendor delays or quality, payments, platform issues.
+5. Check **columns J and K** for associate feedback. If K names an associate with negative, Ops-controllable feedback, report it in **#svc-ops-feedback** if it's valid.
+6. If any value is wrong, overwrite the cell with the correct value.
+
+<Warning>
+  Column I feeds the Customer Churn '26 spreadsheet. If you change I on a row, recount rows 57, 58, 60 and 61 for that week's column and correct them.
+</Warning>
+
+#### Step 3 - Validate the investigation notes (column Q)
+
+1. For each row with notes in **column Q**, open the WO in the admin app.
+2. Confirm the WO number, state, days in state and PM company match what Claude wrote.
+3. If something is wrong or out of date, correct column Q.
+
+<Tip>
+  Claude's notes are a snapshot from Monday morning, and the WO may have moved since. If they differ, go with what you see in the admin app.
+</Tip>
+
+#### Step 4 - Validate SDDIs (L = Yes)
+
+1. Open each SDDI linked in **column Z** (#ps-dd-sddi).
+2. Confirm an SDDI is warranted: open emergency, WO stalled 14+ days or stuck in Finding Service Provider / Needs Approval / Waiting for PM, repeat requests, or a missed appointment.
+3. Confirm the priority in **column M** (P1 Emergency, P2 Stalled/Repeat, P3 Investigate).
+4. If the SDDI or its priority is wrong, reply in the #ps-dd-sddi thread with the correction and update L/M in the sheet.
+
+#### Step 5 - Review "Quality to review" callouts
+
+Rows with **V = "Quality to review"** are traceable callouts that don't need an SDDI (for example, already rescued, WO moving normally, or the issue isn't clear). They are flagged in the summary under **Quality to review (no SDDI)**. Claude only lists the facts and what it couldn't verify; it does not recommend next steps.
+
+1. Validate the facts in column Q against the WO and any related ASM ticket.
+2. Decide whether anyone needs to contact the customer.
+   - If yes, escalate to the right team (usually **Ops Support**) using your normal escalation process.
+   - If no, nothing else is needed.
+3. Add a short note at the end of **column Q** with your decision (for example, "QA: visit confirmed completed 10/19, no contact needed" or "QA: escalated to Ops Support").
+4. Set **column AA** to **"Resolved"**.
+
+<Danger>
+  Contact with customers for investigations is by email only. Never call a customer for a CSAT investigation.
+</Danger>
+
+#### Step 6 - Check product feedback and routing
+
+1. For each row with **O = YES**, confirm the **column P** summary describes a real product issue. Product Support routes these per [SOP: Reviewing and Categorizing Product and Work Order Feedback via Associate CSAT](/latchel-admin/Service-Operations/Quality-Program/SOP-Reviewing-and-Categorizing-Product-and-Work-Order-Feedback-via-Associate-CSAT).
+2. Confirm **column V (Route to)** is right for every row. Rows routed to "Lucia/AI sheet" should also appear on the Lucia CSAT sheet.
+
+#### Step 7 - Close out your review
+
+1. Set **column AA** to **"Resolved"** on every row you reviewed that needed an action: SDDI rows (once validated), "Quality to review" rows, Billing/Payments rows and rows with associate feedback.
+2. Leave AA blank on any row you haven't finished, so it stays visible as open.
+
+<Warning>
+  Claude never writes to column AA, so anything you set there stays as you left it.
+</Warning>
+
+### Correcting Claude's mistakes
+
+- Fix the cell directly in the sheet. Claude doesn't change earlier weeks' rows on later runs (except obvious errors, which it calls out in the Slack summary).
+- If you see the same mistake more than once (for example, a type of comment that keeps getting the wrong theme), tell **Jennifer Lye** so Claude's instructions can be updated.
+- Never paste customer emails or phone numbers into #svc-ops-sync. Use the customer name and WO number.
+
+## If You Think This SOP Could Be Improved...
+
+Noticed something clunky or confusing in this process, or had a situation that wasn't covered here? Share your suggestion in the [SOP Feedback Form](https://slack.com/shortcuts/Ft07C0TDU4N9/9439ee41aae76a4a602b6c186ce4a6cd) or tell your manager.

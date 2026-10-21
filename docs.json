@@ -748,7 +748,8 @@
                             "group": "How to: Update and Report CSAT Feedback",
                             "pages": [
                               "latchel-admin/Service-Operations/Quality-Program/How-to-Update-and-Report-CSAT-Feedback",
-                              "latchel-admin/Service-Operations/Quality-Program/SOP-Reviewing-and-Categorizing-Product-and-Work-Order-Feedback-via-Associate-CSAT"
+                              "latchel-admin/Service-Operations/Quality-Program/SOP-Reviewing-and-Categorizing-Product-and-Work-Order-Feedback-via-Associate-CSAT",
+                              "latchel-admin/Service-Operations/Quality-Program/sop-validating-ai-agents-weekly-csat-qa-review"
                             ]
                           },
                           "latchel-admin/Service-Operations/Quality-Program/Work-Order-Audit-Weekly-Reporting",
