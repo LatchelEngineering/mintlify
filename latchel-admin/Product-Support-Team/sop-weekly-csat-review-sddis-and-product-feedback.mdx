@@ -1,0 +1,141 @@
+---
+title: "SOP: Weekly CSAT Review - SDDIs and Product Feedback"
+sidebarTitle: "CSAT QA Review: SDDIs & Product Feedback"
+description: "Product Support's part of the weekly Service Ops CSAT review that Claude runs every Monday: validating and working SDDIs, and routing product feedback."
+---
+
+## Purpose
+
+<Note>
+  **Purpose of this document**
+
+  Every Monday morning, Claude (Latchel's AI assistant) runs the weekly Service Ops CSAT review. It logs each new survey response in the **QA Review** tab, flags SDDIs and product feedback, and posts to Slack. Ownership is split:
+
+  - **Product Support** owns **SDDIs** and **product feedback** (this SOP).
+  - **Quality** owns associate feedback and "Quality to review" callouts. See [SOP: Validating AI Agent's Weekly CSAT QA Review](/latchel-admin/Service-Operations/Quality-Program/sop-validating-ai-agents-weekly-csat-qa-review).
+</Note>
+
+<Note>
+  **Who should read this document?**
+
+  Product Support Associates and the Product Support Manager
+</Note>
+
+## Content
+
+### Background and Deviation Guidelines
+
+<Note>
+  **What This Process Is Trying to Solve:**
+
+  Claude does the first pass: it reads the feedback, looks up the customer and work order (only when they gave an email or WO number), and flags what looks like an SDDI or a product issue. Product Support validates those flags, opens the investigation and routes the product feedback, so every low-score callout with a real maintenance problem gets a person on it and every product issue reaches the Product team.
+</Note>
+
+<Warning>
+  **When to break this SOP**
+
+  - A P1 - Emergency SDDI comes in. Act the same day using the Urgent Save steps in [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets); don't wait for the ASM ticket.
+  - Claude's run fails or doesn't post on Monday. Review the [Ops CSAT Results](https://docs.google.com/spreadsheets/d/1YW7plF1nwkS-I2U1DyAmHWsDoR3uojEY0Pss2DA-QGU/edit#gid=0) sheet manually.
+</Warning>
+
+### What Claude produces for Product Support
+
+At about **7:48 AM PT** every Monday, Claude:
+
+- Adds one row per new response to the **QA Review** tab of [Ops CSAT Results](https://docs.google.com/spreadsheets/d/1YW7plF1nwkS-I2U1DyAmHWsDoR3uojEY0Pss2DA-QGU/edit#gid=0).
+- For each row it thinks needs an SDDI (**L = Yes**), posts a message in `#ps-dd-sddi` in the SDDI format (Feedback Type "CSAT Review", user type, email, WO link, company, feedback, score, priority and its initial review) and links that post in **column Z**.
+- Flags product feedback with **O = YES** and a one- or two-sentence summary in **column P**.
+- Posts a summary in `#svc-ops-sync`. Section 3 lists new SDDIs, section 2 lists product feedback, and section 4 lists every SDDI still missing an ASM link, tagging Maddie.
+
+<Warning>
+  Claude's `#ps-dd-sddi` posts do **not** create an Assembly ticket. Claude also never opens tickets or contacts customers. A Product Support associate creates the ASM ticket.
+</Warning>
+
+### Columns Product Support owns
+
+| Column | What it is | Your action |
+| --- | --- | --- |
+| L | SDDI needed? (Yes/No) | Validate; change if wrong |
+| M | SDDI priority (P1 / P2 / P3) | Validate; change if wrong |
+| N | ASM link | **Paste the ASM ticket link** |
+| O | Product opportunity? (YES/No) | Validate; change if wrong |
+| P | Product opportunity summary | Validate; add the `#feature-requests` or bug ticket link at the end |
+| Q | Investigation notes | Read; correct facts if wrong |
+| Z | `#ps-dd-sddi` post | Leave as is |
+
+Leave **column AA (Quality review status)** to the Quality team.
+
+### SDDI priorities
+
+| Priority | Meaning | Act |
+| --- | --- | --- |
+| **P1 - Emergency** | Open emergency or habitability issue: no heat/AC in extreme temps, active leak, no water, lockout, safety | Same day |
+| **P2 - Stalled/Repeat** | Non-emergency WO stuck (no state change 14+ days, or stuck in Finding Service Provider / Needs Approval / Waiting for PM) or reported repeatedly | This week |
+| **P3 - Investigate** | Unclear or lower impact, including vendor payment complaints from an identifiable vendor | When there's capacity |
+
+### Step by step guide
+
+#### Step 1 - Pick up Monday's SDDIs
+
+1. Open the Claude summary in `#svc-ops-sync` and go to **3. Investigations required → SDDI (Product Support)**. P1s are listed first.
+2. Open each linked `#ps-dd-sddi` post (also in **column Z** of the QA Review tab).
+
+#### Step 2 - Validate the SDDI
+
+1. Open the WO from the **WO Link** in the post and check its current state and history.
+2. Confirm an SDDI is warranted using **When an SDDI Is Required** in [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets).
+3. Confirm the priority against the table above.
+4. If Claude got it wrong:
+   1. Update **L** and/or **M** in the QA Review tab.
+   2. Reply in the `#ps-dd-sddi` thread with the correction (for example, "Not an SDDI: WO completed 10/18").
+   3. If it's not an SDDI, stop here.
+
+<Tip>
+  Claude's notes are a snapshot from Monday morning, and the WO may have moved since. If they differ, go with what you see in the admin app.
+</Tip>
+
+#### Step 3 - Open the ASM ticket and work the SDDI
+
+1. Create the ASM ticket for the SDDI in the **PS Deep Dive Tickets Team** space, using Feedback Type **CSAT**.
+2. Paste the ASM ticket link into **column N** of the QA Review tab.
+3. Reply in the `#ps-dd-sddi` thread with the ASM link so the post and ticket are connected.
+4. Work the SDDI per [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets): document findings, determine WO status, escalate open WOs and communicate findings.
+
+<Warning>
+  Until column N has a link, the SDDI is listed in section 4 of every Monday summary and Maddie is tagged. Paste the link as soon as the ticket exists.
+</Warning>
+
+<Danger>
+  Contact with customers for investigations is by email only. Never call a customer for a CSAT investigation.
+</Danger>
+
+#### Step 4 - Route product feedback
+
+1. In the QA Review tab, filter **column O** to **YES** and **column Y (Reviewed on)** to Monday's date.
+2. Read the feedback (column A) and Claude's summary (column P). Confirm it's a real product issue: a feature request, bug, notification or communication design problem, or app/portal friction.
+   - If it isn't, change **O** to **No**.
+3. Check whether a request for the same problem already exists in `#feature-requests`.
+   - If it does, add the new example to that thread instead of opening a new one.
+4. If it's new, submit it:
+   - **Feature request:** use the **Feature Request** form per [How to Handle: Feature Requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests).
+   - **Bug:** open a bug ticket through the standard Product bug process.
+5. Paste the `#feature-requests` post link or bug ticket link at the end of **column P**.
+
+<Tip>
+  Claude groups repeats in section 2 of the summary (for example, "notification overload x3"). A repeat is a good reason to add examples to an existing request rather than open a new one.
+</Tip>
+
+#### Step 5 - Weekly check
+
+1. Before the next Monday run, confirm every row with **L = Yes** has an ASM link in **column N**.
+2. Confirm every row with **O = YES** has a product link at the end of **column P**.
+
+### Correcting Claude's mistakes
+
+- Fix the cell directly in the QA Review tab. Claude doesn't change earlier weeks' rows on later runs (except obvious errors, which it calls out in the summary).
+- If Claude keeps making the same mistake (for example, flagging SDDIs for WOs that are moving normally), tell **Jennifer Lye** so its instructions can be updated.
+- Never paste customer emails or phone numbers into `#svc-ops-sync`. Use the customer name and WO number.
+
+## If You Think This SOP Could Be Improved...
+
+Noticed something clunky or confusing in this process, or had a situation that wasn't covered here? Share your suggestion in the [SOP Feedback Form](https://slack.com/shortcuts/Ft07C0TDU4N9/9439ee41aae76a4a602b6c186ce4a6cd) or tell your manager.
