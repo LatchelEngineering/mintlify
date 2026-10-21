@@ -257,7 +257,8 @@
                           "s/topic/0TO5e000000h9wqGAA/How-to-Terminate-the-Gmail-Integration"
                         ],
                         "public": true
-                      }
+                      },
+                      "s/topic/0TO5e000000h9wqGAA/automatic-unlinking-of-former-residents"
                     ]
                   },
                   {
@@ -546,7 +547,8 @@
                       "s/topic/0TO5e000000h9wpGAA/How-Service-Providers-View-their-Work-Order-Calendar",
                       "s/topic/0TO5e000000h9wpGAA/How-to-Move-Work-Orders-Forward-When-Your-Action-is-Required",
                       "s/topic/0TO5e000000h9wpGAA/How-to-Reject-a-Work-Order-Service-Provider",
-                      "s/topic/0TO5e000000h9wpGAA/Clock-in-and-clock-out-on-work-orders"
+                      "s/topic/0TO5e000000h9wpGAA/Clock-in-and-clock-out-on-work-orders",
+                      "s/topic/0TO5e000000h9wpGAA/how-to-call-a-resident-from-an-on-call-alert"
                     ]
                   },
                   {
