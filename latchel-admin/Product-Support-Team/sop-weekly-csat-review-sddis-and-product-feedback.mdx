@@ -1,8 +1,9 @@
 ---
 title: "SOP: Weekly CSAT Review - SDDIs and Product Feedback"
-groups: ["latchel"]
 sidebarTitle: "CSAT QA Review: SDDIs & Product Feedback"
 description: "Product Support's part of the weekly Service Ops CSAT review that Claude runs every Monday: validating and working SDDIs, and routing product feedback."
+groups:
+  - "latchel"
 icon:
   name: "bilibili"
   style: "regular"
@@ -50,11 +51,12 @@ At about **7:48 AM PT** every Monday, Claude:
 - Adds one row per new response to the **QA Review** tab of [Ops CSAT Results](https://docs.google.com/spreadsheets/d/1YW7plF1nwkS-I2U1DyAmHWsDoR3uojEY0Pss2DA-QGU/edit#gid=0).
 - For each row it thinks needs an SDDI (**L = Yes**), posts a message in `#ps-dd-sddi` in the SDDI format (Feedback Type "CSAT Review", user type, email, WO link, company, feedback, score, priority and its initial review) and links that post in **column Z**.
 - Flags product feedback with **O = YES** and a one- or two-sentence summary in **column P**.
-- Posts a summary in `#svc-ops-sync`. Section 3 lists new SDDIs, section 2 lists product feedback, and section 4 lists every SDDI still missing an ASM link, tagging Maddie.
+- Posts a summary in `#svc-ops-sync`. Section 3 lists new SDDIs, section 2 lists product feedback, and section 4 lists any SDDI whose ASM ticket Claude couldn't find, tagging Maddie.
+- Finds the ASM ticket each `#ps-dd-sddi` post creates automatically (using Wavelength) and pastes its link into **column N**.
 
-<Warning>
-  Claude's `#ps-dd-sddi` posts do **not** create an Assembly ticket. Claude also never opens tickets or contacts customers. A Product Support associate creates the ASM ticket.
-</Warning>
+<Note>
+  Every post in `#ps-dd-sddi`, including Claude's, automatically creates an ASM ticket in the **PS Deep Dive Tickets Team** space. Don't create a second ticket. Claude never contacts customers.
+</Note>
 
 ### Columns Product Support owns
 
@@ -62,7 +64,7 @@ At about **7:48 AM PT** every Monday, Claude:
 | --- | --- | --- |
 | L | SDDI needed? (Yes/No) | Validate; change if wrong |
 | M | SDDI priority (P1 / P2 / P3) | Validate; change if wrong |
-| N | ASM link | **Paste the ASM ticket link** |
+| N | ASM link | Filled by Claude; paste it yourself only if Claude couldn't find it |
 | O | Product opportunity? (YES/No) | Validate; change if wrong |
 | P | Product opportunity summary | Validate; add the `#feature-requests` or bug ticket link at the end |
 | Q | Investigation notes | Read; correct facts if wrong |
@@ -99,15 +101,13 @@ Leave **column AA (Quality review status)** to the Quality team.
   Claude's notes are a snapshot from Monday morning, and the WO may have moved since. If they differ, go with what you see in the admin app.
 </Tip>
 
-#### Step 3 - Open the ASM ticket and work the SDDI
+#### Step 3 - Work the SDDI from its ASM ticket
 
-1. Create the ASM ticket for the SDDI in the **PS Deep Dive Tickets Team** space, using Feedback Type **CSAT**.
-2. Paste the ASM ticket link into **column N** of the QA Review tab.
-3. Reply in the `#ps-dd-sddi` thread with the ASM link so the post and ticket are connected.
-4. Work the SDDI per [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets): document findings, determine WO status, escalate open WOs and communicate findings.
+1. Open the ASM ticket linked in **column N** of the QA Review tab (also linked in the summary). It was created automatically from the `#ps-dd-sddi` post. Don't create a second ticket.
+2. Work the SDDI per [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets): document findings, determine WO status, escalate open WOs and communicate findings.
 
 <Warning>
-  Until column N has a link, the SDDI is listed in section 4 of every Monday summary and Maddie is tagged. Paste the link as soon as the ticket exists.
+  If column N is blank, Claude couldn't find the ticket. The SDDI is listed in section 4 of the summary and Maddie is tagged. Find the ticket in Assembly (search for the WO number or feedback text) and paste its link into column N.
 </Warning>
 
 <Danger>
@@ -132,7 +132,7 @@ Leave **column AA (Quality review status)** to the Quality team.
 
 #### Step 5 - Weekly check
 
-1. Before the next Monday run, confirm every row with **L = Yes** has an ASM link in **column N**.
+1. Before the next Monday run, confirm every row with **L = Yes** has an ASM link in **column N** and that its ticket is being worked.
 2. Confirm every row with **O = YES** has a product link at the end of **column P**.
 
 ### Correcting Claude's mistakes
