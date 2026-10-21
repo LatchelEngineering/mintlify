@@ -1,0 +1,96 @@
+---
+title: "Automatic Unlinking of Former Residents"
+description: "Learn how Latchel automatically unlinks residents who are no longer in your PMS, and how to download the list of unlinked residents."
+---
+
+<Danger>
+  Automatic unlinking currently works with **Yardi**, **Rentvine**, **Propertyware**, and **AppFolio** integrations. More property management software (PMS) integrations are coming soon. If you don't use one of these, this guide doesn't apply to you yet. Questions? Email [**success@latchel.com**](mailto:success@latchel.com).
+</Danger>
+
+No more former residents getting texts and calls about work orders at a home they've moved out of. Latchel now checks your resident list against your PMS every week and unlinks anyone your PMS no longer lists, so only your current residents are contacted about a unit's work orders.
+
+We built it to be careful. A resident is only unlinked after they've been missing from your PMS for three weekly checks in a row, and anyone who shows up again is relinked automatically.
+
+<Check>
+  **In other words:**
+
+  When someone moves out and drops off your PMS, Latchel unlinks them from the property for you. You can download a list of who was unlinked at any time.
+</Check>
+
+## **What This Feature Does**
+
+<CardGroup cols={2}>
+  <Card title="Weekly check" color="#ff9b8a" icon="calendar-check" iconType="duotone">
+    Every Monday, Latchel compares your residents in Latchel with the residents in your PMS.
+  </Card>
+
+  <Card title="Three strikes, not one" color="#7ed5d5" icon="shield-check" iconType="duotone">
+    A resident is unlinked only after they're missing from your PMS for three weekly checks in a row.
+  </Card>
+
+  <Card title="Automatic relinking" color="#7ed5d5" icon="link" iconType="duotone">
+    If an unlinked resident shows up in your PMS again, Latchel relinks them automatically.
+  </Card>
+
+  <Card title="Your manual residents stay put" color="#ff9b8a" icon="user-lock" iconType="duotone">
+    Residents you added by hand in Latchel are never unlinked by this check.
+  </Card>
+</CardGroup>
+
+## **How to Download the List of Unlinked Residents**
+
+<Steps>
+  <Step title="Open the Exports page." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Go to the **Exports** page in your Latchel dashboard.
+
+    {/* TODO: confirm the menu path to the Exports page from the Latchel dashboard */}
+  </Step>
+  <Step title="Find Deactivated Residents." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Scroll to **Deactivated Residents**. The description shows the date of the most recent weekly check.
+
+    {/* TODO: screenshot of the Exports page showing the Deactivated Residents row */}
+  </Step>
+  <Step title="Click Export." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Click **Export** next to **Deactivated Residents** to download the list of residents who were unlinked from their properties in the last weekly check.
+  </Step>
+</Steps>
+
+## **Things to Remember**
+
+<Note>
+  Keep your PMS up to date. Latchel uses your PMS as the source of truth, so a resident who is removed from your PMS by mistake will be unlinked after three weekly checks. Add them back in your PMS and Latchel relinks them automatically.
+</Note>
+
+<Tip>
+  If a weekly check would unlink more than 20% of your residents, Latchel holds those changes back so our team can review them first. Nothing is unlinked until then.
+</Tip>
+
+## **Frequently Asked Questions**
+
+<AccordionGroup>
+  <Accordion title="When does the check run?">
+    Every Monday. A resident is unlinked only after they've been missing from your PMS for three weekly checks in a row.
+  </Accordion>
+
+  <Accordion title="Will this remove residents I added manually in Latchel?">
+    No. Residents added manually in Latchel are never touched by this check.
+  </Accordion>
+
+  <Accordion title="What if a resident was unlinked by mistake?">
+    Make sure they're listed in your PMS. Anyone who reappears in your PMS is relinked automatically.
+  </Accordion>
+
+  <Accordion title="Which integrations does this work with?">
+    Yardi, Rentvine, Propertyware, and AppFolio. More PMS integrations are coming soon.
+  </Accordion>
+</AccordionGroup>
+
+**Related guides**
+
+<Card title="How Latchel Integration Works" color="#ff9b8a" icon="arrow-right-arrow-left" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/How-Latchel-Integration-Works">
+  Get a high-level view of how Latchel connects with your property management system.
+</Card>
+
+<Card title="How to Add & Manage Residents" color="#ff9b8a" icon="house-chimney-user" iconType="duotone" horizontal href="/s/topic/0TO5e000000h9wqGAA/How-to-Add-Manage-Residents">
+  Add residents, update their contact info, and manage move dates.
+</Card>

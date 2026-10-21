@@ -32,7 +32,7 @@ You can configure separate routing rules for different call categories — for e
 
 This means a single Latchel-assigned number can intelligently handle many different caller types without manual intervention, sending each to the right place based on why they called.
 
-Category routing is configured in your non-resident intake settings. Contact [success@latchel.com](mailto:success@latchel.com) to set up or update your categories and routing rules.
+You set up category routing yourself in your non-resident intake settings, under **Account Settings > Intake Settings > Non-Resident Intake**. Follow the steps below to add or update your categories and routing rules. Need a hand? Email [**success@latchel.com**](mailto:success@latchel.com).
 
 ### **Routing Options**
 
@@ -48,7 +48,7 @@ Live-line forwarding is now available as a routing destination. When a call's ca
 <Callout icon="phone-arrow-up-right" iconType="duotone" color="#b19cf8">
   **When it triggers:** Forwarding happens automatically when the AI classifies the call into a category you've set up with a live-transfer destination.
 
-  **Configurability:** Live-line forwarding is configured per account in your non-resident intake settings. Contact [success@latchel.com](mailto:success@latchel.com) to set up or update your forwarding number and category rules.
+  **Configurability:** You set up live-line forwarding yourself in your non-resident intake settings. Choose **Forward the live call** as a category's destination and enter the number to transfer calls to. See the steps below.
 
   **Transfer notifications:** The system sends a notification indicating whether the live transfer succeeded or failed, so your team always knows what happened.
 </Callout>
@@ -86,7 +86,7 @@ The AI Virtual Receptionist supports both **English** and **Spanish**.
     </Frame>
   </Step>
   <Step title="Set a destination for each category. " icon="4" iconType="duotone" titleSize="h4">
-    For each category, select how calls in that category should be handled. You can choose an existing destination or click `Create new destination`.
+    For each category, select how calls in that category should be handled. Pick a destination you've already set up from the list, or click **Create new destination** to add one. If you haven't created any destinations yet, start with **Create new destination**. You'll see options like sending an email, creating a Latchel task, or sending a Slack message.
 
     - **Deliver post-call notifications** via email, SMS, Latchel task, Slack notification, or webhook. You can also choose to notify a specific team or team member from your company.
     - **Forward the live call** to transfer the caller to a designated phone number.
@@ -110,3 +110,9 @@ The AI Virtual Receptionist supports both **English** and **Spanish**.
     </Frame>
   </Step>
 </Steps>
+
+### **Things to Remember**
+
+<Note>
+  Calls are routed by **call category** only. Latchel can't send the same category to different teams based on the time of day. If your own phone system already routes calls by time of day (without callers pressing a key), you can forward the live call to that number and let your system take it from there.
+</Note>
