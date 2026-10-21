@@ -1,12 +1,13 @@
 ---
 title: "SOP: Validating AI Agent's Weekly CSAT QA Review"
-groups: ["latchel"]
 sidebarTitle: "Validating Claude's CSAT QA Review"
 description: "How Quality associates verify the CSAT review Claude runs every Monday, what to fill in, and how to close out each callout."
 icon:
   name: "bilibili"
   style: "regular"
   library: "fontawesome"
+groups:
+  - "latchel"
 ---
 
 ## Purpose
@@ -61,9 +62,9 @@ Claude runs at about **7:48 AM PT** every Monday and:
 | --- | --- | --- |
 | A–F, R–U, W–Y | Claude (copied or looked up) | Spot-check only |
 | G–K (associate feedback, theme, Ops controllable) | Claude | **Validate and correct** |
-| L–M (SDDI needed, priority) | Claude | **Validate** |
+| L–M (SDDI needed, priority) | Claude; validated by Product Support | Leave to Product Support |
 | N (ASM link) | Product Support | Leave as is |
-| O–P (product opportunity) | Claude | **Validate** |
+| O–P (product opportunity) | Claude; validated by Product Support | Leave to Product Support |
 | Q (Investigation notes) | Claude | **Validate the facts** |
 | V (Route to) | Claude | **Validate** |
 | Z (SDDI Slack post) | Claude | Leave as is |
@@ -101,12 +102,11 @@ Claude runs at about **7:48 AM PT** every Monday and:
   Claude's notes are a snapshot from Monday morning, and the WO may have moved since. If they differ, go with what you see in the admin app.
 </Tip>
 
-#### Step 4 - Validate SDDIs (L = Yes)
+#### Step 4 - SDDIs and product feedback (Product Support)
 
-1. Open each SDDI linked in **column Z** (#ps-dd-sddi).
-2. Confirm an SDDI is warranted: open emergency, WO stalled 14+ days or stuck in Finding Service Provider / Needs Approval / Waiting for PM, repeat requests, or a missed appointment.
-3. Confirm the priority in **column M** (P1 Emergency, P2 Stalled/Repeat, P3 Investigate).
-4. If the SDDI or its priority is wrong, reply in the #ps-dd-sddi thread with the correction and update L/M in the sheet.
+Product Support owns SDDIs (L = Yes) and product feedback (O = YES): validating them, opening ASM tickets and routing product feedback. See [SOP: Weekly CSAT QA Review - SDDIs and Product Feedback](/latchel-admin/Product-Support-Team/SOP-Weekly-CSAT-QA-Review-SDDIs-and-Product-Feedback).
+
+1. If you spot an SDDI that looks wrong, or a low score that should have been an SDDI, reply in the #ps-dd-sddi thread (or post there) so Product Support can review it.
 
 #### Step 5 - Review "Quality to review" callouts
 
@@ -123,14 +123,13 @@ Rows with **V = "Quality to review"** are traceable callouts that don't need an 
   Contact with customers for investigations is by email only. Never call a customer for a CSAT investigation.
 </Danger>
 
-#### Step 6 - Check product feedback and routing
+#### Step 6 - Check routing
 
-1. For each row with **O = YES**, confirm the **column P** summary describes a real product issue. Product Support routes these per [SOP: Reviewing and Categorizing Product and Work Order Feedback via Associate CSAT](/latchel-admin/Service-Operations/Quality-Program/SOP-Reviewing-and-Categorizing-Product-and-Work-Order-Feedback-via-Associate-CSAT).
-2. Confirm **column V (Route to)** is right for every row. Rows routed to "Lucia/AI sheet" should also appear on the Lucia CSAT sheet.
+1. Confirm **column V (Route to)** is right for every row. Rows routed to "Lucia/AI sheet" should also appear on the Lucia CSAT sheet.
 
 #### Step 7 - Close out your review
 
-1. Set **column AA** to **"Resolved"** on every row you reviewed that needed an action: SDDI rows (once validated), "Quality to review" rows, Billing/Payments rows and rows with associate feedback.
+1. Set **column AA** to **"Resolved"** on every row you reviewed that needed an action: "Quality to review" rows, Billing/Payments rows and rows with associate feedback.
 2. Leave AA blank on any row you haven't finished, so it stays visible as open.
 
 <Warning>
