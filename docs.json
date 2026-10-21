@@ -82,17 +82,17 @@
                       "s/topic/0TO5e000000h9wqGAA/voice-action",
                       "s/topic/0TO5e000000h9wqGAA/clock-in-clock-out",
                       "s/topic/0TO5e000000h9wqGAA/outbound-voice",
+                      "s/topic/0TO5e000000h9wqGAA/ai-messaging",
                       {
                         "group": "Intake Settings",
+                        "public": true,
                         "pages": [
                           "s/topic/0TO5e000000h9wqGAA/Introduction-to-Intake-Settings",
                           "s/topic/0TO5e000000h9wqGAA/Managing-Intake-Settings",
                           "s/topic/0TO5e000000h9wqGAA/intake-settings-rule-analyzer",
                           "s/topic/0TO5e000000h9wqGAA/intake-conversation-settings"
-                        ],
-                        "public": true
-                      },
-                      "s/topic/0TO5e000000h9wqGAA/ai-messaging"
+                        ]
+                      }
                     ],
                     "public": true
                   },
@@ -184,6 +184,7 @@
                     "pages": [
                       "s/topic/0TO5e000000h9wqGAA/Comprehensive-Integration-Guides",
                       "s/topic/0TO5e000000h9wqGAA/How-Latchel-Integration-Works",
+                      "s/topic/0TO5e000000h9wqGAA/automatic-unlinking-of-former-residents",
                       "s/topic/0TO5e000000h9wqGAA/How-to-Export-Reports-with-Reference-IDs",
                       {
                         "group": "Latchel Data Sync Extension",
@@ -258,8 +259,7 @@
                           "s/topic/0TO5e000000h9wqGAA/How-to-Terminate-the-Gmail-Integration"
                         ],
                         "public": true
-                      },
-                      "s/topic/0TO5e000000h9wqGAA/automatic-unlinking-of-former-residents"
+                      }
                     ]
                   },
                   {
@@ -478,12 +478,12 @@
                       "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Confirm-Completion-of-a-Work-Order",
                       "s/topic/0TO5e000000h9wrGAA/Rating-Completed-Maintenance-Request-Service",
                       "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Report-an-Incomplete-Request",
+                      "s/topic/0TO5e000000h9wrGAA/messaging-us-about-your-work-order",
                       "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-View-or-Update-Work-Orders",
                       "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Update-Maintenance-Schedule-Availability",
                       "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Add-Images-and-Files-on-a-Work-Order",
                       "s/topic/0TO5e000000h9wrGAA/Cancelling-A-Work-Order-Resident",
-                      "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Generate-Work-Order-Details-in-PDF",
-                      "s/topic/0TO5e000000h9wrGAA/messaging-us-about-your-work-order"
+                      "s/topic/0TO5e000000h9wrGAA/How-can-a-Resident-Generate-Work-Order-Details-in-PDF"
                     ]
                   },
                   {
@@ -549,9 +549,9 @@
                       "s/topic/0TO5e000000h9wpGAA/How-Service-Providers-View-their-Work-Order-Calendar",
                       "s/topic/0TO5e000000h9wpGAA/How-to-Move-Work-Orders-Forward-When-Your-Action-is-Required",
                       "s/topic/0TO5e000000h9wpGAA/How-to-Reject-a-Work-Order-Service-Provider",
+                      "s/topic/0TO5e000000h9wpGAA/messaging-us-about-a-work-order",
                       "s/topic/0TO5e000000h9wpGAA/Clock-in-and-clock-out-on-work-orders",
-                      "s/topic/0TO5e000000h9wpGAA/how-to-call-a-resident-from-an-on-call-alert",
-                      "s/topic/0TO5e000000h9wpGAA/messaging-us-about-a-work-order"
+                      "s/topic/0TO5e000000h9wpGAA/how-to-call-a-resident-from-an-on-call-alert"
                     ]
                   },
                   {
