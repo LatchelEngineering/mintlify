@@ -2389,12 +2389,12 @@
                   {
                     "group": "How To: Identify and Handle Past Due Subscription Invoices",
                     "pages": [
+                      "latchel-admin/accounts-receivable/How-To-Handle-Desire-to-Churn-Alerts",
                       "latchel-admin/accounts-receivable/How-To-Identify-and-Handle-Past-Due-Subscription-Invoices",
                       "latchel-admin/accounts-receivable/How-to-Create-the-Aging-and-Payment-Checker",
                       "latchel-admin/accounts-receivable/How-to-Set-Up-the-Non-Payment-Reminder-Banner"
                     ]
-                  },
-                  "latchel-admin/accounts-receivable/How-To-Handle-Desire-to-Churn-Alerts"
+                  }
                 ]
               },
               {
