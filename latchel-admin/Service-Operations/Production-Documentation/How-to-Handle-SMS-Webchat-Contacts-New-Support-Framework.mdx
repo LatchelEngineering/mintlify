@@ -25,7 +25,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
 </Note>
 
 <Note>
-  **Effective December 11, Latchel is officially launching Lucia (Assistant AI) for Residents.** To learn more about how conversations are transferred to a live Operations associate, please refer to the following link: [How to Handle an SMS/Webchat from Lucia](https://help.latchel.com/latchel-admin/Service-Operations/How-to-Handle-an-SMS/Webchat-from-Lucia).
+  **Resident and Service Provider messages are handled in Conversations; Property Manager and Owner texts and PM webchats stay in the legacy SMS icon.** On Latchel-managed work orders (and all work orders for Autopilot customers), Latchel AI (formerly Lucia) answers resident and SP messages first and transfers to a person when needed. Use the steps on this page to research and answer the request. Claim, reply and document resident/SP threads per [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta). The SMS/webchat mechanics on this page (assigning, closing the window, ending the conversation, Transcripts) apply to Property Manager/Owner SMS and PM webchat only.
 </Note>
 
 ## 📋New 4-Step Support Framework
@@ -66,7 +66,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
    3. Additionally, open the property profile because work orders might be requested by different residents for the same property. Those views will allow you to see all issues/jobs related to that person so you have a more complete picture of what is going on.
       1. If you are unable to find the work order in the profile view, check which filters are being applied and include all that is unchecked, for example, the work order could have been cancelled.
    4. Open the work order and check for WO status, recent notes and pending tasks.
-   5. Skim work order for prior email and SMS conversations to see if there were prior interactions for the same issue and if there is anything there that is not in the work order notes.
+   5. Skim the work order's **Conversations** tab and prior emails to see if there were prior interactions for the same issue and if there is anything there that is not in the work order notes.
       1. Refer to this [job-aid](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Understand-the-Existing-Work-Order#how-to-understand-the-existing-work-order) for details
    6. If there is no information that will help to answer the client’s question or resolve the issue on the WO, check also the email queue for emails related to this work order, resident, property manager, or address
    7. Once you’re able to answer the client's question:
@@ -139,12 +139,12 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
       1. When requesting photos during/following a call
       2. When sending a follow-up/update after a call
       3. Any other outbound communication in which the client didn’t respond or interact
-   3. Close the SMS window. (See: [↔ How to: Use Text Message and Webchat Functions (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support).
+   3. **PM/Owner SMS and PM webchat:** Close the SMS window (see [↔ How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console#step-5-how-to-close-the-text-message)). **Resident/SP Conversations:** there is no close step. Your reply keeps the thread handled.
 
 ### ❗Handling Unresponsive or Upset Client
 
 1. <u>If at any point during the conversation the client hasn’t responded after 3 minutes of your latest message, you may proceed with ending the conversation.</u>
-   1. **📝** **NOTE**: While waiting for a response, you’re expected to take on any other available conversations.
+   1. **📝** **NOTE**: While waiting for a response, you’re expected to take on any other available conversations. For resident/SP **Conversations**, there is no end step: send the wrap-up messages below and move on. If the customer writes again, the thread reopens as unhandled in **Team**. For PM/Owner SMS and PM webchat, close the conversation as usual after the wrap-up.
    2. Share the following messages:
       1. 💠 **Say something like**: _“It was my pleasure to message with you today. I will close our conversation now. Please feel free to contact us again in the future ,if you need help with anything else. Take care!”_
       2. 💠 **Say something like**: “_Thank you for contacting Latchel. Please take our brief survey to let us know how we did: [https://latchel.typeform.com/to/GpWKSIRP](https://latchel.typeform.com/to/GpWKSIRP)”_
@@ -158,7 +158,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
 
 1. Wrap-up the message
    1. [How to: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes)
-3. **📝** **NOTE:** It is no longer required to log the conversation manually on the Work Order since the transcript will be logged automatically by the system in the “Transcripts” section, but it is important to leave a detailed note on the Work Order if you updated it as a result of SMS/Webchat communication indicating why you took said action.
+3. **📝** **NOTE:** It is not required to log the conversation manually on the Work Order. PM/Owner SMS/Webchat transcripts are logged automatically, and resident/SP Conversations are saved in the WO **Conversations** tab (formerly Transcripts). It is important to leave a detailed note on the Work Order if you updated it as a result of SMS/Webchat or Conversations communication, indicating why you took said action.
 
 ### **Common Examples of PM-Reported Blockers**
 
@@ -187,6 +187,10 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
 </Accordion>
 
 <Accordion title="Q: What if a resident wants to submit a maintenance request via SMS?">
+  <Warning>
+    🛑 **NOTE**: Resident texts now arrive in **Conversations** (on Latchel-managed work orders, and all work orders for Autopilot customers, Latchel AI answers first). Follow [How to: Handle Resident Maintenance Requests via Text Intake](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Resident-Maintenance-Requests-via-Text-Intake) for the full process.
+  </Warning>
+
   1. **For registered residents:** Let them know they can submit work orders directly through their dashboard. Provide them with their dashboard link.
   2. 💠 **Say something like**: _"Hi [Resident Name]! You have a personal maintenance portal — no login needed. Here's your link: [Dashboard Link from Miscellaneous in resident profile]. If you'd rather do it here over text or prefer I give you a quick call, I'm happy to help that way too — just let me know!"_
   3. **For non-registered residents:** The call option via the Latchel-Assigned Phone Number can be provided.
@@ -207,7 +211,7 @@ You can "break" or deviate from the SOP for handling SMS/Webchat Contacts (New S
 3. **Owners and Landlords:** Owners and landlords do not have access to the Latchel interface. For these users, it may be necessary to take action on their behalf rather than guiding them to self-service.
 4. **Direct Intervention:** If the client prefers not to try self-service or walk through steps and explicitly requests you to take action for them, you may intervene directly after confirming permission.
 5. **No Relevant Help Guide:** If there is no help guide available for the action the client needs, you may take action on their behalf and submit a request to create a new help article.
-6. **Emergency Situations:** If a resident describes an emergency, property damage, or extreme habitability issue via SMS: do not simply redirect them. Create a work order immediately with whatever information is available. Troubleshooters will escalate to the PM following: Job Aid: PM Outbound Communication for Emergency WOs, and prioritize urgency over intake completeness. An incomplete work order escalated promptly is always better than a complete work order delayed.
+6. **Emergency Situations:** If a resident describes an emergency, property damage, or extreme habitability issue in a Conversation: do not simply redirect them. Create a work order immediately with whatever information is available. Troubleshooters will escalate to the PM following: Job Aid: PM Outbound Communication for Emergency WOs, and prioritize urgency over intake completeness. An incomplete work order escalated promptly is always better than a complete work order delayed.
 7. If there is a recent interaction (same day) from the Property Manager (PM) about the same inquiry and the PM has already been provided with the relevant help guide, there is no need to provide the help guide again. Instead, proceed to address their current question or concern directly.
 
 ## 💡 If You Think This SOP Could Be Improved...
