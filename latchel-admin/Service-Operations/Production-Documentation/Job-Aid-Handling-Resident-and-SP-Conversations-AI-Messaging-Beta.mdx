@@ -7,13 +7,13 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 ## 🧠 What This Process Is Trying to Solve
 
 <Note>
-  We want to prevent missed, delayed, or duplicated replies now that Resident and Service Provider texts are handled in Conversations for all customers. Property Manager and Owner texts and PM webchats stay in the legacy SMS icon. This job aid shows you how to claim and reply to inbound Conversations and how to send outbound messages, so that no two associates work the same thread and nothing sits unanswered.
+  We want to prevent missed, delayed, or duplicated replies now that text messages are handled in Conversations for all customers. Only PM web chats stay in the legacy SMS icon. This job aid shows you how to claim and reply to inbound Conversations and how to send outbound messages, so that no two associates work the same thread and nothing sits unanswered.
 </Note>
 
 <Info>
   🔔 Before You Start:
 
-  For **all customers**, resident and SP messages are in the **Conversations** icon. Property Manager and Owner texts and PM webchats stay in the legacy **SMS** icon and follow [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console). 
+  For all customers, text messages from residents, SPs, Property Managers and Owners are in the Conversations icon. Only PM web chats stay in the legacy SMS icon and follow How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console). Both have equal priority, so always work the oldest unhandled message first by timestamp, across both icons.[How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
 
   Both have **equal priority**, so always work the **oldest** unhandled message first by timestamp, across both icons.
 </Info>
@@ -21,7 +21,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 ![Conversations overview](/images/8499ca8c-4d9d-42b7-8c0f-dd450f236d90.png "Conversations overview")
 
 <Accordion title="Key terms">
-  - **Conversation** — A browser chat thread that residents and SPs open from a link in our SMS/email notifications. There is one thread per user per work order, and it is tagged to the WO automatically. Property Manager and Owner texts and PM webchats are not Conversations; they stay in the legacy SMS icon.
+  - **Conversation** — A browser chat thread that residents and SPs open from a link in our SMS/email notifications. There is one thread per user per work order, and it is tagged to the WO automatically. Property Manager and Owner texts are also in Conversations. PM web chats are not Conversations; they stay in the legacy SMS icon.
   - **Latchel AI** — The AI assistant (formerly Lucia). It answers first and transfers to a person when asked, or when it can't handle the query. Who it's transferred to depends on the WO's **managed_by**: **Managed by Latchel** → our **Team** queue; **Managed by PM** → the PM team on the WO is notified.
   - **Team** — New, unhandled Conversations for everyone. **My messages** — Conversations you've replied in or started.
   - **Mark as Handled** — Claims a thread and clears the unread indicator for everyone.
@@ -113,14 +113,14 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
     ![SP notification with conversation link](/images/683689ae-df61-4dab-9d09-28cd60b3a705.png "SP notification with conversation link")
   </Accordion>
   <Accordion title="Which customers are affected?">
-    All customers, for messages from **residents and SPs** only. Property Manager and Owner texts and PM webchats stay in the legacy **SMS** icon, with the same process as before (see [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console)).
+    All customers. Text messages from residents, SPs, Property Managers and Owners are in Conversations, and Latchel AI answers residents and SPs only. PM web chats stay in the legacy SMS icon, with the same process as before (see [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console)).
   </Accordion>
   <Accordion title="Which messages does Latchel AI handle, and which come to us?">
     Latchel AI only answers **resident and SP** messages, and only where it is active:
 
     - **Autopilot customers:** all resident and SP messages, during the free trial.
     - **All other customers:** only on **Latchel-managed** work orders. Messages on PM-managed work orders go straight to the PM's team.
-    - **Property Managers and Owners:** never. Their texts and webchats stay in the legacy SMS icon.
+    - **Property Managers and Owners**: never. Our team answers their texts in Conversations, and PM web chats stay in the legacy SMS icon.
 
     Where it is active, Latchel AI answers unless the customer asks for a person or it's something the AI can't handle (e.g., leasing or other out-of-scope questions). When that happens, the conversation is transferred based on who manages the work order:
 
@@ -186,7 +186,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
     3. If the PM insists that we make the change, escalate to the Product Support (PS) team following [How to Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support). Include the PM name, PM company, which they want off (AI text responses, AI voice calls, or both) and the reason. Don't remove any product yourself.
   </Accordion>
   <Accordion title="Does Latchel AI answer Property Manager or Owner messages?">
-    No. Latchel AI only answers residents and Service Providers. Property Manager and Owner texts and PM webchats stay in the legacy SMS icon and are handled per [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
+    No. Latchel AI only answers residents and Service Providers. Property Manager and Owner texts are in Conversations and handled by our team. PM web chats stay in the legacy SMS icon and are handled per [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
   </Accordion>
 </AccordionGroup>
 
