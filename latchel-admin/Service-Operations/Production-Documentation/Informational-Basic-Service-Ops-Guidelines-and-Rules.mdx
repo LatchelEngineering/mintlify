@@ -79,6 +79,7 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
 **📝Additional notes:**
 
 - Outbound **webchats should not be initiated by agents**, since it may negatively impact our customer’s experience.
+- Outbound messages to **Residents and Service Providers** are sent through **Conversations**: on the work order, open the **Conversations** tab → **Resident**/**Service provider** tab → **Open Conversation**, or click **Message Resident/Service Provider**. Set **Handled by** to **Staff** and send. The customer receives an SMS with a link to the Conversation. See [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta).
 - If the main resident in a WO didn’t answer, **you should contact any other** existing **residents** on the property (if any).
 
 ## **👋Standard Customer Greeting**
@@ -192,7 +193,7 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
 
 <Accordion title="**📩Follow-Up Procedures**">
   <Note>
-    The following process applies to follow-up tasks for all customer types. Please note that critical notes and pre-dispatch instructions (along with any other relevant notes) will take precedence over the procedures outlined here. Follow up tasks may be for scheduling, estimates, materials and unresolved issues.
+    🛑 **NOTE:** Wherever this section says "send an SMS" to a resident or service provider, send it through **Conversations** (Handled by = **Staff**), not as a manual SMS. Texts to Property Managers and Owners are sent from the SMS icon as before. See [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta).
   </Note>
 
   <Warning>
@@ -273,7 +274,7 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
   </Note>
 
   - If you attempt to contact a customer by phone and they are unresponsive or the number is invalid:
-    - Attempt to reach the customer via **text message.**
+    - Attempt to reach the customer via **text message** (for Residents and Service Providers, send it through **Conversations** with Handled by = **Staff**).
     - If SMS is not possible or unsuccessful, send an **email**.
   - If the customer does **not** have an active phone number and **no** registered email on file:
     - **Document the failed contact** due to unavailable communication methods.
@@ -312,7 +313,7 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
   - **Sending Follow-Up Task Updates**:
     - If you are sending an outbound communication that does not require an immediate response (e.g., sending an SMS about a work order update):
       - **Wait 2 Minutes**: Allow 2 minutes to ensure there is no error and the message is delivered.
-      - **Verify Delivery**: After the 2-minute wait, check for any delivery issues or errors. Then, end the conversation.
+      - **Verify Delivery**: After the 2-minute wait, check for any delivery issues or errors. Then, end the conversation (Property Manager/Owner SMS only). Resident and Service Provider Conversations have no End Conversation option. If no reply is needed, click **Mark as Handled**.**📞❌If a Customer Hangs Up or the Call Gets Disconnected**
 </Accordion>
 
 <Accordion title="**📞❌If a Customer Hangs Up or the Call Gets Disconnected**">
@@ -329,7 +330,7 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
   2. **Leave a Voicemail (if available)**
      - Explain why you're calling and ask them to call back. Include your name, callback number, and any reference info.
   3. **Send a Follow-Up SMS/Email**
-     - If they don’t answer, send a short, professional text to let them know the call was disconnected and ask for a callback.
+     - If they don't answer, send a short, professional text to let them know the call was disconnected and ask for a callback. For Residents and Service Providers, send it through **Conversations** with Handled by = **Staff**.
      - **Note:** If SMS is disabled, proceed with email
        - _Hi [customer name]. It seems the call ended unexpectedly. We're following up to assist with your work order. We just need [briefly state the info needed] to move forward—please feel free to call us at  [PM Latchel-Assigned Phone Number for Residents/Service Providers/Unknown] [206-900-9466 for PMs]. Thank you!_
   4. **Leave a Note**
@@ -348,11 +349,15 @@ Acceptable operations hours are defined as **Monday through Sunday from 8:00 am 
 
 <Accordion title="**👤Guidelines for Assisting Contacts**">
   <Warning>
-    **📝Note on SMS Conversations:**<br />If an SMS is received from a phone number linked to multiple profiles, the system will display only the **phone number**, not the user’s name. When the **phone number in the message box is clicked**, all profiles associated with that number will be shown.
+    **📝Note on SMS (Property Managers/Owners):**
+
+    If an SMS is received from a phone number linked to multiple profiles, the system will display only the **phone number**, not the user’s name. When the **phone number in the message box is clicked**, all profiles associated with that number will be shown.
 
     **_Always click the phone number in the message box to check if it is linked to any profiles._** In many cases, the name doesn’t display simply because the number is associated with multiple profiles.
 
     If there is a matching profile in the system, the user is considered **registered**. Be sure to select the correct profile before proceeding.
+
+    For Resident and Service Provider messages in **Conversations**, Latchel AI asks unknown or shared numbers to identify themselves, and each thread is tagged to its work order automatically. No manual profile selection or tagging is needed.
   </Warning>
 
   <Accordion title="**Residents**">

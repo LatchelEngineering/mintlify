@@ -10,6 +10,10 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4089315332/H
   This protocol ensures associates have a clear, step-by-step path for handling text-based maintenance requests from intake through WO creation, including emergency escalation.
 </Note>
 
+<Warning>
+  🔔 **Conversations:** Resident texts arrive in **Conversations → Team** (on Latchel-managed work orders, and all work orders for Autopilot customers, after Latchel AI transfers them). Check for _"[name] is typing…"_, click **Mark as Handled** before replying, and reply in the thread. Wherever this SOP says to close or end the conversation, there is no close step: send your final message and move on. The thread reopens as unhandled if the resident writes again. See [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta).
+</Warning>
+
 ## 📋 Step-by-Step Process
 
 ### Step 1 - **Identify the Resident & Offer Their Portal Link**
@@ -152,11 +156,11 @@ After submitting the work order, confirm whether the submission was completed su
   - A non-emergency work order should move forward based on the Property Manager’s subscription, intake settings, and standard workflow.
     - **If the WO comes out as non-emergency per intake settings but there are PD/EH indicators** → Create a TS task and let TS handle the EEC call following the [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos).
   - If the work order does not move to the expected status or workflow, review the submitted intake information and update the work order only if the correct action is clear. If the correct outcome is unclear, notify the Operations Support Specialists for guidance.
-- Document any important SMS intake details that were not captured during submission, and note in the work order summary that the intake was completed through SMS for transcript review if needed.
+- Document any important intake details that were not captured during submission, and note in the work order summary that the intake was completed via text (Conversations) so the thread can be reviewed if needed.
 
 Once the submission outcome has been confirmed, proceed based on the result:
 
-- If the work order was created successfully and no additional action is needed, proceed with closing out the SMS conversation according to the standard workflow.
+- If the work order was created successfully and no additional action is needed, send the closing message below in the Conversation. There is no End Conversation step.
   - **Say something like:💬Hi [resident name**], thank you for contacting us. I’ve submitted your request and the appropriate team will review it shortly. You’ll receive an SMS with the next steps and any important updates. Please let us know if there’s anything else we can assist you with.
 - If the resident stopped responding, refused to answer intake questions, or the submission could not be completed, proceed to the applicable edge-case scenario below.
 
@@ -173,7 +177,7 @@ If the resident goes silent mid-conversation:
    1. **Do you have an address AND an issue description?**
       1. ✅ **Yes** → Create the work order with the available information, note it as incomplete in the WO summary, then close the conversation.
       2. ❌ **No (missing one or both)** → Do **not** create a work order. Close the conversation and document the interaction in the resident's profile notes. If any part of what was described sounds like an emergency, property damage, or habitability concern, follow Scenario C before closing.
-6. Close the conversation using the standard "[End Conversation](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console#step-5-how-to-close-the-text-message)" workflow and document your notes on the work order or resident profile.
+6. Send your final message in the Conversation (there is no End Conversation step) and document your notes on the work order or resident profile.
 
 #### **Scenario B — Resident Refuses to Answer Intake Questions**
 
@@ -304,7 +308,7 @@ Use this table to quickly confirm the correct action for common situations. Alwa
 
 ## 🎯 When to Break This SOP
 
-- Lucia feature request ships and changes the handoff flow — check SOP 5 for updated guidance
+- **Do not break or deviate from this SOP on your own authority.** Always escalate to an Ops Support specialist or follow explicit instructions if you believe an exception is necessary.
 
 ## 💡 If You Think This SOP Could Be Improved...
 

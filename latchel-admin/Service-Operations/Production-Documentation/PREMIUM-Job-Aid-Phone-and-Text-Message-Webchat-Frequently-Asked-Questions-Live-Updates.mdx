@@ -44,7 +44,7 @@ Check the Work Order Notes to see if there is any other Associate history on the
 
 1. If another Associate has already sent messages to try to contact the resident regarding the Work Order, and it has already passed 24-hours (and the resident has not responded to messages from Latchel),
    1. **Say something like**: _Hi (customer first name). We haven't heard back from you in regards to the work order you recently submitted. Please call your hotline if you need to create a new request._
-2. If this is the first time that a Non-Emergency Associate comes across the Work Order that is incomprehensible, then send a text to the resident:
+2. If this is the first time that a Non-Emergency Associate comes across the Work Order that is incomprehensible, then message the resident in **Conversations** (WO → **Conversations** tab → **Resident** → **Open Conversation**, **Handled by** = **Staff**; see [Sending Outbound Messages](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#sending-outbound-messages)):
    1. **Say something like**: _Hi (customer first name). You recently sent in a maintenance request, but we need more detail from you to move forward. You said (insert jibberish description from customer).Can you please explain what is going on and include pictures for me? We need this before moving your request forward._
    2. Move work order into "Pending" with a note: "Requested a better description from the tenant of the issue"
       1. Click "Put this job on hold"
@@ -76,6 +76,10 @@ Check the Work Order Notes to see if there is any other Associate history on the
 
 ### **Q: If a resident wants to submit a work order with you through the text message...**
 
+<Warning>
+  🛑 **NOTE**: Resident texts arrive in **Conversations**. For the full process, follow [How to: Handle Resident Maintenance Requests via Text Intake](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Resident-Maintenance-Requests-via-Text-Intake).
+</Warning>
+
 **Step 1 — Look up the resident and send their personal submission link:**
 
 - **Say something like**: _"Hi \[Name\]! You can submit your maintenance request through your personal portal — no login required. Here's your link: \[Dashboard Link from Miscellaneous in resident profile\]. Just tap and follow the prompts!"_
@@ -102,7 +106,7 @@ If the resident asks how to submit the work order in their portal, refer the res
 
 1. **Say something like**: _We apologize for the inconvenience.  We will reach out to the service provider for an update and reach out to you shortly_.
    1. The Associate will then:
-      1. Follow up with service provider via SMS/phone.
+      1. Follow up with service provider via **Conversations** (**Message SP**, **Handled by** = **Staff**) or phone.
          1. See: [Job Aid: Solving Appointment or Issue Resolution Disputes Between Resident and Service Provider](/latchel-admin/Service-Operations/Production-Documentation/job-aid-solving-appointment-or-issue-resolution-disputes-between-resident-and-service-provider)
 
 ### **Q**: "**I wanted to follow up on the status of my (issues) being repaired?"**
@@ -140,7 +144,7 @@ If the resident asks how to submit the work order in their portal, refer the res
 1. **Say something like**: _We will contact and instruct the service provider to call before arrival. Please be advised, we cannot guarantee they will call. Please let us know if the service provider meets your expectations once the work is complete._
    1. The Associate will then:
       1. Write a Note on the account with the request
-      2. Send SMS to provider with the request
+      2. Message the provider in **Conversations** with the request (**Handled by** can be set to **Latchel AI**, since no reply is needed)
 
 ### **Q: "I no longer live at that Property Address"**
 

@@ -62,14 +62,14 @@ After accepting the call, you will be informed that the call is a Spanish call. 
 
 ### **SMS/Email (Includes Emergency Admin)**
 
-Spanish SMS and email associates follow the same workflow: associates assist the customer directly using the approved translation tool. Do not wait for an available Spanish-speaking teammate before responding.
+Spanish SMS and email associates follow the same workflow: associates assist the customer directly using the approved translation tool. Do not wait for an available Spanish-speaking teammate before responding. This applies to all **Conversations**: click **Mark as Handled** before replying and paste the translated message into the thread (see [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)).
 
 1. When an associate receives an SMS in Spanish, they respond right away using the [**<u>Spanish SMS Translator</u>**](https://claude.ai/public/artifacts/35daba8e-9963-4de9-82bb-74d3999cb190 "https://claude.ai/public/artifacts/35daba8e-9963-4de9-82bb-74d3999cb190"), starting with the following disclosure: **"Hola [Customer's Name], estamos utilizando una herramienta de traducción para comunicarnos con usted. Pedimos disculpas por cualquier error y agradecemos su paciencia. ¿En qué podemos ayudarle?"** _(English: "Hello [Customer's Name], we are using a translation tool to communicate with you. We apologize for any errors and appreciate your patience. How can we assist you?")_
    1. For Spanish email requests, use the disclosure only when the email does not include enough information to understand the request. If the email request is clear, respond by addressing the stated issue directly and take the appropriate action needed to resolve or move the concern forward.
 2. Continue the conversation using the Spanish SMS Translator until the request is resolved or a clear next step is identified.
 3. For email requests where the requester is not the customer, such as an admin or other third-party email, associates may handle the request and reach out directly to the customer for a response.
    1. The only exception where an associate should reach out to Support to tag a Spanish-speaking associate is when we cannot contact the customer directly because there is no available SMS or email contact for the customer.
-4. If the customer stops responding, apply the standard unresponsive-client rule from [**<u>How to: Handle SMS/Webchat Contacts (New Support Framework)</u>**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework#how-to-handle-sms-webchat-contacts-new-support-framework "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/How+to+Handle+SMS+Webchat+Contacts+New+Support+Framework#%E2%9D%97Handling-Unresponsive-or-Upset-Client") — no response after 3 minutes, close the conversation.
+4. If the customer stops responding, apply the standard unresponsive-client rule from [**<u>How to: Handle SMS/Webchat Contacts (New Support Framework)</u>**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework#how-to-handle-sms-webchat-contacts-new-support-framework "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/How+to+Handle+SMS+Webchat+Contacts+New+Support+Framework#%E2%9D%97Handling-Unresponsive-or-Upset-Client") — no response after 3 minutes, send your wrap-up message and move on (Conversations have no close step).
 5. Once the conversation is complete, update the thread to confirm whether communication with the customer was successful and document the customer response or next step taken.
 
 ### **Troubleshooting (TS) Tasks**
@@ -118,7 +118,7 @@ Elliot is our Spanish-speaking associate. His shift is **Monday–Friday, 12:30 
   - Keep the current work order status.
   - Keep the troubleshooting task assigned to the TS group.
   - Label the task subject with **Spanish** so a Spanish-speaking consultant can pick it up.
-  - Send the customer an SMS if SMS is available:
+  - Message the customer in **Conversations** (WO → **Conversations** tab → **Resident** → **Open Conversation**, **Handled by** = **Staff**) if SMS is available:
 
     **Hola [Customer’s Name], gracias por comunicarse con nosotros. Enviaremos a un asociado que hable español para llamarle y ayudarle con su consulta lo antes posible. Apreciamos su paciencia.**
 
@@ -137,11 +137,11 @@ Elliot is our Spanish-speaking associate. His shift is **Monday–Friday, 12:30 
 
 <Accordion title="What if the resident is not an English or Spanish Speaker?">
   1. Attempt the TS call and ask whether anyone is available who can speak English.
-  2. If the resident cannot understand, send an SMS in their language using Google Translate asking whether someone is available who speaks English.
+  2. If the resident cannot understand, send a message in their language through **Conversations** (**Handled by** = **Staff**) using Google Translate, asking whether someone is available who speaks English.
   3. If they provide a contact, call that person.
   4. If there is still no response, attempt to contact all other available residents listed.
   5. Check other listed tenants first. If available, connect with them to see whether they can help communicate in English.
-  6. If no English-speaking tenant is available, send an SMS or email using Google Translate. Example message to translate: **“Hello [Customer’s Name]! We apologize for any errors. Is there someone available who can speak English so we can assist you?”**
+  6. If no English-speaking tenant is available, send a **Conversations** message or email using the approved translation tool. Example message to translate: **“Hello [Customer’s Name]! We apologize for any errors. Is there someone available who can speak English so we can assist you?”**
   7. If there is still no response or clarity, do not forward the work order to the PM because of the language barrier. Keep the task in the correct queue, document all contact attempts, and follow the applicable TS follow-up process.
 </Accordion>
 

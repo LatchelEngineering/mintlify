@@ -18,7 +18,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/LTG/pages/782172204/Ho
   - After the Work Order is created, the resident and Service Provider should use self-service tools as much as possible, allowing our Latchel software to complete the Work Order in an automated workflow, rather than relying on Associates to manually adjust Work Order details. Operations Associates can now access and provide the direct URL link to residents and customers for their respective Latchel Customer Interface.
   - If a customer contacts you to do something that they should be able to do on the dashboard, you can take care of that, but educate the customer on being able to complete actions themselves, for example: Set availability,  create a new work order,  add images and files, cancel the job. For more information see: [How to: Navigate the Resident Interface](/latchel-admin/Service-Operations/Latchel-Library/How-to-Navigate-the-Resident-Interface) and [How to: Navigate the Service Provider Interface](/latchel-admin/Service-Operations/Latchel-Library/How-to-Navigate-the-Service-Provider-Interface)  for details on tool capabilities.
   - You can say,Latchel BlurbDid you know that you can do \[X\] through a self-service tool? This is the link to it: \[paste the link here\]
-  - To locate the Public Dashboard Link and send the URL link to the resident or Service Provider via text message. Go to the Latchel Console and navigate to the Resident Profile or Service Provider Profile.
+  - To locate the Public Dashboard Link and send the URL link to the resident or Service Provider through Conversations. Go to the Latchel Console and navigate to the Resident Profile or Service Provider Profile.
     - Click "People"
       - Choose "Residents" or "Vendors" to reveal the customer profile.
     - From the Details Tab, Scroll down to find the box that is labeled "Miscellaneous"
@@ -34,8 +34,8 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/LTG/pages/782172204/Ho
     ![Image](/images/LL-37.png)
   </Frame>
 
-  - Paste the URL into the text message field (CTRL\+V)
-  - Send to the Customer via textLatchel BlurbHi (customer name), This is the link to your personal maintenance request dashboard: \[paste the link here\]
+  - Click **Message Resident** on the profile (or on the work order, open the **Conversations** tab → **Resident** tab → **Open Conversation**), set **Handled by** to **Staff**, and paste the URL into the message field (CTRL+V). See [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta).
+  - Send to the Customer Latchel Blurb Hi (customer name), This is the link to your personal maintenance request dashboard: \[paste the link here\]
 </Info>
 
 ### Step-by-Step Guide
@@ -97,3 +97,6 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/LTG/pages/782172204/Ho
             2. Not Time Sensitive
                1. "We're here to help"
                   1. Options to write a note about the Work Order, which then becomes a task for Operations team, logged into Notes in Work Order
+5. From the Job Details Page, open the **Action Menu** and select **"Talk to Us About this Work Order"**
+
+   - Opens a Conversation tagged to that Work Order. On Latchel-managed work orders (and all work orders for Autopilot customers), Latchel AI answers first and transfers the resident to a person (our team on Latchel-managed work orders, the PM's team otherwise) when they ask or when the request is out of scope. The full history appears in the Work Order's **Conversations** tab.
