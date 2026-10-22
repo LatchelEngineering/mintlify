@@ -1,37 +1,28 @@
 ---
-title: "Job Aid: Handling Resident & Service Provider Conversations (AI Messaging Beta)"
-groups: ["latchel"]
+title: "Job Aid: Handling Resident & Service Provider Conversations"
+groups:
+  - "latchel"
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/Job+Aid+Handling+Resident+Service+Provider+Conversations+AI+Messaging+Beta"
 ---
 
 ## 🧠 What This Process Is Trying to Solve
 
 <Note>
-  We want to prevent missed, delayed, or duplicated replies as Resident and Service Provider texts move from SMS to Conversations. This job aid shows you how to claim and reply to inbound Conversations and how to send outbound messages, so that no two associates work the same thread and nothing sits unanswered.
+  We want to prevent missed, delayed, or duplicated replies now that Resident and Service Provider texts are handled in Conversations for all customers. Property Manager and Owner texts and PM webchats stay in the legacy SMS icon. This job aid shows you how to claim and reply to inbound Conversations and how to send outbound messages, so that no two associates work the same thread and nothing sits unanswered.
 </Note>
 
 <Info>
-  **🔔 Before You Start:** During the beta you work **two queues**: the **SMS** icon (all other customers) and the new **Conversations** icon (beta customers). Both have **equal priority**, so always work the **oldest** message first by timestamp.
+  🔔 Before You Start:
 
-  **Beta customer list:**
+  For **all customers**, resident and SP messages are in the **Conversations** icon. Property Manager and Owner texts and PM webchats stay in the legacy **SMS** icon and follow [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console). 
 
-  - [Scarpa Properties](https://app.latchel.com/admin/pm-company/33410)
-  - [SureWay Property Management LLC](https://app.latchel.com/admin/pm-company/9080)
-  - [PropertyWize, LLC](https://app.latchel.com/admin/pm-company/5694)
-  - [Rental Zebra](https://app.latchel.com/admin/pm-company/36720)
-  - [Citywide Real Estate](https://app.latchel.com/admin/pm-company/41613)
-  - [Metropolitan Real Estate](https://app.latchel.com/admin/pm-company/34647)
-  - [Pam T Property Management](https://app.latchel.com/admin/pm-company/34364)
+  Both have **equal priority**, so always work the **oldest** unhandled message first by timestamp, across both icons.
 </Info>
-
-<Warning>
-  **⚠️ Beta queue warning:** During beta testing, the **SMS** and **Conversations** icons may both show unhandled or pending messages at the same time. When both queues have messages waiting, compare the message timestamps and handle the **oldest message first**, regardless of which icon it appears under.
-</Warning>
 
 ![Conversations overview](/images/8499ca8c-4d9d-42b7-8c0f-dd450f236d90.png "Conversations overview")
 
 <Accordion title="Key terms">
-  - **Conversation** — A browser chat thread that residents and SPs open from a link in our SMS/email notifications. There is one thread per user per work order, and it is tagged to the WO automatically.
+  - **Conversation** — A browser chat thread that residents and SPs open from a link in our SMS/email notifications. There is one thread per user per work order, and it is tagged to the WO automatically. Property Manager and Owner texts and PM webchats are not Conversations; they stay in the legacy SMS icon.
   - **Latchel AI** — The AI assistant (formerly Lucia). It answers first and transfers to a person when asked, or when it can't handle the query. Who it's transferred to depends on the WO's **managed_by**: **Managed by Latchel** → our **Team** queue; **Managed by PM** → the PM team on the WO is notified.
   - **Team** — New, unhandled Conversations for everyone. **My messages** — Conversations you've replied in or started.
   - **Mark as Handled** — Claims a thread and clears the unread indicator for everyone.
@@ -43,32 +34,13 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 ### Handling Inbound Messages
 
 1. Go to **Conversations → Team**. New messages stay unhandled until someone claims them.
-   1. <img
-        src="/images/7a5ad93e-6046-4816-8327-971a5b8d424e-1.png"
-        alt="7a5ad93e 6046 4816 8327 971a5b8d424e 1"
-        title="7a5ad93e 6046 4816 8327 971a5b8d424e 1"
-        style={{ width:"20%" }}
-      />
 2. **Claim it**
    1. Click **Mark as Handled** **before** replying. Replying also marks it handled, but claiming first prevents double replies.
-      1. <img
-           src="/images/90aba3ea-9969-4bb9-b586-856b46f2f5d8-1.png"
-           alt="90aba3ea 9969 4bb9 B586 856b46f2f5d8 1"
-           title="90aba3ea 9969 4bb9 B586 856b46f2f5d8 1"
-           style={{ width:"76%" }}
-         />
    2. 🛑 **NOTE**: **Before you click**, check for _"[name] is typing…"_. If you see it, move on to another message since someone is already about to handle it.
-
-      1. <img
-           src="/images/a199730a-bff6-425c-89a3-ce56eb481078-1.png"
-           alt="A199730a Bff6 425c 89a3 Ce56eb481078 1"
-           title="A199730a Bff6 425c 89a3 Ce56eb481078 1"
-           style={{ width:"76%" }}
-         />
    2. 🛑 **NOTE**: If the message needs no reply (e.g., it just says "Thank you"), clicking Mark as Handled is all you need to do.
 3. Scroll the full thread (AI, associate and customer messages) and confirm the tagged WO. Only ask for what's genuinely missing.
 4. Assist the customer using the [How to: Handle SMS/Webchat Contacts (New Support Framework)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework), then reply in the thread with the appropriate next step or resolution.
-   1. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"**[When can I switch Handled by to AI?](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#when-can-i-switch-handled-by-to-ai)**"**
+   1. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"**[When can I switch Handled by to AI?](#when-can-i-switch-handled-by-to-ai)**"**
 5. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
 6. **No end step**: There is no End Conversation or close option. If the customer writes again about the same work order, the thread reopens as unhandled, and anyone who previously replied in it gets a notification _(an unread message bubble)_. If none of them respond within 10 minutes, it's marked red in Team for anyone to pick up.
 
@@ -83,10 +55,8 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 <AccordionGroup>
   <Accordion title="Option A: From the WO Conversations tab">
     1. Open the **work order** and go to the **Conversations** tab. Select the **Resident** or **Service provider** tab. Click **Open Conversation**.
-       1. ![C3f5fe3a 62f4 44b1 Ab57 457467cca755](/images/c3f5fe3a-62f4-44b1-ab57-457467cca755.png "C3f5fe3a 62f4 44b1 Ab57 457467cca755")
     2. Set **Handled by** to **Staff**.
-       1. ![E4eac2d5 603d 4f84 A79a 6fe27c5d4795](/images/e4eac2d5-603d-4f84-a79a-6fe27c5d4795.png "E4eac2d5 603d 4f84 A79a 6fe27c5d4795")
-       2. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"[When can I switch Handled by to AI?](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#when-can-i-switch-handled-by-to-ai)"**
+       1. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"[When can I switch Handled by to AI?](#when-can-i-switch-handled-by-to-ai)"**
     3. Type your message in the thread and send it.
   </Accordion>
   <Accordion title="Option B: From the user's profile or WO tab">
@@ -98,7 +68,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
          style={{ width:"66%" }}
        />
     2. Enter your message. When asked who will handle the reply, choose **Staff**.
-       1. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"[When can I switch Handled by to AI?](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#when-can-i-switch-handled-by-to-ai)"**
+       1. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"[When can I switch Handled by to AI?](#when-can-i-switch-handled-by-to-ai)"**
           <img
             src="/images/8b8eb6b2-32ac-4b18-830e-56d314442b9b.png"
             alt="Reply handler set to Staff"
@@ -113,14 +83,19 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 #### 2. Taking Action
 
 1. The customer gets an SMS with a link to the Conversation.
-   1. <img
-        src="/images/image-(2)-1.png"
-        alt="Image (2) 1"
-        title="Image (2) 1"
-        style={{ width:"37%" }}
-      />
 2. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
 3. When the customer replies to a message handled by **Staff**, the thread appears in your **My messages** and as unhandled in **Team**. Follow **Handling Inbound Messages** from Step 2 (Claim it). If you chose **Latchel AI**, it responds first and transfers to a person if needed.
+
+## ✅ Quick Do's and Don'ts
+
+| Do | Don't |
+| :-- | :-- |
+| Work the **oldest** unhandled message in **Team** first, by timestamp. | Don't pick newer threads because they look quicker. |
+| Check for _"[name] is typing…"_, then click **Mark as Handled** before you reply. | Don't jump into a thread where someone is typing, or assume opening a thread claims it. |
+| Read the whole thread (Latchel AI, associate and customer messages) before replying, and only ask for what's genuinely missing. | Don't make the customer repeat what they already told Latchel AI or a teammate. |
+| Reply with the answer or next step right away. Latchel AI already told the customer they're being passed to a person. | Don't send a separate acknowledgment message. |
+| Keep sending the CSAT link at the end of the interaction, as today. | Don't send CSAT when you're only requesting photos or the conversation is still open. |
+| Leave a WO note when the conversation led you to change the work order. | Don't copy the conversation into notes, tag it, or look for End Conversation. |
 
 ## 🚫 What Not to Do
 
@@ -128,7 +103,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 - Don't reply without clicking Mark as Handled first, or jump into a thread where someone is typing.
 - Don't assume opening a thread claims it.
 - Don't treat Conversations as lower priority than SMS.
-- Don't look for Transcripts on beta WOs. History lives in the WO **Conversations** tab.
+- Don't look for a separate Transcripts tab. History lives in the WO **Conversations** tab (formerly Transcripts).
 
 ## ❓ Frequently Asked Questions
 
@@ -139,10 +114,16 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
     ![SP notification with conversation link](/images/683689ae-df61-4dab-9d09-28cd60b3a705.png "SP notification with conversation link")
   </Accordion>
   <Accordion title="Which customers are affected?">
-    Only messages from **residents and SPs** for customers in the beta. Owner/PM SMS and PM webchat work the same as today during the beta.
+    All customers, for messages from **residents and SPs** only. Property Manager and Owner texts and PM webchats stay in the legacy **SMS** icon, with the same process as before (see [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console)).
   </Accordion>
   <Accordion title="Which messages does Latchel AI handle, and which come to us?">
-    Latchel AI handles all resident and SP messages unless they ask for a person or it's something the AI can't handle (e.g., leasing or other out-of-scope questions). When that happens, the conversation is transferred based on who manages the work order:
+    Latchel AI only answers **resident and SP** messages, and only where it is active:
+
+    - **Autopilot customers:** all resident and SP messages, during the free trial.
+    - **All other customers:** only on **Latchel-managed** work orders. Messages on PM-managed work orders go straight to the PM's team.
+    - **Property Managers and Owners:** never. Their texts and webchats stay in the legacy SMS icon.
+
+    Where it is active, Latchel AI answers unless the customer asks for a person or it's something the AI can't handle (e.g., leasing or other out-of-scope questions). When that happens, the conversation is transferred based on who manages the work order:
 
     - **Managed by Latchel** → Latchel team's messages (our **Team** queue)
     - **Managed by the PM** → PM team's messages
@@ -175,7 +156,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
     In the WO's **Conversations** tab. It shows each resident and SP thread, but automated notifications are not shown there yet.
   </Accordion>
   <Accordion title="What if a customer starts talking about a different work order in the same thread?">
-    Product is still confirming how this is handled. Escalate to Operations Support Specialists so they can raise it in **#ai-messaging-beta**.
+    Escalate to Operations Support Specialists. Ops Support will escalate  to the escalation channel.
   </Accordion>
   <Accordion title="Do I still send the CSAT link or the Lucia acknowledgment message?">
     - **CSAT link:** Yes. Keep sending the CSAT link as you do today. **Heads up:** we plan to deprecate this process in the near future, and this job aid will be updated when that happens.
@@ -187,6 +168,26 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
     1. **Customer texts back instead of clicking the link:** An autoresponder tells them to click the conversation link to chat with Latchel.
     2. **The phone number belongs to more than one user, or we don't recognize it:** Latchel AI asks them to identify themselves and starts a thread.
     3. **They want to reach us without the SMS link:** They can open Conversations from their dashboard, under **Action Menu → Talk to Us About this Work Order**.
+  </Accordion>
+  <Accordion title="Does AI Messaging change automated notifications?">
+    No. Automated outbound notifications (appointment reminders, scheduling links, troubleshooting rating texts, video call links, etc.) are not affected.
+  </Accordion>
+  <Accordion title="How do I report issues or suggestions for Latchel AI?">
+    1. **Latchel AI shares private PM information** (name, phone number, email): Note the Conversation and WO, capture a video showing what was shared, and submit a bug report using [this link](https://app.latchel.com/admin/bug-reports) (also pinned in #bug-report). See [Handling Property Manager’s Private Information](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#private-property-manager/owner-handling-private-information).
+    2. **Any other issue:** Submit a bug report.
+    3. **Suggestions:** Submit a feature request in #svc-ops-requests per [How to: Use the Serv Ops Intake Workflows](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows).
+    4. **Latchel AI is down or not responding:** Operations Support Specialists report it in #tech-high-sev-escalations immediately, including the issue, impact and steps already taken.
+  </Accordion>
+  <Accordion title="A Property Manager asks about AI Messaging or Conversations">
+    Share the [AI Messaging help guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/ai-messaging). PMs also see an in-app pop-up linking to it.
+  </Accordion>
+  <Accordion title="A PM wants to turn off AI responses or AI voice calls">
+    1. **AI voice calls:** share the [Outbound Voice for Vendors help guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/outbound-voice). The screenshots in step 3, "Automated Daily Calls", show where the setting is in **Account Settings**. They can also turn it off for one vendor in that vendor's settings.
+    2. **AI text responses:** share the [AI Messaging help guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/ai-messaging) and its FAQ "Can my team answer every message instead of Latchel AI?". Let them know their team will then handle every resident and service provider message.
+    3. If the PM insists that we make the change, escalate to the Product Support (PS) team following [How to Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support). Include the PM name, PM company, which they want off (AI text responses, AI voice calls, or both) and the reason. Don't remove any product yourself.
+  </Accordion>
+  <Accordion title="Does Latchel AI answer Property Manager or Owner messages?">
+    No. Latchel AI only answers residents and Service Providers. Property Manager and Owner texts and PM webchats stay in the legacy SMS icon and are handled per [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
   </Accordion>
 </AccordionGroup>
 
