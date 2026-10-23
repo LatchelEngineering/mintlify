@@ -15,7 +15,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/782893419/Jo
 <Info>
   ### ⬅️What is happening prior to this process?
 
-  A resident has notified Latchel via webchat, phone, or email that something has gone wrong with either the scheduled appointment (Service Provider No-Show) or the actual repair has an issue (Recall Work Order).
+  A resident has notified Latchel via Conversations, phone, or email that something has gone wrong with either the scheduled appointment (Service Provider No-Show) or the actual repair has an issue (Recall Work Order).
 </Info>
 
 <Warning>
@@ -76,8 +76,8 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/782893419/Jo
     5. If the work order is an Emergency, create a task for the “Troubleshooters” Latchel user group and request to reschedule an appointment. Please keep in mind that the availability and schedule should align with the guidelines provided on dispatching an emergency work order [How to: Handle Emergency Work Orders](https://latchel.atlassian.net/wiki/spaces/OPS/pages/759332893/How+to+Handle+Emergency+Work+Orders)
        1. The troubleshooter will call the service provider and attempt to reschedule based on the resident’s availability.
        2. 📝 **NOTE:** If the SP's critical note specifies SMS/email-only contact, skip the call/SMS/reassign sequence below — refer to the "SMS and/or email only" FAQ in [**SOP: Work Order Follow-ups and Updates**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates#q-how-should-we-handle-service-providers-with-critical-notes-that-say-sms-and-or-email-only).
-       3. If the service provider is unresponsive: Send them an SMS. If there is no response the same day, reassign the work order to another service provider immediately — do not wait for a second, next-day follow-up.
-          1. Notify the unresponsive service provider via email or SMS (if available).
+       3. If the service provider is unresponsive: Send them a Conversations message (WO → **Conversations** tab → **Service provider** tab → **Open Conversation** → **Handled by** = **Staff**). If there is no response the same day, reassign the work order to another service provider immediately — do not wait for a second, next-day follow-up.
+          1. Notify the unresponsive service provider via email or a Conversations message (if available).
              1. Refer to [How to: Reassign a Service Provider](https://latchel.atlassian.net/wiki/spaces/OPS/pages/786859062/How+to+Reassign+a+Service+Provider).
        4. If the assigned service provider was recommended by the Property Manager:
           1. PM approval is required before reassigning the work order.
@@ -86,7 +86,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/782893419/Jo
              2. Contact emergency escalation contacts immediately. See [Job Aid: PM Outbound Communication for Emergency WOs](https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/Job+Aid+PM+Outbound+Communication+for+Emergency+WOs)
              3. If the escalation contacts are unresponsive, move the work order to Waiting for PM.
           3. For non-property damaging/non-extreme habitability issues:
-             1. Send the SP an SMS. Forward the work order to the PM or escalate to Operations Support Specialists to move it to Waiting for PM.
+             1. Send the SP a Conversations message (**Handled by** = **Staff**). Forward the work order to the PM or escalate to Operations Support Specialists to move it to Waiting for PM.
   </Accordion>
 
   <Accordion title="**Outcome 3: There is a confirmed appointment, but the resident follows up during the designated timeframe since the Service Provider hasn’t shown up yet.**">
@@ -118,7 +118,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/782893419/Jo
              1. **Say something like**: _Hi [resident’s], I’m reaching out because the service provider informed us that the appointment has been rescheduled. Could you please confirm the new date and time of the appointment? This will help us ensure the work order is up-to-date. Once confirmed, we'll make sure everything is accurately documented. Thank you!_
              2. If the resident confirms, proceed with setting the appointment.
              3. If there's no response, proceed as follows:
-                1. Set the appointment based on the service provider’s information then send an SMS/Email (whichever is applicable) to the resident.
+                1. Set the appointment based on the service provider’s information then send a Conversations message (WO → **Conversations** tab → **Resident** tab → **Open Conversation**) or an email (whichever is applicable) to the resident. Because this update needs no reply, you may set **Handled by** = **Latchel AI**.
                 2. **Say something like**:_Hi [resident’s name], we received information from the service provider that the appointment has been rescheduled to [date and time provided. Since we haven't heard back from you, we’ll proceed by updating the work order based on the service provider’s details. If there are any changes or updates, please let us know. Thank you!_
                 3. Proceed to ↔ How to: Write Effective Notes and document the call. Make sure to note that the appointment was set up as we have been informed by the service provider that they rescheduled it directly with them.
                 4. Additional action for **emergency work orders**: Escalate to Operations Support Specialists. Refer to [How to: Escalate Between Teams](https://latchel.atlassian.net/wiki/spaces/OPS/pages/776044545/How+to+Escalate+Between+Teams) and notify them that the appointment has been set as informed by the service provider.

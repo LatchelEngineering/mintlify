@@ -51,11 +51,11 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759332893/Ho
       1. Before calling the resident or completing TS prompts, make sure you have already done the required review from the [**How to Properly Diagnose Emergency Situations SOP (How do I fulfill this mission?)**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Properly-Diagnose-Emergency-Situations).
    7. Once the issue is confirmed (via resident, secondary resident, or WO details), classify severity per the PM's intake settings.
    8. **Complete Intake Transcript** — Open the full intake conversation in the Latchel Console or Service Ops Assistant plug-in. Do not rely solely on the work order description or summary. The full transcript may contain details about the severity, resident statements, or prior troubleshooting attempts that are not captured in the summary.
-   9. **Lucia Transcript (if applicable)** — If the work order was initiated or transferred by Lucia, review the complete Lucia conversation before contacting the resident or dispatching a service provider. The Lucia transcript may reveal context, resident-reported details, or responses to troubleshooting prompts that affect how the emergency should be classified and handled.
+   9. **Latchel AI Conversation (if applicable)** — If the work order was initiated or transferred by Latchel AI (formerly Lucia), review the complete conversation in the work order's **Conversations** tab before contacting the resident or dispatching a service provider. The conversation may reveal context, resident-reported details, or responses to troubleshooting prompts that affect how the emergency should be classified and handled.
 3. **Call the resident** to troubleshoot. Refer to [(TECH 101) How to: Make Outbound Calls Within the Latchel Console](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Make-Outbound-Calls-Within-the-Latchel-Console#tech-101-how-to-make-outbound-calls-within-the-latchel-console).
    1. **‼️IMPORTANT**<br />**You must attempt to call the resident within 20 minutes of the work order being created or escalated to emergency. This ensures we meet our service level agreement (SLA) and resident expectations.**
-   2. If you cannot reach the resident on the first attempt, send this SMS (if enabled) before your next call, so they recognize the Latchel number. Some phones label it “Possible Scam” or “Spam Risk.” Then continue with the required follow-up call attempts as outlined below.
-      1. 🗨️ **Call-ahead SMS:** _“Hi [resident name]! This is Latchel, the maintenance team for [PM Company Name]. We’re calling you to discuss your work order request. Please pick up when you see our call.”_
+   2. If you cannot reach the resident on the first attempt, send this message through Conversations before your next call (work order → **Conversations** tab → **Resident** tab → **Open Conversation** → set **Handled by** = **Staff** → send), so they recognize the Latchel number. The resident receives it as an SMS with a link to the conversation. Some phones label it “Possible Scam” or “Spam Risk.” Then continue with the required follow-up call attempts as outlined below.
+      1. 🗨️ **Call-ahead message (Conversations):** _“Hi [resident name]! This is Latchel, the maintenance team for [PM Company Name]. We’re calling you to discuss your work order request. Please pick up when you see our call.”_
    3. If the call disconnects, call the customer back until you have obtained enough details to move the Work Order forward.
 4. **‼️IMPORTANT:** If the WO is for a **common area**, do not ask the resident to troubleshoot the issue itself — they can't fix a common-area problem. Instead, call the resident (or any other active resident in the unit) for two things:
    1. Access info — ask if they can grant entry themselves, or whether they know the entry code/instructions.
@@ -240,7 +240,7 @@ Sometimes residents report an emergency work order but are unreachable. This cou
 <Note>
   **🗂️Process Overview**
 
-  1. Call the resident 3 times. If the 1st call goes unanswered, send the call-ahead SMS before your 2nd attempt.
+  1. Call the resident 3 times. If the 1st call goes unanswered, send the call-ahead message through Conversations before your 2nd attempt.
   2. Check for additional resident phone numbers.
   3. Check for additional residents on the property.
   4. If a different resident makes contact, change the Work Order's resident contact (as needed).
@@ -251,13 +251,13 @@ Sometimes residents report an emergency work order but are unreachable. This cou
 **Steps**
 
 1. **Call the resident 3 times.** 
-   1. If the resident doesn’t answer the 1st call, send this SMS (if enabled) before calling again, so they recognize the Latchel number. Some phones label it “Possible Scam” or “Spam Risk.”
+   1. If the resident doesn’t answer the 1st call, send this message through Conversations (**Handled by** = **Staff**) before calling again, so they recognize the Latchel number. Some phones label it “Possible Scam” or “Spam Risk.”
    2. 🗨️ **Call-ahead SMS:** _“Hi [resident name]! This is Latchel, the maintenance team for [PM Company Name]. We’re calling you to discuss your work order request. Please pick up when you see our call.”_
    3. Make your 2nd and 3rd attempts.
 2. **"Can’t reach resident"** - Click this option if you tried calling 3 times and the resident did not pick up.
-   1. Leave a voicemail and send an SMS to the resident (if enabled).
+   1. Leave a voicemail and send the message below to the resident through Conversations (work order → **Conversations** tab → **Resident** tab → **Open Conversation** → **Handled by** = **Staff**).
    2. 🗨️ Say something like: “_Hello, [resident name]. This is [your name], calling from Latchel, the maintenance intake team for [PM Company Name] regarding your recent maintenance request. I’ve been trying to reach you regarding the work order you submitted for [WO title]. I will now contact any other active residents listed for your property. If I am also unable to reach them, your work order will be forwarded to the appropriate team for proper handling. Please reach out to them directly for next steps. Thank you, and don’t hesitate to send us a text if there’s anything else we can help you with!”_
-   3. 🗨️ **SMS Blurb**: _“Hello, [resident’s name]! This is [your name], calling from Latchel, the maintenance intake team for [PM Company Name] regarding your recent maintenance request. We’ve tried to call you to gather further information regarding the [issue] in order to further assist you. Let us know as soon as you are available for a callback! If you think the issue has worsened or require further assistance, please call us at [provide the PM’s Latchel Communication Phone Number]. Thank you!”_
+   3. 🗨️ **Conversations message**: _“Hello, [resident’s name]! This is [your name], calling from Latchel, the maintenance intake team for [PM Company Name] regarding your recent maintenance request. We’ve tried to call you to gather further information regarding the [issue] in order to further assist you. Let us know as soon as you are available for a callback! If you think the issue has worsened or require further assistance, please call us at [provide the PM’s Latchel Communication Phone Number]. Thank you!”_
    4. Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules)  for guidance on how to locate the Latchel Communication Phone Number for the specific resident.
 3. Check for additional phone numbers with the resident.
    1. If there are additional phone numbers, they will appear under the resident’s name.
@@ -412,7 +412,7 @@ If a Property Manager reaches out and asks Latchel to contact a Home Warranty co
   2. The troubleshooter/Operations Support Specialist will then assess the resident’s issue and proceed accordingly as outlined in [How to: Properly Diagnose Emergency Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Properly-Diagnose-Emergency-Situations).
 
   <Warning>
-    \*\*🔔Reminder: \*\*\_ Please make sure that all calls and responses related to when the resident gets back to us are linked to the work order. This ensures all updates are documented properly. There’s no need to create a new task to notify PM; the notes will be sufficient.\_
+    **🔔Reminder:** _Please make sure that all calls related to when the resident gets back to us are linked to the work order. Resident messages in Conversations are tagged to the work order automatically, so no manual linking is needed. If the conversation led you to update the work order, leave a note per How to: Write Effective Notes. There’s no need to create a new task to notify PM; the notes will be sufficient._
   </Warning>
 </Accordion>
 
@@ -505,7 +505,7 @@ If a Property Manager reaches out and asks Latchel to contact a Home Warranty co
   1. Politely verify: _"I'm looking for [Resident Name] regarding a maintenance request at [Property Address]. Is this the correct number for them?"_
   2. If the person confirms they are **not** the resident and have no connection to the property, treat the number as incorrect.
      1. Do **not** continue troubleshooting with this person.
-     2. Do **not** send SMS communications to this number.
+     2. Do **not** send SMS or Conversations messages to this number. A Conversations message is delivered by SMS to the number on file.
 
   **Step 2 — Attempt alternate contacts**
 
@@ -548,7 +548,7 @@ If a Property Manager reaches out and asks Latchel to contact a Home Warranty co
 
   | Don't | Why |
   | --- | --- |
-  | Send SMS to the incorrect number | Could be a privacy concern / harassment to a stranger |
+  | Send SMS or Conversations messages to the incorrect number | Could be a privacy concern / harassment to a stranger |
   | Continue troubleshooting with the wrong person | They cannot provide accurate info about the property |
   | Assume the WO is invalid and cancel it | The resident may have submitted it — the number is just wrong |
   | Skip documentation | QA and the PM need to know the number is incorrect |

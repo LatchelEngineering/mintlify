@@ -28,7 +28,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2511372328/S
       Prior to taking any action on a follow-up or update task, complete the following:
 
       - **Read the complete intake transcript.** Do not rely on the work order title or description alone. The intake conversation may include resident-reported details, special instructions, or context that directly affects how the follow-up should be handled.
-      - **Review the Lucia transcript (if applicable).** If Lucia handled the original intake, review the full Lucia conversation to understand what was communicated to the resident and what commitments or next steps were implied. This ensures your follow-up is consistent with what the resident was already told.
+      - **Review the Latchel AI conversation (if applicable).** If Latchel AI (formerly Lucia) handled the original intake or any later messages, review the full thread in the work order's **Conversations** tab to understand what was communicated to the resident or service provider and what commitments or next steps were implied. This ensures your follow-up is consistent with what they were already told.
     </Note>
 
     <Warning>
@@ -45,7 +45,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2511372328/S
 
 ## 🗂️Process overview
 
-Agents assigned to incoming communications (SMS/Webchat, Inbound Calls, and Emails) will receive communications from customers following up on their work order, update, or requesting information. It is the Operations Associate's responsibility to: understand the request, which Work Order the communication is pertaining to, and update the WO or create the follow-up task.
+Agents assigned to incoming communications (Conversations, PM web chat, Inbound Calls, and Emails) will receive communications from customers following up on their work order, update, or requesting information. It is the Operations Associate's responsibility to: understand the request, which Work Order the communication is pertaining to, and update the WO or create the follow-up task.
 
 <Note>
   **Important:** Before taking action on any task, verify that the communication or update **belongs to the work order you are working on.** If the message or note references a different issue or a different WO:
@@ -76,14 +76,14 @@ Agents assigned to incoming communications (SMS/Webchat, Inbound Calls, and Emai
   </Note>
 </Accordion>
 
-### Inbound Calls, SMS/Webchat, and Email
+### Inbound Calls, Conversations, Webchat, and Email
 
 <Note>
   For Inbound Calls, follow the flow outlined in [How to: Receive a Call - Inbound (Amazon Connect)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Receive-a-Call-Inbound-Amazon-Connect#how-to-receive-a-call-inbound-amazon-connect). 
 </Note>
 
 <Note>
-  For SMS/Webchat, follow the flow outlined in [**How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console#how-to-use-text-message-sms-webchat-functions-in-latchel-console)
+  For text messages, follow the flow outlined in [**Job Aid: Handling Resident & Service Provider Conversations**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta). For PM web chat, follow the flow outlined in [**How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console#how-to-use-text-message-sms-webchat-functions-in-latchel-console)
 </Note>
 
 <Note>
@@ -321,7 +321,7 @@ Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.la
      1. If dealing with tech issues, post in Slack (in the #ops-requests channel) using the WO link or the caller account
   3. **WO Notes Review:**
      1. Add Work Order notes to refer an escalation to CS including Assembly ticket
-     2. Link any related calls or conversations to the WO
+     2. Link any related calls to the WO. Resident and service provider Conversations are tagged to the WO automatically, so no manual linking is needed.
   4. **Resolution Check:**
      1. If the issue was resolved during the call and no further action is needed, document the interaction properly and close the inquiry.
 </Accordion>
@@ -405,9 +405,9 @@ There are certain specific cases in which Operations Associates will still need 
   Follow this process:
 
   1. **Notify the Property Manager** — Create a task for the PM informing them of the situation and the risk of double dispatch across the bid request WOs.
-  2. **Notify the other assigned SP(s) via SMS** — Contact the SPs on the remaining bid request WOs and instruct them to hold off on any action until the PM confirms next steps.
+  2. **Notify the other assigned SP(s) via Conversations** — On each remaining bid request WO, open the **Conversations** tab → **Service provider** tab → **Open Conversation**, set **Handled by** = **Staff**, and instruct them to hold off on any action until the PM confirms next steps.
      1. 🗨️ _Say something like:_ "Hi [SP Name], this is [Your Name] from Latchel. We're reaching out regarding work order [WO#]. Please hold off on any action for this job for the time being, as we are confirming details with the property manager. We will follow up with next steps shortly. Thank you!"
-     2. ‼️IMPORTANT: If the risk of double dispatch is immediate — such as when the follow-up was received within the appointment window — **call the SP instead of sending an SMS.**
+     2. ‼️IMPORTANT: If the risk of double dispatch is immediate — such as when the follow-up was received within the appointment window — **call the SP instead of sending a Conversations message.**
   3. **Document everything** — Add notes to all related bid request WOs explaining the situation and actions taken.
 </Accordion>
 
@@ -460,7 +460,7 @@ There are certain specific cases in which Operations Associates will still need 
 <Accordion title="Q: How should we handle service providers with critical notes that say SMS and/or email only?">
   **A:** Follow the service provider's critical note instead of the standard phone-call path.
 
-  **Step 1:** Send the SMS and/or email (depending on what the critical note specifies) immediately and document the attempt in the work order notes.
+  **Step 1:** Send the text message and/or email (depending on what the critical note specifies) immediately. Send text messages through Conversations (WO → **Conversations** tab → **Service provider** tab → **Open Conversation** → **Handled by** = **Staff**). The SP receives it as an SMS with a link to the conversation. Note the attempt in the work order notes.
 
   **Step 2:** Take action based on the following:
 

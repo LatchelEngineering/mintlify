@@ -94,7 +94,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/776601885/No
 
 Call the Service Provider one time (1x) a day using the Latchel Console ( [<u>How to: Make Outbound Calls Within the Latchel Console</u>](https://latchel.atlassian.net/wiki/spaces/OPS/pages/757235750 "https://latchel.atlassian.net/wiki/spaces/OPS/pages/757235750")) and follow the script below (replacing the fields in purple with specific information).
 
-- **📝 NOTE** Always attempt to contact the service provider first via phone call. SMS and email should only be used if we are unable to reach them by phone. Exceptions include cases where they don't have a valid phone number, it's outside of 9:00 am-5:00 pm, or if there are special communication instructions in the critical notes.
+- **📝 NOTE** Always attempt to contact the service provider first via phone call. Conversations messages (delivered to the SP by SMS) and email should only be used if we are unable to reach them by phone.
 
 <Tip>
   **Service Provider Call Script**
@@ -148,22 +148,22 @@ From the call, you will encounter 1 of the 6 outcomes below.
 
 #### **<u>OUTCOME 3:</u>** If the Service Provider answers, but says they cannot talk now and will call back.
 
-1. Send an SMS with the template below. If the Service Provider does not have a textable number, then send an email with the template below.
-   1. **Service Provider Scheduling Reminder SMS Template**
+1. Send the template below through Conversations (WO → **Conversations** tab → **Service provider** tab → **Open Conversation**). Because this only asks the SP to book, you may set **Handled by** = **Latchel AI** so it handles the SP's reply; otherwise choose **Staff**. If the Service Provider does not have a textable number, then send an email with the template below.
+   1. **Service Provider Scheduling Reminder Template (Conversations or email)**
 
       This is a reminder from Latchel to schedule the job at (insert Property _Address_) within the next 24 hours. This can be done via our online portal or by calling (_please refer to [<u>Informational: Latchel Communication (Phone Numbers)</u>](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#customer-calling-to-latchel-phone-numbers "https://latchel.atlassian.net/wiki/spaces/OPS/pages/766346653") for the appropriate phone number_). Otherwise, the job will be reassigned without notice. Thank you!
 2. Defer the task for the next business day at 9:00 AM local time for the contact. Business day is defined as weekdays and does not include holidays. For example, if it's Friday, please defer the task for Monday.
 
 #### **<u>OUTCOME 4</u>**<u>:</u> If the Service Provider does not answer the phone call, then:
 
-1. Leave a voicemail using the template below (replacing the 4 fields in pink with specific information) and also send an SMS. If the Service Provider does not have a textable number then send him/her an email instead.
+1. Leave a voicemail using the template below (replacing the 4 fields in pink with specific information) and also send a Conversations message (see step 2). If the Service Provider does not have a textable number then send him/her an email instead.
    1. **Preferred**: _Hello! This is **(insert Associate Name)**, I'm calling on behalf of **(insert PM Company Name)**. We have a job assigned to you at (insert Property address) and we need to confirm an appointment_ as soon as possible_. Otherwise, the job will be reassigned to another provider without notice. Please confirm via our online portal or call us back at (please refer to_ [Informational: Basic Service Ops Guidelines and Rules ](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#customer-calling-to-latchel-phone-numbers)_for the appropriate phone numbers) at your earliest convenience. Thanks!_
    2. **LCN/LVN:** _Hello! This is **(insert Associate Name)**, I'm a maintenance coordinator calling on behalf of **(insert PM Company Name)**. We have a job assigned to you at (insert Property address) and we need to confirm an appointment_ as soon as possible_. Otherwise, the job will be reassigned to another provider without notice. Please confirm via our online portal or call us back at (please refer to_ [Informational: Basic Service Ops Guidelines and Rules ](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#customer-calling-to-latchel-phone-numbers)_for the appropriate phone numbers) at your earliest convenience. Thanks!_
-2. Send an SMS or email to the service provider using the following template:
+2. Send a Conversations message (WO → **Conversations** tab → **Service provider** tab → **Open Conversation**; **Handled by** = **Latchel AI** is fine because this only asks the SP to book) or an email to the service provider using the following template:
    1. **Service Provider Scheduling Reminder SMS Template**
 
       This is a reminder from Latchel to schedule the job at (insert Property _Address_) within the next 24 hours. This can be done via our online portal or by calling (_please refer to [<u>Informational: Latchel Communication (Phone Numbers)</u>](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#customer-calling-to-latchel-phone-numbers "https://latchel.atlassian.net/wiki/spaces/OPS/pages/766346653") for the appropriate phone number_). Otherwise, the job will be reassigned without notice. Thank you!
-3. Then, contact the Resident via Webchat/SMS using the following template:
+3. Then, message the Resident through Conversations (WO → **Conversations** tab → **Resident** tab → **Open Conversation** → **Handled by** = **Staff**, since you need their answer to decide next steps) using the following template:
    1. **Say something like**: _Hello! This is **(insert Associate Name)** **from the dedicated maintenance line** on behalf of the **(insert PM Company name)**. We are contacting you to see if you have been contacted by the **(insert Service Provider Name)**. We are attempting to confirm that an appointment has been scheduled._
    2. If the resident confirms that an appointment has been set, update the appointment time in the Latchel console. 
    3. If the resident does not confirm an appointment, proceed to the deferral steps below: 
@@ -242,7 +242,7 @@ From the call, you will encounter 1 of the 6 outcomes below.
 1. Write a Note in the existing Work Order, including the Assembly Ticket # (if available).
    1. The note should include the following information:
       1. Summarize the conversation.
-      2. Where you left the message (i.e. voicemail, SMS, email, webchat).
+      2. Where you left the message (i.e. voicemail, Conversations, email).
       3. Any actions you took to change and assign a new Preferred Service Provider.
       4. If you have escalated, transferred, or deferred the task, summarize what led you to execute one of these actions.
 
