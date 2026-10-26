@@ -109,6 +109,12 @@ Product Support owns SDDIs (L = Yes) and product feedback (O = YES): validating 
 
 #### Step 5 - Review "Quality to review" callouts
 
+<Danger>
+  **Untraceable rows: skip them.** If a row has no property, resident or WO you can find (no email or WO was given, or the email, phone or WO given doesn't match anything in the platform), there's nothing to review or investigate. Don't search for the customer some other way, and don't contact anyone. Leave the row as is and move on; it doesn't need a column AA status.
+
+  Claude marks these rows with **column Q starting "Untraceable:"** and **V = "No action"**. They show up in the summary only under **6. Actionable but untraceable**, as a count for trend tracking. If you find an untraceable row routed to "Quality to review", change V to "No action", start Q with "Untraceable:", and tell **Jennifer Lye**.
+</Danger>
+
 Rows with **V = "Quality to review"** are traceable callouts that don't need an SDDI (for example, already rescued, WO moving normally, or the issue isn't clear). They are flagged in the summary under **Quality to review (no SDDI)**. Claude only lists the facts and what it couldn't verify; it does not recommend next steps.
 
 1. Validate the facts in column Q against the WO and any related ASM ticket.
@@ -128,7 +134,7 @@ Rows with **V = "Quality to review"** are traceable callouts that don't need an 
 
 #### Step 7 - Close out your review
 
-1. Set **column AA** to **"Resolved"** on every row you reviewed that needed an action: "Quality to review" rows, Billing/Payments rows and rows with associate feedback.
+1. Set **column AA** to **"Resolved"** on every row you reviewed that needed an action: "Quality to review" rows, Billing/Payments rows and rows with associate feedback. Untraceable rows (Q starts "Untraceable:") don't need a status.
 2. Leave AA blank on any row you haven't finished, so it stays visible as open.
 
 <Warning>
