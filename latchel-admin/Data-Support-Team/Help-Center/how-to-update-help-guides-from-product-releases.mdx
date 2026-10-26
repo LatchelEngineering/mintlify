@@ -1,53 +1,66 @@
 ---
 title: "How to Update Help Guides From Product Releases"
 sidebarTitle: "Help Guide Updates From Releases"
-description: "How Data Support keeps help.latchel.com in step with #product-release: the daily drafts, the review page, one pull request per day, and the automatic tracker and announcements."
-groups: ["latchel"]
+description: "How Data Support keeps help.latchel.com in step with #product-release and #help-guide-requests: the weekday drafts, the review page, one pull request, and the announcement after the merge."
+groups:
+  - "latchel"
 ---
 
-Every product release that changes what customers see needs a matching help guide. Data Support owns that work, and most of it is now automated. Each morning, Claude checks the previous day's **#product-release** posts against help.latchel.com and drafts the guide changes. We review the drafts, open one pull request, and merge it. The tracker sheet and the Slack announcement then update on their own.
+Every product release that changes what customers see needs a matching help guide, and so does every request the team posts in **#help-guide-requests**. Data Support owns that work, and most of it is automated. Each weekday morning, Claude checks the previous day's posts in both channels against help.latchel.com and drafts the guide changes. We review the drafts, create one pull request, merge it, and click one button to announce it.
 
 <Check>
   **In other words:**
 
-  Claude drafts the changes at 6:00 AM PT. We review them on the review page, click **Create pull request** once, and merge the PR in GitHub. Everything after the merge happens automatically.
+  Claude drafts the changes at 6:00 AM PT on weekdays and sends a notification with the review page link. We review the drafts and click **Create pull request**, merge the PR in GitHub, then click **Done with merge, make the announcement**. The page posts the announcement and updates the tracker sheet.
 </Check>
 
 <Warning>
-  The automated steps run as Claude scheduled tasks on the Data Support Lead's computer, and they only run while the Claude desktop app is open there. If the app is closed at 6:00 AM, the check runs the next time it opens and catches up on any days it missed.
+  The 6:00 AM check runs as a Claude scheduled task on the Data Support Lead's computer, and it only runs while the Claude desktop app is open there. If the app is closed, the check runs the next time it opens and catches up on every day it missed.
 </Warning>
 
 ## **How the Routine Works**
 
 | When | What happens | Who |
 | --- | --- | --- |
-| **Every day, 6:00 AM PT** | Claude reads the previous day's #product-release posts (and new replies on release threads from the last 30 days), compares them with the help guides, and drafts updates or new guides. It adds **one entry** for the day to the Help Guide Release Review page and logs each release in the tracker sheet. Days with no releases are skipped. | Automatic |
-| **During the day** | Review the day's entry, edit the drafts if needed, and click **Create pull request**. All of the day's changes go into one pull request. | Data Support |
-| **When it's ready** | Review the pull request in GitHub and merge it. Merging is what publishes the changes. | Data Support Lead |
-| **Every hour, 7:00 AM–8:00 PM PT** | The sync marks merged rows **Published** with the date. Once the changes are live, it posts one announcement per pull request in **#help-center-announcements**. | Automatic |
+| **Weekdays, 6:00 AM PT** | Claude reads the previous day's posts in **#product-release** and **#help-guide-requests**, compares them with the help guides, and drafts updates or new guides. It adds **one entry** to the Help Guide Release Review page, logs each post in the tracker sheet, and sends a computer notification with the review page link. | Automatic |
+| **When you're ready** | Review the entry, edit the drafts if needed, and click **Create pull request**. Everything in the entry goes into one pull request. | Data Support |
+| **After review** | Review the pull request in GitHub and merge it. Merging is what publishes the changes. | Data Support Lead |
+| **After the merge** | Back on the review page, click **Done with merge, make the announcement**. The page checks the changes are live, posts in **#help-center-announcements**, and marks the rows **Published** in the tracker sheet. | Data Support Lead |
+
+## **Which Days Each Run Covers**
+
+| Run | Covers posts from |
+| --- | --- |
+| **Monday** | Friday, Saturday, and Sunday |
+| **Tuesday** | Monday |
+| **Wednesday** | Tuesday |
+| **Thursday** | Wednesday |
+| **Friday** | Thursday |
+
+There's no run on weekends. If a run is missed because the app was closed, the next run covers every day since the last one. For example, if the Tuesday and Wednesday runs are missed, Thursday's run covers Monday through Wednesday in one entry. Days with no posts send no notification.
 
 ## **Tools and Links**
 
 | Tool | What it's for |
 | --- | --- |
-| **Help Guide Release Review page** ([open](https://claude.ai/artifact/75qrPt54zo5SutRx7qSVzL)) | Where the drafts land. Preview them, edit the MDX, choose what goes in, and create the pull request. It's owned by the Data Support Lead, so ask them to share it with you. |
-| **Help Center Status Report** ([Google Sheet](https://docs.google.com/spreadsheets/d/1ChMku13lVWoYPSHHm16mnOVmRc_Fnwec8T6qeufTS_Y/edit)) | The **Release Updates** tab is the tracker. It has one row per release and article: the Slack post, the article, its public link, the date published, new or updated, what changed, the pull request, and the status. |
+| **Help Guide Release Review page** ([open](https://claude.ai/artifact/75qrPt54zo5SutRx7qSVzL)) | Where the drafts land. Preview them, edit the MDX, choose what goes in, create the pull request, and announce it after the merge. It's owned by the Data Support Lead, so ask them to share it with you. |
+| **Help Center Status Report** ([Google Sheet](https://docs.google.com/spreadsheets/d/1ChMku13lVWoYPSHHm16mnOVmRc_Fnwec8T6qeufTS_Y/edit)) | The **Release Updates** tab is the tracker. It has one row per release or request and article: the Slack post, the article, its public link, the date published, new or updated, what changed, the pull request, the status, and the run date. |
 | **GitHub: [LatchelEngineering/mintlify](https://github.com/LatchelEngineering/mintlify/pulls)** | Where you review and merge the pull requests. |
 | **Style guide: `.mintlify/AGENTS.md`** | The voice, template, and formatting rules every draft follows. |
-| **Slack** | **#product-release** (the source), **#help-guide-requests** (requests from the team), **#help-center-announcements** (where updates are announced) |
+| **Slack** | **#product-release** and **#help-guide-requests** (the sources), **#help-center-announcements** (where updates are announced) |
 
-## **How to Review and Publish the Day's Drafts**
+## **How to Review, Publish, and Announce**
 
 <Steps>
-  <Step title="Open the day's entry." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
-    Open the Help Guide Release Review page and choose the entry under **To review**, for example **Releases from Oct 21 (3 posts)**. Entries with a pull request already move to **Pull request opened**.
+  <Step title="Open the review page from the notification." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Click the link in the morning notification, or open the Help Guide Release Review page and choose the entry under **To review**, for example **Posts from Oct 24–Oct 26 (2 releases, 1 request)**.
   </Step>
   <Step title="Read each draft." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
-    Each draft shows the source release, the target article, and a one-line summary.
+    Each draft shows its source (a release or a request), the target article, and a one-line summary.
 
     - **Updates** show the current text next to the new text.
     - **New guides** show a preview, or click **Edit MDX** to change the title, description, or content.
-    - Read the **Open questions** box. It lists anything the release post didn't make clear, like a button name or a missing screenshot.
+    - Read the **Open questions** box. It lists anything the post didn't make clear, like a button name or a missing screenshot.
   </Step>
   <Step title="Choose what goes in." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
     Tick **Include in PR** for every draft that's ready. Drafts marked **Needs info** start unticked. Leave them out until the open questions are answered.
@@ -58,10 +71,12 @@ Every product release that changes what customers see needs a matching help guid
     If the page stops partway, it says which step failed. Click **Finish pull request** to continue on the same branch.
   </Step>
   <Step title="Review and merge in GitHub." icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
-    Open the pull request, check the changes and the open questions in its description, and wait for the **Mintlify Deployment** check to finish. Then merge it.
+    Click **Open pull request**, check the changes and the open questions in its description, and wait for the **Mintlify Deployment** check to finish. Then merge it.
   </Step>
-  <Step title="Confirm it went out." icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
-    Within about an hour, the rows in the **Release Updates** tab change to **Published** with the date, and the announcement appears in **#help-center-announcements**.
+  <Step title="Announce it." icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
+    Go back to the same entry on the review page and click **Done with merge, make the announcement**. The page confirms the pull request is merged and live, posts the announcement in **#help-center-announcements**, and marks the rows **Published** with the date in the tracker sheet.
+
+    The first time, the page asks you to allow Slack and Google Sheets. If the site is still publishing, the page says so. Wait a minute or two, then click the button again.
   </Step>
 </Steps>
 
@@ -71,42 +86,45 @@ Every product release that changes what customers see needs a matching help guid
 | --- | --- |
 | **Draft ready for review** | Claude drafted a change and it's on the review page. |
 | **Draft needs info** | A draft exists, but it has open questions to answer first. |
-| **No guide change needed** | The release was checked and needs no change. The **What Was Updated** column gives the reason, for example internal-only, already covered, or not to be advertised. |
-| **PR open** | A pull request exists but isn't merged yet. |
-| **Published** | The pull request is merged. The date column shows when. |
+| **No guide change needed** | The post was checked and needs no change. The **What Was Updated** column gives the reason, for example internal-only, already covered, already handled, or not to be advertised. |
+| **Published** | The pull request is merged and announced. The date column shows when it was merged. |
 | **PR closed (not merged)** | The pull request was closed without merging. |
 
+The **Run Date** column shows the day of the 6:00 AM check that drafted the change. Requests from #help-guide-requests start with **Request:** in the **Product Release** column.
+
 <Note>
-  Rows are matched by a hidden **Key** column, so a release keeps the same row as it moves from draft to published. Don't edit or sort the Key column.
+  Rows are matched by a hidden **Key** column, so a post keeps the same row as it moves from draft to published. Don't edit or sort the Key column.
 </Note>
 
 ## **What the Drafts Follow**
 
-- **Facts only:** every sentence comes from the release post, its thread and files, or existing guides. Anything unclear becomes a TODO in the draft and an open question, never a guess.
+- **Facts only:** every sentence comes from the post, its thread and files, or existing guides. Anything unclear becomes a TODO in the draft and an open question, never a guess.
 - **House style:** voice, terms, and layout follow `.mintlify/AGENTS.md`. New guides use Heading 2 (`## **Heading**`) for sub-titles. Edits inside an existing page keep that page's heading level.
 - **Public guides only:** drafts never touch `latchel-admin/` or the What's New newsletters, and never include internal details.
-- **No change needed:** internal-only releases, releases the post says not to advertise, releases already covered by a guide, and video-only posts are logged with the reason instead of drafted.
+- **No change needed:** internal-only releases, releases the post says not to advertise, releases already covered by a guide, requests already handled in their thread, and video-only posts are logged with the reason instead of drafted.
 
 ## **How to Hold an Announcement**
 
-Merging a pull request announces it automatically. To hold one, for example until screenshots are added, ask Claude to put it on hold **before** you merge. Held pull requests are listed as on hold until you say to announce them.
+Nothing is announced until you click **Done with merge, make the announcement**. To hold one, for example until screenshots are added, merge the pull request and don't click the button yet. Click it when you're ready.
 
-Cleanup pull requests that aren't tied to a release, like formatting fixes or rewrites, are never announced.
+Cleanup pull requests that aren't tied to a release or request, like formatting fixes or rewrites, are never announced.
 
 ## **Troubleshooting**
 
 | Problem | What to do |
 | --- | --- |
+| No notification this morning | Either there were no posts on the days covered, it's the weekend, or the Claude app was closed at 6:00 AM. The check catches up the next time the app opens. |
 | GitHub says **"We couldn't merge this pull request"** | Another pull request merged first and changed the same page or menu section. Ask Claude to rebuild the pull request on the current site. It opens a fresh pull request with the same content and closes the old one. |
 | **Create pull request** stopped partway | Click **Finish pull request** on the same entry. It picks up where it stopped. |
-| No new entry this morning | Either there were no #product-release posts yesterday, or the Claude app was closed at 6:00 AM. The check catches up the next time the app opens. |
-| A request in **#help-guide-requests** isn't tied to a release | Handle it directly. It's logged in the tracker as **Not from a release**. |
+| The announce button says the site is still publishing | The merge hasn't finished deploying. Wait a minute or two, then click the button again. |
+| The page says Slack didn't confirm the announcement | Check **#help-center-announcements** first. If the post is there, ask Claude to mark it announced. If not, click the button again. |
 | Stray `**` or `_` showing on live pages | Ask Claude to run the stray-markup scan. It checks every public page and fixes them in one pull request. |
 
 ## **Things to Remember**
 
 <Warning>
   - Only merging publishes a change. Creating a pull request doesn't.
+  - Only the **Done with merge, make the announcement** button announces a change. Merging alone doesn't.
   - One entry means one pull request. If two pull requests change the same page, merge one, then ask Claude to rebuild the other before you merge it.
   - Never put internal details in a public guide.
 </Warning>
