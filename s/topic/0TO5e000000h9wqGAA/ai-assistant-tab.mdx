@@ -1,14 +1,19 @@
 ---
 title: "AI Assistant Tab"
-description: "See what Latchel AI handled for you, how much time it spent, and how much happened after hours, all in one tab."
+description: "See what Latchel AI handled for you, check which AI features are on, and choose when Latchel AI calls your service providers."
 ---
 
 Wondering how much work Latchel AI is taking off your team's plate? The **AI Assistant** tab shows it all in one place: the messages and vendor conversations it handled, the time it spent (including time on the phone), and how much of that happened after hours.
 
+It's also where you control Latchel AI. The tab has two views:
+
+- **Overview**: what Latchel AI handled for you and when.
+- **Settings**: which AI features are on, and when Latchel AI can call your service providers.
+
 <Check>
   **In other words:**
 
-  The AI Assistant tab is your scorecard for Latchel AI. It shows what the AI handled for you and when.
+  The AI Assistant tab is your scorecard for Latchel AI. It shows what the AI handled for you and when, and lets you pick the days and hours your service providers get their daily call.
 </Check>
 
 ## **What You'll See**
@@ -42,9 +47,12 @@ The tab also previews what's coming soon on our Autopilot AI roadmap.
     {/* TODO: screenshot of Account Settings with the AI Assistant tab */}
   </Step>
   <Step title="Open the AI Assistant tab." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
-    Click the **AI Assistant** tab to see your Latchel AI activity.
+    Click the **AI Assistant** tab. It's the last tab in the row, after **Notifications**. The **Overview** opens first and shows your Latchel AI activity.
 
     {/* TODO: screenshot of the AI Assistant tab */}
+  </Step>
+  <Step title="Click Settings to manage Latchel AI." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Click **Settings**, next to **Overview**, to open **AI Assistant Settings**. The next section covers what you can change there.
   </Step>
 </Steps>
 
@@ -54,11 +62,79 @@ The tab also previews what's coming soon on our Autopilot AI roadmap.
   {/* TODO: screenshot of the See everything link on the feed */}
 </Tip>
 
+## **AI Assistant Settings**
+
+### **Features**
+
+This section shows whether each AI feature is **On** for your company.
+
+| Feature | What it does |
+|---|---|
+| **Messaging assistant** | Answers residents and service providers in your conversations. |
+| **Vendor calls** | Calls your service providers about their open work orders. |
+
+<Note>
+  You can't switch these on or off from this page. To turn a feature on or off, email [success@latchel.com](mailto:success@latchel.com) or click **contact us** on the page.
+</Note>
+
+{/* TODO: screenshot of the Features section */}
+
+### **Vendor Call Schedule**
+
+This sets when your service providers get their daily call from Latchel AI. Each service provider gets **up to one call per day**.
+
+<Steps>
+  <Step title="Choose your call days." icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Under **Call days**, click a day to turn it on or off. Days that are on are highlighted in purple.
+
+    {/* TODO: screenshot of Call days */}
+  </Step>
+  <Step title="Set your call hours." icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Under **Call hours**, pick the **Earliest** and **Latest** time a call can go out. You can choose any hour from 12:00 AM to 11:00 PM.
+
+    {/* TODO: screenshot of Call hours */}
+  </Step>
+  <Step title="Click Save." icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    **Save** is at the top of the **Account Settings** page. Click **Cancel** to discard your changes.
+  </Step>
+</Steps>
+
+<Note>
+  Call days and hours use **each service provider's local time**, not yours. If you set 10:00 AM to 4:00 PM, every service provider is called between 10 AM and 4 PM where they are.
+</Note>
+
+### **Providers With Their Own Call Settings**
+
+This list shows every service provider who has changed how they want to be called. Service providers can opt out of calls, or choose their own days and hours. Next to each one, you'll see what they chose, for example:
+
+- **Off. The provider opted out**: the service provider asked not to receive calls.
+- **Your call days · 8am–9am**: the service provider uses your call days but picked their own hours.
+
+Click a service provider's name to open their page. That's also where you can turn calls off for a single service provider.
+
+{/* TODO: screenshot of Providers with their own call settings */}
+
+<Warning>
+  A service provider's own preferences win over your schedule. Service providers who set their own call days are called on those days, and those who set their own hours are called within those hours.
+</Warning>
+
 ## **Frequently Asked Questions**
 
 <AccordionGroup>
   <Accordion title="Is Latchel AI turned on for my company?">
-    AI features are on by default for Autopilot customers. If you'd rather opt out, email [**success@latchel.com**](mailto:success@latchel.com).
+    AI features are on by default for Autopilot customers. To check, open the **Settings** view of the AI Assistant tab: each feature under **Features** shows **On** when it's active. If you'd rather opt out, email [**success@latchel.com**](mailto:success@latchel.com).
+  </Accordion>
+
+  <Accordion title="Can I turn the Messaging assistant or Vendor calls on or off myself?">
+    Not from the AI Assistant tab. Email [**success@latchel.com**](mailto:success@latchel.com) and we'll turn the feature on or off for you.
+  </Accordion>
+
+  <Accordion title="Will a service provider be called more than once a day?">
+    No. Each service provider gets up to one call per day.
+  </Accordion>
+
+  <Accordion title="A service provider doesn't want calls. What do I do?">
+    Service providers can opt out on their own, and they'll show as **Off. The provider opted out** in your settings. You can also turn calls off for a service provider from their page.
   </Accordion>
 </AccordionGroup>
 
