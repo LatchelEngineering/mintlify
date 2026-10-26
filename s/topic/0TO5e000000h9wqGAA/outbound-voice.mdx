@@ -112,35 +112,30 @@ If the vendor asks for something the AI can't resolve, it doesn't guess — it c
 ### **3. Automated Daily Calls**
 
 <Steps>
-  <Step title="Go to your Account Settings" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+  <Step title="Ask us to turn on Vendor calls" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Automated Daily Calls are turned on by Latchel, not from a switch in your account. Email [success@latchel.com](mailto:success@latchel.com) and your Success Manager will turn on **Vendor calls** for you.
+  </Step>
+  <Step title="Check that Vendor calls is on" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Go to **Account Settings > AI Assistant > Settings**. Under **Features**, **Vendor calls** shows **On** when it's active.
+
     <Card title="Sign in to your Latchel Account" color="#ff9b8a" icon="house-chimney-user" iconType="duotone" horizontal href="https://app.latchel.com/admin/account">
     </Card>
+
+    {/* TODO: screenshot of AI Assistant Settings > Features with Vendor calls On */}
   </Step>
-  <Step title="Turn on Automated Outbound Calls" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
-    Look for the automated outbound calling option and switch it on.
-
-    <Frame>
-      ![Autopilot 1](/images/autopilot-1.png "Autopilot 1")
-    </Frame>
-
-    <Frame>
-      ![Autopilot 2](/images/autopilot-2.png "Autopilot 2")
-    </Frame>
-
-    <Frame>
-      ![Autopilot 3](/images/autopilot-3.png "Autopilot 3")
-    </Frame>
+  <Step title="Choose your call days and hours" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    On the same page, set when your vendors can be called. See [Choose Which Days and Hours Vendors Get Called](#choose-which-days-and-hours-vendors-get-called) below.
   </Step>
-  <Step title="Give it one business day" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+  <Step title="Give it one business day" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
     There's no lengthy setup — Latchel begins making daily calls to your vendors with open work orders starting the next business day.
   </Step>
-  <Step title="Fine-tune which vendors get called (optional)" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+  <Step title="Fine-tune which vendors get called (optional)" icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
     If a vendor is already responsive through the portal and doesn't need a check-in call, you can turn automated calling off for that vendor individually in their settings.
   </Step>
 </Steps>
 
 <Tip>
-  Don't see the toggle yet, or want a walkthrough first? Email [success@latchel.com](mailto:success@latchel.com) and your Success Manager can activate it for you or set up a quick call.
+  Want to turn Automated Daily Calls off, or want a walkthrough first? Email [success@latchel.com](mailto:success@latchel.com) and your Success Manager can turn it off for you or set up a quick call.
 </Tip>
 
 ### **Requirements & Eligibility**
@@ -167,11 +162,32 @@ There are three ways to manage this:
 
 You decide when Latchel's AI calls your vendors. Choose which days of the week calls go out (for example, Tuesdays and Thursdays only) and set the hours they're placed (for example, 10 to 4 instead of 10 to 7).
 
-{/* TODO: steps and screenshot for where PMs set vendor call days and hours */}
+<Steps>
+  <Step title="Open AI Assistant Settings" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="h4">
+    Go to **Account Settings > AI Assistant > Settings** and find **Vendor call schedule**.
+  </Step>
+  <Step title="Choose your call days" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="h4">
+    Under **Call days**, click a day to turn it on or off. Days that are on are highlighted in purple.
+
+    {/* TODO: screenshot of Call days */}
+  </Step>
+  <Step title="Set your call hours" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="h4">
+    Under **Call hours**, pick the **Earliest** and **Latest** time a call can go out.
+
+    {/* TODO: screenshot of Call hours */}
+  </Step>
+  <Step title="Click Save" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
+    **Save** is at the top of the **Account Settings** page.
+  </Step>
+</Steps>
+
+Call days and hours use each vendor's local time, and each vendor gets up to one call per day.
 
 <Note>
-  Vendors still control their own preferred call windows, and you can see which service providers have set theirs.
+  Vendors still control their own preferred call windows. Under **Providers with their own call settings** on the same page, you can see which vendors opted out or set their own days and hours. Their choices win over your schedule.
 </Note>
+
+For more on this page, see the [AI Assistant Tab](/s/topic/0TO5e000000h9wqGAA/ai-assistant-tab) guide.
 
 **Not a Latchel customer yet? You can request a live demo of Outbound Voice and the rest of the AI Voice suite:**
 
