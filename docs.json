@@ -76,6 +76,7 @@
                     "group": "AI Assistance Hub",
                     "pages": [
                       "s/topic/0TO5e000000h9wqGAA/ai-assistance-hub",
+                      "s/topic/0TO5e000000h9wqGAA/ai-assistant-tab",
                       "s/topic/0TO5e000000h9wqGAA/latchel-mcp-ai-assistants",
                       "s/topic/0TO5e000000h9wqGAA/meet-harphonia-ai-maintenance-call-intake",
                       "s/topic/0TO5e000000h9wqGAA/24-7-ai-virtual-receptionist",
@@ -92,8 +93,7 @@
                           "s/topic/0TO5e000000h9wqGAA/intake-settings-rule-analyzer",
                           "s/topic/0TO5e000000h9wqGAA/intake-conversation-settings"
                         ]
-                      },
-                      "s/topic/0TO5e000000h9wqGAA/ai-assistant-tab"
+                      }
                     ],
                     "public": true
                   },
