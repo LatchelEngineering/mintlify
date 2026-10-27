@@ -370,7 +370,9 @@ If an owner wants to add a preferred service provider, refer to [this guide.](ht
    2. Assign to a User Group: _NOMAD's PM user group (Maint. Inbox, [latchel@nomadlease.com](mailto:latchel@nomadlease.com))_
    3. Description: _State exactly what you need from NOMAD (for example, the owner's name, phone number, and email for the property)._
    4. _Complete task only on Completed or Cancelled job States_
-3. Do not change the WO status. Leave it as is so the owner, SP, and resident can still update it.
+3. Handle the WO status based on severity:
+   1. **Non-emergency:** Do not change the WO status. Leave it as is so the owner, SP, and resident can still update it.
+   2. **Emergency:** Follow the [Stale Emergency rule](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency) the same day. If the issue is not PD/EH, de-escalate to Urgent, keep "(EMERGENCY)" in the title, and keep the WO in a status the vendor can schedule in (path 2). If the issue is PD/EH, do not de-escalate. Call the escalation contacts, and if they're unresponsive, follow path 3.
 4. Your management of the WO ends here until NOMAD responds to the task. Once NOMAD responds, pick the WO back up and move it forward.
 
 ## What if the owner who reached out is not registered in the system?
@@ -409,7 +411,7 @@ If someone reaches out claiming to be the property owner but is not listed in th
 1. Refer to [this guide.](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams)
 2. Operations Support Specialists will create a task to NOMAD following [NOMAD WO blocked on something NOMAD is responsible for](#nomad-wo-blocked-on-something-nomad-is-responsible-for). Include the owner information collected in Step 1 in the task description.
    1. Do not submit the owner information to Data Support, and do not update the owner details in the system.
-   2. Do not change the WO status.
+   2. Handle the WO status as described in that section: leave it as is for non-emergencies, and follow the Stale Emergency rule for emergencies.
 3. Once NOMAD responds to the task, Ops picks the WO back up and takes the appropriate actions to advance it.
 
 **Rentredi**
