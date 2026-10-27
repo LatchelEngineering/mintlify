@@ -27,11 +27,11 @@ Before proceeding, make sure you've read the documentation for the integration y
 
 | Platform | Internal reference | PM-facing guide |
 | --- | --- | --- |
-| All | [Latchel Integrations Wiki](https://help.latchel.com/Latchel-Integrations-Wiki) | [Comprehensive Integration Guides](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Comprehensive-Integration-Guides) |
+| All | [Latchel Integrations Wiki](/latchel-admin/Product-Engineering/latchel-integrations-wiki/latchel-integrations-wiki) | [Comprehensive Integration Guides](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Comprehensive-Integration-Guides) |
 | AppFolio | [AppFolio Resources](/latchel-admin/Customer-Success-Team/app-folio-resources) | [Latchel Data Sync Extension Reference Guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Latchel-Data-Sync-Extension-Reference-Guide) |
 | Rent Manager | [Rent Manager Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/rent-manager-reference-guide) · [Rent Manager Resources](/latchel-admin/Customer-Success-Team/rent-manager-resources) | [Rent Manager Integration Reference Guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Rent-Manager-Integration-Reference-Guide) |
 | Propertyware | [Propertyware Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/propertyware-reference-guide) · [Propertyware Resources](/latchel-admin/Customer-Success-Team/propertyware-resources) | [Propertyware Integration Reference Guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Propertyware-Integration-Reference-Guide) |
-| Yardi | [Yardi Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide) | [Yardi Voyager Standard Interfaces Setup](https://help.latchel.com/s/article/Yardi-Voyager-Standard-Interfaces-Setup) |
+| Yardi | [Yardi Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide) | [Yardi Voyager Standard Interfaces Setup](/latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide#stage-1-yardi-voyager-standard-interfaces-setup) |
 | Buildium | [Buildium Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/buildium-reference-guide) · [Buildium Resources](/latchel-admin/Customer-Success-Team/buildium-resources) | [Buildium Integration Reference Guide](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Buildium-Integration-Reference-Guide) |
 
 Related Ops Integrations SOPs:
@@ -57,7 +57,7 @@ Related Ops Integrations SOPs:
 
 #### 2.2 AppFolio Setup
 
-- Refer to [How to: Install the Chrome Plug-in (AppFolio)](https://help.latchel.com/How-to-Install-the-Chrome-Plug-in-\(Appfolio\))
+- Refer to [How to: Install the Chrome Plug-in (AppFolio)](/latchel-admin/Customer-Success-Team/how-to-install-the-chrome-plug-in-appfolio)
 - PM Guide: [How to Install the Latchel Data Sync Extension](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Install-the-Latchel-Data-Sync-Extension)
 - PMs automatically get the newest version of the Latchel Data Sync extension within a few days of release, but it can vary. For example, if a PM never closes or restarts their browser, updates may be delayed.
 - **If Latchel will run the sync for the PM (PS owns this setup):** the PM creates a Latchel user in AppFolio with access to view units, view residents, and view/edit/create work orders, and sends PS the login. PS logs it in the software login spreadsheet, creates/activates the Latchel integration user, and sets up the PM on the remote server. Full steps: [SOP: Running AppFolio Sync on Behalf of Customers](/latchel-admin/Product-Support-Team/SOP-Running-AppFolio-Sync-on-Behalf-of-Customers). Also make sure the **Latchel-managed** setting is turned on for the integration (see section 3.3), and let the team know in `#integration-health` so monitoring uses the right thresholds.
@@ -65,12 +65,12 @@ Related Ops Integrations SOPs:
 #### 2.3 Propertyware Setup
 
 - Refer to the [Propertyware Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/propertyware-reference-guide)
-- PM Guide: [How to Activate the Client Propertyware Integration](https://help.latchel.com/s/article/How-to-Activate-the-Client-Propertyware-Integration)
+- PM Guide: [How to Activate the Client Propertyware Integration](/s/topic/0TO5e000000h9wqGAA/How-to-Activate-the-Client-Propertyware-Integration)
 
 #### 2.4 Yardi Setup
 
 - Refer to the [Yardi Reference Guide](/latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide)
-- PM Guide: [Yardi Voyager Standard Interfaces Setup](https://help.latchel.com/s/article/Yardi-Voyager-Standard-Interfaces-Setup)
+- PM Guide: [Yardi Voyager Standard Interfaces Setup](/latchel-admin/Product-Engineering/latchel-integrations-wiki/yardi-reference-guide#stage-1-yardi-voyager-standard-interfaces-setup)
 
 #### 2.5 Buildium Setup
 
@@ -395,7 +395,7 @@ Credentials live in the [**software login** spreadsheet](https://docs.google.com
        - Unit Directory
        - Work Order
     3. Other saved reports (e.g., owner statements, rent roll, general ledger) are used by Finance/CPT and aren't needed for the sync.
-    4. If any required report is missing, the PM needs to restore access (no need to involve the CSM). DS escalates this to PS in `#ps-escalation`, and PS reaches out to the PM. The PM-facing guide is [How to Grant Report Permissions to Latchel in AppFolio](https://help.latchel.com/how-to-grant-report-permissions-to-latchel-in-appfolio).
+    4. If any required report is missing, the PM needs to restore access (no need to involve the CSM). DS escalates this to PS in `#ps-escalation`, and PS reaches out to the PM. The PM-facing guide is [How to Grant Report Permissions to Latchel in AppFolio](/latchel-admin/Service-Operations/Ops-Integrations/how-to-grant-report-permissions-to-latchel-in-appfolio).
     5. If access is fine and it still fails, follow [How to: Resolve AppFolio Work Order Export Failures](/latchel-admin/Service-Operations/Ops-Integrations/how-to-resolve-appfolio-work-order-export-failures) and the recommended action on Integration Health.
   </Accordion>
 
@@ -762,7 +762,7 @@ Credentials live in the [**software login** spreadsheet](https://docs.google.com
 | Existing functionality not working as expected (not covered above) | [Bug Reports form](https://app.latchel.com/admin/bug-reports) |
 | Request for NEW functionality | [Bug Reports form](https://app.latchel.com/admin/bug-reports) → "I wish it did X," or the "Feature Request" workflow in `#feature-requests` |
 
-**AppFolio plugin issues:** have the PM follow [How to Report Bugs and Issues with our Tools](https://help.latchel.com/s/article/How-to-Report-Bugs-and-Issues-with-our-Tools) so engineering gets the debug report.
+**AppFolio plugin issues:** have the PM follow [How to Report Bugs and Issues with our Tools](/s/topic/0TO5e000000h9wqGAA/How-to-Report-Bugs-and-Issues-with-our-Tools) so engineering gets the debug report.
 
 #### 5.1 Using the Bug Reports form
 
@@ -877,6 +877,6 @@ To see whether a PM is Latchel-managed, check the **Latchel Managed** toggle on 
 
 ### **8. Appendix**
 
-- [Job Aid: Suggested Templates & Best Practices](https://help.latchel.com/Job-Aid-Suggested-Templates-Best-Practices) (Integration-Related Concerns)
+- [Job Aid: Requesting Clarification/Answering General Work Order Question](/latchel-admin/Product-Support-Team/Job-Aid-Requesting-Clarification-Answering-General-Work-Order-Question#integration-related-concerns) (suggested templates for integration-related concerns)
 - [Job Aid: Slack Channels & Escalation Workflows](/latchel-admin/Product-Support-Team/Job-Aid-Slack-Channels-Escalation-Workflows)
 - Slack: `#integration-health` for questions about the dashboard and process.
