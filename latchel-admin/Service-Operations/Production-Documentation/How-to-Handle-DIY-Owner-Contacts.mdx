@@ -36,7 +36,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/3032088578/H
 
 | APPROVED Actions Serv Ops Agents can take for Owners: |
 | --- |
-| - Update Owner Approval<br />- Marking Work Order as Completed<br />- Cancel Work Order<br />- Find a New Service Provider<br />- Put the Work Order on Hold <br />- Updating personal contact information <br />- Uploading images<br />- Set a New Confirmed Work Date <br />- Reschedule Work Order<br />- Sharing amount to be approved<br />- Edit Assigned Skill on the WO page<br />- Edit Assigned Property on the WO page |
+| - Update Owner Approval<br />- Marking Work Order as Completed<br />- Cancel Work Order<br />- Find a New Service Provider<br />- Put the Work Order on Hold <br />- Updating personal contact information (RentRedi only. For NOMAD, create a task for NOMAD. See [NOMAD WO blocked on something NOMAD is responsible for](#nomad-wo-blocked-on-something-nomad-is-responsible-for).) <br />- Uploading images<br />- Set a New Confirmed Work Date <br />- Reschedule Work Order<br />- Sharing amount to be approved<br />- Edit Assigned Skill on the WO page<br />- Edit Assigned Property on the WO page |
 
 #### WO Escalation and Deep Dives
 
@@ -350,10 +350,9 @@ There may be instances where the Ops team is actively managing a work order, and
          3. Once NOMAD confirms, Support may proceed with enabling/reactivating the resident or property.
          4. Ops can continue with the work order handling.
       2. **If the issue is NOT property-damaging or an extreme habitability concern**
-         1. Ops submits a **Product Support (PS) ticket** to relay the caller’s concern (disabled property) and the PS team to validate with NOMAD.
-         2. Create a task for NOMAD yourself, following [NOMAD WO blocked on something NOMAD is responsible for](#nomad-wo-blocked-on-something-nomad-is-responsible-for). You don't need to escalate to Operations Support Specialists.
-         3. Handle the WO status as described in that section: leave it as is for non-emergencies, and follow the Stale Emergency rule for emergencies.
-         4. Be sure to leave **clear and accurate notes** on the WO. Refer to this guide: [How to Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes).
+         1. Create a task for NOMAD yourself, following [NOMAD WO blocked on something NOMAD is responsible for](#nomad-wo-blocked-on-something-nomad-is-responsible-for). In the description, relay the caller’s concern (disabled property) and ask NOMAD to confirm the property status. You don't need to submit a PS ticket or escalate to Operations Support Specialists.
+         2. Handle the WO status as described in that section: leave it as is for non-emergencies, and follow the Stale Emergency rule for emergencies.
+         3. Be sure to leave **clear and accurate notes** on the WO. Refer to this guide: [How to Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes).
 
 ## Owner Requests to Add Preferred Service Providers
 
@@ -365,7 +364,7 @@ If an owner wants to add a preferred service provider, refer to [this guide.](ht
   Owner info updates are NOMAD's responsibility, not Latchel's. Use this process when a NOMAD WO can't move forward because of something NOMAD needs to provide. The most common case is that you need to reach the owner, but the owner information on the property is missing or wrong. Other examples are an approval NOMAD needs to give or missing property details.
 </Note>
 
-This process also applies to the following scenarios, where associates are blocked until the owner information is confirmed:
+This process also applies to the following scenarios, where associates are blocked until NOMAD confirms the information needed:
 
 - [Handling Work Orders When a Property Becomes Disabled Mid-Process](#handling-work-orders-when-a-property-becomes-disabled-mid-process)
 - [What if the owner who reached out is not registered in the system?](#what-if-the-owner-who-reached-out-is-not-registered-in-the-system)
