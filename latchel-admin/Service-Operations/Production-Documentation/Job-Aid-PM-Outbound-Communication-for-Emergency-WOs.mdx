@@ -223,7 +223,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
 
   1. **Premium Customer SMS:**<br />_Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, including unit #] for a [brief WO description] issue. I am reaching out because I called [the resident/all residents on record] and they have not responded to 3 troubleshooting calls, and the issue appears [property damaging/extreme habitability]. I’ve called all escalation contacts; the WO is now in “Needs PM Approval” status for your input. Please reply via Webchat or text (206)-900-9466 if we can assist._
   2. **Non-Premium Customer SMS:**<br />_Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, including unit #] for a [brief WO description] issue. I am reaching out because I called [the resident/all residents on record] and they have not responded to 3 troubleshooting calls, and the issue appears [property damaging/extreme habitability]. I’ve called all escalation contacts; the WO is now “Forwarded to PM” for your team. Please reply via Webchat or text (206)-900-9466 if we can assist._
-  3.     **SMS-Originated Work Orders**
+  3.      **SMS-Originated Work Orders**
 
   _"Hi [Escalation Contact name], this is [your name] from Latchel regarding WO #[number] at [property address, unit #] for a [brief issue description] issue. We received a text message from [Resident Name] reporting this concern, and the issue appears to be [property damaging / an extreme habitability situation]. We were unable to complete full intake as the resident [stopped responding / declined to provide details]. The WO has been created. All escalation contacts have been called and the WO is now in [Needs PM Approval / Forwarded to PM] status. Please reply via Webchat or text (206)-900-9466 if we can assist."_
 </Accordion>
@@ -255,7 +255,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
      1. Learn more about handling 911 situations [here](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-911-Severity-Type-Work-Orders).
 
   <Note>
-       **💧 Leak From a Neighboring Unit**
+        **💧 Leak From a Neighboring Unit**
 
     1. **Get the source unit.**
 
@@ -274,7 +274,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
   </Note>
 
   <Warning>
-       **🔒 Privacy:** Never share the reporting resident's name, phone number or unit details with the neighbor. Never share the neighbor's details with the reporting resident. Tell the neighbor only that a possible leak has been reported. 
+        **🔒 Privacy:** Never share the reporting resident's name, phone number or unit details with the neighbor. Never share the neighbor's details with the reporting resident. Tell the neighbor only that a possible leak has been reported. 
   </Warning>
 
   Select _Issue IS an emergency → PM Input Needed Before Dispatch_ from the guided workflow.
@@ -519,8 +519,47 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2537652248/J
   </Frame>
 
   <Danger>
-    For non-property damaging or non-extreme habitability situations, do not call the escalation contact list and instead just put the job On Hold --> Waiting for Owner Approval with a task assigned to the PM. Follow the same form template as above.
+    For **non-property damaging or non-extreme habitability** situations, do **not** call the escalation contact list. Put the job On Hold --> Waiting for Owner Approval with a task assigned to the PM, using the same form template as above.
+
+    **Only exception:** the SP is on site (or standing by on site) **during business hours** and the estimate is over the hard budget. In that case, follow **Scenario 5A** below.
   </Danger>
+</Accordion>
+
+<Accordion title="Scenario 5A: Budget Approvals for Non-PD/EH Emergencies — SP On Site, Business Hours Only">
+  ### Scenario 5A: Budget Approvals for Non-PD/EH Emergencies (SP On Site, Business Hours Only)
+
+  Use this scenario **only when all of the following are true**:
+
+  - The work order is an **Emergency** 
+  - The issue is **not** [property damaging or extreme habitability](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations).
+  - The Service Provider is **on site, or standing by on site**, and the requested amount is **over the Hard Budget**.
+  - It is **business hours: 9:00 AM – 5:00 PM property time, Monday – Friday**, and not a Latchel holiday (New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving Day, Christmas Day).
+
+  <Warning>
+    **Outside business hours, do not call.** If any condition above is not met (for example, it's 5:01 PM property time, a weekend or a holiday, or the SP has already left), follow the Danger note in Scenario 5: put the job On Hold --> Waiting for Owner Approval with a task for the PM.
+
+    **After-hours subscription customers:** Latchel does not handle emergencies for these PMs during business hours, so this scenario does not apply. **On-call customers** follow their separate instructions.
+  </Warning>
+
+  **Steps**
+
+  1. Confirm the written estimate or itemized verbal estimate per [(⛑EMERGENCY) How to: Handle Changes to the Approved Budget](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Changes-to-the-Approved-Budget), and ask the SP to stand by while you contact the PM.
+  2. Open **WYGC** from the **Action Menu** and call each Escalation Contact **once, in the order specified**.
+  3. **If a contact answers:** follow their decision (approve or deny) using Step 2 of the budget SOP. Call the SP back right away so they can finish while on site.
+  4. **If a contact doesn't answer**, leave this voicemail for **all but the last contact**:
+     <Note>
+       _Hi, [Escalation Contact name]! This is [your name] calling from Latchel regarding WO number [number] at [property address, including unit #] for a [brief WO description] issue. Our Service Provider is on site now, and the repair will exceed the current hard budget because of [reasons for additional cost]. The requested budget is [total cost]. I'll continue calling the rest of your escalation contacts. You can also send us a Webchat or text (206)-900-9466. Have a nice day!_
+     </Note>
+  5. **If no one answers**, leave this voicemail for the **last contact**:
+     <Note>
+       _Hi, [Escalation Contact name]! This is [your name] calling from Latchel regarding WO number [number] at [property address, including unit #] for a [brief WO description] issue. Our Service Provider is on site now, and the repair will exceed the current hard budget because of [reasons for additional cost]. The requested budget is [total cost]. I've called all of your escalation contacts, and the work order is now in "Awaiting Owner Approval" for your input. Please send us a Webchat or text (206)-900-9466. Have a nice day!_
+     </Note>
+  6. Send an SMS to every escalation contact with SMS enabled, using the Scenario 5 SMS template without the PD/EH sentence. Then put the job On Hold --> **Waiting for Owner Approval** using the Scenario 5 form template. Tell the SP that approval is pending and we'll call them once the PM responds.
+  7. Link all calls to the WO and document the time of each call (property time) in the WO notes.
+
+  <Info>
+    Because this is not PD/EH, Latchel **cannot** approve over the Hard Budget without the PM. If no one responds, the Important section of Part 2 applies.
+  </Info>
 </Accordion>
 
 ### **🚦**Admin Triggers

@@ -24,7 +24,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/797245658/EM
 
 # 🗂️Information
 
-ach Work Order automatically has an "Approved Budget" and "Hard Budget" amount. Both these amounts are set by the Property Manager.
+Each Work Order automatically has an "Approved Budget" and "Hard Budget" amount. Both these amounts are set by the Property Manager.
 
 <AccordionGroup>
   <Accordion title="**⚠️ Automatic Budget Adjustment After Invoice Upload (System Update — June 2026)**">
@@ -127,12 +127,13 @@ ach Work Order automatically has an "Approved Budget" and "Hard Budget" amount. 
                   1. Proceed to upload it to the Work Order, refer to [(TECH 101) How to: Add a File to a Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Add-a-File-to-a-Work-Order#tech-101-how-to-add-a-file-to-a-work-order).
                   2. For property-damaging or extreme habitability situations, proceed to Step 2 - Request Verification from Escalation Contacts.
                   3. For non-property-damaging or extreme habitability situations, move the work order to Needs Owner Approval status.
+                     1. **Exception:** if the SP is on site (or standing by) **during business hours (9:00 AM–5:00 PM property time, Mon–Fri, excluding Latchel holidays)**, call the escalation contacts first. Follow **Scenario 5A** in [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs). Outside business hours, move the WO to Needs Owner Approval as usual.
                2. If the Service Provider **can't** provide the written estimate right away:
                   1. Inform the Service Provider that you will attempt to obtain approval with a verbal estimate based on the itemized list that you created, but the Property Manager may require a written estimate.
                   2. If the issue is property-damaging or extreme habitability (refer to [How to: Identify Property Damage and Extreme Habitability Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations)), and the PM does require a written estimate, we expect the estimate that same day; otherwise, the WO may be reassigned to another SP.
-                  3. Ask the Service Provider to kindly stand by for as long as possible while you proceed to contact the Property Manager.
-                  4. Proceed to Step 2 - Request Verification from Escalation Contacts
-   3. If the issue is not property-damaging or extreme habitability, move the work order to Needs Owner Approval status.
+                  3. **If PD/EH, or if non-PD/EH and it is business hours (9:00 AM–5:00 PM property time, Mon–Fri, excluding Latchel holidays):** ask the Service Provider to kindly stand by for as long as possible while you contact the Property Manager, then proceed to Step 2 - Request Verification from Escalation Contacts (for non-PD/EH, follow **Scenario 5A** in [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)).
+                  4. **If non-PD/EH outside business hours:** do not call the escalation contacts. Move the work order to Needs Owner Approval status.
+   3. If the issue is not property-damaging or extreme habitability, move the work order to Needs Owner Approval status (unless the SP is on site during business hours — see the Scenario 5A exception above).
       1. If the SP has not provided a date when the estimate will be available or is unresponsive.
          1. If the issue is property-damaging or extreme habitability (refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-Property-Damage-and-Extreme-Habitability-Situations)), call the escalation contacts.
             1. Refer to [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos)
@@ -287,7 +288,8 @@ Step 2 - Use the Emergency Escalation list to Contact the Property Manager for A
         2. Proceed with the [following steps](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Changes-to-the-Approved-Budget#emergency-how-to-handle-changes-to-the-approved-budget) based on the outcome of your call with the Property Manager.
         3. If escalation contacts do not respond promptly, the WO will be moved to “Needs Approval” for further review by the Property Manager.
      2. **Non-Property Damaging/Extreme Habitability**
-        1. Move the WO to “Needs Owner Approval” without requiring an immediate call to the PM. Refer to [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold).
+        1. Move the WO to “Needs Owner Approval” without requiring an immediate call to the PM. Refer to [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold).
+           1. **Exception:** if the SP is on site (or standing by) **during business hours (9:00 AM–5:00 PM property time, Mon–Fri, excluding Latchel holidays)**, call the escalation contacts first per **Scenario 5A** in [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
            1. Await the PM/owner’s decision before proceeding.
 
   **B. The service provider has completed the work but left a hole/other issue that requires a different technician to fix.**
@@ -334,7 +336,7 @@ Step 2 - Use the Emergency Escalation list to Contact the Property Manager for A
   - Refer to [How to: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes)
 </Accordion>
 
-<Accordion title=" How to Proceed When a Service Provider Claims OR Submits Property Manager/Owner Approval (Including Signed Estimates)">
+<Accordion title="How to Proceed When a Service Provider Claims OR Submits Property Manager/Owner Approval (Including Signed Estimates)">
   1. **Step 1: Verify and Upload Documentation**
      1. Review the estimate to confirm whether it is signed by the Property Manager or Owner.
         1. **📝** NOTE: If the Service Provider provided the signed estimate via email, add an internal note indicating that the document has not yet been uploaded to the work order and that confirmation from the Property Manager is still required. Include the corresponding Assembly ticket number in the work order for reference.
@@ -523,7 +525,7 @@ Step 2 - Use the Emergency Escalation list to Contact the Property Manager for A
   Yes — Ops has the authority to approve or deny estimates submitted via a service provider's link, **as long as the standard budget rules are followed**:
 
   - ✅ **If the estimate is equal to or under the Hard Budget** → You may approve via the link. After approving, update the Approved Budget in the work order and document the action in the WO notes.
-  - ❌ **If the estimate exceeds the Hard Budget** → Do **NOT** approve via the link. Escalate to the Property Manager. move the work order to Needs Owner Approval.
+  - ❌ **If the estimate exceeds the Hard Budget** → Do **NOT** approve via the link. Escalate to the Property Manager and move the work order to Needs Owner Approval. If the issue is non-PD/EH and the SP is on site during business hours, follow **Scenario 5A** in [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs) first.
   - ⚠️ **If the SP submits multiple estimates** (e.g., repair vs. replace) → Do **NOT** approve via the link. Escalate all options to the Property Manager regardless of amount.
 
   **Always remember to:**
