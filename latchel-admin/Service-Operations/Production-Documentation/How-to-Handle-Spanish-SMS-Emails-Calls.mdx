@@ -13,31 +13,32 @@ We want to prevent delays, confusion, and poor customer experiences when Spanish
 ## 🗺️ Quick Flow
 
 ```mermaid
+%%{init: {"flowchart": {"padding": 20, "nodeSpacing": 40, "rankSpacing": 50}}}%%
 flowchart LR
-    A["Spanish-speaking customer"] --> B{"How did it come in?"}
+    A["Spanish-speaking<br/>customer"] --> B{"How did it<br/>come in?"}
 
-    B -->|Inbound call| C["Transfer to Spanish Queue<br/>(press 2, then Join)"]
-    B -->|SMS / Email| D["Reply with Spanish SMS Translator<br/>(start with disclosure)"]
-    B -->|Task| E{"Who do you need to reach?"}
+    B -->|Inbound call| C["Transfer to<br/>Spanish Queue<br/>(press 2, then Join)"]
+    B -->|SMS / Email| D["Reply with<br/>Spanish SMS Translator<br/>(start with disclosure)"]
+    B -->|Task| E{"Who do you<br/>need to reach?"}
 
-    E -->|English speaker<br/>e.g. SP or PM| F["Handle as a normal task"]
-    E -->|Spanish speaker| I{"What type of task?"}
+    E -->|English speaker<br/>e.g. SP or PM| F["Handle as<br/>a normal task"]
+    E -->|Spanish speaker| I{"Task<br/>type?"}
 
-    I -->|Emergency TS| J["Review intake (click Translate)<br/>No TS call needed"]
-    J --> K{"Clear and matches<br/>PM intake settings?"}
-    K -->|Yes| L["Move forward per intake settings<br/>(e.g. emergency = dispatch)"]
-    K -->|No, need more info| M["SMS via translator<br/>within 20 min"]
+    I -->|Emergency TS| J["Review intake<br/>(click Translate)<br/>No TS call needed"]
+    J --> K{"Clear and<br/>matches PM<br/>intake settings?"}
+    K -->|Yes| L["Move forward per<br/>intake settings<br/>(e.g. emergency =<br/>dispatch)"]
+    K -->|No, need<br/>more info| M["SMS via translator<br/>within 20 min"]
     M --> N{"Reply?"}
     N -->|Yes| K
-    N -->|No| O["Wait 3 min, send 1 reminder,<br/>wait 3 more min"]
-    O --> P["Still no reply:<br/>Option 3 - Can't reach resident"]
+    N -->|No| O["Wait 3 min,<br/>send 1 reminder,<br/>wait 3 more min"]
+    O --> P["Still no reply:<br/>Option 3 -<br/>Can't reach resident"]
 
     I -->|Follow-up task| Q["Skip the call.<br/>SMS via translator"]
-    Q --> R{"Emergency WO?"}
-    R -->|No| S["Each SMS = 1 attempt.<br/>Follow the task's normal SOP"]
+    Q --> R{"Emergency<br/>WO?"}
+    R -->|No| S["Each SMS =<br/>1 attempt.<br/>Follow the task's<br/>normal SOP"]
     R -->|Yes| T["Stale Emergency rule:<br/>no reply in 3 min =<br/>same-day decision"]
 
-    Z["No SMS or email for a Spanish speaker?<br/>See 'Spanish Speaker Without SMS'"]
+    Z["No SMS or email<br/>for a Spanish speaker?<br/>See 'Spanish Speaker<br/>Without SMS'"]
     style Z fill:#fff8e1,stroke:#f0b429
 ```
 
