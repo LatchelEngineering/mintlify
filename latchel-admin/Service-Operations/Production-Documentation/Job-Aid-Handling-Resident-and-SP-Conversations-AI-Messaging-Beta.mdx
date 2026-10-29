@@ -13,7 +13,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 <Info>
   🔔 Before You Start:
 
-  For all customers, text messages from residents, SPs, Property Managers and Owners are in the Conversations icon. Only PM web chats stay in the legacy SMS icon and follow How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console). Both have equal priority, so always work the oldest unhandled message first by timestamp, across both icons.[How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
+  For all customers, text messages from residents, SPs, Property Managers and Owners are in the Conversations icon. Only PM web chats stay in the legacy SMS icon and follow [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
 
   Both have **equal priority**, so always work the **oldest** unhandled message first by timestamp, across both icons.
 </Info>
@@ -30,13 +30,38 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
    2. 🛑 **NOTE**: **Before you click**, check for _"[name] is typing…"_. If you see it, move on to another message since someone is already about to handle it.
    3. 🛑 **NOTE**: If the message needs no reply (e.g., it just says "Thank you"), clicking Mark as Handled is all you need to do.
 3. Scroll the full thread (AI, associate and customer messages) and confirm the tagged WO. Only ask for what's genuinely missing.
-4. Assist the customer using the [How to: Handle SMS/Webchat Contacts (New Support Framework)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework), then reply in the thread with the appropriate next step or resolution.
+4. Assist the customer using [How to: Handle Conversations/Webchat](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework), then reply in the thread with the appropriate next step or resolution.
    1. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"**[When can I switch Handled by to AI?](#when-can-i-switch-handled-by-to-ai)**"**
 5. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
 6. **No end step**: There is no End Conversation or close option. If the customer writes again about the same work order, the thread reopens as unhandled, and anyone who previously replied in it gets a notification _(an unread message bubble)_. If none of them respond within 10 minutes, it's marked red in Team for anyone to pick up.
 
 <Warning>
   **⏱️ 10-minute aging tag:** If a resident or SP message goes 10 minutes without a staff reply, the thread is highlighted in red in Team. Any team member can pick it up.
+</Warning>
+
+### What a Latchel AI Handoff Looks Like
+
+When Latchel AI can't handle a resident or SP message, or the customer asks for a person, it hands the Conversation to our **Team** queue. This is what you see in the thread, from top to bottom (example: a resident reports a furnace pilot that keeps blowing out and gas building up in the unit).
+
+| What you see in the thread | What it means | What to do |
+| --- | --- | --- |
+| **Customer message**, e.g. _"The problem is not fixed. The tech said it is actually dangerous because gas is building up inside the unit when the pilot gets blown out."_ | The message that triggered the handoff. | Read it, then read the full thread above it. |
+| **AI: _N_ actions** (expandable) and a status line, e.g. **Now Pending · Automatic** | The actions Latchel AI already took on the work order, such as changing its status. | Expand it so you know what changed before you act. Don't redo or undo these actions without a reason. |
+| **Internal · The assistant asked for a person:** followed by a summary | Latchel AI's handoff note: why it needs a person and what it learned (e.g. safety issue, root cause the resident reported, a vulnerable occupant, freezing temperatures). Only staff can see it. | Read this first. It's your briefing. Use it to decide severity and next steps, and don't ask the customer for details already in it. |
+| **Latchel AI's last message** to the customer, e.g. _"I've recorded it as not fixed… I've asked someone on the team to pick it up. If you smell gas at any point, leave the home and call 911 or your gas utility from outside."_ | The customer already knows a person is taking over and may already have safety guidance. | Don't send a separate greeting or acknowledgment. Don't contradict safety guidance Latchel AI already gave. |
+| **A team member has joined the conversation.** and **Internal · Marked handled by [your name]** | You claimed the thread (Mark as Handled or your first reply). | Check for _"[name] is typing…"_ before you claim. |
+| **Your reply** | The customer's next message from a person. | Send one complete reply with the answer or next step. Then take the action on the work order. |
+
+<Tip>
+  **Example of a strong first reply** for the handoff above:
+
+  _"Hi [Resident Name], I'm sorry the issue isn't fixed. Please don't relight the pilot. If you smell gas, leave the home and call 911 or your gas utility from outside. We're contacting the service provider now to get someone back out as soon as possible, and we'll update you here. Someone from our team may also call you, so please keep your phone nearby."_
+
+  Avoid splitting this into several short messages (a greeting, then an apology, then an update). One clear message is easier for the customer to follow.
+</Tip>
+
+<Warning>
+  **Safety handoffs:** If the handoff note or thread describes a possible emergency (gas, no heat in freezing temperatures, active leaks, a vulnerable occupant), check the work order severity and follow the emergency process. If you're assigned to SMS only, create the TS task so a troubleshooter acts on it, per [Cross-Training & Queue Scope](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#cross-training-and-queue-scope) and the [Latchel Harmonia Judgment Override Policy](/latchel-admin/Service-Operations/Production-Documentation/Latchel-Harmonia-Judgment-Override-Policy).
 </Warning>
 
 ### Sending Outbound Messages
@@ -136,7 +161,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
   </Accordion>
 
   <Accordion title="Which customers are affected?">
-    All customers. Text messages from residents, SPs, Property Managers and Owners are in Conversations, and Latchel AI answers residents and SPs only. PM web chats stay in the legacy SMS icon, with the same process as before (see [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console)).
+    All customers. Text messages from residents, SPs, Property Managers and Owners are in Conversations, and Latchel AI answers residents and SPs only. PM web chats stay in the legacy SMS icon, with the same process as before (see [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console)).
   </Accordion>
 
   <Accordion title="Which messages does Latchel AI handle, and which come to us?">
@@ -187,7 +212,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
     Escalate to Operations Support Specialists. Ops Support will escalate  to the escalation channel.
   </Accordion>
 
-  <Accordion title="Do I still send the CSAT link or the Lucia acknowledgment message?">
+  <Accordion title="Do I still send the CSAT link or an acknowledgment message?">
     - **CSAT link**: Only for Property Managers. Don't send the CSAT link to residents, service providers or owners. The new Conversations experience makes it unnecessary. For PM interactions, keep sending it per [How to: Handle Conversations/Webchat](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework).
     - **Acknowledgment message:** Not needed. When Latchel AI transfers a Conversation, it already tells the resident or SP they're being passed to a person. Review the thread and reply with your answer.
 
@@ -244,7 +269,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
   </Accordion>
 
   <Accordion title="Does Latchel AI answer Property Manager or Owner messages?">
-    No. Latchel AI only answers residents and Service Providers. Property Manager and Owner texts are in Conversations and handled by our team. PM web chats stay in the legacy SMS icon and are handled per [How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
+    No. Latchel AI only answers residents and Service Providers. Property Manager and Owner texts are in Conversations and handled by our team. PM web chats stay in the legacy SMS icon and are handled per [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
   </Accordion>
 </AccordionGroup>
 

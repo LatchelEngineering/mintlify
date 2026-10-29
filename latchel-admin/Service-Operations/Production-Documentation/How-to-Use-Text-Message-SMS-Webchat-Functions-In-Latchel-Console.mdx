@@ -7,15 +7,21 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/766509545/Ho
 ## 🧠 What This Process Is Trying to Solve
 
 <Note>
-  ### What are Latchel Console Text Message?
-
-  Operations team members communicate with Property Managers via webchat in the legacy SMS icon on the Latchel Console (PMs see webchat as their Latchel Support icon). Text messages with Residents, Service Providers, Property Managers and Owners are handled in Conversations instead (see [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)).
-
-  This document addresses how to properly navigate and use the Latchel Console’s SMS/ Webchat functions on a daily basis. It also includes **all necessary knowledge** to interact with the SMS /Webchat functions and to detect (and escalate) whenever an issue/bug is occurring
+  We want to prevent missed, delayed or duplicated replies to **Property Manager web chats** in the Latchel Console. This page shows you how to open, reply to, tag and close a PM web chat in the legacy SMS icon, and how to spot (and report) anything that shows up there by mistake.
 </Note>
 
 <Warning>
-  🔔 Text messages: For all customers, text messages are in the Conversations icon, not the SMS icon. Tagging is automatic, there is no End Conversation, and you claim a thread with Mark as Handled (see [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)). This SOP applies only to PM web chats in the legacy SMS icon. If anything else appears in the SMS icon, report it in #bug-report.
+  🔔 **What this page covers and what it doesn't**
+
+  | Message type | Where you work it | Follow |
+  | --- | --- | --- |
+  | **PM web chats** (PMs write to us from their Latchel Support icon) | Legacy **SMS icon** (chat bubble) in the Latchel Console | This page |
+  | **Text messages** from Residents, Service Providers, Property Managers and Owners | **Conversations** icon (**Team** and **My messages** views) | [Job Aid: Handling AI Messaging - Conversations](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta) |
+
+  - In Conversations, Latchel AI answers residents and SPs first (where it is active) and hands off to staff. Threads are tagged automatically, you claim them with **Mark as Handled**, and there is no assigning or End Conversation. None of the steps on this page apply there. See [What a Latchel AI Handoff Looks Like](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#what-a-latchel-ai-handoff-looks-like).
+  - Owners don't have dashboard access, so they have no web chat. Texts to and from Owners are in Conversations.
+  - If a resident, SP or Owner message appears in the SMS icon, report it in #bug-report.
+  - Both icons have **equal priority**. Always work the **oldest** unhandled message first by timestamp, across both icons.
 </Warning>
 
 <Note>
@@ -24,64 +30,55 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/766509545/Ho
   The contents of this page have been included in the SMS & Webchat Cross-Training Coassemble course.
 </Note>
 
-## About Text Message - Generic Functions
+<Note>
+  This page covers the console mechanics. For how to research and answer the PM's request (help guides, direct intervention, CSAT), follow [How to: Handle Conversations/Webchat](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework).
+</Note>
 
-## 💬Text Message
+## 💬 About PM Web Chat
 
-<Accordion title="About Text Message">
-  1. <u>What is Text Message?</u>
-     1. Text Message is a function available to communicate with Property Managers and Owners from the Latchel Console to their mobile phone. These texts are sent and received in Conversations (see [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)).
-     2. When a resident texts in a maintenance request, follow this order:
-        1. Offer their unique portal link first (from Miscellaneous in their resident profile). This is the fastest path and creates the most complete work order.
-        2. If they push back or can't use the link, offer intake via SMS (ask the required questions one at a time) or place an outbound call — whichever they prefer.
-        3. Do not respond with only a phone number or portal link and no further offer of assistance. Always give the resident a clear next step.
-     3. <u>Who can I send a text message to?</u>
-        1. You can send a webchat to a Property Manager from the SMS icon. To send a text message to a Resident, Service Provider, Property Manager or Owner, use Conversations (WO → Conversations tab → Open Conversation, or the Message option on their profile). See [Sending Outbound Messages](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#sending-outbound-messages).
-           1. Refer to [Job-Aid: Guide to write SMS/Webchat or email to customers](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Guide-to-write-SMS-Webchat-or-email-to-customers#job-aid-guide-to-write-sms-webchat-or-email-to-customers) if there’s a warning text next to a message or the number is invalid for texting.
-  2. <u>How do customers send texts to Latchel?</u>
-     1. Please refer to [Informational: Latchel Communication (Phone Numbers)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Phone-Number-Experience#phone-number-experience) for the appropriate phone number.
+<Accordion title="About PM web chat">
+  1. <u>What is PM web chat?</u>
+     1. PM web chat is how Operations team members chat with Property Managers from the Latchel Console. You work it in the legacy SMS icon. PMs see it as their Latchel Support icon, next to their Conversations icon.
+  2. <u>Who can I web chat with?</u>
+     1. Property Managers only. To text a Resident, Service Provider, Property Manager or Owner, use Conversations (WO → **Conversations** tab → **Open Conversation**, or the **Message** option on their profile). See [Sending Outbound Messages](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#sending-outbound-messages).
+     2. Refer to [Job-Aid: Guide to write SMS/Webchat or email to customers](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Guide-to-write-SMS-Webchat-or-email-to-customers) for writing guidance.
 </Accordion>
 
-## How to Review Pending Conversations
+## How to Review Pending Web Chats
 
-For a product overview of the messaging User Interface, refer to [Messaging UI Redesign](https://help.latchel.com/messaging-ui-redesign).
+For a product overview of the messaging user interface, refer to [Messaging UI Redesign](https://help.latchel.com/messaging-ui-redesign).
 
-<Expandable title="Review Pending Conversations">
-  1. <u>How to Review Your Pending Conversations</u>
-     1. To review the Conversations that are assigned to you, click on the Voice Bubble located on the top right of the Latchel Home Interface.
+<Expandable title="Review pending web chats">
+  1. To review the web chats assigned to you, click the chat bubble (SMS) icon at the top right of the Latchel Home Interface.
 
   <Frame>
     ![](/images/SVC-361.png)
   </Frame>
 
-  Note: The number that you see inside a red circle next to the Message Bubble on the top right of the Latchel Home Interface reflects how many messages are currently in the queue.
+  Note: The number in the red circle next to the chat bubble icon shows how many messages are currently in the queue.
 </Expandable>
 
-## How to Initiate a Text Message Conversation
+## How to Start a PM Web Chat
 
-<Expandable title="How to Initiate a Text Message Conversation">
+<Expandable title="How to start a PM web chat">
   <Warning>
-    🛑 NOTE: Use these steps for PM web chats only. For text messages, do not use the SMS icon. Send the message from Conversations (Option A or B in [Sending Outbound Messages](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#sending-outbound-messages)). The thread is tagged to the work order automatically.
+    🛑 NOTE: Use these steps for PM web chats only. To text anyone (including a PM), send the message from Conversations (Option A or B in [Sending Outbound Messages](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#sending-outbound-messages)).
   </Warning>
 
-  1. To begin a text conversation with the customer, locate the phone icon next to the Customer's phone number.
-  2. Click on the chat SMS icon next to the customer's profile.
+  1. Click the chat (SMS) icon next to the Property Manager's profile.
 
   <Frame>
     ![](/images/SVC-362.png)
   </Frame>
 
-  3. If the conversation was initiated outside of a Work Order page you will be prompted to tag it first: Refer to [Updated SMS Tagging Designs for Ops](https://help.latchel.com/latchel-admin/Product-Engineering/updated-sms-tagging-designs-for-ops#updated-sms-tagging-designs-for-ops) for details about how the tagging feature works.
+  2. If you start the chat outside of a Work Order page, you will be prompted to tag it first. Refer to [Updated SMS Tagging Designs for Ops](https://help.latchel.com/latchel-admin/Product-Engineering/updated-sms-tagging-designs-for-ops#updated-sms-tagging-designs-for-ops) for how the tagging feature works.
 
   <Frame>
     ![](/images/SVC-363.png)
   </Frame>
 
-  4. The conversation should be tagged per the following hierarchy:
-     1. First, to a Work Order(s), this is the most common case.
-     2. Secondly, you can leave it untagged if the conversation truly does not belong to a WO.
-        1. For example: Following with a Latchel Service Provider about a request not related to a WO like an account update.
-  8. A Text Message Interface and text field will appear.
+  3. Tag the chat per the hierarchy in [Step 5](#step-5-how-to-close-the-text-message) (Work Order first, then the PM company, untagged only if neither applies).
+  4. A chat window and text field will appear.
 
   <Frame>
     <img
@@ -91,51 +88,29 @@ For a product overview of the messaging User Interface, refer to [Messaging UI R
     />
   </Frame>
 
-  6. To write a text message, type a message into the text field.
-  7. To send a text message, push "Enter" on your keyboard.
-     1. Example: If the customer was using an Apple iPhone, this is what the SMS will look like from the Point of View of the Receiving customer.
-
-  <Frame>
-    ![](/images/SVC-365.png)
-  </Frame>
+  5. Type your message in the text field and press **Enter** to send it.
 </Expandable>
 
 ## 📋 Step-by-Step Process
 
-### Step 1: How to Identify the Text Message Customer
+### Step 1: How to Identify the Property Manager
 
-<Expandable title="How to Identify the Text Message Customer">
-  1. When the customer's name is known, the header of the message will populate their name instead of the phone number.
-     1. Click on the name to reveal the Customer profile.
-  2. When the customer is unknown, the Associate should be able to click on the phone number and the customer profile (if available) will show up.
-  3. You can also check the letter between parenthesis before the customer name to identify if it is a Property Manager (PM), or Service Provider / Vendor (V), or a Resident (R)
+<Expandable title="How to identify the Property Manager">
+  1. When the sender's name is known, the chat header shows their name.
+     1. Click the name to open their profile.
+  2. Check the letter in parentheses before the name. PM web chats should show **(PM)**.
 
   <Frame>
     ![](/images/SVC-366.png)
   </Frame>
 
-  4. If there is no identifier on the text message and it doesn't open up when clicked, this may be because there may be multiple people with the same phone number OR it is a number that is not recognized.
-     1. From the Latchel Console Interface, Click the "People" tab
-     2. If the context of the message is regarding service provider tasks
-        1. Click "Service Provider"
-        2. Copy and Paste the phone number to try to pull up a customer profile that way.
-        3. Remove any symbols from the phone number including parentheses ( ) and dashes ---.
-     3. If the context of the message is regarding resident tasks
-        1. Click "Residents"
-        2. Copy and Paste the phone number to try to pull up a customer profile that way.
-        3. Remove any symbols from the phone number including parentheses ( ) and dashes ---.
-  5. **If none of the above methods work**, ask the customer for more information to locate their related Work Order.
-     1. Try asking,
-
-  <Note>
-    **Latchel Blurb** - Oops! I can't locate your customer information. To help us to better serve you, please kindly provide your name and property address. Thank you!
-  </Note>
+  3. If the chat shows a Resident **(R)** or Service Provider / Vendor **(V)**, it belongs in Conversations. Report it in #bug-report.
 </Expandable>
 
-### Step 2: How to Open Incoming Message
+### Step 2: How to Open an Incoming Web Chat
 
-1. Click on the Open Chat Queue icon with a red circle containing a number.
-2. Click on the “Pending Messages” option, this will open the inbound messages being sent to Latchel.
+1. Click the chat bubble (SMS) icon with the red circle containing a number.
+2. Click **Pending Messages** to open the inbound web chats sent to Latchel.
 
 <Frame>
   ![](/images/SVC-367.png)
@@ -149,75 +124,54 @@ For a product overview of the messaging User Interface, refer to [Messaging UI R
   ![](/images/SVC-369.png)
 </Frame>
 
-3. The number in a circle represents how many conversations are in the General Queue that have not been assigned. These are "New" messages.
-4. Review the Past Messages in the text message .
-5. Use below "Frequently Asked Question" Resource and "How to handle Text Message Resource to Resolve/Advance the Work Order given the limit of your job duties
-   1. [(PREMIUM) Job Aid: Phone and Text Message Frequently Asked Questions (⭕Live Updates)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/PREMIUM-Job-Aid-Phone-and-Text-Message-Webchat-Frequently-Asked-Questions-Live-Updates#-what-this-process-is-trying-to-solve)
+3. The number in the circle shows how many chats in the General Queue have not been assigned. These are "New" messages.
+4. Before you open one, compare timestamps with **Conversations → Team** and take the oldest unhandled message first.
+5. Review the past messages in the chat.
+6. Use [How to: Handle Conversations/Webchat](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework) and the [(PREMIUM) Job Aid: Phone and Text Message/Webchat Frequently Asked Questions](/latchel-admin/Service-Operations/Production-Documentation/PREMIUM-Job-Aid-Phone-and-Text-Message-Webchat-Frequently-Asked-Questions-Live-Updates) to resolve or advance the request within your job duties.
 
-### Step 3: How to Assign Text Message to yourself
-
-<Note>
-  ### Text Message Tech Feature - Another User is Responding.
-
-  While another user is actively responding to a text message, the text message (all users) will display a field that mentions: "[username] is typing...". The purpose of this feature is to prevent multiple users to be handling the same text message, and thereby providing aligned service to our customers.
-
-  If you need to communicate with another user who is (mistakenly) handling the same text message (all users), use Slack and the guidelines outlined in your team's internal communication policy.
-</Note>
-
-1. <u>Always</u> Send a Response to the Customer (and therefore Assign Text messages to yourself)
-   1. Upon receipt of the new message from a Customer, Associates should <u>always</u> be sending a response to the customer, whether the Associate will handle the text message to completion or not.
-   2. Send a greeting message, replying to the customer once you begin working on a message.
+### Step 3: How to Assign the Web Chat to Yourself
 
 <Note>
-  **Latchel Blurb -** Hello (customer name _if available_)! While I work on your request, feel free to provide us with more details.
+  ### Another User Is Responding
+
+  While another user is actively responding to a chat, all users see "[username] is typing...". This prevents two people from handling the same chat. If you see it, move on to another message.
+
+  If you need to reach another user who is (mistakenly) handling the same chat, use Slack and the guidelines in your team's internal communication policy.
 </Note>
 
-2. **Note:** Sending a message/reply to the text message will auto-assign the text message to yourself. No other actions are required to Assign the message to yourself.
-   1. **_Why?_** To avoid team members overlapping work on the same message, Associates handling text message ALWAYS auto-assign the message to themselves upon receiving a message.
-   2. It also helps the customer to know we are in the process of working on their request.
-3. If you cannot handle the Text Message to completion:
-   1. Proceed to Step 4
+1. Sending a reply in the chat assigns it to you. No other action is needed.
+   1. **_Why?_** It keeps team members from overlapping on the same chat.
+2. Reply with the answer or next step, following [How to: Handle Conversations/Webchat](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework). If the PM hasn't said what they need, ask how you can help. If you need time to research, tell the PM you're taking a moment to gather information.
+3. If you can't handle the chat to completion, go to Step 4.
 
-### Step 4: How to Escalate a Message to a Peer or Supervisor
+### Step 4: How to Escalate a Web Chat to a Peer or Supervisor
 
-1. Refer to [How to: Escalate Between Teams](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams#how-to-escalate-between-teams)
-2. Write Effective Notes
-   1. [How to: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes)
+1. Refer to [How to: Escalate Between Teams](/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams)
+2. Write effective notes: [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes)
 
-### Step 5: How to Close the Text Message
+### Step 5: How to Close the Text Message
 
 <Warning>
-  🛑 NOTE: This step applies to PM web chat only. Conversations have no End Conversation or Close Window option. Click Mark as Handled instead (see Handling Inbound Messages). (see [Handling Inbound Messages](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#handling-inbound-messages)).
+  🛑 NOTE: This step applies to PM web chat only. Conversations have no tagging, End Conversation or Close Window step. Click **Mark as Handled** instead (see [Handling Inbound Messages](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#handling-inbound-messages)).
 </Warning>
 
-1. Before closing the conversation, tag it to the appropriate Work Order or Property Manager Company.
-   1. Refer to [Updated SMS Tagging Designs for Ops](https://help.latchel.com/latchel-admin/Product-Engineering/updated-sms-tagging-designs-for-ops#updated-sms-tagging-designs-for-ops) for details about how the tagging feature works.
-   2. The conversation should be tagged per the following hierarchy:
-      1. First to a Work Order(s), this is the most common case.
-         1. Note: If the conversation happens with an SP who is no longer assigned to a WO, tag the conversation to a PM Company if the SP is preferred or leave it untagged if it’s not a preferred SP.
-      2. Second to a Property Manager’s company if the conversation does not belong to a WO.
-         1. Some examples are:
-            1. Messages from residents not related to a WO.
-            2. Messages from Preferred Services Providers not related to a WO.
-      3. Third, you can leave it untagged if the conversation truly does not belong to a WO or Property Manager company.
-         1. Some examples are:
-            1. Spam messages from an unregistered number.
-            2. A Latchel Service Provider wanting to update their account information.
-   3. If the conversation is already tagged, verify that the tag is correct.
-      1. Refer to [Updated SMS Tagging Designs for Ops](https://help.latchel.com/updated-sms-tagging-designs-for-ops)
-      2. If the tag is incorrect, remove it.
-         1. Refer to [Updated SMS Tagging Designs for Ops](https://help.latchel.com/updated-sms-tagging-designs-for-ops)
-      3. If the tag is correct, continue with the following steps.
-   4. **Important:** All conversations need to be tagged properly before ending the conversation.
-2. From the open Text Message, click on the three dots on the right-hand side to End/Complete the Conversation, or Close the Window
-   1. If you are Transferring the Message to someone else, the message will automatically disappear from your Latchel Console Interface once it has been assigned to someone else.
-      1. When the conversation disappears from your Latchel Console, the message has been successfully transferred to another Associate.
-   2. **<u>"End Conversation"</u> -** Click this option if you are still waiting on a customer reply but would like to completely close out and finish your work in the text conversation.
-      1. "End Conversations" Unassigns the Associate that had been working on it previously.
-      2. **IMPORTANT**: Never "End a conversation" if the request is not fully addressed. If you are transferring the conversation to someone else, please DO NOT use this option.
-   3. <u>"Close Window"</u> - Click this option to close the conversation window in the Latchel Console but leaving it active. This option leaves the conversation assigned to you and allows you to access or return to it later.
-      1. "Close Window" keeps the conversation Assigned to the Associate that last responded.
-      2. When the customer responds, the messages will be automatically forwarded to you.
+1. Before closing, send the wrap-up and CSAT survey messages per [Final Assurance and Engagement](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework#🤝final-assurance-and-engagement). If the PM hasn't replied 3 minutes after your latest message, follow [Handling Unresponsive or Upset Client](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework#❗handling-unresponsive-or-upset-client).
+2. Tag the chat to the appropriate Work Order or Property Manager company.
+   1. Refer to [Updated SMS Tagging Designs for Ops](https://help.latchel.com/latchel-admin/Product-Engineering/updated-sms-tagging-designs-for-ops#updated-sms-tagging-designs-for-ops) for how the tagging feature works.
+   2. Tag per this hierarchy:
+      1. First, to a Work Order(s). This is the most common case.
+      2. Second, to the Property Manager's company if the chat does not belong to a WO.
+      3. Third, leave it untagged only if the chat truly does not belong to a WO or Property Manager company.
+   3. If the chat is already tagged, verify that the tag is correct. If it's incorrect, remove it and tag it correctly.
+   4. **Important:** All PM web chats need to be tagged properly before you end them.
+3. From the open chat, click the three dots on the right-hand side to **End Conversation** or **Close Window**.
+
+   1. If you transfer the chat to someone else, it disappears from your Latchel Console once it has been assigned to them. That means the transfer worked.
+   2. **<u>"End Conversation"</u>**: Click this when you've finished all work on the chat (including your notes), even if you're still waiting on a reply. It unassigns you.
+      1. **IMPORTANT**: Never end a chat if the request is not fully addressed. If you are transferring the chat to someone else, do NOT use this option.
+   3. **<u>"Close Window"</u>**: Click this to close the chat window but keep it active. The chat stays assigned to you so you can return to it later.
+      1. When the PM responds, the messages are forwarded to you.
+4. You don't need to log the chat manually. PM web chat transcripts are logged automatically. If you updated the work order because of the chat, leave a WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
 
 ## **🎯 When to Break This SOP**
 

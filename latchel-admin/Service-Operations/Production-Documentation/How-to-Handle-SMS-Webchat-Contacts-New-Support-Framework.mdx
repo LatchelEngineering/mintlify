@@ -17,7 +17,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
 # Content
 
 <Note>
-  For more information on Identifying the sender of the Text message/Webchat, review this document: [↔ How to: Use Text Message and Webchat Functions (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/How-to-Use-Text-Message-SMS/Webchat-Functions-in-Latchel-Console)
+  For PM web chat mechanics (the legacy SMS icon), review [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
 </Note>
 
 <Note>
@@ -25,7 +25,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
 </Note>
 
 <Note>
-  Text messages from residents, SPs, Property Managers and Owners are handled in Conversations; only PM web chats stay in the legacy SMS icon. On Latchel-managed work orders (and all work orders for Autopilot customers), Latchel AI (formerly Lucia) answers resident and SP messages first and transfers to a person when needed. Use the steps on this page to research and answer the request. Claim, reply and document Conversations per [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta). The webchat mechanics on this page (assigning, closing the window, ending the conversation, Transcripts) apply to PM web chat only.
+  Text messages from residents, SPs, Property Managers and Owners are handled in Conversations; only PM web chats stay in the legacy SMS icon. On Latchel-managed work orders (and all work orders for Autopilot customers), Latchel AI (formerly Lucia) answers resident and SP messages first and transfers to a person when needed. To see what a transferred thread looks like and how to reply, see [What a Latchel AI Handoff Looks Like](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta#what-a-latchel-ai-handoff-looks-like). Use the steps on this page to research and answer the request. Claim, reply and document Conversations per [Job Aid: Handling AI Messaging - Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta). The webchat mechanics on this page (assigning, closing the window, ending the conversation, Transcripts) apply to PM web chat only.
 </Note>
 
 ## 📋New 4-Step Support Framework
@@ -44,7 +44,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
    1. 🚫 **STOP — Unsolicited Sales or Marketing Message**
    2. If the SMS or webchat is from an outside company trying to sell, pitch, or promote their services to Latchel:
       1. Send the polite decline message below.
-      2. Close the SMS/webchat window.
+      2. PM web chat: close the web chat window. Conversations: there is no close step; click Mark as Handled if the thread is still unhandled.
          1. 🗨️ **Say something like:** "Thank you for reaching out. Unfortunately, we are not accepting those types of offers at this time. We appreciate your understanding — have a great day!"
       3. Do NOT:
          1. Engage further or ask follow-up questions
@@ -96,7 +96,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
                1. **If there is no Help Guide relevant or available in** [http://help.latchel.com](http://help.latchel.com):
                   1. Take action on behalf of the customer.
                   2. Submit a **Public Latchel Help Article Request** in the **#svc-ops-requests** Slack channel (video). Your input is key to growing and improving the Help Center.
-            2. **‼️IMPORTANT**: Some actions cannot be performed by users themselves. In these cases, delivering a positive customer experience is critical. Review [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Help-Center-Reference-Guide) for details on these limitations and how to handle them.
+            2. **‼️IMPORTANT**: Some actions cannot be performed by users themselves. In these cases, delivering a positive customer experience is critical. Review [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Help-Center-Reference-Guide) for details on these limitations and how to handle them.
          3. **📝** **NOTE**: If the client asks about multiple items, list them out and adjust your script. For example:
             1. 💠 **Say something like**:  “_To summarize, you need help with: [A, B, C,…]. Let’s start with [A].”_
       2. Wait for the client’s response.
@@ -140,7 +140,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
          2. When requesting photos during/following a call
          3. When sending a follow-up/update after a call
          4. Any other outbound communication in which the client didn't respond or interact
-3. Close the SMS window (see [↔ How to: Use Text Message (SMS/Webchat) Functions for PMs & Owners (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console#step-5-how-to-close-the-text-message)). 
+3. PM web chat only: close the web chat window (see [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console#step-5-how-to-close-the-text-message)).
 4. Conversations: there is no close step. Your reply keeps the thread handled.
 
 ### ❗Handling Unresponsive or Upset Client
@@ -148,7 +148,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/Ho
 1. <u>If at any point during the conversation the client hasn’t responded after 3 minutes of your latest message, you may proceed with ending the conversation.</u>
    1. **📝** **NOTE**: While waiting for a response, you’re expected to take on any other available conversations. For Conversations, there is no end step: send the wrap-up messages below and move on. If the customer writes again, the thread reopens as unhandled in Team. For PM web chat, close the conversation as usual after the wrap-up.
    2. Share the following messages:
-      1. 💠 **Say something like**: _“It was my pleasure to message with you today. I will close our conversation now. Please feel free to contact us again in the future ,if you need help with anything else. Take care!”_
+      1. 💠 **Say something like**: _“It was my pleasure to message with you today. Please feel free to contact us again in the future if you need help with anything else. Take care!”_
       2. **Property Managers only:** 💠 Say something like: _"Thank you for contacting Latchel. Please take our brief survey to let us know how we did: [https://latchel.typeform.com/to/GpWKSIRP](https://latchel.typeform.com/to/GpWKSIRP)"_
    3. If the Property Manager is upset, you can use this instead:
       1. 💠 **Say something like**: “Your feedback is important for improving our services. Please consider visiting this form to share your thoughts on today's interaction. Thank you for helping us enhance your future experiences: [_https://latchel.typeform.com/to/GpWKSIRP_](https://latchel.typeform.com/to/GpWKSIRP)”
