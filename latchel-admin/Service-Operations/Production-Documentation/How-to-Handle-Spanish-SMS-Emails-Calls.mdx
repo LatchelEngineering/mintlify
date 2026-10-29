@@ -29,7 +29,7 @@ flowchart LR
     K -->|Yes| L["Move forward per<br/>intake settings<br/>(e.g. emergency =<br/>dispatch)"]
     K -->|No| M["SMS resident via translator<br/>within 20 min"]
     M --> N{"Resident<br/>replied?"}
-    N -->|Yes, info received| J
+    N -->|Yes| J
     N -->|No| O["Wait 3 min,<br/>send 1 reminder,<br/>wait 3 more min"]
     O --> P["Still no reply:<br/>Option 3 -<br/>Can't reach resident"]
 
