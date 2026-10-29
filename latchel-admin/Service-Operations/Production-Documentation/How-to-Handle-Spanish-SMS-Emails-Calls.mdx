@@ -28,8 +28,9 @@ flowchart LR
     J --> K{"Info complete<br/>and matches PM<br/>intake settings?"}
     K -->|Yes| L["Move forward per<br/>intake settings<br/>(e.g. emergency =<br/>dispatch)"]
     K -->|No| M["SMS resident via translator<br/>within 20 min.<br/>Wait 3 min, send 1 reminder,<br/>wait 3 more min."]
-    M --> P["No reply:<br/>Option 3 -<br/>Can't reach resident"]
-    M --> L
+    M --> N{"Resident<br/>replied?"}
+    N -->|Yes| L
+    N -->|No| P["Option 3 -<br/>Can't reach resident"]
 
     I -->|Follow-up task| Q["Skip the call.<br/>SMS via translator"]
     Q --> R{"Emergency<br/>WO?"}
