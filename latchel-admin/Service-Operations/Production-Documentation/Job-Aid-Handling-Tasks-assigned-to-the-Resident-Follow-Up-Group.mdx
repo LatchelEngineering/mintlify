@@ -10,6 +10,10 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2528575517/J
   We want to prevent missed follow-ups, duplicate outreach, and unresolved resident issues when tasks are assigned to the Resident Follow Up Group. The goal is to ensure every resident concern—whether about missed appointments, unresolved repairs, or general help—is handled promptly, using the right communication method and with full visibility into all open tasks for that customer.
 </Note>
 
+<Warning>
+  **This job aid is for non-emergency work orders.** If the work order is an **Emergency** and the resident reports the issue is not resolved (no-show, parts needed, assessment only, temporary fix, or no details), follow [(EMERGENCY) Work Order Is Not Complete/Issue is Not Resolved](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-Work-Order-Is-Not-Complete-Issue-is-Not-Resolved) instead. Emergencies follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules): make 1 attempt, then make a same-day decision. Do not defer to the next day.
+</Warning>
+
 <Note>
   For actions that require a text message as the initial point of contact, message the resident or service provider through Conversations (WO → **Conversations** tab → **Resident** / **Service provider** tab → **Open Conversation** → **Handled by** = **Staff**). They receive it as an SMS with a link to the conversation. Every "text message" or "SMS" to a resident or service provider on this page is sent this way. For an update that needs no reply, you may set **Handled by** = **Latchel AI**. If the phone number is not enabled for text, send an email. If there is not an email, call the customer. If they don't answer, leave a voicemail.
 
@@ -17,7 +21,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2528575517/J
 </Note>
 
 <Note>
-  **Attention:** For agents handling tasks for both emergencies and non-emergencies.
+  **Attention:**
 
   Before you begin working on any task, **ensure you view all open tasks for the customer you are following up on** (resident, service provider, owner). This step is crucial to avoid duplicating efforts and customers complaints, and to ensure we always get it right the first time.
 
@@ -49,14 +53,14 @@ When a scenario instructs you to close your current task and create a new one, f
   | --- | --- |
   | **Subject** | _\[Provided by the scenario — examples: "Service Provider Follow Up," "Resident Follow Up," "Unresponsive Resident," or "A Message from the Resident"\]_ |
   | **Who is this task about?** | _\[Provided by the scenario — select the person this task is about: the Resident, the Service Provider, or the Property Manager\]_ |
-  | **Select Date and Time** | Defer the task for the **next business day at 9:00 AM local time** for the contact. A business day is defined as weekdays and does not include holidays. For example, if today is Friday, defer the task to Monday. ⚠️ **Exception:** Some scenarios instruct you to leave this blank so the task is sent immediately — if so, the scenario will say this explicitly. |
+  | **Select Date and Time** | Defer the task for the **next business day at 9:00 AM local time** for the contact. A business day is defined as weekdays and does not include holidays. For example, if today is Friday, defer the task to Monday. <br /><br />⚠️ **Exception:** Some scenarios instruct you to leave this blank so the task is sent immediately — if so, the scenario will say this explicitly. <br /><br />⚠️ This applies to non-emergency work orders only. Never defer an emergency task to the next business day. Follow the Stale Emergency rule. |
   | **Assign to User Group** | _\[Provided by the scenario — examples: "Service Provider Follow Up," "Resident Follow Up," or "PM"\]_ |
   | **Assign to a User** | **Always leave this blank.** Leaving it blank sends the task to all users listed within the chosen user group, ensuring proper coverage and routing. |
   | **Task Priority Level** | Choose priority based on the work order severity: |
   |  | - Emergency Severity = **Highest** Priority |
   |  | - Urgent Severity = **High** Priority |
   |  | - Normal Severity = **Medium** Priority |
-  | **Cancel Action** | **Default: "Cancel on any state change."** ⚠️ **Exception:** Some scenarios require "Cancel only on Completed or the Canceled States" instead — if so, the scenario will call this out explicitly with an override note. |
+  | **Cancel Action** | **Default: "Cancel on any state change."** <br /><br />⚠️ **Exception:** Some scenarios require "Cancel only on Completed or the Canceled States" instead — if so, the scenario will call this out explicitly with an override note. |
   | **Task Description** | _\[Provided by the scenario — use the exact description text or template given. Include all relevant context so the next agent can act on the task without needing to re-research the work order.\]_ |
 </Accordion>
 
@@ -272,9 +276,12 @@ For PM routing, refer to how we handle non-maintenance requests.
       1. Leave a voicemail if possible. If no voicemail option, send an SMS or email, whichever is available.
       2. Close the task.
 
-## **<u>How to handle emergency work orders when resident requested further support or reported the issue is not resolved.</u>**
+## Emergency Work Orders
 
-For emergency follow-ups where the issue is not resolved, apply the same scenario logic above (1A–1E) but follow emergency contact frequency and escalation timelines per the [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) and [How to: Handle Emergency Work Orders](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders).
+Do not use the scenarios above for emergency work orders.
+
+- **Resident reports the issue is not resolved** (no-show, parts needed, assessment only, temporary fix, or no details): follow [(EMERGENCY) Work Order Is Not Complete/Issue is Not Resolved](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-Work-Order-Is-Not-Complete-Issue-is-Not-Resolved).
+- **Any other follow-up on an active emergency:** follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules). Make 1 attempt, then make a same-day decision right away (intervene, de-escalate, or forward to the PM). Do not defer to the next day.
 
 ## 🎯 When to Break This SOP
 
