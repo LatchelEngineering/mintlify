@@ -10,6 +10,37 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/3422683158/H
 We want to prevent delays, confusion, and poor customer experiences when Spanish-speaking customers reach out via SMS, email, or phone. Associates handle Spanish SMS, emails, and troubleshooting tasks themselves using the approved translation tool. Inbound Spanish calls are transferred to our Spanish call center partner.
 </Note>
 
+## 🗺️ Quick Flow
+
+```mermaid
+flowchart LR
+    A["Spanish-speaking customer"] --> B{"How did it come in?"}
+
+    B -->|Inbound call| C["Transfer to Spanish Queue<br/>(press 2, then Join)"]
+    B -->|SMS / Email| D["Reply with Spanish SMS Translator<br/>(start with disclosure)"]
+    B -->|Task| E{"Who do you need to reach?"}
+
+    E -->|English speaker<br/>e.g. SP or PM| F["Handle as a normal task"]
+    E -->|Spanish speaker| I{"What type of task?"}
+
+    I -->|Emergency TS| J["Review intake (click Translate)<br/>No TS call needed"]
+    J --> K{"Clear and matches<br/>PM intake settings?"}
+    K -->|Yes| L["Move forward per intake settings<br/>(e.g. emergency = dispatch)"]
+    K -->|No, need more info| M["SMS via translator<br/>within 20 min"]
+    M --> N{"Reply?"}
+    N -->|Yes| K
+    N -->|No| O["Wait 3 min, send 1 reminder,<br/>wait 3 more min"]
+    O --> P["Still no reply:<br/>Option 3 - Can't reach resident"]
+
+    I -->|Follow-up task| Q["Skip the call.<br/>SMS via translator"]
+    Q --> R{"Emergency WO?"}
+    R -->|No| S["Each SMS = 1 attempt.<br/>Follow the task's normal SOP"]
+    R -->|Yes| T["Stale Emergency rule:<br/>no reply in 3 min =<br/>same-day decision"]
+
+    Z["No SMS or email for a Spanish speaker?<br/>See 'Spanish Speaker Without SMS'"]
+    style Z fill:#fff8e1,stroke:#f0b429
+```
+
 ## 📋 Step-by-Step Process
 
 ### Calls
