@@ -11,7 +11,9 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2528575517/J
 </Note>
 
 <Warning>
-  **This job aid is for non-emergency work orders.** If the work order is an **Emergency** and the resident reports the issue is not resolved (no-show, parts needed, assessment only, temporary fix, or no details), follow [(EMERGENCY) Work Order Is Not Complete/Issue is Not Resolved](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-Work-Order-Is-Not-Complete-Issue-is-Not-Resolved) instead. Emergencies follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules): make 1 attempt, then make a same-day decision. Do not defer to the next day.
+  **This job aid is for non-emergency work orders.** If the work order is an **Emergency** and the resident reports the issue is not resolved (no-show, parts needed, assessment only, temporary fix, or no details), follow [(EMERGENCY) Work Order Is Not Complete/Issue is Not Resolved](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-Work-Order-Is-Not-Complete-Issue-is-Not-Resolved) instead. Emergencies follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules): do not defer to the next day. Follow the attempt rules in **Follow-Up Procedures** (PD/EH and non-PD/EH are different). See **Emergency Work Orders** at the bottom of this page.
+
+  For On-call customers, follow [Follow-Up Guidelines for On-Call Customers](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Follow-Up-Guidelines-for-On-Call-Customers-app-latchel-com) instead.
 </Warning>
 
 <Note>
@@ -281,7 +283,10 @@ For PM routing, refer to how we handle non-maintenance requests.
 Do not use the scenarios above for emergency work orders.
 
 - **Resident reports the issue is not resolved** (no-show, parts needed, assessment only, temporary fix, or no details): follow [(EMERGENCY) Work Order Is Not Complete/Issue is Not Resolved](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-Work-Order-Is-Not-Complete-Issue-is-Not-Resolved).
-- **Any other follow-up on an active emergency:** follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules). Make 1 attempt, then make a same-day decision right away (intervene, de-escalate, or forward to the PM). Do not defer to the next day.
+- **Any other follow-up on an active emergency:** follow the **Stale Emergency rule** and **Follow-Up Procedures** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules). Do not defer to the next day.
+  - **Not PD/EH:** make 1 call attempt. If no one answers, send an SMS. Then make a same-day decision right away: intervene, de-escalate to Urgent, or forward to the PM (only if the PM took over).
+  - **PD/EH:** make 3 call attempts in a row to the resident or service provider. If no one answers, send an SMS. If Latchel can still move the job forward (for example, reassign an SP that isn't locked in), do that. If not, call the Emergency Escalation Contacts. Do not de-escalate, unless exception B or C of the Stale Emergency rule applies.
+- **On-call customers:** follow [Follow-Up Guidelines for On-Call Customers](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Follow-Up-Guidelines-for-On-Call-Customers-app-latchel-com).
 
 ## 🎯 When to Break This SOP
 
