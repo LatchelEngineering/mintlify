@@ -16,7 +16,7 @@ With the implementation of Harphonia automation, most callback scenarios (caller
 
 When a Harphonia call ends because the caller hung up (Disconnection Reason = user\_hangup) before a request is submitted, the system will automatically send an SMS to the resident. If the caller’s phone number is not textable, an alert will be posted in the **#cc-tasks** Slack channel. These alerts are the only case where associates need to take manual action (call back and/or create a WO). Each alert includes a link to the Retell call and the call summary for context.
 
-**Note:** Callback alerts for Spanish callers with non-textable phone numbers now include a **Spanish indicator** in the #cc-tasks alert. When this indicator is present, ensure a Spanish-speaking associate handles the callback.
+**Note:** Callback alerts for Spanish callers with non-textable numbers include a **Spanish indicator**. When you see it, follow **“Spanish Speaker Without SMS”** in [How to: Handle Spanish SMS/Emails/Calls](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls). Any associate can take these alerts.
 
 **Sample Alert**
 
