@@ -13,7 +13,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4227629058/O
   The assistant is most helpful when you use it consistently: start from the right status, use **Next Task** to pick up work, and review the work order guidance before taking action.
 </Info>
 
-_This job aid reflects plugin version **0.6.7** (current as of 10/6/26)._
+> _This job aid reflects plugin version **0.6.9** (current as of 10/29/26)._
 
 ## Why Your Status and Queue Matter
 
@@ -61,6 +61,7 @@ Before calling, messaging, assigning, or making changes on a work order, let the
 You shouldn't have to dig for this information — the assistant puts it in front of you automatically on every work order.
 
 - **Status and Managed By** — The assistant tells you who's actually managing the work order and flags it if the status doesn't line up, so you're not guessing or hunting through the property record.
+- **Troubleshooting Instructions** — Shown first under **Critical notes & escalation**. These are company-wide instructions the PM Company added in their Intake Settings for how troubleshooting should be handled. They can be questions to ask or things to avoid (e.g., “Never tell the resident to light the pilot”), and they follow the same rules as critical notes. Latchel’s AI is expected to follow them during intake, so check them against the intake transcript before you call: don’t re-ask what the AI covered, ask what it missed, and always follow “do not” instructions. If it reads _“No special instructions; follow normal troubleshooting protocol,”_ the PM hasn’t added any.
 - **Critical notes** — The assistant pulls critical notes from both the vendor and the PM Company automatically and puts them in one place, so you're not missing instructions buried on either side.
 - **Emergency Escalation Contacts** — the assistant pulls the designated emergency contacts from both the vendor and the PM Company automatically and surfaces them in one place, so you always know who to call first when a job is flagged Emergency, without digging through either side's records.
 - **Pre-dispatch instructions** — Any special steps required before dispatching or escalating are surfaced right in the assistant, so you don't have to remember or look them up separately.
@@ -85,6 +86,10 @@ You shouldn't have to dig for this information — the assistant puts it in fron
 ## What's New: Recent Plugin Changes to Your Daily Workflow
 
 The plugin updates frequently, and some updates change how you work day to day. Here's what's changed recently that affects associates:
+
+- **Troubleshooting Instructions now surfaced.** The PM’s custom troubleshooting instructions appear at the top of **Critical notes & escalation**, ahead of Critical Notes. Check them before every TS call.
+
+- **SLA countdown now starts when the job enters Troubleshooting**, not when the work order was created.
 
 - **Enter no longer sends SMS templates.** Pressing Enter to pick a template in SMS no longer sends it, so you can edit before sending.
 
@@ -129,7 +134,7 @@ The plugin updates frequently, and some updates change how you work day to day. 
 
 - Make sure you are in the correct emergency-related status.
 - Use Next Task so emergency and urgent work is surfaced correctly.
-- Review emergency context, managed-by details, escalation contacts, and pre-dispatch instructions before acting.
+- Review emergency context, managed-by details, **Troubleshooting Instructions**, escalation contacts, and pre-dispatch instructions before acting.
 
 ### If Your Queue Looks Empty
 
@@ -145,7 +150,8 @@ The plugin updates frequently, and some updates change how you work day to day. 
 - Start every work block by clocking in (if starting your shift) and checking your status from the plugin.
 - Use **Next Task** as your default way to pick up work. Avoid browsing **All Queues** to choose tasks manually; when you click **Next Task**, the assistant will surface the next task that should be picked up.
 - Read the work order context before calling, messaging, dispatching, or escalating.
-- Check critical notes, escalation details, related jobs, and intake transcript when needed.
+- Check Troubleshooting Instructions, critical notes, escalation details, related jobs, and intake transcript when needed.
+
 - Use the assistant's callback numbers and quality reminders to reduce missed steps.
 - Return from breaks or meetings by updating your status before taking work.
 - Report issues only after checking status, user-group access, and plugin version.
@@ -159,6 +165,7 @@ The plugin updates frequently, and some updates change how you work day to day. 
 - Using All Queues as the daily task picker instead of a visibility tool.
 - Ignoring related jobs and accidentally duplicating work.
 - Skipping or giving a vague late clock-out reason.
+- Re-asking the resident questions the AI already covered during intake, or skipping PM Troubleshooting Instructions the AI missed.
 
 ## Quick Troubleshooting
 
