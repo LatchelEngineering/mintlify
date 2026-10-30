@@ -13,7 +13,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4227629058/O
   The assistant is most helpful when you use it consistently: start from the right status, use **Next Task** to pick up work, and review the work order guidance before taking action.
 </Info>
 
-> _This job aid reflects plugin version **0.6.9** (current as of 10/29/26)._
+_This job aid reflects plugin version **0.6.9** (current as of 10/29/26)._
 
 ## Why Your Status and Queue Matter
 
@@ -61,23 +61,120 @@ Before calling, messaging, assigning, or making changes on a work order, let the
 You shouldn't have to dig for this information — the assistant puts it in front of you automatically on every work order.
 
 - **Status and Managed By** — The assistant tells you who's actually managing the work order and flags it if the status doesn't line up, so you're not guessing or hunting through the property record.
+  - <img
+      src="/images/image-174.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"27%" }}
+    />
+  - <img
+      src="/images/image-175.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"38%" }}
+    />
 - **Troubleshooting Instructions** — Shown first under **Critical notes & escalation**. These are company-wide instructions the PM Company added in their Intake Settings for how troubleshooting should be handled. They can be questions to ask or things to avoid (e.g., “Never tell the resident to light the pilot”), and they follow the same rules as critical notes. Latchel’s AI is expected to follow them during intake, so check them against the intake transcript before you call: don’t re-ask what the AI covered, ask what it missed, and always follow “do not” instructions. If it reads _“No special instructions; follow normal troubleshooting protocol,”_ the PM hasn’t added any.
+  - <img
+      src="/images/image-176.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"32%" }}
+    />
 - **Critical notes** — The assistant pulls critical notes from both the vendor and the PM Company automatically and puts them in one place, so you're not missing instructions buried on either side.
+  - <img
+      src="/images/image-177.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"46%" }}
+    />
 - **Emergency Escalation Contacts** — the assistant pulls the designated emergency contacts from both the vendor and the PM Company automatically and surfaces them in one place, so you always know who to call first when a job is flagged Emergency, without digging through either side's records.
+  - <img
+      src="/images/image-178.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"53%" }}
+    />
 - **Pre-dispatch instructions** — Any special steps required before dispatching or escalating are surfaced right in the assistant, so you don't have to remember or look them up separately.
+  - <img
+      src="/images/image-179.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"65%" }}
+    />
 
 - **Resident and vendor callback numbers** — The right callback number is already there, with a one-click copy button, so you're never fumbling to find or retype it mid-call.
+  - <img
+      src="/images/image-180.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"52%" }}
+    />
 - **Special Notes** — Jot a note straight into the work order without committing it to the Activity log yet. It saves locally, survives you navigating away, and sticks around for 30 days — so you can step away mid-task without losing your train of thought.
+  - <img
+      src="/images/image-181.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"57%" }}
+    />
 - **Intake transcript** — The full intake conversation is right there, so you get the complete picture of what the resident reported without piecing it together from scratch.
+  - <img
+      src="/images/image-189.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"68%" }}
+    />
 - **Related jobs** — The assistant checks the past 6 months for duplicates or connected issues automatically, cutting down on unnecessary follow-up work before you even have to think to look. Still worth a manual double-check at the property if nothing surfaces.
+  - <img
+      src="/images/image-186.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"57%" }}
+    />
 - **Quality CX call tips** — Reminders for call quality and customer experience are built right in, so the standard is always in front of you, not something you have to remember separately.
+  - <img
+      src="/images/image-187.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"31%" }}
+    />
 - **Go to Task** — A one-click shortcut card that jumps you straight to the active task on a work order (e.g., "Emergency Troubleshooting Required"), showing which team owns it and letting you claim it with **Assign to me**.
+  - <img
+      src="/images/image-190.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"55%" }}
+    />
 - **Subscription Tags** — Shown under the PM's info, these tags (Autopilot, Home Assistant, 24/7 Emergency, etc.) tell you what the PM Company has actually signed up for, so you know what you can and can't promise the resident on their behalf.
+  - ![Image](/images/image-188.png "Image")
 - **Photos** — Any photos attached to the work order (from the resident, vendor, or tech) are pulled into one gallery on the job, so you don't have to dig through texts or emails to see what the issue looks like.
+  - <img
+      src="/images/image-191.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"20%" }}
+    />
 - **Templates Panel** — A searchable library of pre-written SMS, call notes, and task notes (54+ available), sorted by Relevance/Most Used/A-Z. Open it by clicking the ⚡ templates icon wherever it appears, by clicking the Templates button on the Conversations tab, or by typing ;; in any message or note box. Common templates also have keyword shortcuts, for example ;;rut + Enter inserts "Are you there??" Templates support merge fields (like WO number, resident name, job cost) so the same snippet auto-fills with the right details per job. In SMS, details fill in from the work order linked to the conversation. Templates are also available in task forms. Pressing Enter to select a template in SMS no longer sends it, so you can review and edit before sending.
+  - <img
+      src="/images/image-183.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"50%" }}
+    />
 - **Common-Area WO Flag** — Flags a work order as being for a common area rather than a resident's unit, so calls to the resident are for access info only — you're not meant to troubleshoot the issue with them since it's not their space. Pulls in any on-file **Access Instructions** for the area so you know how to get in.
 - **Weather Check** — A live forecast for the property's location is surfaced right on every work order, not just weather-sensitive jobs, so you can check conditions before scheduling or dispatching.
+  - <img
+      src="/images/image-184.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"61%" }}
+    />
 - **Test Intake Rules** — Check which intake rules match a work order without leaving it. Describe the issue (it pre-fills from the WO description, so edit it as needed), and the assistant shows which rules matched and which didn't. AI can make mistakes, so always confirm the result is correct before acting on it.
+  - <img
+      src="/images/image-185.png"
+      alt="Image"
+      title="Image"
+      style={{ width:"54%" }}
+    />
 - **Sourcing contact details** — When you're sourcing a service provider in the **Find Service Provider** modal, the assistant shows the SP's alternate phone numbers and email address, along with the main number. The email has a one-click copy button, so you can reach the SP another way if the main number doesn't connect, without digging through their profile.
 - **Assembly job link** — In Assembly, click the Latchel icon to add a link to a job you recently viewed into an internal note. A ✅ appears once it's added, so you know the link went in.
 
