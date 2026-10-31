@@ -1,0 +1,131 @@
+---
+title: "Operations Weekly Newsletter — Process Update Edition 10/30/2026"
+groups:
+  - "latchel"
+---
+
+<Info>
+  This newsletter is intended as a resource to collect Ops Goals, All Hands information, SOP updates, and Product releases impacting the team in one place, so you're able to refer to any recent changes that took place.
+</Info>
+
+<Warning>
+  Please fill out this form after reading to confirm acknowledgement of the content: [**Form link**](https://forms.gle/ZKAh1V1N5Ym6B97f8)
+</Warning>
+
+<Note>
+  Please note that the content of this page may become obsolete over time since its validity is subject to any future changes; therefore, always refer to the actual SOPs and Job Aids for official guidance.
+</Note>
+
+**All Hands Topics:**
+
+[Recording](https://drive.google.com/file/d/1I5dxXsADbqtJlSX_t3SR6MKUwUypiIiO/view?usp=sharing)
+
+1. Quality Team – Weekly Recap
+2. **CSAT Survey Update**: CSAT survey links are no longer sent to residents, service providers and owners through messaging
+3. **SP Onsite Approvals**: new exception (business hours only) that lets us call the PM when an SP onsite needs budget approval for an amount over the hard budget limit on an emergency WO, whether or not it’s PD/EH
+4. **Daylight Saving Time**: US DST ends Sunday, November 1 at 2:00 AM.
+
+<div style={{ maxWidth: "420px" }}>
+  <Warning>
+    ## ⭐ SHOUTOUT
+
+    <Columns cols={2}>
+      <div>
+        CX Experience
+
+        * Carl
+        * Joner
+        * Summer
+      </div>
+
+      <div>
+        Troubleshooting
+
+        * Neil
+        * Noel
+        * Roy
+      </div>
+    </Columns>
+  </Warning>
+</div>
+
+# Documentation Updates
+
+<Info>
+  ## Major Updates/Training
+
+  <Accordion title="🚨 URGENT: Spanish Process in Service Ops">
+    **Why it matters:**<br />Spanish-speaking customers shouldn't face delays while their request waits for a Spanish-speaking associate. Every associate now handles Spanish contacts directly.
+
+    **What changed:**<br />Associates handle Spanish SMS, emails, troubleshooting tasks and follow-up tasks themselves using the [Spanish SMS Translator](https://claude.ai/public/artifacts/35daba8e-9963-4de9-82bb-74d3999cb190). Inbound Spanish calls are transferred to our Spanish call center partner (Sunshine Call Center). **No troubleshooting call is required for Spanish-speaking residents.**
+
+    **What you need to do:**
+
+    1. **Inbound Calls:** transfer any Spanish-speaking caller through **Quick Connects > Spanish Queue**, press **2**, then click **Join**.
+    2. **SMS/Email:** reply right away with the Spanish SMS Translator, starting with the translation disclosure message.
+    3. **TS tasks:** don't defer or wait for a Spanish speaker. Review the intake (click **Translate**). If the details are clear and match the PM's intake settings, move forward. If you need more info, SMS the resident within **20 minutes**, wait 3 minutes, send 1 reminder, wait 3 more minutes, then follow **Option 3 – Can't reach resident**.
+    4. **Follow-up tasks:** check who the task is for first. For Spanish speakers, skip the call and SMS via the translator. On emergency WOs, apply the Stale Emergency rule after 3 minutes with no reply.
+    5. **No SMS or email:** follow **Spanish Speaker Without SMS** in the SOP.
+
+    **When it takes effect:**<br />Effective immediately
+
+    **Resources impacted:**
+
+    - [How to: Handle Spanish SMS/Emails/Calls](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls)
+  </Accordion>
+
+  <Accordion title="PM Troubleshooting Instructions (Beta)">
+    **Why it matters:**<br />PMs can now add their own troubleshooting instructions in Intake Settings, and our AI is expected to follow them during intake. Troubleshooters need to catch anything the AI missed and respect PM restrictions on every call.
+
+    **What changed:**<br />Previously there was no PM-specific troubleshooting guidance to check. Now **Troubleshooting Instructions** appear at the top of **Critical notes & escalation** in the Ops Assistant plug-in (v0.6.9), and they follow the same rules as critical notes.
+
+    **What you need to do:**
+
+    1. Before every TS call, check Troubleshooting Instructions against the intake transcript. Don’t re-ask what the AI already covered. Ask any PM questions it missed, note them in the call notes, and submit a bug report. Follow every “do not” instruction, even if the Question Bank says otherwise.
+
+    **When it takes effect:**<br />Monday, 11/02/2026
+
+    **Resources impacted:**
+
+    - [How to: Properly Diagnose Emergency Situations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Properly-Diagnose-Emergency-Situations)
+    - [Job Aid: Critical, Pre-dispatch, Warranty, Special Notes & EEC (Q10)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Critical-Pre-dispatch-Warranty-Special-Notes-Emergency-Escalation-Contacts)
+    - [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders): Reworded the 20-minute call SLA to start when the WO enters Troubleshooting, matching the plugin’s SLA countdown.
+    - [Job-Aid: Ops Assistant Plug-in](https://help.latchel.com/latchel-admin/Service-Operations/Operations-Associate-Job-Aid-Latchel-Service-Ops-Assistant-Plug-in): Updated to v0.6.9 and added Troubleshooting Instructions and the new SLA countdown.
+  </Accordion>
+</Info>
+
+<Tip>
+  ## Minor Updates
+
+  <Accordion title="Click to expand minor updates">
+    - [(⛑EMERGENCY) How to: Handle Changes to the Approved Budget](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Handle-Changes-to-the-Approved-Budget)
+      - **SP onsite approvals:** New exception (business hours only, 9:00 AM–5:00 PM property time, Mon–Fri). When an SP is on site and needs approval over the hard budget limit on an emergency WO, call the PM's escalation contacts first, whether or not it’s PD/EH. Follow **Scenario 5A** in [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
+    - [How to: Handle DIY Owner Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts#nomad-wo-blocked-on-something-nomad-is-responsible-for)
+      - If a NOMAD work order is missing info NOMAD should provide, create a task for NOMAD instead of escalating.
+    - [How to: Handle SMS/Webchat Contacts (New Support Framework)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework)
+      - **CSAT survey update:** CSAT survey links are no longer sent to residents, service providers or owners through messaging. Send the survey to Property Managers only.
+    - [How to: Add a New Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-To-Add-a-New-Service-Provider)
+      - **Thumbtack FAQs now live:** Added FAQs for SPs following up after the Thumbtack reply (creating or connecting a profile,etc), and refined the response scripts.
+    - [Job Aid: Handling AI Messaging - Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)
+      - **AI Messaging complaint scripts:** Added reply scripts for when a PM or SP complains about the messaging link or wants to text a real person. Never send the PM version (with stats) to an SP. Escalate to PS if the PM still complains.
+  </Accordion>
+</Tip>
+
+<Note>
+  ## Product Releases & Help Guides
+
+  <Accordion title="Click to expand product releases and help guides">
+    - [Troubleshooting Instructions (Intake Settings) Beta Feature](https://latchel.slack.com/archives/C038Z6M0T6H/p1793226287058669)
+
+    **New guides**
+
+    - [AI Assistant Tab](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/ai-assistant-tab): New guide: what the AI Assistant tab shows (messages, vendor conversations, time spent, after-hours activity, activity breakdown) and how to open it.
+
+    **Updated guides**
+
+    - [AI Messaging: How Conversations Work](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/ai-messaging): Updated the rollout note to say Conversations is live for all customers, pointed to the new Conversations and support chat icons, and noted AI is on by default for Autopilot with an opt-out.
+    - [How to Contact Latchel](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Contact-Latchel): Changed the webchat steps to use the new chat with support icon (next to the Conversations icon) instead of the old SMS icon.
+    - [Outbound Voice for Vendors](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/outbound-voice): Added a section explaining that you can choose which days vendors get called and set call hours, while vendors keep their own call windows.
+    - [Overview of Work Order Life Cycle](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/Overview-of-Work-Order-Life-Cycle): Now has an updated video walkthrough of how a work order moves from request to completion.
+  </Accordion>
+</Note>
