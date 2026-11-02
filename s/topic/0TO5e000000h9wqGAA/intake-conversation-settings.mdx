@@ -57,6 +57,16 @@ Each level shows you exactly which underlying intake steps will run (diagnostics
   Troubleshooting depth is currently a **company-wide setting** — it can't yet be customized by portfolio or property.
 </Note>
 
+### **Adding Troubleshooting Instructions (Beta)**
+
+Have your own way of handling common issues? In the **Troubleshooting Instructions** section, you can write company-specific instructions in a free-text field, and Latchel AI will weave them naturally into troubleshooting with residents during intake.
+
+{/* TODO: screenshot of the Troubleshooting Instructions section in Conversation Settings */}
+
+<Note>
+  Troubleshooting Instructions is a beta feature. It's set at the company level only, so it can't yet be customized by portfolio or property.
+</Note>
+
 ### **Steps to Activate**
 
 <Steps>
@@ -72,7 +82,10 @@ Each level shows you exactly which underlying intake steps will run (diagnostics
   <Step title="Set your troubleshooting depth" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="h4">
     Choose None, Mitigate Damage, Solve Issues, or High based on how much diagnostic guidance you want residents to receive.
   </Step>
-  <Step title="Save, then place a test call" icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+  <Step title="Add troubleshooting instructions (optional)" icon="5" iconType="sharp-solid" stepNumber={5} titleSize="h4">
+    In the **Troubleshooting Instructions** section, enter any company-specific instructions you want Latchel AI to work into troubleshooting.
+  </Step>
+  <Step title="Save, then place a test call" icon="6" iconType="sharp-solid" stepNumber={6} titleSize="h4">
     Save your changes, then call in as if you were a resident to confirm the voice, tone, and troubleshooting flow all sound the way you expect.
   </Step>
 </Steps>
@@ -90,6 +103,10 @@ Each level shows you exactly which underlying intake steps will run (diagnostics
 
   <Accordion title="Can I set different troubleshooting depths for different properties or portfolios?">
     Not yet. Troubleshooting depth is currently a company-wide setting that applies to every property under your account.
+  </Accordion>
+
+  <Accordion title="Can I add different troubleshooting instructions for different properties or portfolios?">
+    Not yet. Troubleshooting Instructions are set at the company level and apply to every property under your account.
   </Accordion>
 
   <Accordion title="Why doesn't the voice sample change when I adjust Emotion or Speed?">
