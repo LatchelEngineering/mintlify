@@ -1,0 +1,146 @@
+---
+title: "October 19, 2026"
+---
+
+The following are the Latchel updates for the week of October 19, 2026.
+
+### **New Features**
+
+1. **AI Messaging Is Rolling Out to All Autopilot Customers on Wednesday, October 21st!**
+
+SMS and in-app messages from residents and service providers are about to get smarter. On **Wednesday, October 21st**, we're rolling out **AI Messaging** to all Autopilot customers — our next step in automating the back-and-forth that eats up your team's day.
+
+**Here's what changes:**
+
+- Residents and vendors message you; Latchel's AI reads and responds to routine ones ("I scheduled this for tomorrow." ✓)
+- Messages outside AI's scope get routed where they belong: to you if it's a PM-managed work order, to Latchel if we manage it
+- No more manual tagging: conversations auto-tag to work orders and close themselves when you reply
+- You stay in control: rate AI responses to help us improve, and customize when you want notifications
+
+**See how it works:**
+
+<Columns cols={3}>
+  <Card title="Resident demo" color="#ff9b8a" icon="house-user" iconType="duotone" href="https://www.loom.com/share/3aef0b4d8afa4842b36c6d8b7f3095e6">
+  </Card>
+  <Card title="Service Provider demo" color="#ff9b8a" icon="screwdriver-wrench" iconType="duotone" href="https://www.loom.com/share/ed7423f478ee4f3d8e3c7a0223edde60">
+  </Card>
+  <Card title="Property Manager demo" color="#ff9b8a" icon="user-tie" iconType="duotone" href="https://www.loom.com/share/9bc1f664a629446e9032e16a07e8d87d">
+  </Card>
+</Columns>
+
+<Tip>
+  Thanks to everyone in our beta group for the feedback that helped shape this release. Questions before Wednesday? **Reply to this email** and we'll be happy to help.
+</Tip>
+
+<Card title="AI Messaging: How Conversations Work" color="#ff9b8a" icon="messages" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/ai-messaging">
+  Learn how Latchel's AI handles resident and service provider messages.
+</Card>
+
+2. **Assign a Service Provider While Creating a Work Order**
+
+We noticed a lot of you were creating a work order and then going straight back into it to assign a service provider. You don't need that extra step anymore. You can now **add a service provider right in the Create Work Order flow**, so the work order is ready to go the moment you submit it.
+
+3. **Automatic Cleanup of Former Residents**
+
+<Accordion title="Shoutout!" defaultOpen iconType="duotone">
+  <Icon icon="party-horn" iconType="sharp-duotone-solid" color="#ff9b8a" size={35} /> Thanks to **Pam T Management** for your recent report about this!
+</Accordion>
+
+Latchel always moves residents from properties when we receive a move-out date from your property management system. Unfortunately, not all property management systems or move-out processes ensure we receive those move-out dates. This resulted in moved-out residents staying on the property for too long — and we were tired of former residents getting messages about a unit they've already moved out of.
+
+We've introduced **Resident Reconciliation**. Every Monday, Latchel checks your residents against your property management software and unlinks anyone your PMS no longer lists.
+
+<Callout icon="hands-holding-heart" iconType="duotone" color="#b19cf8">
+  **It's built to be cautious:**
+
+  - A resident is removed only after they've been missing from **three weekly checks in a row**
+  - Residents you added manually in Latchel are **never touched**
+  - Anyone who reappears in your PMS is **relinked automatically**
+</Callout>
+
+Want to see who was removed? Download the list from your [Exports page](https://app.latchel.com/admin/exports).
+
+<Note>
+  Currently available for **Yardi**, **Rentvine**, **Propertyware** and **AppFolio**, with more PMS integrations coming soon!
+</Note>
+
+4. **Latchel MCP Just Got a Lot More Capable**
+
+Already using Latchel with Claude or ChatGPT? The **Latchel MCP** has gained **27 new tools** in the past three weeks, and several existing tools have been improved. Highlights include:
+
+- **Your to-do list and notifications:** ask your AI assistant what's on your agenda, or pull up a notification along with the task, work order or conversation it's about
+- **Conversations (AI Messaging Beta):** see who on a work order can be messaged and what's already been said to them, and send a text to the resident, service provider or owner. Yes, this means you can empower your own AI agents to continue the conversation through Latchel. Imagine the power 🙂
+
+Not connected yet? It only takes a few minutes!
+
+<Card title="Get Started with Latchel MCP" color="#ff9b8a" icon="plug-circle-bolt" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/latchel-mcp-ai-assistants">
+  Connect Claude or ChatGPT to your Latchel account.
+</Card>
+
+### **Resolved Bugs**
+
+1. **"Other Actions" Opens Instantly**
+
+<Warning>
+  **What was happening:**
+
+  Clicking **Other Actions** on a work order reloaded the menu and showed a spinner, which slowed things down and led to accidental clicks.
+</Warning>
+
+<Check>
+  **What's fixed:**
+
+  The menu now opens right away, with no reload and no spinner. It's a small change you'll notice on every work order!
+</Check>
+
+2. **Global Search Shows Your Most Recent Work Orders First**
+
+<Warning>
+  **What was happening:**
+
+  When you searched an address in the global search bar, older completed work orders could push an open work order out of the top results.
+</Warning>
+
+<Check>
+  **What's fixed:**
+
+  Global search now lists the most recently updated work orders first, so your active work is easier to find. Exact matches still appear ahead of partial ones.
+</Check>
+
+3. **No More Duplicate Work Orders from Bids**
+
+<Warning>
+  **What was happening:**
+
+  When a bid became a work order, Latchel could send that work order to your property management software twice. Depending on your integration and timing, this sometimes left a duplicate work order in your PMS.
+</Warning>
+
+<Check>
+  **What's fixed:**
+
+  Work orders created from bids now sync to your PMS just once, so you won't have duplicates to clean up. We've also added new safeguards that help us catch issues like this sooner.
+</Check>
+
+### **What Should Latchel Build Next? You Decide.**
+
+We're locking our **2027 priorities** soon, and this is your chance to influence what we build next. It takes less than **60 seconds** — and every response goes straight to the product and leadership teams.
+
+<Columns cols={2}>
+  <Column>
+    <Card title="Submit your feedback here!" color="#ff9b8a" icon="message-pen" iconType="duotone" horizontal href="https://forms.gle/AbUoieefga3azLmH7">
+    </Card>
+  </Column>
+  <Column>
+  </Column>
+</Columns>
+
+Your input directly shapes which features ship, improve, or get deprioritized — this is where ideas turn into action.
+
+### **Interested in learning more about Latchel's products? Book a meeting with us.**
+
+<Columns cols={2}>
+  <Column>
+    <Card title="Get a Demo" color="#ff9b8a" icon="comments-question-check" iconType="duotone" horizontal href="https://latchel.com/demo-request-releases/">
+    </Card>
+  </Column>
+</Columns>
