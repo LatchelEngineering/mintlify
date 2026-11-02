@@ -16,29 +16,28 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/775553066/La
 
 For what a specific status means, see the [Work Order Statuses](#work-order-statuses) tables below.
 
-### Non-Emergency Work Orders
+| Step | Non-Emergency | Emergency |
+| --- | --- | --- |
+| **1. Intake** | The resident submits the request. Intake collects the details needed to create an actionable WO, and some issues are resolved or de-escalated at this step. | Same as non-emergency. |
+| **2. Scheduling / Troubleshooting** | Latchel collects the resident's availability or permission to enter and shares it with the Service Provider (SP). | A Latchel troubleshooter calls the resident to try to de-escalate the issue. |
+| **3. Dispatch** | Once an appointment is set, Latchel sends automated communication and reminders to all parties leading up to the work date. | If the issue can't be de-escalated, Latchel dispatches SPs in the order shown in [Emergency Dispatch Order](#emergency-dispatch-order) below. |
+| **4. Follow-up** | The resident confirms the issue was resolved. Residents are encouraged to post positive reviews on the customer's review site of choice. | Same as non-emergency. |
+| **5. Invoicing** | The SP adds their invoice directly in Latchel. If the customer prefers, payments can be approved and paid automatically. | Same as non-emergency. |
 
-1. **Intake**: The resident submits the request. Intake collects the details needed to create an actionable WO, and some issues are resolved or de-escalated at this step.
-2. **Scheduling**: Latchel collects the resident's availability or permission to enter and shares it with the Service Provider (SP).
-3. **Dispatch**: Once an appointment is set, Latchel sends automated communication and reminders to all parties leading up to the work date.
-4. **Follow-up**: The resident confirms the issue was resolved. Residents are encouraged to post positive reviews on the customer's review site of choice.
-5. **Invoicing**: The SP adds their invoice directly in Latchel. If the customer prefers, payments can be approved and paid automatically.
+### Emergency Dispatch Order
 
-### Emergency Work Orders
+| Order | Who Latchel contacts | When it applies |
+| --- | --- | --- |
+| 1 | Preferred SPs (auto-assign and/or manual calls) | Always first |
+| 2 | Latchel Network (LCN) SPs, starting with Partner SPs | PM is opted in to the Latchel Network |
+| 3 | Externally sourced SPs | PM is opted in, and no LCN SP can be secured |
+| 4 | The Property Manager (PM): a task for the PM, or the escalation contacts for PD/EH | No SP can be secured, or the PM is opted out. The Preferred SP Retry Process applies first where it fits. |
 
-1. **Intake**: Same as non-emergency.
-2. **Troubleshooting**: A Latchel troubleshooter calls the resident to try to de-escalate the issue.
-3. **Dispatch**: If the issue can't be de-escalated, Latchel calls Preferred SPs to schedule an appointment. If Preferred SPs are unresponsive or unavailable, Latchel creates a task for the Property Manager (PM) or, in limited circumstances, calls the escalation contacts. See [Job Aid: PM Outbound Communication for Emergency WOs](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs) and the Stale Emergency rule in [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules).
-4. **Follow-up**: Same as non-emergency.
-5. **Invoicing**: Same as non-emergency.
-
-<Note>
-  **Sourcing outside the network:** When sourcing an SP, Latchel reaches out to the Preferred SPs, our list of existing SPs in the area of the job, and 5 additional external options. If we can't get ahold of an SP, we notify the PM for help.
-</Note>
+For the full steps, see [(EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider). For escalation, see [Job Aid: PM Outbound Communication for Emergency WOs](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs) and the Stale Emergency rule in [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules).
 
 ## Work Order Statuses
 
-The **Related SOP** column points to the SOP that covers next steps. For customer wording, see [Job-Aid: Blurbs or Templates to Communicate with Customers](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Blurbs-or-Templates-to-Communicate-with-Customers).
+The **Related SOP** column points to the SOP that covers next steps.
 
 ### Active Statuses (in lifecycle order)
 
