@@ -4,73 +4,86 @@ groups: ["latchel"]
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/775553066/Latchel+Processes+and+Product+Wiki"
 ---
 
-# 🧠 What This Process Is Trying to Solve
+# 🧠 What This Page Is For
 
 <Note>
-  We want to prevent confusion, knowledge gaps, and inconsistent processes by providing a centralized, living wiki that compiles Latchel's operational procedures, product workflows, and key process overviews from multiple sources. The goal is to give team members a single reference point for understanding how Latchel's systems and processes work—from work order intake and automation, to escalation paths and status definitions—so they can quickly find accurate information, follow best practices, and deliver reliable service.
+  This page is a quick-reference overview of how a Work Order (WO) moves through Latchel. Use it when a customer asks "where is my Work Order?" or "why is it in this status?" It explains the lifecycle and each status in plain language, then points you to the SOP or blurb that tells you what to do next.
+
+  This page is an overview, not the rulebook. If this page and an SOP ever differ, follow the SOP.
 </Note>
 
-## Work Order Life Cycle Overview
+## Work Order Lifecycle Overview
 
-The following information is meant to provide an overview of the lifecycle of Work Order. If you're looking for information in regards to specific Work Order Statuses (e.g. what is Scheduling Resident?"), refer to the "Work Order Statuses" table below.
+For what a specific status means, see the [Work Order Statuses](#work-order-statuses) tables below.
 
-### Maintenance Automation (Non-Emergencies)
+### Non-Emergency Work Orders
 
-1. **Intake**: Latchel's proprietary intake delivers higher quality, actionable WOs while de-escalating and resolving up to 30% of WOs.
-2. **Scheduling**: Latchel collects resident availability or permission to enter and shares with SPs to automate the scheduling process for most WOs
-3. **Dispatch**: Once an appointment is set, Latchel automates communication and reminders to all parties leading up to the work date
-4. **Follow-up**: The resident confirms the issue was resolved. Positive resident reviews are encouraged to be posted on the customer's review site of choice
-5. **Invoicing**: Service Providers can add their invoices directly in the Latchel system and, if the customer prefers, payments can be approved and paid automatically
+1. **Intake**: The resident submits the request. Intake collects the details needed to create an actionable WO, and some issues are resolved or de-escalated at this step.
+2. **Scheduling**: Latchel collects the resident's availability or permission to enter and shares it with the Service Provider (SP).
+3. **Dispatch**: Once an appointment is set, Latchel sends automated communication and reminders to all parties leading up to the work date.
+4. **Follow-up**: The resident confirms the issue was resolved. Residents are encouraged to post positive reviews on the customer's review site of choice.
+5. **Invoicing**: The SP adds their invoice directly in Latchel. If the customer prefers, payments can be approved and paid automatically.
 
-### Maintenance Automation (Emergency)
+### Emergency Work Orders
 
-1. **Intake**: Latchel's proprietary intake delivers higher quality, actionable WOs while de-escalating and resolving up to 30% of WOs.
-2. **Scheduling**: A Latchel troubleshooter attempts to call residents to de-escalate the issue.
-3. **Dispatch**: If unsuccessful in de-escalating, Latchel calls preferred vendors to attempt to schedule an appointment. If preferred vendors are unresponsive or unavailable, Latchel will create a task for the Property Manager or, in limited circumstances, attempt to call the escalation contacts (refer to [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos)).
-4. **Follow-up**: The resident confirms the issue was resolved. Positive resident reviews are encouraged to be posted on the customer's review site of choice.
-5. **Invoicing**: Service providers can add their invoices directly in the Latchel system and, if the customer prefers, payments can be approved and paid automatically.
+1. **Intake**: Same as non-emergency.
+2. **Troubleshooting**: A Latchel troubleshooter calls the resident to try to de-escalate the issue.
+3. **Dispatch**: If the issue can't be de-escalated, Latchel calls Preferred SPs to schedule an appointment. If Preferred SPs are unresponsive or unavailable, Latchel creates a task for the Property Manager (PM) or, in limited circumstances, calls the escalation contacts. See [Job Aid: PM Outbound Communication for Emergency WOs](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs) and the Stale Emergency rule in [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules).
+4. **Follow-up**: Same as non-emergency.
+5. **Invoicing**: Same as non-emergency.
 
-### Work Order Statuses
+<Note>
+  **Sourcing outside the network:** When sourcing an SP, Latchel reaches out to the Preferred SPs, our list of existing SPs in the area of the job, and 5 additional external options. If we can't get ahold of an SP, we notify the PM for help.
+</Note>
 
-The following table is meant to provide an explanation of specific Work Order Statuses.
+## Work Order Statuses
 
-| Status | Description |
+The **Related SOP / Blurb** column points to where the next steps or customer wording live. Blurbs are listed by their title in [Job-Aid: Blurbs or Templates to Communicate with Customers](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Blurbs-or-Templates-to-Communicate-with-Customers).
+
+### Active Statuses (in lifecycle order)
+
+| Status | What it means | Related SOP / Blurb |
+| --- | --- | --- |
+| Troubleshooting | Latchel has received the request and is trying to understand and resolve the issue over the phone, if possible. | [Job-Aid: Troubleshooter Question Bank](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Troubleshooter-Question-Bank); Blurb: "R unable to reach for troubleshooting attempt" |
+| Scheduling Resident / Rescheduling with Resident | Latchel is collecting the resident's availability (for a first appointment or a new one). The system sends up to 3 automated messages to the resident. If the resident doesn't respond after 3 attempts, the WO is sent back to the PM. | Blurbs: "R WO need availability" (non-emergency) or "R Emergency Work Order needs availability" |
+| Needs Pre Approval | The WO needs approval before it can proceed. If the owner has Needs Pre Approval toggled ON, all non-emergency approvals go straight to the owner, overriding the PM's severity settings. If it's OFF, the PM's severity settings apply (Needs Pre Approval, Normal, Urgent, Resident Responsibility). | [How to Setup Owner Communication](/s/topic/0TO5e000000h9wqGAA/How-to-Setup-Owner-Communication) |
+| Finding Service Provider | Depends on how the SP is assigned. **Auto-assign on:** the system notifies Preferred SPs on file that a job is available; the job is assigned to the SP once they schedule it. **Manual assignment toggled on at WO creation:** no automatic messages are sent in this status, and an SP must be added to the job manually. | Blurb: "Preferred / LCN SP follow up on accepting a Work Order" |
+| Scheduling Service Provider | Only applies when the SP was assigned manually (not through auto-assign). Latchel is scheduling with the SP. If the SP doesn't schedule within 1 business day, Latchel tries a different SP, if possible. | [(Non-Emergency) Handling 'Scheduling With Service Provider' Tasks](/latchel-admin/Service-Operations/Production-Documentation/Handling-Scheduling-With-Service-Provider-Tasks); [(Emergency) How to: Handle Scheduling Requests](/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests) |
+| Awaiting Work Date | The SP is scheduled. Latchel is waiting for the appointment date to arrive. | [SOP: Work Order Follow-ups and Updates](/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates) (missed appointments); Blurb: "SP Missed Appointment" |
+| Needs Approval | An estimate was submitted and **no owner** is assigned to the property, so the PM must approve it (budget or continuing the work) before the WO proceeds. | [(Non-Emergency) How to: Handle Over Approved Budget (aka Estimate)](/latchel-admin/Service-Operations/Production-Documentation/Non-Emergency-How-to-Handle-Over-Approved-Budget-aka-Estimate) |
+| Needs Owner Approval | An estimate was submitted and **an owner is** assigned to the property, so the WO goes to the owner to approve (budget or continuing the work) before it proceeds. | [(Non-Emergency) How to: Handle Over Approved Budget (aka Estimate)](/latchel-admin/Service-Operations/Production-Documentation/Non-Emergency-How-to-Handle-Over-Approved-Budget-aka-Estimate); [SOP: Work Order Follow-ups and Updates](/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates) (estimate approval follow-ups) |
+| Waiting for Materials | Work can't continue until parts or materials are available. | [SOP: Work Order Follow-ups and Updates](/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates) |
+| Confirming Completion | Latchel is confirming the job was completed. The system sends one automated message to the resident and up to 3 daily reminders to the SP. The resident always gets at least 24 hours to report an issue before the WO moves to Completed. | Blurb: "R confirming completion" |
+| Awaiting Invoice Receipt | Latchel is collecting the invoice from the SP. The system sends up to 5 daily reminders to the SP. | Blurbs: "Preferred SP payment" or "Latchel SP payment" |
+| Completed | The WO is finished. | — |
+
+### On-Hold and Closed Statuses
+
+| Status | What it means | Related SOP / Blurb |
+| --- | --- | --- |
+| Waiting for PM | The WO is on hold until the PM takes action. Check the job log for details. | [SOP: Work Order Follow-ups and Updates](/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates); Blurb: "When a Resident Asks Who the Work Order Is With" |
+| Pending | The WO is on hold until further notice. Check the job log for the reason. | [SOP: Work Order Follow-ups and Updates](/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates) |
+| Pending - Awaiting Payment Details | The WO is on hold until a payment method is provided. | — |
+| Forwarded to PM | Latchel is no longer tracking this WO; the PM is handling next steps. If a PM asks about having Latchel track the full lifecycle of their WOs, refer them to [success@latchel.com](mailto:success@latchel.com). | Blurb: "When a Resident Asks Who the Work Order Is With" |
+| Cancelled | The WO has been cancelled in Latchel. | [How to: Handle a Work Order Cancellation](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation); Blurb: "R reaching out to complete diagnostics once the WO has already been cancelled" |
+| Archived | The WO no longer shows in the default view in Latchel. | — |
+
+## Where to Go Next
+
+| If the question is about... | Go to |
 | --- | --- |
-| Scheduling Resident | We are in the process of obtaining the resident's availability. We will send up to 3 automated messages to the resident. If the resident does not respond after our 3 automated message attempts then we will send the work order back to the Property Manager. |
-| Finding Service Provider | There are two process alternatives depending on whether or not the Service Provider auto-assign feature is used or not: 1. If the Service Provider auto-assign feature is used: The system will notify the preferred Service Providers on file that there's a job available for them to pick up, scheduling of the job is required for the job to be assigned to the Service Provider. 2. If manual Service Provider assignment was toggled on during the Work Order creation: No automatic messages are sent while in this status. You must add a service provider to this job. |
-| Scheduling Service Provider | (Only valid if the Service Provider was assigned manually to the Work Order and not through the Service Provider auto-assign feature) We are in the process of scheduling with the service provider. If the service provider does not schedule within 1 business day, we will attempt to use a different service provider, if possible. |
-| Awaiting Work Date | The service provider has already been scheduled to work on this issue. We're just waiting for the scheduled work time to arrive. |
-| Needs owner approval | A work order requires approval from the property owner. This could be for budget authorization or to approve the continuation of the work order. The "Needs Owner Approval" state becomes relevant when an estimate is entered AND an owner is assigned to the property. The work order will be directed to the owner for their review and approval before proceeding further. |
-| Needs Pre Approval | A work order requires prior approval from the property manager before it can proceed. If the owner has Needs Pre Approval toggled ON ([https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Setup-Owner-Communication](https://help.latchel.com/s/topic/0TO5e000000h9wqGAA/How-to-Setup-Owner-Communication)), this encompasses the PM severity settings by going straight to the owner for all NONEMERGENCY APPROVALS. If the owner has it turned OFF, then we follow the PM severity settings and have Needs Pre Approval, Normal, Urgent, Resident Responsibility |
-| Needs Approval | This status indicates that a work order is pending approval from the property manager. This may involve review and authorization of the budget or confirmation to proceed with the WO. The "Needs Approval" state is used when an estimate is submitted for a WO, but no owner has been assigned to the property. This means that the approval needs to come directly from the property manager, as the system does not require or cannot obtain authorization from an owner |
-| Confirming completion | We are in the process of confirming that this job was completed. We will send one automated message to the resident and up to 3 daily reminders to the service provider to confirm this job has been completed. We always give the resident at least 24 hours to let us know of an issue before moving a job to "Completed". |
-| Awaiting invoice receipt | We are in the process of acquiring an invoice from the service provider. We will send up to 5 daily reminders to the service provider asking for their invoice. |
-| Pending | This job is on hold until further notice. See the job log below for more information. |
-| Cancelled | The work order has been cancelled in our system. |
-| Completed | Congratulations! Looks like this work order is all wrapped up. |
-| Archived | The work order will no longer show up in the default view in Latchel |
-| Waiting for Materials | Work cannot continue until parts or materials are available. |
-| Waiting for PM | This work order is on hold until the property manager takes action. See the job log below for more details. |
-| Pending - Awaiting Payment Details | This work order is on hold until a payment method is provided |
-| Rescheduling with Resident | We are in the process of obtaining the resident's availability. We will send up to 3 automated messages to the resident. If the resident does not respond after our 3 automated message attempts then we will send the work order back to the Property Manager. |
-| Forwarded to PM | We are no longer tracking this work order in Latchel. If you want to track the full lifecycle of a work order in Latchel, consider upgrading your subscription. To learn more contact [success@latchel.com](mailto:success@latchel.com) |
-| Troubleshooting | We have received this request and are attempting to understand and resolve the situation over the phone if possible. |
+| Escalation paths, contact attempts, or the Stale Emergency rule | [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules) |
+| Calling the PM or emergency escalation contacts | [Job Aid: PM Outbound Communication for Emergency WOs](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs) |
+| Follow-ups, updates, or missed appointments | [SOP: Work Order Follow-ups and Updates](/latchel-admin/Service-Operations/Production-Documentation/SOP-Work-Order-Follow-ups-and-Updates) |
+| Estimates and over-budget approvals | [(Non-Emergency) How to: Handle Over Approved Budget (aka Estimate)](/latchel-admin/Service-Operations/Production-Documentation/Non-Emergency-How-to-Handle-Over-Approved-Budget-aka-Estimate) |
+| Cancellations | [How to: Handle a Work Order Cancellation](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-a-Work-Order-Cancellation) |
+| What to say to a customer | [Job-Aid: Blurbs or Templates to Communicate with Customers](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Blurbs-or-Templates-to-Communicate-with-Customers) |
+| Dissatisfied customers | [How to: Handle Dissatisfied Customers](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Dissatisfied-Customers) |
+| Home Assistant and benefits | [How to: Handle Home Assistant and Benefits Inquiries](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Home-Assistant-and-Benefits-Inquiries) |
+| Subscriptions | [Informational: Latchel Customers & Customer Subscriptions](/latchel-admin/Service-Operations/Latchel-Library/Informational-Latchel-Customers-Customer-Subscriptions) |
+| Product or account issues | [How to: Escalate to Product Support](/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-to-Product-Support) |
 
-## Sourcing Outside Network
-
-We'll reach out to the Preferred Service Providers, our list of existing Service Providers in the area of the job, and 5 additional external options. If we are unable to get ahold of a Service Provider, we'll notify the PM for help.
-
-## Escalation Paths
-
-Refer to [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#informational-basic-service-ops-guidelines-and-rules)
-
-## Benefits
-
-Refer to [How to: Handle Home Assistant and Benefits Inquiries](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Home-Assistant-and-Benefits-Inquiries#what-is-home-assistant)
-
-## Subscription Questions
-
-Refer to [Informational: Latchel Customers & Customer Subscriptions](https://help.latchel.com/latchel-admin/Service-Operations/Latchel-Library/Informational-Latchel-Customers-Customer-Subscriptions#informational-latchel-customers-and-customer-subscriptions)
+_Last reviewed: November 2, 2026_
 
 ## 💡 If You Think This SOP Could Be Improved...
 
