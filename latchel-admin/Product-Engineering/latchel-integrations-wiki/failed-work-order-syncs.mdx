@@ -37,3 +37,13 @@ Latchel is unable to find a property with a matching ref\_property\_id.
 Research Latchel database for properties/units with a similar address and compare to the Appfolio report. Problems can be caused by duplicate properties in either platform. Properties/units can be merge or missing ref id added.
 
 It might be necessary to connect with the customer to validate the correct data.<br /><br />**Important, we should not have two properties/units with a matching ref id for the same pm company.**
+
+## **Do Not Press Sync Now Repeatedly**
+
+When you retry a failed sync, press **Sync Now** on the work order once and wait for the result.
+
+Pressing it several times in quick succession can create duplicate issues in Rent Manager. The duplicate can sync back into Latchel as a second work order. That work order then has to be cancelled, and the extra issue closed in Rent Manager.
+
+<Note>
+  In one case, three presses within two minutes on one work order created two Rent Manager issues, and one came back as a duplicate Latchel work order. The double-create is tracked as a separate bug. Source: [ClickUp 86bcndjz2](https://app.clickup.com/t/86bcndjz2).
+</Note>

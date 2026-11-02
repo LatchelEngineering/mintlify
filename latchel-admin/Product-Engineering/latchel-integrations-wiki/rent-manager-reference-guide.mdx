@@ -274,6 +274,10 @@ If a work order (job) is created in the Latchel console it will automatically tr
 - `UnitID` (Only if property and `ref_unit_id` is supplied)
 - `TenantID` (Only if tenant with `ref_user_id` is supplied)
 
+<Note>
+  **Work orders on a property with no unit (fixed Oct 20, 2026).** These work orders used to fail to sync to Rent Manager. Latchel sent a unit link with an empty ID, Rent Manager answered with a 500 server error on every retry, and the work order stayed in the outbound backlog. On the integration health page this showed as a `platform_server_error` and an `outbound_backlog` failure. Integrations PR #44 fixed it: Latchel now leaves out the unit link when there's no unit. A work order that got stuck this way before the fix needs a fresh **Sync Now**. Sources: [ClickUp 86bcndjz2](https://app.clickup.com/t/86bcndjz2), [ClickUp 86bcpkp87](https://app.clickup.com/t/86bcpkp87).
+</Note>
+
 #### **Previously created WOs**
 
 By default, we only the WO in Rent Manager when the WO moves to the ‘Canceled' or 'Completed’ statuses in Latchel. We do not update the status in Rent Manager when the work order moves to “Forwarded to PM.” These are the WO fields we update for previously created work orders:
@@ -305,6 +309,10 @@ When a customer is on an _active_ integration, an indication will show at the to
 #### **Manually Sync WO**
 
 Customers can manually trigger a Latchel--\>Platform sync by going to the “Action” menu and clicking “Sync Now.” This will manually push the WO to the customer’s platform.
+
+<Warning>
+  **Press Sync Now once and wait for the result.** Pressing it several times in quick succession can create duplicate issues in Rent Manager. The duplicate can sync back into Latchel as a second work order, which then has to be cancelled, and the extra issue closed in Rent Manager. See [Failed Work Order Syncs](/latchel-admin/Product-Engineering/latchel-integrations-wiki/failed-work-order-syncs#do-not-press-sync-now-repeatedly).
+</Warning>
 
 <iframe src="https://www.loom.com/embed/da0535c37a0146e8a2b14e327f6d80c4" title="Loom video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
 
