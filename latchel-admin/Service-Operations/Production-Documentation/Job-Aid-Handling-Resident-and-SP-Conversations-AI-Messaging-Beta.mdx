@@ -16,6 +16,8 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
   For all customers, text messages from residents, SPs, Property Managers and Owners are in the Conversations icon. Only PM web chats stay in the legacy SMS icon and follow [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
 
   Both have **equal priority**, so always work the **oldest** unhandled message first by timestamp, across both icons.
+
+  🛑 **NOTE:** The legacy SMS icon will soon be replaced by a **Webchat Support** icon. Until then, keep handling PM web chats in the SMS icon.
 </Info>
 
 ![Conversations overview](/images/8499ca8c-4d9d-42b7-8c0f-dd450f236d90.png "Conversations overview")
@@ -66,18 +68,24 @@ When Latchel AI can't handle a resident or SP message, or the customer asks for 
 
 ### Sending Outbound Messages
 
+<Info>
+  **Who can you message from Conversations?** Outbound Conversations are used to message **Residents, Service Providers and Property Managers**.
+
+  **PM web chats are different:** web chats started by a Property Manager are **not** handled here. Keep handling them in the legacy **SMS** icon (soon to be replaced by the **Webchat Support** icon), per [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
+</Info>
+
 #### 1. How to get there?
 
 <AccordionGroup>
   <Accordion title="Option A: From the WO Conversations tab">
-    1. Open the **work order** and go to the **Conversations** tab. Select the **Resident** or **Service provider** tab. Click **Open Conversation**.
+    1. Open the **work order** and go to the **Conversations** tab. Select the **Resident**, **Service provider** or **Property manager** tab. Click **Open Conversation**.
     2. Set **Handled by** to **Staff**.
        1. 🛑 **NOTE:** In some cases, you can hand the next reply to Latchel AI. See the FAQ **"[When can I switch Handled by to AI?](#when-can-i-switch-handled-by-to-ai)"**
     3. Type your message in the thread and send it.
   </Accordion>
 
   <Accordion title="Option B: From the user's profile or WO tab">
-    1. Go to the user's profile or tab in the work order. Click the option to message them (**Message Resident/SP**).
+    1. Go to the user's profile or tab in the work order (Resident, SP or PM). Click the option to message them (e.g., **Message Resident/SP**).
        <img
          src="/images/09ee0959-7785-4d60-a186-53db63f6df68.png"
          alt="Message Resident/SP button"
@@ -161,7 +169,7 @@ When Latchel AI can't handle a resident or SP message, or the customer asks for 
   </Accordion>
 
   <Accordion title="Which customers are affected?">
-    All customers. Text messages from residents, SPs, Property Managers and Owners are in Conversations, and Latchel AI answers residents and SPs only. PM web chats stay in the legacy SMS icon, with the same process as before (see [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console)).
+    All customers. Text messages from residents, SPs, Property Managers and Owners are in Conversations, and Latchel AI answers residents and SPs only. PM web chats stay in the legacy SMS icon (soon to be replaced by the Webchat Support icon), with the same process as before (see [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console)).
   </Accordion>
 
   <Accordion title="Which messages does Latchel AI handle, and which come to us?">
