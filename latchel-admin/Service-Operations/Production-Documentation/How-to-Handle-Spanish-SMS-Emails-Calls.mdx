@@ -18,7 +18,7 @@ flowchart LR
     A["Spanish-speaking<br/>customer"] --> B{"How did it<br/>come in?"}
 
     B -->|Inbound call| C["Transfer to<br/>Spanish Queue<br/>(press 2, then Join)"]
-    B -->|SMS / Email| D["Reply with<br/>Spanish SMS Translator<br/>(start with disclosure)"]
+    B -->|SMS / Email| D["Reply with<br/>Google Translate<br/>(start with disclosure)"]
     B -->|Task| E{"Who do you<br/>need to reach?"}
 
     E -->|English speaker<br/>e.g. SP or PM| F["Handle as<br/>a normal task"]
@@ -27,12 +27,12 @@ flowchart LR
     I -->|Emergency TS| J["Review intake<br/>(click Translate)<br/>No TS call needed"]
     J --> K{"Info complete<br/>and matches PM<br/>intake settings?"}
     K -->|Yes| L["Move forward per<br/>intake settings<br/>(e.g. emergency =<br/>dispatch)"]
-    K -->|No| M["SMS resident via translator<br/>within 20 min.<br/>Wait 3 min, send 1 reminder,<br/>wait 3 more min."]
+    K -->|No| M["SMS resident via<br/>Google Translate<br/>within 20 min.<br/>Wait 3 min, send 1 reminder,<br/>wait 3 more min."]
     M --> N{"Resident<br/>replied?"}
     N -->|Yes| L
     N -->|No| P["Option 3 -<br/>Can't reach resident"]
 
-    I -->|Follow-up task| Q["Skip the call.<br/>SMS via translator"]
+    I -->|Follow-up task| Q["Skip the call.<br/>SMS via Google Translate"]
     Q --> R{"Emergency<br/>WO?"}
     R -->|No| S["Each SMS =<br/>1 attempt.<br/>Follow the task's<br/>normal SOP"]
     R -->|Yes| T["Stale Emergency rule:<br/>no reply in 3 min =<br/>same-day decision"]
@@ -95,9 +95,9 @@ After accepting the call, you will be informed that the call is a Spanish call. 
 
 Spanish SMS and email associates follow the same workflow: associates assist the customer directly using the approved translation tool. Do not wait for an available Spanish-speaking teammate before responding. This applies to all **Conversations**: click **Mark as Handled** before replying and paste the translated message into the thread (see [Job Aid: Handling Resident & Service Provider Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)).
 
-1. When an associate receives an SMS in Spanish, they respond right away using the [**<u>Spanish SMS Translator</u>**](https://claude.ai/public/artifacts/35daba8e-9963-4de9-82bb-74d3999cb190 "https://claude.ai/public/artifacts/35daba8e-9963-4de9-82bb-74d3999cb190"), starting with the following disclosure: **"Hola [Customer's Name], estamos utilizando una herramienta de traducción para comunicarnos con usted. Pedimos disculpas por cualquier error y agradecemos su paciencia. ¿En qué podemos ayudarle?"** _(English: "Hello [Customer's Name], we are using a translation tool to communicate with you. We apologize for any errors and appreciate your patience. How can we assist you?")_
+1. When an associate receives an SMS in Spanish, they respond right away using [**<u>Google Translate</u>**](https://translate.google.com/?sl=en&amp;tl=es "https://translate.google.com/?sl=en&amp;tl=es"), starting with the following disclosure: **"Hola [Customer's Name], estamos utilizando una herramienta de traducción para comunicarnos con usted. Pedimos disculpas por cualquier error y agradecemos su paciencia. ¿En qué podemos ayudarle?"** _(English: "Hello [Customer's Name], we are using a translation tool to communicate with you. We apologize for any errors and appreciate your patience. How can we assist you?")_
    1. For Spanish email requests, use the disclosure only when the email does not include enough information to understand the request. If the email request is clear, respond by addressing the stated issue directly and take the appropriate action needed to resolve or move the concern forward.
-2. Continue the conversation using the Spanish SMS Translator until the request is resolved or a clear next step is identified.
+2. Continue the conversation using Google Translate until the request is resolved or a clear next step is identified.
 3. For email requests where the requester is not the customer, such as an admin or other third-party email, associates may handle the request and reach out directly to the customer for a response.
    1. If the customer has no SMS or email contact, follow **“Spanish Speaker Without SMS”** below.
 4. If the customer stops responding, apply the standard unresponsive-client rule from [**<u>How to: Handle SMS/Webchat Contacts (New Support Framework)</u>**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-SMS-Webchat-Contacts-New-Support-Framework#how-to-handle-sms-webchat-contacts-new-support-framework "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431202/How+to+Handle+SMS+Webchat+Contacts+New+Support+Framework#%E2%9D%97Handling-Unresponsive-or-Upset-Client") — no response after 3 minutes, send your wrap-up message and move on (Conversations have no close step).
@@ -109,22 +109,22 @@ Spanish SMS and email associates follow the same workflow: associates assist the
   Do not defer the task or wait for a Spanish-speaking associate. Handle it yourself.
 </Warning>
 
-**No troubleshooting call is required for Spanish-speaking residents.** This is an exception to the normal TS process. Review the intake, and use SMS through the Spanish SMS Translator only if you need more information.
+**No troubleshooting call is required for Spanish-speaking residents.** This is an exception to the normal TS process. Review the intake, and use SMS through Google Translate only if you need more information.
 
 1. Keep the task assigned to the TS group. Do not forward the work order to the PM just because the resident speaks Spanish. Follow the steps below first.
 2. **Review the intake.** Read the work order details, the pre-dispatch notes, and the intake conversation. If the intake is in Spanish, click **Translate** to see it in English.
    1. **If the details are clear and match the PM’s intake settings,** you do not need to call or message the resident. Move forward based on the intake settings, the same as any other work order. For example, if it is an emergency, dispatch.
-   2. **If you need more information,** message the resident in **Conversations** using the [Spanish SMS Translator](https://claude.ai/public/artifacts/35daba8e-9963-4de9-82bb-74d3999cb190). Start with the disclosure message. Send your first message within **20 minutes** of the work order being created or escalated to emergency. Once you have the information, go back to step 2.1.
+   2. **If you need more information,** message the resident in **Conversations** using [Google Translate](https://translate.google.com/?sl=en&amp;tl=es). Start with the disclosure message. Send your first message within **20 minutes** of the work order being created or escalated to emergency. Once you have the information, go back to step 2.1.
 3. **If the resident does not reply:**
-   1. Wait **3 minutes** after your message. Then send one reminder through the translator: _“Hi [Name], we are following up on your maintenance request. Please reply to this message so we can help you.”_
+   1. Wait **3 minutes** after your message. Then send one reminder through Google Translate: _“Hi [Name], we are following up on your maintenance request. Please reply to this message so we can help you.”_
    2. Wait **3 more minutes**. If there’s still no reply, treat the resident as unreachable. Follow **Option 3 – Can’t reach resident** in [How to: Handle Emergency Work Orders](/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders), starting from “Check for additional phone numbers”. For Spanish-speaking residents, these 2 messages replace the 3 call attempts.
-4. Add **Spanish** to the task subject so the next associate knows to use the translator. This label does **not** mean the task should wait for a Spanish speaker.
+4. Add **Spanish** to the task subject so the next associate knows to use Google Translate. This label does **not** mean the task should wait for a Spanish speaker.
 5. Document what you sent, what the resident said, and the action you took in the work order notes.
 
 ### Follow-Up Tasks – Spanish-Speaking Resident/SPs/Owners/PMs (e.g., resident reports issue unresolved, service provider follow-ups)
 
 1. First check who the task is for. If the person you need to reach speaks English (for example, an SP or PM), handle it as a normal task.
-2. If you need to reach the Spanish-speaking contact, skip the phone call. Message them in **Conversations** using the Spanish SMS Translator, starting with the disclosure message. This also applies to tasks where the SOP says to always call first (for example, tasks created from a resident review).
+2. If you need to reach the Spanish-speaking contact, skip the phone call. Message them in **Conversations** using Google Translate, starting with the disclosure message. This also applies to tasks where the SOP says to always call first (for example, tasks created from a resident review).
 3. **Non-emergency work orders:** Each SMS counts as one contact attempt. Then follow the task’s normal SOP, including what to do when the contact doesn’t reply (for example, [Job Aid: Handling Tasks assigned to the Resident Follow Up Group](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Tasks-assigned-to-the-Resident-Follow-Up-Group)).
 4. **Emergency work orders:** Follow the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules). Your one SMS counts as the one attempt. If the contact hasn’t replied **3 minutes** after your message, make the same-day decision right away. Do not defer to the next day.
 5. If the contact’s number can’t receive texts, follow **“Spanish Speaker Without SMS”** below.
