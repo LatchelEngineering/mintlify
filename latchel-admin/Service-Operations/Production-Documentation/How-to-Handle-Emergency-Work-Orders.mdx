@@ -377,7 +377,18 @@ Sometimes residents report an emergency work order but are unreachable. This cou
 
     - **The Rule:** Make **one (1) attempt**, then immediately execute a **Same-Day Decision** (Intervene, De-escalate to Urgent, or Forward to PM).
     - **The Goal:** A decision must be made **immediately** following the failed attempt to ensure the **24-Hour Appointment Standard** (Service Provider arrival within 24 hours) remains achievable.
-    - **Reference:** For the full decision framework and PD/EH exceptions, see the **[Basic Service Ops Guidelines]**.<br />
+    - **Reference:** For the full decision framework and PD/EH exceptions, see the **[Basic Service Ops Guidelines]**.
+  </Accordion>
+
+  <Accordion title="Updated Routing Logic After Resident Contact (Common Area WOs)">
+    | **Scenario** | **Action** |
+    | --- | --- |
+    | Reached (resident or other active resident in the unit), access confirmed, issue clearly meets emergency criteria | Dispatch a Service Provider immediately. |
+    | Reached, but the situation is ambiguous | Ask clarifying questions using the Troubleshooter Question Bank before deciding. Once clear: dispatch if access is confirmed, otherwise follow the escalation path below. |
+    | Reached, but no access info available — OR unreachable after 3 attempts (resident and any other active resident in the unit) | **Go to the escalation path:** |
+    | → Escalation path: property damaging or extreme habitability? | **Yes** — escalate to the PM's Emergency Escalation Contact (existing “PM Input needed before dispatch” flow). <br /><br />**No** — standard process: move the WO to “Waiting for PM and assign the task to PM.” No EEC call needed. |
+
+    **Before escalating**: review all notes on the account — not just critical notes (includes pre-dispatch instructions, EEC notes, and general notes). If notes already provide enough information to dispatch, proceed instead of escalating.
   </Accordion>
 
   <Accordion title="📋 Handling Work Orders with Home Warranty Information">
@@ -410,17 +421,6 @@ Sometimes residents report an emergency work order but are unreachable. This cou
        1. 🗨️ **Say something like:** _"Hi [PM name], Latchel does not directly coordinate with Home Warranty companies. If you’d like us to consider dispatching to a warranty company for emergencies, please add them as a Service Provider in your account. This will allow us to include them in our dispatch process."_
     3. Explain that once added, Latchel can treat the Home Warranty company like any other listed Service Provider and may dispatch to them for emergencies when appropriate.
     4. If the Property Manager agrees, proceed with assigning the Home Warranty service provider and schedule the work order accordingly. See [(Emergency) How to Handle Scheduling Requests](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests)
-  </Accordion>
-
-  <Accordion title="Updated Routing Logic After Resident Contact (Common Area WOs)">
-    | **Scenario** | **Action** |
-    | --- | --- |
-    | Reached (resident or other active resident in the unit), access confirmed, issue clearly meets emergency criteria | Dispatch a Service Provider immediately. |
-    | Reached, but the situation is ambiguous | Ask clarifying questions using the Troubleshooter Question Bank before deciding. Once clear: dispatch if access is confirmed, otherwise follow the escalation path below. |
-    | Reached, but no access info available — OR unreachable after 3 attempts (resident and any other active resident in the unit) | **Go to the escalation path:** |
-    | → Escalation path: property damaging or extreme habitability? | **Yes** — escalate to the PM's Emergency Escalation Contact (existing “PM Input needed before dispatch” flow). <br /><br />**No** — standard process: move the WO to “Waiting for PM and assign the task to PM.” No EEC call needed. |
-
-    **Before escalating**: review all notes on the account — not just critical notes (includes pre-dispatch instructions, EEC notes, and general notes). If notes already provide enough information to dispatch, proceed instead of escalating.
   </Accordion>
 </AccordionGroup>
 
