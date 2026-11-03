@@ -11,11 +11,17 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 </Note>
 
 <Info>
+  🆕 **Updated November 3, 2026:** Don't handle resident or SP replies on **PM-managed** work orders. See step 2 (Check who manages the WO) and **Replies on PM-managed work orders** below.
+</Info>
+
+<Info>
   🔔 Before You Start:
 
   For all customers, text messages from residents, SPs, Property Managers and Owners are in the Conversations icon. Only PM web chats stay in the legacy SMS icon and follow [How to: Use Text Message (SMS/Webchat) Functions (in Latchel Console)](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-Text-Message-SMS-Webchat-Functions-In-Latchel-Console).
 
   Both have **equal priority**, so always work the **oldest** unhandled message first by timestamp, across both icons.
+
+  On **PM-managed** work orders, the PM's team handles resident and SP replies, even if Ops posted in the thread earlier.
 
   🛑 **NOTE:** The legacy SMS icon will soon be replaced by a **Webchat Support** icon. Until then, keep handling PM web chats in the SMS icon.
 </Info>
@@ -27,6 +33,28 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 ### Handling Inbound Messages
 
 1. Go to **Conversations → Team**. New messages stay unhandled until someone claims them.
+2. **Check who manages the WO** (before you claim it)
+
+   1. Open the tagged work order and check **Managed by (in the plugin)**.
+
+      1. <img
+           src="/images/image-194.png"
+           alt="Image"
+           title="Image"
+           style={{ width:"61%" }}
+         />
+      2. Conversation shows below warning at the right part of the panel just above the Handled by tab.
+
+         1. <img
+              src="/images/image-195.png"
+              alt="Image"
+              title="Image"
+              style={{ width:"52%" }}
+            />
+   2. **Managed by Latchel:** continue to step 3 (Claim it).
+   3. **Managed by PM:** don't claim or reply. Move on to the next message.
+      - You should no longer get notifications for these threads. If you do, submit a bug report using [this link](https://app.latchel.com/admin/bug-reports).
+      - 🛑 **Exception:** possible PD/EH replies don't come to this queue. The system creates a task for the Troubleshooting team to assess. If a new emergency comes up some other way, follow the emergency process.
 2. **Claim it**
    1. Click **Mark as Handled** **before** replying. Replying also marks it handled, but claiming first prevents double replies.
    2. 🛑 **NOTE**: **Before you click**, check for _"[name] is typing…"_. If you see it, move on to another message since someone is already about to handle it.
@@ -39,6 +67,14 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 
 <Warning>
   **⏱️ 10-minute aging tag:** If a resident or SP message goes 10 minutes without a staff reply, the thread is highlighted in red in Team. Any team member can pick it up.
+</Warning>
+
+<Warning>
+  **Replies on PM-managed work orders**
+
+  - Don't handle resident or SP replies on work orders **Managed by PM**, even if you posted in the thread earlier (for example, after you de-escalated an emergency or handed it to the PM).
+  - Only get involved again if an emergency comes back or a new one develops. If a reply is flagged as a potential PD/EH, the system creates a **Troubleshooting task** to assess it. The WO severity isn't changed automatically. The troubleshooter escalates it to Emergency if needed.
+  - You should no longer get notifications for these threads. If you do, submit a bug report using [this link](https://app.latchel.com/admin/bug-reports).
 </Warning>
 
 ### What a Latchel AI Handoff Looks Like
@@ -100,7 +136,7 @@ When Latchel AI can't handle a resident or SP message, or the customer asks for 
 
 1. The customer gets an SMS with a link to the Conversation.
 2. **Document it:** You don't need to log the conversation manually, since it's saved in the WO **Conversations** tab. If you updated the work order because of the Conversation, leave a detailed WO note explaining the action and why, following [How to: Write Effective Notes](/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes).
-3. When the customer replies to a message handled by **Staff**, the thread appears in your **My messages** and as unhandled in **Team**. Follow **Handling Inbound Messages** from Step 2 (Claim it). If you chose **Latchel AI**, it responds first and transfers to a person if needed.
+3. When the customer replies to a message handled by **Staff**, the thread appears in your **My messages** and as unhandled in **Team**. Follow **Handling Inbound Messages** from Step 2 (Check who manages the WO). If you chose **Latchel AI**, it responds first and transfers to a person if needed.
 
 ## ✅ Quick Do's and Don'ts
 
@@ -119,6 +155,10 @@ When Latchel AI can't handle a resident or SP message, or the customer asks for 
     <tr>
       <td>Work the **oldest** unhandled message in **Team** first, by timestamp.</td>
       <td>Don't pick newer threads because they look quicker.</td>
+    </tr>
+    <tr>
+      <td>Check **Managed by** before you claim a message. Only step in on a PM-managed WO if an emergency comes back or a new one develops.</td>
+      <td>Don't reply to resident or SP messages on PM-managed WOs.</td>
     </tr>
     <tr>
       <td>Check for _"[name] is typing…"_, then click **Mark as Handled** before you reply.</td>
@@ -146,6 +186,7 @@ When Latchel AI can't handle a resident or SP message, or the customer asks for 
 ## 🚫 What Not to Do
 
 - Don't manually tag Conversations or look for End Conversation.
+- Don't reply to resident or SP messages on PM-managed work orders.
 - Don't reply without clicking Mark as Handled first, or jump into a thread where someone is typing.
 - Don't assume opening a thread claims it.
 - Don't treat Conversations as lower priority than SMS.
@@ -198,6 +239,10 @@ When Latchel AI can't handle a resident or SP message, or the customer asks for 
     New messages come in as unhandled in **Team** until someone clicks **Mark as Handled**. Sending a reply also marks it handled. You'll see "[name] is typing…" if a teammate is already working on it. Once you reply, the thread will also appear in **My messages**.
 
     The **Conversations** indicator shows new messages in threads you've participated in, plus **Team** threads no one is working on yet.
+  </Accordion>
+
+  <Accordion title="I messaged the resident on an emergency, then de-escalated it or handed it to the PM. The resident replied. Do I answer?">
+    If the WO is Managed by PM, no. The PM’s team handles replies. Only get involved again if the emergency comes back or a new one develops. If the reply is flagged as a potential PD/EH, the system creates a task for the Troubleshooting team.
   </Accordion>
 
   <Accordion title="Can I assign a Conversation to someone or end it?">
