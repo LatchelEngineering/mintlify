@@ -18,6 +18,12 @@ We want to prevent lost, delayed, or mishandled invoices and estimates sent by s
 
 When working on new & unsorted tickets, you will come across emails and estimates from service providers. Email is a very common way for service providers to share these documents.
 
+<Note>
+  **🆕 Forward first (default):** Forward any invoice or estimate email from Assembly to [**invoices@inbox.latchel.com**](mailto:invoices@inbox.latchel.com) (invoices) or [**estimates@inbox.latchel.com**](mailto:estimates@inbox.latchel.com) (estimates). AI reads the email and its attachments (WO or invoice number, property address and unit, vendor name, resident name), finds the matching work order and **attaches the file to it**.
+
+  ⚠️ **The AI only attaches the file. It does not start the estimate approval flow, update the approved budget, or approve or pay anything.** You still own the budget check and any budget update (Step 4), payment or escalation (Steps 5–6), and the vendor reply (Step 7).
+</Note>
+
 ### Step 1 - Read the Email
 
 1. Read the email along with any attached files and determine what actions need to be taken.
@@ -29,9 +35,19 @@ When working on new & unsorted tickets, you will come across emails and estimate
   style={{ width:"61%" }}
 />
 
-### Step 2 - Search for the matching Work Order
+### Step 2 - Forward the email to the AI inbox
 
-1. After reading the details in the email and in the estimate/invoice, search for the Matching work order in the Latchel console.
+1. Forward the original email with all attachments to [**invoices@inbox.latchel.com**](mailto:invoices@inbox.latchel.com) or [**estimates@inbox.latchel.com**](mailto:estimates@inbox.latchel.com). Don't strip the attachments or edit the subject.
+2. Give it a few minutes, then search the WO in the Latchel console and check that the file is in the WO's Files tab.
+3. If the file is attached, move on to Step 4.
+4. If the AI can't match the email, it comes back to Assembly as a **new ticket from [team@latchel.com](mailto:team@latchel.com)** with its findings and best guesses. Handle that ticket with Step 2a. **Do not forward it to the inbox again.**
+
+### Step 2a - Handle unmatched invoices or estimates
+
+**How to recognize it:** a new Assembly ticket sent from [**team@latchel.com**](mailto:team@latchel.com) that contains the original vendor email, plus the AI's findings and its best-guess work orders.
+
+1. Review the AI's findings and best-guess WOs.
+2. Confirm the right WO, using the guesses as a starting point (see [How to: Upload an Invoice for a Work Order – Step 2](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Upload-an-Invoice-for-a-Work-Order#step-2-find-the-existing-work-order)).
 
 <img
   src="/images/image-16.png"
@@ -54,9 +70,7 @@ When working on new & unsorted tickets, you will come across emails and estimate
   style={{ width:"65%" }}
 />
 
-### Step 3 - Attach the Invoice/Estimate file to the Work Order
-
-1. Skim through the files tab inside the work order and corroborate that the Invoice/estimate has not been uploaded yet.<br />a) If the file is already inside the work order, move on to step 4<br />b) If the file is not in the files tab upload it to the work order.
+3. Check the Files tab for duplicates, then upload the file to the WO by hand.
 
 <img
   src="/images/image-20.png"
@@ -65,7 +79,12 @@ When working on new & unsorted tickets, you will come across emails and estimate
   style={{ width:"80%" }}
 />
 
+4. If no WO exists, send the email on to the PM using the "PM invoice received but no Work Order found" blurb.
+5. Go on to Step 4.
+
 ### Step 4 - Confirm the approved budget
+
+Whether the file was attached by the AI or by hand, do this step by hand every time. **The AI does not update the approved budget or send estimates for approval.**
 
 1. Corroborate that the amount quoted in the invoice/estimate is equal to or less than the approved budget.
    1. **NOTE**: All estimates must clearly indicate the exact total amount before proceeding with any approval process. Estimates without the full details must be confirmed prior to moving forward.
@@ -169,6 +188,7 @@ iv. If the service provider responded to the confirmation:
 ### Step 8 - Wrap up
 
 1. Copy the Assembly ticket number and paste it into the note session of the work order with a summary of the update and actions you took (↔ How to: Write Effective Notes). Save notes making them visible to others.
+   - Note in the WO whether the file was attached by the AI inbox or placed by hand, e.g., _"Ticket 6027 — Invoice forwarded to invoices@inbox; AI attached to WO. Within budget."_
 2. Copy the Latchel work order URL and paste it into the internal notes session of the Assembly ticket. This will enable us to quickly link the call to the work order and facilitate future research. (See [How to: Handle Assembly Email Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Assembly-Email-Contacts#how-to-handle-assembly-email-contacts))
 3. Close the email in Assembly. (See [Service Ops: Assembly Guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Assembly-Guide#service-ops-assembly-guide))
 

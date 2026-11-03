@@ -17,7 +17,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431181/Ho
 
   Service Providers send invoices to Latchel to get paid for their work. The Ops agent is responsible for uploading the invoice to help bridge payment communication between the Property Manager and the Service Provider. Sometimes the invoice is submitted to us simply for record keeping.
 
-  All Preferred and Latchel Affiliate Service Providers send invoices via email and Ops agents receive them from Assembly; these are the invoices we are working on. Latchel In-Network Service Providers submit invoices through the Latchel console, so Ops agents never interact with these.
+  All Preferred and Latchel Affiliate SPs send invoices by email. Ops agents receive them in Assembly and **forward them to [invoices@inbox.latchel.com](mailto:invoices@inbox.latchel.com)**, where AI attaches them to the matching WO. Use this SOP's manual upload steps only for unmatched tickets from [team@latchel.com](mailto:team@latchel.com), for invoices received in Conversations, or when told to. Latchel In-Network SPs submit invoices through the Latchel console, so Ops agents never handle these.
 </Note>
 
 <Note>
@@ -42,10 +42,8 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431181/Ho
   As a best practice we will not take Invoices for any work order over \$500 via Conversations or text message. A detailed invoice must be sent via email.
 </Note>
 
-1. If the Invoice is coming in from Assembly email queue, find the invoice file.
-   1. Download the file with right click and save it to your computer.
-      1. Remember the file name and download location (the file is named by the Service Provider, Ops agents do not need to rename the file)
-   2. **🔔Ops associates must ensure that a response is sent to the service provider to acknowledge receipt of the invoice.**
+1. If the invoice comes in from the Assembly email queue, **forward it to [invoices@inbox.latchel.com](mailto:invoices@inbox.latchel.com) first**, then follow [How to: Handle Invoices or Estimates Sent via email](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Invoices-or-Estimates-Sent-via-email). If the AI can't match it, you'll get an unmatched ticket from [team@latchel.com](mailto:team@latchel.com). In that case, download the invoice and upload it by hand (see Step 2a of that SOP).
+   1. **🔔Ops associates must still send the SP a reply confirming the invoice was received.**
 2. If the Invoice is coming in through a Service Provider's Conversations thread, find the invoice file in the thread (or in the work order's **Conversations** tab).
    1. Download the file with right click and save it to your computer.
       1. Remember the file name and download location (the file is named by the Service Provider, Ops agents do not need to rename the file)
@@ -85,6 +83,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/759431181/Ho
             1. Within the Property's profile, click the "Maintenance" tab
                1. Refer to the invoice and Locate the related work order by matching the work order by address or Work Order number.
                   1. When you have located the Work Order, proceed to Step 3.
+                  2. Check the AI's best-guess WOs in the unmatched ticket first.
                   2. If you cannot find the Work Order, forward the email with the invoice to the Property Manager
 
 ### Step 3- Verify if the Invoice amount
