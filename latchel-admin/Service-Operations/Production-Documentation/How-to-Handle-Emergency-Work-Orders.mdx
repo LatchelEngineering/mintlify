@@ -327,56 +327,102 @@ Sometimes residents report an emergency work order but are unreachable. This cou
   For guidelines on handling customer responses when a resident reaches out after unsuccessful troubleshooting call attempts, please refer to the below guidelines in the FAQ.
 </Note>
 
-## **⚠️ Emergency Follow-Up Standard**
+<AccordionGroup>
+  <Accordion title='🚨 "Review for Emergency" Tasks (from Conversations)'>
+    <Info>
+      **What this task is:** When a resident's reply in a Conversation on a **PM-managed** work order is flagged as a potential PD/EH, the system creates a Troubleshooting task titled **"Review for emergency: …"**.
 
-For all follow-up tasks on active emergencies (e.g., unresponsive vendors or stalled scheduling), do not defer to the next day.
+      This task is different from a regular TS task:
 
-- **The Rule:** Make **one (1) attempt**, then immediately execute a **Same-Day Decision** (Intervene, De-escalate to Urgent, or Forward to PM).
-- **The Goal:** A decision must be made **immediately** following the failed attempt to ensure the **24-Hour Appointment Standard** (Service Provider arrival within 24 hours) remains achievable.
-- **Reference:** For the full decision framework and PD/EH exceptions, see the **[Basic Service Ops Guidelines]**.<br />
+      - The work order **has not been changed**. Its severity is the same as before, and it is not in Troubleshooting status, so **Action → Troubleshoot** may not apply.
+      - The resident has been given basic safety steps and told our emergency team will review it right away, with no promise of when someone will arrive.
+      - Anything else the resident reports while the task is open is added to the work order log, not a new task.
 
-## **📋**Handling Work Orders with Home Warranty Information
+      <img
+        src="/images/image-(62).png"
+        alt="Image (62)"
+        title="Image (62)"
+        style={{ width:"60%" }}
+      />
+    </Info>
 
-<Note>
-  Refer to this guide on how to locate warranty information: [How to: Navigate the Work Order Interface](https://help.latchel.com/latchel-admin/Service-Operations/Latchel-Library/How-to-Navigate-the-Work-Order-Interface#how-to-navigate-the-work-order-interface)
-</Note>
+    1. **Assign the task to yourself** using **Next Task** in the plugin.
+    2. **Review before you call:**
+       1. The Conversation in the work order's **Conversations** tab and the task details (Hazard, what the resident said, their answers to the follow-up questions).
+       2. The PM's **Intake Settings**, following the "How do I fulfill this mission?" review in [How to Properly Diagnose Emergency Situations](/latchel-admin/Service-Operations/Production-Documentation/How-to-Properly-Diagnose-Emergency-Situations).
+       3. The WO notes, to see **why** the work order is Managed by PM (see step 5).
+    3. **Not an emergency per the PM's Intake Settings:** Leave a WO note explaining why, then follow the path that applies:
+       1. **Not PD/EH:** Handle it based on the PM's subscription:
+          - **Premium:** Move the work order forward yourself with whatever it needs next.
+          - **Autopilot:** Create a new PM task. Don't reassign an existing task.
+          - **24/7 / After Hours:** Use **Forward to PM** in the plugin.
+       2. **PD/EH:** Call the escalation contacts per [Job Aid: PM Outbound Communication for Emergency WOs](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs) and follow their direction.
+       3. Complete the task (see **Step 2. Closing the task**).
+    4. **Could be an emergency:** Call the resident to confirm the situation.
+       1. If you can't reach the resident, follow **Option 3 - Can't reach resident** above.
+    5. **Emergency confirmed:** Follow the path that matches why the work order is Managed by PM.
+       1. **The PM took over or is actively managing a PD/EH WO** (exception A or D of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules)):
+          1. Don't take any other action on the work order. Keep it Managed by PM.
+          2. Update the severity to **Emergency** and add "(EMERGENCY)" to the work order title.
+          3. Call the escalation contacts per [Job Aid: PM Outbound Communication for Emergency WOs](/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs) to let them know the issue is now PD/EH, and follow their direction.
+       2. **The WO is PM-managed only because it went stale and was de-escalated** (for example, auto-forwarded on 24/7 / After Hours): emergency handling did not resume, so re-escalate per **Re-escalating a stale de-escalation** in the **Stale Emergency rule**.
+          1. Click **Switch to Latchel** in the plugin.
+          2. Update the severity to **Emergency** and continue with **Step 1 - Troubleshooting and defining next steps** above.
+          3. 🛑 **Exceptions:** If exception B applies (PD/EH with an unresponsive PM-assigned SP), reach out to the PM before re-escalating. If exception C applies (critical note says not to follow up with the PM-assigned SP), don't re-escalate. Create a PM task with the resident's update.
+    6. **Document it** in the WO notes, then complete the task (see **Step 2. Closing the task**).
+  </Accordion>
 
-<Warning>
-  **Non-Emergency Work Orders:**
+  <Accordion title="⚠️ Emergency Follow-Up Standard">
+    For all follow-up tasks on active emergencies (e.g., unresponsive vendors or stalled scheduling), do not defer to the next day.
 
-  **If a property has a Home Warranty note, all non-emergency work orders require Property Manager approval before dispatching and are therefore automatically forwarded to the Property Manager.**
+    - **The Rule:** Make **one (1) attempt**, then immediately execute a **Same-Day Decision** (Intervene, De-escalate to Urgent, or Forward to PM).
+    - **The Goal:** A decision must be made **immediately** following the failed attempt to ensure the **24-Hour Appointment Standard** (Service Provider arrival within 24 hours) remains achievable.
+    - **Reference:** For the full decision framework and PD/EH exceptions, see the **[Basic Service Ops Guidelines]**.
+  </Accordion>
 
-  If an emergency WO is de-escalated to non-emergency and the property has a warranty note, the system will automatically place the WO in Pending with a task to PM to review warranty. Ops should not move the WO forward or override this status.
+  <Accordion title="Updated Routing Logic After Resident Contact (Common Area WOs)">
+    | **Scenario** | **Action** |
+    | --- | --- |
+    | Reached (resident or other active resident in the unit), access confirmed, issue clearly meets emergency criteria | Dispatch a Service Provider immediately. |
+    | Reached, but the situation is ambiguous | Ask clarifying questions using the Troubleshooter Question Bank before deciding. Once clear: dispatch if access is confirmed, otherwise follow the escalation path below. |
+    | Reached, but no access info available — OR unreachable after 3 attempts (resident and any other active resident in the unit) | **Go to the escalation path:** |
+    | → Escalation path: property damaging or extreme habitability? | **Yes** — escalate to the PM's Emergency Escalation Contact (existing “PM Input needed before dispatch” flow). <br /><br />**No** — standard process: move the WO to “Waiting for PM and assign the task to PM.” No EEC call needed. |
 
-  1. Notify the PM/Owner that the WO has been de-escalated and moved to Pending due to the warranty note on file.
-  2. If the reported issue does not match the warranty note, submit a PS ticket to flag the mismatch. In the PS ticket:
-     1. Note the specific WO ID and the mismatch between the reported issue and the warranty note.
-     2. Request that PS verify with the PM/Owner whether they want to update their intake settings to specify the exact warranty details so that only matching WOs are automatically held for warranty on non-emergency cases. Refer to [How to: Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams#escalate-to-product-support) how to submit a ticket.
-  3. Document in the WO notes that the reported issue does not align with the warranty information on file and that the PM/Owner has been notified.
-</Warning>
+    **Before escalating**: review all notes on the account — not just critical notes (includes pre-dispatch instructions, EEC notes, and general notes). If notes already provide enough information to dispatch, proceed instead of escalating.
+  </Accordion>
 
-Latchel **does not coordinate with Home Warranty companies** for emergencies or non-emergencies. Emergencies are handled **directly by Latchel** regardless of warranty status. For emergencies covered by warranty, Latchel attempts to resolve the issue directly.
+  <Accordion title="📋 Handling Work Orders with Home Warranty Information">
+    <Note>
+      Refer to this guide on how to locate warranty information: [How to: Navigate the Work Order Interface](https://help.latchel.com/latchel-admin/Service-Operations/Latchel-Library/How-to-Navigate-the-Work-Order-Interface#how-to-navigate-the-work-order-interface)
+    </Note>
 
-Proceed to handle the emergency work order as usual following our guidelines above.
+    <Warning>
+      **Non-Emergency Work Orders:**
 
-If a Property Manager reaches out and asks Latchel to contact a Home Warranty company for an emergency work order, follow these steps:
+      **If a property has a Home Warranty note, all non-emergency work orders require Property Manager approval before dispatching and are therefore automatically forwarded to the Property Manager.**
 
-1. Inform the Property Manager that Latchel does not coordinate directly with Home Warranty companies.
-2. Advise the Property Manager that if they want Latchel to consider a Home Warranty company for emergency dispatching, they must add that company as a Service Provider in their account.
-   1. 🗨️ **Say something like:** _"Hi [PM name], Latchel does not directly coordinate with Home Warranty companies. If you’d like us to consider dispatching to a warranty company for emergencies, please add them as a Service Provider in your account. This will allow us to include them in our dispatch process."_
-3. Explain that once added, Latchel can treat the Home Warranty company like any other listed Service Provider and may dispatch to them for emergencies when appropriate.
-4. If the Property Manager agrees, proceed with assigning the Home Warranty service provider and schedule the work order accordingly. See [(Emergency) How to Handle Scheduling Requests](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests)
+      If an emergency WO is de-escalated to non-emergency and the property has a warranty note, the system will automatically place the WO in Pending with a task to PM to review warranty. Ops should not move the WO forward or override this status.
 
-## **Updated Routing Logic After Resident Contact (Common Area WOs)**
+      1. Notify the PM/Owner that the WO has been de-escalated and moved to Pending due to the warranty note on file.
+      2. If the reported issue does not match the warranty note, submit a PS ticket to flag the mismatch. In the PS ticket:
+         1. Note the specific WO ID and the mismatch between the reported issue and the warranty note.
+         2. Request that PS verify with the PM/Owner whether they want to update their intake settings to specify the exact warranty details so that only matching WOs are automatically held for warranty on non-emergency cases. Refer to [How to: Escalate to Product Support](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams#escalate-to-product-support) how to submit a ticket.
+      3. Document in the WO notes that the reported issue does not align with the warranty information on file and that the PM/Owner has been notified.
+    </Warning>
 
-| **Scenario** | **Action** |
-| --- | --- |
-| Reached (resident or other active resident in the unit), access confirmed, issue clearly meets emergency criteria | Dispatch a Service Provider immediately. |
-| Reached, but the situation is ambiguous | Ask clarifying questions using the Troubleshooter Question Bank before deciding. Once clear: dispatch if access is confirmed, otherwise follow the escalation path below. |
-| Reached, but no access info available — OR unreachable after 3 attempts (resident and any other active resident in the unit) | **Go to the escalation path:** |
-| → Escalation path: property damaging or extreme habitability? | **Yes** — escalate to the PM's Emergency Escalation Contact (existing “PM Input needed before dispatch” flow). <br /><br />**No** — standard process: move the WO to “Waiting for PM and assign the task to PM.” No EEC call needed. |
+    Latchel **does not coordinate with Home Warranty companies** for emergencies or non-emergencies. Emergencies are handled **directly by Latchel** regardless of warranty status. For emergencies covered by warranty, Latchel attempts to resolve the issue directly.
 
-**Before escalating**: review all notes on the account — not just critical notes (includes pre-dispatch instructions, EEC notes, and general notes). If notes already provide enough information to dispatch, proceed instead of escalating.
+    Proceed to handle the emergency work order as usual following our guidelines above.
+
+    If a Property Manager reaches out and asks Latchel to contact a Home Warranty company for an emergency work order, follow these steps:
+
+    1. Inform the Property Manager that Latchel does not coordinate directly with Home Warranty companies.
+    2. Advise the Property Manager that if they want Latchel to consider a Home Warranty company for emergency dispatching, they must add that company as a Service Provider in their account.
+       1. 🗨️ **Say something like:** _"Hi [PM name], Latchel does not directly coordinate with Home Warranty companies. If you’d like us to consider dispatching to a warranty company for emergencies, please add them as a Service Provider in your account. This will allow us to include them in our dispatch process."_
+    3. Explain that once added, Latchel can treat the Home Warranty company like any other listed Service Provider and may dispatch to them for emergencies when appropriate.
+    4. If the Property Manager agrees, proceed with assigning the Home Warranty service provider and schedule the work order accordingly. See [(Emergency) How to Handle Scheduling Requests](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Emergency-How-to-Handle-Scheduling-Requests)
+  </Accordion>
+</AccordionGroup>
 
 ## ❓Frequently Asked Questions:
 
