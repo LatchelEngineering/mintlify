@@ -1,7 +1,7 @@
 ---
 title: "SOP: Running a Deep Dive with the DD Agent (PILOT)"
 sidebarTitle: "SOP: Running a DD with the DD Agent"
-description: "How Product Support runs a Deep Dive with the DD agent: who runs, validates, writes, and reviews, the procedure, validation, the DD Correction Log, backup coverage, and escalations."
+description: "How Product Support runs a Deep Dive with the DD agent: roles, process steps, validation, the DD Correction Log, and legal threats."
 keywords:
   - "deep dive"
   - "DD agent"
@@ -9,26 +9,19 @@ keywords:
   - "validation"
   - "DD Correction Log"
   - "pilot"
-groups: ["latchel"]
+groups:
+  - "latchel"
 ---
-
-<Note>
-  This SOP covers how Product Support runs a Deep Dive (DD) with the DD agent. It sits on top of the existing DD pages and doesn't repeat them. For DD types, SLAs, and how requests come in, see [Product Support Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management). For the Wavelength ticket mechanics (timer, labels, child ticket templates, root cause tags, closing), see [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process).
-</Note>
 
 ## Purpose and scope
 
-This SOP sets how Product Support runs a DD with the DD agent: Cza runs and validates the dive, the PS agent on the PM's ticket writes the customer conclusion, and Maddie reviews it in the DD Conclusion Workshop before anything goes out. It is a pilot version for November 2026.
-
-The agent does the evidence work (timeline, transcripts, settings, first-pass conclusion, child ticket drafts) so a dive doesn't take four hours of Cza's time. People validate, decide, and own every fact and promise.
-
-**Covered:** standard DDs and Invoice Dispute DDs submitted through the DD Request and Invoice Dispute DD workflows in `#ps-dd-sddi` (see [How to: Submit a Deep Dive Request](/latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request)), run with the `ps-deep-dive` skill in the Deep Dives Claude project.
+The DD AI agent does the research and first drafts. A PS team member checks the facts, makes the calls, and sends the final customer email. Use this for every Standard DD and Invoice Dispute DD from `#ps-dd-sddi`. Ticket mechanics (timer, labels, tags) still follow the [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process).
 
 **Not covered:** Google Reviews dives (see [SOP: How to Deep Dive Google Reviews](/latchel-admin/Product-Support-Team/SOP-How-to-Deep-Dive-Google-Reviews)) and SDDI tickets. We are building a separate SDDI agent, so keep following [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets) for those.
 
 ## Roles
 
-Three people touch every dive: Cza, the PS agent on the PM ticket, and Maddie. Abi covers when Cza is out, and Will signs off only when there is a legal threat.
+Three people touch every dive (Cza, the PS agent on the PM ticket, and Maddie). Abi covers when Cza is out, and Will signs off only when there is a legal threat.
 
 The DD Conclusion Workshop continues in the interim while we pilot, so we can keep improving the skill in Claude.
 
@@ -38,91 +31,45 @@ The DD Conclusion Workshop continues in the interim while we pilot, so we can ke
 | Validates | Cza | Works the validator checklist, verifies facts against source, listens to call recordings, adds her own recommendation, and logs corrections in the DD Correction Log |
 | Writes the final conclusion | PS agent assigned to the PM ticket | Turns the agent's ACE draft into the customer email in their own voice, and owns any commitment in it |
 | Reviews before it goes out | Maddie | Reviews the conclusion in the DD Conclusion Workshop, and reviews the Correction Log every two weeks |
-| Backup when Cza is out | Abi | Runs and validates the dive the same way (see [Backup coverage](#backup-coverage)) |
+| Backup when Cza is out | Abi | Runs and validates the dive the same way |
 | Legal sign-off | Will (Jen Lye in his absence) | Signs off on any dive where a vendor, owner, or PM has threatened legal action, before anything is sent |
-
-## What the agent does and what people do
-
-The agent owns the evidence work and the first drafts. People own verification, judgment, and anything that is sent. Nobody should rebuild by hand what the agent already produced.
-
-| Work | Owner | Notes |
-| --- | --- | --- |
-| Pull the WO log, settings at the time, tasks and queue routing, webchat and text threads, call and SMS records | Agent | Wavelength and BigQuery |
-| Build the sourced timeline and the on/off-platform ledger | Agent | Cza verifies the facts the conclusion relies on |
-| Find what the SOP requires and compare it to what happened | Agent | Uses the Help Center (Mintlify), never Confluence or Rovo |
-| Draft the internal conclusion, the ACE customer draft, and the ACE self-score | Agent | Drafts only; nothing is sent |
-| Draft child tickets and the tagging suggestion | Agent | Agent feedback, SOP gaps, bugs, feature requests, LVN SP feedback |
-| Listen to call recordings, view photos, check SendGrid and Twilio receipts | Cza | The agent can't do these |
-| Decide any verdict that rests on an unverified fact, and add the recommendation | Cza | Latchel policy and visible facts override AI output |
-| Create child tickets and post in Slack | Cza | Cza decides which drafts to create or drop |
-| Write the final customer email and own every promise in it | PS agent on the PM ticket | Starts from the agent's ACE draft |
-| Review the conclusion before it goes out | Maddie | DD Conclusion Workshop |
-
-**Stop doing by hand:** building timelines from scratch, writing the first ACE draft from scratch, filling child ticket templates from scratch, and rewriting the findings into a separate conclusion.
 
 ## Output: what the agent gives us
 
-The agent returns these outputs, in this order, for every dive. Cza reads them in step 4 of the [procedure](#procedure).
+The agent returns these outputs, in this order, for every dive. Cza reads them in step 3 of the [process steps](#process-steps).
 
 | # | Output | Notes |
 | --- | --- | --- |
-| 1 | Customer conclusion (ACE) | Acknowledge, Clarify, Execute, written to the [ACE framework](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE). Includes the ACE self-score. |
+| 1 | Customer conclusion (ACE) | Acknowledge, Clarify, Execute, written to the [ACE framework](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE). Under ~150 words, ends on a statement. No timeline unless the dispute is about sequence (then 3–5 dated bullets). Includes the ACE self-score. |
 | 2 | Internal conclusion (the WL internal note) | What happened, why, what's next, and a verdict that answers the DD question word for word. Leaves a slot for the validator's own recommendation. |
 | 3 | Sourced timeline | Always included, internal only. Each line has a source. |
 | 4 | Findings | Intake corrections first, then the settings at the time and the on/off-platform ledger for money dives. |
 | 5 | Tagging suggestion | Complaint Category and Root Cause + Details from the [Category Matrix](/latchel-admin/Product-Support-Team/Job-Aid-PS-DD-and-SDDI-Category-Matrix). |
-| 6 | Child ticket recommendations | Each gap is sorted into one of the types below. Each comes pre-filled in the child ticket template from the [Job Aid](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process). |
+| 6 | Child ticket recommendations | Each gap is sorted into one of four types. (a) An SOP exists and wasn't followed → Agent Feedback. (b) An SOP exists but is unclear or outdated → SOP update. (c) No SOP → SOP request. (d) System behavior → Bug/Feature. LVN issues → LVN SP Feedback. Each comes pre-filled in the child ticket template from the [Job Aid](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process). |
 | 7 | Agent feedback appendix | Transcript with key lines bolded, what was missed, what should have been said, and what the agent did well. |
-| 8 | Validator checklist | What a human must still check, and what would flip the verdict. |
-| 9 | Conditional | Cover note when a CSM or partner relays the conclusion. Escalation brief for every legal threat. |
+| 8 | Validator checklist | What a human must still check: call recordings, photos, SendGrid/Twilio receipts, every fact and promise. Also what would flip the verdict. |
+| 9 | Conditional | Cover note when a CSM or partner relays it. Escalation brief for every legal threat. |
 
-The agent sorts each gap into one of these child ticket types:
+## Process steps
 
-- An SOP exists and wasn't followed: **Agent Feedback**.
-- An SOP exists but is unclear or outdated: **SOP update**.
-- There is no SOP: **SOP request**.
-- System behavior: **Bug** or **Feature Request**.
-- An LVN issue: **LVN SP Feedback**.
-
-## Procedure
-
-Every dive runs the same twelve steps. Cza owns steps 1 to 8 and step 12, the PS agent on the PM ticket owns steps 9 and 11, and Maddie owns step 10.
-
-| # | Step | Who | What to do |
-| --- | --- | --- | --- |
-| 1 | Receive the request | Cza | The DD Request or Invoice Dispute DD workflow in `#ps-dd-sddi` creates the Wavelength ticket in PS Deep Dive Tickets. For an invoice dispute, confirm the Payments task exists and the dispute is inside the 45-day window; older disputes don't get a DD. See [SOP: Handling Work Order Invoice Disputes](/latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes). |
-| 2 | Pick up in Wavelength | Cza | Start the timer, make yourself Owner, label the ticket DD, and set the Complaint Category. Follow step 1 of the [Job Aid](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process). Keep the ticket in Open while you work. |
-| 3 | Run the agent | Cza | Open the Deep Dives project, paste the approved [kickoff prompt](/latchel-admin/Product-Support-Team/Job-Aid-DD-Agent-Kickoff-Prompt), then paste the DD request or ticket link. Answer every question the agent asks (which budget applies, which visit an invoice covers, on or off platform). It asks instead of guessing. |
-| 4 | Read the output in order | Cza | ACE customer draft, internal findings and conclusion, child ticket drafts, validator checklist. |
-| 5 | Validate | Cza | Work the validator checklist (see [Validation](#validation)). Don't go past this step with an unverified fact in the conclusion. To counter-check the dive, or to confirm how the system behaves (work orders, dispatch, billing, messaging, PM integrations), ask the Latchel Minion in `#ask-the-minion`: tag it with one question and include the WO, property, or company ID. It is read-only and can't change anything, so check anything urgent or customer-facing with an engineer. |
-| 6 | Log corrections | Cza | Add one entry per fix to the DD Correction Log (see [DD Correction Log](#dd-correction-log)). |
-| 7 | Create child tickets and tag | Cza | Create the child tickets you keep, using the templates and Slack workflows in step 3 of the [Job Aid](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process). Set Complaint Category plus Root Cause and Details from the [Category Matrix](/latchel-admin/Product-Support-Team/Job-Aid-PS-DD-and-SDDI-Category-Matrix). |
-| 8 | Post the internal conclusion | Cza | Post it as an internal note on the DD ticket with the DD ticket link and the WO link, then hand the ACE draft and findings to the PS agent on the PM ticket. Log time spent in an internal note. |
-| 9 | Write the final customer email | PS agent on the PM ticket | Edit the ACE draft in your own voice, check every fact and promise against the work order, and submit it in the DD Conclusion Workshop in `#ps-team-chat`. |
-| 10 | Review | Maddie | Review in the workshop. Any dive with a legal threat also goes to Will before anything is sent (see [Escalations](#escalations)). |
-| 11 | Send | PS agent on the PM ticket | Send the approved email, or hand it to the requester to send. Don't send before the review. |
-| 12 | Close | Cza | Tag the requester, set the status to Escalated, stop the timer, and close the DD ticket, following step 6 of the [Job Aid](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process). For Slack-only requests, post the conclusion in the `#ps-dd-sddi` thread instead. |
+1. **Pick up the ticket.** Start the timer, set yourself as Owner, add the DD or SDDI label. For invoice disputes, check it's within 45 days. (Ticket steps are in the [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process).)
+2. **Run the agent.** Open the Deep Dives project, paste the [kickoff prompt](/latchel-admin/Product-Support-Team/Job-Aid-DD-Agent-Kickoff-Prompt) and the DD request. Answer every question it asks.
+3. **Check the output.** Work the checklist below. Fix anything wrong and log each fix in the DD Correction Log. To counter-check the dive or confirm how the system behaves, ask the Latchel Minion in `#ask-the-minion`.
+4. **Create child tickets and tag.** Keep or drop each draft the agent wrote. Set Complaint Category and Root Cause.
+5. **Hand off.** Post the findings as an internal note on the DD ticket, then give the customer draft to the PS agent on the PM ticket.
+6. **Write and submit the email.** Edit the draft in your own voice and submit it in the DD Conclusion Workshop in `#ps-team-chat`.
+7. **Approve (Maddie).** Review in the workshop.
+8. **Send and close.** The PS agent sends the approved email. Cza tags the requester, sets the ticket to Escalated, stops the timer, and closes it.
 
 ## Validation
 
-Cza validates every dive before anything is posted or sent. AI output is an input, not the finding: Latchel policy and visible facts override it, and the validator owns the recommendation. See also "Using AI in Deep Dives" on the [Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management) page.
+The agent's output is a draft, and the following needs to be validated by a team member:
 
-The agent ends every run with a validator checklist. Work through it in full:
-
-- [ ] Every date, amount, and who-did-what the conclusion relies on is checked against the source (work order log, messages, invoice).
-- [ ] Outbound calls the agent names are listened to in Twilio, and photos are viewed. The agent can't do either.
-- [ ] SendGrid and Twilio receipts are checked for any "I never got it" complaint.
-- [ ] Each claim in the intake's research is confirmed or corrected, and corrections are at the top of the findings.
-- [ ] Every unverified item is listed with what would settle it and what would flip the verdict.
-- [ ] Names match the primary profile and the work order, not the notes.
-- [ ] Every promise in the customer draft has a named owner and a date, and whoever must agree has agreed.
-- [ ] The ACE self-score passes and the body is about 150 words.
-- [ ] Every link works. No legacy Confluence links.
-- [ ] Each child ticket draft is kept or dropped, and an agent miss is only called a miss after the SOP was read.
-- [ ] The validator's own recommendation, with the reason, is written in the internal conclusion.
-- [ ] Every correction made is logged in the DD Correction Log.
-
-If the evidence already answers the question, conclude. Don't go back to the service provider for more detail on a dive that is already resolvable.
+- [ ] Dates, amounts, and who-did-what match the work order, messages, and invoice
+- [ ] Call recordings listened to and photos viewed (the AI agent can't do these)
+- [ ] SendGrid or Twilio receipts checked for any "I never got it" complaint
+- [ ] Every promise in the draft has an owner and a date
+- [ ] Your own recommendation is written in the findings
 
 ## DD Correction Log
 
@@ -157,41 +104,38 @@ Three rules come from past dives:
 
 To review, submit the draft in `#ps-team-chat` using the DD Conclusion Workshop workflow, make Maddie's changes, then send. The internal findings stay internal; the customer email is a short distillation of them.
 
-## Backup coverage
+## Legal threats
 
-When Cza is out, Abi runs and validates dives using the same procedure, kickoff prompt, and checklist. The 3-day SLA doesn't change.
-
-- **Access:** Abi needs the Deep Dives project, the `ps-deep-dive` skill, and the Wavelength, BigQuery, and Mintlify connections working before Cza's first planned absence. Test with one practice dive.
-- **Handoff:** before a planned absence, Cza sets a new Owner on any open DD ticket and leaves an internal note saying where it stands (which step, what is unverified).
-- **Mid-dive handoff:** Abi starts from the existing ticket notes and the agent's output, and reruns the agent rather than trusting a partial draft.
-- **Corrections:** Abi logs corrections in the DD Correction Log the same way.
-
-Because the runner and validator are the same person, a second check is worth deciding on for Abi's dives (see [Pilot notes and open items](#pilot-notes-and-open-items)).
-
-## Escalations
-
-Any legal threat stops the send. If a vendor, owner, or PM has threatened a lawsuit, legal action, or a lawyer, nothing goes to them until Will signs off (Jen Lye in his absence).
-
-- **Flag it first.** The agent flags a legal threat at the top of every output. Cza confirms the flag at validation.
-- **Escalation brief.** For every legal threat, and any dive that goes to leadership, the agent writes a one-screen brief: the decision needed, intake corrections, the on/off-platform split with totals, what it proposes for each open amount, and the risks. Post the brief and the draft in the same thread.
-- **Keep admissions out of the draft.** Statements like "that was wrong" or "we should have" go in the brief for Will to decide on, not in the customer email.
-- **No send until leadership replies.**
-
-Vendor-raised dives (a vendor saying they are owed money) use the vendor version of the conclusion. Amounts approved through Latchel with proof of completion are paid through Latchel. Amounts arranged off-platform go back to the owner, and Latchel doesn't mediate. Vendor licensing isn't checked or discussed. For invoice disputes, refunds, and outcomes, see [SOP: Handling Work Order Invoice Disputes](/latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes).
+If anyone mentions a lawsuit, legal action, or a lawyer, stop. Nothing is sent until Will signs off (Jen if Will is out). Post the agent's escalation brief and the draft in one thread, and keep admissions like "we should have" out of the customer email.
 
 ## Timing and metrics
 
-The 3-day SLA and the 4-hour handling-time target are set on [Product Support Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management) and tracked by the Wavelength timer, so the timer has to run. The WBR reports average age of all dives (goal 7 days, stretch 3 days) and average handling time of DD tickets (goal 6 hours, stretch 4 hours).
+A dive should finish inside the 3-day SLA and take no more than four hours of working time. Wavelength tracks both, so the timer has to run. See [Product Support Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management) for the service levels.
+
+| Measure | Target | How it's tracked |
+| --- | --- | --- |
+| Completion time | 3 days from submission | Wavelength flags a ticket as Breaching if it sits in Needs Response near day 3 |
+| Handling time | Within 4 hours of working time per dive | The Wavelength timer: start it at pick-up, pause it for breaks |
+| Average age of all dives (WBR) | 7 days goal, 3 days stretch | WBR dive metrics |
+| Average handling time of DD tickets (WBR) | 6 hours goal, 4 hours stretch | WBR dive metrics |
 
 The pilot is working if handling time stays at or under four hours and the DD Correction Log shows fewer corrections per dive over time. Review both at the end of the pilot.
 
-## Related pages
+## Appendix: What the agent does and what people do
 
-- [Product Support Deep Dive Management](/latchel-admin/Product-Support-Team/Product-Support-Deep-Dive-Management)
-- [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process)
-- [How to: Submit a Deep Dive Request](/latchel-admin/Product-Support-Team/How-to-Submit-a-Deep-Dive-Request)
-- [DD Customer Conclusion Email Framework (ACE)](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE)
-- [Job Aid: PS DD and SDDI Category Matrix](/latchel-admin/Product-Support-Team/Job-Aid-PS-DD-and-SDDI-Category-Matrix)
-- [SOP: Handling Work Order Invoice Disputes](/latchel-admin/Product-Support-Team/SOP-Handling-Work-Order-Invoice-Disputes)
-- [Job Aid: DD Agent Kickoff Prompt](/latchel-admin/Product-Support-Team/Job-Aid-DD-Agent-Kickoff-Prompt)
-- [Job Aid: SDDI Tickets](/latchel-admin/Product-Support-Team/Job-Aid-SDDI-Tickets)
+The agent owns the evidence work and the first drafts. People own verification, judgment, and anything that is sent. Nobody should rebuild by hand what the agent already produced.
+
+| Work | Owner | Notes |
+| --- | --- | --- |
+| Pull WO log, settings at the time, tasks and queue routing, webchat and text threads, call and SMS records | AI Agent | Wavelength and BigQuery |
+| Build the sourced timeline and the on/off-platform ledger | AI Agent | Cza verifies the facts the conclusion relies on |
+| Find what the SOP requires and compare it to what happened | AI Agent | Uses the Help Center (Mintlify), never Confluence or Rovo |
+| Draft the internal conclusion, the ACE customer draft, and the ACE self-score | AI Agent | Drafts only; nothing is sent |
+| Draft child tickets and the tagging suggestion | AI Agent | Agent feedback, SOP gaps, bugs, feature requests, LVN SP feedback |
+| Listen to call recordings, view photos, check SendGrid and Twilio receipts | Cza | The agent cannot do these |
+| Decide any verdict that rests on an unverified fact, and add the recommendation | Cza | Latchel policy and visible facts override AI output |
+| Create child tickets and post in Slack | Cza | Cza decides which drafts to create or drop |
+| Write the final customer email and own every promise in it | PS agent on the PM ticket | Starts from the agent's ACE draft |
+| Review the conclusion before it goes out | Maddie | DD Conclusion Workshop |
+
+**Stop doing by hand:** building timelines from scratch, writing the first ACE draft from scratch, filling child ticket templates from scratch, and rewriting the findings into a separate conclusion.
