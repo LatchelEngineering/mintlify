@@ -1,0 +1,49 @@
+---
+title: "Job Aid: DD Agent Kickoff Prompt"
+sidebarTitle: "Job Aid: DD Agent Kickoff Prompt"
+description: "The approved prompt to paste into the Deep Dives Claude project to start a Deep Dive with the DD agent."
+keywords: ["deep dive", "DD agent", "kickoff prompt", "ps-deep-dive", "Deep Dives project"]
+groups:
+  - "latchel"
+---
+
+<Note>
+  This is the approved prompt for starting a Deep Dive (DD) with the DD agent. For who runs each step and what to do with the output, see [SOP: Running a Deep Dive with the DD Agent](/latchel-admin/Product-Support-Team/sop-running-a-deep-dive-with-the-dd-agent-pilot).
+</Note>
+
+## How to use it
+
+1. Open a new chat in the **Deep Dives** project in Claude.
+2. Paste the prompt below.
+3. Replace the last line with the DD request (the Slack intake form) or the DD ticket link.
+4. Answer every question the agent asks. It asks instead of guessing.
+
+Use the prompt as written. If you think it needs a change, log it in the DD Correction Log rather than editing your own copy, so the fix reaches everyone.
+
+## The prompt
+
+```text
+Run a deep dive on the request below using the ps-deep-dive skill. Follow the skill's output package in order: (1) customer conclusion written with ACE, with the ACE self-score, (2) internal findings and conclusion with the sourced timeline, tagging suggestion, and agent conversation transcript, (3) pre-filled child ticket drafts for every gap you find, (4) the validator checklist.
+
+Before you draft anything:
+- Quote the customer's question and the DD question word for word, and confirm or correct every claim in the intake's research.
+- Read the Help Center SOP that governs each step that went wrong and quote it next to what happened. Don't call something an agent miss until you have read the SOP.
+- Ask me before assuming anything that would change the verdict.
+
+Don't post, send, or create anything. Flag any legal threat at the top.
+
+DD REQUEST:
+[paste the Slack intake form or the DD ticket link here]
+```
+
+## What the prompt does
+
+- **Output order:** the agent returns the ACE customer conclusion, the internal findings and conclusion, child ticket drafts, and the validator checklist, in that order. See "Output: what the agent gives us" in the [SOP](/latchel-admin/Product-Support-Team/sop-running-a-deep-dive-with-the-dd-agent-pilot).
+- **Nothing goes out:** the agent doesn't post, send, or create anything. You create the child tickets and the PS agent on the PM ticket sends the final email after the DD Conclusion Workshop.
+- **Legal threats:** the agent flags any legal threat at the top. Any dive with a legal threat goes to Will before anything is sent.
+
+## Related pages
+
+- [SOP: Running a Deep Dive with the DD Agent](/latchel-admin/Product-Support-Team/sop-running-a-deep-dive-with-the-dd-agent-pilot)
+- [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process)
+- [DD Customer Conclusion Email Framework (ACE)](/latchel-admin/Product-Support-Team/DD-Customer-Conclusion-Email-Framework-ACE)
