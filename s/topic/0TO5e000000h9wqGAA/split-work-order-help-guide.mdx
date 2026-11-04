@@ -26,33 +26,39 @@ Related issues, such as a plumbing leak and remediation work caused by that leak
 
 If you're on a work order and realize it needs to be split into two separate jobs, you can now do this directly from the work order page. Latchel uses AI to suggest how the work order might be split and lets you confirm or edit the suggestion before creating the new work order.
 
-Open the work order you need to split from your dashboard. In the **Action** dropdown (or from the work order detail page), select **Split Work Order**.
+<Steps>
+  <Step title="**Select Split Work Order**" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="p">
+    Open the work order you need to split from your dashboard. In the **Action** dropdown (or from the work order detail page), select **Split Work Order**.
 
-<Frame>
-  ![Split WO 1](/images/split-WO-1.png)
-</Frame>
+    <Frame>
+      ![Split WO 1](/images/split-WO-1.png)
+    </Frame>
 
-Latchel will suggest how to divide the issues.
+    Latchel will suggest how to divide the issues.
 
-<Frame>
-  ![Split Wo 2](/images/split-wo-2.png)
-</Frame>
+    <Frame>
+      ![Split Wo 2](/images/split-wo-2.png)
+    </Frame>
+  </Step>
+  <Step title="**Review the suggested split**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
+    Review the suggested split and make any edits if needed.
 
-Review the suggested split and make any edits if needed.
+    <Frame>
+      ![Split Wo 3](/images/split-wo-3.png)
+    </Frame>
+  </Step>
+  <Step title="**Click Split Work Order to confirm**" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="p">
+    Confirm the split by clicking **Split Work Order**. A new, separate work order will be created for the second issue.
 
-<Frame>
-  ![Split Wo 3](/images/split-wo-3.png)
-</Frame>
+    <Note>
+      When using Split Work Order, you will need to **manually select the correct severity** for the new work order. The suggested budget on the split work order is pulled from the original (parent) work order, but it can be edited before confirming.
+    </Note>
 
-Confirm the split by clicking **Split Work Order**. A new, separate work order will be created for the second issue.
-
-<Note>
-  When using Split Work Order, you will need to **manually select the correct severity** for the new work order. The suggested budget on the split work order is pulled from the original (parent) work order, but it can be edited before confirming.
-</Note>
-
-<Tip>
-  The skill for the new work order is automatically detected—no need to assign it manually.
-</Tip>
+    <Tip>
+      The skill for the new work order is automatically detected—no need to assign it manually.
+    </Tip>
+  </Step>
+</Steps>
 
 ## Frequently Asked Questions
 
