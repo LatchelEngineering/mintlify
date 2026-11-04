@@ -22,9 +22,14 @@ There are three ways to create a recurring work order. Each one asks for the sam
 
 ### **Option 1 — From the Recurring Work Orders Page**
 
-From your dashboard, go to the **Maintenance** tab and select **Recurring Work Orders**.
-
-Create a new recurring work order, then search for and select the **property** where the work needs to be done. Describe the work, then set the schedule and details.
+<Steps>
+  <Step title="**Go to Recurring Work Orders**" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="p">
+    From your dashboard, go to the **Maintenance** tab and select **Recurring Work Orders**.
+  </Step>
+  <Step title="**Create the work order and select the property**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
+    Create a new recurring work order, then search for and select the **property** where the work needs to be done. Describe the work, then set the schedule and details.
+  </Step>
+</Steps>
 
 ### **Option 2 — From an Existing Work Order**
 
@@ -38,13 +43,25 @@ Anywhere in Latchel where you can create a work order, you'll see the option to 
 
 ## **Setting the Schedule and Details**
 
-1. **Frequency** — Choose how often the work order should repeat.
-2. **Start Date** — Choose when the series should begin.
-3. **End Date (optional)** — Add a stop date if the work should only repeat for a set period. Leave it blank to keep the series going.
-4. **Service Provider (optional)** — If you always want the same vendor to complete this work, select them here and they'll be assigned to every work order in the series.
-5. **Requires coordination with resident** — Choose whether Latchel needs to coordinate with the resident:
-   - **Selected:** The resident will be notified and asked for their availability. Use this for work that requires entering the home, like HVAC maintenance.
-   - **Not selected:** The work order is treated as having **permission to enter**. Use this for work that doesn't require entering the home, like mowing or pool treatments.
+<Steps>
+  <Step title="**Choose the frequency**" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="p">
+    **Frequency** — Choose how often the work order should repeat.
+  </Step>
+  <Step title="**Choose the start date**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
+    **Start Date** — Choose when the series should begin.
+  </Step>
+  <Step title="**Add an end date**" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="p">
+    **End Date (optional)** — Add a stop date if the work should only repeat for a set period. Leave it blank to keep the series going.
+  </Step>
+  <Step title="**Select a service provider**" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="p">
+    **Service Provider (optional)** — If you always want the same vendor to complete this work, select them here and they'll be assigned to every work order in the series.
+  </Step>
+  <Step title="**Choose resident coordination**" icon="5" iconType="sharp-solid" stepNumber={5} titleSize="p">
+    **Requires coordination with resident** — Choose whether Latchel needs to coordinate with the resident:
+       - **Selected:** The resident will be notified and asked for their availability. Use this for work that requires entering the home, like HVAC maintenance.
+       - **Not selected:** The work order is treated as having **permission to enter**. Use this for work that doesn't require entering the home, like mowing or pool treatments.
+  </Step>
+</Steps>
 
 <Tip>
   **Use an outside tool for recurring inspections?** Create a recurring work order in Latchel and add the link to your external inspection tool in the **work order description**.
