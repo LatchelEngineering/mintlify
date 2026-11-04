@@ -14,13 +14,13 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2626191361/M
 
 ### **Schedule Adherence**
 
-#### Step 1 - Deputy Inspection
+#### Step 1 - Sheriff Attendance Check
 
-1. Check Deputy to see if there are any agents marked as late or absent.
+1. Open the On Shift tab in Sheriff (also available in the Latchel Service Ops Assistant) and check whether any associates are marked late or absent.
 
-<Frame>
-  ![image-20221029-104953.png](/images/SVC-78.png)
-</Frame>
+![Image (6) 2](/images/image-\(6\)-2.png "Image (6) 2")
+
+![Screenshot 2026 11 03 At 4 53 00 PM 1](/images/Screenshot-2026-11-03-at-4.53.00-PM-1.png "Screenshot 2026 11 03 At 4 53 00 PM 1")
 
 #### Step 2 - Operations Channel Review
 
@@ -40,25 +40,15 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2626191361/M
 
 #### Step 4 - No Status Update & Associate is Late
 
-1. If no post has been made in the #status\_updates Slack channel and the associate is marked late or absent in Deputy for 5 or more minutes, Operations Support Specialists must submit a feedback ticket. Please refer to [**How to: Submit Associate Feedback Tickets**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Submit-Associate-Feedback-Tickets#how-to-submit-associate-feedback-tickets).
+1. If no post has been made in the #status\_updates Slack channel and the associate is marked late or absent in Sheriff (On Shift tab) for 5 or more minutes, Operations Support Specialists must submit a feedback ticket. Please refer to [**How to: Submit Associate Feedback Tickets**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Submit-Associate-Feedback-Tickets#how-to-submit-associate-feedback-tickets).
 
 ### **Staff Availability**
 
 #### Step 1 - Assessing Workload
 
-Operations Support Specialists should review the emergency work orders, task backlogs and call volume on the [Dashboard](https://datastudio.google.com/reporting/d9160663-a5a3-4f78-936f-75d92cc93fb6) to check if the workload for Troubleshooters and Ops Associates is low.
+Operations Support Specialists should review emergency work orders, task backlogs, and call volume in the Latchel Service Ops Assistant: use All queues (Ops Support sees every queue when Available) for task volume and age, and the Amazon Connect dashboard for call volume. 
 
-<Frame>
-  ![image-20221025-150902.png](/images/SVC-81.png)
-</Frame>
-
-<Frame>
-  ![image-20221025-150716.png](/images/SVC-82.png)
-</Frame>
-
-<Frame>
-  ![image-20240703-182643.png](/images/SVC-83.png)
-</Frame>
+![Screenshot 2026 11 03 At 5 14 59 PM](/images/Screenshot-2026-11-03-at-5.14.59-PM.png "Screenshot 2026 11 03 At 5 14 59 PM")
 
 #### Step 2 - Task Switching and VTO
 
@@ -74,6 +64,7 @@ Operations Support Specialists should review the emergency work orders, task bac
 3. **Call Center team:**
    1. Calls should be answered in less than 1 min to avoid calls rolling over to the call center.
    2. This depends on the number of associates assigned to phones. We should have enough associates to handle calls within 1 minute. If we constantly have more calls in the queue than associates available, we need to move labor to balance it or offer VTO. See [(Operations Support Specialist) When to offer voluntary time-off (VTO)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Operations-Support-Specialist-When-to-offer-voluntary-time-off-VTO#operations-support-specialist-when-to-offer-voluntary-time-off-vto)
+   3. Act on the Latchel Service Ops Assistant's Amazon Connect capacity alert. 'No one logged in' or 'No one available' means calls are at high risk of rolling over; move a cross-trained associate to phones immediately.
 
 # 🎯 When to Break This SOP
 
@@ -83,7 +74,7 @@ Operations Support Specialists should review the emergency work orders, task bac
 
 - Leadership directs a different staffing approach.
 - Unexpected spikes in workload require immediate reallocation of staff.
-- System tools (Dashboard, Deputy, or Slack) are unavailable or malfunctioning.
+- System tools (Dashboard, Sheriff, the Latchel Service Ops Assistant, or Slack) are unavailable or malfunctioning.
 - Temporary policies or experiments are in place to optimize coverage or efficiency.
 
 # 💡 If You Think This SOP Could Be Improved...
