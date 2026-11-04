@@ -14,51 +14,60 @@ When a technician in an contact rotation is unavailable, an absence should be re
 
 Follow the steps below to record an absence for a technician in an contact rotation.
 
-Go to the **Contact Rotations** page and **open the rotation** that includes the technician who will be absent. Click **Edit** to access the scheduled rotation.
+<Steps>
+  <Step title="**Open the rotation and click Edit**" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="p">
+    Go to the **Contact Rotations** page and **open the rotation** that includes the technician who will be absent. Click **Edit** to access the scheduled rotation.
 
-<Frame>
-  ![Latchel 06 12 2026 10 26 AM](/images/Latchel-06-12-2026_10_26_AM.png)
-</Frame>
+    <Frame>
+      ![Latchel 06 12 2026 10 26 AM](/images/Latchel-06-12-2026_10_26_AM.png)
+    </Frame>
 
-<Frame>
-  ![Latchel 06 12 2026 10 39 AM](/images/Latchel-06-12-2026_10_39_AM.png)
-</Frame>
+    <Frame>
+      ![Latchel 06 12 2026 10 39 AM](/images/Latchel-06-12-2026_10_39_AM.png)
+    </Frame>
 
-<Frame>
-  ![Latchel 06 12 2026 10 40 AM](/images/Latchel-06-12-2026_10_40_AM.png)
-</Frame>
+    <Frame>
+      ![Latchel 06 12 2026 10 40 AM](/images/Latchel-06-12-2026_10_40_AM.png)
+    </Frame>
+  </Step>
+  <Step title="**Click the technician's name**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
+    **Locate the layer that contains the technician.** Each layer lists the technicians assigned to that escalation tier. Click on the **technician's name** or profile to access their absence settings.
 
-**Locate the layer that contains the technician.** Each layer lists the technicians assigned to that escalation tier. Click on the **technician's name** or profile to access their absence settings.
+    <Frame>
+      ![Absences 4](/images/absences-4.png)
+    </Frame>
+  </Step>
+  <Step title="**Click Add Absence**" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="p">
+    Within the technician's profile or layer settings, locate the **Absences** section and click **Add Absence** to open the absence form.
 
-<Frame>
-  ![Absences 4](/images/absences-4.png)
-</Frame>
+    <Frame>
+      ![Absences 5](/images/absences-5.png)
+    </Frame>
+  </Step>
+  <Step title="**Enter the start and end dates**" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="p">
+    Enter the **start date and end date** of the absence. Both dates are required — if the end date is unknown for an unplanned absence, enter an estimated date and update it later.
 
-Within the technician's profile or layer settings, locate the **Absences** section and click **Add Absence** to open the absence form.
+    <Frame>
+      ![Absences 6](/images/absences-6.png)
+    </Frame>
 
-<Frame>
-  ![Absences 5](/images/absences-5.png)
-</Frame>
+    <Note>
+      Both a start and end date are always required. The system will not save an absence without both fields filled in.
+    </Note>
+  </Step>
+  <Step title="**Select a substitute technician**" icon="5" iconType="sharp-solid" stepNumber={5} titleSize="p">
+    Optionally, select a **substitute technician** who will cover the absent technician's spot during the absence period. If no substitute is selected, the rotation will skip this technician and escalate normally to the next layer.
 
-Enter the **start date and end date** of the absence. Both dates are required — if the end date is unknown for an unplanned absence, enter an estimated date and update it later.
+    <Warning>
+      The substitute must also be an **in-house technician** for the PM company to appear in the selection list.
 
-<Frame>
-  ![Absences 6](/images/absences-6.png)
-</Frame>
-
-<Note>
-  Both a start and end date are always required. The system will not save an absence without both fields filled in.
-</Note>
-
-Optionally, select a **substitute technician** who will cover the absent technician's spot during the absence period. If no substitute is selected, the rotation will skip this technician and escalate normally to the next layer.
-
-<Warning>
-  The substitute must also be an **in-house technician** for the PM company to appear in the selection list.
-
-  **Leaving this blank is acceptable** — the contact rotation will continue escalating through the remaining layers.
-</Warning>
-
-Click **Save** to confirm the absence. The technician will be automatically skipped during the absence period, and the substitute (if assigned) will receive alerts in their place.
+      **Leaving this blank is acceptable** — the contact rotation will continue escalating through the remaining layers.
+    </Warning>
+  </Step>
+  <Step title="**Click Save**" icon="6" iconType="sharp-solid" stepNumber={6} titleSize="p">
+    Click **Save** to confirm the absence. The technician will be automatically skipped during the absence period, and the substitute (if assigned) will receive alerts in their place.
+  </Step>
+</Steps>
 
 ## **Things to Keep In Mind**
 
