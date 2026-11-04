@@ -3,11 +3,11 @@ title: "Latchel Data Sync Extension Reference Guide"
 description: "Unlike our integrations for other platforms, the **Chrome Plugin** doesn’t have the concept of an initial sync. Therefore every sync can be considered a subsequent sync, which will look for any data that was created or updated within the last 72 hours."
 ---
 
-### **Two Directions of Data Desynchronization After the Initial Sync**
+## **Two Directions of Data Desynchronization After the Initial Sync**
 
 We refer to sync events after the initial sync as “subsequent” syncs. Subsequent syncs will look for any data that was created or updated within the last 72 hours. Subsequent property updates can be organized into two categories **(1) Newly created Data,** and **(2) Existing or Previously Created Data.**
 
-### **Platform → Latchel**
+## **Platform → Latchel**
 
 **I. Newly Created Data**
 
@@ -62,7 +62,7 @@ Here is how each setting option impacts which work orders sync from your platfor
 
 3. **Work Order (WO) -** the integration do not update any fields on previously created work orders.
 
-### **Latchel → Platform**
+## **Latchel → Platform**
 
 **I. Properties and Residents -** Manually created properties and residents in Latchel will not sync to your platform. Hence, the option to create new properties and residents in the Latchel console is unavailable.
 
@@ -103,7 +103,7 @@ To manually sync WO using the Chrome plugin data sync, you can initiate a re-syn
   You may also contact Latchel's Product Support via [team@latchel.com](mailto:team@latchel.com) to know which option works best for your company.
 </Tip>
 
-### Excluding Properties from Import
+## Excluding Properties from Import
 
 PMs can now choose to exclude specific properties from being imported into Latchel during a sync. This is useful for units that should not be managed through Latchel, such as:
 
@@ -118,7 +118,7 @@ To exclude a property, use the **Exclude from Property Sync** button found withi
   To re-include a property, simply remove the exclusion in your PMS. It will be picked up in the next sync.
 </Note>
 
-### Merging Properties
+## Merging Properties
 
 The integration won’t have any awareness of merging. It simply lines up with reference ids or makes new ones if it's not existing in Latchel.
 
@@ -126,7 +126,7 @@ The integration won’t have any awareness of merging. It simply lines up with r
   **Planning to merge properties in your PMS?** Please reach out to Product Support or your Customer Success Manager first so we can ensure the integration continues to sync correctly during and after the merge.
 </Danger>
 
-### **Other Related Articles**
+## **Other Related Articles**
 
 <Columns cols={2}>
   <Column>
