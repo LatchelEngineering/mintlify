@@ -32,7 +32,7 @@ Subsequent syncs will look for any data that was created or updated **within the
 
 ## **Propertyware ----\> Latchel**
 
-**I. Newly Created Data**
+### **I. Newly Created Data**
 
 1. **Properties and Residents -** New properties, and residents will sync all information to Latchel the same rule as the initial sync.
 2. **Work Order** - In order for new work orders to sync to Latchel, the “**Managed By**” field must be assigned to the Latchel user in Propertyware. There is no way to automatically have all of the “Managed By” fields filled out when a maintenance request is submitted. It has to be manually done by someone on the team. Normally:
@@ -46,11 +46,11 @@ Subsequent syncs will look for any data that was created or updated **within the
    </Check>
 3. **Leases -** The lease sync runs at **11:30 pm UTC every night** and is thus synchronized from Propertyware to Latchel once a day.
 
-**II. Existing or Previously Created Data**
+### **II. Existing or Previously Created Data**
 
 1. **Property -** synchronization of existing or previously created property will only update the integration data field.
 
-**Automatic Property Reconciliation**
+### **Automatic Property Reconciliation**
 
 To ensure accurate customer billing Latchel runs on automated process each month to de-activate any active units in Latchel that no longer exist in the Propertyware property list integrated with Latchel. This process currently happens on the **27th at 3am PST**.
 
