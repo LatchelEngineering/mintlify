@@ -122,7 +122,6 @@
                       "s/topic/0TO5e000000h9wqGAA/Configuring-Portal-Settings",
                       "s/topic/0TO5e000000h9wqGAA/Customize-Resident-Review-URL",
                       "s/topic/0TO5e000000h9wqGAA/How-to-Customize-Work-Order-Budget-Limits",
-                      "s/topic/0TO5e000000h9wqGAA/How-to-Add-Emergency-Temperature-Thresholds",
                       "s/topic/0TO5e000000h9wqGAA/Set-Up-Non-Emergency-Schedule",
                       "s/topic/0TO5e000000h9wqGAA/how-to-white-label-your-resident-experience-by-portfolio"
                     ]
@@ -2679,6 +2678,11 @@
     "drilldown": false
   },
   "redirects": [
+    {
+      "source": "/s/topic/0TO5e000000h9wqGAA/How-to-Add-Emergency-Temperature-Thresholds",
+      "destination": "/s/topic/0TO5e000000h9wqGAA/How-Emergency-Temperature-Works-with-Intake-Settings",
+      "permanent": true
+    },
     {
       "source": "/s/topic/0TO5e000000h9wqGAA/How-to-Add-a-New-Problem-Location-Setting-From-the-Work-Order-Page-New-Experience",
       "destination": "/s/topic/0TO5e000000h9wqGAA/Introduction-to-Intake-Settings",
