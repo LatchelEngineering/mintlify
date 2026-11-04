@@ -14,6 +14,32 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2313453653/H
 
 Anyone in Latchel Ops escalating an issue or requesting a feature, design, or process/policy change.
 
+### Bug Report, Latchel Minion, or High-Sev?
+
+<Warning>
+  **Associates:** For now, don't submit a bug report until Ops Support confirms it's a bug.
+</Warning>
+
+**How it works:**
+
+1. **Associate:** Post the issue in `#ops_assistance_hub` with the WO link, what you expected, and what happened instead.
+2. **Ops Support:** Review the issue. If you're not sure it's a bug, check in `#ask-the-minion`.
+3. **Ops Support:** Reply in the associate's thread with the outcome:
+   - **It's a bug:** Tell the associate to submit a bug report.
+   - **It's not a bug:** Explain the expected behavior or next step.
+   - **The app is down or the team can't work:** Post in `#tech-high-sev-escalations` right away using the **High Severity Tech Escalation** workflow.
+4. **Associate:** Once Ops Support confirms it's a bug, submit it through the [bug report form](https://app.latchel.com/admin/bug-reports).
+
+| Situation | Where it goes | Who posts |
+| --- | --- | --- |
+| **You know it's a bug.** You're expecting X, and X isn't happening. | [Bug report form](https://app.latchel.com/admin/bug-reports) → `#bug-report` | Associate, after Ops Support replies to confirm |
+| **You're not sure it's a bug.** You don't know what to expect, you're not sure how to do X, or you were told something vague and need to know what it means. | `#ask-the-minion` | Ops Support only |
+| **The app is down or you can't perform your job.** | `#tech-high-sev-escalations` | Ops Support only |
+
+<Note>
+  The Latchel Minion doesn't replace bug reports. Ops Support uses it only to check an issue when it's unclear whether it's a bug.
+</Note>
+
 ### Types of Escalations & Requests
 
 First, determine what kind of request you would like to escalate to the team. Use Table 1 below to figure out the type. If you’re still unsure if something is an issue or a change request, please discuss it with your colleagues or manager.
@@ -22,7 +48,7 @@ Table 1: Different Types of Requests
 
 | Escalation or Request Type | Definition | Examples |
 | --- | --- | --- |
-| Bug Report | Escalation for when something is not working the way that it typically does.<br /><br />Submit a bug report using this link: [<u>https://app.latchel.com/admin/bug-reports</u>](https://app.latchel.com/admin/bug-reports) (also pinned at the top of the `#bug-report` channel). | <ul><li>WO not behaving as it should. <ul><li>WOs stuck in Intake processing for more than 3 minutes.</li></ul></li><li>Notification sending under incorrect circumstances.</li><li>Call not being recorded.</li><li>Certain work orders not appearing on the user dashboard as expected.</li><li>Tasks created even if it shouldn’t</li></ul> |
+| Bug Report | Escalation for when you're expecting X and X isn't happening.<br /><br />**Associates:** Post it in `#ops_assistance_hub` first. Once Ops Support confirms it's a bug, submit a bug report using this link: [<u>https://app.latchel.com/admin/bug-reports</u>](https://app.latchel.com/admin/bug-reports) (also pinned at the top of the `#bug-report` channel). | <ul><li>WO not behaving as it should. <ul><li>WOs stuck in Intake processing for more than 3 minutes.</li></ul></li><li>Notification sending under incorrect circumstances.</li><li>Call not being recorded.</li><li>Certain work orders not appearing on the user dashboard as expected.</li><li>Tasks created even if it shouldn’t</li></ul> |
 | Feature Request | Request to add or change something in the Latchel console that will improve the user’s experience. Please note that these requests should be for things that don’t block any standard work or processes. Submit a feature request using this link: [app.latchel.com/admin/feature-requests](http://app.latchel.com/admin/feature-requests) (also pinned at the top of the #bug-report channel). | <ul><li>Request to add a vendor call history page</li><li>Remove task from the overall task list if someone has claimed it or is working on it</li></ul> |
 | SOP Update Request | Request to change something in any current SOPs. These do not involve any changes in Tech. | <ul><li>Would be helpful to add a standardized template for speaking to an owner</li><li>Request to have all associates answer webchats</li><li>Consolidation request for a specific Slack channel</li></ul> |
 | Public Latchel Help Article Request | Request to update or create a Public Help article in [https://help.latchel.com/s/](https://help.latchel.com/s/) for our customers to reference. | <ul><li>Create a page to show PMs how to use the LCN network.</li><li>Create a page to show Residents how to report issues with WOs.</li><li>Update a SP help article to correct X error in page.</li></ul> |
@@ -37,7 +63,7 @@ Table 2: List of Escalation/Request Slack Channels
 
 | Slack Channel | Escalation or Request Type | Who Submits Here? | Examples |
 | --- | --- | --- | --- |
-| bug-report | For any issue when the designed behavior of the application is different than the actual outcome.<br /><br />_Important Note: **For all high severity issues that are blocking production and causing critical errors**, please follow your normal process of escalating to Operations Support Specialists. Operations Support Specialists will then conduct a deep dive and escalate in the tech-escalations Slack channel, if applicable._ | Every team at Latchel | See all examples in Table 1 above |
+| bug-report | For any issue when the designed behavior of the application is different than the actual outcome.<br /><br />_Important Note: **If the app is down or you can't perform your job**, escalate to Operations Support Specialists right away. They'll review it and post in `#tech-high-sev-escalations`._ | Every team at Latchel. Service Ops associates submit only after Ops Support confirms it's a bug. | See all examples in Table 1 above |
 | ops-requests | For any feature requests, diagnostic workflow requests, process/policy change requests or help article requests. This channel is specifically for supporting **Latchel’s internal Service Operations teams** (i.e. Ops Associates, Operations Support Specialists, Troubleshooters, etc.). | Latchel Serv Ops | See all examples in Table 1 aboveAdd a diagnostic flow for mold |
 
 ### How to Submit Escalations & Requests
@@ -54,7 +80,7 @@ Table 3: Forms in Each Escalation/Request Slack Channel
 
 | Slack Channel | Form | How Form is Used |
 | --- | --- | --- |
-| bug-report | [https://app.latchel.com/admin/bug-reports](https://app.latchel.com/admin/bug-reports) | This link is used for issue submissions (i.e. anything that’s not working the way it typically does). For high severity issues that are blocking production or causing critical errors, please follow your current SOP of escalating to Operations Support Specialists. If the Operations Support Specialist does not determine the issue as an urgent tech escalation, please then submit this issue through this “Bug report” form. |
+| bug-report | [https://app.latchel.com/admin/bug-reports](https://app.latchel.com/admin/bug-reports) | Use this form when you're expecting X and X isn't happening. Associates submit it only after Ops Support confirms it's a bug in `#ops_assistance_hub`. If the app is down or you can't perform your job, Ops Support posts in `#tech-high-sev-escalations` instead. |
 | ops-requests | [app.latchel.com/admin/feature-requests](http://app.latchel.com/admin/feature-requests) | This form is used for any non-issue submissions, which are feature, design or diagnostic workflow requests. |
 | ops-requests | SOP Update Request | This form is used for any process/policy change requests or suggestions. |
 | ops-requests | Public Latchel Help Article Request | This form is used to request updates to our public Help Center library ([https://help.latchel.com/](https://help.latchel.com/s/). |
