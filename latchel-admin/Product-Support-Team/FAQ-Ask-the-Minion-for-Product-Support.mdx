@@ -31,93 +31,100 @@ groups: ["latchel"]
 
 ### **The basics**
 
-<AccordionGroup>
-  <Accordion title="What is the Minion?">
-    A read-only assistant for Latchel's systems. It looks things up and explains them in plain terms. It can't change anything.
-  </Accordion>
+#### What is the Minion?
 
-  <Accordion title="What can it access?">
-    - Latchel's code: the main app, the integrations service and the package they share. It is read-only and refreshed every few minutes.
-    - A read-only copy of the production database. It runs a few seconds behind live and covers work orders, invoices, properties, vendors, tenants, companies and more.
+A read-only assistant for Latchel's systems. It looks things up and explains them in plain terms. It can't change anything.
 
-    It can't see server logs, monitoring dashboards, SOPs or internal docs, Slack history outside its thread, email, Wavelength tickets, or the property management platforms themselves.
-  </Accordion>
+#### What can it access?
 
-  <Accordion title="What can it answer or investigate?">
-    - **What happened on a specific record.** For example, when a vendor was assigned or removed, why a work order is in its current status, or what was billed.
-    - **How the product works.** What the system does in a given situation, such as how dispatch, billing or messaging behaves, or which fields and options exist.
-    - **Integrations.** How Latchel syncs with RentManager, Rentvine, Propertyware, Buildium, Yardi and Leo, and what data moves between them.
-    - **Counts and trends.** For example, how many work orders a company opened last month.
-    - **Reports and exports.** It can pull a query result and attach it to the thread as a CSV file.
-    - **Whether something is a bug.** It can say whether something looks like it's working as designed.
-  </Accordion>
+| It can see | It can't see |
+| :-- | :-- |
+| Latchel's code: the main app, the integrations service and the package they share. Read-only, refreshed every few minutes | Server logs and monitoring dashboards |
+| A read-only copy of the production database. It runs a few seconds behind live and covers work orders, invoices, properties, vendors, tenants, companies and more | SOPs and internal docs |
+|  | Slack history outside its thread |
+|  | Email and Wavelength tickets |
+|  | The property management platforms themselves |
 
-  <Accordion title="What can't it do?">
-    - **Make changes of any kind.** It can't edit records, reassign vendors, send messages, fix data or deploy code.
-    - **Diagnose performance problems** like slow pages or timeouts. Ask an engineer.
-    - **Make business policy calls.** Whether to take a job, how to handle an exception, or what a customer or vendor is owed. Ask Ops or the CSM.
-    - **Share credentials or security details.**
-    - **Troubleshoot code or write fixes.** It can tell you what happened and whether it looks like a bug. Engineering does the rest.
-  </Accordion>
+#### What can it answer or investigate?
 
-  <Accordion title="Can it tell me how a process works?">
-    Yes, if it's how the *system* runs it. It can tell you what happens to a work order when a tenant cancels, when a vendor is notified, how a job moves through its statuses, or when an invoice is sent. That comes from the code and the data.
+| Type of question | Example |
+| :-- | :-- |
+| **What happened on a specific record** | When a vendor was assigned or removed, why a work order is in its current status, or what was billed |
+| **How the product works** | How dispatch, billing or messaging behaves, or which fields and options exist |
+| **Integrations** | How Latchel syncs with RentManager, Rentvine, Propertyware, Buildium, Yardi and Leo, and what data moves between them |
+| **Counts and trends** | How many work orders a company opened last month |
+| **Reports and exports** | It can pull a query result and attach it to the thread as a CSV file |
+| **Whether something is a bug** | It can say whether something looks like it's working as designed |
 
-    It can't tell you how a *person* should handle a situation, who to escalate to, or what steps to follow. It has no access to SOPs or team workflows. Use the Mintlify Assistant or the Help Center for those.
-  </Accordion>
-</AccordionGroup>
+#### What can't it do?
+
+| It can't | Who to ask instead |
+| :-- | :-- |
+| **Make changes of any kind.** It can't edit records, reassign vendors, send messages, fix data or deploy code | You, or the team that owns the change |
+| **Diagnose performance problems** like slow pages or timeouts | An engineer |
+| **Make business policy calls.** Whether to take a job, how to handle an exception, or what a customer or vendor is owed | Ops or the CSM |
+| **Share credentials or security details** | N/A |
+| **Troubleshoot code or write fixes.** It can tell you what happened and whether it looks like a bug | Engineering |
+
+#### Can it tell me how a process works?
+
+Yes, if it's how the _system_ runs it. It can tell you what happens to a work order when a tenant cancels, when a vendor is notified, how a job moves through its statuses, or when an invoice is sent. That comes from the code and the data.
+
+It can't tell you how a _person_ should handle a situation, who to escalate to, or what steps to follow. It has no access to SOPs or team workflows. Use the Mintlify Assistant or the Help Center for those.
 
 ---
 
 ### **Asking well**
 
-<AccordionGroup>
-  <Accordion title="How do I get a good answer?">
-    - Be specific. A work order number, invoice number, or company or property name helps a lot.
-    - Mention the Minion in your message, and ask one question per thread.
-    - It can't open Wavelength links. Paste the customer's email text into the thread.
-    - Say roughly when it happened.
-    - Number your sub-questions and name the identifiers (work order, invoice, company, property) for each one.
-    - Say what you want back: a yes or no, a timeline, a list, or a CSV.
-    - Ask it to flag anything it couldn't find instead of guessing. For example: "If you can't find it, say so rather than filling in the gap."
-    - To check a customer's claim (for example, "I emailed you on Tuesday"), give it the claim and the date range and ask it to find the exact record or message that matches, or say none exists.
-  </Accordion>
+#### How do I get a good answer?
 
-  <Accordion title="What are some questions that work well?">
-    - "Why was the vendor removed from work order 123456 yesterday?"
-    - "What's the history of status changes on work order 123456?"
-    - "Did invoice 7890 get sent to the PM, and what was on it?"
-    - "When a tenant cancels a work order, does the vendor get notified?"
-    - "Does a work order from Rentvine sync back when it's completed?"
-    - "How many emergency work orders did [company] have in October?"
-    - "Can you export all open work orders for [company] older than 30 days as a CSV?"
-    - "Is AI messaging on for [company], and are automated vendor calls on?"
-    - "A PM says the AI messaged a tenant after they asked it to stop. Can you find the conversation on work order 123456 and show what was sent and when?"
-    - "For work orders 123456 and 123457: 1) who was assigned, 2) when did the status change to Scheduled, 3) was anything sent to the tenant? Flag anything you couldn't find."
-  </Accordion>
+- Be specific. A work order number, invoice number, or company or property name helps a lot.
+- Mention the Minion in your message, and ask one question per thread.
+- It can't open Wavelength links. Paste the customer's email text into the thread.
+- Say roughly when it happened.
+- Number your sub-questions and name the identifiers (work order, invoice, company, property) for each one.
+- Say what you want back: a yes or no, a timeline, a list, or a CSV.
+- Ask it to flag anything it couldn't find instead of guessing. For example: "If you can't find it, say so rather than filling in the gap."
+- To check a customer's claim (for example, "I emailed you on Tuesday"), give it the claim and the date range and ask it to find the exact record or message that matches, or say none exists.
 
-  <Accordion title="What are some signs the answer is incomplete or wrong?">
-    - It says it couldn't open a link, reach Freshdesk or Wavelength, or see a source. Paste the text into the thread and ask again.
-    - It says a search "could have missed" something because the wording was different. Try other keywords, or check the record yourself.
-    - It gives a different answer when you ask a second way, or it conflicts with what you see on the work order. Don't pick one. Ask in the thread what it based each on.
-    - It assumes how a team runs things (for example, which on-call rotation or process is in use). The Minion reads the code and data, not how our teams work day to day. Check with a person.
-    - It answers a policy, scope or "what should we do" question (for example, whether a repair is in a PM's maintenance scope). That belongs to Ops, your PSM or the CSM.
-  </Accordion>
+#### What are some questions that work well?
 
-  <Accordion title="What if it can't find anything, or the lookup times out?">
-    A lookup can time out. Try again with a narrower question or a specific work order number. If it still finds nothing, write "Minion found no example" in your ticket note or escalation. That is useful to the CSM and better than leaving it blank.
-  </Accordion>
+| Goal | Example question |
+| :-- | :-- |
+| Why something happened | "Why was the vendor removed from work order 123456 yesterday?" |
+| History | "What's the history of status changes on work order 123456?" |
+| An invoice | "Did invoice 7890 get sent to the PM, and what was on it?" |
+| System behavior | "When a tenant cancels a work order, does the vendor get notified?" |
+| Integrations | "Does a work order from Rentvine sync back when it's completed?" |
+| Counts | "How many emergency work orders did [company] have in October?" |
+| Exports | "Can you export all open work orders for [company] older than 30 days as a CSV?" |
+| Account settings | "Is AI messaging on for [company], and are automated vendor calls on?" |
+| Finding an example of a complaint | "A PM says the AI messaged a tenant after they asked it to stop. Can you find the conversation on work order 123456 and show what was sent and when?" |
+| Several questions at once | "For work orders 123456 and 123457: 1) who was assigned, 2) when did the status change to Scheduled, 3) was anything sent to the tenant? Flag anything you couldn't find." |
 
-  <Accordion title="Can I rely on its answer?">
-    Not without checking. The Minion is a great tool, but it can sometimes get things wrong. Treat it as research, like the Mintlify Assistant. Check what it returns against the work order and the account, and use your own judgment.
+#### What are some signs the answer is incomplete or wrong?
 
-    If an answer doesn't seem right, or it doesn't match what our engineers or product team have told us, check with one of them before taking the Minion's word for it. If you escalate or ask the PSM for help, say what you verified yourself. Don't send its answer to a customer as the answer.
-  </Accordion>
+| If the Minion... | Do this |
+| :-- | :-- |
+| Says it couldn't open a link, reach Freshdesk or Wavelength, or see a source | Paste the text into the thread and ask again |
+| Says a search "could have missed" something because the wording was different | Try other keywords, or check the record yourself |
+| Gives a different answer when you ask a second way, or conflicts with what you see on the work order | Don't pick one. Ask in the thread what it based each on |
+| Assumes how a team runs things (for example, which on-call rotation or process is in use). It reads the code and data, not how our teams work day to day | Check with a person |
+| Answers a policy, scope or "what should we do" question (for example, whether a repair is in a PM's maintenance scope) | That belongs to Ops, your PSM or the CSM |
 
-  <Accordion title="Where do I keep the answer?">
-    Paste the Minion thread link into the ticket as an internal note.
-  </Accordion>
-</AccordionGroup>
+#### What if it can't find anything, or the lookup times out?
+
+A lookup can time out. Try again with a narrower question or a specific work order number. If it still finds nothing, write "Minion found no example" in your ticket note or escalation. That is useful to the CSM and better than leaving it blank.
+
+#### Can I rely on its answer?
+
+Not without checking. The Minion is a great tool, but it can sometimes get things wrong. Treat it as research, like the Mintlify Assistant. Check what it returns against the work order and the account, and use your own judgment.
+
+If an answer doesn't seem right, or it doesn't match what our engineers or product team have told us, check with one of them before taking the Minion's word for it. If you escalate or ask the PSM for help, say what you verified yourself. Don't send its answer to a customer as the answer.
+
+#### Where do I keep the answer?
+
+Paste the Minion thread link into the ticket as an internal note.
 
 ---
 
