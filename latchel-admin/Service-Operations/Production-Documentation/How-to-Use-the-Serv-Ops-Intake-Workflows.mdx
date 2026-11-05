@@ -1,10 +1,11 @@
 ---
 title: "How to: Use the Serv Ops Intake Workflows"
-groups: ["latchel"]
+groups:
+  - "latchel"
 confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2313453653/How+to+Use+the+Serv+Ops+Intake+Workflows"
 ---
 
-##  What This Process Is Trying to Solve
+## What This Process Is Trying to Solve
 
 <Note>
   We want to prevent missed, lost, or delayed escalations and requests by providing a standardized workflow for submitting all Service Operations requests to the Product team. The goal is to ensure every bug, feature request, SOP update, or help article request is submitted through the correct Slack channel and form—creating an official audit trail, reducing channel clutter, and allowing Product and Ops to track, prioritize, and resolve issues efficiently.
@@ -14,31 +15,95 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/2313453653/H
 
 Anyone in Latchel Ops escalating an issue or requesting a feature, design, or process/policy change.
 
-### Bug Report, Latchel Minion, or High-Sev?
+### Bug Report, Latchel Minion, or High-Tech-Sev?
 
-<Warning>
-  **Associates:** For now, don't submit a bug report until Ops Support confirms it's a bug.
-</Warning>
+<AccordionGroup>
+  <Accordion title="1. Ops Associate bug reporting">
+    - **You know what should happen, but it isn't happening:** Submit a bug report directly through the [bug report form](https://app.latchel.com/admin/bug-reports).
+    - **Something doesn't seem normal, but you're not certain it's a bug:** Post it in `#ops_assistance_hub` for Ops Support to validate. Include the WO link, what you expected, and what happened instead.
+  </Accordion>
 
-**How it works:**
+  <Accordion title="2. Ops Support validation and handling">
+    Review the reported issue and determine whether it's a bug.
 
-1. **Associate:** Post the issue in `#ops_assistance_hub` with the WO link, what you expected, and what happened instead.
-2. **Ops Support:** Review the issue. If you're not sure it's a bug, check in `#ask-the-minion`.
-3. **Ops Support:** Reply in the associate's thread with the outcome:
+    - **You're certain about the expected behavior and can confirm it isn't working as expected:** Instruct the associate to submit a bug report through the [bug report form](https://app.latchel.com/admin/bug-reports).
+    - **You're unsure whether it's a bug or need further validation:** Post the issue in `#ask-the-minion`.
+    - **Your Minion thread confirms something isn't working as expected:** File the bug report directly using that thread. The associate doesn't need to submit a separate report when the issue has already been investigated and validated.
 
-   - **It's a bug:** Tell the associate to submit a bug report.
-   - **It's not a bug:** Explain the expected behavior or next step.
-   - **The app is down or the team can't work:** Post in `#tech-high-sev-escalations` right away using the **High Severity Tech Escalation** workflow.
-4. **Associate:** Once Ops Support confirms it's a bug, submit it through the [bug report form](https://app.latchel.com/admin/bug-reports).
+    <Warning>
+      The Minion is a great tool, but it can sometimes get things wrong. If an answer doesn't seem right, or it doesn't match what our engineers or product team have told us, check with one of them before taking the Minion's word for it.
+    </Warning>
+  </Accordion>
 
-| Situation | Where it goes | Who posts |
-| --- | --- | --- |
-| **You know it's a bug.** You're expecting X, and X isn't happening. | [Bug report form](https://app.latchel.com/admin/bug-reports) → `#bug-report` | Associate, after Ops Support replies to confirm |
-| **You're not sure it's a bug.** You don't know what to expect, you're not sure how to do X, or you were told something vague and need to know what it means. | `#ask-the-minion` | Ops Support only |
-| **The app is down or you can't perform your job.** | `#tech-high-sev-escalations` | Ops Support only |
+  <Accordion title="3. Outages and critical issues">
+    For app outages or issues preventing associates from performing their job duties, Ops Support escalates directly to Engineering through `#tech-high-sev-escalations`. Associates should flag these in `#ops_assistance_hub` right away.
+
+    <Note>
+      The Latchel Minion isn't equipped for this type of escalation. Don't ask it to investigate outages, system-wide latency, or connectivity issues with the Latchel Console. Go straight to `#tech-high-sev-escalations`.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Quick reference: where each issue goes">
+    | Situation | Where it goes | Who submits |
+    | --- | --- | --- |
+    | **You know it's a bug.** You know what should happen, and it isn't happening. | [Bug report form](https://app.latchel.com/admin/bug-reports) → `#bug-report` | Associate, directly |
+    | **Something doesn't seem normal, but you're not certain it's a bug.** | `#ops_assistance_hub` (Ops Support validates) | Associate |
+    | **Ops Support confirms it's a bug.** | [Bug report form](https://app.latchel.com/admin/bug-reports) → `#bug-report` | Associate, when instructed by Ops Support |
+    | **Ops Support is unsure or needs further validation.** | `#ask-the-minion` | Ops Support only |
+    | **A Minion investigation confirms it's a bug.** | Bug report filed from the Minion thread | Ops Support |
+    | **The app is down or you can't perform your job.** | `#tech-high-sev-escalations` (Engineering) | Ops Support only. Associates flag it in `#ops_assistance_hub`. |
+  </Accordion>
+
+  <Accordion title="Latchel Minion: what it can and can't do">
+    The Latchel Minion is a read-only assistant for Latchel's systems. It looks things up and explains them in plain terms. It can't change anything.
+
+    <Tip>
+      If the question is "what does the system do?", ask the Minion. If it's "what should we do?", ask a person.
+    </Tip>
+
+    **What it can answer or investigate**
+
+    - **What happened on a specific record:** a work order, invoice, property, vendor, or company. For example, when a vendor was assigned or unassigned, why a job is in its current status, or what was billed.
+    - **How the product works:** what the system does in a given situation, such as how dispatch, billing, or messaging behaves, or which fields and options exist.
+    - **Processes as the system runs them:** what happens to a work order when a tenant cancels, when a vendor gets notified, how a job moves through its statuses, or when an invoice is sent.
+    - **PMS integrations:** how Latchel syncs with RentManager, Rentvine, Propertyware, Buildium, Yardi, and Leo, and what data moves between them.
+    - **Counts and trends:** for example, how many work orders a company opened last month, or how many jobs are in a given status.
+    - **Reports and exports:** it can pull a query result and attach it to the thread as a CSV file.
+    - **Is this a bug?** It can say whether something looks like it's working as designed. If it looks broken, mention the Minion with "bug" and a short description to file it for Engineering.
+
+    **What it can access**
+
+    - The Latchel code (main app, integrations service, and the shared package between them), read-only and refreshed every few minutes.
+    - A read-only copy of the production database, a few seconds behind live. It covers work orders, invoices, properties, vendors, tenants, companies, and more.
+    - **Not available:** server logs, monitoring dashboards, SOPs or internal docs, Slack history outside the thread, email, or the PM platforms themselves.
+
+    **What it can't help with**
+
+    - **Making changes of any kind:** editing records, reassigning vendors, sending messages, fixing data, or deploying code.
+    - **Performance problems** like slow pages, latency, or timeouts. It doesn't have monitoring access, so ask an engineer.
+    - **Internal SOPs and team workflows:** how Ops should handle a situation, who to escalate to, or what steps to follow.
+    - **Business policy calls:** whether we take a job, how to handle an exception, or what a customer or vendor is owed. Ask Ops or the account manager.
+    - **Credentials or security details:** passwords, API keys, or how to exploit a weakness.
+    - **Code-level troubleshooting or writing fixes:** that goes to Engineering, though the Minion can tell you what happened and whether it looks like a bug.
+
+    **Example questions that work well**
+
+    - "Why was the vendor removed from work order 123456 yesterday?"
+    - "What's the history of status changes on work order 123456?"
+    - "Did invoice 7890 get sent to the PM, and what was on it?"
+    - "When a tenant cancels a work order, does the vendor get notified?"
+    - "Does a work order from Rentvine sync back when it's completed?"
+    - "How many emergency work orders did Acme Property Management have in October?"
+    - "Can you export all open work orders for company X older than 30 days as a CSV?"
+
+    The more specific you are, the faster it finds the answer. A work order number, invoice number, or company or property name helps a lot.
+  </Accordion>
+</AccordionGroup>
 
 <Note>
-  The Latchel Minion doesn't replace bug reports. Ops Support uses it only to check an issue when it's unclear whether it's a bug.
+  **The Latchel Minion is not a replacement for bug reports.** Ops Support uses it to validate an issue when it's unclear whether it's a bug.
+
+  **It's also not the same as the Mintlify assistant.** The Minion answers questions about Latchel's systems: code, data, and how the product behaves. For SOPs and internal Service Ops processes, use the Mintlify assistant instead.
 </Note>
 
 ### Types of Escalations & Requests
@@ -49,7 +114,7 @@ Table 1: Different Types of Requests
 
 | Escalation or Request Type | Definition | Examples |
 | --- | --- | --- |
-| Bug Report | Escalation for when you're expecting X and X isn't happening.<br /><br />**Associates:** Post it in `#ops_assistance_hub` first. Once Ops Support confirms it's a bug, submit a bug report using this link: [<u>https://app.latchel.com/admin/bug-reports</u>](https://app.latchel.com/admin/bug-reports) (also pinned at the top of the `#bug-report` channel). | <ul><li>WO not behaving as it should. <ul><li>WOs stuck in Intake processing for more than 3 minutes.</li></ul></li><li>Notification sending under incorrect circumstances.</li><li>Call not being recorded.</li><li>Certain work orders not appearing on the user dashboard as expected.</li><li>Tasks created even if it shouldn’t</li></ul> |
+| Bug Report | Escalation for when you're expecting X and X isn't happening.<br /><br />**Associates:** If you know what should happen and it isn't happening, submit a bug report directly. If you're unsure, post it in `#ops_assistance_hub` for Ops Support to validate first. Submit bug reports using this link: [<u>https://app.latchel.com/admin/bug-reports</u>](https://app.latchel.com/admin/bug-reports) (also pinned at the top of the `#bug-report` channel). | <ul><li>WO not behaving as it should. <ul><li>WOs stuck in Intake processing for more than 3 minutes.</li></ul></li><li>Notification sending under incorrect circumstances.</li><li>Call not being recorded.</li><li>Certain work orders not appearing on the user dashboard as expected.</li><li>Tasks created even if it shouldn’t</li></ul> |
 | Feature Request | Request to add or change something in the Latchel console that will improve the user’s experience. Please note that these requests should be for things that don’t block any standard work or processes. Submit a feature request using this link: [app.latchel.com/admin/feature-requests](http://app.latchel.com/admin/feature-requests) (also pinned at the top of the #bug-report channel). | <ul><li>Request to add a vendor call history page</li><li>Remove task from the overall task list if someone has claimed it or is working on it</li></ul> |
 | SOP Update Request | Request to change something in any current SOPs. These do not involve any changes in Tech. | <ul><li>Would be helpful to add a standardized template for speaking to an owner</li><li>Request to have all associates answer webchats</li><li>Consolidation request for a specific Slack channel</li></ul> |
 | Public Latchel Help Article Request | Request to update or create a Public Help article in [https://help.latchel.com/s/](https://help.latchel.com/s/) for our customers to reference. | <ul><li>Create a page to show PMs how to use the LCN network.</li><li>Create a page to show Residents how to report issues with WOs.</li><li>Update a SP help article to correct X error in page.</li></ul> |
@@ -64,7 +129,7 @@ Table 2: List of Escalation/Request Slack Channels
 
 | Slack Channel | Escalation or Request Type | Who Submits Here? | Examples |
 | --- | --- | --- | --- |
-| bug-report | For any issue when the designed behavior of the application is different than the actual outcome.<br /><br />_Important Note: **If the app is down or you can't perform your job**, escalate to Operations Support Specialists right away. They'll review it and post in `#tech-high-sev-escalations`._ | Every team at Latchel. Service Ops associates submit only after Ops Support confirms it's a bug. | See all examples in Table 1 above |
+| bug-report | For any issue when the designed behavior of the application is different than the actual outcome.<br /><br />_Important Note: **If the app is down or you can't perform your job**, flag it in `#ops_assistance_hub` right away. Ops Support escalates directly to Engineering through `#tech-high-sev-escalations`._ | Every team at Latchel. Service Ops associates submit directly when they know it's a bug, or when Ops Support instructs them to. Ops Support can also file directly from a Minion thread that confirmed the bug. | See all examples in Table 1 above |
 | ops-requests | For any feature requests, diagnostic workflow requests, process/policy change requests or help article requests. This channel is specifically for supporting **Latchel’s internal Service Operations teams** (i.e. Ops Associates, Operations Support Specialists, Troubleshooters, etc.). | Latchel Serv Ops | See all examples in Table 1 aboveAdd a diagnostic flow for mold |
 
 ### How to Submit Escalations & Requests
@@ -81,7 +146,7 @@ Table 3: Forms in Each Escalation/Request Slack Channel
 
 | Slack Channel | Form | How Form is Used |
 | --- | --- | --- |
-| bug-report | [https://app.latchel.com/admin/bug-reports](https://app.latchel.com/admin/bug-reports) | Use this form when you're expecting X and X isn't happening. Associates submit it only after Ops Support confirms it's a bug in `#ops_assistance_hub`. If the app is down or you can't perform your job, Ops Support posts in `#tech-high-sev-escalations` instead. |
+| bug-report | [https://app.latchel.com/admin/bug-reports](https://app.latchel.com/admin/bug-reports) | Use this form when you know what should happen and it isn't happening. If you're unsure whether it's a bug, post it in `#ops_assistance_hub` for Ops Support to validate first. If the app is down or you can't perform your job, Ops Support escalates to Engineering through `#tech-high-sev-escalations` instead. |
 | ops-requests | [app.latchel.com/admin/feature-requests](http://app.latchel.com/admin/feature-requests) | This form is used for any non-issue submissions, which are feature, design or diagnostic workflow requests. |
 | ops-requests | SOP Update Request | This form is used for any process/policy change requests or suggestions. |
 | ops-requests | Public Latchel Help Article Request | This form is used to request updates to our public Help Center library ([https://help.latchel.com/](https://help.latchel.com/s/). |

@@ -53,7 +53,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
             />
    2. **Managed by Latchel:** continue to step 3 (Claim it).
    3. **Managed by PM:** don't claim or reply. Move on to the next message.
-      - You should no longer get notifications for these threads. If you do, escalate it to Ops Support in #ops_assistance_hub. Once they confirm it's a bug, submit a bug report using [this link](https://app.latchel.com/admin/bug-reports).
+      - You should no longer get notifications for these threads. If you do, submit a [bug report](https://app.latchel.com/admin/bug-reports). If you're not sure it's a bug, post it in #ops_assistance_hub first. See the [bug report workflow](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows#bug-report-latchel-minion-or-high-sev).
       - 🛑 **Exception:** possible PD/EH replies don't come to this queue. The system creates a task for the Troubleshooting team to assess. If a new emergency comes up some other way, follow the emergency process.
 2. **Claim it**
    1. Click **Mark as Handled** **before** replying. Replying also marks it handled, but claiming first prevents double replies.
@@ -74,7 +74,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/4301914114/J
 
   - Don't handle resident or SP replies on work orders **Managed by PM**, even if you posted in the thread earlier (for example, after you de-escalated an emergency or handed it to the PM).
   - Only get involved again if an emergency comes back or a new one develops. If a reply is flagged as a potential PD/EH, the system creates a **Troubleshooting task** to assess it. The WO severity isn't changed automatically. The troubleshooter escalates it to Emergency if needed.
-  - You should no longer get notifications for these threads. If you do, escalate it to Ops Support in #ops_assistance_hub. Once they confirm it's a bug, submit a bug report using [this link](https://app.latchel.com/admin/bug-reports).
+  - You should no longer get notifications for these threads. If you do, submit a [bug report](https://app.latchel.com/admin/bug-reports). If you're not sure it's a bug, post it in #ops_assistance_hub first. See the [bug report workflow](/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows#bug-report-latchel-minion-or-high-sev).
 </Warning>
 
 ### What a Latchel AI Handoff Looks Like
@@ -275,10 +275,10 @@ When Latchel AI can't handle a resident or SP message, or the customer asks for 
   </Accordion>
 
   <Accordion title="How do I report issues or suggestions for Latchel AI?">
-    1. **Latchel AI shares private PM information** (name, phone number, email): Note the Conversation and WO, capture a video showing what was shared, and escalate it to Ops Support in #ops_assistance_hub right away. Once they confirm it, submit a bug report using [this link](https://app.latchel.com/admin/bug-reports) (also pinned in #bug-report). See [Handling Property Manager’s Private Information](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#private-property-manager/owner-handling-private-information).
+    1. **Latchel AI shares private PM information** (name, phone number, email): Note the Conversation and WO, capture a video showing what was shared, submit a [bug report](https://app.latchel.com/admin/bug-reports) right away, and flag it in #ops_assistance_hub right away. submit a bug report using [this link](https://app.latchel.com/admin/bug-reports) (also pinned in #bug-report). See [Handling Property Manager’s Private Information](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#private-property-manager/owner-handling-private-information).
     2. **Any other issue:** Submit a bug report.
     3. **Suggestions:** Submit a feature request in #svc-ops-requests per [How to: Use the Serv Ops Intake Workflows](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows).
-    4. **Latchel AI is down or not responding:** Operations Support Specialists report it in #tech-high-sev-escalations immediately, including the issue, impact and steps already taken.
+    4. **Latchel AI is down or not responding:** Associates flag it in #ops_assistance_hub right away. Operations Support Specialists report it in #tech-high-sev-escalations immediately, including the issue, impact and steps already taken.
   </Accordion>
 
   <Accordion title="A Property Manager asks about AI Messaging or Conversations">

@@ -81,9 +81,10 @@ Claude runs at about **7:48 AM PT** every Monday and:
 1. Read the feedback in **column A**.
 2. Check **column G**: is it about how a Latchel associate handled the interaction? Blank feedback is always "Yes".
 3. Check **column H (Theme)** against the comment.
-4. Check **column I (Ops Controllable / Non-Ops Controllable)**.
-   - Ops Controllable: something Service Ops can change through process, training or resources.
-   - Non-Ops Controllable: PM decisions, vendor delays or quality, payments, platform issues.
+4. Check **column I (Ops Controllable / Non-Ops Controllable)**. Ask: did Service Ops handle this differently from what the PM's settings call for, or handle the contact itself poorly?
+   - **Ops Controllable:** how the associate handled the contact (tone, helpfulness, accuracy, clear information, keeping commitments such as a promised callback); a **true emergency per the PM's intake settings** that wasn't handled as one; not following the PM's settings or instructions (for example, dispatching without required approval, or not escalating when the settings say to). Blank feedback is always Ops Controllable.
+   - **Non-Ops Controllable:** outcomes of PM settings and decisions (approval waits, severity set by intake rules, PM-handled / Forwarded to PM WOs, dispatch timing that follows the PM's configuration), vendor delays or quality, payments, and platform/product issues (app, portal, automated notifications).
+   - A slow or "not urgent enough" outcome is Ops Controllable only if the PM's settings called for faster handling and we didn't deliver it. If you can't check it against the PM's settings (for example, the row is untraceable), it's **Non-Ops Controllable by default**.
 5. Check **columns J and K** for associate feedback. If K names an associate with negative, Ops-controllable feedback, report it in **#svc-ops-feedback** if it's valid.
 6. If any value is wrong, overwrite the cell with the correct value.
 

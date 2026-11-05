@@ -2363,22 +2363,33 @@
                       {
                         "group": "How to Receive and Reconcile Payments",
                         "pages": [
-                          "latchel-admin/accounts-receivable/How-to-Receive-and-Reconcile-Payments"
+                          "latchel-admin/accounts-receivable/How-to-Receive-and-Reconcile-Payments",
+                          "latchel-admin/accounts-receivable/How-to-Upload-Bank-Transactions-to-Rillet",
+                          "handling-overpayments",
+                          "handling-partial-payments"
                         ]
                       },
-                      "handling-partial-payments",
-                      "handling-overpayments",
-                      "latchel-admin/accounts-receivable/How-to-Upload-Bank-Transactions-to-Rillet",
                       {
                         "group": "How to Handle Monthly Subscription Invoice Adjustments",
                         "pages": [
                           "latchel-admin/accounts-receivable/How-to-Handle-Monthly-Subscription-Invoice-Adjustments",
+                          "types-of-subscription-credit",
+                          "how-to-apply-credit-memos",
                           "latchel-admin/accounts-receivable/Active-Unit-Count-Credit-Request-Process"
                         ]
                       },
                       "latchel-admin/accounts-receivable/How-To-Set-Up-a-New-Customer",
                       "how-to-fill-out-and-use-the-monthly-minimum-tracker",
                       "how-to-handle-analytics-subscriptions-ar-guide",
+                      {
+                        "group": "How To: Identify and Handle Past Due Subscription Invoices",
+                        "pages": [
+                          "latchel-admin/accounts-receivable/How-To-Handle-Desire-to-Churn-Alerts",
+                          "latchel-admin/accounts-receivable/How-To-Identify-and-Handle-Past-Due-Subscription-Invoices",
+                          "latchel-admin/accounts-receivable/How-to-Create-the-Aging-and-Payment-Checker",
+                          "latchel-admin/accounts-receivable/How-to-Set-Up-the-Non-Payment-Reminder-Banner"
+                        ]
+                      },
                       "latchel-admin/accounts-receivable/How-To-Terminate-Accounts-from-ARs-Perspective",
                       {
                         "group": "How To Create Monthly Subscription Invoices",
@@ -2387,8 +2398,6 @@
                           "how-to-determine-the-units-a-customer-is-billed-for",
                           "how-to-create-stand-alone-monthly-invoices",
                           "latchel-admin/accounts-receivable/How-to-Create-AR-Monthly-Bridge-Report",
-                          "how-to-apply-credit-memos",
-                          "types-of-subscription-credit",
                           "latchel-admin/accounts-receivable/How-to-Create-Monthly-Latchel-Autopay-Checker",
                           "latchel-admin/accounts-receivable/How-to-Fill-Out-and-Use-the-AR-Credit-and-Overpayment-Tracker-2026"
                         ]
@@ -2396,13 +2405,8 @@
                     ]
                   },
                   {
-                    "group": "How To: Identify and Handle Past Due Subscription Invoices",
-                    "pages": [
-                      "latchel-admin/accounts-receivable/How-To-Handle-Desire-to-Churn-Alerts",
-                      "latchel-admin/accounts-receivable/How-To-Identify-and-Handle-Past-Due-Subscription-Invoices",
-                      "latchel-admin/accounts-receivable/How-to-Create-the-Aging-and-Payment-Checker",
-                      "latchel-admin/accounts-receivable/How-to-Set-Up-the-Non-Payment-Reminder-Banner"
-                    ]
+                    "group": "Untitled Group",
+                    "pages": []
                   }
                 ]
               },
