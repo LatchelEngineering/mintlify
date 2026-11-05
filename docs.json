@@ -1392,7 +1392,6 @@
                           "latchel-admin/Product-Support-Team/SOP-Handling-Service-Provider-SP-Cases",
                           "latchel-admin/Product-Support-Team/SOP-Closing-Cases-in-Product-Support",
                           "latchel-admin/Product-Support-Team/SOP-Sending-Proactive-Failed-Escalation-Emails",
-                          "latchel-admin/Product-Support-Team/FAQ-Ask-the-Minion-for-Product-Support",
                           "latchel-admin/Product-Support-Team/Guide-Using-AI-Tools-in-Product-Support"
                         ]
                       },
@@ -2818,6 +2817,11 @@
     {
       "source": "/s/topic/0TO5e000000h9wqGAA/Export-Severity-Settings-as-a-CSV-File",
       "destination": "/s/topic/0TO5e000000h9wqGAA/Files-Reports-Overview",
+      "permanent": true
+    },
+    {
+      "source": "/latchel-admin/Product-Support-Team/FAQ-Ask-the-Minion-for-Product-Support",
+      "destination": "/latchel-admin/Product-Support-Team/Guide-Using-AI-Tools-in-Product-Support#the-minion",
       "permanent": true
     }
   ]
