@@ -83,13 +83,13 @@ The resident will report a maintenance issue via any inbound communication (e.g.
         2. Ensure the **new work order** severity is updated. Refer to [**Service Ops: Handling Work Order Severity via Harmonia & Harmonia X Intake Settings.**](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-Handling-Work-Order-Severity-via-Harmonia-Harmonia-X-Intake-Settings#harmonia-x-overview)
         3. **Emergencies**:
            1. **_Issue IS property damaging or extreme habitability_**: See  [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs)
-              1. If you’ve successfully reached the PM, follow their instructions. Refer to [this guide](https://latchel.atlassian.net/wiki/spaces/OPS/pages/786859062) if the PM wants to reassign.
-              2. If the **PM is unresponsive**
-                 1. Escalate to the Operations Support Specialists, refer to [How to: Escalate Between Teams](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams), to update the new WO as follows:
-                 2. Move the WO to “Waiting for PM” status. Refer to [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold)
-                 3. Fill out the task accordingly:
-                    1. Status: “Waiting for PM”
-                    2. Add a description of why you moved the WO to this status: **_The resident reported an issue with a previously completed WO (original work order) which might be a recall, but the service provider (can’t confirm an appointment). We need to escalate this to the Property Manager._**
+              1. If you’ve successfully reached the PM, follow their instructions. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Reassign-a-Service-Provider#how-to-reassign-a-service-provider) if the PM wants to reassign.
+              2. If the **escalation contacts are unresponsive**, follow path 3 of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency), which is the **Important** section in [Part 2 of the job aid](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#part-2-if-escalation-contacts-dont-respond). If exception B or D applies, follow that exception instead.
+                 1. Keep the new WO as **Emergency** and keep "(EMERGENCY)" in the title. Do not de-escalate.
+                 2. Use the **Forward to PM** tool on the new WO. If no email is sent to the PM, use the **Generic Manual Email Template for Forwarded WOs** in the job aid. If the tool isn't available, escalate to the Operations Support Specialists ([How to: Escalate Between Teams](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Escalate-Between-Teams)) to move the new WO to “Waiting for PM” (approved scenario "Unresponsive Escalation" in [How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold)).
+                 3. Use these details when forwarding (or for the Ops Support task):
+                    1. Status: “Forwarded to PM” / “Waiting for PM”
+                    2. Reason for forwarding: **_The resident reported an issue with a previously completed WO (original work order) which might be a recall, but the service provider (can’t confirm an appointment). We need to escalate this to the Property Manager._**
                     3. Select the SP as the contact.
                     4. Date and time: No need to modify
                     5. Task priority: No need to modify
@@ -97,7 +97,11 @@ The resident will report a maintenance issue via any inbound communication (e.g.
                     7. User: No need to modify
                     8. When should this cancel: No need to modify
                     9. Describe what is the action required from the PM. **_This work order was identified as a potential recall for (original work order), but the service provider (can’t confirm an appointment within the required timeframe). Please advise if you would like us to reassign it to another service provider. Thank you._**
-           2. Issue IS NOT property damaging or extreme habitability, move the new work order to Pending status and assign the task to the Property Manager with the same task description above.
+           2. **_Issue IS NOT property damaging or extreme habitability_**: follow path 2 of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#general-rule-recognizing-and-handling-a-stale-emergency).
+              1. De-escalate the new WO to **Urgent**, keep "(EMERGENCY)" in the title, and leave the mandatory internal note: _"De-escalated from Emergency to Urgent — recall SP (SP Name) accepted but can't confirm an appointment today. Flagging for team visibility — reach out before re-escalating."_
+              2. Keep the new WO in a status the SP can schedule in (such as Scheduling Service Provider). Do **not** move it to Pending, Waiting for PM or Forwarded to PM.
+              3. Follow the next steps for the PM's subscription type under path 2.
+              4. Forward to PM only if the PM has taken over (exception A).
         4. **Non-emergencies:** From the take action button, click “Reschedule This Work Order”.
         5. Proceed to adding the work orders to a project. Refer to [Step 4 - Adding the work orders (original and new) to a Project](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Identify-and-Handle-a-Recall-WO#step-4-adding-the-work-orders-original-and-new-to-a-project).
       </Accordion>
