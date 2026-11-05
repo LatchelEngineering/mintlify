@@ -47,11 +47,12 @@ The **Property Manager** tab has 13 groups, in the order a PM meets them:
 
 Keep each article in the group where a reader would look for it. A guide written for PMs stays in the Property Manager tab, even when it's about residents. For example, *How to Access and View a Resident Public Dashboard* is in **Properties, Residents & Owners**.
 
-### **Three Places to Update When You Add an Article**
+### **Two Places to Update When You Add an Article**
 
-1. **The navigation (`docs.json`).** Add the page to its group. A page that isn't listed there doesn't show in the sidebar.
-2. **The group's overview page.** Every article needs a card on the first page of its group. Copy the card format already on that page.
-3. **The Help Center home page (`home.mdx`).** Only when you add, rename or remove a *group*. The Property Manager card on the home page lists the groups in sidebar order.
+Create the new page inside its group. The page is added to the navigation automatically, so you don't need to edit `docs.json`. Then update:
+
+1. **The group's overview page.** Every article needs a card on the first page of its group. Copy the card format already on that page.
+2. **The Help Center home page (`home.mdx`).** Only when you add, rename or remove a *group*. The Property Manager card on the home page lists the groups in sidebar order.
 
 <Frame>
   ![The Notifications overview page, with one card for each guide in the group](/images/help-article-sop-overview-cards.png "Group overview cards")
@@ -215,7 +216,7 @@ Don't end an article with a "Related guides" or "Other articles" list. Every pag
 
 | Check | Done when |
 | --- | --- |
-| **Location** | The article is in the right tab and group, is listed in `docs.json`, and has a card on its group's overview page. |
+| **Location** | The article is in the right tab and group, and has a card on its group's overview page. |
 | **Frontmatter** | It has a clear `title` and a one-sentence `description`. |
 | **Headings** | Main sections are Heading 2, no bold text is used as a section title, and every section shows in the **On this page** menu. |
 | **Steps** | Every task with 2 or more actions is in `<Steps>`, with short bold titles and `titleSize="p"`. |
