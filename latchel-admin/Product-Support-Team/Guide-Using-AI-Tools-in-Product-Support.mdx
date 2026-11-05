@@ -1,0 +1,112 @@
+---
+title: "Guide: Using AI Tools in Product Support"
+description: "Which AI tool PS uses for what: the Mintlify Assistant, the Minion, Claude with connectors, BigQuery and the DD Agent. When to use each, how, and why."
+groups:
+  - "latchel"
+---
+
+<Note>
+  **Objective:** This guide helps Product Support pick the right AI tool for the job, use it well, and keep our own judgment in the answer.
+
+  **Rule of thumb:** AI tools are inputs, not the final product. Latchel policies and the facts you can see on the ticket, work order and account override what an AI tool says.
+</Note>
+
+<Warning>
+  AI tools can sometimes get things wrong. If an answer doesn't seem right, or it doesn't match what our engineers or product team have told us, check with one of them before taking the tool's word for it.
+</Warning>
+
+### **Which tool for which job**
+
+| If you need to... | Use | Where |
+| :-- | :-- | :-- |
+| Find out what Latchel's SOPs, job aids or help guides say to do | **Mintlify Assistant** | The Help Center |
+| Find out what happened on a work order, invoice, property or company, or how the system behaves | **Minion** | [#ask-the-minion](https://latchel.slack.com/archives/C0C9GE19KFH) |
+| Read, summarize or draft from ticket threads, Slack threads, docs and sheets, or pull from several of our tools at once | **Claude with connectors** | Claude |
+| Count, trend or compare across many records | **BigQuery, through Claude** | Claude |
+| Investigate a Deep Dive (Standard DD or Invoice Dispute DD) | **DD Agent** | The Deep Dives project in Claude |
+| Make a policy call, or decide what to tell the customer | **A person: you, your PSM, Ops or the CSM** | N/A |
+
+---
+
+### **Mintlify Assistant**
+
+| | |
+| :-- | :-- |
+| **When** | You need to know what the process is: which SOP applies, what a job aid says, how a feature is explained to customers |
+| **For what** | Finding the right SOP, job aid or help guide, and a plain-language summary of it |
+| **How** | Ask it the question the way you'd ask a teammate, then open the page it cites and read it yourself. Use the Help Center link, not a legacy Confluence one |
+| **Why** | The Help Center is our source of truth. Confluence is legacy and out of date |
+
+---
+
+### **The Minion**
+
+| | |
+| :-- | :-- |
+| **When** | The ticket, the work order and the SOPs don't tell you what the system did or what the customer saw |
+| **For what** | What happened on a specific record, how the product behaves, integrations, counts, and CSV exports of records |
+| **How** | Mention the Minion in #ask-the-minion with a work order number, a name and roughly when it happened. One question per thread. See [FAQ: Ask the Minion for Product Support](/latchel-admin/Product-Support-Team/FAQ-Ask-the-Minion-for-Product-Support) |
+| **Why** | It reads Latchel's code and a copy of the production database, so it can answer "what does the system do?" faster than digging yourself. It can't answer "what should we do?" |
+
+---
+
+### **Claude with connectors**
+
+| | |
+| :-- | :-- |
+| **When** | The work involves reading, summarizing, comparing or drafting, or you'd otherwise copy things between tools by hand |
+| **For what** | Summarizing a long ticket or Slack thread, pulling context from Wavelength, Slack, HubSpot, Google Drive or Sheets and Mintlify in one place, drafting an escalation summary or a first reply for you to edit, and organizing notes or sheets |
+| **How** | Tell Claude the goal, which ticket or record to look at, and what you want back. Ask it to say what it couldn't find instead of guessing. Check every fact, number and link it gives you against the source before using it |
+| **Why** | It saves time on the reading and drafting. You still own the recommendation and the final message |
+
+<Info>
+  The connectors you can use depend on how Claude is set up for you. If a connector you need is missing, ask your PSM.
+</Info>
+
+---
+
+### **BigQuery, through Claude**
+
+| | |
+| :-- | :-- |
+| **When** | The question is about many records: trends over time, counts by company, comparisons, or data for the WBR or a Deep Dive |
+| **For what** | Counts, trends, comparisons and exports that are too big or too wide to ask the Minion for a single record |
+| **How** | Tell Claude the question, the date range and the companies or segments. Ask it to show the query it ran and how it defined each number. Spot-check a few rows against the work orders yourself |
+| **Why** | One question across thousands of records is faster in BigQuery than looking at records one at a time |
+
+<Tip>
+  **Minion or BigQuery?** One work order, invoice or company and a "what happened?" question: ask the Minion. A trend or comparison across many records: use BigQuery through Claude. Either way, check a sample before you share a number.
+</Tip>
+
+---
+
+### **The DD Agent**
+
+| | |
+| :-- | :-- |
+| **When** | A Standard DD or Invoice Dispute DD comes in from `#ps-dd-sddi` |
+| **For what** | The research and first drafts of the Deep Dive. A PS team member checks the facts, makes the calls and sends the final customer email |
+| **How** | Follow [SOP: Running a Deep Dive with the DD Agent (PILOT)](/latchel-admin/Product-Support-Team/sop-running-a-deep-dive-with-the-dd-agent-pilot). Start with the [kickoff prompt](/latchel-admin/Product-Support-Team/Job-Aid-DD-Agent-Kickoff-Prompt) and answer every question the agent asks |
+| **Why** | It does the evidence gathering consistently so people can spend their time on validation and judgment |
+
+---
+
+### **Rules for every AI tool**
+
+| Rule | What it looks like |
+| :-- | :-- |
+| **Your judgment is the answer** | Say what you think the right path is and why. A summary of what the tool found is not a recommendation |
+| **Verify before you rely on it** | Check the answer against the ticket, the work order, the account and the SOP. Policies and visible facts win over AI output |
+| **Verify every link** | Open each link before you send it. Never send a customer a legacy Confluence link |
+| **Show your checking** | When you escalate or ask the PSM for help, say which tool you used, what it said and what you verified yourself |
+| **Don't forward AI output as the answer** | Write the customer reply yourself, using the tool's output as input |
+| **When it doesn't match** | If the answer conflicts with what engineers or product told you, ask them before using it |
+
+---
+
+### **Related**
+
+- [FAQ: Ask the Minion for Product Support](/latchel-admin/Product-Support-Team/FAQ-Ask-the-Minion-for-Product-Support)
+- [SOP: Running a Deep Dive with the DD Agent (PILOT)](/latchel-admin/Product-Support-Team/sop-running-a-deep-dive-with-the-dd-agent-pilot)
+- [SOP: Handling New Tickets](/latchel-admin/Product-Support-Team/SOP-Handling-New-Ticket-in-Product-Support)
+- [SOP: Escalating Tickets to the CSM](/latchel-admin/Product-Support-Team/SOP-Escalating-Tickets-to-the-CSM)
