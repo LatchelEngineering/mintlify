@@ -10,6 +10,10 @@ groups: ["latchel"]
   **Rule of thumb:** If the question is "what does the system do?", ask the Minion. If it's "what should we do?", ask a person.
 </Note>
 
+<Warning>
+  **A quick reminder:** the Minion is a great tool, but it can sometimes get things wrong. If an answer doesn't seem right, or it doesn't match what our engineers or product team have told us, check with one of them before taking the Minion's word for it.
+</Warning>
+
 ### **When to use the Minion**
 
 | If you need to know... | Go to |
@@ -21,6 +25,7 @@ groups: ["latchel"]
 | What the SOP or process says to do | **Mintlify Assistant** or the Help Center. The Minion has no access to SOPs |
 | A policy call (should we take the job, what is the customer owed, how to handle an exception) | **Ops, your PSM, or the CSM** |
 | Slow pages or timeouts | **An engineer** |
+| An answer that looks wrong or conflicts with what engineering or product told you | **An engineer or the product team** |
 
 ---
 
@@ -72,6 +77,10 @@ groups: ["latchel"]
     - Mention the Minion in your message, and ask one question per thread.
     - It can't open Wavelength links. Paste the customer's email text into the thread.
     - Say roughly when it happened.
+    - Number your sub-questions and name the identifiers (work order, invoice, company, property) for each one.
+    - Say what you want back: a yes or no, a timeline, a list, or a CSV.
+    - Ask it to flag anything it couldn't find instead of guessing. For example: "If you can't find it, say so rather than filling in the gap."
+    - To check a customer's claim (for example, "I emailed you on Tuesday"), give it the claim and the date range and ask it to find the exact record or message that matches, or say none exists.
   </Accordion>
 
   <Accordion title="What are some questions that work well?">
@@ -83,6 +92,16 @@ groups: ["latchel"]
     - "How many emergency work orders did [company] have in October?"
     - "Can you export all open work orders for [company] older than 30 days as a CSV?"
     - "Is AI messaging on for [company], and are automated vendor calls on?"
+    - "A PM says the AI messaged a tenant after they asked it to stop. Can you find the conversation on work order 123456 and show what was sent and when?"
+    - "For work orders 123456 and 123457: 1) who was assigned, 2) when did the status change to Scheduled, 3) was anything sent to the tenant? Flag anything you couldn't find."
+  </Accordion>
+
+  <Accordion title="What are some signs the answer is incomplete or wrong?">
+    - It says it couldn't open a link, reach Freshdesk or Wavelength, or see a source. Paste the text into the thread and ask again.
+    - It says a search "could have missed" something because the wording was different. Try other keywords, or check the record yourself.
+    - It gives a different answer when you ask a second way, or it conflicts with what you see on the work order. Don't pick one. Ask in the thread what it based each on.
+    - It assumes how a team runs things (for example, which on-call rotation or process is in use). The Minion reads the code and data, not how our teams work day to day. Check with a person.
+    - It answers a policy, scope or "what should we do" question (for example, whether a repair is in a PM's maintenance scope). That belongs to Ops, your PSM or the CSM.
   </Accordion>
 
   <Accordion title="What if it can't find anything, or the lookup times out?">
@@ -90,7 +109,9 @@ groups: ["latchel"]
   </Accordion>
 
   <Accordion title="Can I rely on its answer?">
-    Treat it as research, like the Mintlify Assistant. Check what it returns against the work order and the account, and use your own judgment. If you escalate or ask the PSM for help, say what you verified yourself. Don't send its answer to a customer as the answer.
+    Not without checking. The Minion is a great tool, but it can sometimes get things wrong. Treat it as research, like the Mintlify Assistant. Check what it returns against the work order and the account, and use your own judgment.
+
+    If an answer doesn't seem right, or it doesn't match what our engineers or product team have told us, check with one of them before taking the Minion's word for it. If you escalate or ask the PSM for help, say what you verified yourself. Don't send its answer to a customer as the answer.
   </Accordion>
 
   <Accordion title="Where do I keep the answer?">
