@@ -56,7 +56,6 @@
                 "group": "Property Managers Help Guides",
                 "public": true,
                 "pages": [
-                  "s/topic/0TO5e000000h9wqGAA/property-manager-guides",
                   {
                     "group": "Getting Started",
                     "public": true,
@@ -83,6 +82,7 @@
                       }
                     ]
                   },
+                  "s/topic/0TO5e000000h9wqGAA/property-manager-guides",
                   {
                     "group": "Work Orders",
                     "public": true,
