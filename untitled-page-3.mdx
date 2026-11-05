@@ -47,20 +47,25 @@ groups:
 <Info>
   ## Major Updates/Training
 
-  <Accordion title="Update title">
-    **Why it matters:**<br />
+  <Accordion title="Replies on PM-Managed Work Orders + New “Review for Emergency” Task">
+    **Why it matters:**<br />When a PM manages a work order, the PM owns the conversation with the resident and SP. Ops stepping into those threads creates duplicate or conflicting replies.
 
-    **What changed:**<br />
+    **What changed:**<br />Engineering released a routing change. On work orders **Managed by PM**, Conversation notifications now go **only to the PM**. Ops won't be notified anymore, even if you replied in the thread earlier. If a resident's reply is flagged as a potential PD/EH, the system creates a **"Review for emergency"** task for the Troubleshooting team. The WO itself isn't changed: severity stays the same and it isn't moved to Troubleshooting.
 
     **What you need to do:**
 
-    1. Step
+    1. **All associates:** check **Managed by** before you claim a Conversation. If it says PM, don't claim it or reply to the resident or SP.
+    2. **All associates:** leave it with the PM. Possible emergencies come to Troubleshooters as a task.
+    3. **All associates:** if you still get notified on a PM-managed thread, submit a bug report.
+    4. **Troubleshooters:** on a "Review for emergency" task, review the Conversation, the PM's Intake Settings and the WO notes. Call the resident if it could be an emergency.
+    5. **Troubleshooters:** update severity only once the emergency is confirmed, then follow the path for why the WO is Managed by PM (keep it PM-managed and call the escalation contacts, or **Switch to Latchel** if it was de-escalated as stale). Not an emergency? Leave a note and follow the PM's subscription path.
 
-    **When it takes effect:**<br />
+    **When it takes effect:**<br />Effective immediately (11/03/2026)
 
     **Resources impacted:**
 
-    - Link
+    - [Job Aid: Handling AI Messaging – Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)
+    - [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders): See the "Review for Emergency" Tasks (from Conversations) section.
   </Accordion>
 </Info>
 
@@ -70,6 +75,9 @@ groups:
   <Accordion title="Click to expand minor updates">
     - [How to: Use the Serv Ops Intake Workflows](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows#bug-report-latchel-minion-or-high-tech-sev)
       - **Bug report workflow update:** If you know what should happen and it isn't happening, submit a bug report directly. If you're not sure it's a bug, post it in #ops_assistance_hub first.
+    - [How to: Handle Invoices or Estimates Sent via email](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Invoices-or-Estimates-Sent-via-email)
+
+      - **Forward first:** forward SP invoices and estimates received by email to [**invoices@inbox.latchel.com**](mailto:invoices@inbox.latchel.com) or [**estimates@inbox.latchel.com**](mailto:estimates@inbox.latchel.com), and the AI attaches them to the WO. Upload by hand only when you get an unmatched ticket from [**team@latchel.com**](mailto:team@latchel.com). Related SOPs were updated to match.
   </Accordion>
 </Tip>
 
