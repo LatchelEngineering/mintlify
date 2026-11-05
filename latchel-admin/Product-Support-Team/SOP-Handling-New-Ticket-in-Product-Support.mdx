@@ -168,12 +168,12 @@ Get a clear picture of what happened **before** you reach out to the customer.
 
 **Using #ask-the-minion**
 
-Minion reads Latchel's database, work order notes and conversation history, so it can show what actually happened on a work order or account. It is a research tool like the Mintlify Assistant: check what it returns against the work order and don't send it to the customer as the answer.
+Minion is a read-only assistant with access to Latchel's code and a read-only copy of the production database, so it can show what happened on a work order or account and explain what the system does. It is a research tool like the Mintlify Assistant: check what it returns against the work order and don't send it to the customer as the answer. For the full list of what it can and can't do, see [FAQ: Ask the Minion for Product Support](/latchel-admin/Product-Support-Team/FAQ-Ask-the-Minion-for-Product-Support).
 
 - **Good uses:** account or feature settings ("Is AI messaging on for [company]?"), what happened on a work order, why a message or notification did or didn't go out, and finding an example that matches what a PM describes.
 - **Give it context:** a work order number, the vendor or resident name, and roughly when it happened. Minion can't open Wavelength links, so paste the customer's email text into the thread.
 - **Ask one question per thread.**
-- **Know its limits:** it can't see Wavelength tickets or Freshdesk emails, and a lookup can time out. If it finds nothing, say "Minion found no example" in your notes or escalation.
+- **Know its limits:** it can't make changes, and it can't see Wavelength tickets, Freshdesk emails, SOPs, Slack history outside its thread, server logs or the PM platforms themselves. A lookup can time out. It answers "what does the system do?", not "what should we do?": for SOP questions use the Mintlify Assistant, and for policy calls ask Ops, the PSM or the CSM. If it finds nothing, say "Minion found no example" in your notes or escalation.
 - **Suspected bug:** mention Minion with "bug" and a short description, and Minion files the bug report for you.
 - **Ops agent feedback or a feature request found in Minion's answer:** Minion doesn't file these. Follow the standard process instead: the **Agent Feedback** workflow in `#svc-ops-feedback` for Ops agent feedback (see [Job Aid: Slack Channels & Escalation Workflows](/latchel-admin/Product-Support-Team/Job-Aid-Slack-Channels-Escalation-Workflows)), and the **Feature Request** workflow in `#feature-requests` for feature requests (see [How to Handle: Feature Requests](/latchel-admin/Product-Support-Team/How-to-Handle-Feature-Requests)).
 - **Link it:** paste the Minion thread into the ticket as an internal note, and say what you verified yourself if you escalate or ask the PSM for help.
