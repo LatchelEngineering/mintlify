@@ -21,7 +21,7 @@ When working on new & unsorted tickets, you will come across emails and estimate
 <Note>
   **🆕 Forward first (default):** Forward any invoice or estimate email from Assembly to [**invoices@inbox.latchel.com**](mailto:invoices@inbox.latchel.com) (invoices) or [**estimates@inbox.latchel.com**](mailto:estimates@inbox.latchel.com) (estimates). AI reads the email and its attachments (WO or invoice number, property address and unit, vendor name, resident name), finds the matching work order and **attaches the file to it**.
 
-  ⚠️ **The AI only attaches the file. It does not start the estimate approval flow, update the approved budget, or approve or pay anything.** You still own the budget check and any budget update (Step 4), payment or escalation (Steps 5–6), and the vendor reply (Step 7).
+  ⚠️ **The AI only attaches the file. It does not start the estimate approval flow, update the approved budget, or approve or pay anything.** You still own the budget check and any budget update (Step 4), and payment or escalation (Steps 5–6). No reply to the vendor is needed if the email only submits an invoice or estimate. If the vendor asks a question or needs a decision, reply with a custom response that answers only that part.
 </Note>
 
 ### Step 1 - Read the Email
@@ -114,13 +114,15 @@ Whether the file was attached by the AI or by hand, do this step by hand every t
 </Warning>
 
 1. If the file being shared is an invoice, proceed with the following instructions:
-   1. **Preferred vendors:** Respond to the vendor's email letting them know the property manager will be the one issuing the payment. (See [How to: Handle Assembly Email Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Assembly-Email-Contacts#how-to-handle-assembly-email-contacts))
+   1. **Preferred vendors:** No reply needed. The property manager issues the payment.
    2. **Issued cards vendors:** If the amount is below $$500 and the work order has been confirmed complete by the resident, you may call the service provider and issue a credit card payment for the quoted amount. Please note that you can also process payments below $$500 via a web link if the SP includes one in their email.
-      1. If the amount is \$500 or more or you were unable to contact the vendor, respond to the vendor's email letting them know one of our service provider associates will contact them soon to issue payment. (See [How to: Handle Assembly Email Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Assembly-Email-Contacts#how-to-handle-assembly-email-contacts)) Create a task for service provider associates under the "payment processing" group to follow up on the payment. (See [↔ How to: Create a Task](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-What-is-a-task#job-aid-what-is-a-task))
+      1. If the amount is \$500 or more or you were unable to contact the vendor, create a task for service provider associates under the "payment processing" group to follow up on the payment. (See [↔ How to: Create a Task](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-What-is-a-task#job-aid-what-is-a-task))
    3. **LVN/LCN direct deposit vendors:** Respond to the vendor's email asking them to submit the invoice/estimate using their Latchel dashboard. (See [How to: Handle Assembly Email Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Assembly-Email-Contacts#how-to-handle-assembly-email-contacts))
 
 <Info>
-  If you processed the payment, make sure to leave an internal note in the Assembly email stating why you did not respond: _No response required. Payment was issued over the phone. \[WO link\]_
+  If the email only submits the invoice or estimate, leave an internal note in the Assembly ticket: _No response required. [Invoice/Estimate] attached to WO. [WO link]_
+
+  If the vendor asked a question or needs a decision, reply to answer it before closing the ticket.
 </Info>
 
 ### Step 6 - Escalate the exceeding quote
@@ -131,7 +133,6 @@ Whether the file was attached by the AI or by hand, do this step by hand every t
    2. Create a task assigned to the Troubleshooter. Indicate on the task the Assembly Ticket No of the estimate received.
       1. Task notes: **_Please review the attached estimate received via ASM-, check if any additional costs have already been charged, and confirm the exact total cost. Reach out to the service provider if follow-up or additional information is needed, and ensure the total cost is submitted for approval before proceeding._**
    3. Set the task to Never complete on any job state change.
-   4. Respond to the email advising the vendor that we will seek approval and get back to him ASAP.
 3. **Estimate for Non-Emergency Work Order:**
    1. We should place the work order on hold and select the "waiting for owner approval" option.
    2. Create the task for the property manager, and leave proper notes. (See - [(SOP) How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold))
@@ -183,7 +184,8 @@ iv. If the service provider responded to the confirmation:
 
 ### Step 7 - Update the vendor
 
-1. Respond to the service provider and advise them we will advise them just as soon as we hear back from the property manager about the estimate. You should use the Assembly response called _(Operations) Estimate from SP_. Refer to [How to: Use an email templated response/escalation (Assembly)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Respond-to-Assembly-Tickets-and-Forward-Requests#how-to-respond-to-assembly-tickets-and-forward-requests)
+1. No reply to the vendor is needed if the email only submits the estimate. The _(Operations) Estimate from SP_ template is no longer in Assembly.
+2. If the vendor asks a question or needs a decision (for example, "Can I proceed?"), reply with a custom response that answers it.
 
 ### Step 8 - Wrap up
 
