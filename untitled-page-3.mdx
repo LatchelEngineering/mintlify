@@ -10,7 +10,7 @@ hidden: true
 </Info>
 
 <Warning>
-  Please fill out this form after reading to confirm acknowledgement of the content: [**Form link**](https://forms.gle/ZKAh1V1N5Ym6B97f8)
+  Please fill out this form after reading to confirm acknowledgement of the content: [**Form link**](https://docs.google.com/forms/d/e/1FAIpQLSdDizOMXmEUyLApr_OEdBqia0Wrse1HbVQxawcmEEh4DrT7Hw/viewform?usp=sharing&amp;ouid=109986139603538163293)
 </Warning>
 
 <Note>
@@ -19,9 +19,14 @@ hidden: true
 
 **All Hands Topics:**
 
-[Recording](#)
+[Recording](https://drive.google.com/file/d/1DGMsB-hnMXOqgXteGBHY_0S91s6FyrSu/view?usp=sharing)
 
-1. Topic
+1. **QA Weekly Update**
+   1. **Scenario Review: Autopilot Work Orders:** Follow the autopilot SOP without adding extra manual tasks.
+   2. **Nomad Accounts and DIY Requests:** Nomad accounts follow the DIY owner instructions (job 8).
+2. **AI Inboxes for Invoices and Estimates:** Forward all invoices and estimates to the AI inboxes first, and reattach documents by hand if the AI misses them.
+3. **Routing Change for PM-Managed Work Orders:** Notifications for PM-managed work orders now go only to the property manager.
+4. **Bug Reports and Translation Tool:** Check with support before filing a bug you’re unsure about, and use Google Translate for now.
 
 <div style={{ maxWidth: "420px" }}>
   <Warning>
@@ -29,16 +34,14 @@ hidden: true
 
     <Columns cols={2}>
       <div>
-        Team
+        QA Top Performers
 
-        * Name
+        * Ford
+        * Cora
+        * Neil
       </div>
 
-      <div>
-        Team
-
-        * Name
-      </div>
+      <div />
     </Columns>
   </Warning>
 </div>
@@ -68,6 +71,34 @@ hidden: true
     - [Job Aid: Handling AI Messaging – Conversations](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-Handling-Resident-and-SP-Conversations-AI-Messaging-Beta)
     - [How to: Handle Emergency Work Orders](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Emergency-Work-Orders): See the "Review for Emergency" Tasks (from Conversations) section.
   </Accordion>
+
+  <Accordion title="Callback Phone Numbers + Text-First for PMs">
+    **Why it matters:**<br />We were giving out too many numbers, and some scripts pointed PMs, residents and SPs to the wrong one. One clear number per situation, and steering PMs to text instead of calling, gets everyone a faster answer.
+
+    **What changed:**
+
+    | Who | Situation | Number to give |
+    | --- | --- | --- |
+    | Residents & SPs | Non-emergency | PM's **Latchel-Assigned Phone Number** |
+    | SPs | Emergency WOs | **(206) 900-9466** |
+    | PMs | All communications | **(206) 900-9466**: ask them to text or send a Webchat, not call |
+    | Anyone we can't map to a PM | Any | **(206) 717-8374** (encourage texting) |
+    | Owners (RentRedi/NOMAD) | Any | **(206) 717-8374** (no change) |
+
+    **What you need to do:**
+
+    1. **All associates:** give the number that matches who you're talking to and the WO severity (see the table above).
+    2. **All associates:** for PMs, always encourage texting. In PM voicemails, SMS, emails and task descriptions, close with _"…reply here, text us at (206) 900-9466, or send us a Webchat."_ In PM web chat, _"just reply here or text us at (206) 900-9466"_ is enough.
+    3. **All associates:** resident scripts now say **PM's Latchel-Assigned Phone Number** (not "Latchel Communication Phone Number").
+    4. **Call Center:** use the updated ghost call and dropped call spiels, which now include a PM line and the (206) 717-8374 number for callers we can't map to a PM.
+
+    **When it takes effect:**<br />Effective immediately (11/09/2026)
+
+    **Resources impacted:**
+
+    - [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules#customer-calling-to-latchel-phone-numbers): See the "Customer Calling-to-Latchel Phone Numbers" section.
+    - All related SOPs and job aids with phone number scripts were updated to match.
+  </Accordion>
 </Info>
 
 <Tip>
@@ -85,6 +116,9 @@ hidden: true
     - [How to: Handle Spanish SMS/Emails/Calls](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Spanish-SMS-Emails-Calls)
 
       - **Use Google Translate for now:** The Spanish SMS Translator shared in the 10/30 newsletter needs a Claude account, so translations fail for most of the team. Use [Google Translate](https://translate.google.com/?sl=en&amp;tl=es) for Spanish messages instead. Everything else in the Spanish process stays the same.
+    - [How to: Handle Invoices or Estimates Sent via email](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Invoices-or-Estimates-Sent-via-email), [How to: Handle DIY Owner Contacts](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-DIY-Owner-Contacts), [How to: Intake Non-Resident Requests (Non-maintenance Requests)](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Intake-Non-Resident-Requests-Non-maintenance-Requests), [How to: Create a New Work Order from "Incognito Mode"](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Create-a-New-Work-Order-from-Incognito-Mode-All-Submissions), [Troubleshooters Handling Skill Assignment Tasks](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Troubleshooters-Handling-Skill-Assignment-Tasks-in-Work-Order-Intake-Low-Confidence-No-Skill-Match-and-No-Skill-Assigned), [How to Handle Payment Related Inquiries](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-How-to-Handle-Payment-Related-Inquiries)
+
+      - **Removed email responses:** We removed the steps to respond by email when (1) an SP sends an estimate or invoice (the WO moves forward and notifications go out automatically), (2) a non-maintenance request comes in (use **Request Non-Maintenance Help**; only email the PM, free-form, when the property isn't in our system), and (3) an SP's budget is approved (the WO moves to scheduling and the SP is notified automatically; still call on emergency WOs).
   </Accordion>
 </Tip>
 
@@ -92,8 +126,8 @@ hidden: true
   ## Product Releases & Help Guides
 
   <Accordion title="Click to expand product releases and help guides">
-    - [Better Estimates](https://latchel.slack.com/archives/C038Z6M0T6H/p1793830793130089): New **Awaiting Estimate** status with a due date (3 days by default). Ops can set it from **Take Action → Waiting on an Estimate**. Latchel follows up with the vendor automatically, and an overdue estimate creates an "Estimate Overdue" task for the PM, not Ops. Vendors can now submit up to 5 options (repair, replace or other). An estimate with multiple options always goes to the PM (or owner) to pick one. The new **Costs** tab shows the budget, estimates and invoices together. Bid work orders now use **Awaiting Bid**.
-    - [Smarter identification for shared phone numbers](https://latchel.slack.com/archives/C038Z6M0T6H/p1793742849562819): When one phone number belongs to more than one account, replies are now matched to the person we texted in the last week for that PM. The Conversation page shows who we think is texting (e.g., "Jane Doe · Resident") at the top, replacing the Live/Offline dot, so check it to catch a wrong guess.
+    - [Better Estimates](https://latchel.slack.com/archives/C038Z6M0T6H/p1793830793130089): New **Awaiting Estimate** status with a due date (3 days by default). Ops can set it from **Take Action → Waiting on an Estimate**.
+    - [Smarter identification for shared phone numbers](https://latchel.slack.com/archives/C038Z6M0T6H/p1793742849562819): When one phone number belongs to more than one account, replies are now matched to the person we texted in the last week for that PM.
 
     **New guides**
 
