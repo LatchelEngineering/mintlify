@@ -1,0 +1,188 @@
+---
+title: "Technician Setup Guide for Emergency Alerts"
+description: "Make a one-page guide with your logo and Latchel numbers that shows your technicians how to let emergency calls and texts through on their phones."
+mode: "wide"
+---
+
+Most missed emergency alerts come from a phone setting that silences or filters calls and texts. Use the builder below to make a one-page guide for your technicians. Add your logo and your Latchel numbers, then download it as a PDF or as a web page you can send or post.
+
+<Check>
+  **In other words:**
+
+  Fill in your company details, check the preview, and download the guide to share with your technicians.
+</Check>
+
+## **How to Make Your Technician Guide**
+
+<Steps>
+  <Step title="**Add your company details**" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="p">
+    Type your company name, upload your logo, and pick a brand color. The contact name is what technicians save the numbers as, for example "Pam T Work Orders".
+  </Step>
+  <Step title="**Add your Latchel numbers**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
+    Add the numbers your technicians get calls and texts from, with a short label and note for each. You can add up to three. Not sure which numbers Latchel assigned to you? See the guide below.
+
+    <Card title="How to View Your Latchel-Assigned Phone Number" color="#ff9b8a" icon="phone-office" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/How-to-view-your-Latchel-Assigned-Phone-Number">
+      Find the numbers Latchel assigned to your account in your dashboard.
+    </Card>
+  </Step>
+  <Step title="**Edit the footer**" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="p">
+    The footer tells technicians what to do if they still miss calls or texts. Change the text to add your own contact details, office hours, or anything else your team needs.
+  </Step>
+  <Step title="**Download and share**" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="p">
+    Click **Download PDF** and choose **Save as PDF** in the print window, or click **Download web page** to get an HTML file you can email, print, or post on your own site.
+  </Step>
+</Steps>
+
+<TechAlertsGuideBuilder />
+
+<Note>
+  Nothing you enter here is saved or sent to Latchel. Your details stay in your browser and are cleared when you leave the page, so download your guide before you close it.
+</Note>
+
+## **What the Guide Covers**
+
+- **How alerts work:** every emergency sends a text and a call. Technicians accept by tapping the link, answering the call, or calling back.
+- **Three fixes for every phone:** save the numbers as one contact, mark it a Favorite, and text **START** to a number if anyone ever replied STOP to it.
+- **iPhone settings:** let Favorites through Focus, stop screening unknown callers, check filtered texts, unblock the numbers, and turn on Emergency Bypass.
+- **Android settings:** let starred contacts through Do Not Disturb, check spam and call screening, unblock numbers and unknown callers, and rescue texts from Spam.
+- **Still missing alerts:** check carrier spam blocking (Verizon Call Filter, AT&T ActiveArmor, T-Mobile Scam Shield), then contact [**success@latchel.com**](mailto:success@latchel.com) with the technician's name, phone model, and the time of the missed call or text.
+
+Need more help with on-call alerts? See the guide below.
+
+<Card title="How to Troubleshoot On-Call Alerts for Your Technicians" color="#7ed5d5" icon="bell-on" iconType="duotone" href="/s/topic/0TO5e000000h9wqGAA/how-to-troubleshoot-on-call-alerts-for-your-technicians">
+  Check phone numbers, let alerts through, and add backup contacts.
+</Card>
+
+export const TechAlertsGuideBuilder = () => {
+  const [company, setCompany] = useState("Your Company");
+  const [contactEdit, setContact] = useState(null);
+  const contact = contactEdit === null ? (company || "Your Company") + " Work Orders" : contactEdit;
+  const [frameH, setFrameH] = useState(1180);
+  const [logo, setLogo] = useState("");
+  const [logoMsg, setLogoMsg] = useState("");
+  const [color, setColor] = useState("#8a5a2b");
+  const [nums, setNums] = useState([
+    { label: "Emergencies", number: "(978) 848-4371", note: "Latchel on-call alerts" },
+    { label: "Work orders", number: "", note: "Your Latchel-assigned number" },
+  ]);
+  const [footTitle, setFootTitle] = useState("Still missing calls or texts?");
+  const [foot1, setFoot1] = useState("Check carrier spam blocking. Verizon Call Filter, AT&T ActiveArmor and T-Mobile Scam Shield can stop calls before they reach the phone. Add the numbers to the allowed list in your carrier's app.");
+  const [foot2, setFoot2] = useState("Contact Latchel support at success@latchel.com with the technician's name, phone model and the time of the missed call or text.");
+  const [foot3, setFoot3] = useState("");
+  const frameRef = useRef(null);
+
+  const esc = (s) => String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const setNum = (i, key, val) => setNums(nums.map((n, j) => (j === i ? { ...n, [key]: val } : n)));
+  const count = nums.length;
+  const them = count === 1 ? "the number" : "the numbers";
+  const saveTitle = count === 1 ? "Save the number" : count === 2 ? "Save both" : "Save all three";
+  const saveCap = count === 1 ? "Save this number" : count === 2 ? "Save both numbers" : "Save all three numbers";
+
+  const onLogo = (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    if (!/^image\//.test(f.type)) { setLogoMsg("Choose an image file (PNG, JPG or SVG)."); return; }
+    if (f.size > 2 * 1024 * 1024) { setLogoMsg("Choose an image under 2 MB."); return; }
+    const r = new FileReader();
+    r.onload = () => { setLogo(String(r.result)); setLogoMsg(""); };
+    r.readAsDataURL(f);
+  };
+
+  const html = useMemo(() => {
+    const c = esc(contact || "Work Orders");
+    const path = (s) => '<div class="path">' + s + "</div>";
+    const item = (t, p, d) => '<div class="item"><h4>' + t + "</h4>" + path(p) + "<p>" + d + "</p></div>";
+    const numCells = nums.map((n) =>
+      '<div class="num"><div class="lab">' + esc(n.label) + '</div><div class="big">' + (esc(n.number) || '<span class="ph">(000) 000-0000</span>') + '</div><div class="note">' + esc(n.note) + "</div></div>").join("");
+    const brand = logo ? '<img class="logo" src="' + logo + '" alt="' + esc(company) + ' logo">' : '<div class="co">' + esc(company) + "</div>";
+    const latchelMark = '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2b2b2b"/><path d="M7 17V11l5-4 5 4v6h-3.2v-3.6h-3.6V17z" fill="#fff"/></svg>';
+    return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + esc(company) + ' · Technician Guide for Emergency Alerts</title><style>' +
+      ':root{--a:' + color + '}*{box-sizing:border-box}body{margin:0;background:#fff;color:#2b2b2b;font:13px/1.45 "Segoe UI",Helvetica,Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}' +
+      '.page{max-width:8.5in;margin:0 auto;background:#fff}.band{background:color-mix(in srgb,var(--a) 12%,#fff);padding:24px 36px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}' +
+      '.logo{max-height:64px;max-width:240px}.co{font-size:22px;font-weight:700;color:var(--a)}.kick{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#666;text-align:right}.pow{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:6px;font-size:11px;color:#666}.pow b{color:#2b2b2b}' +
+      'h1{font-size:30px;line-height:1.1;margin:16px 0 6px}.lead{margin:0;font-size:14px;color:#444}.how{border-top:3px solid var(--a);padding:14px 36px 18px;background:color-mix(in srgb,var(--a) 5%,#fff)}' +
+      '.cap{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#666;margin:0 0 8px}.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.how h3{margin:0 0 2px;font-size:14px;color:var(--a)}.how p{margin:0}' +
+      '.nums{margin-top:14px;border:2px solid #4a3a2c;border-radius:12px;padding:12px 18px;background:#fff}.nhead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;color:#555}.nrow{display:grid;grid-template-columns:repeat(' + count + ',1fr);margin-top:6px}' +
+      '.num{padding:0 14px;border-left:1px solid #ddd}.num:first-child{border-left:0;padding-left:0}.lab{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--a);font-weight:700}.big{font-size:26px;font-weight:700;white-space:nowrap}.ph{color:#bbb}.note{font-size:11px;color:#555}' +
+      '.body{padding:16px 36px}h2{font-size:18px;margin:0 0 10px}.fixes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.fix{border:1px solid #e3dccf;border-radius:10px;padding:10px 14px}.fix h3{margin:0 0 4px;font-size:14px;display:flex;align-items:center;gap:8px}.dot{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#4a3a2c;color:#fff;font-size:12px}.fix p{margin:0}' +
+      '.os{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px}.oshead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px solid #4a3a2c;padding-bottom:4px;margin-bottom:8px}.oshead h2{margin:0}.oshead span{font-size:10px;color:#666}' +
+      '.item{margin-bottom:9px}.item h4{margin:0;font-size:13px}.path{color:var(--a);font-weight:600;font-size:12px}.item p{margin:0}.foot{border-top:3px solid #4a3a2c;background:color-mix(in srgb,var(--a) 12%,#fff);padding:14px 36px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:18px}.foot h2{font-size:17px}.foot p{margin:0 0 6px;white-space:pre-line}' +
+      '@media print{@page{size:letter;margin:0}body{font-size:12px}}@media (max-width:640px){.cols3,.fixes,.os,.foot,.nrow{grid-template-columns:1fr}.num{border-left:0;padding:6px 0}.band,.how,.body,.foot{padding-left:16px;padding-right:16px}}' +
+      '</style></head><body><div class="page"><div class="band"><div class="top"><div>' + brand + '</div><div><div class="kick">Technician guide · Emergency work orders &amp; updates</div><div class="pow">Powered by ' + latchelMark + '<b>Latchel</b></div></div></div>' +
+      '<h1>Set up your phone for emergency work orders</h1><p class="lead">Most missed emergencies and work order updates come from a phone setting that silences or filters calls and texts. Share this with every technician on ' + esc(company) + ' jobs; most fixes take minutes.</p></div>' +
+      '<div class="how"><p class="cap">How work order calls &amp; texts work</p><div class="cols3"><div><h3>1 · Emergencies</h3><p>You\'ll get a text and a call. To accept, tap the link, answer the call, or call back.</p></div><div><h3>2 · Check-ins</h3><p>We may call you if one of your work orders looks out of date.</p></div><div><h3>3 · Anytime</h3><p>Text or call to update your work orders or accept new jobs offered to you.</p></div></div>' +
+      '<div class="nums"><div class="nhead"><span class="cap" style="margin:0">' + saveCap + '</span><span>Save ' + (count === 1 ? "it" : "them together") + ' as one contact: “' + c + '”</span></div><div class="nrow">' + numCells + "</div></div></div>" +
+      '<div class="body"><h2>Start here: three fixes for every phone</h2><div class="fixes"><div class="fix"><h3><span class="dot">1</span>' + saveTitle + '</h3><p>Save ' + them + ' in one contact named “' + c + '.” Phones trust saved numbers and are far less likely to silence or filter them.</p></div>' +
+      '<div class="fix"><h3><span class="dot">2</span>Mark it a Favorite</h3><p>iPhone: open the contact › Add to Favorites. Android: open the contact › tap the star. Favorites can ring through Do Not Disturb.</p></div>' +
+      '<div class="fix"><h3><span class="dot">3</span>Text “START” if needed</h3><p>If anyone ever replied STOP to ' + (count === 1 ? "this number" : "one of these numbers") + ', its texts are switched off. Texting START to that same number turns them back on.</p></div></div>' +
+      '<div class="os"><div><div class="oshead"><h2>iPhone</h2><span>All iPhones · menu names vary by iOS version</span></div>' +
+      item("Let Favorites through Focus", "Settings › Focus › Do Not Disturb › People", "Allow calls from Favorites, add the " + c + " contact, turn on Allow Repeated Calls. Repeat for every Focus, incl. Sleep.") +
+      item("Stop screening unknown callers", "Settings › Apps › Phone › Screen Unknown Callers", "Set to Never. On older iOS, turn off Silence Unknown Callers.") +
+      item("Check filtered texts", "Settings › Apps › Messages › Unknown Senders", "Work order texts may be sitting in the Unknown Senders or Spam list. Saving the contact moves them to your main inbox.") +
+      item(count === 1 ? "Make sure it isn't blocked" : "Make sure none are blocked", "Settings › Apps › Phone › Blocked Contacts", "If " + (count === 1 ? "the number" : "any of the numbers") + " is listed, swipe left and tap Unblock.") +
+      item("Turn on Emergency Bypass", "Contacts › " + c + " › Edit › Ringtone", "Rings even on silent or in a Focus. Repeat under Text Tone.") +
+      '</div><div><div class="oshead"><h2>Android</h2><span>Pixel &amp; Samsung shown · others similar</span></div>' +
+      item("Let starred contacts through DND", "Pixel: Settings › Modes (or Notifications) › Do Not Disturb · Samsung: Settings › Notifications › Do not disturb", "Allow calls and messages from Starred/Favorite contacts, and allow repeat callers.") +
+      item("Check spam &amp; call screening", "Phone app › ⋮ › Settings › Spam and Call Screen (Samsung: Caller ID and spam protection)", "Make sure " + (count === 1 ? "the number isn't" : "none of the numbers is") + " filtered as spam or auto-screened.") +
+      item("Unblock numbers &amp; unknown callers", "Phone app › ⋮ › Settings › Blocked numbers", "Remove " + (count === 1 ? "the number" : "any of the numbers") + " if listed, and turn off Block unknown callers.") +
+      item("Rescue texts from Spam", "Messages › ☰ or ⋮ › Spam &amp; blocked", "If a work order text is there, open it and tap Not spam or Unblock.") +
+      '</div></div></div><div class="foot"><h2>' + esc(footTitle) + "</h2><div><p>" + esc(foot1) + "</p></div><div><p>" + esc(foot2) + "</p>" + (foot3 ? "<p>" + esc(foot3) + "</p>" : "") + "</div></div></div></body></html>";
+  }, [company, contact, logo, color, nums, footTitle, foot1, foot2, foot3]);
+
+  const fitFrame = () => {
+    const d = frameRef.current && frameRef.current.contentDocument;
+    if (d && d.body) setFrameH(Math.max(600, d.documentElement.scrollHeight + 4));
+  };
+  const printIt = () => { const w = frameRef.current && frameRef.current.contentWindow; if (w) { w.focus(); w.print(); } };
+  const download = () => {
+    const url = URL.createObjectURL(new Blob([html], { type: "text/html" }));
+    const a = document.createElement("a");
+    a.href = url; a.download = (company || "Company").replace(/[^a-z0-9]+/gi, "-") + "-Technician-Emergency-Alerts-Guide.html";
+    a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+
+  const box = { border: "1px solid rgba(127,127,127,.3)", borderRadius: 8, padding: "7px 9px", font: "inherit", color: "inherit", background: "transparent", width: "100%", minWidth: 0 };
+  const lab = { display: "grid", gap: 4, fontSize: 13, fontWeight: 600, minWidth: 0 };
+  const btn = { padding: "8px 14px", borderRadius: 8, border: "1px solid rgba(127,127,127,.4)", background: "transparent", color: "inherit", font: "inherit", cursor: "pointer" };
+  const main = { ...btn, background: "#ff9b8a", borderColor: "#ff9b8a", color: "#1f1f1f", fontWeight: 600 };
+
+  return (
+    <div className="not-prose" style={{ border: "1px solid rgba(127,127,127,.25)", borderRadius: 12, padding: 16, display: "grid", gap: 16 }}>
+      <div style={{ display: "grid", gap: 12, gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
+        <label style={lab}>Company name<input style={box} value={company} onChange={(e) => setCompany(e.target.value)} /></label>
+        <label style={lab}>Contact name technicians save<input style={box} value={contact} onChange={(e) => setContact(e.target.value)} /></label>
+        <label style={lab}>Logo (PNG, JPG or SVG, under 2 MB)<input type="file" accept="image/*" onChange={onLogo} style={{ fontSize: 13 }} /></label>
+        <label style={lab}>Brand color<input type="color" value={color} onChange={(e) => setColor(e.target.value)} style={{ width: 60, height: 34, padding: 0, border: 0, background: "transparent" }} /></label>
+      </div>
+      {logoMsg ? <div style={{ fontSize: 13, color: "#d9534f" }}>{logoMsg}</div> : null}
+      {logo ? <button type="button" style={{ ...btn, justifySelf: "start" }} onClick={() => setLogo("")}>Remove logo</button> : null}
+      <div style={{ display: "grid", gap: 8 }}>
+        <div style={{ fontSize: 14, fontWeight: 700 }}>Your Latchel numbers</div>
+        {nums.map((n, i) => (
+          <div key={i} style={{ display: "grid", gap: 8, gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", alignItems: "end" }}>
+            <label style={lab}>Label<input style={box} value={n.label} onChange={(e) => setNum(i, "label", e.target.value)} /></label>
+            <label style={lab}>Phone number<input style={box} value={n.number} placeholder="(000) 000-0000" onChange={(e) => setNum(i, "number", e.target.value)} /></label>
+            <label style={lab}>Note<input style={box} value={n.note} onChange={(e) => setNum(i, "note", e.target.value)} /></label>
+            <button type="button" style={btn} disabled={nums.length === 1} aria-label={"Remove number " + (i + 1)} onClick={() => setNums(nums.filter((_, j) => j !== i))}>Remove</button>
+          </div>
+        ))}
+        {nums.length < 3 ? <button type="button" style={{ ...btn, justifySelf: "start" }} onClick={() => setNums([...nums, { label: "Work orders", number: "", note: "" }])}>+ Add a number</button> : null}
+      </div>
+      <div style={{ display: "grid", gap: 8 }}>
+        <div style={{ fontSize: 14, fontWeight: 700 }}>Footer</div>
+        <label style={lab}>Footer title<input style={box} value={footTitle} onChange={(e) => setFootTitle(e.target.value)} /></label>
+        <div style={{ display: "grid", gap: 8, gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
+          <label style={lab}>Column 1<textarea rows={4} style={box} value={foot1} onChange={(e) => setFoot1(e.target.value)} /></label>
+          <label style={lab}>Column 2<textarea rows={4} style={box} value={foot2} onChange={(e) => setFoot2(e.target.value)} /></label>
+          <label style={lab}>Extra info (optional)<textarea rows={4} style={box} value={foot3} placeholder="For example: your office phone, after-hours manager, or radio channel" onChange={(e) => setFoot3(e.target.value)} /></label>
+        </div>
+      </div>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <button type="button" style={main} onClick={printIt}>Download PDF</button>
+        <button type="button" style={btn} onClick={download}>Download web page</button>
+      </div>
+      <div style={{ fontSize: 13, fontWeight: 700 }}>Preview</div>
+      <iframe ref={frameRef} title="Technician guide preview" srcDoc={html} onLoad={fitFrame} style={{ width: "100%", height: frameH, border: "1px solid rgba(127,127,127,.3)", borderRadius: 8, background: "#fff" }} />
+    </div>
+  );
+};
