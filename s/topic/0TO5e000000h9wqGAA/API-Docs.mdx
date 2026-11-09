@@ -44,6 +44,7 @@ The **Latchel Partner API** lets you connect your own systems to Latchel so you 
 - **Only pull what changed:** `GET /properties`, `GET /tenants`, and `GET /properties/{property_id}/tenants` accept `updated_at_start_date` to return only records changed since that time. Save the time each sync starts and pass it on the next one.
 - **Webhooks:** want Latchel to notify your system when work orders, portfolios, or residents change instead of polling? See our webhook documentation in the Help Center (search "Webhooks").
 - **Calls to your Latchel-assigned number:** pull the list of phone calls received on your [Latchel-assigned number](/s/topic/0TO5e000000h9wqGAA/How-to-view-your-Latchel-Assigned-Phone-Number) for any date range up to one month at a time. For each call, you'll see when it came in, how long it lasted, whether it connected, the number it came from, and the matching resident when that number belongs to one of your residents. It's an easy way to see how many calls Latchel handled for you and when. See the [Calls section of the API documentation](https://papi.latchel.com/#/calls).
+- **Estimates:** the `estimate` field on a work order is only filled in while the work order is waiting on approval.
 
 ## Other Integration Guides
 
