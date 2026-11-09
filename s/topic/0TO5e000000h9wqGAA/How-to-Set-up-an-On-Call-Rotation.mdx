@@ -47,10 +47,12 @@ Any service providers you want to add to a rotation must have the **"in-house"**
   <Step title="**Add a tech or backup layer**" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="p">
     In the Layers tab, click either **\+Add Tech Layers** or **\+Add Backup Layer**.
 
+    {/* TODO: confirm the button label now that Tech Layer is called Primary Layer, and replace the screenshot below if it changed */}
+
     <Note>
       **What are Layers?**
 
-      - **Tech Layers or First Responders** - Technicians and contractors who physically respond to emergencies. Multiple layers allow for shift coverage and escalation.
+      - **Primary Layers (formerly Tech Layers) or First Responders** - The people who respond first. A primary layer can include either service providers (SPs) or property managers (PMs), and each person is labeled by type. Multiple layers allow for shift coverage and escalation.
       - **Backup Layers or Escalation Contacts** - Property managers or staff who should be notified if technicians don't respond. The safety net for critical situations.
     </Note>
 
@@ -59,7 +61,7 @@ Any service providers you want to add to a rotation must have the **"in-house"**
     </Frame>
 
     <Tip>
-      Start with a tech layer to define your primary contact schedule, then add a backup layer for peace of mind.
+      Start with a primary layer to define your main contact schedule, then add a backup layer for peace of mind.
     </Tip>
   </Step>
   <Step title="**Select the rotation type and click Add Layer**" icon="5" iconType="sharp-solid" stepNumber={5} titleSize="p">
@@ -90,6 +92,12 @@ Any service providers you want to add to a rotation must have the **"in-house"**
   </Step>
   <Step title="**Select the technician and set the time slot**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
     Select the **technician** (or backup) from the **dropdown**, or click **\+Create Technician** if they are not yet listed. Then, **set the day and start and end times** for the schedule. Click **Add** to save.
+
+    <Note>
+      **Adding people is easier now.** The Add Member window lets you search by name or phone number, and filter the results to service providers only or property managers only. If the person isn't listed, you can create them as either a service provider or a property manager. You can't create someone with a phone number that's already in Latchel. Pick the existing person instead.
+    </Note>
+
+    {/* TODO: screenshot of the new Add Member window */}
 
     <Frame>
       ![Latchel 04 06 2026 10 18 AM](/images/Latchel-04-06-2026_10_18_AM.png)
@@ -128,7 +136,7 @@ Any service providers you want to add to a rotation must have the **"in-house"**
     </Frame>
   </Step>
   <Step title="**Select the technician and set the rotation**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
-    Select the **Technician (or Backup)** from the dropdown list, or **\+Create Technician** (or PM User if Backup Layer) if the person is not yet added in Latchel. Also setup the **Rotation Frequency**, and **Handoff Time**.
+    Select the **Technician (or Backup)** from the dropdown list, or **\+Create Technician** (or PM User if Backup Layer) if the person is not yet added in Latchel. Primary layers accept either service providers or property managers, but backups must still be property managers. Also setup the **Rotation Frequency**, and **Handoff Time**.
 
     <Tip>
       For **Rotation Frequency**, you can select the number of **days or weeks**. If the frequency is set to weeks, the **Handoff Time** will require you to **choose the day of the week** when the next person will be scheduled to be called.
