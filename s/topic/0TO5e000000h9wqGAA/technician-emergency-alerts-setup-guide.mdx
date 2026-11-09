@@ -64,7 +64,15 @@ export const TechAlertsGuideBuilder = () => {
   const frameRef = useRef(null);
 
   const esc = (s) => String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  const setNum = (i, key, val) => setNums(nums.map((n, j) => (j === i ? { ...n, [key]: val } : n)));
+    const setNum = (i, key, val) => setNums(nums.map((n, j) => (j === i ? { ...n, [key]: val } : n)));
+  const fmtPhone = (v) => {
+    let d = String(v).split("").filter((c) => c >= "0" && c <= "9").join("");
+    if (d.length === 11 && d[0] === "1") d = d.slice(1);
+    d = d.slice(0, 10);
+    if (d.length < 4) return d;
+    if (d.length < 7) return "(" + d.slice(0, 3) + ") " + d.slice(3);
+    return "(" + d.slice(0, 3) + ") " + d.slice(3, 6) + "-" + d.slice(6);
+  };
   const count = nums.length;
   const them = count === 1 ? "the number" : "the numbers";
   const saveTitle = count === 1 ? "Save the number" : count === 2 ? "Save both" : "Save all three";
@@ -185,7 +193,7 @@ export const TechAlertsGuideBuilder = () => {
         {nums.map((n, i) => (
           <div key={i} style={{ display: "grid", gap: 8, gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", alignItems: "end" }}>
             <label style={lab}>Label<input style={box} value={n.label} onChange={(e) => setNum(i, "label", e.target.value)} /></label>
-            <label style={lab}>Phone number<input style={box} value={n.number} placeholder="(000) 000-0000" onChange={(e) => setNum(i, "number", e.target.value)} /></label>
+            <label style={lab}>Phone number<input style={box} value={n.number} placeholder="(000) 000-0000" onChange={(e) => setNum(i, "number", fmtPhone(e.target.value))} /></label>
             <label style={lab}>Note<input style={box} value={n.note} onChange={(e) => setNum(i, "note", e.target.value)} /></label>
             <button type="button" style={btn} disabled={nums.length === 1} aria-label={"Remove number " + (i + 1)} onClick={() => setNums(nums.filter((_, j) => j !== i))}>Remove</button>
           </div>
