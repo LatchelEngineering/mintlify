@@ -23,31 +23,29 @@ Any service providers you want to add to a rotation must have the **"in-house"**
     From your dashboard, go to the **Tools** tab, then choose **Contact Rotations**.
 
     <Frame>
-      ![Latchel 06 12 2026 10 26 AM](/images/Latchel-06-12-2026_10_26_AM.png)
+      ![Tools menu with Contact Rotations](/images/contact-rotation-tools-menu.png)
     </Frame>
   </Step>
   <Step title="**Create and name the rotation**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
     On the next page, click **Create New**, then **give the rotation a clear, descriptive name** (e.g., "Emergency Maintenance" or "Parking Issues"). Click **OK** once done.
 
     <Frame>
-      ![Latchel 06 12 2026 10 27 AM](/images/Latchel-06-12-2026_10_27_AM.png)
+      ![Create New on the Contact Rotations page](/images/contact-rotation-create-new.png)
     </Frame>
 
     <Frame>
-      ![Latchel 06 12 2026 10 29 AM](/images/Latchel-06-12-2026_10_29_AM.png)
+      ![Name the new contact rotation and click OK](/images/contact-rotation-name.png)
     </Frame>
   </Step>
   <Step title="**Click Add Layers or the pencil icon**" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="p">
     In the new rotation, click **Add Layers** or the **pencil icon** at the right upper corner of the page to start setting up the schedules.
 
     <Frame>
-      ![Latchel 04 02 2026 09 20 AM 1](/images/Latchel-04-02-2026_09_20_AM-1.png)
+      ![Pencil icon on the rotation page](/images/contact-rotation-pencil.png)
     </Frame>
   </Step>
   <Step title="**Add a tech or backup layer**" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="p">
-    In the Layers tab, click either **\+Add Tech Layers** or **\+Add Backup Layer**.
-
-    {/* TODO: confirm the button label now that Tech Layer is called Primary Layer, and replace the screenshot below if it changed */}
+    In the Layers tab, click either **\+Add Primary Layer** or **\+Add Backup Layer**.
 
     <Note>
       **What are Layers?**
@@ -57,7 +55,7 @@ Any service providers you want to add to a rotation must have the **"in-house"**
     </Note>
 
     <Frame>
-      ![Latchel 04 02 2026 09 44 AM](/images/Latchel-04-02-2026_09_44_AM.png)
+      ![Add Primary Layer and Add Backup Layer in the Layers tab](/images/contact-rotation-add-layer.png)
     </Frame>
 
     <Tip>
@@ -73,34 +71,32 @@ Any service providers you want to add to a rotation must have the **"in-house"**
       - **Calendar rotation** - Coverage for specific times and days
       - **Block rotation** - 24/7 continuous coverage
     </Note>
+
+    <Frame>
+      ![Add Primary Layer window with the rotation types](/images/contact-rotation-type-calendar.png)
+    </Frame>
   </Step>
 </Steps>
 
 ### **A. Setup Calendar Rotation**
 
-<Frame>
-  ![Latchel 04 02 2026 09 46 AM](/images/Latchel-04-02-2026_09_46_AM.png)
-</Frame>
-
 <Steps>
-  <Step title="**Click an empty day**" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="p">
-    Next, click on any **empty day** to make the **Add Time Slot** option appear.
+  <Step title="**Click and drag on an empty day**" icon="1" iconType="sharp-solid" stepNumber={1} titleSize="p">
+    Next, click and drag on any **empty day** to open the **Add Time Slot** window.
 
     <Frame>
-      ![Add Tech Layer](/images/Add-tech-layer.gif)
+      ![Click and drag on the calendar to add a time slot](/images/contact-rotation-calendar-drag.png)
     </Frame>
   </Step>
   <Step title="**Select the technician and set the time slot**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
-    Select the **technician** (or backup) from the **dropdown**, or click **\+Create Technician** if they are not yet listed. Then, **set the day and start and end times** for the schedule. Click **Add** to save.
+    Select the **technician** (or backup) from the **dropdown**, or click **\+Create primary responder** if they are not yet listed. Then, **set the day and start and end times** for the schedule. Click **Add** to save.
 
     <Note>
       **Adding people is easier now.** The Add Member window lets you search by name or phone number, and filter the results to service providers only or property managers only. If the person isn't listed, you can create them as either a service provider or a property manager. You can't create someone with a phone number that's already in Latchel. Pick the existing person instead.
     </Note>
 
-    {/* TODO: screenshot of the new Add Member window */}
-
     <Frame>
-      ![Latchel 04 06 2026 10 18 AM](/images/Latchel-04-06-2026_10_18_AM.png)
+      ![Add Time Slot window](/images/contact-rotation-add-time-slot.png)
     </Frame>
   </Step>
   <Step title="**Repeat for each scheduled day**" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="p">
@@ -120,7 +116,7 @@ Any service providers you want to add to a rotation must have the **"in-house"**
     Finally, adjust the **Repeat Cadence**. This will set how often the weekly schedule repeats.
 
     <Frame>
-      ![Latchel 04 06 2026 10 50 AM](/images/Latchel-04-06-2026_10_50_AM.png)
+      ![Repeat Cadence dropdown](/images/contact-rotation-repeat-cadence.png)
     </Frame>
   </Step>
 </Steps>
@@ -132,25 +128,25 @@ Any service providers you want to add to a rotation must have the **"in-house"**
     Choose **Block Rotation**, then click **Add Layer**.
 
     <Frame>
-      ![Latchel 04 06 2026 11 05 AM](/images/Latchel-04-06-2026_11_05_AM.png)
+      ![Block Rotation selected in the Add Primary Layer window](/images/contact-rotation-type-block.png)
     </Frame>
   </Step>
   <Step title="**Select the technician and set the rotation**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
-    Select the **Technician (or Backup)** from the dropdown list, or **\+Create Technician** (or PM User if Backup Layer) if the person is not yet added in Latchel. Primary layers accept either service providers or property managers, but backups must still be property managers. Also setup the **Rotation Frequency**, and **Handoff Time**.
+    Under **Members**, click **\+Add member** to select the **Technician (or Backup)**, or create them (or a PM User if Backup Layer) if the person is not yet added in Latchel. Primary layers accept either service providers or property managers, but backups must still be property managers. Also setup the **Rotation Frequency**, and **Handoff Time**.
 
     <Tip>
       For **Rotation Frequency**, you can select the number of **days or weeks**. If the frequency is set to weeks, the **Handoff Time** will require you to **choose the day of the week** when the next person will be scheduled to be called.
     </Tip>
 
     <Frame>
-      ![Latchel 04 06 2026 11 08 AM](/images/Latchel-04-06-2026_11_08_AM.png)
+      ![Members, Rotation Frequency and Handoff Time for a block layer](/images/contact-rotation-block-settings.png)
     </Frame>
   </Step>
   <Step title="**Click Close**" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="p">
     When finished setting up your new contact rotation, click **Close** at the bottom of the screen. The new contact rotation will show on your screen.
 
     <Frame>
-      ![Latchel 06 12 2026 10 36 AM](/images/Latchel-06-12-2026_10_36_AM.png)
+      ![The finished contact rotation](/images/contact-rotation-done.png)
     </Frame>
   </Step>
 </Steps>
@@ -164,25 +160,25 @@ Use these steps to add people, adjust schedules, or add new layers to a rotation
     From your dashboard, go to the **Tools** tab, then choose **Contact Rotations**.
 
     <Frame>
-      ![Latchel 06 12 2026 10 26 AM](/images/Latchel-06-12-2026_10_26_AM.png)
+      ![Tools menu with Contact Rotations](/images/contact-rotation-tools-menu.png)
     </Frame>
   </Step>
   <Step title="**Open the rotation and click Edit**" icon="2" iconType="sharp-solid" stepNumber={2} titleSize="p">
     **Open the rotation** you want to change, then click **Edit** or the **pencil icon** at the right upper corner of the page.
 
     <Frame>
-      ![Latchel 06 12 2026 10 39 AM](/images/Latchel-06-12-2026_10_39_AM.png)
+      ![Open a rotation from the Contact Rotations list](/images/contact-rotation-open.png)
     </Frame>
 
     <Frame>
-      ![Latchel 06 12 2026 10 40 AM](/images/Latchel-06-12-2026_10_40_AM.png)
+      ![Pencil icon on the rotation page](/images/contact-rotation-pencil.png)
     </Frame>
   </Step>
   <Step title="**Make your changes in the Layers tab**" icon="3" iconType="sharp-solid" stepNumber={3} titleSize="p">
     In the **Layers** tab, make your changes:
 
-    - **To add a new layer**, click **\+Add Tech Layers** or **\+Add Backup Layer**, then follow the [Calendar Rotation](#setting-up-the-contact-rotation) or Block Rotation steps above.
-    - **To add a technician to a calendar layer**, click an **empty day** to open the **Add Time Slot** option. Select the technician, set the day and start and end times, then click **Add**.
+    - **To add a new layer**, click **\+Add Primary Layer** or **\+Add Backup Layer**, then follow the [Calendar Rotation](#setting-up-the-contact-rotation) or Block Rotation steps above.
+    - **To add a technician to a calendar layer**, click and drag on an **empty day** to open the **Add Time Slot** window. Select the technician, set the day and start and end times, then click **Add**.
     - **To change a block layer**, update the **Technician (or Backup)**, **Rotation Frequency**, or **Handoff Time**.
     - **To change how often a calendar schedule repeats**, adjust the **Repeat Cadence**.
   </Step>
