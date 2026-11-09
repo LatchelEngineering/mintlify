@@ -53,7 +53,7 @@ The agent returns these outputs, in this order, for every dive. Cza reads them i
 
 1. **Pick up the ticket.** Start the timer, set yourself as Owner, add the DD or SDDI label. For invoice disputes, check it's within 45 days. (Ticket steps are in the [Job Aid: Deep Dive (DD) Process](/latchel-admin/Product-Support-Team/Job-Aid-Deep-Dive-DD-Process).)
 2. **Run the agent.** Open the Deep Dives project, paste the [kickoff prompt](/latchel-admin/Product-Support-Team/Job-Aid-DD-Agent-Kickoff-Prompt) and the DD request. Answer every question it asks.
-3. **Check the output.** Work the checklist below. Fix anything wrong and log each fix in the DD Correction Log. To counter-check the dive or confirm how the system behaves, ask the Latchel Minion in `#ask-the-minion`.
+3. **Check the output.** Work the checklist below. Fix anything wrong and log each fix in the DD Correction Log. If you need to confirm how the system behaved on a specific work order, you can ask the Latchel Minion in `#ask-the-minion` a specific question. Don't ask it to counter-check the dive or the agent's output. That isn't what the Minion is for, and it can't open Google Docs or Wavelength links. Validating the dive is your job (see [Validation](#validation)). For more on the AI tools, see [Guide: Using AI Tools in Product Support](/latchel-admin/Product-Support-Team/Guide-Using-AI-Tools-in-Product-Support).
 4. **Create child tickets and tag.** Keep or drop each draft the agent wrote. Set Complaint Category and Root Cause.
 5. **Hand off.** Post the findings as an internal note on the DD ticket, then give the customer draft to the PS agent on the PM ticket.
 6. **Write and submit the email.** Edit the draft in your own voice and submit it in the DD Conclusion Workshop in `#ps-team-chat`.
@@ -68,7 +68,14 @@ The agent's output is a draft, and the following needs to be validated by a team
 - [ ] Call recordings listened to and photos viewed (the AI agent can't do these)
 - [ ] SendGrid or Twilio receipts checked for any "I never got it" complaint
 - [ ] Every promise in the draft has an owner and a date
+- [ ] Anything the agent says about a policy, SOP or instruction is checked against the instruction as written (the property's pre-dispatch instructions, the account settings, the SOP)
 - [ ] Your own recommendation is written in the findings
+
+<Warning>
+  **The agent can be overly deferential about policies it doesn't understand.** It can read an instruction that was followed as written as a mistake we made. For example, if a property's instructions say to call the owner first for emergencies, the agent may treat calling the owner first as an error. It is a statistical model that is good at producing plausible language, and plausible isn't the same as right. Read the instruction yourself and make the call. If the agent's verdict contradicts the instruction, log it in the DD Correction Log.
+
+  **Don't use another AI tool to check the agent.** Don't ask the Minion to counter-check the dive. Validation is done by a PS team member.
+</Warning>
 
 ## DD Correction Log
 
@@ -132,7 +139,7 @@ The agent owns the evidence work and the first drafts. People own verification, 
 | Draft the internal conclusion, the ACE customer draft, and the ACE self-score | AI Agent | Drafts only; nothing is sent |
 | Draft child tickets and the tagging suggestion | AI Agent | Agent feedback, SOP gaps, bugs, feature requests, LVN SP feedback |
 | Listen to call recordings, view photos, check SendGrid and Twilio receipts | Cza | The agent cannot do these |
-| Decide any verdict that rests on an unverified fact, and add the recommendation | Cza | Latchel policy and visible facts override AI output |
+| Decide any verdict that rests on an unverified fact or a policy the agent may have misread, and add the recommendation | Cza | Latchel policy and visible facts override AI output |
 | Create child tickets and post in Slack | Cza | Cza decides which drafts to create or drop |
 | Write the final customer email and own every promise in it | PS agent on the PM ticket | Starts from the agent's ACE draft |
 | Review the conclusion before it goes out | Maddie | DD Conclusion Workshop |
