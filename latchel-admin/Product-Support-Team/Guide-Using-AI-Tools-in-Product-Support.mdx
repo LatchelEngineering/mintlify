@@ -91,6 +91,7 @@ A read-only assistant for Latchel's systems. It looks things up and explains the
 | **Make business policy calls.** Whether to take a job, how to handle an exception, or what a customer or vendor is owed | Ops or the CSM |
 | **Share credentials or security details** | N/A |
 | **Troubleshoot code or write fixes.** It can tell you what happened and whether it looks like a bug | Engineering |
+| **Check or "counter-check" a Deep Dive, or the output of Claude or the DD Agent.** That isn't what the Minion is for, and it can't open the Google Doc or Wavelength ticket anyway | You. Validate the Deep Dive yourself against the ticket, the work order and the instructions as written. See [The DD Agent](#the-dd-agent) |
 
 #### Can it tell me how a process works?
 
@@ -102,7 +103,7 @@ It can't tell you how a _person_ should handle a situation, who to escalate to, 
 
 - Be specific. A work order number, invoice number, or company or property name helps a lot.
 - Mention the Minion in your message, and ask one question per thread.
-- It can't open Wavelength links. Paste the customer's email text into the thread.
+- It can't open Wavelength or Google Docs links. Paste the customer's email text or the details into the thread.
 - Say roughly when it happened.
 - Number your sub-questions and name the identifiers (work order, invoice, company, property) for each one.
 - Say what you want back: a yes or no, a timeline, a list, or a CSV.
@@ -198,6 +199,12 @@ Paste the Minion thread link into the ticket as an internal note.
 | **How** | Follow [SOP: Running a Deep Dive with the DD Agent (PILOT)](/latchel-admin/Product-Support-Team/sop-running-a-deep-dive-with-the-dd-agent-pilot). Start with the [kickoff prompt](/latchel-admin/Product-Support-Team/Job-Aid-DD-Agent-Kickoff-Prompt) and answer every question the agent asks |
 | **Why** | It does the evidence gathering consistently so people can spend their time on validation and judgment |
 
+<Warning>
+  **The DD Agent can be overly deferential about policies it doesn't understand.** It can also read an instruction that was followed as written as a mistake we made. For example, if a property's instructions say to call the owner first for emergencies, the agent may treat calling the owner first as an error instead of the instruction we were given. It is a statistical model that is good at producing plausible language, and plausible isn't the same as right. Check what it says about any policy or instruction against the instruction itself (the property's pre-dispatch instructions, the account settings, the SOP), and make the call yourself.
+
+  **Don't ask the Minion to counter-check a Deep Dive.** Validation is done by a PS team member, as the DD SOP describes.
+</Warning>
+
 ---
 
 ### **Rules for every AI tool**
@@ -209,6 +216,8 @@ Paste the Minion thread link into the ticket as an internal note.
 | **Verify every link** | Open each link before you send it. Never send a customer a legacy Confluence link |
 | **Show your checking** | When you escalate or ask the PSM for help, say which tool you used, what it said and what you verified yourself |
 | **Don't forward AI output as the answer** | Write the customer reply yourself, using the tool's output as input |
+| **Plausible isn't the same as right** | AI tools can sound confident and still be wrong, and they tend to go along with what's in front of them. If an answer explains away an instruction or policy as a mistake, read the instruction yourself before you agree |
+| **Use the tool for its own job** | Don't use one AI tool to check another's work. Use the Minion for what the system did, the Mintlify Assistant for SOPs and policy, and your own validation for Deep Dives |
 | **When it doesn't match** | If the answer conflicts with what engineers or product told you, ask them before using it |
 
 ---
