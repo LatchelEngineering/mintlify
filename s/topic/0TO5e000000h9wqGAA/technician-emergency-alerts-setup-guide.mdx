@@ -29,7 +29,7 @@ Most missed emergency alerts come from a phone setting that silences or filters 
     The footer tells technicians what to do if they still miss calls or texts. Change the text to add your own contact details, office hours, or anything else your team needs.
   </Step>
   <Step title="**Download and share**" icon="4" iconType="sharp-solid" stepNumber={4} titleSize="p">
-    Click **Download PDF** and choose **Save as PDF** in the print window, or click **Download web page** to get an HTML file you can email, print, or post on your own site.
+    Click **Download PDF** to save the guide as a PDF file, or click **Download web page** to get an HTML file you can email, print, or post on your own site.
   </Step>
 </Steps>
 
@@ -80,6 +80,14 @@ export const TechAlertsGuideBuilder = () => {
     r.readAsDataURL(f);
   };
 
+  const tint = (pct) => {
+    const hex = String(color || "").replace("#", ""); const n = hex.length === 6 ? parseInt(hex, 16) : 0x8a5a2b;
+    const ch = (v) => Math.round(v * pct / 100 + 255 * (1 - pct / 100)).toString(16).padStart(2, "0");
+    return "#" + ch(n >> 16 & 255) + ch(n >> 8 & 255) + ch(n & 255);
+  };
+  const [pdfMsg, setPdfMsg] = useState("");
+  const [busy, setBusy] = useState(false);
+
   const html = useMemo(() => {
     const c = esc(contact || "Work Orders");
     const path = (s) => '<div class="path">' + s + "</div>";
@@ -87,26 +95,27 @@ export const TechAlertsGuideBuilder = () => {
     const numCells = nums.map((n) =>
       '<div class="num"><div class="lab">' + esc(n.label) + '</div><div class="big">' + (esc(n.number) || '<span class="ph">(000) 000-0000</span>') + '</div><div class="note">' + esc(n.note) + "</div></div>").join("");
     const brand = logo ? '<img class="logo" src="' + logo + '" alt="' + esc(company) + ' logo">' : '<div class="co">' + esc(company) + "</div>";
+    const dot = (n) => '<svg class="dot" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="#4a3a2c"/><text x="11" y="15.2" text-anchor="middle" font-size="12" font-weight="600" font-family="Segoe UI, Arial, sans-serif" fill="#fff">' + n + '</text></svg>';
     const latchelMark = '<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#2b2b2b"/><path d="M7 17V11l5-4 5 4v6h-3.2v-3.6h-3.6V17z" fill="#fff"/></svg>';
     return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + esc(company) + ' · Technician Guide for Emergency Alerts</title><style>' +
       ':root{--a:' + color + '}*{box-sizing:border-box}body{margin:0;background:#fff;color:#2b2b2b;font:13px/1.45 "Segoe UI",Helvetica,Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}' +
-      '.page{max-width:8.5in;margin:0 auto;background:#fff}.band{background:color-mix(in srgb,var(--a) 12%,#fff);padding:24px 36px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}' +
+      '.page{max-width:8.5in;margin:0 auto;background:#fff}.band{background:' + tint(12) + ';padding:24px 36px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}' +
       '.logo{max-height:64px;max-width:240px}.co{font-size:22px;font-weight:700;color:var(--a)}.kick{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#666;text-align:right}.pow{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:6px;font-size:11px;color:#666}.pow b{color:#2b2b2b}' +
-      'h1{font-size:30px;line-height:1.1;margin:16px 0 6px}.lead{margin:0;font-size:14px;color:#444}.how{border-top:3px solid var(--a);padding:14px 36px 18px;background:color-mix(in srgb,var(--a) 5%,#fff)}' +
+      'h1{font-size:30px;line-height:1.1;margin:16px 0 6px}.lead{margin:0;font-size:14px;color:#444}.how{border-top:3px solid var(--a);padding:14px 36px 18px;background:' + tint(5) + '}' +
       '.cap{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#666;margin:0 0 8px}.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.how h3{margin:0 0 2px;font-size:14px;color:var(--a)}.how p{margin:0}' +
       '.nums{margin-top:14px;border:2px solid #4a3a2c;border-radius:12px;padding:12px 18px;background:#fff}.nhead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;color:#555}.nrow{display:grid;grid-template-columns:repeat(' + count + ',1fr);margin-top:6px}' +
       '.num{padding:0 14px;border-left:1px solid #ddd}.num:first-child{border-left:0;padding-left:0}.lab{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--a);font-weight:700}.big{font-size:26px;font-weight:700;white-space:nowrap}.ph{color:#bbb}.note{font-size:11px;color:#555}' +
-      '.body{padding:16px 36px}h2{font-size:18px;margin:0 0 10px}.fixes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.fix{border:1px solid #e3dccf;border-radius:10px;padding:10px 14px}.fix h3{margin:0 0 4px;font-size:14px;display:flex;align-items:center;gap:8px}.dot{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#4a3a2c;color:#fff;font-size:12px}.fix p{margin:0}' +
+      '.body{padding:16px 36px}h2{font-size:18px;margin:0 0 10px}.fixes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.fix{border:1px solid #e3dccf;border-radius:10px;padding:10px 14px}.fix h3{margin:0 0 4px;font-size:14px;display:flex;align-items:center;gap:8px}.dot{flex:none}.fix p{margin:0}' +
       '.os{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px}.oshead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px solid #4a3a2c;padding-bottom:4px;margin-bottom:8px}.oshead h2{margin:0}.oshead span{font-size:10px;color:#666}' +
-      '.item{margin-bottom:9px}.item h4{margin:0;font-size:13px}.path{color:var(--a);font-weight:600;font-size:12px}.item p{margin:0}.foot{border-top:3px solid #4a3a2c;background:color-mix(in srgb,var(--a) 12%,#fff);padding:14px 36px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:18px}.foot h2{font-size:17px}.foot p{margin:0 0 6px;white-space:pre-line}' +
+      '.item{margin-bottom:9px}.item h4{margin:0;font-size:13px}.path{color:var(--a);font-weight:600;font-size:12px}.item p{margin:0}.foot{border-top:3px solid #4a3a2c;background:' + tint(12) + ';padding:14px 36px;display:grid;grid-template-columns:1fr 1.5fr 1.5fr;gap:18px}.foot h2{font-size:17px}.foot p{margin:0 0 6px;white-space:pre-line}' +
       '@media print{@page{size:letter;margin:0}body{font-size:12px}}@media (max-width:640px){.cols3,.fixes,.os,.foot,.nrow{grid-template-columns:1fr}.num{border-left:0;padding:6px 0}.band,.how,.body,.foot{padding-left:16px;padding-right:16px}}' +
       '</style></head><body><div class="page"><div class="band"><div class="top"><div>' + brand + '</div><div><div class="kick">Technician guide · Emergency work orders &amp; updates</div><div class="pow">Powered by ' + latchelMark + '<b>Latchel</b></div></div></div>' +
       '<h1>Set up your phone for emergency work orders</h1><p class="lead">Most missed emergencies and work order updates come from a phone setting that silences or filters calls and texts. Share this with every technician on ' + esc(company) + ' jobs; most fixes take minutes.</p></div>' +
       '<div class="how"><p class="cap">How work order calls &amp; texts work</p><div class="cols3"><div><h3>1 · Emergencies</h3><p>You\'ll get a text and a call. To accept, tap the link, answer the call, or call back.</p></div><div><h3>2 · Check-ins</h3><p>We may call you if one of your work orders looks out of date.</p></div><div><h3>3 · Anytime</h3><p>Text or call to update your work orders or accept new jobs offered to you.</p></div></div>' +
       '<div class="nums"><div class="nhead"><span class="cap" style="margin:0">' + saveCap + '</span><span>Save ' + (count === 1 ? "it" : "them together") + ' as one contact: “' + c + '”</span></div><div class="nrow">' + numCells + "</div></div></div>" +
-      '<div class="body"><h2>Start here: three fixes for every phone</h2><div class="fixes"><div class="fix"><h3><span class="dot">1</span>' + saveTitle + '</h3><p>Save ' + them + ' in one contact named “' + c + '.” Phones trust saved numbers and are far less likely to silence or filter them.</p></div>' +
-      '<div class="fix"><h3><span class="dot">2</span>Mark it a Favorite</h3><p>iPhone: open the contact › Add to Favorites. Android: open the contact › tap the star. Favorites can ring through Do Not Disturb.</p></div>' +
-      '<div class="fix"><h3><span class="dot">3</span>Text “START” if needed</h3><p>If anyone ever replied STOP to ' + (count === 1 ? "this number" : "one of these numbers") + ', its texts are switched off. Texting START to that same number turns them back on.</p></div></div>' +
+      '<div class="body"><h2>Start here: three fixes for every phone</h2><div class="fixes"><div class="fix"><h3>' + dot("1") + '' + saveTitle + '</h3><p>Save ' + them + ' in one contact named “' + c + '.” Phones trust saved numbers and are far less likely to silence or filter them.</p></div>' +
+      '<div class="fix"><h3>' + dot("2") + 'Mark it a Favorite</h3><p>iPhone: open the contact › Add to Favorites. Android: open the contact › tap the star. Favorites can ring through Do Not Disturb.</p></div>' +
+      '<div class="fix"><h3>' + dot("3") + 'Text “START” if needed</h3><p>If anyone ever replied STOP to ' + (count === 1 ? "this number" : "one of these numbers") + ', its texts are switched off. Texting START to that same number turns them back on.</p></div></div>' +
       '<div class="os"><div><div class="oshead"><h2>iPhone</h2><span>All iPhones · menu names vary by iOS version</span></div>' +
       item("Let Favorites through Focus", "Settings › Focus › Do Not Disturb › People", "Allow calls from Favorites, add the " + c + " contact, turn on Allow Repeated Calls. Repeat for every Focus, incl. Sleep.") +
       item("Stop screening unknown callers", "Settings › Apps › Phone › Screen Unknown Callers", "Set to Never. On older iOS, turn off Silence Unknown Callers.") +
@@ -125,11 +134,34 @@ export const TechAlertsGuideBuilder = () => {
     const d = frameRef.current && frameRef.current.contentDocument;
     if (d && d.body) setFrameH(Math.max(600, d.documentElement.scrollHeight + 4));
   };
-  const printIt = () => { const w = frameRef.current && frameRef.current.contentWindow; if (w) { w.focus(); w.print(); } };
+  const loadLib = (src, ready) => new Promise((resolve, reject) => {
+    if (ready()) return resolve();
+    const s = document.createElement("script");
+    s.src = src; s.onload = () => resolve(); s.onerror = () => reject(new Error("load"));
+    document.head.appendChild(s);
+  });
+  const fileBase = (company || "Company").replace(/[^a-z0-9]+/gi, "-") + "-Technician-Emergency-Alerts-Guide";
+  const downloadPdf = () => {
+    setBusy(true); setPdfMsg("Making your PDF…");
+    const fail = () => { setBusy(false); setPdfMsg("Couldn't make the PDF. Check your connection and try again, or use Download web page."); };
+    loadLib("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js", () => !!window.html2canvas)
+      .then(() => loadLib("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js", () => !!(window.jspdf && window.jspdf.jsPDF)))
+      .then(() => window.html2canvas(frameRef.current.contentDocument.querySelector(".page"), { scale: 2, windowWidth: 816, backgroundColor: "#ffffff", logging: false }))
+      .then((canvas) => {
+        const pdf = new window.jspdf.jsPDF({ unit: "pt", format: "letter" });
+        const pw = 612, ph = 792, ratio = canvas.width / canvas.height;
+        let w = pw, h = pw / ratio;
+        if (h > ph) { h = ph; w = ph * ratio; }
+        pdf.addImage(canvas.toDataURL("image/jpeg", 0.95), "JPEG", (pw - w) / 2, 0, w, h);
+        pdf.save(fileBase + ".pdf");
+        setBusy(false); setPdfMsg("");
+      })
+      .catch(fail);
+  };
   const download = () => {
     const url = URL.createObjectURL(new Blob([html], { type: "text/html" }));
     const a = document.createElement("a");
-    a.href = url; a.download = (company || "Company").replace(/[^a-z0-9]+/gi, "-") + "-Technician-Emergency-Alerts-Guide.html";
+    a.href = url; a.download = fileBase + ".html";
     a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
 
@@ -170,9 +202,10 @@ export const TechAlertsGuideBuilder = () => {
         </div>
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <button type="button" style={main} onClick={printIt}>Download PDF</button>
+        <button type="button" style={main} onClick={downloadPdf} disabled={busy}>{busy ? "Making PDF…" : "Download PDF"}</button>
         <button type="button" style={btn} onClick={download}>Download web page</button>
       </div>
+      {pdfMsg ? <div style={{ fontSize: 13 }}>{pdfMsg}</div> : null}
       <div style={{ fontSize: 13, fontWeight: 700 }}>Preview</div>
       <iframe ref={frameRef} title="Technician guide preview" srcDoc={html} onLoad={fitFrame} style={{ width: "100%", height: frameH, border: "1px solid rgba(127,127,127,.3)", borderRadius: 8, background: "#fff" }} />
     </div>
