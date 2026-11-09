@@ -69,6 +69,46 @@ Have your own way of handling common issues? In the **Troubleshooting Instructio
   Troubleshooting Instructions is a beta feature. It's set at the company level only, so it can't yet be customized by portfolio or property.
 </Note>
 
+## **Intake Rules vs. Troubleshooting Settings**
+
+Both live on the same **Intake Settings** page, but they do different jobs. **Intake Rules** decide what happens to a work order after the conversation. **Troubleshooting** settings shape how Latchel AI talks to your resident during the conversation.
+
+|  | **Intake Rules** | **Troubleshooting settings** |
+| --- | --- | --- |
+| **What it controls** | The outcome for the work order | What Latchel AI says and how far it troubleshoots |
+| **Where to find it** | **Account Settings > Intake Settings > Resident Intake** | **Account Settings > Intake Settings > Conversation Settings** |
+| **How it works** | Each rule pairs a plain-English situation with an outcome. For example, "No hot water for 24+ hours" can lead to **Urgent**. Latchel checks your rules against the whole conversation when the work order is created, and asks the resident follow-up questions if it needs more detail. | **Troubleshooting depth** sets how hard Latchel AI tries to solve the problem before routing the request. **Troubleshooting instructions** are free-text facts and guardrails, like "The water shutoff for every unit is in the garage." |
+| **Where it applies** | Company, Portfolio, or Property level. Lower levels inherit from above unless you override them. | Company level only, for now |
+| **Limits** | Up to 50 rules per rule set, and 2,000 characters per rule | Up to 1,000 characters for troubleshooting instructions |
+
+**Intake Rule outcomes:**
+
+- **Normal**: a service provider is dispatched.
+- **Urgent**: a service provider is dispatched within a 72-hour window.
+- **Emergency**: a live agent does second-level troubleshooting.
+- **Needs PM Approval**: the work order waits for your approval.
+- **Contact On-Call**: calls the on-call rotation you choose. This only works if your company is subscribed to the ER-SaaS-RBP package with the "On-Call" option enabled.
+- **Resident Responsible**: cancels the work order and tells the resident.
+- **Send Email Only**: no work order is created.
+
+**Which one should you use?**
+
+- To control the result (severity, approval, on-call, resident responsibility, or email only), use an **Intake Rule**.
+- To change what Latchel AI says or how far it troubleshoots, use **Troubleshooting depth** or **instructions**.
+- To share property facts or forbid risky DIY steps, use **Troubleshooting instructions**.
+
+<Warning>
+  Don't put outcomes in your troubleshooting instructions, like "Treat leaks as emergencies." Outcomes belong in an Intake Rule.
+</Warning>
+
+**Best practices:**
+
+- **Rules:** Keep to one topic per rule. Use concrete thresholds like "below 50°F" or "24+ hours". Be clear about AND and OR. Don't write the outcome into the rule text, because you pick it in a separate step. The editor flags vague list pairings, unclear AND or OR, several concerns in one rule, and off-topic rules, so fix those before you save.
+- **Testing:** Use the rule set tester to try sample conversations before you roll out changes.
+- **Defaults:** Set the company-wide default once, and only override it at the Portfolio or Property level where one really differs.
+- **Instructions:** Keep them short and factual, because Latchel AI reads them every turn.
+- **Depth:** Start at **Solve Issues**. Lower it if you want service providers sent right away. Raise it if your goal is fewer emergency dispatches.
+
 ## **Steps to Activate**
 
 <Steps>
