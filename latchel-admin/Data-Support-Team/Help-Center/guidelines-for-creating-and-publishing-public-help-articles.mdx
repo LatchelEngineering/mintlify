@@ -137,7 +137,7 @@ Write every task the reader does as a `<Steps>` block, with a Heading 2 above it
 - **Put each screenshot inside the step it belongs to**, right after the instruction.
 - **Give every screenshot a colored border**, the same as the rest of the Help Center:
   - Colors: **#B19CF8** (purple), **#7ED5D5** (teal) and **#FF9B8A** (coral). Rotate them in that order down the article.
-  - The border is part of the image file: a flat colored margin around the screenshot (about 19 px on a full-width screenshot), with a soft shadow along the bottom and right edges.
+  - The border is part of the image file: a flat **15 px** colored margin around the screenshot, with a soft shadow along the bottom and right edges.
 - **Show the current interface.** Replace screenshots and videos that show an old menu or layout.
 - **Blur personal information** (names, emails, phone numbers, addresses) before uploading.
 - Upload images to the `images/` folder with a descriptive file name.
@@ -147,8 +147,25 @@ Write every task the reader does as a `<Steps>` block, with a Heading 2 above it
   ![An older screenshot without a border, and the same screenshot with the Help Center's colored border](/images/help-article-sop-image-border.png "Image border before and after")
 </Frame>
 
+### **Marking Up Screenshots**
+
+Mark up a screenshot so the reader can spot what to click right away. Use the same style on every image:
+
+| Markup | When to use it | Style |
+| --- | --- | --- |
+| **Box** | The option to click is easy to see. | Coral (#FF9B8A) outline around the option. |
+| **Numbered circle** | The step has more than one click, so the order matters. | Coral circle with a white outline. The number sits in the **center** of the circle. |
+| **Arrow** | The option is in a crowded screen, inside a dropdown that has to be expanded, or not obvious. | Coral, **big arrowhead**, **stroke width 2**. The numbered circle can sit at the arrow's tail. |
+| **Text label** | The reader needs a short extra instruction on the image itself. | **Open Sans, 25 px**, white text on a **#B19CF8** or **#7ED5D5** background, with a thin shadow so it stands out. |
+
+Keep labels short, a few words each, and don't let markup cover the option it points to.
+
+<Frame>
+  ![A screenshot marked up with a numbered box, a numbered arrow, and two text labels](/images/help-article-sop-markup.png "Screenshot markup example")
+</Frame>
+
 <Tip>
-  Ask Claude to add the border to a screenshot before you upload it. It uses the same tool that bordered the existing 1,110 screenshots, so new images match exactly.
+  Ask Claude to border and mark up a screenshot before you upload it. Its image tool follows the border and markup rules on this page, so new images match.
 </Tip>
 
 ## **Linking to Other Guides**
@@ -220,7 +237,7 @@ Don't end an article with a "Related guides" or "Other articles" list. Every pag
 | **Frontmatter** | It has a clear `title` and a one-sentence `description`. |
 | **Headings** | Main sections are Heading 2, no bold text is used as a section title, and every section shows in the **On this page** menu. |
 | **Steps** | Every task with 2 or more actions is in `<Steps>`, with short bold titles and `titleSize="p"`. |
-| **Images** | Every image is in a `<Frame>`, sits inside its step, has a colored border, shows the current interface, and has personal information blurred. |
+| **Images** | Every image is in a `<Frame>`, sits inside its step, has a 15 px colored border, follows the markup style, shows the current interface, and has personal information blurred. |
 | **Links** | Pointers to other guides are cards with a lead-in, and there's no "Related guides" list at the bottom. |
 | **Build** | The preview looks right and `mint validate` passes. |
 
