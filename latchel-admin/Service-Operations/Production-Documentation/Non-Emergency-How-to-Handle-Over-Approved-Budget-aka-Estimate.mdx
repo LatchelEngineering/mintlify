@@ -54,7 +54,7 @@ confluenceUrl: "https://latchel.atlassian.net/wiki/spaces/OPS/pages/764313974/No
 </Note>
 
 <Warning>
-  Whenever a Service Provider sends multiple estimates for the same Work Order (for example: one estimate to _repair_ an existing equipment and another to _replace_ the same equipment), we will seek Property Manager’s approval prior to proceeding, even if the estimates fall under the Hard Limit. Latchel will not make the decision of which estimate to choose, we will allow the Property Manager to make that decision. In such cases, follow the same procedure for when an estimate exceeds the hard limit.
+  **Estimates with more than one option:** An SP can submit up to 5 options (Repair, Replace or Other) on one estimate, each with a price, and can mark one as recommended. **An estimate with two or more options is never auto-approved, even if every option is under the Hard Limit.** It goes to the owner if the owner approves new budgets, otherwise to the PM. Latchel doesn't choose the option. Whoever approves picks one, and that option's price becomes the budget.
 </Warning>
 
 <Warning>
@@ -180,7 +180,7 @@ In the situation where a Service Provider can complete a work order, follow Part
             3. Inform the service provider of the following:
                1. _The invoice has been uploaded to the Work Order and we have send your request to our payment department so that they can process process payment._
    2. Continue with  the following steps for the estimate:
-      1. Proceed to "Handle the Pending Estimate Work Order"
+      1. Proceed to "Handle the Awaiting Estimate Work Order"
          1. Inform the Service Provider that they can leave the property address now.
             1. _You may leave the property now. Please stay vigilant to any emails or text messages that we may send to Approve the job. If the job is Denied after we have spoken to the Property Manager, you will receive a phone call from one of our Associates._
          2. If Approved for the job, tell the Service Provider that scheduling functions will automatically be sent to them after it's approved by the Property Manager and scheduling has been completed by the Resident.
@@ -202,10 +202,9 @@ In the situation where a Service Provider can complete a work order, follow Part
   Request that the SP also upload the estimate to the work order via the Service Provider Interface, or send a copy to [team@latchel.com](mailto:team@latchel.com), for documentation purposes.
 </Note>
 
-1. **Handle the "Pending" Work Order**
-   1. If the Service Provider did not ask to be paid immediately:
-      1. From "Put the job on hold", choose "Pending" as the destination status.
-      2. **‼️IMPORTANT:** Refer to [(SOP) How to: Put a Job on Hold](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold) to make sure you're following proper procedure for putting a job into "Pending".
+1. **Handle the "Awaiting Estimate" Work Order**
+   1. If the Service Provider did not ask to be paid immediately, click **Action → Waiting on an Estimate**. Enter the SP's date in **"When will the service provider send it?"** (leave blank for 3 days), add what the SP said in **Additional Details**, and click **Submit**.
+   2. **‼️IMPORTANT:** Follow [How to: Put a Job on Hold → Awaiting Estimate](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#awaiting-estimate-non-emergency-only). Don't create an SP follow-up task.
    2. Add "(ESTIMATE)" to the beginning of the job title.
    3. **Lock-in the Service Provider to the job**, so the job is not mistakenly re-assigned to another Service Provider. 
       1. From the Existing Work Order Interface, Navigate to the Service Provider section.
@@ -228,7 +227,7 @@ In the situation where a Service Provider can complete a work order, follow Part
          />
    2. Upload the Estimate to the Work Order.
       1. [How to: Add a File to a Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Add-a-File-to-a-Work-Order#tech-101-how-to-add-a-file-to-a-work-order)
-2. Change the status of Work Order from "Pending" to   **“Needs Owner Approval”**
+2. Change the status of the Work Order from "Awaiting Estimate" to **“Needs Owner Approval”**
    1. A text field will appear. This message will be relayed to the Property Manager.
       1. You can write: "_We've received an estimate. To review this estimate, please check the "Files" section of this Work Order._"
       2. **IMPORTANT:** Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#how-to-put-a-job-on-hold) to make sure you're following proper procedure for putting a job into "Needs Owner Approval".
@@ -236,21 +235,18 @@ In the situation where a Service Provider can complete a work order, follow Part
 
 ### **PART 4 - How to: Handle an** Approved **and a** Denied **Written Estimate** **PART 4 - How to: Handle an** Approved **and a** Denied **Written Estimate** **PART 4 - How to: Handle an** Approved **and a** Denied **Written Estimate** 
 
+<Warning>
+  Always record the decision (**Action → Update Owner Approval** or **Action → Approve or Deny**) before you cancel the work order or move it out of Needs Approval / Needs Owner Approval. Otherwise **the estimate is cancelled.**
+</Warning>
+
 1. **✅Approved Estimate:** **Enter into the Work Order that contains the Service Provider whose estimate amount was ✅ Approved.**
    1. The status of the Work Order should currently be in "Needs Owner Approval".
       1. See [Part 2.](#)
-      2. Click on “Take action”
-      3. Click on “Approve Work”
-         1. ![Download 2026 09 25T021321 076](/images/download---2026-09-25T021321.076.png "Download 2026 09 25T021321 076")
-         2. Enter in approved budget limit for this job
-         3. Summarize the approval from the PM into the summary section, include ticket number from Assembly and method of communication (phone, email, Webchat).
-            1. <img
-                 src="/images/download---2026-09-25T021414.726.png"
-                 alt="Download 2026 09 25T021414 726"
-                 title="Download 2026 09 25T021414 726"
-                 style={{ width:"81%" }}
-               />
-            2. Click "Submit"
+      2. Record the approval (see [How to: Put a Job on Hold → Needs Owner Approval](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#needs-owner-approval)):
+         - **Needs Owner Approval:** click **Action → Update Owner Approval** (or **Record owner's decision** on the Estimate card), then select the approved option. Its price becomes the budget.
+         - **Needs Approval:** click **Action → Approve or Deny**, select **Approve the work order**, and enter the **Approved budget**.
+      3. Add any details the SP needs in **Additional Details to Provide the Service Provider**, then click **Submit**.
+      4. Leave a WO note with the Assembly ticket number and how the approval came in.
       4. Change the status back to "Scheduling with Tenant"
       5. Replace existing "(ESTIMATE)" from the Work Order title to: (APPROVED).
          1. ![Download 2026 09 25T021446 841](/images/download---2026-09-25T021446.841.png "Download 2026 09 25T021446 841")
@@ -262,22 +258,11 @@ In the situation where a Service Provider can complete a work order, follow Part
       1. **Preferred Service Providers:** Invoice the Property Manager directly.
          1. The status of the Work Order should currently be in "Needs Owner Approval".
             1. See [Part 2.](#)
-            2. Click on “Take action”
-            3. Click on "Deny Work"
-               1. ![Download 2026 09 25T021537 504](/images/download---2026-09-25T021537.504.png "Download 2026 09 25T021537 504")
-            4. Add the ticket number, how the PM contacted us (phone, email, or Webchat), and the outcome.
-            5. For example:
-               1. #Ticket 1234 email from property manager: owner declined estimate. 
-                  1. <img
-                       src="/images/download---2026-09-25T021614.592.png"
-                       alt="Download 2026 09 25T021614 592"
-                       title="Download 2026 09 25T021614 592"
-                       style={{ width:"69%" }}
-                     />
-               2. Click "Submit"
-                  1. After you click "Submit" the Work Order will be "Cancelled"
-               3. Write Effective Notes
-                  1. Educate the PM about using their interface to deny work for next time.
+            2. Record the denial: **Action → Update Owner Approval → Owner denied** (Needs Owner Approval), or **Action → Approve or Deny → Deny** (Needs Approval). The work order is cancelled.
+            3. Add the reason in **Additional Details to Provide the Service Provider**. This is sent to the SP.
+            4. Click **Submit**, then leave a WO note with the ticket number, how the PM or owner contacted us, and the outcome. For example: _#Ticket 1234, email from property manager: owner declined estimate._
+            5. Write Effective Notes
+               1. Educate the PM about using their interface to deny work for next time.
          2. **Latchel Service Provider with Direct Deposit payment method**\*\*:\*\*
             1. The status of the Work Order should currently be in "Needs Owner Approval".
             2. Click on the secondary take action button.
@@ -552,7 +537,7 @@ In the situation where a Service Provider can complete a work order, follow Part
 
   - ✅ **If the estimate is equal to or under the Hard Budget** → You may approve via the link. After approving, update the Approved Budget in the work order and document the action in the WO notes.
   - ❌ **If the estimate exceeds the Hard Budget** → Do **NOT** approve via the link. Escalate to the Property Manager.
-  - ⚠️ **If the SP submits multiple estimates** (e.g., repair vs. replace) → Do **NOT** approve via the link. Escalate all options to the Property Manager regardless of amount.
+  - ⚠️ **If the estimate has two or more options** (e.g., repair vs. replace) → Do **NOT** approve via the link. These are never auto-approved. Send all options to the owner (if the owner approves new budgets) or the PM, regardless of amount.
 
   **Always remember to:**
 
