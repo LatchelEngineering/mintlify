@@ -19,14 +19,18 @@ We want to prevent lost, delayed, or mishandled invoices and estimates sent by s
 When working on new & unsorted tickets, you will come across emails and estimates from service providers. Email is a very common way for service providers to share these documents.
 
 <Note>
-  **🆕 Forward first (default):** Forward any invoice or estimate email from Assembly to [**invoices@inbox.latchel.com**](mailto:invoices@inbox.latchel.com) (invoices) or [**estimates@inbox.latchel.com**](mailto:estimates@inbox.latchel.com) (estimates). AI reads the email and its attachments (WO or invoice number, property address and unit, vendor name, resident name), finds the matching work order and **attaches the file to it**.
+  **🆕 Forward first (default):** Use the **Forward** button in Wavelength (Assembly) to send the SP's email, with its original attachments, to [**invoices@inbox.latchel.com**](mailto:invoices@inbox.latchel.com) (invoices) or [**estimates@inbox.latchel.com**](mailto:estimates@inbox.latchel.com) (estimates). Only forward the email where the SP **first sends** the invoice or estimate. AI reads the email and its attachments (WO or invoice number, property address and unit, vendor name, resident name), finds the matching work order and **attaches the file to it**.
 
   ⚠️ **The AI only attaches the file. It does not start the estimate approval flow, update the approved budget, or approve or pay anything.** You still own the budget check and any budget update (Step 4), and payment or escalation (Steps 5–6). No reply to the vendor is needed if the email only submits an invoice or estimate. If the vendor asks a question or needs a decision, reply with a custom response that answers only that part.
 </Note>
 
 ### Step 1 - Read the Email
 
-1. Read the email along with any attached files and determine what actions need to be taken.
+1. Read the **whole** email along with any attached files and determine what actions need to be taken. Don't assume it's only an invoice or estimate submission. SPs often add a question, a request (for example, "Can I proceed?"), or a payment follow-up in the same email.
+2. **Don't forward:**
+
+   - **Payment follow-ups and duplicates:** if the same invoice or estimate is already in the WO's **Files** tab, don't forward or re-upload it. Handle the email as a payment follow-up per [Service Ops: How to Handle Payment-Related Inquiries](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Service-Ops-How-to-Handle-Payment-Related-Inquiries).
+   - Replies, follow-ups, or the AI's own error emails.
 
 <img
   src="/images/image-17.png"
@@ -37,11 +41,12 @@ When working on new & unsorted tickets, you will come across emails and estimate
 
 ### Step 2 - Forward the email to the AI inbox
 
-1. Forward the original email with all attachments to [**invoices@inbox.latchel.com**](mailto:invoices@inbox.latchel.com) or [**estimates@inbox.latchel.com**](mailto:estimates@inbox.latchel.com). Don't strip the attachments or edit the subject.
+1. Click **Forward** in Wavelength (Assembly) and send the original email, with all attachments, to [**invoices@inbox.latchel.com**](mailto:invoices@inbox.latchel.com) or [**estimates@inbox.latchel.com**](mailto:estimates@inbox.latchel.com). Don't strip the attachments or edit the subject.
    - **Estimate and invoice in the same email?** Forward it once to either address. Both inboxes handle multiple submissions: the AI reads every attachment and attaches each one to the matching WO. You don't need to split the email or send it twice. If the AI has trouble with any of them, it routes the email to [team@latchel.com](mailto:team@latchel.com) (see Step 2a).
 2. Give it a few minutes, then search the WO in the Latchel console and check that the file is in the WO's Files tab.
 3. If the file is attached, move on to Step 4.
 4. If the AI can't match the email, it comes back to Assembly as a **new ticket from [team@latchel.com](mailto:team@latchel.com)** with its findings and best guesses. Handle that ticket with Step 2a. **Do not forward it to the inbox again.**
+5. **If the forward itself fails** (you get an error when you send, or a bounce because the files are too large), attach the file to the WO by hand (Step 2a, item 3) and let Support know so they can follow up.
 
 ### Step 2a - Handle unmatched invoices or estimates
 
@@ -86,6 +91,16 @@ When working on new & unsorted tickets, you will come across emails and estimate
 ### Step 4 - Confirm the approved budget
 
 Whether the file was attached by the AI or by hand, do this step by hand every time. **The AI does not update the approved budget or send estimates for approval.**
+
+<Note>
+  **Estimates: check the WO status first.**
+
+  - **WO is in Awaiting Estimate or Awaiting Bid:** click **Action → Add Estimate** and enter the estimate (one total, or each option). The system handles approval: a single price within budget is auto-approved, and anything else goes to the PM, or to the owner if the owner approves new budgets. **Don't update the budget by hand or move the WO yourself.** Then go to Step 7.
+  - **Any other status** (Add Estimate isn't available): follow the budget check below.
+  - **Two or more options, without Add Estimate:** never approve. Move the WO to **Needs Owner Approval** (Step 6), regardless of the amount.
+
+  Invoices always follow the budget check below.
+</Note>
 
 1. Corroborate that the amount quoted in the invoice/estimate is equal to or less than the approved budget.
    1. **NOTE**: All estimates must clearly indicate the exact total amount before proceeding with any approval process. Estimates without the full details must be confirmed prior to moving forward.
