@@ -152,7 +152,7 @@ In the situation where a Service Provider can complete a work order, follow Part
               title="Download 2026 09 25T003720 486"
               style={{ width:"66%" }}
             />
-         2. Alternatively, Service Providers can send an email to [team@latchel.com](mailto:team@latchel.com)
+         2. Alternatively, Service Providers can email the estimate to [estimates@inbox.latchel.com](mailto:estimates@inbox.latchel.com).
 2. **Service Provider Payment**
    1. "Please pay me for this initial visit" - The Service Provider is **insisting** on payment after the first visit (while the Estimate for the rest of the job is pending).
       1. **Note:** Escalation to the Payments team should occur only if the service provider insists on payment despite being informed that it must be collected after the completion of the work order.
@@ -216,17 +216,11 @@ In the situation where a Service Provider can complete a work order, follow Part
 
 ### **PART 3 - Receive the Written Estimate via Email and Send it to the Owner/Property Manager for Approval or Denial**
 
-1. After the Estimate document comes into Assembly Email
-   1. Check if the document is saved as a PDF file.
-      1. If not, save the document as a PDF file.
-      2. <img
-           src="/images/25870c70-e435-45d7-9411-a637580134ba.png"
-           alt="25870c70 E435 45d7 9411 A637580134ba"
-           title="25870c70 E435 45d7 9411 A637580134ba"
-           style={{ width:"68%" }}
-         />
-   2. Upload the Estimate to the Work Order.
-      1. [How to: Add a File to a Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Add-a-File-to-a-Work-Order#tech-101-how-to-add-a-file-to-a-work-order)
+1. After the estimate comes into Assembly email:
+   1. Forward the original email with all attachments to [estimates@inbox.latchel.com](mailto:estimates@inbox.latchel.com). Don't strip the attachments or edit the subject. Follow Step 2 of [How to: Handle Invoices or Estimates Sent via email](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Invoices-or-Estimates-Sent-via-email).
+   2. After a few minutes, check that the file is in the WO's Files tab.
+   3. **Only upload the estimate by hand if there's an error:** the AI couldn't match it (it comes back to Assembly as a new ticket from [team@latchel.com](mailto:team@latchel.com)), or the email bounced. Save it as a PDF if needed and upload it. See Step 2a of [How to: Handle Invoices or Estimates Sent via email](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Invoices-or-Estimates-Sent-via-email) and [How to: Add a File to a Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Add-a-File-to-a-Work-Order#tech-101-how-to-add-a-file-to-a-work-order).
+   4. The AI only attaches the file. It doesn't start the estimate approval, so continue with step 2 below.
 2. Change the status of the Work Order from "Awaiting Estimate" to **“Needs Owner Approval”**
    1. A text field will appear. This message will be relayed to the Property Manager.
       1. You can write: "_We've received an estimate. To review this estimate, please check the "Files" section of this Work Order._"
@@ -247,7 +241,7 @@ In the situation where a Service Provider can complete a work order, follow Part
          - **Needs Approval:** click **Action → Approve or Deny**, select **Approve the work order**, and enter the **Approved budget**.
       3. Add any details the SP needs in **Additional Details to Provide the Service Provider**, then click **Submit**.
       4. Leave a WO note with the Assembly ticket number and how the approval came in.
-      4. Change the status back to "Scheduling with Tenant"
+      4. If the system doesn't move the WO to scheduling after you submit, change the status to "Scheduling with Tenant" manually.
       5. Replace existing "(ESTIMATE)" from the Work Order title to: (APPROVED).
          1. ![Download 2026 09 25T021446 841](/images/download---2026-09-25T021446.841.png "Download 2026 09 25T021446 841")
       6. Write Effective Notes
