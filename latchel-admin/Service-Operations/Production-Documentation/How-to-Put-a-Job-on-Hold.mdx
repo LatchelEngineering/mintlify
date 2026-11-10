@@ -54,24 +54,51 @@ Fill up the form, starting with the reason for putting the job on hold.
   📝NOTE: Automated notifications are triggered and sent immediately when a work order is moved to a different status. Operations associates must confirm that these notifications are sent to the relevant parties before leaving the work order. If you notice that the notifications are not being sent, submit a [bug report](https://app.latchel.com/admin/bug-reports). If you're not sure it's a bug, post it in #ops_assistance_hub first. See the [bug report workflow](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Use-the-Serv-Ops-Intake-Workflows#bug-report-latchel-minion-or-high-tech-sev).
 </Note>
 
+## **Awaiting Estimate (Non-Emergency Only)**
+
+<Warning>
+  ⚠️ **Use this for non-emergency work orders only.** For emergencies, keep the WO in **Pending** and follow the Emergency Rule under Pending below.
+</Warning>
+
+Use this when a Service Provider tells us they need time to send an estimate on a **non-emergency** work order.
+
+1. On the work order, click **Action → Waiting on an Estimate**.
+2. In **"When will the service provider send it? (optional)"**, enter the date the SP commits to. If you leave it blank, the system uses **3 days**.
+3. In **"Additional Details (optional)"**, enter anything the SP said about the estimate (for example, what they found and what the estimate will cover).
+4. Click **Submit**. The WO's **Current State** changes to **Awaiting Estimate**.
+5. Lock in the Service Provider.
+6. **Don't create an SP follow-up task.** Latchel follows up with the SP automatically. If the estimate is **3 days past the due date**, the system creates one **"Estimate Overdue"** task for the **PM**.
+7. **When the SP sends the estimate** while the WO is in **Awaiting Estimate**:
+   - **By email:** forward it to [estimates@inbox.latchel.com](mailto:estimates@inbox.latchel.com) per [How to: Handle Invoices or Estimates Sent via email](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Invoices-or-Estimates-Sent-via-email). **Don't use Add Estimate.** The AI reads the email and adds the estimate to the WO, so adding it again creates a duplicate. After a few minutes, check that the **Estimate** card shows at the top of the Details tab. Emailed estimates are **never auto-approved**. They always go for approval.
+   - **By phone or text:** click **Action → Add Estimate** (shown under **Suggested**) and enter it. The estimate then shows as an **Estimate** card on the Details tab. A single price is handled the same as before, including auto-approval when it's within budget. An estimate with two or more options always goes to the PM, or to the owner if the owner approves new budgets.
+
+<Note>
+  **If the SP set it themselves** (they picked "I'll provide an estimate later" in their update), the WO is already in Awaiting Estimate. Leave it.
+</Note>
+
+<Warning>
+  ⚠️ IMPORTANT: If the service provider sends the estimate directly to the Property Manager, **don't use Awaiting Estimate:**
+
+  - **The SP gives you the amount:** move the WO to **"Needs Owner Approval"** with that amount.
+  - **The SP won't or can't give the amount, or says they'll send the estimate directly to the PM:** complete your current task and move the WO to **"Waiting for PM"** (see [Waiting for PM](#waiting-for-pm), "Estimate Issues"). Assign it to the Property Manager user group with the task due immediately, and explain that the SP is sending the estimate directly to them.
+</Warning>
+
+**Emergency WO already in Awaiting Estimate** (set by the SP or the PM):
+
+- **SP-set:** click **Action → Put This Work Order on Hold → Pending**, then follow the Emergency Rule under Pending below.
+- **PM-set:** check the notes to confirm the issue is mitigated, leave the WO and add a WO note. If it's **not mitigated and is PD/EH**, call the escalation contacts per [Job Aid: PM Outbound Communication for Emergency WOs](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs).
+
 ## **Pending**
 
 Only use this if:
 
-1. You're waiting on a Service Provider to send us an estimate. To make sure the property manager understands the estimate, please make sure the provider is providing an itemized estimate.
+1. **Emergency work orders:** You're waiting on a Service Provider to send us an estimate. Make sure the provider is providing an itemized estimate. **For non-emergencies, use [Awaiting Estimate](#awaiting-estimate-non-emergency-only) instead.**
    1. **🛑 Emergency Rule:** For Emergency work orders, the "two attempts" and "separate days" rules **do not apply.** You only get **one (1) attempt** to reach the Service Provider for this estimate. If they do not provide the estimate or a firm commitment to send it immediately, first confirm whether this Service Provider has already been to the property or performed any diagnostic/repair work:
       - **If they have NOT visited:** source a new Service Provider — refer to [(EMERGENCY) How to: Assign a Preferred + Latchel Network Service Provider](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/EMERGENCY-How-to-Assign-a-Preferred-Latchel-Network-Service-Provider#emergency-how-to-assign-a-preferred-latchel-network-service-provider).
       - **If they HAVE visited:** do not reassign, since a new provider would lose that diagnostic work. Instead, perform the **Mitigation Test** (confirm if the immediate threat is stopped) using the same logic as the [Waiting for Materials](#) section:
         - **If Mitigated, or the issue is not PD/EH:** follow path 2 of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules): de-escalate to Urgent, keep "(EMERGENCY)" in the title, and leave the WO in **Pending** so the SP can still submit the estimate.
         - **If NOT Mitigated and the issue is PD/EH:** follow path 3 of the Stale Emergency rule: call the escalation contacts, and if they're unresponsive, use the **"Forward to PM"** tool and document what the current Service Provider found, so the PM has full context. If exception B or C applies, follow it and leave the WO in **Pending**.
-   2. For non-emergency work orders, "Describe why you moved the job to this status", explain why you need that estimate. For example, the service provider went to the property and learned the root cause of the problem will cost more than the initial estimate, so we are requesting an itemized estimate to seek approval from the Property Manager.
-      1. Select the service provider name in the "Who is this task about?" and assign the task to the Service Provider Follow up group.
-      2. Set follow-up task for the next business day, due at 9 am (unless the Service Provider provided a specific date).
-         1. If the Service Provider provides the estimate and you need approval from the Property Manager, change the status to "Needs Owner Approval".
-            <Warning>
-              ⚠️IMPORTANT: If the service provider confirms they have already sent the estimate directly to the Property Manager AND can provide the estimate amount, update the work order status to "Needs Owner Approval." If they are unable or unwilling to confirm the amount, or if they state they will send the estimate directly to the Property Manager, complete your current task and keep the status as in "Needs Owner Approval" and create a new task to the Property Manager. For PD/EH issues, also call the escalation contacts to ensure timely follow-up. If escalation contacts are unresponsive, follow path 3 of the **Stale Emergency rule** in [Informational: Basic Service Ops Guidelines and Rules](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Informational-Basic-Service-Ops-Guidelines-and-Rules).
-            </Warning>
-            1. Go to Step B - "Waiting for Owner Approval".
+   2. **Non-emergency work orders:** don't use Pending for estimates. Use [Awaiting Estimate](#awaiting-estimate-non-emergency-only).
    3. For the associates following up on the task:
       1. **📝NOTE:** Make sure to review the Work Order history and search for any emails the service provider may have set regarding the Work Order.
       2. Complete the task to follow up with the vendor.
@@ -79,11 +106,7 @@ Only use this if:
          - **PD/EH:** call the escalation contacts, and if they're unresponsive, use the **"Forward to PM"** button in the [Latchel Service Ops Assistant](https://help.latchel.com/latchel-admin/Service-Operations/Operations-Associate-Job-Aid-Latchel-Service-Ops-Assistant-Plug-in#everything-the-assistant-surfaces-for-you) plugin (path 3).
          - **Not PD/EH:** de-escalate to Urgent, keep "(EMERGENCY)" in the title, and leave the WO in **Pending** so the SP can still submit the estimate (path 2).
          - If exception B or C applies, follow it and leave the WO in **Pending**.
-      4. For **Non-Emergencies**:
-         1. Without changing the status of the Work Order, create a new task for the Property Manager to inform them that the vendor has not been responsive and request instructions.
-      5. Set the vendor as a contact.
-      6. Assign the task to the Property Manager group.
-      7. Summarize the status of the Work Order in the task description.
+      4. **Non-emergencies:** if you find a non-emergency estimate WO in Pending, click **Action → Waiting on an Estimate**, enter the SP's date if you have one, and complete the task. No PM task is needed, because the system sends the PM an Estimate Overdue task if the estimate is late.
 2. The job has been reported incomplete by the vendor or the resident and the reason or following steps are unknown, we need to follow up to obtain more information:
    1. 📝**NOTE**: If the Job is already in Pending status just create a task.
    2. Change the status to Pending.
@@ -115,6 +138,32 @@ Only use this if:
 ## **Needs Owner Approval**
 
 Only used when we are waiting on an estimate approval.
+
+<Note>
+  **Recording the decision** (when the owner or PM approves or denies by phone or email):
+
+  **Needs Owner Approval:**
+
+  1. Click **Action → Update Owner Approval** (under **Suggested**), or click **Record owner's decision** on the **Estimate** card in the Details tab.
+  2. Under **"Which did the owner choose?"**, select the option the owner approved, or **Owner denied**. Denying cancels the work order. The option's price becomes the budget.
+  3. In **Additional Details to Provide the Service Provider**, add anything the SP needs to know. **This is sent to the SP.**
+  4. Click **Submit**.
+
+  **Needs Approval** (estimates submitted the older way don't show an Estimate card):
+
+  1. Click **Action → Approve or Deny**.
+  2. Under **"Choose an option"**:
+     - **Approve the work order:** enter the amount in **Approved budget**. The screen confirms the new budget, and Latchel schedules the work.
+     - **Deny:** the work order is cancelled.
+  3. In **Additional Details to Provide the Service Provider**, add anything the SP needs to know. **This is sent to the SP.**
+  4. Click **Submit**.
+
+  **Either way:** leave a WO note with the Assembly ticket number, how the decision came in (phone, email or Webchat) and what was decided. Keep ticket numbers and internal details out of the SP field. The **Latchel AI** price review and "Latchel AI's pick" are for reference only. Always follow the owner's or PM's decision and the budget rules.
+</Note>
+
+<Warning>
+  If you cancel the work order, or move it out of Needs Approval / Needs Owner Approval without recording the decision, **the estimate is cancelled.**
+</Warning>
 
 <Note>
   📝NOTE: All estimates must clearly indicate the exact total amount before proceeding with any approval process. Estimates without the full details must be confirmed prior to moving forward.
