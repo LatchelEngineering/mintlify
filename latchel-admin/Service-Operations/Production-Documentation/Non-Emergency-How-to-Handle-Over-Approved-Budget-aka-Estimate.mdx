@@ -220,9 +220,9 @@ In the situation where a Service Provider can complete a work order, follow Part
    1. Forward the original email with all attachments to [estimates@inbox.latchel.com](mailto:estimates@inbox.latchel.com). Don't strip the attachments or edit the subject. Follow Step 2 of [How to: Handle Invoices or Estimates Sent via email](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Invoices-or-Estimates-Sent-via-email).
    2. After a few minutes, check that the file is in the WO's Files tab.
    3. **Only upload the estimate by hand if there's an error:** the AI couldn't match it (it comes back to Assembly as a new ticket from [team@latchel.com](mailto:team@latchel.com)), or the email bounced. Save it as a PDF if needed and upload it. See Step 2a of [How to: Handle Invoices or Estimates Sent via email](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Invoices-or-Estimates-Sent-via-email) and [How to: Add a File to a Work Order](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Add-a-File-to-a-Work-Order#tech-101-how-to-add-a-file-to-a-work-order).
-   4. The AI only attaches the file. It doesn't start the estimate approval, so continue with step 2 below.
+   4. If the WO is in Awaiting Estimate, the AI also adds the estimate as an **Estimate** card on the Details tab. Continue with step 2 below.
 2. Follow Step 4 of [How to: Handle Invoices or Estimates Sent via email](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Handle-Invoices-or-Estimates-Sent-via-email):
-   1. **WO is in Awaiting Estimate:** click **Action → Add Estimate** and enter the estimate (one total, or each option). The system handles approval: a single price within budget is auto-approved, and anything else goes to the PM, or to the owner if the owner approves new budgets.
+   1. **WO is in Awaiting Estimate:** check the Details tab for an **Estimate** card. If the AI already added it, **don't click Add Estimate** (it would replace the AI's estimate). If there's no Estimate card, click **Action → Add Estimate** and enter the estimate (one total, or each option). The system handles approval: a single price within budget is auto-approved, and anything else goes to the PM, or to the owner if the owner approves new budgets.
    2. **Add Estimate isn't available:** move the WO to **“Needs Owner Approval”**. A text field will appear, and this message is relayed to the Property Manager. You can write: "_We've received an estimate. To review this estimate, please check the "Files" section of this Work Order._" Refer to [How to: Put a Job on Hold → Needs Owner Approval](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Put-a-Job-on-Hold#needs-owner-approval).
    2. Write Notes following [How to: Write Effective Notes](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/How-to-Write-Effective-Notes#how-to-write-effective-notes)
 
@@ -458,7 +458,7 @@ In the situation where a Service Provider can complete a work order, follow Part
   1. **Set the Approved and Hard Budget limit to match the Owner’s requested cap**
      1. In the WO, update the **Approved and Hard Budget** to the amount they specified (e.g., \$400). Ensure that the budget has been updated. Check for automated notes of budget changes in the work order to ensure that this has reflected.
      2. This ensures that what the **service provider sees** matches the Owner’s instructions.
-     3. **Say something like:Say something like: **_“Thanks for letting us know you don’t want anything over \$[X] approved without your prior approval. Your account’s_ **hard budget limit** _for this type of work has now been updated to \$[HBL]. Thank you, and please let us know if we can assist you with anything else.”_
+     3. **Say something like:** _“Thanks for letting us know you don’t want anything over \$[X] approved without your prior approval. Your account’s_ **hard budget limit** _for this type of work has now been updated to \$[HBL]. Thank you, and please let us know if we can assist you with anything else.”_
   2. **Update the SP Instructions**
      1. **_“DO NOT PROCEED WITH ANY ADDITIONAL WORK. OWNER HAS APPROVED A MAXIMUM OF [amount] ONLY. ANY WORK OR COSTS BEYOND THIS AMOUNT ARE NOT AUTHORIZED AND REQUIRE PRIOR APPROVAL.”_**
   3. **Add a Special Note**
@@ -547,7 +547,7 @@ In the situation where a Service Provider can complete a work order, follow Part
 
   1. **Verify the estimate details** — Confirm the estimate amount and review whether it is within or over the Hard Budget.
   2. **Upload the estimate to the work order** — If the estimate or a screenshot of the SP's link/notification is available, attach it to the WO files. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/TECH-101-How-to-Add-a-File-to-a-Work-Order#how-to-add-a-file-to-the-work-order).
-  3. **Move the work order to Needs Owner Approval** (if the estimate exceeds the Hard Budget) or **Waiting for PM **(if within budget but the SP still requires the PM's action on the link before proceeding).
+  3. **Move the work order to Needs Owner Approval** (if the estimate exceeds the Hard Budget) or **Waiting for PM** (if within budget but the SP still requires the PM's action on the link before proceeding).
      1. For non-Property Damaging and Extreme Habitability situations:
         1. Call the escalation contacts.
            1. Refer to [this guide](https://help.latchel.com/latchel-admin/Service-Operations/Production-Documentation/Job-Aid-PM-Outbound-Communication-for-Emergency-WOs#job-aid-pm-outbound-communication-for-emergency-wos).
